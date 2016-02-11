@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<title>DAPNET</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./assets/css/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" href="./assets/css/datatables.min.css">
+	<link rel="stylesheet" href="./assets/css/chosen.min.css">
+	<link rel="stylesheet" href="./assets/css/leaflet.css">
+	<link rel="stylesheet" href="./assets/css/custom.css">
+	<link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./assets/css/sweetalert.css">
+	<link rel="shortcut icon" href="./assets/img/favicon.png">
+</head>
+<body>
+	<div id="splashscreen">
+	    <img class="center" src="./assets/img/loading.gif" alt="Loading..." />
+	</div>
+
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="#1" class="navbar-brand" onclick="openContainer(1)" data-i18n="dapnet"></a>
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse" id="navbar-main">
+				<ul class="nav navbar-nav" id="navbar-main-nav">
+					<li class="divider-vertical"></li>
+					<li><a href="#2" onclick="openContainer(2)" data-i18n="nav_calls"></a></li>
+					<li><a href="#4" onclick="openContainer(4)" data-i18n="nav_callsigns"></a></li>
+					<li class="divider-vertical"></li>
+					<li><a href="#3" onclick="openContainer(3)" data-i18n="nav_news"></a></li>
+					<li><a href="#5" onclick="openContainer(5)" data-i18n="nav_rubrics"></a></li>
+					<li class="divider-vertical"></li>
+					<li><a href="#6" onclick="openContainer(6)" data-i18n="nav_transmitters"></a></li>
+					<li><a href="#7" onclick="openContainer(7)" data-i18n="nav_transmittergroups"></a></li>
+					<li class="divider-vertical"></li>
+					<li><a href="#8" onclick="openContainer(8)" data-i18n="nav_nodes"></a></li>
+					<li class="divider-vertical"></li>
+					<li><a href="#9" onclick="openContainer(9)" data-i18n="nav_users"></a></li>
+					<li class="divider-vertical"></li>
+					<li><a href="#13" onclick="openContainer(13)" data-i18n="nav_map"></a></li>
+					<li class="divider-vertical"></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" id="loggedin"></a></li>
+					<li><a href="#" id="btnLogin" data-toggle="modal" data-target="#modalLogin" data-i18n="nav_login"></a></li>
+					<li><a href="#" id="btnLogout" onclick="logout()" data-i18n="nav_logout"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="containerModals">
+		<div class="modal fade" id="modalLogin">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#215;</button>
+						<h4 class="modal-title" data-i18n="nav_login"></h4>
+					</div>
+					<div class="modal-body">
+						<div class="alert alert-dismissible alert-danger" id="modalLoginAlert">
+							<button type="button" class="close" data-hide="alert">&#215;</button>
+							<strong data-i18n="login_error_title"></strong><br />
+							<p data-i18n="login_error_text"></p>
+						</div>
+						<form class="form-horizontal" id="formLogin">
+							<fieldset>
+								<div class="form-group">
+									<label for="loginUsername" class="col-lg-2 control-label" data-i18n="login_form_username"></label>
+									<div class="col-lg-10">
+										<input type="text" class="form-control" id="loginUsername">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="loginPassword" class="col-lg-2 control-label" data-i18n="login_form_password"></label>
+									<div class="col-lg-10">
+										<input type="password" class="form-control" id="loginPassword" autocomplete="off">
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" form="formLogin" onclick="loginWithForm()" class="btn btn-primary" data-i18n="nav_login"></button>
+						<button type="button" class="btn btn-default" data-dismiss="modal" data-i18n="close"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="container1">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="jumbotron">
+					<h1 data-i18n="home_jumbotron_title"></h1>
+					<p data-i18n="home_jumbotron_text"></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-4">
+				<h2 id="wellInfo" data-i18n="home_info_title"></h2>
+				<div class="well">
+					<img src="./assets/img/rwth-funker-small.png" alt="Amateurfunker RWTH Aachen University" style="float:left; padding-right:15px;"/>
+					<p data-i18n="home_info_text"></p>
+				</div>
+			</div>
+
+			<div class="col-lg-4">
+				<h2 data-i18n="nav_news"></h2>
+				<div class="list-group" id="newsStart">
+					<div class="list-group-item">
+						<h4 class="list-group-item-heading" data-i18n="alert_news_forbidden_title"></h4>
+						<p class="list-group-item-text" data-i18n="alert_news_forbidden_text"></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4" id="homeStats">
+				<h2 data-i18n="home_stats_title"></h2>
+				<ul class="list-group">
+					<li class="list-group-item"><b data-i18n="nav_calls"></b><span class="badge" id="statsStartCalls"></span></li>
+					<li class="list-group-item"><b data-i18n="nav_news"></b><span class="badge" id="statsStartNews"></span></li>
+					<li class="list-group-item"><b data-i18n="nav_transmitters"></b><span class="badge" id="statsStartTransmitter"></span></li>
+					<li class="list-group-item"><b data-i18n="nav_nodes"></b><span class="badge" id="statsStartNodes"></span></li>
+					<li class="list-group-item"><b data-i18n="nav_users"></b><span class="badge" id="statsStartUsers"></span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="container2">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 data-i18n="nav_calls"></h1>
+			</div>
+		</div>
+		<div class="row" id="container2-overview">
+			<div class="col-lg-9">
+				<h2 data-i18n="calls_all_calls"></h2>
+				<table class="table table-striped table-hover dataTable" id="tableCalls">
+					<thead>
+						<tr>
+							<th data-i18n="calls_table_time"></th>
+							<th data-i18n="calls_table_callsign"></th>
+							<th data-i18n="calls_table_transmittergroups"></th>
+							<th data-i18n="calls_table_text"></th>
+							<th data-i18n="calls_table_emergency">?</th>
+							<th data-i18n="calls_table_owners"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-lg-3 well">
+				<legend data-i18n="container_side_actions_title"></legend>
+				<ul>
+					<li><a href="#2" onclick="loadCalls()" data-i18n="container_side_actions_refresh"></a></li>
+					<li><a href="#2" onclick="addCall()" data-i18n="calls_side_actions_new"></a></li>
+				</ul>
+				<br />
+				<legend data-i18n="container_side_statistics_title"></legend>
+				<ul class="list-group" id="statsCalls">
+					<li class="list-group-item"><b data-i18n="calls_side_statistics_emergency"></b><span class="badge" id="statsCallsEmergency"></span></li>
+					<li class="list-group-item"><b data-i18n="calls_side_statistics_total"></b><span class="badge" id="statsCallsTotal"></span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row" id="container2-detail">
+			<div class="col-lg-9">
+				<form class="form-horizontal well">
+					<fieldset>
+						<legend data-i18n="calls_side_actions_new"></legend>
+						<div class="form-group">
+							<label for="formEditCallText" class="col-lg-2 control-label" data-i18n="calls_table_text"></label>
+							<div class="col-lg-10">
+								<textarea class="form-control" rows="2" maxlength="80" id="formEditCallText"></textarea>
+								<span class="help-block" id="formEditCallTextRemaining"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditCallCallsign" class="col-lg-2 control-label" data-i18n="calls_table_callsign"></label>
+							<div class="col-lg-10">
+								<select class="form-control chosen-select" id="formEditCallCallsign" multiple="" size="5">
+									<option value="_NONE_" selected>_NONE_</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditCallTransmitterGroup" class="col-lg-2 control-label" data-i18n="calls_table_transmittergroups"></label>
+							<div class="col-lg-10">
+								<select class="form-control chosen-select" id="formEditCallTransmitterGroup" multiple="" size="5">
+									<option value="_NONE_" selected>_NONE_</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditCallEmergency" class="col-lg-2 control-label" data-i18n="calls_table_emergency"></label>
+							<div class="col-lg-10 checkbox">
+								<label>
+									<input type="checkbox" id="formEditCallEmergency">
+								</label>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div class="col-lg-3 well">
+				<legend data-i18n="container_side_actions_title"></legend>
+				<ul>
+					<li><a href="#2" onclick="postCall()" data-i18n="container_side_actions_save"></a></li>
+					<li><a href="#2" onclick="returnFromCallDetails()" data-i18n="container_side_actions_cancel"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="container4">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 data-i18n="nav_callsigns"></h1>
+			</div>
+		</div>
+		<div class="row" id="container4-overview">
+			<div class="col-lg-9">
+				<h2 data-i18n="callsigns_all_callsigns"></h2>
+				<table class="table table-striped table-hover dataTable" id="tableCallSigns">
+					<thead>
+						<tr>
+							<th data-i18n="callsigns_table_name"></th>
+							<th data-i18n="callsigns_table_description"></th>
+							<th data-i18n="callsigns_table_pager_number"></th>
+							<th data-i18n="callsigns_table_pager_name"></th>
+							<th data-i18n="callsigns_table_owner"></th>
+							<th data-i18n="container_side_actions_title"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-lg-3 well">
+				<legend data-i18n="container_side_actions_title"></legend>
+				<ul>
+					<li><a href="#4" onclick="loadCallSigns()" data-i18n="container_side_actions_refresh"></a></li>
+					<li><a href="#4" onclick="addCallSign()" data-i18n="callsigns_side_actions_new"></a></li>
+				</ul>
+				<br />
+				<legend data-i18n="container_side_statistics_title"></legend>
+				<ul class="list-group" id="statsCallSigns">
+					<li class="list-group-item"><b data-i18n="callsigns_side_statstics_total"></b><span class="badge" id="statsCallSignsTotal"></span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row" id="container4-detail">
+			<div class="col-lg-9">
+				<form class="form-horizontal well">
+					<fieldset>
+						<legend data-i18n="callsigns_add_edit_title"></legend>
+						<div class="form-group">
+							<label for="formEditCallSignName" class="col-lg-2 control-label" data-i18n="callsigns_table_name"></label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="formEditCallSignName">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditCallSignDescription" class="col-lg-2 control-label" data-i18n="callsigns_table_description"></label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="formEditCallSignDescription">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditCallSignPagers" class="col-lg-2 control-label" data-i18n="callsigns_add_pager"></label>
+							<div class="col-lg-5">
+								<textarea class="form-control" rows="5" id="formEditCallSignsPagersNumber"></textarea>
+								<span class="help-block" id="formEditCallSignsPagersNumberHelp" data-i18n="callsigns_add_pager_number_help"></span>
+							</div>
+							<div class="col-lg-5">
+								<textarea class="form-control" rows="5" id="formEditCallSignsPagersName"></textarea>
+								<span class="help-block" id="formEditCallSignsPagersNameHelp" data-i18n="callsigns_add_pager_name_help"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditCallSignOwners" class="col-lg-2 control-label" data-i18n="callsigns_table_owner"></label>
+							<div class="col-lg-10">
+								<select class="form-control chosen-select" id="formEditCallSignOwners" multiple="" size="5">
+									<option value="_NONE_" selected>_NONE_</option>
+								</select>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div class="col-lg-3 well">
+				<legend data-i18n="container_side_actions_title"></legend>
+				<ul>
+					<li><a href="#4" onclick="putCallSign()" data-i18n="container_side_actions_save"></a></li>
+					<li><a href="#4" onclick="returnFromCallSignDetails()" data-i18n="container_side_actions_cancel"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="container3">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 data-i18n="nav_news"></h1>
+			</div>
+		</div>
+		<div class="row" id="container3-overview">
+			<div class="col-lg-9">
+				<h2 data-i18n="news_all_news"></h2>
+				<table class="table table-striped table-hover dataTable" id="tableNews">
+					<thead>
+						<tr>
+							<th data-i18n="news_table_timestamp"></th>
+							<th data-i18n="news_table_rubric"></th>
+							<th data-i18n="news_table_number"></th>
+							<th data-i18n="news_table_text"></th>
+							<th data-i18n="news_table_owner"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-lg-3 well">
+				<legend data-i18n="container_side_actions_title"></legend>
+				<ul>
+					<li><a href="#3" onclick="loadNews()" data-i18n="container_side_actions_refresh"></a></li>
+					<li><a href="#3" onclick="addNews()" data-i18n="news_side_actions_new"></a></li>
+				</ul>
+				<br />
+				<legend data-i18n="container_side_statistics_title"></legend>
+				<ul class="list-group" id="statsNews">
+					<li class="list-group-item"><b data-i18n="news_side_statistics_total"></b><span class="badge" id="statsNewsTotal"></span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row" id="container3-detail">
+			<div class="col-lg-9">
+				<form class="form-horizontal well">
+					<fieldset>
+						<legend data-i18n="news_side_actions_new"></legend>
+						<div class="form-group">
+							<label for="formEditNewsText" class="col-lg-2 control-label" data-i18n="news_table_text"></label>
+							<div class="col-lg-10">
+								<textarea class="form-control" rows="5" id="formEditNewsText"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditNewsRubric" class="col-lg-2 control-label" data-i18n="news_table_rubric"></label>
+							<div class="col-lg-10">
+								<select class="form-control chosen-select" id="formEditNewsRubric">
+									<option value="_NONE_" selected>_NONE_</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditNewsNumber" class="col-lg-2 control-label" data-i18n="news_table_number"></label>
+							<div class="col-lg-10">
+								<input type="number" step="1" min="1" max="10" class="form-control" id="formEditNewsNumber" placeholder="1 - 10">
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div class="col-lg-3 well">
+				<legend data-i18n="container_side_actions_title"></legend>
+				<ul>
+					<li><a href="#3" onclick="postNews()" data-i18n="container_side_actions_save"></a></li>
+					<li><a href="#3" onclick="returnFromNewsDetails()" data-i18n="container_side_actions_cancel"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="container5">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 data-i18n="nav_rubrics"></h1>
+			</div>
+		</div>
+		<div class="row" id="container5-overview">
+			<div class="col-lg-9">
+				<h2 data-i18n="rubrics_all_rubrics"></h2>
+				<table class="table table-striped table-hover dataTable" id="tableRubrics">
+					<thead>
+						<tr>
+							<th data-i18n="rubrics_table_number"></th>
+							<th data-i18n="rubrics_table_name"></th>
+							<th data-i18n="rubrics_table_label"></th>
+							<th data-i18n="rubrics_table_transmittergroups"></th>
+							<th data-i18n="rubrics_table_owner"></th>
+							<th data-i18n="container_side_actions_title"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-lg-3 well">
+				<legend data-i18n="container_side_actions_title"></legend>
+				<ul>
+					<li><a href="#5" onclick="loadRubrics()" data-i18n="container_side_actions_refresh"></a></li>
+					<li id="rubrics-add-rubric"><a href="#5" onclick="addRubric()" data-i18n="rubrics_side_actions_new"></a></li>
+					<li><a href="#5" onclick="activateRubrics()" data-i18n="rubrics_side_actions_activation"></a></li>
+				</ul>
+				<br />
+				<legend data-i18n="container_side_statistics_title"></legend>
+				<ul class="list-group" id="statsRubrics">
+					<li class="list-group-item"><b data-i18n="rubrics_side_statistics_total"></b><span class="badge" id="statsRubricsTotal"></span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row" id="container5-detail">
+			<div class="col-lg-9">
+				<form class="form-horizontal well">
+					<fieldset>
+						<legend data-i18n="rubrics_add_edit_title"></legend>
+						<div class="form-group">
+							<label for="formEditRubricName" class="col-lg-2 control-label" data-i18n="rubrics_table_name"></label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="formEditRubricName">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditRubricLabel" class="col-lg-2 control-label" data-i18n="rubrics_table_label"></label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="formEditRubricLabel">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditRubricNumber" class="col-lg-2 control-label" data-i18n="rubrics_table_number"></label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="formEditRubricNumber">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditRubricTransmitterGroups" class="col-lg-2 control-label" data-i18n="rubrics_table_transmittergroups"></label>
+							<div class="col-lg-10">
+								<select class="form-control chosen-select" id="formEditRubricTransmitterGroups" multiple="" size="5">
+									<option value="_NONE_" selected>_NONE_</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditRubricOwners" class="col-lg-2 control-label" data-i18n="rubrics_table_owner"></label>
+							<div class="col-lg-10">
+								<select class="form-control chosen-select" id="formEditRubricOwners" multiple="" size="5">
+									<option value="_NONE_" selected>_NONE_</option>
+								</select>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div class="col-lg-3 well">
+				<legend data-i18n="container_side_actions_title"></legend>
+				<ul>
+					<li><a href="#5" onclick="putRubric()" data-i18n="container_side_actions_save"></a></li>
+					<li><a href="#5" onclick="returnFromRubricDetails()" data-i18n="container_side_actions_cancel"></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row" id="container5-detail2">
+			<div class="col-lg-9">
+				<form class="form-horizontal well">
+					<fieldset>
+						<legend data-i18n="rubrics_side_actions_activation"></legend>
+						<div class="form-group">
+							<label for="formActivateRubricNumber" class="col-lg-2 control-label" data-i18n="rubrics_table_number"></label>
+							<div class="col-lg-10">
+								<input type="number" min="0" max="2097151" class="form-control" id="formActivateRubricNumber">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formActivateRubricTransmitterGroups" class="col-lg-2 control-label" data-i18n="rubrics_table_transmittergroups"></label>
+							<div class="col-lg-10">
+								<select class="form-control chosen-select" id="formActivateRubricTransmitterGroups" multiple="" size="5">
+									<option value="_NONE_" selected>_NONE_</option>
+								</select>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div class="col-lg-3 well">
+				<legend data-i18n="container_side_actions_title"></legend>
+				<ul>
+					<li><a href="#5" onclick="sendRubricsActivation()" data-i18n="rubrics_send_activation"></a></li>
+					<li><a href="#5" onclick="returnFromRubricDetails2()" data-i18n="container_side_actions_cancel"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="container6">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 data-i18n="nav_transmitters"></h1>
+			</div>
+		</div>
+		<div class="row" id="container6-overview">
+			<div class="col-lg-9">
+				<h2 data-i18n="transmitters_all_transmitters"></h2>
+				<table class="table table-striped table-hover dataTable" id="tableTransmitters">
+					<thead>
+						<tr>
+							<th data-i18n="transmitters_table_name"></th>
+							<th data-i18n="transmitters_table_nodes"></th>
+							<th data-i18n="transmitters_table_ip"></th>
+							<th data-i18n="transmitters_table_owner"></th>
+							<th data-i18n="transmitters_table_type"></th>
+							<th data-i18n="transmitters_table_status"></th>
+							<th data-i18n="container_side_actions_title"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-lg-3 well">
+				<legend data-i18n="container_side_actions_title"></legend>
+				<ul>
+					<li><a href="#6" onclick="loadTransmitters()" data-i18n="container_side_actions_refresh"></a></li>
+					<li><a href="#6" onclick="addTransmitter()" data-i18n="transmitters_side_actions_new"></a></li>
+				</ul>
+				<br />
+				<legend data-i18n="container_side_statistics_title"></legend>
+				<ul class="list-group" id="statsTransmitter">
+					<li class="list-group-item"><b data-i18n="transmitters_side_statistics_online"></b><span class="badge" id="statsTransmitterOnline"></span></li>
+					<li class="list-group-item"><b data-i18n="transmitters_side_statistics_offline"></b><span class="badge" id="statsTransmitterOffline"></span></li>
+					<li class="list-group-item"><b data-i18n="transmitters_side_statistics_total"></b><span class="badge" id="statsTransmitterTotal"></span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row" id="container6-detail">
+			<div class="col-lg-9">
+				<form class="form-horizontal well">
+					<fieldset>
+						<legend data-i18n="transmitters_add_edit_title"></legend>
+						<div class="form-group">
+							<label for="formEditTransmitterName" class="col-lg-2 control-label" data-i18n="transmitters_table_name"></label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="formEditTransmitterName">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditTransmitterNodeName" class="col-lg-2 control-label" data-i18n="transmitters_table_nodes"></label>
+							<div class="col-lg-10">
+								<select class="form-control" id="formEditTransmitterNodeName">
+									<option value="_NONE_" selected>_NONE_</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-lg-2 control-label" data-i18n="transmitters_add_lat_lon"></label>
+							<div class="col-lg-3">
+								<input type="number" step="0.00000001" min="0" max="90" class="form-control" id="formEditTransmitterLatitude" placeholder="0 - 90">
+							</div>
+							<div class="col-lg-2">
+								<select class="form-control" id="formEditTransmitterLatitudeOrientation">
+									<option value="1" selected data-i18n="transmitters_add_north"></option>
+									<option value="-1" data-i18n="transmitters_add_south"></option>
+								</select>
+							</div>
+							<div class="col-lg-3">
+								<input type="number" step="0.00000001" min="0" max="180" class="form-control" id="formEditTransmitterLongitude" placeholder="0 - 180">
+							</div>
+							<div class="col-lg-2">
+								<select class="form-control" id="formEditTransmitterLongitudeOrientation">
+									<option value="1" selected data-i18n="transmitters_add_east"></option>
+									<option value="-1" data-i18n="transmitters_add_west"></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditTransmitterPower" class="col-lg-2 control-label" data-i18n="transmitters_add_power"></label>
+							<div class="col-lg-10">
+								<input type="number" step="0.5" min="0" max="200"  class="form-control" id="formEditTransmitterPower" placeholder="0 - 200">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditNodeIp" class="col-lg-2 control-label" data-i18n="transmitters_add_ip_port"></label>
+							<div class="col-lg-6">
+								<input type="text" class="form-control" id="formEditTransmitterIp">
+							</div>
+							<div class="col-lg-4">
+								<input type="text" class="form-control" id="formEditTransmitterPort">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditTransmitterTimeslot" class="col-lg-2 control-label" data-i18n="transmitters_add_timeslot"></label>
+							<div class="col-lg-10">
+								<table>
+									<tbody style="text-align: center">
+										<tr>
+											<td>0</td>
+											<td>1</td>
+											<td>2</td>
+											<td>3</td>
+											<td>4</td>
+											<td>5</td>
+											<td>6</td>
+											<td>7</td>
+											<td>8</td>
+											<td>9</td>
+											<td>A</td>
+											<td>B</td>
+											<td>C</td>
+											<td>D</td>
+											<td>E</td>
+											<td>F</td>
+										</tr>
+										<tr>
+											<td><input type="checkbox" class="timeslotCheckBox" id="formEditTransmitterTimeslot0"></td>
+											<td><input type="checkbox" class="timeslotCheckBox" id="formEditTransmitterTimeslot1"></td>
+											<td><input type="checkbox" class="timeslotCheckBox" id="formEditTransmitterTimeslot2"></td>
+											<td><input type="checkbox" class="timeslotCheckBox" id="formEditTransmitterTimeslot3"></td>
+											<td><input type="checkbox" class="timeslotCheckBox" id="formEditTransmitterTimeslot4"></td>
+											<td><input type="checkbox" class="timeslotCheckBox" id="formEditTransmitterTimeslot5"></td>
+											<td><input type="checkbox" class="timeslotCheckBox" id="formEditTransmitterTimeslot6"></td>
+											<td><input type="checkbox" class="timeslotCheckBox" id="formEditTransmitterTimeslot7"></td>
+											<td><input type="checkbox" class="timeslotCheckBox" id="formEditTransmitterTimeslot8"></td>
+											<td><input type="checkbox" class="timeslotCheckBox" id="formEditTransmitterTimeslot9"></td>
+											<td><input type="checkbox" class="timeslotCheckBox" id="formEditTransmitterTimeslotA"></td>
+											<td><input type="checkbox" class="timeslotCheckBox" id="formEditTransmitterTimeslotB"></td>
+											<td><input type="checkbox" class="timeslotCheckBox" id="formEditTransmitterTimeslotC"></td>
+											<td><input type="checkbox" class="timeslotCheckBox" id="formEditTransmitterTimeslotD"></td>
+											<td><input type="checkbox" class="timeslotCheckBox" id="formEditTransmitterTimeslotE"></td>
+											<td><input type="checkbox" class="timeslotCheckBox" id="formEditTransmitterTimeslotF"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditTransmitterOwners" class="col-lg-2 control-label" data-i18n="transmitters_table_owner"></label>
+							<div class="col-lg-10">
+								<select class="form-control chosen-select" id="formEditTransmitterOwners" multiple="" size="5">
+									<option value="_NONE_" selected>_NONE_</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditTransmitterDeviceType" class="col-lg-2 control-label" data-i18n="transmitters_table_type"></label>
+							<div class="col-lg-10">
+								<select class="form-control" id="formEditTransmitterDeviceType">
+									<option selected>RASPPAGER1</option>
+								</select>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div class="col-lg-3 well">
+				<legend data-i18n="container_side_actions_title"></legend>
+				<ul>
+					<li><a href="#6" onclick="putTransmitter()" data-i18n="container_side_actions_save"></a></li>
+					<li><a href="#6" onclick="returnFromTransmitterDetails()" data-i18n="container_side_actions_cancel"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="container7">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 data-i18n="nav_transmittergroups"></h1>
+			</div>
+		</div>
+		<div class="row" id="container7-overview">
+			<div class="col-lg-9">
+				<h2 data-i18n="transmitter_groups_all_transmitter_groups"></h2>
+				<table class="table table-striped table-hover dataTable" id="tableTransmitterGroups">
+					<thead>
+						<tr>
+							<th data-i18n="transmitter_groups_table_name"></th>
+							<th data-i18n="transmitter_groups_table_description"></th>
+							<th data-i18n="transmitter_groups_table_transmitter_names"></th>
+							<th data-i18n="transmitter_groups_table_owner"></th>
+							<th data-i18n="container_side_actions_title"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-lg-3 well">
+				<legend data-i18n="container_side_actions_title"></legend>
+				<ul>
+					<li><a href="#7" onclick="loadTransmitterGroups()" data-i18n="container_side_actions_refresh"></a></li>
+					<li><a href="#7" onclick="addTransmitterGroup()" data-i18n="transmitter_groups_side_actions_new"></a></li>
+				</ul>
+				<br />
+				<legend data-i18n="container_side_statistics_title"></legend>
+				<ul class="list-group" id="statsTransmitterGroups">
+					<li class="list-group-item"><b data-i18n="transmitter_groups_side_statistics_total"></b><span class="badge" id="statsTransmitterGroupsTotal"></span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row" id="container7-detail">
+			<div class="col-lg-9">
+				<form class="form-horizontal well">
+					<fieldset>
+						<legend data-i18n="transmitter_groups_add_edit_title"></legend>
+						<div class="form-group">
+							<label for="formEditTransmitterGroupName" class="col-lg-2 control-label" data-i18n="transmitter_groups_table_name"></label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="formEditTransmitterGroupName">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditTransmitterGroupDescription" class="col-lg-2 control-label" data-i18n="transmitter_groups_table_description"></label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="formEditTransmitterGroupDescription">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditTransmitterGroupTransmitters" class="col-lg-2 control-label" data-i18n="transmitter_groups_table_transmitter_names"></label>
+							<div class="col-lg-10">
+								<select class="form-control chosen-select" id="formEditTransmitterGroupTransmitters" multiple="" size="5">
+									<option value="_NONE_" selected>_NONE_</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditTransmitterGroupOwners" class="col-lg-2 control-label" data-i18n="transmitter_groups_table_owner"></label>
+							<div class="col-lg-10">
+								<select class="form-control chosen-select" id="formEditTransmitterGroupOwners" multiple="" size="5">
+									<option value="_NONE_" selected>_NONE_</option>
+								</select>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div class="col-lg-3 well">
+				<legend data-i18n="container_side_actions_title"></legend>
+				<ul>
+					<li><a href="#7" onclick="putTransmitterGroup()" data-i18n="container_side_actions_save"></a></li>
+					<li><a href="#7" onclick="returnFromTransmitterGroupDetails()" data-i18n="container_side_actions_cancel"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="container8">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 data-i18n="nav_nodes"></h1>
+			</div>
+		</div>
+		<div class="row" id="container8-overview">
+			<div class="col-lg-9">
+				<h2 data-i18n="nodes_all_nodes"></h2>
+				<table class="table table-striped table-hover dataTable" id="tableNodes">
+					<thead>
+						<tr>
+							<th data-i18n="nodes_table_name"></th>
+							<th data-i18n="nodes_table_ip"></th>
+							<th data-i18n="nodes_table_port"></th>
+							<th data-i18n="nodes_table_status"></th>
+							<th data-i18n="container_side_actions_title"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-lg-3 well">
+				<legend data-i18n="container_side_actions_title"></legend>
+				<ul>
+					<li><a href="#8" onclick="loadNodes()" data-i18n="container_side_actions_refresh"></a></li>
+					<li id="nodes-add-node"><a href="#8" onclick="addNode()" data-i18n="nodes_side_actions_new"></a></li>
+				</ul>
+				<br />
+				<legend data-i18n="container_side_statistics_title"></legend>
+				<ul class="list-group" id="statsNodes">
+					<li class="list-group-item"><b data-i18n="nodes_side_statistics_online"></b><span class="badge" id="statsNodesOnline"></span></li>
+					<li class="list-group-item"><b data-i18n="nodes_side_statistics_offline"></b><span class="badge" id="statsNodesOffline"></span></li>
+					<li class="list-group-item"><b data-i18n="nodes_side_statistics_total"></b><span class="badge" id="statsNodesTotal"></span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row" id="container8-detail">
+			<div class="col-lg-9">
+				<form class="form-horizontal well">
+					<fieldset>
+						<legend data-i18n="nodes_add_edit_title"></legend>
+						<div class="form-group">
+							<label for="formEditNodeName" class="col-lg-2 control-label" data-i18n="nodes_table_name"></label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="formEditNodeName">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-lg-2 control-label" data-i18n="nodes_add_lat_lon"></label>
+							<div class="col-lg-3">
+								<input type="number" step="0.00000001" min="0" max="90" class="form-control" id="formEditNodeLatitude" placeholder="0 - 90">
+							</div>
+							<div class="col-lg-2">
+								<select class="form-control" id="formEditNodeLatitudeOrientation">
+									<option value="1" selected data-i18n="nodes_add_north"></option>
+									<option value="-1" data-i18n="nodes_add_south"></option>
+								</select>
+							</div>
+							<div class="col-lg-3">
+								<input type="number" step="0.00000001" min="0" max="180" class="form-control" id="formEditNodeLongitude" placeholder="0 - 180">
+							</div>
+							<div class="col-lg-2">
+								<select class="form-control" id="formEditNodeLongitudeOrientation">
+									<option value="1" selected data-i18n="nodes_add_east"></option>
+									<option value="-1" data-i18n="nodes_add_west"></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditNodeIp" class="col-lg-2 control-label" data-i18n="nodes_add_ip_port"></label>
+							<div class="col-lg-6">
+								<input type="text" class="form-control" id="formEditNodeIp">
+							</div>
+							<div class="col-lg-4">
+								<input type="text" class="form-control" id="formEditNodePort" value="7800">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditNodeStatus" class="col-lg-2 control-label" data-i18n="nodes_table_status"></label>
+							<div class="col-lg-10">
+								<select class="form-control" id="formEditNodeStatus">
+									<option value="ONLINE" selected data-i18n="nodes_add_status_online"></option>
+									<option value="SUSPENDED" data-i18n="nodes_add_status_suspended"></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditNodeKey" class="col-lg-2 control-label" data-i18n="nodes_add_key"></label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="formEditNodeKey">
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div class="col-lg-3 well">
+				<legend data-i18n="container_side_actions_title"></legend>
+				<ul>
+					<li><a href="#8" onclick="putNode()" data-i18n="container_side_actions_save"></a></li>
+					<li><a href="#8" onclick="returnFromNodeDetails()" data-i18n="container_side_actions_cancel"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="container9">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 data-i18n="nav_users"></h1>
+			</div>
+		</div>
+		<div class="row" id="container9-overview">
+			<div class="col-lg-9">
+				<h2 data-i18n="users_all_users"></h2>
+				<table class="table table-striped table-hover dataTable" id="tableUsers">
+					<thead>
+						<tr>
+							<th data-i18n="users_table_name"></th>
+							<th data-i18n="users_table_mail"></th>
+							<th data-i18n="users_table_admin"></th>
+							<th data-i18n="users_table_callsigns"></th>
+							<th data-i18n="container_side_actions_title"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-lg-3 well">
+				<legend data-i18n="container_side_actions_title"></legend>
+				<ul>
+					<li><a href="#9" onclick="loadUsers()" data-i18n="container_side_actions_refresh"></a></li>
+					<li><a href="#9" onclick="addUser()" data-i18n="users_side_actions_new"></a></li>
+				</ul>
+				<br />
+				<legend data-i18n="container_side_statistics_title"></legend>
+				<ul class="list-group" id="statsUsers">
+					<li class="list-group-item"><b data-i18n="users_side_statistics_admins"></b><span class="badge" id="statsUsersAdmins"></span></li>
+					<li class="list-group-item"><b data-i18n="users_side_statistics_total"></b><span class="badge" id="statsUsersTotal"></span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row" id="container9-detail">
+			<div class="col-lg-9">
+				<form class="form-horizontal well">
+					<fieldset>
+						<legend data-i18n="users_add_edit_title"></legend>
+						<div class="form-group">
+							<label for="formEditUserName" class="col-lg-2 control-label" data-i18n="users_table_name"></label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="formEditUserName">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditUserPassword" class="col-lg-2 control-label" data-i18n="users_add_password"></label>
+							<div class="col-lg-10">
+								<input type="password" class="form-control" id="formEditUserPassword">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditUserMail" class="col-lg-2 control-label" data-i18n="users_table_mail"></label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="formEditUserMail">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditUserAdmin" class="col-lg-2 control-label" data-i18n="users_table_admin"></label>
+							<div class="col-lg-10 checkbox">
+								<label>
+									<input type="checkbox" id="formEditUserAdmin">
+								</label>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div class="col-lg-3 well">
+				<legend data-i18n="container_side_actions_title"></legend>
+				<ul>
+					<li><a href="#9" onclick="putUser()" data-i18n="container_side_actions_save"></a></li>
+					<li><a href="#9" onclick="returnFromUserDetails()" data-i18n="container_side_actions_cancel"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="container10">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 data-i18n="footer_contact"></h1>
+				<p>Hier ist nichts.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="container11">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 data-i18n="footer_impress"></h1>
+				<h2>Angaben gemäß § 5 TMG:</h2>
+				<p>Max Mustermann<br />
+					Musterstraße 111<br />
+					Gebäude 44<br />
+					90210 Musterstadt
+				</p>
+				<h2>Kontakt:</h2>
+				<table>
+					<tr>
+						<td>Telefon:</td>
+						<td>+49 (0) 123 44 55 66</td>
+					</tr>
+					<tr>
+						<td>Telefax:</td>
+						<td>+49 (0) 123 44 55 99</td>
+					</tr>
+					<tr>
+						<td>E-Mail:</td>
+						<td>mustermann@musterfirma.de</td>
+					</tr>
+				</table>
+				<p>Quelle: <em><a rel="nofollow" href="http://www.e-recht24.de">http://www.e-recht24.de</a></em></p>
+
+				<h1>Haftungsausschluss (Disclaimer)</h1>
+				<p><strong>Haftung für Inhalte</strong></p>
+				<p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+				<br />
+				<p><strong>Haftung für Links</strong></p>
+				<p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+				<br />
+				<p><strong>Urheberrecht</strong></p>
+				<p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="container12">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 data-i18n="footer_privacy"></h1>
+				<p><strong>Datenschutz</strong></p>
+				<p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+				<p>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.</p>
+				<p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+				<br />
+				<p><strong>Cookies</strong></p>
+				<p>Die Internetseiten verwenden teilweise so genannte Cookies. Cookies richten auf Ihrem Rechner keinen Schaden an und enthalten keine Viren. Cookies dienen dazu, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen. Cookies sind kleine Textdateien, die auf Ihrem Rechner abgelegt werden und die Ihr Browser speichert.</p>
+				<p>Die meisten der von uns verwendeten Cookies sind so genannte „Session-Cookies“. Sie werden nach Ende Ihres Besuchs automatisch gelöscht. Andere Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese löschen. Diese Cookies ermöglichen es uns, Ihren Browser beim nächsten Besuch wiederzuerkennen.</p>
+				<p>Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browser aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="container13">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 data-i18n="nav_map"></h1>
+				<div id="map"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="containerFooter">
+		<footer>
+			<div class="row">
+				<div class="col-lg-12">
+					<noscript><p><b>Please enable JavaScript to use this Website.</b></p><br /></noscript>
+					<p><b data-i18n="footer_support_us"></b>
+						<ul class="list-unstyled">
+							<li><a href="#" target="_blank" data-i18n="footer_github"></a></li>
+							<li><a href="https://www.afu.rwth-aachen.de" target="_blank" data-i18n="footer_afu"></a></li>
+							<li><a href="https://www.rwth-aachen.de" target="_blank" data-i18n="footer_rwth"></a></li>
+							<li><a href="#" target="_blank" data-i18n="footer_howto"></a></li>
+						</ul>
+					</p>
+					<p><b data-i18n="footer_contact_us"></b>
+						<ul class="list-unstyled">
+							<li><a href="#" target="_blank" data-i18n="footer_twitter"></a></li>
+							<li><a href="#" target="_blank" data-i18n="footer_facebook"></a></li>
+							<li><a href="#10" onclick="openContainer(10)" data-i18n="footer_contact"></a></li>
+							<li><a href="#11" onclick="openContainer(11)" data-i18n="footer_impress"></a></li>
+							<li><a href="#12" onclick="openContainer(12)" data-i18n="footer_privacy"></a></li>
+						</ul>
+					</p>
+					<p><b data-i18n="footer_language"></b>
+						<ul class="list-unstyled">
+							<li><a href="#" onclick="changeLanguage('en_US')" data-i18n="footer_language_english"></a></li>
+							<li><a href="#" onclick="changeLanguage('de_DE')" data-i18n="footer_language_german"></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<script src="./assets/js/jquery.min.js"></script>
+	<script src="./assets/js/bootstrap.min.js"></script>
+	<script src="./assets/js/jquery.i18n.properties.js"></script>
+	<script src="./assets/js/datatables.min.js"></script>
+	<script src="./assets/js/chosen.jquery.min.js"></script>
+	<script src="./assets/js/leaflet.js"></script>
+	<script src="./assets/js/sweetalert.min.js"></script>
+	<script src="./assets/js/cookie.min.js"></script>
+	<script src="./assets/js/onepager.js"></script>
+	<script src="./assets/js/apiclient.js"></script>
+</body>
+</html>
