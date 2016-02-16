@@ -278,9 +278,7 @@ function editCallSign(name) {
 			$("#container4-overview").hide();
 			$("#container4-detail").show();
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -338,9 +336,7 @@ function editRubric(name) {
 			$("#container5-overview").hide();
 			$("#container5-detail").show();
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -433,9 +429,7 @@ function editTransmitter(name) {
 			$("#container6-overview").hide();
 			$("#container6-detail").show();
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -497,9 +491,7 @@ function editTransmitterGroup(name) {
 			$("#container7-overview").hide();
 			$("#container7-detail").show();
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -556,9 +548,7 @@ function editNode(name) {
 			$("#container8-overview").hide();
 			$("#container8-detail").show();
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -608,9 +598,7 @@ function editUser(name) {
 			$("#container9-overview").hide();
 			$("#container9-detail").show();
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -727,6 +715,16 @@ function showSuccessReloadAlert() {
 
 // Ajax Error Handler
 function handleError(err) {
+	if (err.status === 0) {
+		swal({
+			title: jQuery.i18n.prop('alert_error_api_title'),
+			text: jQuery.i18n.prop('alert_error_api_text'),
+			type: "error",
+			html: true
+		});
+		return;
+	}
+
 	var errorText = err.responseJSON.message;
 	if (err.responseJSON.code == 4001) {
 		var jsonErrors = "<ul style=\"text-align:left\">";

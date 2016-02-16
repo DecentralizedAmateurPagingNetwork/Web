@@ -48,9 +48,7 @@ function loadCalls() {
 			$('#statsCallsEmergency').text(statEmergency);
 			$('#statsCallsTotal, #statsStartCalls').text(data.length);
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -89,9 +87,7 @@ function postCall() {
 			returnFromCallDetails();
 			loadCalls();
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -120,9 +116,7 @@ function loadNews() {
 
 			$('#statsNewsTotal, #statsStartNews').text(data.length);
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -149,9 +143,7 @@ function loadStartNews() {
 			}
 			$('#newsStart').html(resString);
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -181,9 +173,7 @@ function postNews() {
 			loadNews();
 			loadStartNews();
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -246,9 +236,7 @@ function loadCallSigns() {
 			});
 			$("#formEditCallCallsign").trigger("chosen:updated");
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -302,9 +290,7 @@ function putCallSign() {
 			returnFromCallSignDetails();
 			loadCallSigns();
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -323,9 +309,7 @@ function deleteCallSign(name) {
 				showSuccessAlert();
 				loadCallSigns();
 			},
-			error: function(err) {
-				handleError(err);
-			}
+			error: handleError
 		});
 	});
 }
@@ -372,9 +356,7 @@ function loadRubrics() {
 			});
 			$("#formEditNewsRubric").trigger("chosen:updated");
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -424,9 +406,7 @@ function putRubric() {
 			returnFromRubricDetails();
 			loadRubrics();
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -445,9 +425,7 @@ function deleteRubric(name) {
 				showSuccessAlert();
 				loadRubrics();
 			},
-			error: function(err) {
-				handleError(err);
-			}
+			error: handleError
 		});
 	});
 }
@@ -480,9 +458,7 @@ function sendRubricsActivation() {
 			showSuccessAlert();
 			returnFromRubricDetails2();
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -565,9 +541,7 @@ function loadTransmitters() {
 			});
 			if (mapInited) map.addLayer(markers);
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -623,9 +597,7 @@ function putTransmitter() {
 			returnFromTransmitterDetails();
 			loadTransmitters();
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -644,9 +616,7 @@ function deleteTransmitter(name) {
 				showSuccessAlert();
 				loadTransmitters();
 			},
-			error: function(err) {
-				handleError(err);
-			}
+			error: handleError
 		});
 	});
 }
@@ -688,9 +658,7 @@ function loadTransmitterGroups() {
 			});
 			$('#formEditCallTransmitterGroup, #formEditRubricTransmitterGroups, #formActivateRubricTransmitterGroups').trigger("chosen:updated");
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -738,9 +706,7 @@ function putTransmitterGroup() {
 			returnFromTransmitterGroupDetails();
 			loadTransmitterGroups();
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -759,9 +725,7 @@ function deleteTransmitterGroup(name) {
 				showSuccessAlert();
 				loadTransmitterGroups();
 			},
-			error: function(err) {
-				handleError(err);
-			}
+			error: handleError
 		});
 	});
 }
@@ -834,9 +798,7 @@ function loadNodes() {
 			});
 			$('#formEditTransmitterNodeName').trigger("chosen:updated");
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -880,9 +842,7 @@ function putNode() {
 			returnFromNodeDetails();
 			loadNodes();
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -901,9 +861,7 @@ function deleteNode(name) {
 				showSuccessAlert();
 				loadNodes();
 			},
-			error: function(err) {
-				handleError(err);
-			}
+			error: handleError
 		});
 	});
 }
@@ -960,9 +918,7 @@ function loadUsers() {
 			});
 			$('#formEditCallSignOwners, #formEditRubricOwners, #formEditTransmitterOwners, #formEditTransmitterGroupOwners').trigger("chosen:updated");
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -1001,9 +957,7 @@ function putUser() {
 			returnFromUserDetails();
 			loadUsers();
 		},
-		error: function(err) {
-			handleError(err);
-		}
+		error: handleError
 	});
 }
 
@@ -1022,9 +976,7 @@ function deleteUser(name) {
 				showSuccessAlert();
 				loadUsers();
 			},
-			error: function(err) {
-				handleError(err);
-			}
+			error: handleError
 		});
 	});
 }
