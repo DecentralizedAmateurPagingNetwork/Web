@@ -8,18 +8,18 @@ body > .navbar {
 
 #splashscreen {
 	background-color: white;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: 10000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 10000;
 }
 
 .center {
 	position: fixed;
-  	top: 45%;
-  	left: 50%;
+	top: 45%;
+	left: 50%;
 	transform: translate(-50%, -50%);
 }
 
@@ -28,6 +28,10 @@ body > .navbar {
 	border-right: 1px solid #FFF;
 	height: 40px;
 	margin: 0 5px;
+}
+
+.help-block {
+	color: #808080;
 }
 
 #map {
@@ -61,7 +65,7 @@ body > .navbar {
 }
 
 /* Bootstrap Additions for Chosen
-	based on https://gist.github.com/koenpunt/6424137 */
+based on https://gist.github.com/koenpunt/6424137 */
 select.form-control + .chosen-container.chosen-container-single .chosen-single {
 	display: block;
 	width: 100%;
