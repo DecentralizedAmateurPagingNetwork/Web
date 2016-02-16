@@ -560,7 +560,7 @@ function loadTransmitters() {
 			if (markers !== undefined && mapInited) map.removeLayer(markers);
 			markers = new L.FeatureGroup();
 			$.each(data, function(i, item) {
-				var marker = L.marker([item.latitude, item.longitude]).bindPopup("<b>" + item.name + "</b><br />Status: " + item.status);
+				var marker = L.marker([item.latitude, item.longitude]).bindPopup("<b>" + item.name + "</b><br />" + jQuery.i18n.prop('transmitters_table_status') + ": " + item.status + "<br/>" + jQuery.i18n.prop('transmitters_add_power') + ": " + item.power + "<br />" + jQuery.i18n.prop('transmitters_add_timeslot') + ": " + item.timeSlot);
 				markers.addLayer(marker);
 			});
 			if (mapInited) map.addLayer(markers);
