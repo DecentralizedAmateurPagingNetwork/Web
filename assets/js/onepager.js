@@ -690,7 +690,6 @@ function showDeleteAlert(deleteFunction) {
 		title: jQuery.i18n.prop('alert_confirm'),
 		text: jQuery.i18n.prop('alert_delete_notice'),
 		type: "warning",
-		timer: 3000,
 		showCancelButton: true,
 		confirmButtonColor: "#DD6B55",
 		confirmButtonText: jQuery.i18n.prop('yes'),
