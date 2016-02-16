@@ -31,6 +31,9 @@ function loadCalls() {
 			$('#tableCalls').DataTable().destroy();
 			$('#tableCalls').DataTable({
 				data: data,
+				language: {
+					url: './assets/langs/DataTables_' + currentLanguage + '.json'
+				},
 				columns: [
 					{ data: 'timestamp' },
 					{ data: 'callSignNames[, ]' },
@@ -105,6 +108,9 @@ function loadNews() {
 			$('#tableNews').DataTable().destroy();
 			$('#tableNews').DataTable({
 				data: data,
+				language: {
+					url: './assets/langs/DataTables_' + currentLanguage + '.json'
+				},
 				columns: [
 					{ data: 'timestamp' },
 					{ data: 'rubricName' },
@@ -193,6 +199,9 @@ function loadCallSigns() {
 			if (!isAdmin) {
 				$('#tableCallSigns').DataTable({
 					data: data,
+					language: {
+						url: './assets/langs/DataTables_' + currentLanguage + '.json'
+					},
 					columns: [
 						{ data: 'name' },
 						{ data: 'description' },
@@ -211,6 +220,9 @@ function loadCallSigns() {
 			} else {
 				$('#tableCallSigns').DataTable({
 					data: data,
+					language: {
+						url: './assets/langs/DataTables_' + currentLanguage + '.json'
+					},
 					columns: [
 						{ data: 'name' },
 						{ data: 'description' },
@@ -328,6 +340,9 @@ function loadRubrics() {
 			$('#tableRubrics').DataTable().destroy();
 			$('#tableRubrics').DataTable({
 				data: data,
+				language: {
+					url: './assets/langs/DataTables_' + currentLanguage + '.json'
+				},
 				columns: [
 					{ data: 'number' },
 					{ data: 'name' },
@@ -477,6 +492,9 @@ function loadTransmitters() {
 			if (!isAdmin) {
 				$('#tableTransmitters').DataTable({
 					data: data,
+					language: {
+						url: './assets/langs/DataTables_' + currentLanguage + '.json'
+					},
 					columns: [
 						{ data: 'name' },
 						{ data: 'nodeName' },
@@ -494,6 +512,9 @@ function loadTransmitters() {
 			} else {
 				$('#tableTransmitters').DataTable({
 					data: data,
+					language: {
+						url: './assets/langs/DataTables_' + currentLanguage + '.json'
+					},
 					columns: [
 						{ data: 'name' },
 						{ data: 'nodeName' },
@@ -635,6 +656,9 @@ function loadTransmitterGroups() {
 			$('#tableTransmitterGroups').DataTable().destroy();
 			$('#tableTransmitterGroups').DataTable({
 				data: data,
+				language: {
+					url: './assets/langs/DataTables_' + currentLanguage + '.json'
+				},
 				columns: [
 					{ data: 'name' },
 					{ data: 'description' },
@@ -745,6 +769,9 @@ function loadNodes() {
 			if (!isAdmin) {
 				$('#tableNodes').DataTable({
 					data: data,
+					language: {
+						url: './assets/langs/DataTables_' + currentLanguage + '.json'
+					},
 					columns: [
 						{ data: 'name' },
 						{ data: function (obj) {
@@ -762,6 +789,9 @@ function loadNodes() {
 			} else {
 				$('#tableNodes').DataTable({
 					data: data,
+					language: {
+						url: './assets/langs/DataTables_' + currentLanguage + '.json'
+					},
 					columns: [
 						{ data: 'name' },
 						{ data: 'address.ip_addr' },
@@ -880,6 +910,9 @@ function loadUsers() {
 			$('#tableUsers').DataTable().destroy();
 			$('#tableUsers').DataTable({
 				data: data,
+				language: {
+					url: './assets/langs/DataTables_' + currentLanguage + '.json'
+				},
 				columns: [
 					{ data: 'name' },
 					{ data: 'mail' },

@@ -1,4 +1,5 @@
 var config;
+var currentLanguage;
 var isAdmin = false;
 var map, layer, markers;
 var mapInited = false;
@@ -21,6 +22,8 @@ $(document).ready(function() {
 		checkAvailableLanguages: true,
 		async: true,
 		callback: function() {
+			currentLanguage = $(this)[0].language;
+
 			// Translate all DOM-elements with "data-i18n"-attribute
 			$("[data-i18n]").each(function () {
 				var prop = $(this).data('i18n');
@@ -38,8 +41,7 @@ function initPage() {
 	loginWithCookie();
 	openContainer(window.location.hash.substring(1));
 
-	// DataTable and Chosen
-	$('.dataTable').DataTable();
+	// Chosen
 	$(".chosen-select").chosen({
 		no_results_text: jQuery.i18n.prop('select_no_entries'),
 		placeholder_text_multiple: " ",
@@ -70,11 +72,16 @@ function changeLanguage(lang) {
 		checkAvailableLanguages: false,
 		async: true,
 		callback: function() {
+			currentLanguage = lang;
+
 			// Translate all DOM-elements with "data-i18n"-attribute
 			$("[data-i18n]").each(function () {
 				var prop = $(this).data('i18n');
 				$(this).text($.i18n.prop(prop));
 			});
+
+			// Reload Data to update DataTables
+			loadData();
 
 			// Adapt window-title
 			document.title = $("#container" + currentlyOpenContainer + " h1:first").text() + " - " + "DAPNET";
