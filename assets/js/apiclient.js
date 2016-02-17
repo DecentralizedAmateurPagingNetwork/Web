@@ -24,9 +24,7 @@ function loadCalls() {
 	$.ajax({
 		url: config.apiUrl + '/calls',
 		type: 'GET',
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			$('#tableCalls').DataTable().destroy();
 			$('#tableCalls').DataTable({
@@ -82,9 +80,7 @@ function postCall() {
 			transmitterGroupNames: transmitterGroupNames,
 			emergency: $('#formEditCallEmergency').prop('checked')
 		}),
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			showSuccessAlert();
 			returnFromCallDetails();
@@ -101,9 +97,7 @@ function loadNews() {
 	$.ajax({
 		url: config.apiUrl + '/news',
 		type: 'GET',
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			$('#tableNews').DataTable().destroy();
 			$('#tableNews').DataTable({
@@ -133,9 +127,7 @@ function loadStartNews() {
 	$.ajax({
 		url: config.apiUrl + '/news?rubricName=News',
 		type: 'GET',
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			var maxNews = 3;
 			var resString = "";
@@ -170,9 +162,7 @@ function postNews() {
 			rubricName: $('#formEditNewsRubric').val(),
 			number: $('#formEditNewsNumber').val()
 		}),
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			showSuccessAlert();
 			returnFromNewsDetails();
@@ -188,9 +178,7 @@ function loadCallSigns() {
 	$.ajax({
 		url: config.apiUrl + '/callsigns',
 		type: 'GET',
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			callSignData = data;
 
@@ -294,9 +282,7 @@ function putCallSign() {
 			pagers: pagers,
 			ownerNames: ownerNames
 		}),
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			showSuccessAlert();
 			returnFromCallSignDetails();
@@ -314,9 +300,7 @@ function deleteCallSign(name) {
 		$.ajax({
 			url: config.apiUrl + '/callsigns/' + name,
 			type: 'DELETE',
-			beforeSend: function(req) {
-				req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-			},
+			beforeSend: setCookieHeader,
 			success: function(data) {
 				showSuccessAlert();
 				loadCallSigns();
@@ -331,9 +315,7 @@ function loadRubrics() {
 	$.ajax({
 		url: config.apiUrl + '/rubrics',
 		type: 'GET',
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			rubricData = data;
 
@@ -413,9 +395,7 @@ function putRubric() {
 			label: $('#formEditRubricLabel').val(),
 			ownerNames: ownerNames
 		}),
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			showSuccessAlert();
 			returnFromRubricDetails();
@@ -433,9 +413,7 @@ function deleteRubric(name) {
 		$.ajax({
 			url: config.apiUrl + '/rubrics/' + name,
 			type: 'DELETE',
-			beforeSend: function(req) {
-				req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-			},
+			beforeSend: setCookieHeader,
 			success: function(data) {
 				showSuccessAlert();
 				loadRubrics();
@@ -466,9 +444,7 @@ function sendRubricsActivation() {
 			number: $('#formActivateRubricNumber').val(),
 			transmitterGroupNames: transmitterGroupNames
 		}),
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			showSuccessAlert();
 			returnFromRubricDetails2();
@@ -482,9 +458,7 @@ function loadTransmitters() {
 	$.ajax({
 		url: config.apiUrl + '/transmitters',
 		type: 'GET',
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			transmitterData = data;
 
@@ -610,9 +584,7 @@ function putTransmitter() {
 			ownerNames: ownerNames,
 			deviceType: $('#formEditTransmitterDeviceType').val()
 		}),
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			showSuccessAlert();
 			returnFromTransmitterDetails();
@@ -630,9 +602,7 @@ function deleteTransmitter(name) {
 		$.ajax({
 			url: config.apiUrl + '/transmitters/' + name,
 			type: 'DELETE',
-			beforeSend: function(req) {
-				req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-			},
+			beforeSend: setCookieHeader,
 			success: function(data) {
 				showSuccessAlert();
 				loadTransmitters();
@@ -647,9 +617,7 @@ function loadTransmitterGroups() {
 	$.ajax({
 		url: config.apiUrl + '/transmitterGroups',
 		type: 'GET',
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			transmitterGroupData = data;
 
@@ -722,9 +690,7 @@ function putTransmitterGroup() {
 			transmitterNames: transmitters,
 			ownerNames: ownerNames
 		}),
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			showSuccessAlert();
 			returnFromTransmitterGroupDetails();
@@ -742,9 +708,7 @@ function deleteTransmitterGroup(name) {
 		$.ajax({
 			url: config.apiUrl + '/transmitterGroups/' + name,
 			type: 'DELETE',
-			beforeSend: function(req) {
-				req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-			},
+			beforeSend: setCookieHeader,
 			success: function(data) {
 				showSuccessAlert();
 				loadTransmitterGroups();
@@ -759,9 +723,7 @@ function loadNodes() {
 	$.ajax({
 		url: config.apiUrl + '/nodes',
 		type: 'GET',
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			nodeData = data;
 
@@ -864,9 +826,7 @@ function putNode() {
 			status: $('#formEditNodeStatus').val(),
 			key: $('#formEditNodeKey').val()
 		}),
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			showSuccessAlert();
 			returnFromNodeDetails();
@@ -884,9 +844,7 @@ function deleteNode(name) {
 		$.ajax({
 			url: config.apiUrl + '/nodes/' + name,
 			type: 'DELETE',
-			beforeSend: function(req) {
-				req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-			},
+			beforeSend: setCookieHeader,
 			success: function(data) {
 				showSuccessAlert();
 				loadNodes();
@@ -901,9 +859,7 @@ function loadUsers() {
 	$.ajax({
 		url: config.apiUrl + '/users',
 		type: 'GET',
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			userData = data;
 
@@ -982,9 +938,7 @@ function putUser() {
 			mail: $('#formEditUserMail').val(),
 			admin: $('#formEditUserAdmin').prop('checked')
 		}),
-		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-		},
+		beforeSend: setCookieHeader,
 		success: function(data) {
 			showSuccessAlert();
 			returnFromUserDetails();
@@ -1002,9 +956,7 @@ function deleteUser(name) {
 		$.ajax({
 			url: config.apiUrl + '/users/' + name,
 			type: 'DELETE',
-			beforeSend: function(req) {
-				req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
-			},
+			beforeSend: setCookieHeader,
 			success: function(data) {
 				showSuccessAlert();
 				loadUsers();
@@ -1012,4 +964,8 @@ function deleteUser(name) {
 			error: handleError
 		});
 	});
+}
+
+function setCookieHeader(req) {
+	req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
 }
