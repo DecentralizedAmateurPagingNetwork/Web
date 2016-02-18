@@ -22,23 +22,23 @@ function loadCalls() {
 	if (!isAdmin) return;
 
 	$.ajax({
-		url: config.apiUrl + '/calls',
-		type: 'GET',
+		url: config.apiUrl + "/calls",
+		type: "GET",
 		beforeSend: setCookieHeader,
 		success: function(data) {
-			$('#tableCalls').DataTable().destroy();
-			$('#tableCalls').DataTable({
+			$("#tableCalls").DataTable().destroy();
+			$("#tableCalls").DataTable({
 				data: data,
 				language: {
-					url: './assets/langs/DataTables_' + currentLanguage + '.json'
+					url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 				},
 				columns: [
-					{ data: 'timestamp' },
-					{ data: 'callSignNames[, ]' },
-					{ data: 'transmitterGroupNames[, ]' },
-					{ data: 'text' },
-					{ data: 'emergency' },
-					{ data: 'ownerName' }
+					{ data: "timestamp" },
+					{ data: "callSignNames[, ]" },
+					{ data: "transmitterGroupNames[, ]" },
+					{ data: "text" },
+					{ data: "emergency" },
+					{ data: "ownerName" }
 				]
 			});
 
@@ -46,8 +46,8 @@ function loadCalls() {
 			$.each(data, function(index, value) {
 				if (value.emergency) statEmergency++;
 			});
-			$('#statsCallsEmergency').text(statEmergency);
-			$('#statsCallsTotal, #statsStartCalls').text(data.length);
+			$("#statsCallsEmergency").text(statEmergency);
+			$("#statsCallsTotal, #statsStartCalls").text(data.length);
 		},
 		error: handleError
 	});
@@ -55,7 +55,7 @@ function loadCalls() {
 
 // Add a Call
 function postCall() {
-	if (checkForInput('container2-detail')) {
+	if (checkForInput("container2-detail")) {
 		handleMissingInput();
 		return;
 	}
@@ -70,15 +70,15 @@ function postCall() {
 	});
 
 	$.ajax({
-		url: config.apiUrl + '/calls',
-		type: 'POST',
-		contentType: 'application/json',
+		url: config.apiUrl + "/calls",
+		type: "POST",
+		contentType: "application/json",
 		dataType: "json",
 		data: JSON.stringify({
-			text: $('#formEditCallText').val(),
+			text: $("#formEditCallText").val(),
 			callSignNames: callSignNames,
 			transmitterGroupNames: transmitterGroupNames,
-			emergency: $('#formEditCallEmergency').prop('checked')
+			emergency: $("#formEditCallEmergency").prop("checked")
 		}),
 		beforeSend: setCookieHeader,
 		success: function(data) {
@@ -95,26 +95,26 @@ function loadNews() {
 	if (!isAdmin) return;
 
 	$.ajax({
-		url: config.apiUrl + '/news',
-		type: 'GET',
+		url: config.apiUrl + "/news",
+		type: "GET",
 		beforeSend: setCookieHeader,
 		success: function(data) {
-			$('#tableNews').DataTable().destroy();
-			$('#tableNews').DataTable({
+			$("#tableNews").DataTable().destroy();
+			$("#tableNews").DataTable({
 				data: data,
 				language: {
-					url: './assets/langs/DataTables_' + currentLanguage + '.json'
+					url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 				},
 				columns: [
-					{ data: 'timestamp' },
-					{ data: 'rubricName' },
-					{ data: 'number' },
-					{ data: 'text' },
-					{ data: 'ownerName' }
+					{ data: "timestamp" },
+					{ data: "rubricName" },
+					{ data: "number" },
+					{ data: "text" },
+					{ data: "ownerName" }
 				]
 			});
 
-			$('#statsNewsTotal, #statsStartNews').text(data.length);
+			$("#statsNewsTotal, #statsStartNews").text(data.length);
 		},
 		error: handleError
 	});
@@ -125,21 +125,21 @@ function loadStartNews() {
 	if (!isAdmin) return;
 
 	$.ajax({
-		url: config.apiUrl + '/news?rubricName=News',
-		type: 'GET',
+		url: config.apiUrl + "/news?rubricName=News",
+		type: "GET",
 		beforeSend: setCookieHeader,
 		success: function(data) {
 			var maxNews = 3;
 			var resString = "";
 			for (i = data.length - 1; i >= 0; i--) {
 				if (maxNews === 0) break;
-				resString += '<div class="list-group-item">' +
-				'<h4 class="list-group-item-heading">' + data[i].timestamp + '</h4>' +
-				'<p class="list-group-item-text">' + data[i].text + '</p>' +
-				'</div>';
+				resString += "<div class='list-group-item'>" +
+				"<h4 class='list-group-item-heading'>" + data[i].timestamp + "</h4>" +
+				"<p class='list-group-item-text'>" + data[i].text + "</p>" +
+				"</div>";
 				maxNews--;
 			}
-			$('#newsStart').html(resString);
+			$("#newsStart").html(resString);
 		},
 		error: handleError
 	});
@@ -147,20 +147,20 @@ function loadStartNews() {
 
 // Add a News
 function postNews() {
-	if (checkForInput('container3-detail')) {
+	if (checkForInput("container3-detail")) {
 		handleMissingInput();
 		return;
 	}
 
 	$.ajax({
-		url: config.apiUrl + '/news',
-		type: 'POST',
-		contentType: 'application/json',
+		url: config.apiUrl + "/news",
+		type: "POST",
+		contentType: "application/json",
 		dataType: "json",
 		data: JSON.stringify({
-			text: $('#formEditNewsText').val(),
-			rubricName: $('#formEditNewsRubric').val(),
-			number: $('#formEditNewsNumber').val()
+			text: $("#formEditNewsText").val(),
+			rubricName: $("#formEditNewsRubric").val(),
+			number: $("#formEditNewsNumber").val()
 		}),
 		beforeSend: setCookieHeader,
 		success: function(data) {
@@ -176,47 +176,47 @@ function postNews() {
 // Load all CallSigns
 function loadCallSigns() {
 	$.ajax({
-		url: config.apiUrl + '/callsigns',
-		type: 'GET',
+		url: config.apiUrl + "/callsigns",
+		type: "GET",
 		beforeSend: setCookieHeader,
 		success: function(data) {
 			callSignData = data;
 
-			$('#tableCallSigns').DataTable().destroy();
+			$("#tableCallSigns").DataTable().destroy();
 
 			if (!isAdmin) {
-				$('#tableCallSigns').DataTable({
+				$("#tableCallSigns").DataTable({
 					data: data,
 					language: {
-						url: './assets/langs/DataTables_' + currentLanguage + '.json'
+						url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 					},
 					columns: [
-						{ data: 'name' },
-						{ data: 'description' },
+						{ data: "name" },
+						{ data: "description" },
 						{ data: function (obj) {
 							return "---";
 						}},
 						{ data: function (obj) {
 							return "---";
 						}},
-						{ data: 'ownerNames[, ]' },
+						{ data: "ownerNames[, ]" },
 						{ data: function (obj) {
 							return "---";
 						}}
 					]
 				});
 			} else {
-				$('#tableCallSigns').DataTable({
+				$("#tableCallSigns").DataTable({
 					data: data,
 					language: {
-						url: './assets/langs/DataTables_' + currentLanguage + '.json'
+						url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 					},
 					columns: [
-						{ data: 'name' },
-						{ data: 'description' },
-						{ data: 'pagers.0.number' },
-						{ data: 'pagers.0.name' },
-						{ data: 'ownerNames[, ]' },
+						{ data: "name" },
+						{ data: "description" },
+						{ data: "pagers.0.number" },
+						{ data: "pagers.0.name" },
+						{ data: "ownerNames[, ]" },
 						{ data: function (obj) {
 							return "<a href='#4' onclick='editCallSign(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
 							"<a href='#4' onclick='deleteCallSign(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
@@ -225,11 +225,11 @@ function loadCallSigns() {
 				});
 			}
 
-			$('#statsCallSignsTotal').text(data.length);
+			$("#statsCallSignsTotal").text(data.length);
 
-			$('#formEditCallCallsign').empty();
+			$("#formEditCallCallsign").empty();
 			$.each(data, function (i, item) {
-				$('#formEditCallCallsign').append($('<option>', {
+				$("#formEditCallCallsign").append($("<option>", {
 					value: item.name,
 					text : item.name
 				}));
@@ -242,23 +242,23 @@ function loadCallSigns() {
 
 // Add / Edit a CallSign
 function putCallSign() {
-	if (checkForInput('container4-detail')) {
+	if (checkForInput("container4-detail")) {
 		handleMissingInput();
 		return;
 	}
 
 	var urlName = editCallSignName;
 	if (urlName === "" || urlName === undefined || urlName === null) {
-		urlName = $('#formEditCallSignName').val();
+		urlName = $("#formEditCallSignName").val();
 	}
 
-	if (checkForOverwriting(callSignData, urlName) && !$('#formEditCallSignName').prop('disabled')) {
+	if (checkForOverwriting(callSignData, urlName) && !$("#formEditCallSignName").prop("disabled")) {
 		handleOverwriteError();
 		return;
 	}
 
-	var pagerNumbers = $('#formEditCallSignsPagersNumber').val().split("\n");
-	var pagerNames = $('#formEditCallSignsPagersName').val().split("\n");
+	var pagerNumbers = $("#formEditCallSignsPagersNumber").val().split("\n");
+	var pagerNames = $("#formEditCallSignsPagersName").val().split("\n");
 	var pagers = [];
 	for (i = 0; i < pagerNumbers.length; i++) {
 		item = {};
@@ -273,12 +273,12 @@ function putCallSign() {
 	});
 
 	$.ajax({
-		url: config.apiUrl + '/callsigns/' + urlName,
-		type: 'PUT',
-		contentType: 'application/json',
+		url: config.apiUrl + "/callsigns/" + urlName,
+		type: "PUT",
+		contentType: "application/json",
 		dataType: "json",
 		data: JSON.stringify({
-			description: $('#formEditCallSignDescription').val(),
+			description: $("#formEditCallSignDescription").val(),
 			pagers: pagers,
 			ownerNames: ownerNames
 		}),
@@ -298,8 +298,8 @@ function deleteCallSign(name) {
 
 	showDeleteAlert(function() {
 		$.ajax({
-			url: config.apiUrl + '/callsigns/' + name,
-			type: 'DELETE',
+			url: config.apiUrl + "/callsigns/" + name,
+			type: "DELETE",
 			beforeSend: setCookieHeader,
 			success: function(data) {
 				showSuccessAlert();
@@ -313,24 +313,24 @@ function deleteCallSign(name) {
 // Load all Rubrics
 function loadRubrics() {
 	$.ajax({
-		url: config.apiUrl + '/rubrics',
-		type: 'GET',
+		url: config.apiUrl + "/rubrics",
+		type: "GET",
 		beforeSend: setCookieHeader,
 		success: function(data) {
 			rubricData = data;
 
-			$('#tableRubrics').DataTable().destroy();
-			$('#tableRubrics').DataTable({
+			$("#tableRubrics").DataTable().destroy();
+			$("#tableRubrics").DataTable({
 				data: data,
 				language: {
-					url: './assets/langs/DataTables_' + currentLanguage + '.json'
+					url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 				},
 				columns: [
-					{ data: 'number' },
-					{ data: 'name' },
-					{ data: 'label' },
-					{ data: 'transmitterGroupNames[, ]' },
-					{ data: 'ownerNames[, ]' },
+					{ data: "number" },
+					{ data: "name" },
+					{ data: "label" },
+					{ data: "transmitterGroupNames[, ]" },
+					{ data: "ownerNames[, ]" },
 					{ data: function (obj) {
 						if (!isAdmin) {
 							return "---";
@@ -342,11 +342,11 @@ function loadRubrics() {
 				]
 			});
 
-			$('#statsRubricsTotal').text(data.length);
+			$("#statsRubricsTotal").text(data.length);
 
-			$('#formEditNewsRubric').empty();
+			$("#formEditNewsRubric").empty();
 			$.each(data, function (i, item) {
-				$('#formEditNewsRubric').append($('<option>', {
+				$("#formEditNewsRubric").append($("<option>", {
 					value: item.name,
 					text : item.name
 				}));
@@ -359,17 +359,17 @@ function loadRubrics() {
 
 // Add / Edit a Rubric
 function putRubric() {
-	if (checkForInput('container5-detail')) {
+	if (checkForInput("container5-detail")) {
 		handleMissingInput();
 		return;
 	}
 
 	var urlName = editRubricName;
 	if (urlName === "" || urlName === undefined || urlName === null) {
-		urlName = $('#formEditRubricName').val();
+		urlName = $("#formEditRubricName").val();
 	}
 
-	if (checkForOverwriting(rubricData, urlName) && !$('#formEditRubricName').prop('disabled')) {
+	if (checkForOverwriting(rubricData, urlName) && !$("#formEditRubricName").prop("disabled")) {
 		handleOverwriteError();
 		return;
 	}
@@ -384,15 +384,15 @@ function putRubric() {
 	});
 
 	$.ajax({
-		url: config.apiUrl + '/rubrics/' + urlName,
-		type: 'PUT',
-		contentType: 'application/json',
+		url: config.apiUrl + "/rubrics/" + urlName,
+		type: "PUT",
+		contentType: "application/json",
 		dataType: "json",
 		data: JSON.stringify({
 			name: urlName,
-			number: $('#formEditRubricNumber').val(),
+			number: $("#formEditRubricNumber").val(),
 			transmitterGroupNames: transmitterGroupNames,
-			label: $('#formEditRubricLabel').val(),
+			label: $("#formEditRubricLabel").val(),
 			ownerNames: ownerNames
 		}),
 		beforeSend: setCookieHeader,
@@ -411,8 +411,8 @@ function deleteRubric(name) {
 
 	showDeleteAlert(function() {
 		$.ajax({
-			url: config.apiUrl + '/rubrics/' + name,
-			type: 'DELETE',
+			url: config.apiUrl + "/rubrics/" + name,
+			type: "DELETE",
 			beforeSend: setCookieHeader,
 			success: function(data) {
 				showSuccessAlert();
@@ -425,7 +425,7 @@ function deleteRubric(name) {
 
 // Send an Activation
 function sendRubricsActivation() {
-	if (checkForInput('container5-detail2')) {
+	if (checkForInput("container5-detail2")) {
 		handleMissingInput();
 		return;
 	}
@@ -436,12 +436,12 @@ function sendRubricsActivation() {
 	});
 
 	$.ajax({
-		url: config.apiUrl + '/activation',
-		type: 'POST',
-		contentType: 'application/json',
+		url: config.apiUrl + "/activation",
+		type: "POST",
+		contentType: "application/json",
 		dataType: "json",
 		data: JSON.stringify({
-			number: $('#formActivateRubricNumber').val(),
+			number: $("#formActivateRubricNumber").val(),
 			transmitterGroupNames: transmitterGroupNames
 		}),
 		beforeSend: setCookieHeader,
@@ -456,46 +456,46 @@ function sendRubricsActivation() {
 // Load all Transmitters
 function loadTransmitters() {
 	$.ajax({
-		url: config.apiUrl + '/transmitters',
-		type: 'GET',
+		url: config.apiUrl + "/transmitters",
+		type: "GET",
 		beforeSend: setCookieHeader,
 		success: function(data) {
 			transmitterData = data;
 
-			$('#tableTransmitters').DataTable().destroy();
+			$("#tableTransmitters").DataTable().destroy();
 			if (!isAdmin) {
-				$('#tableTransmitters').DataTable({
+				$("#tableTransmitters").DataTable({
 					data: data,
 					language: {
-						url: './assets/langs/DataTables_' + currentLanguage + '.json'
+						url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 					},
 					columns: [
-						{ data: 'name' },
-						{ data: 'nodeName' },
+						{ data: "name" },
+						{ data: "nodeName" },
 						{ data: function (obj) {
 							return "---";
 						}},
-						{ data: 'ownerNames[, ]' },
-						{ data: 'deviceType' },
-						{ data: 'status' },
+						{ data: "ownerNames[, ]" },
+						{ data: "deviceType" },
+						{ data: "status" },
 						{ data: function (obj) {
 							return "---";
 						}}
 					]
 				});
 			} else {
-				$('#tableTransmitters').DataTable({
+				$("#tableTransmitters").DataTable({
 					data: data,
 					language: {
-						url: './assets/langs/DataTables_' + currentLanguage + '.json'
+						url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 					},
 					columns: [
-						{ data: 'name' },
-						{ data: 'nodeName' },
-						{ data: 'address.ip_addr' },
-						{ data: 'ownerNames[, ]' },
-						{ data: 'deviceType' },
-						{ data: 'status' },
+						{ data: "name" },
+						{ data: "nodeName" },
+						{ data: "address.ip_addr" },
+						{ data: "ownerNames[, ]" },
+						{ data: "deviceType" },
+						{ data: "status" },
 						{ data: function (obj) {
 							return "<a href='#6' onclick='editTransmitter(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
 							"<a href='#6' onclick='deleteTransmitter(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
@@ -513,25 +513,25 @@ function loadTransmitters() {
 					statCountOffline++;
 				}
 			});
-			$('#statsTransmitterOnline').text(statCountOnline);
-			$('#statsTransmitterOffline').text(statCountOffline);
-			$('#statsTransmitterTotal').text(data.length);
-			$('#statsStartTransmitter').text(statCountOnline + " / " + data.length);
+			$("#statsTransmitterOnline").text(statCountOnline);
+			$("#statsTransmitterOffline").text(statCountOffline);
+			$("#statsTransmitterTotal").text(data.length);
+			$("#statsStartTransmitter").text(statCountOnline + " / " + data.length);
 
-			$('#formEditTransmitterGroupTransmitters').empty();
+			$("#formEditTransmitterGroupTransmitters").empty();
 			$.each(data, function (i, item) {
-				$('#formEditTransmitterGroupTransmitters').append($('<option>', {
+				$("#formEditTransmitterGroupTransmitters").append($("<option>", {
 					value: item.name,
 					text : item.name
 				}));
 			});
-			$('#formEditTransmitterGroupTransmitters').trigger("chosen:updated");
+			$("#formEditTransmitterGroupTransmitters").trigger("chosen:updated");
 
 			// Set Markers on map
 			if (markers !== undefined && mapInited) map.removeLayer(markers);
 			markers = new L.FeatureGroup();
 			$.each(data, function(i, item) {
-				var marker = L.marker([item.latitude, item.longitude]).bindPopup("<b>" + item.name + "</b><br />" + jQuery.i18n.prop('transmitters_table_status') + ": " + item.status + "<br/>" + jQuery.i18n.prop('transmitters_add_power') + ": " + item.power + "<br />" + jQuery.i18n.prop('transmitters_add_timeslot') + ": " + item.timeSlot);
+				var marker = L.marker([item.latitude, item.longitude]).bindPopup("<b>" + item.name + "</b><br />" + jQuery.i18n.prop("transmitters_table_status") + ": " + item.status + "<br/>" + jQuery.i18n.prop("transmitters_add_power") + ": " + item.power + "<br />" + jQuery.i18n.prop("transmitters_add_timeslot") + ": " + item.timeSlot);
 				markers.addLayer(marker);
 			});
 			if (mapInited) map.addLayer(markers);
@@ -542,17 +542,17 @@ function loadTransmitters() {
 
 // Add / Edit a Transmitter
 function putTransmitter() {
-	if (checkForInput('container6-detail')) {
+	if (checkForInput("container6-detail")) {
 		handleMissingInput();
 		return;
 	}
 
 	var urlName = editTransmitterName;
 	if (urlName === "" || urlName === undefined || urlName === null) {
-		urlName = $('#formEditTransmitterName').val();
+		urlName = $("#formEditTransmitterName").val();
 	}
 
-	if (checkForOverwriting(transmitterData, urlName) && !$('#formEditTransmitterName').prop('disabled')) {
+	if (checkForOverwriting(transmitterData, urlName) && !$("#formEditTransmitterName").prop("disabled")) {
 		handleOverwriteError();
 		return;
 	}
@@ -567,22 +567,22 @@ function putTransmitter() {
 	});
 
 	$.ajax({
-		url: config.apiUrl + '/transmitters/' + urlName,
-		type: 'PUT',
-		contentType: 'application/json',
+		url: config.apiUrl + "/transmitters/" + urlName,
+		type: "PUT",
+		contentType: "application/json",
 		dataType: "json",
 		data: JSON.stringify({
-			nodeName: $('#formEditTransmitterNodeName').val(),
-			latitude: $('#formEditTransmitterLatitude').val() * $('#formEditTransmitterLatitudeOrientation').val(),
-			longitude: $('#formEditTransmitterLongitude').val() * $('#formEditTransmitterLongitudeOrientation').val(),
-			power: $('#formEditTransmitterPower').val(),
+			nodeName: $("#formEditTransmitterNodeName").val(),
+			latitude: $("#formEditTransmitterLatitude").val() * $("#formEditTransmitterLatitudeOrientation").val(),
+			longitude: $("#formEditTransmitterLongitude").val() * $("#formEditTransmitterLongitudeOrientation").val(),
+			power: $("#formEditTransmitterPower").val(),
 			address: {
-				ip_addr: $('#formEditTransmitterIp').val(),
-				port: $('#formEditTransmitterPort').val()
+				ip_addr: $("#formEditTransmitterIp").val(),
+				port: $("#formEditTransmitterPort").val()
 			},
 			timeSlot: timeSlot,
 			ownerNames: ownerNames,
-			deviceType: $('#formEditTransmitterDeviceType').val()
+			deviceType: $("#formEditTransmitterDeviceType").val()
 		}),
 		beforeSend: setCookieHeader,
 		success: function(data) {
@@ -600,8 +600,8 @@ function deleteTransmitter(name) {
 
 	showDeleteAlert(function() {
 		$.ajax({
-			url: config.apiUrl + '/transmitters/' + name,
-			type: 'DELETE',
+			url: config.apiUrl + "/transmitters/" + name,
+			type: "DELETE",
 			beforeSend: setCookieHeader,
 			success: function(data) {
 				showSuccessAlert();
@@ -615,23 +615,23 @@ function deleteTransmitter(name) {
 // Load all TransmitterGroups
 function loadTransmitterGroups() {
 	$.ajax({
-		url: config.apiUrl + '/transmitterGroups',
-		type: 'GET',
+		url: config.apiUrl + "/transmitterGroups",
+		type: "GET",
 		beforeSend: setCookieHeader,
 		success: function(data) {
 			transmitterGroupData = data;
 
-			$('#tableTransmitterGroups').DataTable().destroy();
-			$('#tableTransmitterGroups').DataTable({
+			$("#tableTransmitterGroups").DataTable().destroy();
+			$("#tableTransmitterGroups").DataTable({
 				data: data,
 				language: {
-					url: './assets/langs/DataTables_' + currentLanguage + '.json'
+					url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 				},
 				columns: [
-					{ data: 'name' },
-					{ data: 'description' },
-					{ data: 'transmitterNames[, ]' },
-					{ data: 'ownerNames[, ]' },
+					{ data: "name" },
+					{ data: "description" },
+					{ data: "transmitterNames[, ]" },
+					{ data: "ownerNames[, ]" },
 					{ data: function (obj) {
 						return "<a href='#7' onclick='editTransmitterGroup(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
 						"<a href='#7' onclick='deleteTransmitterGroup(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
@@ -639,16 +639,16 @@ function loadTransmitterGroups() {
 				]
 			});
 
-			$('#statsTransmitterGroupsTotal').text(data.length);
+			$("#statsTransmitterGroupsTotal").text(data.length);
 
-			$('#formEditCallTransmitterGroup, #formEditRubricTransmitterGroups, #formActivateRubricTransmitterGroups').empty();
+			$("#formEditCallTransmitterGroup, #formEditRubricTransmitterGroups, #formActivateRubricTransmitterGroups").empty();
 			$.each(data, function (i, item) {
-				$('#formEditCallTransmitterGroup, #formEditRubricTransmitterGroups, #formActivateRubricTransmitterGroups').append($('<option>', {
+				$("#formEditCallTransmitterGroup, #formEditRubricTransmitterGroups, #formActivateRubricTransmitterGroups").append($("<option>", {
 					value: item.name,
 					text : item.name
 				}));
 			});
-			$('#formEditCallTransmitterGroup, #formEditRubricTransmitterGroups, #formActivateRubricTransmitterGroups').trigger("chosen:updated");
+			$("#formEditCallTransmitterGroup, #formEditRubricTransmitterGroups, #formActivateRubricTransmitterGroups").trigger("chosen:updated");
 		},
 		error: handleError
 	});
@@ -656,17 +656,17 @@ function loadTransmitterGroups() {
 
 // Add / Edit a TransmitterGroup
 function putTransmitterGroup() {
-	if (checkForInput('container7-detail')) {
+	if (checkForInput("container7-detail")) {
 		handleMissingInput();
 		return;
 	}
 
 	var urlName = editTransmitterGroupName;
 	if (urlName === "" || urlName === undefined || urlName === null) {
-		urlName = $('#formEditTransmitterGroupName').val();
+		urlName = $("#formEditTransmitterGroupName").val();
 	}
 
-	if (checkForOverwriting(transmitterGroupData, urlName) && !$('#formEditTransmitterGroupName').prop('disabled')) {
+	if (checkForOverwriting(transmitterGroupData, urlName) && !$("#formEditTransmitterGroupName").prop("disabled")) {
 		handleOverwriteError();
 		return;
 	}
@@ -681,12 +681,12 @@ function putTransmitterGroup() {
 	});
 
 	$.ajax({
-		url: config.apiUrl + '/transmitterGroups/' + urlName,
-		type: 'PUT',
-		contentType: 'application/json',
+		url: config.apiUrl + "/transmitterGroups/" + urlName,
+		type: "PUT",
+		contentType: "application/json",
 		dataType: "json",
 		data: JSON.stringify({
-			description: $('#formEditTransmitterGroupDescription').val(),
+			description: $("#formEditTransmitterGroupDescription").val(),
 			transmitterNames: transmitters,
 			ownerNames: ownerNames
 		}),
@@ -706,8 +706,8 @@ function deleteTransmitterGroup(name) {
 
 	showDeleteAlert(function() {
 		$.ajax({
-			url: config.apiUrl + '/transmitterGroups/' + name,
-			type: 'DELETE',
+			url: config.apiUrl + "/transmitterGroups/" + name,
+			type: "DELETE",
 			beforeSend: setCookieHeader,
 			success: function(data) {
 				showSuccessAlert();
@@ -721,44 +721,44 @@ function deleteTransmitterGroup(name) {
 // Load all Nodes
 function loadNodes() {
 	$.ajax({
-		url: config.apiUrl + '/nodes',
-		type: 'GET',
+		url: config.apiUrl + "/nodes",
+		type: "GET",
 		beforeSend: setCookieHeader,
 		success: function(data) {
 			nodeData = data;
 
-			$('#tableNodes').DataTable().destroy();
+			$("#tableNodes").DataTable().destroy();
 			if (!isAdmin) {
-				$('#tableNodes').DataTable({
+				$("#tableNodes").DataTable({
 					data: data,
 					language: {
-						url: './assets/langs/DataTables_' + currentLanguage + '.json'
+						url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 					},
 					columns: [
-						{ data: 'name' },
+						{ data: "name" },
 						{ data: function (obj) {
 							return "---";
 						}},
 						{ data: function (obj) {
 							return "---";
 						}},
-						{ data: 'status' },
+						{ data: "status" },
 						{ data: function (obj) {
 							return "---";
 						}}
 					]
 				});
 			} else {
-				$('#tableNodes').DataTable({
+				$("#tableNodes").DataTable({
 					data: data,
 					language: {
-						url: './assets/langs/DataTables_' + currentLanguage + '.json'
+						url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 					},
 					columns: [
-						{ data: 'name' },
-						{ data: 'address.ip_addr' },
-						{ data: 'address.port' },
-						{ data: 'status' },
+						{ data: "name" },
+						{ data: "address.ip_addr" },
+						{ data: "address.port" },
+						{ data: "status" },
 						{ data: function (obj) {
 							return "<a href='#8' onclick='editNode(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
 							"<a href='#8' onclick='deleteNode(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
@@ -776,19 +776,19 @@ function loadNodes() {
 					statCountOffline++;
 				}
 			});
-			$('#statsNodesOnline').text(statCountOnline);
-			$('#statsNodesOffline').text(statCountOffline);
-			$('#statsNodesTotal').text(data.length);
-			$('#statsStartNodes').text(statCountOnline + " / " + data.length);
+			$("#statsNodesOnline").text(statCountOnline);
+			$("#statsNodesOffline").text(statCountOffline);
+			$("#statsNodesTotal").text(data.length);
+			$("#statsStartNodes").text(statCountOnline + " / " + data.length);
 
-			$('#formEditTransmitterNodeName').empty();
+			$("#formEditTransmitterNodeName").empty();
 			$.each(data, function (i, item) {
-				$('#formEditTransmitterNodeName').append($('<option>', {
+				$("#formEditTransmitterNodeName").append($("<option>", {
 					value: item.name,
 					text : item.name
 				}));
 			});
-			$('#formEditTransmitterNodeName').trigger("chosen:updated");
+			$("#formEditTransmitterNodeName").trigger("chosen:updated");
 		},
 		error: handleError
 	});
@@ -796,35 +796,35 @@ function loadNodes() {
 
 // Add / Edit a Node
 function putNode() {
-	if (checkForInput('container8-detail')) {
+	if (checkForInput("container8-detail")) {
 		handleMissingInput();
 		return;
 	}
 
 	var urlName = editNodeName;
 	if (urlName === "" || urlName === undefined || urlName === null) {
-		urlName = $('#formEditNodeName').val();
+		urlName = $("#formEditNodeName").val();
 	}
 
-	if (checkForOverwriting(nodeData, urlName) && !$('#formEditNodeName').prop('disabled')) {
+	if (checkForOverwriting(nodeData, urlName) && !$("#formEditNodeName").prop("disabled")) {
 		handleOverwriteError();
 		return;
 	}
 
 	$.ajax({
-		url: config.apiUrl + '/nodes/' + urlName,
-		type: 'PUT',
-		contentType: 'application/json',
+		url: config.apiUrl + "/nodes/" + urlName,
+		type: "PUT",
+		contentType: "application/json",
 		dataType: "json",
 		data: JSON.stringify({
-			latitude: $('#formEditNodeLatitude').val() * $('#formEditNodeLatitudeOrientation').val(),
-			longitude: $('#formEditNodeLongitude').val() * $('#formEditNodeLatitudeOrientation').val(),
+			latitude: $("#formEditNodeLatitude").val() * $("#formEditNodeLatitudeOrientation").val(),
+			longitude: $("#formEditNodeLongitude").val() * $("#formEditNodeLatitudeOrientation").val(),
 			address: {
-				ip_addr: $('#formEditNodeIp').val(),
-				port: $('#formEditNodePort').val()
+				ip_addr: $("#formEditNodeIp").val(),
+				port: $("#formEditNodePort").val()
 			},
-			status: $('#formEditNodeStatus').val(),
-			key: $('#formEditNodeKey').val()
+			status: $("#formEditNodeStatus").val(),
+			key: $("#formEditNodeKey").val()
 		}),
 		beforeSend: setCookieHeader,
 		success: function(data) {
@@ -842,8 +842,8 @@ function deleteNode(name) {
 
 	showDeleteAlert(function() {
 		$.ajax({
-			url: config.apiUrl + '/nodes/' + name,
-			type: 'DELETE',
+			url: config.apiUrl + "/nodes/" + name,
+			type: "DELETE",
 			beforeSend: setCookieHeader,
 			success: function(data) {
 				showSuccessAlert();
@@ -857,24 +857,24 @@ function deleteNode(name) {
 // Load all Users
 function loadUsers() {
 	$.ajax({
-		url: config.apiUrl + '/users',
-		type: 'GET',
+		url: config.apiUrl + "/users",
+		type: "GET",
 		beforeSend: setCookieHeader,
 		success: function(data) {
 			userData = data;
 
-			$('#tableUsers').DataTable().destroy();
-			$('#tableUsers').DataTable({
+			$("#tableUsers").DataTable().destroy();
+			$("#tableUsers").DataTable({
 				data: data,
 				language: {
-					url: './assets/langs/DataTables_' + currentLanguage + '.json'
+					url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 				},
 				columns: [
-					{ data: 'name' },
-					{ data: 'mail' },
-					{ data: 'admin' },
+					{ data: "name" },
+					{ data: "mail" },
+					{ data: "admin" },
 					{ data: function(obj) {
-						if (callSignData === null) return jQuery.i18n.prop('users_table_callsigns_not_loaded');
+						if (callSignData === null) return jQuery.i18n.prop("users_table_callsigns_not_loaded");
 
 						var usersCallSigns = "";
 						$.each(callSignData, function(i, item) {
@@ -895,17 +895,17 @@ function loadUsers() {
 			$.each(data, function(index, value) {
 				if (value.admin) statAdmin++;
 			});
-			$('#statsUsersAdmins').text(statAdmin);
-			$('#statsUsersTotal, #statsStartUsers').text(data.length);
+			$("#statsUsersAdmins").text(statAdmin);
+			$("#statsUsersTotal, #statsStartUsers").text(data.length);
 
-			$('#formEditCallSignOwners, #formEditRubricOwners, #formEditTransmitterOwners, #formEditTransmitterGroupOwners').empty();
+			$("#formEditCallSignOwners, #formEditRubricOwners, #formEditTransmitterOwners, #formEditTransmitterGroupOwners").empty();
 			$.each(data, function (i, item) {
-				$('#formEditCallSignOwners, #formEditRubricOwners, #formEditTransmitterOwners, #formEditTransmitterGroupOwners').append($('<option>', {
+				$("#formEditCallSignOwners, #formEditRubricOwners, #formEditTransmitterOwners, #formEditTransmitterGroupOwners").append($("<option>", {
 					value: item.name,
 					text : item.name
 				}));
 			});
-			$('#formEditCallSignOwners, #formEditRubricOwners, #formEditTransmitterOwners, #formEditTransmitterGroupOwners').trigger("chosen:updated");
+			$("#formEditCallSignOwners, #formEditRubricOwners, #formEditTransmitterOwners, #formEditTransmitterGroupOwners").trigger("chosen:updated");
 		},
 		error: handleError
 	});
@@ -913,30 +913,30 @@ function loadUsers() {
 
 // Add / Edit a User
 function putUser() {
-	if (checkForInput('container9-detail')) {
+	if (checkForInput("container9-detail")) {
 		handleMissingInput();
 		return;
 	}
 
 	var urlName = editUserName;
 	if (urlName === "" || urlName === undefined || urlName === null) {
-		urlName = $('#formEditUserName').val();
+		urlName = $("#formEditUserName").val();
 	}
 
-	if (checkForOverwriting(userData, urlName) && !$('#formEditUserName').prop('disabled')) {
+	if (checkForOverwriting(userData, urlName) && !$("#formEditUserName").prop("disabled")) {
 		handleOverwriteError();
 		return;
 	}
 
 	$.ajax({
-		url: config.apiUrl + '/users/' + urlName,
-		type: 'PUT',
-		contentType: 'application/json',
+		url: config.apiUrl + "/users/" + urlName,
+		type: "PUT",
+		contentType: "application/json",
 		dataType: "json",
 		data: JSON.stringify({
-			hash: $('#formEditUserPassword').val(),
-			mail: $('#formEditUserMail').val(),
-			admin: $('#formEditUserAdmin').prop('checked')
+			hash: $("#formEditUserPassword").val(),
+			mail: $("#formEditUserMail").val(),
+			admin: $("#formEditUserAdmin").prop("checked")
 		}),
 		beforeSend: setCookieHeader,
 		success: function(data) {
@@ -954,8 +954,8 @@ function deleteUser(name) {
 
 	showDeleteAlert(function() {
 		$.ajax({
-			url: config.apiUrl + '/users/' + name,
-			type: 'DELETE',
+			url: config.apiUrl + "/users/" + name,
+			type: "DELETE",
 			beforeSend: setCookieHeader,
 			success: function(data) {
 				showSuccessAlert();
@@ -967,5 +967,5 @@ function deleteUser(name) {
 }
 
 function setCookieHeader(req) {
-	req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
+	req.setRequestHeader("Authorization", "Basic " + Cookies.get("auth"));
 }

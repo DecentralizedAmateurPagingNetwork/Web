@@ -9,15 +9,15 @@ var mapInited = false;
 *  ############################ */
 $(document).ready(function() {
 	// Load Config-file
-	$.getJSON('./config.json', function(data) {
+	$.getJSON("./config.json", function(data) {
 		config = data;
 	});
 
 	// Language
 	jQuery.i18n.properties({
-		name: 'Translation',
-		path: './assets/langs/',
-		mode: 'both',
+		name: "Translation",
+		path: "./assets/langs/",
+		mode: "both",
 		cache: true,
 		checkAvailableLanguages: true,
 		async: true,
@@ -26,7 +26,7 @@ $(document).ready(function() {
 
 			// Translate all DOM-elements with "data-i18n"-attribute
 			$("[data-i18n]").each(function () {
-				var prop = $(this).data('i18n');
+				var prop = $(this).data("i18n");
 				$(this).text($.i18n.prop(prop));
 			});
 
@@ -43,31 +43,31 @@ function initPage() {
 
 	// Chosen
 	$(".chosen-select").chosen({
-		no_results_text: jQuery.i18n.prop('select_no_entries'),
+		no_results_text: jQuery.i18n.prop("select_no_entries"),
 		placeholder_text_multiple: " ",
 		placeholder_text_single: " ",
 		width: "100%"
 	});
 
 	// Login on Enter-Keypress
-	$('#loginUsername').keypress(function (e) { if (e.which == 13) loginWithForm(); });
-	$('#loginPassword').keypress(function (e) { if (e.which == 13) loginWithForm(); });
+	$("#loginUsername").keypress(function (e) { if (e.which == 13) loginWithForm(); });
+	$("#loginPassword").keypress(function (e) { if (e.which == 13) loginWithForm(); });
 
 	// container6-detail Character-Count
 	updateCharCount();
-	$('#formEditCallText').on('input', function() { updateCharCount(); });
+	$("#formEditCallText").on("input", function() { updateCharCount(); });
 
 	// Remove Splash-Screen
-	$('#splashscreen').fadeOut(500);
+	$("#splashscreen").fadeOut(500);
 }
 
 // Switch between languages
 function changeLanguage(lang) {
 	jQuery.i18n.properties({
-		name: 'Translation',
-		path: './assets/langs/',
+		name: "Translation",
+		path: "./assets/langs/",
 		language: lang,
-		mode: 'both',
+		mode: "both",
 		cache: true,
 		checkAvailableLanguages: false,
 		async: true,
@@ -76,7 +76,7 @@ function changeLanguage(lang) {
 
 			// Translate all DOM-elements with "data-i18n"-attribute
 			$("[data-i18n]").each(function () {
-				var prop = $(this).data('i18n');
+				var prop = $(this).data("i18n");
 				$(this).text($.i18n.prop(prop));
 			});
 
@@ -108,12 +108,12 @@ function loginWithForm() {
 	if (username !== "" && password !== "") {
 		// Test login-credentials
 		$.ajax({
-			url: config.apiUrl + '/users/' + username,
-			type: 'GET',
-			contentType: 'application/json',
+			url: config.apiUrl + "/users/" + username,
+			type: "GET",
+			contentType: "application/json",
 			dataType: "json",
 			beforeSend: function(req) {
-				req.setRequestHeader('Authorization', 'Basic ' + utf8_to_b64(username + ":" + password));
+				req.setRequestHeader("Authorization", "Basic " + utf8_to_b64(username + ":" + password));
 			},
 			success: function(data) {
 				Cookies.set("auth", utf8_to_b64(username + ":" + password), { expires: 14 });
@@ -136,20 +136,20 @@ function loginWithForm() {
 function loginSuccess(username) {
 	// check privileges
 	$.ajax({
-		url: config.apiUrl + '/users/' + username,
-		type: 'GET',
-		contentType: 'application/json',
+		url: config.apiUrl + "/users/" + username,
+		type: "GET",
+		contentType: "application/json",
 		dataType: "json",
 		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
+			req.setRequestHeader("Authorization", "Basic " + Cookies.get("auth"));
 		},
 		success: function(data) {
 			if (data.admin) {
 				isAdmin = true;
 			} else {
-				$('ul.navbar-nav li a[href="#3"]').parent().hide();
-				$('#rubrics-add-rubric').hide();
-				$('#nodes-add-node').hide();
+				$("ul.navbar-nav li a[href='#3']").parent().hide();
+				$("#rubrics-add-rubric").hide();
+				$("#nodes-add-node").hide();
 			}
 
 			$("#navbar-main-nav").show();
@@ -213,10 +213,10 @@ function prepareMap() {
 	// Query the Hamnet Load Balancing Server
 	$.ajax({
 		url: hamnetLoadBalanceServer,
-		type: 'GET',
+		type: "GET",
 		timeout: 1500,
 		success: function(data) {
-			var returnedServers = data.trim().split('\n');
+			var returnedServers = data.trim().split("\n");
 			var count = 0;
 
 			// Either use the tested server (if successful) or move on
@@ -253,20 +253,20 @@ function prepareMap() {
 function initMap(tileServers) {
 	if (mapInited) return;
 
-	layer = L.tileLayer('http://{s}/{z}/{x}/{y}.png', {
+	layer = L.tileLayer("http://{s}/{z}/{x}/{y}.png", {
 		maxZoom: 19,
-		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
+		attribution: "&copy; <a href='http://www.openstreetmap.org/copyright' target='_blank'>OpenStreetMap</a>",
 		subdomains: tileServers
 	});
-	map = L.map('map').setView([50.776, 6.070], 16).addLayer(layer);
+	map = L.map("map").setView([50.776, 6.070], 16).addLayer(layer);
 
-	$('#mapLoading').hide();
+	$("#mapLoading").hide();
 	mapInited = true;
 
 	if (markers !== undefined) map.addLayer(markers);
 }
 
-// Calculate a map-tile's loading time. Returns -1 on timeout (after ~1.5s).
+// Calculate a map-tile"s loading time. Returns -1 on timeout (after ~1.5s).
 function getMapTileLoadTime(url, fn) {
 	var startTime = new Date().getTime();
 	var img = new Image();
@@ -305,10 +305,10 @@ function returnFromCallDetails() {
 	$("#container2-detail").hide();
 	$("#container2-overview").show();
 
-	$('#formEditCallText').val("");
-	unselectEverything('#formEditCallCallsign');
-	unselectEverything('#formEditCallTransmitterGroup');
-	$('#formEditCallEmergency').prop('checked', false);
+	$("#formEditCallText").val("");
+	unselectEverything("#formEditCallCallsign");
+	unselectEverything("#formEditCallTransmitterGroup");
+	$("#formEditCallEmergency").prop("checked", false);
 }
 
 // Add a new News
@@ -322,16 +322,16 @@ function returnFromNewsDetails() {
 	$("#container3-detail").hide();
 	$("#container3-overview").show();
 
-	$('#formEditNewsText').val("");
-	$('#formEditNewsNumber').val("");
-	unselectEverything('#formEditNewsRubric');
+	$("#formEditNewsText").val("");
+	$("#formEditNewsNumber").val("");
+	unselectEverything("#formEditNewsRubric");
 }
 
 // Add a new CallSign
 function addCallSign() {
 	$("#container4-overview").hide();
 	$("#container4-detail").show();
-	$('#formEditCallSignName').prop('disabled', false);
+	$("#formEditCallSignName").prop("disabled", false);
 }
 
 // Edit a CallSign
@@ -339,17 +339,17 @@ var editCallSignName = "";
 function editCallSign(name) {
 	if (name === "" || name === null) return;
 	editCallSignName = name;
-	$('#formEditCallSignName').prop('disabled', true);
+	$("#formEditCallSignName").prop("disabled", true);
 
 	$.ajax({
-		url: config.apiUrl + '/callsigns/' + editCallSignName,
-		type: 'GET',
+		url: config.apiUrl + "/callsigns/" + editCallSignName,
+		type: "GET",
 		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
+			req.setRequestHeader("Authorization", "Basic " + Cookies.get("auth"));
 		},
 		success: function(data) {
-			$('#formEditCallSignName').val(editCallSignName);
-			$('#formEditCallSignDescription').val(data.description);
+			$("#formEditCallSignName").val(editCallSignName);
+			$("#formEditCallSignDescription").val(data.description);
 			var pagerNumbers = "";
 			var pagerNames = "";
 			$.each(data.pagers, function(index, value) {
@@ -361,8 +361,8 @@ function editCallSign(name) {
 					pagerNames += "\n";
 				}
 			});
-			$('#formEditCallSignsPagersNumber').val(pagerNumbers);
-			$('#formEditCallSignsPagersName').val(pagerNames);
+			$("#formEditCallSignsPagersNumber").val(pagerNumbers);
+			$("#formEditCallSignsPagersName").val(pagerNames);
 			$("#formEditCallSignOwners option").each(function() {
 				if ($.inArray($(this).text(), data.ownerNames) !== -1) {
 					$(this).prop("selected", true);
@@ -384,18 +384,18 @@ function returnFromCallSignDetails() {
 	$("#container4-detail").hide();
 	$("#container4-overview").show();
 
-	$('#formEditCallSignName').val("");
-	$('#formEditCallSignDescription').val("");
-	$('#formEditCallSignsPagersNumber').val("");
-	$('#formEditCallSignsPagersName').val("");
-	unselectEverything('#formEditCallSignOwners');
+	$("#formEditCallSignName").val("");
+	$("#formEditCallSignDescription").val("");
+	$("#formEditCallSignsPagersNumber").val("");
+	$("#formEditCallSignsPagersName").val("");
+	unselectEverything("#formEditCallSignOwners");
 }
 
 // Add a new Rubric
 function addRubric() {
 	$("#container5-overview").hide();
 	$("#container5-detail").show();
-	$('#formEditRubricName').prop('disabled', false);
+	$("#formEditRubricName").prop("disabled", false);
 }
 
 // Edit a Rubric
@@ -403,18 +403,18 @@ var editRubricName = "";
 function editRubric(name) {
 	if (name === "" || name === null) return;
 	editRubricName = name;
-	$('#formEditRubricName').prop('disabled', true);
+	$("#formEditRubricName").prop("disabled", true);
 
 	$.ajax({
-		url: config.apiUrl + '/rubrics/' + editRubricName,
-		type: 'GET',
+		url: config.apiUrl + "/rubrics/" + editRubricName,
+		type: "GET",
 		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
+			req.setRequestHeader("Authorization", "Basic " + Cookies.get("auth"));
 		},
 		success: function(data) {
-			$('#formEditRubricName').val(editRubricName);
-			$('#formEditRubricLabel').val(data.label);
-			$('#formEditRubricNumber').val(data.number);
+			$("#formEditRubricName").val(editRubricName);
+			$("#formEditRubricLabel").val(data.label);
+			$("#formEditRubricNumber").val(data.number);
 			$("#formEditRubricTransmitterGroups option").each(function() {
 				if ($.inArray($(this).text(), data.transmitterGroupNames) !== -1) {
 					$(this).prop("selected", true);
@@ -442,11 +442,11 @@ function returnFromRubricDetails() {
 	$("#container5-detail").hide();
 	$("#container5-overview").show();
 
-	$('#formEditRubricName').val("");
-	$('#formEditRubricLabel').val("");
-	$('#formEditRubricNumber').val("");
-	unselectEverything('#formEditRubricTransmitterGroups');
-	unselectEverything('#formEditRubricOwners');
+	$("#formEditRubricName").val("");
+	$("#formEditRubricLabel").val("");
+	$("#formEditRubricNumber").val("");
+	unselectEverything("#formEditRubricTransmitterGroups");
+	unselectEverything("#formEditRubricOwners");
 }
 
 // Activate Rubrics on a Pager
@@ -460,16 +460,16 @@ function returnFromRubricDetails2() {
 	$("#container5-detail2").hide();
 	$("#container5-overview").show();
 
-	$('#formActivateRubricNumber').val("");
-	unselectEverything('#formActivateRubricTransmitterGroups');
+	$("#formActivateRubricNumber").val("");
+	unselectEverything("#formActivateRubricTransmitterGroups");
 }
 
 // Add a new Transmitter
 function addTransmitter() {
 	$("#container6-overview").hide();
 	$("#container6-detail").show();
-	$('#formEditTransmitterName').prop('disabled', false);
-	$('.timeslotCheckBox').prop('checked', true);
+	$("#formEditTransmitterName").prop("disabled", false);
+	$(".timeslotCheckBox").prop("checked", true);
 }
 
 // Edit a TransmitterGroup
@@ -477,43 +477,43 @@ var editTransmitterName = "";
 function editTransmitter(name) {
 	if (name === "" || name === null) return;
 	editTransmitterName = name;
-	$('#formEditTransmitterName').prop('disabled', true);
+	$("#formEditTransmitterName").prop("disabled", true);
 
 	$.ajax({
-		url: config.apiUrl + '/transmitters/' + editTransmitterName,
-		type: 'GET',
+		url: config.apiUrl + "/transmitters/" + editTransmitterName,
+		type: "GET",
 		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
+			req.setRequestHeader("Authorization", "Basic " + Cookies.get("auth"));
 		},
 		success: function(data) {
-			$('#formEditTransmitterName').val(editTransmitterName);
+			$("#formEditTransmitterName").val(editTransmitterName);
 			$("#formEditTransmitterNodeName option").each(function() {
 				if ($(this).text() === data.nodeName) {
 					$(this).prop("selected", true);
 				}
 			});
 			$("#formEditTransmitterNodeName").trigger("chosen:updated");
-			$('#formEditTransmitterLatitude').val(data.latitude);
+			$("#formEditTransmitterLatitude").val(data.latitude);
 			if (data.latitude < 0) {
-				$('#formEditTransmitterLatitude').val(data.latitude * -1);
-				$('#formEditTransmitterLatitudeOrientation').val("-1");
+				$("#formEditTransmitterLatitude").val(data.latitude * -1);
+				$("#formEditTransmitterLatitudeOrientation").val("-1");
 			}
-			$('#formEditTransmitterLongitude').val(data.longitude);
+			$("#formEditTransmitterLongitude").val(data.longitude);
 			if (data.longitude < 0) {
-				$('#formEditTransmitterLongitude').val(data.longitude * -1);
-				$('#formEditTransmitterLongitudeOrientation').val("-1");
+				$("#formEditTransmitterLongitude").val(data.longitude * -1);
+				$("#formEditTransmitterLongitudeOrientation").val("-1");
 			}
-			$('#formEditTransmitterPower').val(data.power);
-			$('#formEditTransmitterIp').val(data.address.ip_addr);
-			$('#formEditTransmitterPort').val(data.address.port);
+			$("#formEditTransmitterPower").val(data.power);
+			$("#formEditTransmitterIp").val(data.address.ip_addr);
+			$("#formEditTransmitterPort").val(data.address.port);
 
-			$('.timeslotCheckBox').prop('checked', false);
+			$(".timeslotCheckBox").prop("checked", false);
 			for (i = 0; i < data.timeSlot.length; i++) {
-				$('#formEditTransmitterTimeslot' + data.timeSlot.charAt(i)).prop('checked', true);
+				$("#formEditTransmitterTimeslot" + data.timeSlot.charAt(i)).prop("checked", true);
 			}
 
-			$('#formEditTransmitterOwners').val(data.ownerNames.join("\n"));
-			$('#formEditTransmitterDeviceType').val(data.deviceType);
+			$("#formEditTransmitterOwners").val(data.ownerNames.join("\n"));
+			$("#formEditTransmitterDeviceType").val(data.deviceType);
 			$("#formEditTransmitterOwners option").each(function() {
 				if ($.inArray($(this).text(), data.ownerNames) !== -1) {
 					$(this).prop("selected", true);
@@ -535,23 +535,23 @@ function returnFromTransmitterDetails() {
 	$("#container6-detail").hide();
 	$("#container6-overview").show();
 
-	$('#formEditTransmitterName').val("");
-	unselectEverything('#formEditTransmitterNodeName');
-	$('#formEditTransmitterLatitude').val("");
-	unselectEverything('#formEditTransmitterLatitudeOrientation');
-	$('#formEditTransmitterLongitude').val("");
-	unselectEverything('#formEditTransmitterLongitudeOrientation');
-	$('#formEditTransmitterPower').val("");
-	$('#formEditTransmitterIp').val("");
-	$('#formEditTransmitterPort').val("");
-	unselectEverything('#formEditTransmitterOwners');
+	$("#formEditTransmitterName").val("");
+	unselectEverything("#formEditTransmitterNodeName");
+	$("#formEditTransmitterLatitude").val("");
+	unselectEverything("#formEditTransmitterLatitudeOrientation");
+	$("#formEditTransmitterLongitude").val("");
+	unselectEverything("#formEditTransmitterLongitudeOrientation");
+	$("#formEditTransmitterPower").val("");
+	$("#formEditTransmitterIp").val("");
+	$("#formEditTransmitterPort").val("");
+	unselectEverything("#formEditTransmitterOwners");
 }
 
 // Add a new TransmitterGroup
 function addTransmitterGroup() {
 	$("#container7-overview").hide();
 	$("#container7-detail").show();
-	$('#formEditTransmitterGroupName').prop('disabled', false);
+	$("#formEditTransmitterGroupName").prop("disabled", false);
 }
 
 // Edit a TransmitterGroup
@@ -561,15 +561,15 @@ function editTransmitterGroup(name) {
 	editTransmitterGroupName = name;
 
 	$.ajax({
-		url: config.apiUrl + '/transmitterGroups/' + editTransmitterGroupName,
-		type: 'GET',
+		url: config.apiUrl + "/transmitterGroups/" + editTransmitterGroupName,
+		type: "GET",
 		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
+			req.setRequestHeader("Authorization", "Basic " + Cookies.get("auth"));
 		},
 		success: function(data) {
-			$('#formEditTransmitterGroupName').val(editTransmitterGroupName);
-			$('#formEditTransmitterGroupName').prop('disabled', true);
-			$('#formEditTransmitterGroupDescription').val(data.description);
+			$("#formEditTransmitterGroupName").val(editTransmitterGroupName);
+			$("#formEditTransmitterGroupName").prop("disabled", true);
+			$("#formEditTransmitterGroupDescription").val(data.description);
 			$("#formEditTransmitterGroupTransmitters option").each(function() {
 				if ($.inArray($(this).text(), data.transmitterNames) !== -1) {
 					$(this).prop("selected", true);
@@ -597,17 +597,17 @@ function returnFromTransmitterGroupDetails() {
 	$("#container7-detail").hide();
 	$("#container7-overview").show();
 
-	$('#formEditTransmitterGroupName').val("");
-	$('#formEditTransmitterGroupDescription').val("");
-	unselectEverything('#formEditTransmitterGroupTransmitters');
-	unselectEverything('#formEditTransmitterGroupOwners');
+	$("#formEditTransmitterGroupName").val("");
+	$("#formEditTransmitterGroupDescription").val("");
+	unselectEverything("#formEditTransmitterGroupTransmitters");
+	unselectEverything("#formEditTransmitterGroupOwners");
 }
 
 // Add a new Node
 function addNode() {
 	$("#container8-overview").hide();
 	$("#container8-detail").show();
-	$('#formEditNodeName').prop('disabled', false);
+	$("#formEditNodeName").prop("disabled", false);
 }
 
 // Edit a Node
@@ -617,28 +617,28 @@ function editNode(name) {
 	editNodeName = name;
 
 	$.ajax({
-		url: config.apiUrl + '/nodes/' + editNodeName,
-		type: 'GET',
+		url: config.apiUrl + "/nodes/" + editNodeName,
+		type: "GET",
 		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
+			req.setRequestHeader("Authorization", "Basic " + Cookies.get("auth"));
 		},
 		success: function(data) {
-			$('#formEditNodeName').val(data.name);
-			$('#formEditNodeLatitude').val(data.latitude);
+			$("#formEditNodeName").val(data.name);
+			$("#formEditNodeLatitude").val(data.latitude);
 			if (data.latitude < 0) {
-				$('#formEditNodeLatitude').val(data.latitude * -1);
-				$('#formEditNodeLatitudeOrientation').val("-1");
+				$("#formEditNodeLatitude").val(data.latitude * -1);
+				$("#formEditNodeLatitudeOrientation").val("-1");
 			}
-			$('#formEditNodeLongitude').val(data.longitude);
+			$("#formEditNodeLongitude").val(data.longitude);
 			if (data.longitude < 0) {
-				$('#formEditNodeLongitude').val(data.longitude * -1);
-				$('#formEditNodeLongitudeOrientation').val("-1");
+				$("#formEditNodeLongitude").val(data.longitude * -1);
+				$("#formEditNodeLongitudeOrientation").val("-1");
 			}
-			$('#formEditNodeIp').val(data.address.ip_addr);
-			$('#formEditNodePort').val(data.address.port);
-			$('#formEditNodeStatus').val(data.status);
-			$('#formEditNodeKey').val(data.key);
-			$('#formEditNodeName').prop('disabled', true);
+			$("#formEditNodeIp").val(data.address.ip_addr);
+			$("#formEditNodePort").val(data.address.port);
+			$("#formEditNodeStatus").val(data.status);
+			$("#formEditNodeKey").val(data.key);
+			$("#formEditNodeName").prop("disabled", true);
 
 			$("#container8-overview").hide();
 			$("#container8-detail").show();
@@ -654,21 +654,21 @@ function returnFromNodeDetails() {
 	$("#container8-detail").hide();
 	$("#container8-overview").show();
 
-	$('#formEditNodeName').val("");
-	$('#formEditNodeLatitude').val("");
-	unselectEverything('#formEditNodeLatitudeOrientation');
-	$('#formEditNodeLongitude').val("");
-	unselectEverything('#formEditNodeLongitudeOrientation');
-	$('#formEditNodeIp').val("");
-	$('#formEditNodePort').val("7800");
-	$('#formEditNodeKey').val("");
+	$("#formEditNodeName").val("");
+	$("#formEditNodeLatitude").val("");
+	unselectEverything("#formEditNodeLatitudeOrientation");
+	$("#formEditNodeLongitude").val("");
+	unselectEverything("#formEditNodeLongitudeOrientation");
+	$("#formEditNodeIp").val("");
+	$("#formEditNodePort").val("7800");
+	$("#formEditNodeKey").val("");
 }
 
 // Add a new User
 function addUser() {
 	$("#container9-overview").hide();
 	$("#container9-detail").show();
-	$('#formEditUserName').prop('disabled', false);
+	$("#formEditUserName").prop("disabled", false);
 }
 
 // Edit a User
@@ -678,16 +678,16 @@ function editUser(name) {
 	editUserName = name;
 
 	$.ajax({
-		url: config.apiUrl + '/users/' + editUserName,
-		type: 'GET',
+		url: config.apiUrl + "/users/" + editUserName,
+		type: "GET",
 		beforeSend: function(req) {
-			req.setRequestHeader('Authorization', 'Basic ' + Cookies.get("auth"));
+			req.setRequestHeader("Authorization", "Basic " + Cookies.get("auth"));
 		},
 		success: function(data) {
-			$('#formEditUserName').val(data.name);
-			$('#formEditUserName').prop('disabled', true);
-			$('#formEditUserMail').val(data.mail);
-			$('#formEditUserAdmin').prop('checked', data.admin);
+			$("#formEditUserName").val(data.name);
+			$("#formEditUserName").prop("disabled", true);
+			$("#formEditUserMail").val(data.mail);
+			$("#formEditUserAdmin").prop("checked", data.admin);
 
 			openContainer(9);
 			$("#container9-overview").hide();
@@ -704,16 +704,16 @@ function returnFromUserDetails() {
 	$("#container9-detail").hide();
 	$("#container9-overview").show();
 
-	$('#formEditUserName').val("");
-	$('#formEditUserPassword').val("");
-	$('#formEditUserMail').val("");
-	$('#formEditUserAdmin').prop('checked', false);
+	$("#formEditUserName").val("");
+	$("#formEditUserPassword").val("");
+	$("#formEditUserMail").val("");
+	$("#formEditUserAdmin").prop("checked", false);
 }
 
 // Update the Character-Count on the Rufzeichen-Page
 function updateCharCount() {
-	var remaining = 80 - $('#formEditCallText').val().length;
-	$('#formEditCallTextRemaining').text(jQuery.i18n.prop('calls_add_chars_remaining', remaining));
+	var remaining = 80 - $("#formEditCallText").val().length;
+	$("#formEditCallTextRemaining").text(jQuery.i18n.prop("calls_add_chars_remaining", remaining));
 }
 
 
@@ -726,7 +726,7 @@ function checkForInput(formId) {
 	var errorFound = false;
 
 	$("#" + formId).find(":input").each(function() {
-		if ($(this)[0].id === "") return 'non-false';
+		if ($(this)[0].id === "") return "non-false";
 		if ($(this)[0].value === "") {
 			$(this).parent().addClass("has-error");
 			errorFound = true;
@@ -736,7 +736,7 @@ function checkForInput(formId) {
 	});
 
 	$("#" + formId).find("select").each(function() {
-		if ($(this)[0].id === "") return 'non-false';
+		if ($(this)[0].id === "") return "non-false";
 		if ($("#" + $(this)[0].id + " :selected").length === 0) {
 			$(this).parent().addClass("has-error");
 			errorFound = true;
@@ -770,13 +770,13 @@ function unselectEverything(selector) {
 // SweetAlert Deletion Confirm Dialog
 function showDeleteAlert(deleteFunction) {
 	swal({
-		title: jQuery.i18n.prop('alert_confirm'),
-		text: jQuery.i18n.prop('alert_delete_notice'),
+		title: jQuery.i18n.prop("alert_confirm"),
+		text: jQuery.i18n.prop("alert_delete_notice"),
 		type: "warning",
 		showCancelButton: true,
 		confirmButtonColor: "#DD6B55",
-		confirmButtonText: jQuery.i18n.prop('yes'),
-		cancelButtonText: jQuery.i18n.prop('cancel'),
+		confirmButtonText: jQuery.i18n.prop("yes"),
+		cancelButtonText: jQuery.i18n.prop("cancel"),
 		closeOnConfirm: false
 	}, function() {
 		deleteFunction();
@@ -786,8 +786,8 @@ function showDeleteAlert(deleteFunction) {
 // SweetAlert Success Message
 function showSuccessAlert() {
 	swal({
-		title: jQuery.i18n.prop('alert_success_title'),
-		text: jQuery.i18n.prop('alert_success_text'),
+		title: jQuery.i18n.prop("alert_success_title"),
+		text: jQuery.i18n.prop("alert_success_text"),
 		type: "success",
 		timer: 3000
 	});
@@ -799,8 +799,8 @@ function showSuccessReloadAlert() {
 	}, 3000);
 
 	swal({
-		title: jQuery.i18n.prop('alert_success_title'),
-		text: jQuery.i18n.prop('alert_success_text'),
+		title: jQuery.i18n.prop("alert_success_title"),
+		text: jQuery.i18n.prop("alert_success_text"),
 		type: "success",
 		timer: 3000,
 	}, function() {
@@ -812,8 +812,8 @@ function showSuccessReloadAlert() {
 function handleError(err) {
 	if (err.status === 0) {
 		swal({
-			title: jQuery.i18n.prop('alert_error_api_title'),
-			text: jQuery.i18n.prop('alert_error_api_text'),
+			title: jQuery.i18n.prop("alert_error_api_title"),
+			text: jQuery.i18n.prop("alert_error_api_text"),
 			type: "error",
 			html: true
 		});
@@ -840,8 +840,8 @@ function handleError(err) {
 // Missing-Input-Handler
 function handleMissingInput() {
 	swal({
-		title: jQuery.i18n.prop('alert_missing_input_title'),
-		text: jQuery.i18n.prop('alert_missing_input_text'),
+		title: jQuery.i18n.prop("alert_missing_input_title"),
+		text: jQuery.i18n.prop("alert_missing_input_text"),
 		type: "error"
 	});
 }
@@ -849,8 +849,8 @@ function handleMissingInput() {
 // Missing-Input-Handler
 function handleOverwriteError() {
 	swal({
-		title: jQuery.i18n.prop('alert_overwrite_title'),
-		text: jQuery.i18n.prop('alert_overwrite_text'),
+		title: jQuery.i18n.prop("alert_overwrite_title"),
+		text: jQuery.i18n.prop("alert_overwrite_text"),
 		type: "error"
 	});
 }
