@@ -193,18 +193,106 @@ function openContainer(id) {
 
 	$("table").css("width", "100%");
 
-	// Init Map on map-tab-open
 	if (id == 13 && !mapInited) {
-		layer = L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			maxZoom: 19,
-			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>'
-		});
-		map = L.map('map').setView([50.776, 6.070], 16).addLayer(layer);
-		mapInited = true;
-
-		if (markers !== undefined) map.addLayer(markers);
+		prepareMap();
 	}
 }
+
+
+/* ##################
+*  # MAP-MANAGEMENT #
+*  ################## */
+
+// Look for a load-balancer inside the Hamnet and query all returned tile-servers for availability.
+// If the user is not using the Hamnet, use the default tile-servers.
+function prepareMap() {
+	var hamnetLoadBalanceServer = "http://db0sda.ampr.org/osmloadbalservers/";
+	var publicServers = ["a.tile.openstreetmap.org", "b.tile.openstreetmap.org", "c.tile.openstreetmap.org"];
+	var selectedServers = [];
+
+	// Query the Hamnet Load Balancing Server
+	$.ajax({
+		url: hamnetLoadBalanceServer,
+		type: 'GET',
+		timeout: 1500,
+		success: function(data) {
+			var returnedServers = data.trim().split('\n');
+			var count = 0;
+
+			// Either use the tested server (if successful) or move on
+			function selectWorkingMapServers(loadTime, checkedUrl) {
+				if (loadTime != -1) {
+					selectedServers.push(checkedUrl);
+				}
+
+				count++;
+				if (count >= returnedServers.length) {
+					// Tested every available server: initialize map
+					initMap(selectedServers);
+				}
+			}
+
+			// Check which servers are available
+			for (var i in returnedServers) {
+				getMapTileLoadTime(returnedServers[i], selectWorkingMapServers);
+			}
+		},
+		error: function(err) {
+			if (err.status === 0) {
+				// Not reachable: use public tile-servers
+				selectedServers = publicServers;
+				initMap(selectedServers);
+			} else {
+				handleError(err);
+			}
+		}
+	});
+}
+
+// Initialize Map with the given tile-servers
+function initMap(tileServers) {
+	if (mapInited) return;
+
+	layer = L.tileLayer('http://{s}/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
+		subdomains: tileServers
+	});
+	map = L.map('map').setView([50.776, 6.070], 16).addLayer(layer);
+
+	$('#mapLoading').hide();
+	mapInited = true;
+
+	if (markers !== undefined) map.addLayer(markers);
+}
+
+// Calculate a map-tile's loading time. Returns -1 on timeout (after ~1.5s).
+function getMapTileLoadTime(url, fn) {
+	var startTime = new Date().getTime();
+	var img = new Image();
+
+	img.onload = function() {
+		var loadTime = new Date().getTime() - startTime;
+		fn(loadTime, url);
+	};
+
+	img.onerror = function() {
+		fn(-1, url);
+	};
+
+	img.src = "http://" + url + "/14/10/100.png";
+	setTimeout(function() {
+		if (!img.complete || !img.naturalWidth) {
+			img.src = "";
+			fn(-1, url);
+		}
+	}, 1500);
+}
+
+
+/* ########################
+*  # CONTAINER-MANAGEMENT #
+*  ######################## */
 
 // Add a new Call
 function addCall() {
