@@ -20,7 +20,7 @@ function loadData() {
 // Load all Calls
 function loadCalls() {
 	if (!isAdmin) return;
-
+	
 	$.ajax({
 		url: config.apiUrl + "/calls",
 		type: "GET",

@@ -52,7 +52,7 @@ function initPage() {
 	// Login on Enter-Keypress
 	$("#loginUsername").keypress(function (e) { if (e.which == 13) loginWithForm(); });
 	$("#loginPassword").keypress(function (e) { if (e.which == 13) loginWithForm(); });
-
+	
 	// container6-detail Character-Count
 	updateCharCount();
 	$("#formEditCallText").on("input", function() { updateCharCount(); });
