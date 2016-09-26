@@ -57,6 +57,12 @@ function initPage() {
 	updateCharCount();
 	$("#formEditCallText").on("input", function() { updateCharCount(); });
 
+	// validate latitude / longitude input while typing
+	$("#formEditTransmitterLatitude").on("change input", function(e) { coordinatesInput(this, e, 0, 90); });
+	$("#formEditTransmitterLongitude").on("change input", function(e) { coordinatesInput(this, e, 0, 180); });
+	$("#formEditNodeLatitude").on("change input", function(e) { coordinatesInput(this, e, 0, 90); });
+	$("#formEditNodeLongitude").on("change input", function(e) { coordinatesInput(this, e, 0, 180); });
+
 	// Remove Splash-Screen
 	$("#splashscreen").fadeOut(500);
 }
@@ -746,6 +752,19 @@ function checkForInput(formId) {
 	});
 
 	return errorFound;
+}
+
+// Manual input checking for latitude / longitude
+function coordinatesInput(element, e, min, max) {
+	// Replace comma with dot
+	element.value = element.value.replace(",", ".");
+
+	// check for other input than numbers and dots AND for values between min and max
+	if (element.value.match(/([0-9.0-9])$/g) && element.value >= min && element.value <= max) {
+		$(element.parentElement).removeClass("has-error");
+	} else {
+		$(element.parentElement).addClass("has-error");
+	}
 }
 
 // Check for possible overwriting of existing data
