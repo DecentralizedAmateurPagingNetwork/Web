@@ -52,7 +52,7 @@ function initPage() {
 	// Login on Enter-Keypress
 	$("#loginUsername").keypress(function (e) { if (e.which == 13) loginWithForm(); });
 	$("#loginPassword").keypress(function (e) { if (e.which == 13) loginWithForm(); });
-	
+
 	// container6-detail Character-Count
 	updateCharCount();
 	$("#formEditCallText").on("input", function() { updateCharCount(); });
@@ -264,7 +264,7 @@ function initMap(tileServers) {
 		attribution: "&copy; <a href='http://www.openstreetmap.org/copyright' target='_blank'>OpenStreetMap</a>",
 		subdomains: tileServers
 	});
-	map = L.map("map").setView([50.776, 6.070], 16).addLayer(layer);
+	map = L.map("map").setView([51, 10], 5).addLayer(layer);
 
 	$("#mapLoading").hide();
 	mapInited = true;
