@@ -10,7 +10,10 @@ function loadData() {
 	loadTransmitters();
 	loadTransmitterGroups();
 	loadNodes();
-	loadUsers();
+
+	// users will be loaded after all call signs have been loaded
+	// to make sure there is data for the call sign column
+	//loadUsers();
 }
 
 /* #########################
@@ -235,6 +238,9 @@ function loadCallSigns() {
 				}));
 			});
 			$("#formEditCallCallsign").trigger("chosen:updated");
+
+			// load users after all calls signs have been loaded
+			loadUsers();
 		},
 		error: handleError
 	});
@@ -874,8 +880,6 @@ function loadUsers() {
 					{ data: "mail" },
 					{ data: "admin" },
 					{ data: function(obj) {
-						if (callSignData === null) return jQuery.i18n.prop("users_table_callsigns_not_loaded");
-
 						var usersCallSigns = "";
 						$.each(callSignData, function(i, item) {
 							if ($.inArray(obj.name, item.ownerNames) != -1) {
