@@ -20,7 +20,7 @@ function loadData() {
 // Load all Calls
 function loadCalls() {
 	if (!isAdmin) return;
-	
+
 	$.ajax({
 		url: config.apiUrl + "/calls",
 		type: "GET",
@@ -477,7 +477,7 @@ function loadTransmitters() {
 						}},
 						{ data: "ownerNames[, ]" },
 						{ data: "deviceType" },
-						{ data: "status" },
+						{ data: statusFormatter },
 						{ data: function (obj) {
 							return "---";
 						}}
@@ -495,7 +495,7 @@ function loadTransmitters() {
 						{ data: "address.ip_addr" },
 						{ data: "ownerNames[, ]" },
 						{ data: "deviceType" },
-						{ data: "status" },
+						{ data: statusFormatter },
 						{ data: function (obj) {
 							return "<a href='#6' onclick='editTransmitter(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
 							"<a href='#6' onclick='deleteTransmitter(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
@@ -742,7 +742,7 @@ function loadNodes() {
 						{ data: function (obj) {
 							return "---";
 						}},
-						{ data: "status" },
+						{ data: statusFormatter },
 						{ data: function (obj) {
 							return "---";
 						}}
@@ -758,7 +758,7 @@ function loadNodes() {
 						{ data: "name" },
 						{ data: "address.ip_addr" },
 						{ data: "address.port" },
-						{ data: "status" },
+						{ data: statusFormatter },
 						{ data: function (obj) {
 							return "<a href='#8' onclick='editNode(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
 							"<a href='#8' onclick='deleteNode(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
@@ -964,6 +964,16 @@ function deleteUser(name) {
 			error: handleError
 		});
 	});
+}
+
+function statusFormatter(obj) {
+	if (obj.status === "ONLINE") {
+		return "<span class='label label-success'>ONLINE</span>";
+	} else if (obj.status === "OFFLINE") {
+		return "<span class='label label-primary'>OFFLINE</span>";
+	} else {
+		return "<span class='label label-warning'>" + obj.status + "</span>";
+	}
 }
 
 function setCookieHeader(req) {
