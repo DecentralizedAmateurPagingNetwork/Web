@@ -34,6 +34,10 @@ body > .navbar {
 	color: #808080;
 }
 
+.table > tbody > tr > td {
+	word-break: break-word;
+}
+
 #map {
 	height: 40em;
 }
