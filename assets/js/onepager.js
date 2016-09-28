@@ -1,3 +1,5 @@
+const VERSION = "1.0.4";
+
 var config;
 var currentLanguage;
 var isAdmin = false;
@@ -62,6 +64,9 @@ function initPage() {
 	$("#formEditTransmitterLongitude").on("change input", function(e) { coordinatesInput(this, e, 0, 180); });
 	$("#formEditNodeLatitude").on("change input", function(e) { coordinatesInput(this, e, 0, 90); });
 	$("#formEditNodeLongitude").on("change input", function(e) { coordinatesInput(this, e, 0, 180); });
+
+	// add version-number
+	$("#footer_version_number").text(VERSION);
 
 	// Remove Splash-Screen
 	$("#splashscreen").fadeOut(500);
@@ -199,10 +204,38 @@ function openContainer(id) {
 
 	$("table").css("width", "100%");
 
+	if (id == 10) {
+		loadUpdateData();
+	}
+
 	if (id == 13 && !mapInited) {
 		prepareMap();
 	}
 }
+
+// find an update-server (Hamnet or internet), create the update-iframe and display it
+function loadUpdateData() {
+	var hamnetUpdateServer = "http://db0sda.ampr.org/dapnet-update/update.php";
+	var internetUpdateServer = "https://www.afu.rwth-aachen.de/dapnet-update/update.php";
+
+	// Query the Hamnet-server
+	$.ajax({
+		url: hamnetUpdateServer,
+		type: "GET",
+		timeout: 1500,
+		success: function(data) {
+			$("#update_iframe").html("<iframe src='" + hamnetUpdateServer + "?core=UNKNOWN&web=" + VERSION + "' width='600px' height='300px'></iframe>");
+		},
+		error: function(err) {
+			if (err.status === 0) {
+				$("#update_iframe").html("<iframe src='" + internetUpdateServer + "?core=UNKNOWN&web=" + VERSION + "' width='600px' height='300px'></iframe>");
+			} else {
+				handleError(err);
+			}
+		}
+	});
+}
+
 
 
 /* ##################
