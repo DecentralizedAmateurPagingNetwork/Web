@@ -237,7 +237,6 @@ function loadUpdateData() {
 }
 
 
-
 /* ##################
 *  # MAP-MANAGEMENT #
 *  ################## */
