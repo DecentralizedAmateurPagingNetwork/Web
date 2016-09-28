@@ -224,11 +224,11 @@ function loadUpdateData() {
 		type: "GET",
 		timeout: 1000,
 		success: function(data) {
-			$("#update_iframe").html("<iframe src='" + hamnetUpdateServer + "?core=UNKNOWN&web=" + VERSION + "' width='600px' height='300px'></iframe>");
+			$("#update_iframe").html("<iframe src='" + hamnetUpdateServer + "?core=UNKNOWN&web=" + VERSION + "' width='600px' height='250px'></iframe>");
 		},
 		error: function(err) {
 			if (err.status === 0) {
-				$("#update_iframe").html("<iframe src='" + internetUpdateServer + "?core=UNKNOWN&web=" + VERSION + "' width='600px' height='300px'></iframe>");
+				$("#update_iframe").html("<iframe src='" + internetUpdateServer + "?core=UNKNOWN&web=" + VERSION + "' width='600px' height='250px'></iframe>");
 			} else {
 				handleError(err);
 			}
