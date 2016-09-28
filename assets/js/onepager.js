@@ -222,7 +222,7 @@ function loadUpdateData() {
 	$.ajax({
 		url: hamnetUpdateServer,
 		type: "GET",
-		timeout: 1500,
+		timeout: 1000,
 		success: function(data) {
 			$("#update_iframe").html("<iframe src='" + hamnetUpdateServer + "?core=UNKNOWN&web=" + VERSION + "' width='600px' height='300px'></iframe>");
 		},
@@ -253,7 +253,7 @@ function prepareMap() {
 	$.ajax({
 		url: hamnetLoadBalanceServer,
 		type: "GET",
-		timeout: 1500,
+		timeout: 1000,
 		success: function(data) {
 			var returnedServers = data.trim().split("\n");
 			var count = 0;
