@@ -613,6 +613,7 @@ function deleteTransmitter(name) {
 			success: function(data) {
 				showSuccessAlert();
 				loadTransmitters();
+				loadTransmitterGroups();
 			},
 			error: handleError
 		});
