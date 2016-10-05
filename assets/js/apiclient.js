@@ -42,7 +42,8 @@ function loadCalls() {
 					{ data: "text" },
 					{ data: "emergency" },
 					{ data: "ownerName" }
-				]
+				],
+				"order": [[ 0, "desc" ]]
 			});
 
 			var statEmergency = 0;
