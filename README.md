@@ -39,6 +39,13 @@ docker run --name "dapnet-web" -d -p 8081:80 -v /home/user/dapnet-web/config.jso
 * Create symbolic links to this file (if necessary)
 * Add the new language-code inside `languages.json`
 
+## Changelog
+
+### Create Changelog
+```bash
+git log v1.0.4...v1.0.5 --pretty=format:'* %s - %h'
+```
+
 ## Used Software
 * [Bootstrap](https://getbootstrap.com) (MIT) / [Bootswatch](https://bootswatch.com) (MIT)
 * [Chosen](https://github.com/harvesthq/chosen) (MIT)
