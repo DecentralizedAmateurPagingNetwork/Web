@@ -371,6 +371,7 @@ function returnFromCallDetails() {
 	$("#container2-overview").show();
 
 	$("#formEditCallText").val("");
+	updateCharCount();
 	unselectEverything("#formEditCallCallsign");
 	unselectEverything("#formEditCallTransmitterGroup");
 	$("#formEditCallEmergency").prop("checked", false);
