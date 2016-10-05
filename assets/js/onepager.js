@@ -699,8 +699,6 @@ function editNode(name) {
 				$("#formEditNodeLongitude").val(data.longitude * -1);
 				$("#formEditNodeLongitudeOrientation").val("-1");
 			}
-			$("#formEditNodeIp").val(data.address.ip_addr);
-			$("#formEditNodePort").val(data.address.port);
 			$("#formEditNodeStatus").val(data.status);
 			$("#formEditNodeKey").val(data.key);
 			$("#formEditNodeName").prop("disabled", true);
@@ -724,8 +722,6 @@ function returnFromNodeDetails() {
 	unselectEverything("#formEditNodeLatitudeOrientation");
 	$("#formEditNodeLongitude").val("");
 	unselectEverything("#formEditNodeLongitudeOrientation");
-	$("#formEditNodeIp").val("");
-	$("#formEditNodePort").val("7800");
 	$("#formEditNodeKey").val("");
 }
 

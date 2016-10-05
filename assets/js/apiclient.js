@@ -825,10 +825,6 @@ function putNode() {
 		data: JSON.stringify({
 			latitude: $("#formEditNodeLatitude").val() * $("#formEditNodeLatitudeOrientation").val(),
 			longitude: $("#formEditNodeLongitude").val() * $("#formEditNodeLatitudeOrientation").val(),
-			address: {
-				ip_addr: $("#formEditNodeIp").val(),
-				port: $("#formEditNodePort").val()
-			},
 			status: $("#formEditNodeStatus").val(),
 			key: $("#formEditNodeKey").val()
 		}),
