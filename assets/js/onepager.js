@@ -218,20 +218,47 @@ function loadUpdateData() {
 	var hamnetUpdateServer = "http://db0sda.ampr.org/dapnet-update/update.php";
 	var internetUpdateServer = "https://www.afu.rwth-aachen.de/dapnet-update/update.php";
 
-	// Query the Hamnet-server
+	var versionCore = "UNKNOWN";
+	var versionApi = "UNKNOWN";
+
+	// Query the Core Version
 	$.ajax({
-		url: hamnetUpdateServer,
+		url: config.apiUrl + "/core/core_version",
 		type: "GET",
-		timeout: 1000,
 		success: function(data) {
-			$("#update_iframe").html("<iframe src='" + hamnetUpdateServer + "?core=UNKNOWN&web=" + VERSION + "' width='600px' height='250px'></iframe>");
+			versionCore = data;
+
+			// Query the API Version
+			$.ajax({
+				url: config.apiUrl + "/core/api_version",
+				type: "GET",
+				success: function(data) {
+					versionApi = data;
+
+					// Query the update-server
+					$.ajax({
+						url: hamnetUpdateServer,
+						type: "GET",
+						timeout: 1000,
+						success: function(data) {
+							$("#update_iframe").html("<iframe src='" + hamnetUpdateServer + "?core=" + versionCore + "&api=" + versionApi + "&web=" + VERSION + "' width='600px' height='310px'></iframe>");
+						},
+						error: function(err) {
+							if (err.status === 0) {
+								$("#update_iframe").html("<iframe src='" + internetUpdateServer + "?core=" + versionCore + "&api=" + versionApi + "&web=" + VERSION + "' width='600px' height='310px'></iframe>");
+							} else {
+								handleError(err);
+							}
+						}
+					});
+				},
+				error: function(err) {
+					handleError(err);
+				}
+			});
 		},
 		error: function(err) {
-			if (err.status === 0) {
-				$("#update_iframe").html("<iframe src='" + internetUpdateServer + "?core=UNKNOWN&web=" + VERSION + "' width='600px' height='250px'></iframe>");
-			} else {
-				handleError(err);
-			}
+			handleError(err);
 		}
 	});
 }
