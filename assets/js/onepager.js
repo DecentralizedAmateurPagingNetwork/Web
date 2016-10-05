@@ -363,6 +363,8 @@ function getMapTileLoadTime(url, fn) {
 function addCall() {
 	$("#container2-overview").hide();
 	$("#container2-detail").show();
+	$("#formEditCallText").val(": ").focus()[0].setSelectionRange(0, 0);
+	updateCharCount();
 }
 
 // Close the Call-Details-Panel and reopen the Overview
