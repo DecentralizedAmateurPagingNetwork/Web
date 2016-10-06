@@ -764,8 +764,20 @@ function loadNodes() {
 					},
 					columns: [
 						{ data: "name" },
-						{ data: "address.ip_addr" },
-						{ data: "address.port" },
+						{ data: function (obj) {
+							if (obj.status !== "ONLINE") {
+								return "---";
+							} else {
+								return obj.address.ip_addr;
+							}
+						}},
+						{ data: function (obj) {
+							if (obj.status !== "ONLINE") {
+								return "---";
+							} else {
+								return obj.address.port;
+							}
+						}},
 						{ data: statusFormatter },
 						{ data: function (obj) {
 							return "<a href='#8' onclick='editNode(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
