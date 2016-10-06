@@ -363,7 +363,7 @@ function getMapTileLoadTime(url, fn) {
 function addCall() {
 	$("#container2-overview").hide();
 	$("#container2-detail").show();
-	$("#formEditCallText").val(": ").focus()[0].setSelectionRange(0, 0);
+	$("#formEditCallText").val(b64_to_utf8(Cookies.get("auth")).split(":")[0] + ": ").focus();
 	updateCharCount();
 }
 
