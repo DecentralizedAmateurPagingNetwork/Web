@@ -216,7 +216,7 @@ function openContainer(id) {
 // find an update-server (Hamnet or internet), create the update-iframe and display it
 function loadUpdateData() {
 	var hamnetUpdateServer = "http://db0sda.ampr.org/dapnet-update/update.php";
-	var internetUpdateServer = "https://www.afu.rwth-aachen.de/dapnet-update/update.php";
+	var internetUpdateServer = "http://hampager.de/dapnet-update/update.php";
 
 	var versionCore = "UNKNOWN";
 	var versionApi = "UNKNOWN";
