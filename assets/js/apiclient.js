@@ -537,11 +537,11 @@ function loadTransmitters() {
 			// Set Markers on map
 			var markerIcon = L.icon({
 				iconUrl: './assets/img/marker-wifi.png',
-				iconSize:     [28, 30],
-				iconAnchor:   [15, 30],
-				popupAnchor:  [0, -25]
+				iconSize: [28, 30],
+				iconAnchor: [15, 30],
+				popupAnchor: [0, -25]
 			});
-			
+
 			if (markers !== undefined && mapInited) map.removeLayer(markers);
 			markers = new L.FeatureGroup();
 			$.each(data, function(i, item) {
