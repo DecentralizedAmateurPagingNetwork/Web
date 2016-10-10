@@ -781,6 +781,24 @@ function loadNodes() {
 			$("#statsNodesTotal").text(data.length);
 			$("#statsStartNodes").text(statCountOnline + " / " + data.length);
 
+			new Chart($("#chartNodes"), {
+			    type: 'pie',
+			    data: {
+			        labels: ["Online", "Offline"],
+			        datasets: [
+				        {
+				            data: [statCountOnline, statCountOffline],
+				            backgroundColor: ["#469408", "#D9230F",],
+				            hoverBackgroundColor: ["#469408", "#D9230F",]
+				        }]
+			    },
+			    options: {
+			        legend: {
+			            display: false
+			        }
+			    }
+			});
+
 			$("#formEditTransmitterNodeName").empty();
 			$.each(data, function (i, item) {
 				$("#formEditTransmitterNodeName").append($("<option>", {
