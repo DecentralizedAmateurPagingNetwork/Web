@@ -2,7 +2,6 @@ var callSignData, rubricData, transmitterData, transmitterGroupData, nodeData, u
 
 // Loads all data for every table
 function loadData() {
-	loadStartNews();
 	loadCalls();
 	loadNews();
 	loadCallSigns();
@@ -124,31 +123,6 @@ function loadNews() {
 	});
 }
 
-// Load all News for the home-page
-function loadStartNews() {
-	if (!isAdmin) return;
-
-	$.ajax({
-		url: config.apiUrl + "/news?rubricName=News",
-		type: "GET",
-		beforeSend: setCookieHeader,
-		success: function(data) {
-			var maxNews = 3;
-			var resString = "";
-			for (i = data.length - 1; i >= 0; i--) {
-				if (maxNews === 0) break;
-				resString += "<div class='list-group-item'>" +
-				"<h4 class='list-group-item-heading'>" + data[i].timestamp + "</h4>" +
-				"<p class='list-group-item-text'>" + data[i].text + "</p>" +
-				"</div>";
-				maxNews--;
-			}
-			$("#newsStart").html(resString);
-		},
-		error: handleError
-	});
-}
-
 // Add a News
 function postNews() {
 	if (checkForInput("container3-detail")) {
@@ -171,7 +145,6 @@ function postNews() {
 			showSuccessAlert();
 			returnFromNewsDetails();
 			loadNews();
-			loadStartNews();
 		},
 		error: handleError
 	});
