@@ -24,10 +24,7 @@ body > .navbar {
 }
 
 .divider-vertical {
-	border-left: 1px solid #F2F2F2;
-	border-right: 1px solid #FFF;
-	height: 40px;
-	margin: 0 5px;
+	display: none;
 }
 
 .help-block {
@@ -45,6 +42,13 @@ body > .navbar {
 @media (min-width:768px) {
 	.page-header h1 {
 		font-size: 4em;
+	}
+
+	.divider-vertical {
+		border-left: 1px solid #F2F2F2;
+		border-right: 1px solid #FFF;
+		height: 40px;
+		margin: 0 5px;
 	}
 
 	footer {
