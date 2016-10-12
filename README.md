@@ -3,6 +3,7 @@
 ## Installation
 * Copy `index.html`, `config.json` and `assets/` into your webserver's root-path.
 * Adjust `config.json` inside your webserver's root path.
+* Adjust `assets/js/custom.js` to run custom (analytics-)scripts (optional).
 * Done.
 
 ### Docker
