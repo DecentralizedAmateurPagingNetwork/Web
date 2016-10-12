@@ -68,6 +68,9 @@ function initPage() {
 	// add version-number
 	$("#footer_version_number").text(VERSION);
 
+	// do not show labels next to charts
+	Chart.defaults.global.legend.display = false;
+
 	// Remove Splash-Screen
 	$("#splashscreen").fadeOut(500);
 }
