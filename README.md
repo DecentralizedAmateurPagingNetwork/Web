@@ -49,6 +49,7 @@ git log v1.0.4...v1.0.5 --pretty=format:'* %s - %h'
 
 ## Used Software
 * [Bootstrap](https://getbootstrap.com) (MIT) / [Bootswatch](https://bootswatch.com) (MIT)
+* [Chart.js](https://github.com/chartjs/Chart.js) (MIT)
 * [Chosen](https://github.com/harvesthq/chosen) (MIT)
 * [DataTables](https://github.com/DataTables/DataTables) (MIT)
 * [Font Awesome](https://fortawesome.github.io/Font-Awesome) (SIL OFL 1.1 / MIT)
