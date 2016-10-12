@@ -6,28 +6,6 @@
 * Adjust `assets/js/custom.js` to run custom (analytics-)scripts (optional).
 * Done.
 
-### Docker
-
-#### Build Image
-Run inside the repositories's root-path:
-```
-docker build -t dapnet-web .
-```
-
-#### Download Image
-```
-docker pull ... (TBA)
-```
-
-#### Run Image
-* Copy and adjust `config.json` inside a freely chosen directory.
-* Run (see hint below):
-```
-docker run --name "dapnet-web" -d -p 8081:80 -v /home/user/dapnet-web/config.json:/app/config.json dapnet-web
-```
-* Remember to adjust the exposed port (`8081`) and path to config-file (`/home/user/dapnet-web/config.json`)
-* Done.
-
 ## Translations
 * Translations are stored inside `assets/langs/` and use a simple Key-Value-format.  
 * `languages.json` contains a list of all available languages.
