@@ -1,2 +1,6 @@
+# DAPNET Web
 config.json
+assets/js/custom.js
+
+# Development
 HTTP-Server-*
