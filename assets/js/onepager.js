@@ -10,6 +10,9 @@ var mapInited = false;
 *  # INITIALIZATION-PROCEDURE #
 *  ############################ */
 $(document).ready(function() {
+	// show welcome-message on console
+	console.log("%c DAPNET Web v" + VERSION + " ", "background: #112a2d; color: #bada55; font-size: large;");
+
 	// Load Config-file
 	$.getJSON("./config.json", function(data) {
 		config = data;
