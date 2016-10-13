@@ -858,11 +858,10 @@ function showDeleteAlert(deleteFunction) {
 		showCancelButton: true,
 		confirmButtonColor: "#DD6B55",
 		confirmButtonText: jQuery.i18n.prop("yes"),
-		cancelButtonText: jQuery.i18n.prop("cancel"),
-		closeOnConfirm: false
-	}, function() {
+		cancelButtonText: jQuery.i18n.prop("cancel")
+	}).then(function() {
 		deleteFunction();
-	});
+	}).done();
 }
 
 // SweetAlert Success Message
@@ -885,7 +884,7 @@ function showSuccessReloadAlert() {
 		text: jQuery.i18n.prop("alert_success_text"),
 		type: "success",
 		timer: 3000,
-	}, function() {
+	}).then(function() {
 		location.reload();
 	});
 }
@@ -895,9 +894,8 @@ function handleError(err) {
 	if (err.status === 0) {
 		swal({
 			title: jQuery.i18n.prop("alert_error_api_title"),
-			text: jQuery.i18n.prop("alert_error_api_text"),
-			type: "error",
-			html: true
+			html: jQuery.i18n.prop("alert_error_api_text"),
+			type: "error"
 		});
 		return;
 	}
@@ -913,9 +911,8 @@ function handleError(err) {
 
 	swal({
 		title: err.responseJSON.name + " (" + err.responseJSON.code + ")",
-		text: errorText,
-		type: "error",
-		html: true
+		html: errorText,
+		type: "error"
 	});
 }
 

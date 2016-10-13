@@ -35,4 +35,4 @@ git log v1.0.4...v1.0.5 --pretty=format:'* %s - %h'
 * [jQuery.i18n.properties](https://github.com/jquery-i18n-properties/jquery-i18n-properties) (MIT)
 * [js-cookie](https://github.com/js-cookie/js-cookie) (MIT)
 * [Leaflet](http://leafletjs.com) (2-clause BSD License)
-* [SweetAlert](https://github.com/t4t5/sweetalert) (MIT)
+* [SweetAlert2](https://github.com/limonte/sweetalert2) (MIT)
