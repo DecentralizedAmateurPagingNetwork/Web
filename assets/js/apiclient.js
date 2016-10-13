@@ -493,8 +493,6 @@ function loadTransmitters() {
 					statCountOffline++;
 				}
 			});
-			$("#statsTransmitterOnline").text(statCountOnline);
-			$("#statsTransmitterOffline").text(statCountOffline);
 			$("#statsTransmitterTotal").text(data.length);
 			$("#statsStartTransmitter").text(statCountOnline + " / " + data.length);
 
@@ -815,8 +813,6 @@ function loadNodes() {
 					statCountOffline++;
 				}
 			});
-			$("#statsNodesOnline").text(statCountOnline);
-			$("#statsNodesOffline").text(statCountOffline);
 			$("#statsNodesTotal").text(data.length);
 			$("#statsStartNodes").text(statCountOnline + " / " + data.length);
 
