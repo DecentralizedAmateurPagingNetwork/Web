@@ -545,8 +545,14 @@ function loadTransmitters() {
 			$("#formEditTransmitterGroupTransmitters").trigger("chosen:updated");
 
 			// Set Markers on map
-			var markerIcon = L.icon({
-				iconUrl: './assets/img/marker-wifi.png',
+			var markerOnline = L.icon({
+				iconUrl: './assets/img/marker-wifi-online.png',
+				iconSize: [28, 30],
+				iconAnchor: [15, 30],
+				popupAnchor: [0, -25]
+			});
+			var markerOffline = L.icon({
+				iconUrl: './assets/img/marker-wifi-offline.png',
 				iconSize: [28, 30],
 				iconAnchor: [15, 30],
 				popupAnchor: [0, -25]
@@ -555,7 +561,10 @@ function loadTransmitters() {
 			if (markers !== undefined && mapInited) map.removeLayer(markers);
 			markers = new L.FeatureGroup();
 			$.each(data, function(i, item) {
-				var marker = L.marker([item.latitude, item.longitude], {icon: markerIcon}).bindPopup("<b>" + item.name + "</b><br />" + jQuery.i18n.prop("transmitters_table_status") + ": " + item.status + "<br/>" + jQuery.i18n.prop("transmitters_add_power") + ": " + item.power + "<br />" + jQuery.i18n.prop("transmitters_add_timeslot") + ": " + item.timeSlot);
+				var markerIcon = markerOnline;
+				if (item.status !== "ONLINE") markerIcon = markerOffline;
+
+				var marker = L.marker([item.latitude, item.longitude], {icon: markerIcon}).bindPopup("<b>" + item.name + "</b><br />" + jQuery.i18n.prop("transmitters_add_power") + ": " + item.power + "<br />" + jQuery.i18n.prop("transmitters_add_timeslot") + ": " + item.timeSlot);
 				markers.addLayer(marker);
 			});
 			if (mapInited) map.addLayer(markers);
