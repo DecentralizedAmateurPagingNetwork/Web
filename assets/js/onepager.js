@@ -68,6 +68,9 @@ function initPage() {
 	$("#formEditNodeLatitude").on("change input", function(e) { coordinatesInput(this, e, 0, 90); });
 	$("#formEditNodeLongitude").on("change input", function(e) { coordinatesInput(this, e, 0, 180); });
 
+	// validate number input while typing
+	$("#formActivateRubricNumber").on("change input", function(e) { numberInput(this, e, 0, 2097151); });
+
 	// add version-number
 	$("#footer_version_number").text(VERSION);
 
@@ -826,7 +829,16 @@ function coordinatesInput(element, e, min, max) {
 	element.value = element.value.replace(",", ".");
 
 	// check for other input than numbers and dots AND for values between min and max
-	if (element.value.match(/([0-9.0-9])$/g) && element.value >= min && element.value <= max) {
+	if (element.value === "" || (element.value.match(/([0-9.0-9])$/g) && element.value >= min && element.value <= max)) {
+		$(element.parentElement).removeClass("has-error");
+	} else {
+		$(element.parentElement).addClass("has-error");
+	}
+}
+
+function numberInput (element, e, min, max) {
+	// check for other input than numbers AND for values between min and max
+	if (element.value === "" || (element.value.match(/([0-9])$/g) && element.value >= min && element.value <= max)) {
 		$(element.parentElement).removeClass("has-error");
 	} else {
 		$(element.parentElement).addClass("has-error");
