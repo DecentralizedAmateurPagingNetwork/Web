@@ -856,6 +856,10 @@ function checkForOverwriting(dataArray, searchString) {
 	return ret;
 }
 
+function apiTrueFalse(response) {
+	return response ? jQuery.i18n.prop("yes") : jQuery.i18n.prop("no");
+}
+
 // Unselects every option-item
 function unselectEverything(selector) {
 	$(selector + " option").each(function() {

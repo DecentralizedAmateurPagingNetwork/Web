@@ -39,7 +39,7 @@ function loadCalls() {
 					{ data: "callSignNames[, ]" },
 					{ data: "transmitterGroupNames[, ]" },
 					{ data: "text" },
-					{ data: "emergency" },
+					{ data: apiTrueFalse },
 					{ data: "ownerName" }
 				],
 				"order": [[ 0, "desc" ]]
@@ -925,7 +925,7 @@ function loadUsers() {
 				columns: [
 					{ data: "name" },
 					{ data: "mail" },
-					{ data: "admin" },
+					{ data: apiTrueFalse },
 					{ data: function(obj) {
 						var usersCallSigns = "";
 						$.each(callSignData, function(i, item) {
