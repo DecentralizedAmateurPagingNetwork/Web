@@ -100,8 +100,14 @@ function changeLanguage(lang) {
 				$(this).text($.i18n.prop(prop));
 			});
 
-			// Reload Data to update DataTables
-			loadData();
+			// if logged in
+			if (Cookies.get("auth") !== undefined) {
+				// translate jumbotron-message
+				$("#jumbotronText").text(jQuery.i18n.prop("home_jumbotron_text_loggedin", b64_to_utf8(Cookies.get("auth")).split(":")[0]));
+
+				// reload data to update DataTables
+				loadData();
+			}
 
 			// Adapt window-title
 			document.title = $("#container" + currentlyOpenContainer + " h1:first").text() + " - " + "DAPNET";
@@ -172,6 +178,7 @@ function loginSuccess(username) {
 				$("#nodes-add-node").hide();
 			}
 
+			$("#jumbotronText").text(jQuery.i18n.prop("home_jumbotron_text_loggedin", username));
 			$("#navbar-main-nav").show();
 			$("#homeStats").show();
 			$("#loggedin").text(username).css("display", "block");
