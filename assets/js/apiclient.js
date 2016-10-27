@@ -510,13 +510,13 @@ function loadTransmitters() {
 			});
 
 			var statCountRasppager1 = 0;
-			var statCountC9000 = 0;
+			var statCountXOS = 0;
 			var statCountSDRPager = 0;
 			$.each(data, function(index, value) {
 				if (value.deviceType === "RASPPAGER1") {
 					statCountRasppager1++;
-				} else if (value.deviceType === "C9000") {
-					statCountC9000++;
+				} else if (value.deviceType === "XOS") {
+					statCountXOS++;
 				} else if (value.deviceType === "SDRPAGER") {
 					statCountSDRPager++;
 				}
@@ -525,10 +525,10 @@ function loadTransmitters() {
 			new Chart($("#chartTransmitterTypes"), {
 			    type: 'pie',
 			    data: {
-			        labels: ["RASPPAGER1", "C9000", "SDRPAGER"],
+			        labels: ["RASPPAGER1", "XOS", "SDRPAGER"],
 			        datasets: [
 				        {
-				            data: [statCountRasppager1, statCountC9000, statCountSDRPager],
+				            data: [statCountRasppager1, statCountXOS, statCountSDRPager],
 				            backgroundColor: ["#3A01DF", "#DF7401", "#04B431"],
 				            hoverBackgroundColor: ["#3A01DF", "#DF7401", "#04B431"]
 				        }]
