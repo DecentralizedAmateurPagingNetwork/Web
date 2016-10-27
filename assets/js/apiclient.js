@@ -512,6 +512,7 @@ function loadTransmitters() {
 			var statCountRasppager1 = 0;
 			var statCountXOS = 0;
 			var statCountSDRPager = 0;
+			var statCountDV4mini = 0;
 			$.each(data, function(index, value) {
 				if (value.deviceType === "RASPPAGER1") {
 					statCountRasppager1++;
@@ -519,18 +520,20 @@ function loadTransmitters() {
 					statCountXOS++;
 				} else if (value.deviceType === "SDRPAGER") {
 					statCountSDRPager++;
+				} else if (value.deviceType === "DV4mini") {
+					statCountDV4mini++;
 				}
 			});
 
 			new Chart($("#chartTransmitterTypes"), {
 			    type: 'pie',
 			    data: {
-			        labels: ["RASPPAGER1", "XOS", "SDRPAGER"],
+			        labels: ["RASPPAGER1", "XOS", "SDRPAGER", "DV4mini"],
 			        datasets: [
 				        {
-				            data: [statCountRasppager1, statCountXOS, statCountSDRPager],
-				            backgroundColor: ["#3A01DF", "#DF7401", "#04B431"],
-				            hoverBackgroundColor: ["#3A01DF", "#DF7401", "#04B431"]
+				            data: [statCountRasppager1, statCountXOS, statCountSDRPager, statCountDV4mini],
+				            backgroundColor: ["#3A01DF", "#DF7401", "#04B431", "#029ACF"],
+				            hoverBackgroundColor: ["#3A01DF", "#DF7401", "#04B431", "#029ACF"]
 				        }]
 			    }
 			});
