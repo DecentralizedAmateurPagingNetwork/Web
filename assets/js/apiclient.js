@@ -39,7 +39,9 @@ function loadCalls() {
 					{ data: "callSignNames[, ]" },
 					{ data: "transmitterGroupNames[, ]" },
 					{ data: "text" },
-					{ data: apiTrueFalse },
+					{ data: function(obj) {
+						return apiTrueFalse(obj.emergency);
+					}},
 					{ data: "ownerName" }
 				],
 				"order": [[ 0, "desc" ]]
@@ -928,7 +930,9 @@ function loadUsers() {
 				columns: [
 					{ data: "name" },
 					{ data: "mail" },
-					{ data: apiTrueFalse },
+					{ data: function(obj) {
+						return apiTrueFalse(obj.admin);
+					}},
 					{ data: function(obj) {
 						var usersCallSigns = "";
 						$.each(callSignData, function(i, item) {
