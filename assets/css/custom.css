@@ -72,6 +72,10 @@ body > .navbar {
 	display: none;
 }
 
+table.dataTable thead th {
+    width: auto !important;
+}
+
 /* Bootstrap Additions for Chosen
 based on https://gist.github.com/koenpunt/6424137 */
 select.form-control + .chosen-container.chosen-container-single .chosen-single {
