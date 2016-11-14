@@ -187,6 +187,7 @@ function loginSuccess(username) {
 			$("#btnLogout").css("display", "block");
 
 			loadData();
+			setInterval(loadData, 30 * 1000);
 		},
 		error: function(err) {
 			return;
