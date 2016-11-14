@@ -1,4 +1,5 @@
 var callSignData, rubricData, transmitterData, transmitterGroupData, nodeData, userData;
+var chartNodes, chartTransmitter, chartTransmitterTypes;
 
 // Loads all data for every table
 function loadData() {
@@ -498,7 +499,11 @@ function loadTransmitters() {
 			$("#statsTransmitterTotal").text(data.length);
 			$("#statsStartTransmitter").text(statCountOnline + " / " + data.length);
 
-			new Chart($("#chartTransmitter"), {
+			if (chartTransmitter !== undefined) {
+				chartTransmitter.destroy();
+			}
+
+			chartTransmitter = new Chart($("#chartTransmitter"), {
 			    type: 'pie',
 			    data: {
 			        labels: ["Online", "Offline"],
@@ -527,7 +532,11 @@ function loadTransmitters() {
 				}
 			});
 
-			new Chart($("#chartTransmitterTypes"), {
+			if (chartTransmitterTypes !== undefined) {
+				chartTransmitterTypes.destroy();
+			}
+
+			chartTransmitterTypes = new Chart($("#chartTransmitterTypes"), {
 			    type: 'pie',
 			    data: {
 			        labels: ["RASPPAGER1", "XOS", "SDRPAGER", "DV4mini"],
@@ -830,7 +839,11 @@ function loadNodes() {
 			$("#statsNodesTotal").text(data.length);
 			$("#statsStartNodes").text(statCountOnline + " / " + data.length);
 
-			new Chart($("#chartNodes"), {
+			if (chartNodes !== undefined) {
+				chartNodes.destroy();
+			}
+
+			chartNodes = new Chart($("#chartNodes"), {
 			    type: 'pie',
 			    data: {
 			        labels: ["Online", "Offline"],
