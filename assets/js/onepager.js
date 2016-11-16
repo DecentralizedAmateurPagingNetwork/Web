@@ -221,6 +221,15 @@ function openContainer(id) {
 
 	$("table").css("width", "100%");
 
+	if (id == 6) {
+		renderChartTransmitter();
+		renderChartTransmitterTypes();
+	}
+
+	if (id == 8) {
+		renderChartNode();
+	}
+
 	if (id == 10) {
 		loadUpdateData();
 	}
@@ -797,6 +806,80 @@ function returnFromUserDetails() {
 function updateCharCount() {
 	var remaining = 80 - $("#formEditCallText").val().length;
 	$("#formEditCallTextRemaining").text(jQuery.i18n.prop("calls_add_chars_remaining", remaining));
+}
+
+
+/* ##########
+*  # CHARTS #
+*  ########## */
+
+// render online/offline chart of the node-tab
+function renderChartNode() {
+	if (chartNodesData === undefined || currentlyOpenContainer != 8) {
+		return;
+	}
+
+	if (chartNodes !== undefined) {
+		chartNodes.destroy();
+	}
+
+	chartNodes = new Chart($("#chartNodes"), {
+		type: "pie",
+		data: {
+			labels: ["Online", "Offline"],
+			datasets: [{
+				data: chartNodesData,
+				backgroundColor: ["#469408", "#D9230F"],
+				hoverBackgroundColor: ["#469408", "#D9230F"]
+			}]
+		}
+	});
+}
+
+// render online/offline chart of the transmitter-tab
+function renderChartTransmitter() {
+	if (chartTransmitterData === undefined || currentlyOpenContainer != 6) {
+		return;
+	}
+
+	if (chartTransmitter !== undefined) {
+		chartTransmitter.destroy();
+	}
+
+	chartTransmitter = new Chart($("#chartTransmitter"), {
+		type: "pie",
+		data: {
+			labels: ["Online", "Offline"],
+			datasets: [{
+				data: chartTransmitterData,
+				backgroundColor: ["#469408", "#D9230F"],
+				hoverBackgroundColor: ["#469408", "#D9230F"]
+			}]
+		}
+	});
+}
+
+// render transmitter-type chart of the node-tab
+function renderChartTransmitterTypes() {
+	if (chartTransmitterTypesData === undefined || currentlyOpenContainer != 6) {
+		return;
+	}
+
+	if (chartTransmitterTypes !== undefined) {
+		chartTransmitterTypes.destroy();
+	}
+
+	chartTransmitterTypes = new Chart($("#chartTransmitterTypes"), {
+		type: "pie",
+		data: {
+			labels: ["RASPPAGER1", "XOS", "SDRPAGER", "DV4mini"],
+			datasets: [{
+				data: chartTransmitterTypesData,
+				backgroundColor: ["#3A01DF", "#DF7401", "#04B431", "#029ACF"],
+				hoverBackgroundColor: ["#3A01DF", "#DF7401", "#04B431", "#029ACF"]
+			}]
+		}
+	});
 }
 
 

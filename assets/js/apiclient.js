@@ -1,5 +1,6 @@
 var callSignData, rubricData, transmitterData, transmitterGroupData, nodeData, userData;
 var chartNodes, chartTransmitter, chartTransmitterTypes;
+var chartNodesData, chartTransmitterData, chartTransmitterTypesData;
 
 // Loads all data for every table
 function loadData() {
@@ -499,55 +500,22 @@ function loadTransmitters() {
 			$("#statsTransmitterTotal").text(data.length);
 			$("#statsStartTransmitter").text(statCountOnline + " / " + data.length);
 
-			if (chartTransmitter !== undefined) {
-				chartTransmitter.destroy();
-			}
+			chartTransmitterData = [statCountOnline, statCountOffline];
+			renderChartTransmitter();
 
-			chartTransmitter = new Chart($("#chartTransmitter"), {
-			    type: 'pie',
-			    data: {
-			        labels: ["Online", "Offline"],
-			        datasets: [
-				        {
-				            data: [statCountOnline, statCountOffline],
-				            backgroundColor: ["#469408", "#D9230F"],
-				            hoverBackgroundColor: ["#469408", "#D9230F"]
-				        }]
-			    }
-			});
-
-			var statCountRasppager1 = 0;
-			var statCountXOS = 0;
-			var statCountSDRPager = 0;
-			var statCountDV4mini = 0;
+			chartTransmitterTypesData = [0, 0, 0, 0];
 			$.each(data, function(index, value) {
 				if (value.deviceType === "RASPPAGER1") {
-					statCountRasppager1++;
+					chartTransmitterTypesData[0] = chartTransmitterTypesData[0] + 1;
 				} else if (value.deviceType === "XOS") {
-					statCountXOS++;
+					chartTransmitterTypesData[1] = chartTransmitterTypesData[1] + 1;
 				} else if (value.deviceType === "SDRPAGER") {
-					statCountSDRPager++;
+					chartTransmitterTypesData[2] = chartTransmitterTypesData[2] + 1;
 				} else if (value.deviceType === "DV4mini") {
-					statCountDV4mini++;
+					chartTransmitterTypesData[3] = chartTransmitterTypesData[3] + 1;
 				}
 			});
-
-			if (chartTransmitterTypes !== undefined) {
-				chartTransmitterTypes.destroy();
-			}
-
-			chartTransmitterTypes = new Chart($("#chartTransmitterTypes"), {
-			    type: 'pie',
-			    data: {
-			        labels: ["RASPPAGER1", "XOS", "SDRPAGER", "DV4mini"],
-			        datasets: [
-				        {
-				            data: [statCountRasppager1, statCountXOS, statCountSDRPager, statCountDV4mini],
-				            backgroundColor: ["#3A01DF", "#DF7401", "#04B431", "#029ACF"],
-				            hoverBackgroundColor: ["#3A01DF", "#DF7401", "#04B431", "#029ACF"]
-				        }]
-			    }
-			});
+			renderChartTransmitterTypes();
 
 			$("#formEditTransmitterGroupTransmitters").empty();
 			$.each(data, function (i, item) {
@@ -839,22 +807,8 @@ function loadNodes() {
 			$("#statsNodesTotal").text(data.length);
 			$("#statsStartNodes").text(statCountOnline + " / " + data.length);
 
-			if (chartNodes !== undefined) {
-				chartNodes.destroy();
-			}
-
-			chartNodes = new Chart($("#chartNodes"), {
-			    type: 'pie',
-			    data: {
-			        labels: ["Online", "Offline"],
-			        datasets: [
-				        {
-				            data: [statCountOnline, statCountOffline],
-				            backgroundColor: ["#469408", "#D9230F"],
-				            hoverBackgroundColor: ["#469408", "#D9230F"]
-				        }]
-			    }
-			});
+			chartNodesData = [statCountOnline, statCountOffline];
+			renderChartNode();
 
 			$("#formEditTransmitterNodeName").empty();
 			$.each(data, function (i, item) {
