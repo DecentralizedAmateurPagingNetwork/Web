@@ -106,7 +106,7 @@ function changeLanguage(lang) {
 				$("#jumbotronText").text(jQuery.i18n.prop("home_jumbotron_text_loggedin", b64_to_utf8(Cookies.get("auth")).split(":")[0]));
 
 				// reload data to update DataTables
-				loadData();
+				loadOpenTabsData();
 			}
 
 			// Adapt window-title
@@ -186,8 +186,8 @@ function loginSuccess(username) {
 			$("#btnLogin").hide();
 			$("#btnLogout").css("display", "block");
 
-			loadData();
-			setInterval(loadData, 30 * 1000);
+			loadOpenTabsData();
+			setInterval(loadOpenTabsData, 30 * 1000);
 		},
 		error: function(err) {
 			return;
@@ -221,25 +221,37 @@ function openContainer(id) {
 
 	$("table").css("width", "100%");
 
-	if (id == 2) {
+	loadOpenTabsData();
+}
+
+// only load the data of the currently open tab
+function loadOpenTabsData() {
+	if (currentlyOpenContainer == 1) {
 		loadCalls();
-	} else if (id == 3) {
 		loadNews();
-	} else if (id == 4) {
-		loadCallSigns();
-	} else if (id == 5) {
-		loadRubrics();
-	} else if (id == 6) {
 		loadTransmitters();
-	} else if (id == 7) {
-		loadTransmitterGroups();
-	} else if (id == 8) {
 		loadNodes();
-	} else if (id == 9) {
 		loadUsers();
-	} else if (id == 10) {
+	} else if (currentlyOpenContainer == 2) {
+		loadCalls();
+	} else if (currentlyOpenContainer == 3) {
+		loadNews();
+	} else if (currentlyOpenContainer == 4) {
+		loadCallSigns();
+	} else if (currentlyOpenContainer == 5) {
+		loadRubrics();
+	} else if (currentlyOpenContainer == 6) {
+		loadTransmitters();
+	} else if (currentlyOpenContainer == 7) {
+		loadTransmitterGroups();
+	} else if (currentlyOpenContainer == 8) {
+		loadNodes();
+	} else if (currentlyOpenContainer == 9) {
+		// loadCallSigns calls loadUsers() to make sure that all users' callsigns have been loaded
+		loadCallSigns();
+	} else if (currentlyOpenContainer == 10) {
 		loadUpdateData();
-	} else if (id == 13 && !mapInited) {
+	} else if (currentlyOpenContainer == 13 && !mapInited) {
 		prepareMap();
 	}
 }
@@ -359,7 +371,11 @@ function initMap(tileServers) {
 	$("#mapLoading").hide();
 	mapInited = true;
 
-	if (markers !== undefined) map.addLayer(markers);
+	if (markers !== undefined) {
+		map.addLayer(markers);
+	} else {
+		loadTransmitters();
+	}
 }
 
 // Calculate a map-tile"s loading time. Returns -1 on timeout (after ~1.5s).

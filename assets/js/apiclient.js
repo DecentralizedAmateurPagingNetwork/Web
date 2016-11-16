@@ -2,21 +2,6 @@ var callSignData, rubricData, transmitterData, transmitterGroupData, nodeData, u
 var chartNodes, chartTransmitter, chartTransmitterTypes;
 var chartNodesData, chartTransmitterData, chartTransmitterTypesData;
 
-// Loads all data for every table
-function loadData() {
-	loadCalls();
-	loadNews();
-	loadCallSigns();
-	loadRubrics();
-	loadTransmitters();
-	loadTransmitterGroups();
-	loadNodes();
-
-	// users will be loaded after all call signs have been loaded
-	// to make sure there is data for the call sign column
-	//loadUsers();
-}
-
 /* #########################
 *  # INTERACT WITH THE API #
 *  ######################### */
@@ -24,7 +9,6 @@ function loadData() {
 // Load all Calls
 function loadCalls() {
 	if (!isAdmin) return;
-	if (currentlyOpenContainer != 2) return;
 
 	$.ajax({
 		url: config.apiUrl + "/calls",
@@ -102,7 +86,6 @@ function postCall() {
 // Load all News
 function loadNews() {
 	if (!isAdmin) return;
-	if (currentlyOpenContainer != 3) return;
 
 	$.ajax({
 		url: config.apiUrl + "/news",
@@ -160,8 +143,6 @@ function postNews() {
 
 // Load all CallSigns
 function loadCallSigns() {
-	if (currentlyOpenContainer != 4) return;
-
 	$.ajax({
 		url: config.apiUrl + "/callsigns",
 		type: "GET",
@@ -304,8 +285,6 @@ function deleteCallSign(name) {
 
 // Load all Rubrics
 function loadRubrics() {
-	if (currentlyOpenContainer != 5) return;
-
 	$.ajax({
 		url: config.apiUrl + "/rubrics",
 		type: "GET",
@@ -450,8 +429,6 @@ function sendRubricsActivation() {
 
 // Load all Transmitters
 function loadTransmitters() {
-	if (currentlyOpenContainer != 6) return;
-
 	$.ajax({
 		url: config.apiUrl + "/transmitters",
 		type: "GET",
@@ -645,8 +622,6 @@ function deleteTransmitter(name) {
 
 // Load all TransmitterGroups
 function loadTransmitterGroups() {
-	if (currentlyOpenContainer != 7) return;
-
 	$.ajax({
 		url: config.apiUrl + "/transmitterGroups",
 		type: "GET",
@@ -754,8 +729,6 @@ function deleteTransmitterGroup(name) {
 
 // Load all Nodes
 function loadNodes() {
-	if (currentlyOpenContainer != 8) return;
-
 	$.ajax({
 		url: config.apiUrl + "/nodes",
 		type: "GET",
@@ -903,8 +876,6 @@ function deleteNode(name) {
 
 // Load all Users
 function loadUsers() {
-	if (currentlyOpenContainer != 9) return;
-
 	$.ajax({
 		url: config.apiUrl + "/users",
 		type: "GET",
