@@ -221,20 +221,25 @@ function openContainer(id) {
 
 	$("table").css("width", "100%");
 
-	if (id == 6) {
-		renderChartTransmitter();
-		renderChartTransmitterTypes();
-	}
-
-	if (id == 8) {
-		renderChartNode();
-	}
-
-	if (id == 10) {
+	if (id == 2) {
+		loadCalls();
+	} else if (id == 3) {
+		loadNews();
+	} else if (id == 4) {
+		loadCallSigns();
+	} else if (id == 5) {
+		loadRubrics();
+	} else if (id == 6) {
+		loadTransmitters();
+	} else if (id == 7) {
+		loadTransmitterGroups();
+	} else if (id == 8) {
+		loadNodes();
+	} else if (id == 9) {
+		loadUsers();
+	} else if (id == 10) {
 		loadUpdateData();
-	}
-
-	if (id == 13 && !mapInited) {
+	} else if (id == 13 && !mapInited) {
 		prepareMap();
 	}
 }
