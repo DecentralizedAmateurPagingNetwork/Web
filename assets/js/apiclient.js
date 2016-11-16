@@ -46,7 +46,8 @@ function loadCalls() {
 					}},
 					{ data: "ownerName" }
 				],
-				"order": [[ 0, "desc" ]]
+				"order": [[ 0, "desc" ]],
+				"responsive": true
 			});
 
 			var statEmergency = 0;
@@ -118,7 +119,8 @@ function loadNews() {
 					{ data: "number" },
 					{ data: "text" },
 					{ data: "ownerName" }
-				]
+				],
+				"responsive": true
 			});
 
 			$("#statsNewsTotal, #statsStartNews").text(data.length);
@@ -184,7 +186,8 @@ function loadCallSigns() {
 						{ data: function (obj) {
 							return "---";
 						}}
-					]
+					],
+					"responsive": true
 				});
 			} else {
 				$("#tableCallSigns").DataTable({
@@ -202,7 +205,8 @@ function loadCallSigns() {
 							return "<a href='#4' onclick='editCallSign(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
 							"<a href='#4' onclick='deleteCallSign(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
 						}}
-					]
+					],
+					"responsive": true
 				});
 			}
 
@@ -323,7 +327,8 @@ function loadRubrics() {
 							"<a href='#5' onclick='deleteRubric(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
 						}
 					}}
-				]
+				],
+				"responsive": true
 			});
 
 			$("#statsRubricsTotal").text(data.length);
@@ -465,7 +470,8 @@ function loadTransmitters() {
 						{ data: function (obj) {
 							return "---";
 						}}
-					]
+					],
+					"responsive": true
 				});
 			} else {
 				$("#tableTransmitters").DataTable({
@@ -484,7 +490,8 @@ function loadTransmitters() {
 							return "<a href='#6' onclick='editTransmitter(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
 							"<a href='#6' onclick='deleteTransmitter(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
 						}}
-					]
+					],
+					"responsive": true
 				});
 			}
 
@@ -652,7 +659,8 @@ function loadTransmitterGroups() {
 						return "<a href='#7' onclick='editTransmitterGroup(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
 						"<a href='#7' onclick='deleteTransmitterGroup(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
 					}}
-				]
+				],
+				"responsive": true
 			});
 
 			$("#statsTransmitterGroupsTotal").text(data.length);
@@ -762,7 +770,8 @@ function loadNodes() {
 						{ data: function (obj) {
 							return "---";
 						}}
-					]
+					],
+					"responsive": true
 				});
 			} else {
 				$("#tableNodes").DataTable({
@@ -791,7 +800,8 @@ function loadNodes() {
 							return "<a href='#8' onclick='editNode(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
 							"<a href='#8' onclick='deleteNode(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
 						}}
-					]
+					],
+					"responsive": true
 				});
 			}
 
@@ -913,7 +923,8 @@ function loadUsers() {
 						return "<a href='#9' onclick='editUser(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
 						"<a href='#9' onclick='deleteUser(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
 					}}
-				]
+				],
+				"responsive": true
 			});
 
 			var statAdmin = 0;
