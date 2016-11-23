@@ -186,7 +186,7 @@ function loginSuccess(username) {
 			$("#btnLogin").hide();
 			$("#btnLogout").css("display", "block");
 
-			loadOpenTabsData();
+			loadAllData();
 			setInterval(loadOpenTabsData, 30 * 1000);
 		},
 		error: function(err) {
@@ -224,15 +224,20 @@ function openContainer(id) {
 	loadOpenTabsData();
 }
 
-// only load the data of the currently open tab
+// load every tab's data
+function loadAllData() {
+	loadCalls();
+	loadCallSigns();
+	loadNews();
+	loadRubrics();
+	loadTransmitters();
+	loadTransmitterGroups();
+	loadNodes();
+}
+
+// load the data of the currently open tab
 function loadOpenTabsData() {
-	if (currentlyOpenContainer == 1) {
-		loadCalls();
-		loadNews();
-		loadTransmitters();
-		loadNodes();
-		loadUsers();
-	} else if (currentlyOpenContainer == 2) {
+	if (currentlyOpenContainer == 2) {
 		loadCalls();
 	} else if (currentlyOpenContainer == 3) {
 		loadNews();
