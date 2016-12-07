@@ -6,9 +6,9 @@ var isAdmin = false;
 var map, layer, markers;
 var mapInited = false;
 
-/* ############################
-*  # INITIALIZATION-PROCEDURE #
-*  ############################ */
+/*  ############################
+ *  # INITIALIZATION-PROCEDURE #
+ *  ############################ */
 $(document).ready(function() {
 	// show welcome-message on console
 	console.log("%c DAPNET Web v" + VERSION + " ", "background: #112a2d; color: #bada55; font-size: large;");
@@ -30,7 +30,7 @@ $(document).ready(function() {
 			currentLanguage = $(this)[0].language;
 
 			// Translate all DOM-elements with "data-i18n"-attribute
-			$("[data-i18n]").each(function () {
+			$("[data-i18n]").each(function() {
 				var prop = $(this).data("i18n");
 				$(this).text($.i18n.prop(prop));
 			});
@@ -55,21 +55,37 @@ function initPage() {
 	});
 
 	// Login on Enter-Keypress
-	$("#loginUsername").keypress(function (e) { if (e.which == 13) loginWithForm(); });
-	$("#loginPassword").keypress(function (e) { if (e.which == 13) loginWithForm(); });
+	$("#loginUsername").keypress(function(e) {
+		if (e.which == 13) loginWithForm();
+	});
+	$("#loginPassword").keypress(function(e) {
+		if (e.which == 13) loginWithForm();
+	});
 
 	// container6-detail Character-Count
 	updateCharCount();
-	$("#formEditCallText").on("input", function() { updateCharCount(); });
+	$("#formEditCallText").on("input", function() {
+		updateCharCount();
+	});
 
 	// validate latitude / longitude input while typing
-	$("#formEditTransmitterLatitude").on("change input", function(e) { coordinatesInput(this, e, 0, 90); });
-	$("#formEditTransmitterLongitude").on("change input", function(e) { coordinatesInput(this, e, 0, 180); });
-	$("#formEditNodeLatitude").on("change input", function(e) { coordinatesInput(this, e, 0, 90); });
-	$("#formEditNodeLongitude").on("change input", function(e) { coordinatesInput(this, e, 0, 180); });
+	$("#formEditTransmitterLatitude").on("change input", function() {
+		coordinatesInput(this, 0, 90);
+	});
+	$("#formEditTransmitterLongitude").on("change input", function() {
+		coordinatesInput(this, 0, 180);
+	});
+	$("#formEditNodeLatitude").on("change input", function() {
+		coordinatesInput(this, 0, 90);
+	});
+	$("#formEditNodeLongitude").on("change input", function() {
+		coordinatesInput(this, 0, 180);
+	});
 
 	// validate number input while typing
-	$("#formActivateRubricNumber").on("change input", function(e) { numberInput(this, e, 0, 2097151); });
+	$("#formActivateRubricNumber").on("change input", function() {
+		numberInput(this, 0, 2097151);
+	});
 
 	// add version-number
 	$("#footer_version_number").text(VERSION);
@@ -95,7 +111,7 @@ function changeLanguage(lang) {
 			currentLanguage = lang;
 
 			// Translate all DOM-elements with "data-i18n"-attribute
-			$("[data-i18n]").each(function () {
+			$("[data-i18n]").each(function() {
 				var prop = $(this).data("i18n");
 				$(this).text($.i18n.prop(prop));
 			});
@@ -103,7 +119,7 @@ function changeLanguage(lang) {
 			// if logged in
 			if (Cookies.get("auth") !== undefined) {
 				// translate jumbotron-message
-				$("#jumbotronText").text(jQuery.i18n.prop("home_jumbotron_text_loggedin", b64_to_utf8(Cookies.get("auth")).split(":")[0]));
+				$("#jumbotronText").text(jQuery.i18n.prop("home_jumbotron_text_loggedin", atob(Cookies.get("auth")).split(":")[0]));
 
 				// reload data to update DataTables
 				loadOpenTabsData();
@@ -115,15 +131,15 @@ function changeLanguage(lang) {
 	});
 }
 
-/* ###########################
-*  # MANAGE LOGIN AND LOGOUT #
-*  ########################### */
+/*  ###########################
+ *  # MANAGE LOGIN AND LOGOUT #
+ *  ########################### */
 
 // Login using Cookie
 function loginWithCookie() {
 	var authData = Cookies.get("auth");
 	if (authData !== undefined && authData.username !== "") {
-		loginSuccess(b64_to_utf8(authData).split(":")[0]);
+		loginSuccess(atob(authData).split(":")[0]);
 	}
 }
 
@@ -139,17 +155,17 @@ function loginWithForm() {
 			contentType: "application/json",
 			dataType: "json",
 			beforeSend: function(req) {
-				req.setRequestHeader("Authorization", "Basic " + utf8_to_b64(username + ":" + password));
+				req.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
 			},
-			success: function(data) {
-				Cookies.set("auth", utf8_to_b64(username + ":" + password), { expires: 14 });
+			success: function() {
+				Cookies.set("auth", btoa(username + ":" + password), {expires: 14});
 				loginWithCookie();
 
 				$("#modalLogin").modal("toggle");
 				$("#loginUsername").val("");
 				$("#loginPassword").val("");
 			},
-			error: function(err) {
+			error: function() {
 				$("#modalLoginAlert").show();
 			}
 		});
@@ -181,16 +197,17 @@ function loginSuccess(username) {
 			$("#jumbotronText").text(jQuery.i18n.prop("home_jumbotron_text_loggedin", username));
 			$("#navbar-main-nav").show();
 			$("#homeStats").show();
-			$("#loggedin").text(username).css("display", "block");
-			$("#loggedin").click(function() { editUser(username); });
+
+			var loggedInButton = $("#loggedin");
+			loggedInButton.text(username).css("display", "block");
+			loggedInButton.click(function() {
+				editUser(username);
+			});
 			$("#btnLogin").hide();
 			$("#btnLogout").css("display", "block");
 
 			loadAllData();
 			setInterval(loadOpenTabsData, 30 * 1000);
-		},
-		error: function(err) {
-			return;
 		}
 	});
 }
@@ -202,9 +219,9 @@ function logout() {
 }
 
 
-/* #################
-*  # UI-MANAGEMENT #
-*  ################# */
+/*  #################
+ *  # UI-MANAGEMENT #
+ *  ################# */
 
 // Switch between Containers
 var currentlyOpenContainer = 1;
@@ -288,12 +305,12 @@ function loadUpdateData() {
 						url: hamnetUpdateServer,
 						type: "GET",
 						timeout: 1000,
-						success: function(data) {
-							$("#update_iframe").html("<iframe src='" + hamnetUpdateServer + "?core=" + versionCore + "&api=" + versionApi + "&web=" + VERSION + "' width='600px' height='310px'></iframe>");
+						success: function() {
+							$("#update_iframe").html("<iframe src=\"" + hamnetUpdateServer + "?core=" + versionCore + "&api=" + versionApi + "&web=" + VERSION + "\" width=\"600px\" height=\"310px\"></iframe>");
 						},
 						error: function(err) {
 							if (err.status === 0) {
-								$("#update_iframe").html("<iframe src='" + internetUpdateServer + "?core=" + versionCore + "&api=" + versionApi + "&web=" + VERSION + "' width='600px' height='310px'></iframe>");
+								$("#update_iframe").html("<iframe src=\"" + internetUpdateServer + "?core=" + versionCore + "&api=" + versionApi + "&web=" + VERSION + "\" width=\"600px\" height=\"310px\"></iframe>");
 							} else {
 								handleError(err);
 							}
@@ -312,9 +329,9 @@ function loadUpdateData() {
 }
 
 
-/* ##################
-*  # MAP-MANAGEMENT #
-*  ################## */
+/*  ##################
+ *  # MAP-MANAGEMENT #
+ *  ################## */
 
 // Look for a load-balancer inside the Hamnet and query all returned tile-servers for availability.
 // If the user is not using the Hamnet, use the default tile-servers.
@@ -368,7 +385,7 @@ function initMap(tileServers) {
 
 	layer = L.tileLayer("http://{s}/{z}/{x}/{y}.png", {
 		maxZoom: 19,
-		attribution: "&copy; <a href='http://www.openstreetmap.org/copyright' target='_blank'>OpenStreetMap</a>",
+		attribution: "&copy; <a href=\"http://www.openstreetmap.org/copyright\" target=\"_blank\">OpenStreetMap</a>",
 		subdomains: tileServers
 	});
 	map = L.map("map").setView([51, 10], 5).addLayer(layer);
@@ -407,16 +424,16 @@ function getMapTileLoadTime(url, fn) {
 }
 
 
-/* ########################
-*  # CONTAINER-MANAGEMENT #
-*  ######################## */
+/*  ########################
+ *  # CONTAINER-MANAGEMENT #
+ *  ######################## */
 
 // Add a new Call
 function addCall() {
 	$("#container2-overview").hide();
 	$("#container2-detail").show();
 
-	var username = b64_to_utf8(Cookies.get("auth")).split(":")[0].toUpperCase();
+	var username = atob(Cookies.get("auth")).split(":")[0].toUpperCase();
 	$("#formEditCallText").val(username + ": ").focus()[0].setSelectionRange(username.length + 2, username.length + 2);
 	updateCharCount();
 }
@@ -485,12 +502,14 @@ function editCallSign(name) {
 			});
 			$("#formEditCallSignsPagersNumber").val(pagerNumbers);
 			$("#formEditCallSignsPagersName").val(pagerNames);
-			$("#formEditCallSignOwners option").each(function() {
+
+			var owners = $("#formEditCallSignOwners");
+			owners.find("option").each(function() {
 				if ($.inArray($(this).text(), data.ownerNames) !== -1) {
 					$(this).prop("selected", true);
 				}
 			});
-			$("#formEditCallSignOwners").trigger("chosen:updated");
+			owners.trigger("chosen:updated");
 
 			$("#container4-overview").hide();
 			$("#container4-detail").show();
@@ -537,18 +556,22 @@ function editRubric(name) {
 			$("#formEditRubricName").val(editRubricName);
 			$("#formEditRubricLabel").val(data.label);
 			$("#formEditRubricNumber").val(data.number);
-			$("#formEditRubricTransmitterGroups option").each(function() {
+
+			var groups = $("#formEditRubricTransmitterGroups");
+			groups.find("option").each(function() {
 				if ($.inArray($(this).text(), data.transmitterGroupNames) !== -1) {
 					$(this).prop("selected", true);
 				}
 			});
-			$("#formEditRubricTransmitterGroups").trigger("chosen:updated");
-			$("#formEditRubricOwners option").each(function() {
+			groups.trigger("chosen:updated");
+
+			var owners = $("#formEditRubricOwners");
+			owners.find("option").each(function() {
 				if ($.inArray($(this).text(), data.ownerNames) !== -1) {
 					$(this).prop("selected", true);
 				}
 			});
-			$("#formEditRubricOwners").trigger("chosen:updated");
+			owners.trigger("chosen:updated");
 
 			$("#container5-overview").hide();
 			$("#container5-detail").show();
@@ -609,20 +632,26 @@ function editTransmitter(name) {
 		},
 		success: function(data) {
 			$("#formEditTransmitterName").val(editTransmitterName);
-			$("#formEditTransmitterNodeName option").each(function() {
+
+			var nodeName = $("#formEditTransmitterNodeName");
+			nodeName.find("option").each(function() {
 				if ($(this).text() === data.nodeName) {
 					$(this).prop("selected", true);
 				}
 			});
-			$("#formEditTransmitterNodeName").trigger("chosen:updated");
-			$("#formEditTransmitterLatitude").val(data.latitude);
+			nodeName.trigger("chosen:updated");
+
+			var latitude = $("#formEditTransmitterLatitude");
+			latitude.val(data.latitude);
 			if (data.latitude < 0) {
-				$("#formEditTransmitterLatitude").val(data.latitude * -1);
+				latitude.val(data.latitude * -1);
 				$("#formEditTransmitterLatitudeOrientation").val("-1");
 			}
-			$("#formEditTransmitterLongitude").val(data.longitude);
+
+			var longitude = $("#formEditTransmitterLongitude");
+			longitude.val(data.longitude);
 			if (data.longitude < 0) {
-				$("#formEditTransmitterLongitude").val(data.longitude * -1);
+				longitude.val(data.longitude * -1);
 				$("#formEditTransmitterLongitudeOrientation").val("-1");
 			}
 			$("#formEditTransmitterPower").val(data.power);
@@ -634,14 +663,15 @@ function editTransmitter(name) {
 				$("#formEditTransmitterTimeslot" + data.timeSlot.charAt(i)).prop("checked", true);
 			}
 
-			$("#formEditTransmitterOwners").val(data.ownerNames.join("\n"));
+			var owners = $("#formEditTransmitterOwners");
+			owners.val(data.ownerNames.join("\n"));
 			$("#formEditTransmitterDeviceType").val(data.deviceType);
-			$("#formEditTransmitterOwners option").each(function() {
+			owners.find("option").each(function() {
 				if ($.inArray($(this).text(), data.ownerNames) !== -1) {
 					$(this).prop("selected", true);
 				}
 			});
-			$("#formEditTransmitterOwners").trigger("chosen:updated");
+			owners.trigger("chosen:updated");
 
 			$("#container6-overview").hide();
 			$("#container6-detail").show();
@@ -689,21 +719,24 @@ function editTransmitterGroup(name) {
 			req.setRequestHeader("Authorization", "Basic " + Cookies.get("auth"));
 		},
 		success: function(data) {
-			$("#formEditTransmitterGroupName").val(editTransmitterGroupName);
-			$("#formEditTransmitterGroupName").prop("disabled", true);
+			$("#formEditTransmitterGroupName").val(editTransmitterGroupName).prop("disabled", true);
 			$("#formEditTransmitterGroupDescription").val(data.description);
-			$("#formEditTransmitterGroupTransmitters option").each(function() {
+
+			var transmitters = $("#formEditTransmitterGroupTransmitters");
+			transmitters.find("option").each(function() {
 				if ($.inArray($(this).text(), data.transmitterNames) !== -1) {
 					$(this).prop("selected", true);
 				}
 			});
-			$("#formEditTransmitterGroupTransmitters").trigger("chosen:updated");
-			$("#formEditTransmitterGroupOwners option").each(function() {
+			transmitters.trigger("chosen:updated");
+
+			var owners = $("#formEditTransmitterGroupOwners");
+			owners.find("option").each(function() {
 				if ($.inArray($(this).text(), data.ownerNames) !== -1) {
 					$(this).prop("selected", true);
 				}
 			});
-			$("#formEditTransmitterGroupOwners").trigger("chosen:updated");
+			owners.trigger("chosen:updated");
 
 			$("#container7-overview").hide();
 			$("#container7-detail").show();
@@ -745,20 +778,23 @@ function editNode(name) {
 			req.setRequestHeader("Authorization", "Basic " + Cookies.get("auth"));
 		},
 		success: function(data) {
-			$("#formEditNodeName").val(data.name);
-			$("#formEditNodeLatitude").val(data.latitude);
+			$("#formEditNodeName").val(data.name).prop("disabled", true);
+
+			var latitude = $("#formEditNodeLatitude");
+			latitude.val(data.latitude);
 			if (data.latitude < 0) {
-				$("#formEditNodeLatitude").val(data.latitude * -1);
+				latitude.val(data.latitude * -1);
 				$("#formEditNodeLatitudeOrientation").val("-1");
 			}
-			$("#formEditNodeLongitude").val(data.longitude);
+
+			var longitude = $("#formEditNodeLongitude");
+			longitude.val(data.longitude);
 			if (data.longitude < 0) {
-				$("#formEditNodeLongitude").val(data.longitude * -1);
+				longitude.val(data.longitude * -1);
 				$("#formEditNodeLongitudeOrientation").val("-1");
 			}
 			$("#formEditNodeStatus").val(data.status);
 			$("#formEditNodeKey").val(data.key);
-			$("#formEditNodeName").prop("disabled", true);
 
 			$("#container8-overview").hide();
 			$("#container8-detail").show();
@@ -802,8 +838,7 @@ function editUser(name) {
 			req.setRequestHeader("Authorization", "Basic " + Cookies.get("auth"));
 		},
 		success: function(data) {
-			$("#formEditUserName").val(data.name);
-			$("#formEditUserName").prop("disabled", true);
+			$("#formEditUserName").val(data.name).prop("disabled", true);
 			$("#formEditUserMail").val(data.mail);
 			$("#formEditUserAdmin").prop("checked", data.admin);
 
@@ -835,9 +870,9 @@ function updateCharCount() {
 }
 
 
-/* ##########
-*  # CHARTS #
-*  ########## */
+/*  ##########
+ *  # CHARTS #
+ *  ########## */
 
 // render online/offline chart of the node-tab
 function renderChartNode() {
@@ -909,15 +944,16 @@ function renderChartTransmitterTypes() {
 }
 
 
-/* ###########
-*  # HELPERS #
-*  ########### */
+/*  ###########
+ *  # HELPERS #
+ *  ########### */
 
 // Check for form-input
 function checkForInput(formId) {
 	var errorFound = false;
+	var form = $("#" + formId);
 
-	$("#" + formId).find(":input").each(function() {
+	form.find(":input").each(function() {
 		if ($(this)[0].id === "") return "non-false";
 		if ($(this)[0].value === "") {
 			$(this).parent().addClass("has-error");
@@ -927,7 +963,7 @@ function checkForInput(formId) {
 		}
 	});
 
-	$("#" + formId).find("select").each(function() {
+	form.find("select").each(function() {
 		if ($(this)[0].id === "") return "non-false";
 		if ($("#" + $(this)[0].id + " :selected").length === 0) {
 			$(this).parent().addClass("has-error");
@@ -941,7 +977,7 @@ function checkForInput(formId) {
 }
 
 // Manual input checking for latitude / longitude
-function coordinatesInput(element, e, min, max) {
+function coordinatesInput(element, min, max) {
 	// Replace comma with dot
 	element.value = element.value.replace(",", ".");
 
@@ -953,7 +989,7 @@ function coordinatesInput(element, e, min, max) {
 	}
 }
 
-function numberInput (element, e, min, max) {
+function numberInput(element, min, max) {
 	// check for other input than numbers AND for values between min and max
 	if (element.value === "" || (element.value.match(/([0-9])$/g) && element.value >= min && element.value <= max)) {
 		$(element.parentElement).removeClass("has-error");
@@ -1019,7 +1055,7 @@ function showSuccessReloadAlert() {
 		title: jQuery.i18n.prop("alert_success_title"),
 		text: jQuery.i18n.prop("alert_success_text"),
 		type: "success",
-		timer: 3000,
+		timer: 3000
 	}).then(function() {
 		location.reload();
 	});
@@ -1039,7 +1075,7 @@ function handleError(err) {
 	var errorText = err.responseJSON.message;
 	if (err.responseJSON.code == 4001) {
 		var jsonErrors = "<ul style=\"text-align:left\">";
-		for (i = 0; i < err.responseJSON.violations.length; i++) {
+		for (var i = 0; i < err.responseJSON.violations.length; i++) {
 			jsonErrors += "<li>" + err.responseJSON.violations[i].field + " " + err.responseJSON.violations[i].message + " (" + err.responseJSON.violations[i].code + " - " + err.responseJSON.violations[i].constraint + ")</li>";
 		}
 		errorText += "</ul><br />" + jsonErrors;
@@ -1068,16 +1104,6 @@ function handleOverwriteError() {
 		text: jQuery.i18n.prop("alert_overwrite_text"),
 		type: "error"
 	});
-}
-
-// Base64: UTF-8 to Base64
-function utf8_to_b64(str) {
-	return window.btoa(unescape(encodeURIComponent(str)));
-}
-
-// Base64: Base64 to UTF-8
-function b64_to_utf8(str) {
-	return decodeURIComponent(escape(window.atob(str)));
 }
 
 // Hide alert but do not remove it on close

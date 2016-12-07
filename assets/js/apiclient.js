@@ -3,8 +3,8 @@ var chartNodes, chartTransmitter, chartTransmitterTypes;
 var chartNodesData, chartTransmitterData, chartTransmitterTypesData;
 
 /* #########################
-*  # INTERACT WITH THE API #
-*  ######################### */
+ *  # INTERACT WITH THE API #
+ *  ######################### */
 
 // Load all Calls
 function loadCalls() {
@@ -15,23 +15,26 @@ function loadCalls() {
 		type: "GET",
 		beforeSend: setCookieHeader,
 		success: function(data) {
-			$("#tableCalls").DataTable().destroy();
-			$("#tableCalls").DataTable({
+			var table = $("#tableCalls");
+			table.DataTable().destroy();
+			table.DataTable({
 				data: data,
 				language: {
 					url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 				},
 				columns: [
-					{ data: "timestamp" },
-					{ data: "callSignNames[, ]" },
-					{ data: "transmitterGroupNames[, ]" },
-					{ data: "text" },
-					{ data: function(obj) {
-						return apiTrueFalse(obj.emergency);
-					}},
-					{ data: "ownerName" }
+					{data: "timestamp"},
+					{data: "callSignNames[, ]"},
+					{data: "transmitterGroupNames[, ]"},
+					{data: "text"},
+					{
+						data: function(obj) {
+							return apiTrueFalse(obj.emergency);
+						}
+					},
+					{data: "ownerName"}
 				],
-				"order": [[ 0, "desc" ]],
+				"order": [[0, "desc"]],
 				"responsive": true
 			});
 
@@ -54,11 +57,11 @@ function postCall() {
 	}
 
 	var callSignNames = [];
-	$("#formEditCallCallsign option").each(function() {
+	$("#formEditCallCallsign").find("option").each(function() {
 		if (this.selected) callSignNames.push(this.value);
 	});
 	var transmitterGroupNames = [];
-	$("#formEditCallTransmitterGroup option").each(function() {
+	$("#formEditCallTransmitterGroup").find("option").each(function() {
 		if (this.selected) transmitterGroupNames.push(this.value);
 	});
 
@@ -74,7 +77,7 @@ function postCall() {
 			emergency: $("#formEditCallEmergency").prop("checked")
 		}),
 		beforeSend: setCookieHeader,
-		success: function(data) {
+		success: function() {
 			showSuccessAlert();
 			returnFromCallDetails();
 			loadCalls();
@@ -92,18 +95,19 @@ function loadNews() {
 		type: "GET",
 		beforeSend: setCookieHeader,
 		success: function(data) {
-			$("#tableNews").DataTable().destroy();
-			$("#tableNews").DataTable({
+			var table = $("#tableNews");
+			table.DataTable().destroy();
+			table.DataTable({
 				data: data,
 				language: {
 					url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 				},
 				columns: [
-					{ data: "timestamp" },
-					{ data: "rubricName" },
-					{ data: "number" },
-					{ data: "text" },
-					{ data: "ownerName" }
+					{data: "timestamp"},
+					{data: "rubricName"},
+					{data: "number"},
+					{data: "text"},
+					{data: "ownerName"}
 				],
 				"responsive": true
 			});
@@ -132,7 +136,7 @@ function postNews() {
 			number: $("#formEditNewsNumber").val()
 		}),
 		beforeSend: setCookieHeader,
-		success: function(data) {
+		success: function() {
 			showSuccessAlert();
 			returnFromNewsDetails();
 			loadNews();
@@ -150,46 +154,43 @@ function loadCallSigns() {
 		success: function(data) {
 			callSignData = data;
 
-			$("#tableCallSigns").DataTable().destroy();
+			var table = $("#tableCallSigns");
+			table.DataTable().destroy();
 
 			if (!isAdmin) {
-				$("#tableCallSigns").DataTable({
+				table.DataTable({
 					data: data,
 					language: {
 						url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 					},
 					columns: [
-						{ data: "name" },
-						{ data: "description" },
-						{ data: function (obj) {
-							return "---";
-						}},
-						{ data: function (obj) {
-							return "---";
-						}},
-						{ data: "ownerNames[, ]" },
-						{ data: function (obj) {
-							return "---";
-						}}
+						{data: "name"},
+						{data: "description"},
+						{data: noDataEntry},
+						{data: noDataEntry},
+						{data: "ownerNames[, ]"},
+						{data: noDataEntry}
 					],
 					"responsive": true
 				});
 			} else {
-				$("#tableCallSigns").DataTable({
+				table.DataTable({
 					data: data,
 					language: {
 						url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 					},
 					columns: [
-						{ data: "name" },
-						{ data: "description" },
-						{ data: "pagers.0.number" },
-						{ data: "pagers.0.name" },
-						{ data: "ownerNames[, ]" },
-						{ data: function (obj) {
-							return "<a href='#4' onclick='editCallSign(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
-							"<a href='#4' onclick='deleteCallSign(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
-						}}
+						{data: "name"},
+						{data: "description"},
+						{data: "pagers.0.number"},
+						{data: "pagers.0.name"},
+						{data: "ownerNames[, ]"},
+						{
+							data: function(obj) {
+								return "<a href=\"#4\" onclick=\"editCallSign('" + obj.name + "')\"><i class=\"fa fa-pencil\" title=\"" + jQuery.i18n.prop('container_table_actions_edit') + "\"></i></a> " +
+									"<a href=\"#4\" onclick=\"deleteCallSign('" + obj.name + "')\"><i class=\"fa fa-trash\" title=\"" + jQuery.i18n.prop('container_table_actions_delete') + "\"></i></a>";
+							}
+						}
 					],
 					"responsive": true
 				});
@@ -197,14 +198,15 @@ function loadCallSigns() {
 
 			$("#statsCallSignsTotal").text(data.length);
 
-			$("#formEditCallCallsign").empty();
-			$.each(data, function (i, item) {
-				$("#formEditCallCallsign").append($("<option>", {
+			var usages = $("#formEditCallCallsign");
+			usages.empty();
+			$.each(data, function(i, item) {
+				usages.append($("<option>", {
 					value: item.name,
-					text : item.name
+					text: item.name
 				}));
 			});
-			$("#formEditCallCallsign").trigger("chosen:updated");
+			usages.trigger("chosen:updated");
 
 			// load users after all calls signs have been loaded
 			loadUsers();
@@ -220,12 +222,13 @@ function putCallSign() {
 		return;
 	}
 
+	var callSignName = $("#formEditCallSignName");
 	var urlName = editCallSignName;
 	if (urlName === "" || urlName === undefined || urlName === null) {
-		urlName = $("#formEditCallSignName").val();
+		urlName = callSignName.val();
 	}
 
-	if (checkForOverwriting(callSignData, urlName) && !$("#formEditCallSignName").prop("disabled")) {
+	if (checkForOverwriting(callSignData, urlName) && !callSignName.prop("disabled")) {
 		handleOverwriteError();
 		return;
 	}
@@ -233,15 +236,15 @@ function putCallSign() {
 	var pagerNumbers = $("#formEditCallSignsPagersNumber").val().split("\n");
 	var pagerNames = $("#formEditCallSignsPagersName").val().split("\n");
 	var pagers = [];
-	for (i = 0; i < pagerNumbers.length; i++) {
-		item = {};
+	for (var i = 0; i < pagerNumbers.length; i++) {
+		var item = {};
 		item.number = pagerNumbers[i];
 		item.name = pagerNames[i];
 
 		pagers.push(item);
 	}
 	var ownerNames = [];
-	$("#formEditCallSignOwners option").each(function() {
+	$("#formEditCallSignOwners").find("option").each(function() {
 		if (this.selected) ownerNames.push(this.value);
 	});
 
@@ -256,7 +259,7 @@ function putCallSign() {
 			ownerNames: ownerNames
 		}),
 		beforeSend: setCookieHeader,
-		success: function(data) {
+		success: function() {
 			showSuccessAlert();
 			returnFromCallSignDetails();
 			loadCallSigns();
@@ -274,7 +277,7 @@ function deleteCallSign(name) {
 			url: config.apiUrl + "/callsigns/" + name,
 			type: "DELETE",
 			beforeSend: setCookieHeader,
-			success: function(data) {
+			success: function() {
 				showSuccessAlert();
 				loadCallSigns();
 			},
@@ -292,40 +295,44 @@ function loadRubrics() {
 		success: function(data) {
 			rubricData = data;
 
-			$("#tableRubrics").DataTable().destroy();
-			$("#tableRubrics").DataTable({
+			var table = $("#tableRubrics");
+			table.DataTable().destroy();
+			table.DataTable({
 				data: data,
 				language: {
 					url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 				},
 				columns: [
-					{ data: "number" },
-					{ data: "name" },
-					{ data: "label" },
-					{ data: "transmitterGroupNames[, ]" },
-					{ data: "ownerNames[, ]" },
-					{ data: function (obj) {
-						if (!isAdmin) {
-							return "---";
-						} else {
-							return "<a href='#5' onclick='editRubric(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
-							"<a href='#5' onclick='deleteRubric(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
+					{data: "number"},
+					{data: "name"},
+					{data: "label"},
+					{data: "transmitterGroupNames[, ]"},
+					{data: "ownerNames[, ]"},
+					{
+						data: function(obj) {
+							if (!isAdmin) {
+								return "---";
+							} else {
+								return "<a href=\"#5\" onclick=\"editRubric('" + obj.name + "')\"><i class=\"fa fa-pencil\" title=\"" + jQuery.i18n.prop("container_table_actions_edit") + "\"></i></a> " +
+									"<a href=\"#5\" onclick=\"deleteRubric('" + obj.name + "')\"><i class=\"fa fa-trash\" title=\"" + jQuery.i18n.prop("container_table_actions_delete") + "\"></i></a>";
+							}
 						}
-					}}
+					}
 				],
 				"responsive": true
 			});
 
 			$("#statsRubricsTotal").text(data.length);
 
-			$("#formEditNewsRubric").empty();
-			$.each(data, function (i, item) {
-				$("#formEditNewsRubric").append($("<option>", {
+			var usages = $("#formEditNewsRubric");
+			usages.empty();
+			$.each(data, function(i, item) {
+				usages.append($("<option>", {
 					value: item.name,
-					text : item.name
+					text: item.name
 				}));
 			});
-			$("#formEditNewsRubric").trigger("chosen:updated");
+			usages.trigger("chosen:updated");
 		},
 		error: handleError
 	});
@@ -338,22 +345,23 @@ function putRubric() {
 		return;
 	}
 
+	var rubricName = $("#formEditRubricName");
 	var urlName = editRubricName;
 	if (urlName === "" || urlName === undefined || urlName === null) {
-		urlName = $("#formEditRubricName").val();
+		urlName = rubricName.val();
 	}
 
-	if (checkForOverwriting(rubricData, urlName) && !$("#formEditRubricName").prop("disabled")) {
+	if (checkForOverwriting(rubricData, urlName) && !rubricName.prop("disabled")) {
 		handleOverwriteError();
 		return;
 	}
 
 	var transmitterGroupNames = [];
-	$("#formEditRubricTransmitterGroups option").each(function() {
+	$("#formEditRubricTransmitterGroups").find("option").each(function() {
 		if (this.selected) transmitterGroupNames.push(this.value);
 	});
 	var ownerNames = [];
-	$("#formEditRubricOwners option").each(function() {
+	$("#formEditRubricOwners").find("option").each(function() {
 		if (this.selected) ownerNames.push(this.value);
 	});
 
@@ -370,7 +378,7 @@ function putRubric() {
 			ownerNames: ownerNames
 		}),
 		beforeSend: setCookieHeader,
-		success: function(data) {
+		success: function() {
 			showSuccessAlert();
 			returnFromRubricDetails();
 			loadRubrics();
@@ -388,7 +396,7 @@ function deleteRubric(name) {
 			url: config.apiUrl + "/rubrics/" + name,
 			type: "DELETE",
 			beforeSend: setCookieHeader,
-			success: function(data) {
+			success: function() {
 				showSuccessAlert();
 				loadRubrics();
 			},
@@ -405,7 +413,7 @@ function sendRubricsActivation() {
 	}
 
 	var transmitterGroupNames = [];
-	$("#formActivateRubricTransmitterGroups option").each(function() {
+	$("#formActivateRubricTransmitterGroups").find("option").each(function() {
 		if (this.selected) transmitterGroupNames.push(this.value);
 	});
 
@@ -419,7 +427,7 @@ function sendRubricsActivation() {
 			transmitterGroupNames: transmitterGroupNames
 		}),
 		beforeSend: setCookieHeader,
-		success: function(data) {
+		success: function() {
 			showSuccessAlert();
 			returnFromRubricDetails2();
 		},
@@ -436,45 +444,44 @@ function loadTransmitters() {
 		success: function(data) {
 			transmitterData = data;
 
-			$("#tableTransmitters").DataTable().destroy();
+			var table = $("#tableTransmitters");
+			table.DataTable().destroy();
 			if (!isAdmin) {
-				$("#tableTransmitters").DataTable({
+				table.DataTable({
 					data: data,
 					language: {
 						url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 					},
 					columns: [
-						{ data: "name" },
-						{ data: "nodeName" },
-						{ data: function (obj) {
-							return "---";
-						}},
-						{ data: "ownerNames[, ]" },
-						{ data: "deviceType" },
-						{ data: statusFormatter },
-						{ data: function (obj) {
-							return "---";
-						}}
+						{data: "name"},
+						{data: "nodeName"},
+						{data: noDataEntry},
+						{data: "ownerNames[, ]"},
+						{data: "deviceType"},
+						{data: statusFormatter},
+						{data: noDataEntry}
 					],
 					"responsive": true
 				});
 			} else {
-				$("#tableTransmitters").DataTable({
+				table.DataTable({
 					data: data,
 					language: {
 						url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 					},
 					columns: [
-						{ data: "name" },
-						{ data: "nodeName" },
-						{ data: "address.ip_addr" },
-						{ data: "ownerNames[, ]" },
-						{ data: "deviceType" },
-						{ data: statusFormatter },
-						{ data: function (obj) {
-							return "<a href='#6' onclick='editTransmitter(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
-							"<a href='#6' onclick='deleteTransmitter(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
-						}}
+						{data: "name"},
+						{data: "nodeName"},
+						{data: "address.ip_addr"},
+						{data: "ownerNames[, ]"},
+						{data: "deviceType"},
+						{data: statusFormatter},
+						{
+							data: function(obj) {
+								return "<a href=\"#6\" onclick=\"editTransmitter('" + obj.name + "')\"><i class=\"fa fa-pencil\" title=\"" + jQuery.i18n.prop("container_table_actions_edit") + "\"></i></a> " +
+									"<a href=\"#6\" onclick=\"deleteTransmitter('" + obj.name + "')\"><i class=\"fa fa-trash\" title=\"" + jQuery.i18n.prop("container_table_actions_delete") + "\"></i></a>";
+							}
+						}
 					],
 					"responsive": true
 				});
@@ -509,24 +516,25 @@ function loadTransmitters() {
 			});
 			renderChartTransmitterTypes();
 
-			$("#formEditTransmitterGroupTransmitters").empty();
-			$.each(data, function (i, item) {
-				$("#formEditTransmitterGroupTransmitters").append($("<option>", {
+			var usages = $("#formEditTransmitterGroupTransmitters");
+			usages.empty();
+			$.each(data, function(i, item) {
+				usages.append($("<option>", {
 					value: item.name,
-					text : item.name
+					text: item.name
 				}));
 			});
-			$("#formEditTransmitterGroupTransmitters").trigger("chosen:updated");
+			usages.trigger("chosen:updated");
 
 			// Set Markers on map
 			var markerOnline = L.icon({
-				iconUrl: './assets/img/marker-wifi-online.png',
+				iconUrl: "./assets/img/marker-wifi-online.png",
 				iconSize: [28, 30],
 				iconAnchor: [15, 30],
 				popupAnchor: [0, -25]
 			});
 			var markerOffline = L.icon({
-				iconUrl: './assets/img/marker-wifi-offline.png',
+				iconUrl: "./assets/img/marker-wifi-offline.png",
 				iconSize: [28, 30],
 				iconAnchor: [15, 30],
 				popupAnchor: [0, -25]
@@ -554,12 +562,13 @@ function putTransmitter() {
 		return;
 	}
 
+	var transmitterName = $("#formEditTransmitterName");
 	var urlName = editTransmitterName;
 	if (urlName === "" || urlName === undefined || urlName === null) {
-		urlName = $("#formEditTransmitterName").val();
+		urlName = transmitterName.val();
 	}
 
-	if (checkForOverwriting(transmitterData, urlName) && !$("#formEditTransmitterName").prop("disabled")) {
+	if (checkForOverwriting(transmitterData, urlName) && !transmitterName.prop("disabled")) {
 		handleOverwriteError();
 		return;
 	}
@@ -569,7 +578,7 @@ function putTransmitter() {
 		if (this.checked) timeSlot += this.id.substring(27);
 	});
 	var ownerNames = [];
-	$("#formEditTransmitterOwners option").each(function() {
+	$("#formEditTransmitterOwners").find("option").each(function() {
 		if (this.selected) ownerNames.push(this.value);
 	});
 
@@ -592,7 +601,7 @@ function putTransmitter() {
 			deviceType: $("#formEditTransmitterDeviceType").val()
 		}),
 		beforeSend: setCookieHeader,
-		success: function(data) {
+		success: function() {
 			showSuccessAlert();
 			returnFromTransmitterDetails();
 			loadTransmitters();
@@ -601,7 +610,7 @@ function putTransmitter() {
 	});
 }
 
-// Delete a Trasnmitter
+// Delete a Transmitter
 function deleteTransmitter(name) {
 	if (name === "" || name === null) return;
 
@@ -610,7 +619,7 @@ function deleteTransmitter(name) {
 			url: config.apiUrl + "/transmitters/" + name,
 			type: "DELETE",
 			beforeSend: setCookieHeader,
-			success: function(data) {
+			success: function() {
 				showSuccessAlert();
 				loadTransmitters();
 				loadTransmitterGroups();
@@ -629,35 +638,39 @@ function loadTransmitterGroups() {
 		success: function(data) {
 			transmitterGroupData = data;
 
-			$("#tableTransmitterGroups").DataTable().destroy();
-			$("#tableTransmitterGroups").DataTable({
+			var table = $("#tableTransmitterGroups");
+			table.DataTable().destroy();
+			table.DataTable({
 				data: data,
 				language: {
 					url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 				},
 				columns: [
-					{ data: "name" },
-					{ data: "description" },
-					{ data: "transmitterNames[, ]" },
-					{ data: "ownerNames[, ]" },
-					{ data: function (obj) {
-						return "<a href='#7' onclick='editTransmitterGroup(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
-						"<a href='#7' onclick='deleteTransmitterGroup(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
-					}}
+					{data: "name"},
+					{data: "description"},
+					{data: "transmitterNames[, ]"},
+					{data: "ownerNames[, ]"},
+					{
+						data: function(obj) {
+							return "<a href=\"#7\" onclick=\"editTransmitterGroup('" + obj.name + "')\"><i class=\"fa fa-pencil\" title=\"" + jQuery.i18n.prop("container_table_actions_edit") + "\"></i></a> " +
+								"<a href=\"#7\" onclick=\"deleteTransmitterGroup('" + obj.name + "')\"><i class=\"fa fa-trash\" title=\"" + jQuery.i18n.prop("container_table_actions_delete") + "\"></i></a>";
+						}
+					}
 				],
 				"responsive": true
 			});
 
 			$("#statsTransmitterGroupsTotal").text(data.length);
 
-			$("#formEditCallTransmitterGroup, #formEditRubricTransmitterGroups, #formActivateRubricTransmitterGroups").empty();
-			$.each(data, function (i, item) {
-				$("#formEditCallTransmitterGroup, #formEditRubricTransmitterGroups, #formActivateRubricTransmitterGroups").append($("<option>", {
+			var usages = $("#formEditCallTransmitterGroup, #formEditRubricTransmitterGroups, #formActivateRubricTransmitterGroups");
+			usages.empty();
+			$.each(data, function(i, item) {
+				usages.append($("<option>", {
 					value: item.name,
-					text : item.name
+					text: item.name
 				}));
 			});
-			$("#formEditCallTransmitterGroup, #formEditRubricTransmitterGroups, #formActivateRubricTransmitterGroups").trigger("chosen:updated");
+			usages.trigger("chosen:updated");
 		},
 		error: handleError
 	});
@@ -670,22 +683,23 @@ function putTransmitterGroup() {
 		return;
 	}
 
+	var transmitterGroupName = $("#formEditTransmitterGroupName");
 	var urlName = editTransmitterGroupName;
 	if (urlName === "" || urlName === undefined || urlName === null) {
-		urlName = $("#formEditTransmitterGroupName").val();
+		urlName = transmitterGroupName.val();
 	}
 
-	if (checkForOverwriting(transmitterGroupData, urlName) && !$("#formEditTransmitterGroupName").prop("disabled")) {
+	if (checkForOverwriting(transmitterGroupData, urlName) && !transmitterGroupName.prop("disabled")) {
 		handleOverwriteError();
 		return;
 	}
 
 	var transmitters = [];
-	$("#formEditTransmitterGroupTransmitters option").each(function() {
+	$("#formEditTransmitterGroupTransmitters").find("option").each(function() {
 		if (this.selected) transmitters.push(this.value);
 	});
 	var ownerNames = [];
-	$("#formEditTransmitterGroupOwners option").each(function() {
+	$("#formEditTransmitterGroupOwners").find("option").each(function() {
 		if (this.selected) ownerNames.push(this.value);
 	});
 
@@ -700,7 +714,7 @@ function putTransmitterGroup() {
 			ownerNames: ownerNames
 		}),
 		beforeSend: setCookieHeader,
-		success: function(data) {
+		success: function() {
 			showSuccessAlert();
 			returnFromTransmitterGroupDetails();
 			loadTransmitterGroups();
@@ -709,7 +723,7 @@ function putTransmitterGroup() {
 	});
 }
 
-// Delete a TrasnmitterGroup
+// Delete a TransmitterGroup
 function deleteTransmitterGroup(name) {
 	if (name === "" || name === null) return;
 
@@ -718,7 +732,7 @@ function deleteTransmitterGroup(name) {
 			url: config.apiUrl + "/transmitterGroups/" + name,
 			type: "DELETE",
 			beforeSend: setCookieHeader,
-			success: function(data) {
+			success: function() {
 				showSuccessAlert();
 				loadTransmitterGroups();
 			},
@@ -736,55 +750,56 @@ function loadNodes() {
 		success: function(data) {
 			nodeData = data;
 
-			$("#tableNodes").DataTable().destroy();
+			var table = $("#tableNodes");
+			table.DataTable().destroy();
 			if (!isAdmin) {
-				$("#tableNodes").DataTable({
+				table.DataTable({
 					data: data,
 					language: {
 						url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 					},
 					columns: [
-						{ data: "name" },
-						{ data: function (obj) {
-							return "---";
-						}},
-						{ data: function (obj) {
-							return "---";
-						}},
-						{ data: statusFormatter },
-						{ data: function (obj) {
-							return "---";
-						}}
+						{data: "name"},
+						{data: noDataEntry},
+						{data: noDataEntry},
+						{data: statusFormatter},
+						{data: noDataEntry}
 					],
 					"responsive": true
 				});
 			} else {
-				$("#tableNodes").DataTable({
+				table.DataTable({
 					data: data,
 					language: {
 						url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 					},
 					columns: [
-						{ data: "name" },
-						{ data: function (obj) {
-							if (obj.status !== "ONLINE") {
-								return "---";
-							} else {
-								return obj.address.ip_addr;
+						{data: "name"},
+						{
+							data: function(obj) {
+								if (obj.status !== "ONLINE") {
+									return "---";
+								} else {
+									return obj.address.ip_addr;
+								}
 							}
-						}},
-						{ data: function (obj) {
-							if (obj.status !== "ONLINE") {
-								return "---";
-							} else {
-								return obj.address.port;
+						},
+						{
+							data: function(obj) {
+								if (obj.status !== "ONLINE") {
+									return "---";
+								} else {
+									return obj.address.port;
+								}
 							}
-						}},
-						{ data: statusFormatter },
-						{ data: function (obj) {
-							return "<a href='#8' onclick='editNode(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
-							"<a href='#8' onclick='deleteNode(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
-						}}
+						},
+						{data: statusFormatter},
+						{
+							data: function(obj) {
+								return "<a href=\"#8\" onclick=\"editNode('" + obj.name + "')\"><i class=\"fa fa-pencil\" title=\"" + jQuery.i18n.prop("container_table_actions_edit") + "\"></i></a> " +
+									"<a href=\"#8\" onclick=\"deleteNode('" + obj.name + "')\"><i class=\"fa fa-trash\" title=\"" + jQuery.i18n.prop("container_table_actions_delete") + "\"></i></a>";
+							}
+						}
 					],
 					"responsive": true
 				});
@@ -805,14 +820,15 @@ function loadNodes() {
 			chartNodesData = [statCountOnline, statCountOffline];
 			renderChartNode();
 
-			$("#formEditTransmitterNodeName").empty();
-			$.each(data, function (i, item) {
-				$("#formEditTransmitterNodeName").append($("<option>", {
+			var usages = $("#formEditTransmitterNodeName");
+			usages.empty();
+			$.each(data, function(i, item) {
+				usages.append($("<option>", {
 					value: item.name,
-					text : item.name
+					text: item.name
 				}));
 			});
-			$("#formEditTransmitterNodeName").trigger("chosen:updated");
+			usages.trigger("chosen:updated");
 		},
 		error: handleError
 	});
@@ -825,12 +841,13 @@ function putNode() {
 		return;
 	}
 
+	var nodeName = $("#formEditNodeName");
 	var urlName = editNodeName;
 	if (urlName === "" || urlName === undefined || urlName === null) {
-		urlName = $("#formEditNodeName").val();
+		urlName = nodeName.val();
 	}
 
-	if (checkForOverwriting(nodeData, urlName) && !$("#formEditNodeName").prop("disabled")) {
+	if (checkForOverwriting(nodeData, urlName) && !nodeName.prop("disabled")) {
 		handleOverwriteError();
 		return;
 	}
@@ -847,7 +864,7 @@ function putNode() {
 			key: $("#formEditNodeKey").val()
 		}),
 		beforeSend: setCookieHeader,
-		success: function(data) {
+		success: function() {
 			showSuccessAlert();
 			returnFromNodeDetails();
 			loadNodes();
@@ -865,7 +882,7 @@ function deleteNode(name) {
 			url: config.apiUrl + "/nodes/" + name,
 			type: "DELETE",
 			beforeSend: setCookieHeader,
-			success: function(data) {
+			success: function() {
 				showSuccessAlert();
 				loadNodes();
 			},
@@ -883,31 +900,38 @@ function loadUsers() {
 		success: function(data) {
 			userData = data;
 
-			$("#tableUsers").DataTable().destroy();
-			$("#tableUsers").DataTable({
+			var table = $("#tableUsers");
+			table.DataTable().destroy();
+			table.DataTable({
 				data: data,
 				language: {
 					url: "./assets/langs/DataTables_" + currentLanguage + ".json"
 				},
 				columns: [
-					{ data: "name" },
-					{ data: "mail" },
-					{ data: function(obj) {
-						return apiTrueFalse(obj.admin);
-					}},
-					{ data: function(obj) {
-						var usersCallSigns = "";
-						$.each(callSignData, function(i, item) {
-							if ($.inArray(obj.name, item.ownerNames) != -1) {
-								usersCallSigns += item.name + ", ";
-							}
-						});
-						return usersCallSigns.substring(0, usersCallSigns.length - 2);
-					}},
-					{ data: function (obj) {
-						return "<a href='#9' onclick='editUser(\"" + obj.name + "\")'><i class='fa fa-pencil' title='" + jQuery.i18n.prop('container_table_actions_edit') + "'></i></a> " +
-						"<a href='#9' onclick='deleteUser(\"" + obj.name + "\")'><i class='fa fa-trash' title='" + jQuery.i18n.prop('container_table_actions_delete') + "'></i></a>";
-					}}
+					{data: "name"},
+					{data: "mail"},
+					{
+						data: function(obj) {
+							return apiTrueFalse(obj.admin);
+						}
+					},
+					{
+						data: function(obj) {
+							var usersCallSigns = "";
+							$.each(callSignData, function(i, item) {
+								if ($.inArray(obj.name, item.ownerNames) != -1) {
+									usersCallSigns += item.name + ", ";
+								}
+							});
+							return usersCallSigns.substring(0, usersCallSigns.length - 2);
+						}
+					},
+					{
+						data: function(obj) {
+							return "<a href=\"#9\" onclick=\"editUser('" + obj.name + "')\"><i class=\"fa fa-pencil\" title=\"" + jQuery.i18n.prop("container_table_actions_edit") + "\"></i></a> " +
+								"<a href=\"#9\" onclick=\"deleteUser('" + obj.name + "')\"><i class=\"fa fa-trash\" title=\"" + jQuery.i18n.prop("container_table_actions_delete") + "\"></i></a>";
+						}
+					}
 				],
 				"responsive": true
 			});
@@ -919,14 +943,15 @@ function loadUsers() {
 			$("#statsUsersAdmins").text(statAdmin);
 			$("#statsUsersTotal, #statsStartUsers").text(data.length);
 
-			$("#formEditCallSignOwners, #formEditRubricOwners, #formEditTransmitterOwners, #formEditTransmitterGroupOwners").empty();
-			$.each(data, function (i, item) {
-				$("#formEditCallSignOwners, #formEditRubricOwners, #formEditTransmitterOwners, #formEditTransmitterGroupOwners").append($("<option>", {
+			var usages = $("#formEditCallSignOwners, #formEditRubricOwners, #formEditTransmitterOwners, #formEditTransmitterGroupOwners");
+			usages.empty();
+			$.each(data, function(i, item) {
+				usages.append($("<option>", {
 					value: item.name,
-					text : item.name
+					text: item.name
 				}));
 			});
-			$("#formEditCallSignOwners, #formEditRubricOwners, #formEditTransmitterOwners, #formEditTransmitterGroupOwners").trigger("chosen:updated");
+			usages.trigger("chosen:updated");
 		},
 		error: handleError
 	});
@@ -939,12 +964,13 @@ function putUser() {
 		return;
 	}
 
+	var userName = $("#formEditUserName");
 	var urlName = editUserName;
 	if (urlName === "" || urlName === undefined || urlName === null) {
-		urlName = $("#formEditUserName").val();
+		urlName = userName.val();
 	}
 
-	if (checkForOverwriting(userData, urlName) && !$("#formEditUserName").prop("disabled")) {
+	if (checkForOverwriting(userData, urlName) && !userName.prop("disabled")) {
 		handleOverwriteError();
 		return;
 	}
@@ -960,7 +986,7 @@ function putUser() {
 			admin: $("#formEditUserAdmin").prop("checked")
 		}),
 		beforeSend: setCookieHeader,
-		success: function(data) {
+		success: function() {
 			showSuccessAlert();
 			returnFromUserDetails();
 			loadUsers();
@@ -978,7 +1004,7 @@ function deleteUser(name) {
 			url: config.apiUrl + "/users/" + name,
 			type: "DELETE",
 			beforeSend: setCookieHeader,
-			success: function(data) {
+			success: function() {
 				showSuccessAlert();
 				loadUsers();
 			},
@@ -989,12 +1015,16 @@ function deleteUser(name) {
 
 function statusFormatter(obj) {
 	if (obj.status === "ONLINE") {
-		return "<span class='label label-success'>ONLINE</span>";
+		return "<span class=\"label label-success\">ONLINE</span>";
 	} else if (obj.status === "OFFLINE") {
-		return "<span class='label label-primary'>OFFLINE</span>";
+		return "<span class=\"label label-primary\">OFFLINE</span>";
 	} else {
-		return "<span class='label label-warning'>" + obj.status + "</span>";
+		return "<span class=\"label label-warning\">" + obj.status + "</span>";
 	}
+}
+
+function noDataEntry() {
+	return "---";
 }
 
 function setCookieHeader(req) {

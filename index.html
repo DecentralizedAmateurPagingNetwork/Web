@@ -43,13 +43,13 @@
 </head>
 <body>
 	<div id="splashscreen">
-		<img class="center" src="./assets/img/loading.gif" alt="Loading..." />
+		<img class="center" src="./assets/img/loading.gif" alt="Loading..."/>
 	</div>
 
 	<div class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
-				<a href="#1" class="navbar-brand" onclick="openContainer(1)"><img src="./assets/img/dapnet-logo.png" alt="DAPNET Logo" style="width:6em" /></a>
+				<a href="#1" class="navbar-brand" onclick="openContainer(1)"><img src="./assets/img/dapnet-logo.png" alt="DAPNET Logo" style="width:6em"/></a>
 
 				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
 					<span class="icon-bar"></span>
@@ -97,7 +97,7 @@
 					<div class="modal-body">
 						<div class="alert alert-dismissible alert-danger" id="modalLoginAlert">
 							<button type="button" class="close" data-hide="alert">&#215;</button>
-							<strong data-i18n="login_error_title"></strong><br />
+							<strong data-i18n="login_error_title"></strong><br/>
 							<p data-i18n="login_error_text"></p>
 						</div>
 						<form class="form-horizontal" id="formLogin">
@@ -140,7 +140,7 @@
 			<div class="col-lg-4">
 				<h2 id="wellInfo" data-i18n="home_info_title"></h2>
 				<div class="well">
-					<img src="./assets/img/dapnet-logo.png" alt="DAPNET Logo" style="max-width:80%; padding-bottom:15px" />
+					<img src="./assets/img/dapnet-logo.png" alt="DAPNET Logo" style="max-width:80%; padding-bottom:15px"/>
 					<img src="./assets/img/rwth-funker-small.png" alt="Amateurfunker RWTH Aachen University" style="float:left; padding-right:15px;"/>
 					<p data-i18n="home_info_text"></p>
 				</div>
@@ -199,7 +199,7 @@
 					<li><a href="#2" onclick="loadCalls()" data-i18n="container_side_actions_refresh"></a></li>
 					<li><a href="#2" onclick="addCall()" data-i18n="calls_side_actions_new"></a></li>
 				</ul>
-				<br />
+				<br/>
 				<legend data-i18n="container_side_statistics_title"></legend>
 				<ul class="list-group" id="statsCalls">
 					<li class="list-group-item"><b data-i18n="calls_side_statistics_emergency"></b><span class="badge" id="statsCallsEmergency"></span></li>
@@ -294,7 +294,7 @@
 					<li><a href="#4" onclick="loadCallSigns()" data-i18n="container_side_actions_refresh"></a></li>
 					<li><a href="#4" onclick="addCallSign()" data-i18n="callsigns_side_actions_new"></a></li>
 				</ul>
-				<br />
+				<br/>
 				<legend data-i18n="container_side_statistics_title"></legend>
 				<ul class="list-group" id="statsCallSigns">
 					<li class="list-group-item"><b data-i18n="callsigns_side_statstics_total"></b><span class="badge" id="statsCallSignsTotal"></span></li>
@@ -319,7 +319,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="formEditCallSignPagers" class="col-lg-2 control-label" data-i18n="callsigns_add_pager"></label>
+							<label for="formEditCallSignsPagersNumber" class="col-lg-2 control-label" data-i18n="callsigns_add_pager"></label>
 							<div class="col-lg-5">
 								<textarea class="form-control" rows="5" id="formEditCallSignsPagersNumber"></textarea>
 								<span class="help-block" id="formEditCallSignsPagersNumberHelp" data-i18n="callsigns_add_pager_number_help"></span>
@@ -386,7 +386,7 @@
 					<li><a href="#3" onclick="loadNews()" data-i18n="container_side_actions_refresh"></a></li>
 					<li><a href="#3" onclick="addNews()" data-i18n="news_side_actions_new"></a></li>
 				</ul>
-				<br />
+				<br/>
 				<legend data-i18n="container_side_statistics_title"></legend>
 				<ul class="list-group" id="statsNews">
 					<li class="list-group-item"><b data-i18n="news_side_statistics_total"></b><span class="badge" id="statsNewsTotal"></span></li>
@@ -470,7 +470,7 @@
 					<li id="rubrics-add-rubric"><a href="#5" onclick="addRubric()" data-i18n="rubrics_side_actions_new"></a></li>
 					<li><a href="#5" onclick="activateRubrics()" data-i18n="rubrics_side_actions_activation"></a></li>
 				</ul>
-				<br />
+				<br/>
 				<legend data-i18n="container_side_statistics_title"></legend>
 				<ul class="list-group" id="statsRubrics">
 					<li class="list-group-item"><b data-i18n="rubrics_side_statistics_total"></b><span class="badge" id="statsRubricsTotal"></span></li>
@@ -599,12 +599,16 @@
 					<li><a href="#6" onclick="loadTransmitters()" data-i18n="container_side_actions_refresh"></a></li>
 					<li><a href="#6" onclick="addTransmitter()" data-i18n="transmitters_side_actions_new"></a></li>
 				</ul>
-				<br />
+				<br/>
 				<legend data-i18n="container_side_statistics_title"></legend>
 				<ul class="list-group" id="statsTransmitter">
 					<li class="list-group-item"><b data-i18n="transmitters_side_statistics_total"></b><span class="badge" id="statsTransmitterTotal"></span></li>
-					<li class="list-group-item"><canvas id="chartTransmitter" width="100%" height="100%"></canvas></li>
-					<li class="list-group-item"><canvas id="chartTransmitterTypes" width="100%" height="100%"></canvas></li>
+					<li class="list-group-item">
+						<canvas id="chartTransmitter" width="100%" height="100%"></canvas>
+					</li>
+					<li class="list-group-item">
+						<canvas id="chartTransmitterTypes" width="100%" height="100%"></canvas>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -651,11 +655,11 @@
 						<div class="form-group">
 							<label for="formEditTransmitterPower" class="col-lg-2 control-label" data-i18n="transmitters_add_power"></label>
 							<div class="col-lg-10">
-								<input type="number" step="0.5" min="0" max="200"  class="form-control" id="formEditTransmitterPower" placeholder="0 - 200">
+								<input type="number" step="0.5" min="0" max="200" class="form-control" id="formEditTransmitterPower" placeholder="0 - 200">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="formEditNodeIp" class="col-lg-2 control-label" data-i18n="transmitters_add_ip_port"></label>
+							<label for="formEditTransmitterIp" class="col-lg-2 control-label" data-i18n="transmitters_add_ip_port"></label>
 							<div class="col-lg-6">
 								<input type="text" class="form-control" id="formEditTransmitterIp">
 							</div>
@@ -664,7 +668,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="formEditTransmitterTimeslot" class="col-lg-2 control-label" data-i18n="transmitters_add_timeslot"></label>
+							<label for="formEditTransmitterTimeslot0" class="col-lg-2 control-label" data-i18n="transmitters_add_timeslot"></label>
 							<div class="col-lg-10">
 								<table>
 									<tbody style="text-align: center">
@@ -777,7 +781,7 @@
 					<li><a href="#7" onclick="loadTransmitterGroups()" data-i18n="container_side_actions_refresh"></a></li>
 					<li><a href="#7" onclick="addTransmitterGroup()" data-i18n="transmitter_groups_side_actions_new"></a></li>
 				</ul>
-				<br />
+				<br/>
 				<legend data-i18n="container_side_statistics_title"></legend>
 				<ul class="list-group" id="statsTransmitterGroups">
 					<li class="list-group-item"><b data-i18n="transmitter_groups_side_statistics_total"></b><span class="badge" id="statsTransmitterGroupsTotal"></span></li>
@@ -866,11 +870,13 @@
 					<li><a href="#8" onclick="loadNodes()" data-i18n="container_side_actions_refresh"></a></li>
 					<li id="nodes-add-node"><a href="#8" onclick="addNode()" data-i18n="nodes_side_actions_new"></a></li>
 				</ul>
-				<br />
+				<br/>
 				<legend data-i18n="container_side_statistics_title"></legend>
 				<ul class="list-group" id="statsNodes">
 					<li class="list-group-item"><b data-i18n="nodes_side_statistics_total"></b><span class="badge" id="statsNodesTotal"></span></li>
-					<li class="list-group-item"><canvas id="chartNodes" width="100%" height="100%"></canvas></li>
+					<li class="list-group-item">
+						<canvas id="chartNodes" width="100%" height="100%"></canvas>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -970,7 +976,7 @@
 					<li><a href="#9" onclick="loadCallSigns()" data-i18n="container_side_actions_refresh"></a></li>
 					<li><a href="#9" onclick="addUser()" data-i18n="users_side_actions_new"></a></li>
 				</ul>
-				<br />
+				<br/>
 				<legend data-i18n="container_side_statistics_title"></legend>
 				<ul class="list-group" id="statsUsers">
 					<li class="list-group-item"><b data-i18n="users_side_statistics_admins"></b><span class="badge" id="statsUsersAdmins"></span></li>
@@ -1036,9 +1042,9 @@
 			<div class="col-lg-12">
 				<h1 data-i18n="footer_impress"></h1>
 				<h2>Angaben gemäß § 5 TMG:</h2>
-				<p>Ralf Wilke<br />
-					Amateurfunkgruppe an der RWTH Aachen<br />
-					Institut für Hochfrequenztechnik<br />
+				<p>Ralf Wilke<br/>
+					Amateurfunkgruppe an der RWTH Aachen<br/>
+					Institut für Hochfrequenztechnik<br/>
 					52074 Aachen
 				</p>
 				<h2>Kontakt:</h2>
@@ -1061,10 +1067,10 @@
 				<h1>Haftungsausschluss (Disclaimer)</h1>
 				<p><strong>Haftung für Inhalte</strong></p>
 				<p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
-				<br />
+				<br/>
 				<p><strong>Haftung für Links</strong></p>
 				<p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
-				<br />
+				<br/>
 				<p><strong>Urheberrecht</strong></p>
 				<p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
 
@@ -1092,7 +1098,7 @@
 				<p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
 				<p>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.</p>
 				<p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
-				<br />
+				<br/>
 				<p><strong>Cookies</strong></p>
 				<p>Die Internetseiten verwenden teilweise so genannte Cookies. Cookies richten auf Ihrem Rechner keinen Schaden an und enthalten keine Viren. Cookies dienen dazu, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen. Cookies sind kleine Textdateien, die auf Ihrem Rechner abgelegt werden und die Ihr Browser speichert.</p>
 				<p>Die meisten der von uns verwendeten Cookies sind so genannte „Session-Cookies“. Sie werden nach Ende Ihres Besuchs automatisch gelöscht. Andere Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese löschen. Diese Cookies ermöglichen es uns, Ihren Browser beim nächsten Besuch wiederzuerkennen.</p>
@@ -1115,29 +1121,27 @@
 		<footer>
 			<div class="row">
 				<div class="col-lg-12">
-					<noscript><p><b>Please enable JavaScript to use this Website.</b></p><br /></noscript>
-					<p><b data-i18n="footer_support_us"></b>
-						<ul class="list-unstyled">
-							<li><a href="https://github.com/DecentralizedAmateurPagingNetwork" target="_blank" data-i18n="footer_github"></a></li>
-							<li><a href="https://www.afu.rwth-aachen.de" target="_blank" data-i18n="footer_afu"></a></li>
-						</ul>
-					</p>
-					<p><b data-i18n="footer_contact_us"></b>
-						<ul class="list-unstyled">
-							<li><a href="https://twitter.com/RWTHAmateurfunk" target="_blank" data-i18n="footer_twitter"></a></li>
-							<li><a href="https://www.facebook.com/DL0UA" target="_blank" data-i18n="footer_facebook"></a></li>
-							<li><a href="https://www.afu.rwth-aachen.de/ueber-uns/kontakt" data-i18n="footer_contact"></a></li>
-							<li><a href="#11" onclick="openContainer(11)" data-i18n="footer_impress"></a></li>
-							<li><a href="#12" onclick="openContainer(12)" data-i18n="footer_privacy"></a></li>
-						</ul>
-					</p>
-					<p><b data-i18n="footer_language"></b>
-						<ul class="list-unstyled">
-							<li><a href="#" onclick="changeLanguage('en_US')" data-i18n="footer_language_english"></a></li>
-							<li><a href="#" onclick="changeLanguage('de_DE')" data-i18n="footer_language_german"></a></li>
-						</ul>
-					</p>
-					<p><b data-i18n="footer_version"></b> <span id="footer_version_number"></span> / <a href="#10" onclick="openContainer(10)" data-i18n="footer_version_check"></a></p>
+					<noscript><p><b>Please enable JavaScript to use this Website.</b></p><br/></noscript>
+					<p><b data-i18n="footer_support_us"></b></p>
+					<ul class="list-unstyled">
+						<li><a href="https://github.com/DecentralizedAmateurPagingNetwork" target="_blank" data-i18n="footer_github"></a></li>
+						<li><a href="https://www.afu.rwth-aachen.de" target="_blank" data-i18n="footer_afu"></a></li>
+					</ul>
+					<p><b data-i18n="footer_contact_us"></b></p>
+					<ul class="list-unstyled">
+						<li><a href="https://twitter.com/RWTHAmateurfunk" target="_blank" data-i18n="footer_twitter"></a></li>
+						<li><a href="https://www.facebook.com/DL0UA" target="_blank" data-i18n="footer_facebook"></a></li>
+						<li><a href="https://www.afu.rwth-aachen.de/ueber-uns/kontakt" data-i18n="footer_contact"></a></li>
+						<li><a href="#11" onclick="openContainer(11)" data-i18n="footer_impress"></a></li>
+						<li><a href="#12" onclick="openContainer(12)" data-i18n="footer_privacy"></a></li>
+					</ul>
+					<p><b data-i18n="footer_language"></b></p>
+					<ul class="list-unstyled">
+						<li><a href="#" onclick="changeLanguage('en_US')" data-i18n="footer_language_english"></a></li>
+						<li><a href="#" onclick="changeLanguage('de_DE')" data-i18n="footer_language_german"></a></li>
+					</ul>
+					<p><b data-i18n="footer_version"></b> <span id="footer_version_number"></span> /
+						<a href="#10" onclick="openContainer(10)" data-i18n="footer_version_check"></a></p>
 				</div>
 			</div>
 		</footer>
