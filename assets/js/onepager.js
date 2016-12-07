@@ -207,7 +207,6 @@ function loginSuccess(username) {
 			$("#btnLogout").css("display", "block");
 
 			loadAllData();
-			setInterval(loadOpenTabsData, 30 * 1000);
 		}
 	});
 }
