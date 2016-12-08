@@ -87,6 +87,9 @@ function initPage() {
 		numberInput(this, 0, 2097151);
 	});
 
+	// add info-text to home-tab
+	$("#homeInfoText").html(config.information);
+
 	// add version-number
 	$("#footer_version_number").text(VERSION);
 
