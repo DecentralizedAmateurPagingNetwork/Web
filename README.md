@@ -1,10 +1,42 @@
 # DAPNET Web
 
 ## Installation
-* Copy `index.html`, `config.json` and `assets/` into your webserver's root-path.
-* Adjust `config.json` inside your webserver's root path.
-* Adjust `assets/js/custom.js` to run custom (analytics-)scripts (optional).
-* Done.
+
+### Using Git
+* Clone the repository into your webserver's root path: `git clone https://github.com/DecentralizedAmateurPagingNetwork/Web.git`
+* Checkout a specific release / tag: `git checkout tags/v1.2.0`
+* Create a `config.json` file using the example below
+* (Optional) Create a `assets/js/custom.js` file to run custom javascripts
+* Done
+
+### Manually
+* Copy `index.html` and `assets/` into your webserver's root-path
+* Create a `config.json` file using the example below
+* (Optional) Create a `assets/js/custom.js` file to run custom javascripts
+* Done
+
+## Updating
+Before updating make sure to read the changelog!
+
+### Using Git
+* Update your local repository: `git pull`
+* Checkout the current release / tag: `git checkout tags/v1.2.0`
+* Done
+
+### Manually
+* Replace all files using the files from the current release. Exceptions:
+	* `config.json`
+	* `assets/js/custom.js`
+* Done
+
+## Config
+Use the example below to create your own `config.json` file:
+```json
+{
+	"apiUrl": "http://localhost:8080",
+	"information": "This is a custom welcome-text displayed on the homepage.<br/>You may use HTML-syntax."
+}
+```
 
 ## Translations
 * Translations are stored inside `assets/langs/` and use a simple Key-Value-format.  
