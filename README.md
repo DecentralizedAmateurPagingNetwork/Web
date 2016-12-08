@@ -19,7 +19,7 @@
 Before updating make sure to read the changelog!
 
 ### Using Git
-* Update your local repository: `git pull`
+* Update your local repository: `git fetch`
 * Checkout the current release / tag: `git checkout tags/v1.2.0`
 * Done
 
