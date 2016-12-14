@@ -68,23 +68,24 @@ function initPage() {
 		updateCharCount();
 	});
 
-	// validate latitude / longitude input while typing
+	// validate number input while typing
 	$("#formEditTransmitterLatitude").on("change input", function() {
-		coordinatesInput(this, 0, 90);
+		numberInputWithDecimal(this, 0, 90, 8);
 	});
 	$("#formEditTransmitterLongitude").on("change input", function() {
-		coordinatesInput(this, 0, 180);
+		numberInputWithDecimal(this, 0, 180, 8);
 	});
 	$("#formEditNodeLatitude").on("change input", function() {
-		coordinatesInput(this, 0, 90);
+		numberInputWithDecimal(this, 0, 90, 8);
 	});
 	$("#formEditNodeLongitude").on("change input", function() {
-		coordinatesInput(this, 0, 180);
+		numberInputWithDecimal(this, 0, 180, 8);
 	});
-
-	// validate number input while typing
 	$("#formActivateRubricNumber").on("change input", function() {
 		numberInput(this, 0, 2097151);
+	});
+	$("#formEditTransmitterPower").on("change input", function() {
+		numberInputWithDecimal(this, 0, 200, 3);
 	});
 
 	// add info-text to home-tab
@@ -979,13 +980,17 @@ function checkForInput(formId) {
 }
 
 // Manual input checking for latitude / longitude
-function coordinatesInput(element, min, max) {
+function numberInputWithDecimal(element, min, max, maxDecimals) {
 	// Replace comma with dot
 	element.value = element.value.replace(",", ".");
 
-	// check for other input than numbers and dots AND for values between min and max
+	// check for other input than numbers and dots AND for values between min and max AND for not too many decimal places
 	if (element.value === "" || (element.value.match(/([0-9.0-9])$/g) && element.value >= min && element.value <= max)) {
-		$(element.parentElement).removeClass("has-error");
+		if (element.value.indexOf(".") !== -1 && element.value.split(".")[1].length > maxDecimals) {
+			$(element.parentElement).addClass("has-error");
+		} else {
+			$(element.parentElement).removeClass("has-error");
+		}
 	} else {
 		$(element.parentElement).addClass("has-error");
 	}
