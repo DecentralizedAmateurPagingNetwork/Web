@@ -156,7 +156,6 @@ function loginWithForm() {
 		$.ajax({
 			url: config.apiUrl + "/users/" + username,
 			type: "GET",
-			contentType: "application/json",
 			dataType: "json",
 			beforeSend: function(req) {
 				req.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
@@ -184,7 +183,6 @@ function loginSuccess(username) {
 	$.ajax({
 		url: config.apiUrl + "/users/" + username,
 		type: "GET",
-		contentType: "application/json",
 		dataType: "json",
 		beforeSend: function(req) {
 			req.setRequestHeader("Authorization", "Basic " + Cookies.get("auth"));
