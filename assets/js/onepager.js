@@ -951,14 +951,21 @@ function renderChartTransmitterTypes() {
 
 // Check for form-input
 function checkForInput(formId) {
+	return checkForInput(formId, []);
+}
+
+// Check for form-input and exclude ids listed in ignored-array
+function checkForInput(formId, ignored) {
 	var errorFound = false;
 	var form = $("#" + formId);
 
 	form.find(":input").each(function() {
 		if ($(this)[0].id === "") return "non-false";
 		if ($(this)[0].value === "") {
-			$(this).parent().addClass("has-error");
-			errorFound = true;
+			if (!(ignored instanceof Array && ignored.indexOf($(this)[0].id) !== -1)) {
+				$(this).parent().addClass("has-error");
+				errorFound = true;
+			}
 		} else {
 			$(this).parent().removeClass("has-error");
 		}
@@ -967,8 +974,10 @@ function checkForInput(formId) {
 	form.find("select").each(function() {
 		if ($(this)[0].id === "") return "non-false";
 		if ($("#" + $(this)[0].id + " :selected").length === 0) {
-			$(this).parent().addClass("has-error");
-			errorFound = true;
+			if (!(ignored instanceof Array && ignored.indexOf($(this)[0].id) !== -1)) {
+				$(this).parent().addClass("has-error");
+				errorFound = true;
+			}
 		} else {
 			$(this).parent().removeClass("has-error");
 		}

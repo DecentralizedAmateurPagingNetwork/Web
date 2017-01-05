@@ -959,12 +959,21 @@ function loadUsers() {
 
 // Add / Edit a User
 function putUser() {
-	if (checkForInput("container9-detail")) {
-		handleMissingInput();
-		return;
+	var userName = $("#formEditUserName");
+
+	// ignore missing password if we're editing an existing user
+	if (userName.prop("disabled")) {
+		if (checkForInput("container9-detail", ["formEditUserPassword"])) {
+			handleMissingInput();
+			return;
+		}
+	} else {
+		if (checkForInput("container9-detail")) {
+			handleMissingInput();
+			return;
+		}
 	}
 
-	var userName = $("#formEditUserName");
 	var urlName = editUserName;
 	if (urlName === "" || urlName === undefined || urlName === null) {
 		urlName = userName.val();
