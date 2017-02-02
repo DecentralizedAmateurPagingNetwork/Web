@@ -88,6 +88,15 @@ function initPage() {
 		numberInputWithDecimal(this, 0, 200, 3);
 	});
 
+	// show help-text on click for callsigns
+	$("#formEditCallSignsPagersNumberHelpIcon").on("click", function() {
+		swal({
+			title: jQuery.i18n.prop("alert_help_callsign_title"),
+			html: jQuery.i18n.prop("alert_help_callsign_text") + "<br /><img src='./assets/img/pager.jpg' alt='Help' />",
+			type: "info"
+		});
+	});
+
 	// add info-text to home-tab
 	$("#homeInfoText").html(config.information);
 
