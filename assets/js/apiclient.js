@@ -182,8 +182,26 @@ function loadCallSigns() {
 					columns: [
 						{data: "name"},
 						{data: "description"},
-						{data: "pagers.0.number"},
-						{data: "pagers.0.name"},
+						{
+							data: function(obj) {
+								var numbers = [];
+								obj.pagers.forEach(function(item) {
+								    numbers.push(item.number.pad(7));
+								});
+
+								return numbers.join(", ");
+							}
+						},
+						{
+							data: function(obj) {
+								var names = [];
+								obj.pagers.forEach(function(item) {
+								    names.push(item.name);
+								});
+
+								return names.join(", ");
+							}
+						},
 						{data: "ownerNames[, ]"},
 						{
 							data: function(obj) {

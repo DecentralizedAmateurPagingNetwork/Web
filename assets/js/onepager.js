@@ -505,7 +505,7 @@ function editCallSign(name) {
 			var pagerNumbers = "";
 			var pagerNames = "";
 			$.each(data.pagers, function(index, value) {
-				pagerNumbers += value.number;
+				pagerNumbers += value.number.pad(7);
 				pagerNames += value.name;
 
 				if (index < data.pagers.length - 1) {
@@ -1023,6 +1023,13 @@ function numberInput(element, min, max) {
 		$(element.parentElement).addClass("has-error");
 	}
 }
+
+// extends Number to allow padding with zeroes
+Number.prototype.pad = function(size) {
+	var s = String(this);
+    while (s.length < (size || 2)) { s = "0" + s; }
+    return s;
+};
 
 // Check for possible overwriting of existing data
 function checkForOverwriting(dataArray, searchString) {
