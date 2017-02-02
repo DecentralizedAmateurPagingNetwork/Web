@@ -13,6 +13,7 @@ var mapInited = false;
 $(document).ready(function() {
 	// show welcome-message on console
 	console.log("%c DAPNET Web v" + VERSION + " ", "background: #112a2d; color: #bada55; font-size: large;");
+	console.log("More information available at https://github.com/DecentralizedAmateurPagingNetwork/Web.");
 
 	// Load Config-file
 	$.getJSON("./config.json", function(data) {
