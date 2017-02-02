@@ -2,6 +2,7 @@ const VERSION = "1.2.4";
 
 var config;
 var currentLanguage;
+var currentUsername;
 var isAdmin = false;
 var map, layer, markers;
 var mapInited = false;
@@ -197,6 +198,8 @@ function loginSuccess(username) {
 			req.setRequestHeader("Authorization", "Basic " + Cookies.get("auth"));
 		},
 		success: function(data) {
+			currentUsername = username;
+
 			if (data.admin) {
 				isAdmin = true;
 			} else {

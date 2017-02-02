@@ -652,8 +652,12 @@ function loadTransmitterGroups() {
 					{data: "ownerNames[, ]"},
 					{
 						data: function(obj) {
-							return "<a href=\"#7\" onclick=\"editTransmitterGroup('" + obj.name + "')\"><i class=\"fa fa-pencil\" title=\"" + jQuery.i18n.prop("container_table_actions_edit") + "\"></i></a> " +
-								"<a href=\"#7\" onclick=\"deleteTransmitterGroup('" + obj.name + "')\"><i class=\"fa fa-trash\" title=\"" + jQuery.i18n.prop("container_table_actions_delete") + "\"></i></a>";
+							if (obj.ownerNames.indexOf(currentUsername) !== -1 || isAdmin) {
+								return "<a href=\"#7\" onclick=\"editTransmitterGroup('" + obj.name + "')\"><i class=\"fa fa-pencil\" title=\"" + jQuery.i18n.prop("container_table_actions_edit") + "\"></i></a> " +
+									"<a href=\"#7\" onclick=\"deleteTransmitterGroup('" + obj.name + "')\"><i class=\"fa fa-trash\" title=\"" + jQuery.i18n.prop("container_table_actions_delete") + "\"></i></a>";
+							} else {
+								return "---";
+							}
 						}
 					}
 				],
@@ -928,8 +932,12 @@ function loadUsers() {
 					},
 					{
 						data: function(obj) {
-							return "<a href=\"#9\" onclick=\"editUser('" + obj.name + "')\"><i class=\"fa fa-pencil\" title=\"" + jQuery.i18n.prop("container_table_actions_edit") + "\"></i></a> " +
-								"<a href=\"#9\" onclick=\"deleteUser('" + obj.name + "')\"><i class=\"fa fa-trash\" title=\"" + jQuery.i18n.prop("container_table_actions_delete") + "\"></i></a>";
+							if (obj.name === currentUsername || isAdmin) {
+								return "<a href=\"#9\" onclick=\"editUser('" + obj.name + "')\"><i class=\"fa fa-pencil\" title=\"" + jQuery.i18n.prop("container_table_actions_edit") + "\"></i></a> " +
+									"<a href=\"#9\" onclick=\"deleteUser('" + obj.name + "')\"><i class=\"fa fa-trash\" title=\"" + jQuery.i18n.prop("container_table_actions_delete") + "\"></i></a>";
+							} else {
+								return "---";
+							}
 						}
 					}
 				],
