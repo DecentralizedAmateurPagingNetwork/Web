@@ -1028,8 +1028,8 @@ function numberInput(element, min, max) {
 // extends Number to allow padding with zeroes
 Number.prototype.pad = function(size) {
 	var s = String(this);
-    while (s.length < (size || 2)) { s = "0" + s; }
-    return s;
+	while (s.length < (size || 2)) { s = "0" + s; }
+	return s;
 };
 
 // Check for possible overwriting of existing data
