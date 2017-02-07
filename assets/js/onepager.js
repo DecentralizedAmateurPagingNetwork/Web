@@ -89,6 +89,15 @@ function initPage() {
 	$("#formEditTransmitterPower").on("change input", function() {
 		numberInputWithDecimal(this, 0, 200, 3);
 	});
+	$("#formEditTransmitterAntennaLevel").on("change input", function() {
+		numberInputWithDecimal(this, 0, 1000, 0);
+	});
+	$("#formEditTransmitterAntennaDirection").on("change input", function() {
+		numberInputWithDecimal(this, 0, 359, 0);
+	});
+	$("#formEditTransmitterAntennaGain").on("change input", function() {
+		numberInputWithDecimal(this, -50, 80, 0);
+	});
 
 	// show help-text on click for callsigns
 	$("#formEditCallSignsPagersNumberHelpIcon").on("click", function() {
@@ -655,6 +664,8 @@ function editTransmitter(name) {
 			});
 			nodeName.trigger("chosen:updated");
 
+			$("#formEditTransmitterAuthKey").val(data.authKey);
+
 			var latitude = $("#formEditTransmitterLatitude");
 			latitude.val(data.latitude);
 			if (data.latitude < 0) {
@@ -669,8 +680,17 @@ function editTransmitter(name) {
 				$("#formEditTransmitterLongitudeOrientation").val("-1");
 			}
 			$("#formEditTransmitterPower").val(data.power);
-			$("#formEditTransmitterIp").val(data.address.ip_addr);
-			$("#formEditTransmitterPort").val(data.address.port);
+
+			$("#formEditTransmitterUsage").val(data.usage);
+			$("#formEditTransmitterAntennaType").val(data.antennaType);
+			$("#formEditTransmitterAntennaLevel").val(data.antennaAboveGroundLevel);
+			$("#formEditTransmitterAntennaDirection").val(data.antennaDirection);
+			$("#formEditTransmitterAntennaGain").val(data.antennaGainDbi);
+
+			if (data.address) {
+				$("#formEditTransmitterIp").val(data.address.ip_addr);
+				$("#formEditTransmitterPort").val(data.address.port);
+			}
 
 			$(".timeslotCheckBox").prop("checked", false);
 			for (i = 0; i < data.timeSlot.length; i++) {

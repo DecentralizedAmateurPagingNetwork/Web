@@ -668,12 +668,39 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="formEditTransmitterIp" class="col-lg-2 control-label" data-i18n="transmitters_add_ip_port"></label>
-							<div class="col-lg-6">
-								<input type="text" class="form-control" id="formEditTransmitterIp" disabled>
+							<label for="formEditTransmitterUsage" class="col-lg-2 control-label" data-i18n="transmitters_add_usage"></label>
+							<div class="col-lg-10">
+								<select class="form-control" id="formEditTransmitterUsage">
+									<option value="PERSONAL" selected data-i18n="transmitters_add_usage_personal"></option>
+									<option value="WIDERANGE" data-i18n="transmitters_add_usage_widerange"></option>
+								</select>
 							</div>
-							<div class="col-lg-4">
-								<input type="text" class="form-control" id="formEditTransmitterPort" disabled>
+						</div>
+						<div class="form-group">
+							<label for="formEditTransmitterAntennaType" class="col-lg-2 control-label" data-i18n="transmitters_add_antennatype"></label>
+							<div class="col-lg-10">
+								<select class="form-control" id="formEditTransmitterAntennaType">
+									<option value="OMNI" selected data-i18n="transmitters_add_antennatype_omni"></option>
+									<option value="DIRECTIONAL" data-i18n="transmitters_add_antennatype_directional"></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditTransmitterAntennaLevel" class="col-lg-2 control-label" data-i18n="transmitters_add_antennalevel"></label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="formEditTransmitterAntennaLevel" placeholder="0 - 1000">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditTransmitterAntennaDirection" class="col-lg-2 control-label" data-i18n="transmitters_add_antennadirection"></label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="formEditTransmitterAntennaDirection" placeholder="0 - 359">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditTransmitterAntennaGain" class="col-lg-2 control-label" data-i18n="transmitters_add_antennagain"></label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="formEditTransmitterAntennaGain" placeholder="-50 - 80">
 							</div>
 						</div>
 						<div class="form-group">
@@ -736,6 +763,15 @@
 							</div>
 							<div class="col-lg-4">
 								<input type="text" class="form-control" id="formEditTransmitterDeviceVersion" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="formEditTransmitterIp" class="col-lg-2 control-label" data-i18n="transmitters_add_ip_port"></label>
+							<div class="col-lg-6">
+								<input type="text" class="form-control" id="formEditTransmitterIp" disabled>
+							</div>
+							<div class="col-lg-4">
+								<input type="text" class="form-control" id="formEditTransmitterPort" disabled>
 							</div>
 						</div>
 					</fieldset>
@@ -1091,6 +1127,7 @@
 						"contactType": "technical support"
 					}]
 				}
+
 				</script>
 			</div>
 		</div>

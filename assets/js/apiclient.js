@@ -580,7 +580,7 @@ function loadTransmitters() {
 
 // Add / Edit a Transmitter
 function putTransmitter() {
-	if (checkForInput("container6-detail", ["formEditTransmitterDeviceVersion"])) {
+	if (checkForInput("container6-detail", ["formEditTransmitterIp", "formEditTransmitterPort", "formEditTransmitterDeviceType", "formEditTransmitterDeviceVersion"])) {
 		handleMissingInput();
 		return;
 	}
@@ -612,9 +612,15 @@ function putTransmitter() {
 		dataType: "json",
 		data: JSON.stringify({
 			nodeName: $("#formEditTransmitterNodeName").val(),
+			authKey: $("#formEditTransmitterAuthKey").val(),
 			latitude: $("#formEditTransmitterLatitude").val() * $("#formEditTransmitterLatitudeOrientation").val(),
 			longitude: $("#formEditTransmitterLongitude").val() * $("#formEditTransmitterLongitudeOrientation").val(),
 			power: $("#formEditTransmitterPower").val(),
+			usage: $("#formEditTransmitterUsage").val(),
+			antennaType: $("#formEditTransmitterAntennaType").val(),
+			antennaAboveGroundLevel: $("#formEditTransmitterAntennaLevel").val(),
+			antennaDirection: $("#formEditTransmitterAntennaDirection").val(),
+			antennaGainDbi: $("#formEditTransmitterAntennaGain").val(),
 			timeSlot: timeSlot,
 			ownerNames: ownerNames
 		}),
