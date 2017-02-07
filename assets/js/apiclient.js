@@ -186,7 +186,7 @@ function loadCallSigns() {
 							data: function(obj) {
 								var numbers = [];
 								obj.pagers.forEach(function(item) {
-								    numbers.push(item.number.pad(7));
+									numbers.push(item.number.pad(7));
 								});
 
 								return numbers.join(", ");
@@ -196,7 +196,7 @@ function loadCallSigns() {
 							data: function(obj) {
 								var names = [];
 								obj.pagers.forEach(function(item) {
-								    names.push(item.name);
+									names.push(item.name);
 								});
 
 								return names.join(", ");

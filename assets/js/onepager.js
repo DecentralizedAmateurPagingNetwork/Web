@@ -94,7 +94,7 @@ function initPage() {
 	$("#formEditCallSignsPagersNumberHelpIcon").on("click", function() {
 		swal({
 			title: jQuery.i18n.prop("alert_help_callsign_title"),
-			html: jQuery.i18n.prop("alert_help_callsign_text") + "<br /><img src='./assets/img/pager.jpg' alt='Help' />",
+			html: jQuery.i18n.prop("alert_help_callsign_text") + '<br /><img src="./assets/img/pager.jpg" alt="Help" />',
 			type: "info"
 		});
 	});
@@ -1029,7 +1029,9 @@ function numberInput(element, min, max) {
 // extends Number to allow padding with zeroes
 Number.prototype.pad = function(size) {
 	var s = String(this);
-	while (s.length < (size || 2)) { s = "0" + s; }
+	while (s.length < (size || 2)) {
+		s = "0" + s;
+	}
 	return s;
 };
 
