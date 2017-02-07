@@ -880,7 +880,7 @@ function putNode() {
 		dataType: "json",
 		data: JSON.stringify({
 			latitude: $("#formEditNodeLatitude").val() * $("#formEditNodeLatitudeOrientation").val(),
-			longitude: $("#formEditNodeLongitude").val() * $("#formEditNodeLatitudeOrientation").val(),
+			longitude: $("#formEditNodeLongitude").val() * $("#formEditNodeLongitudeOrientation").val(),
 			status: $("#formEditNodeStatus").val(),
 			key: $("#formEditNodeKey").val()
 		}),
