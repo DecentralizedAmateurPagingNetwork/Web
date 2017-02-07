@@ -490,7 +490,11 @@ function loadTransmitters() {
 					columns: [
 						{data: "name"},
 						{data: "nodeName"},
-						{data: "address.ip_addr"},
+						{
+							data: function(obj) {
+								return obj.address.ip_addr + ":" + obj.address.port;
+							}
+						},
 						{data: "ownerNames[, ]"},
 						{data: "deviceType"},
 						{data: statusFormatter},
@@ -575,7 +579,7 @@ function loadTransmitters() {
 
 // Add / Edit a Transmitter
 function putTransmitter() {
-	if (checkForInput("container6-detail")) {
+	if (checkForInput("container6-detail", ["formEditTransmitterDeviceVersion"])) {
 		handleMissingInput();
 		return;
 	}
@@ -610,13 +614,8 @@ function putTransmitter() {
 			latitude: $("#formEditTransmitterLatitude").val() * $("#formEditTransmitterLatitudeOrientation").val(),
 			longitude: $("#formEditTransmitterLongitude").val() * $("#formEditTransmitterLongitudeOrientation").val(),
 			power: $("#formEditTransmitterPower").val(),
-			address: {
-				ip_addr: $("#formEditTransmitterIp").val(),
-				port: $("#formEditTransmitterPort").val()
-			},
 			timeSlot: timeSlot,
-			ownerNames: ownerNames,
-			deviceType: $("#formEditTransmitterDeviceType").val()
+			ownerNames: ownerNames
 		}),
 		beforeSend: setCookieHeader,
 		success: function() {

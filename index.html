@@ -635,6 +635,12 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<label for="formEditTransmitterAuthKey" class="col-lg-2 control-label" data-i18n="transmitters_add_authkey"></label>
+							<div class="col-lg-10">
+								<input type="text" class="form-control" id="formEditTransmitterAuthKey">
+							</div>
+						</div>
+						<div class="form-group">
 							<label class="col-lg-2 control-label" data-i18n="transmitters_add_lat_lon"></label>
 							<div class="col-lg-3">
 								<input type="text" class="form-control" id="formEditTransmitterLatitude" placeholder="0 - 90">
@@ -664,10 +670,10 @@
 						<div class="form-group">
 							<label for="formEditTransmitterIp" class="col-lg-2 control-label" data-i18n="transmitters_add_ip_port"></label>
 							<div class="col-lg-6">
-								<input type="text" class="form-control" id="formEditTransmitterIp">
+								<input type="text" class="form-control" id="formEditTransmitterIp" disabled>
 							</div>
 							<div class="col-lg-4">
-								<input type="text" class="form-control" id="formEditTransmitterPort">
+								<input type="text" class="form-control" id="formEditTransmitterPort" disabled>
 							</div>
 						</div>
 						<div class="form-group">
@@ -725,14 +731,11 @@
 						</div>
 						<div class="form-group">
 							<label for="formEditTransmitterDeviceType" class="col-lg-2 control-label" data-i18n="transmitters_table_type"></label>
-							<div class="col-lg-10">
-								<select class="form-control" id="formEditTransmitterDeviceType">
-									<option value="RASPPAGER1" selected>RASPPAGER1</option>
-									<option value="XOS">XOS</option>
-									<option value="PR430">PR430</option>
-									<option value="SDRPAGER">SDRPAGER</option>
-									<option value="DV4mini">DV4mini</option>
-								</select>
+							<div class="col-lg-6">
+								<input type="text" class="form-control" id="formEditTransmitterDeviceType" disabled>
+							</div>
+							<div class="col-lg-4">
+								<input type="text" class="form-control" id="formEditTransmitterDeviceVersion" disabled>
 							</div>
 						</div>
 					</fieldset>

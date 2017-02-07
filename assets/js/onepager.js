@@ -680,6 +680,7 @@ function editTransmitter(name) {
 			var owners = $("#formEditTransmitterOwners");
 			owners.val(data.ownerNames.join("\n"));
 			$("#formEditTransmitterDeviceType").val(data.deviceType);
+			$("#formEditTransmitterDeviceVersion").val(data.deviceVersion);
 			owners.find("option").each(function() {
 				if ($.inArray($(this).text(), data.ownerNames) !== -1) {
 					$(this).prop("selected", true);
