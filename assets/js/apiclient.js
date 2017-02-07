@@ -492,6 +492,7 @@ function loadTransmitters() {
 						{data: "nodeName"},
 						{
 							data: function(obj) {
+								if (!obj.address) return "---";
 								return obj.address.ip_addr + ":" + obj.address.port;
 							}
 						},
