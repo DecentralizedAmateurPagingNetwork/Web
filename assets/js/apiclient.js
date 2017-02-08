@@ -525,16 +525,12 @@ function loadTransmitters() {
 			chartTransmitterData = [statCountOnline, statCountOffline];
 			renderChartTransmitter();
 
-			chartTransmitterTypesData = [0, 0, 0, 0];
+			chartTransmitterTypesData = [];
 			$.each(data, function(index, value) {
-				if (value.deviceType === "RASPPAGER1") {
-					chartTransmitterTypesData[0] = chartTransmitterTypesData[0] + 1;
-				} else if (value.deviceType === "XOS") {
-					chartTransmitterTypesData[1] = chartTransmitterTypesData[1] + 1;
-				} else if (value.deviceType === "SDRPAGER") {
-					chartTransmitterTypesData[2] = chartTransmitterTypesData[2] + 1;
-				} else if (value.deviceType === "DV4mini") {
-					chartTransmitterTypesData[3] = chartTransmitterTypesData[3] + 1;
+				if (chartTransmitterTypesData[value.deviceType] !== undefined) {
+					chartTransmitterTypesData[value.deviceType]++;
+				} else {
+					chartTransmitterTypesData[value.deviceType] = 1;
 				}
 			});
 			renderChartTransmitterTypes();

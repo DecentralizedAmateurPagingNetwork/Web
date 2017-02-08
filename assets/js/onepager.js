@@ -971,17 +971,29 @@ function renderChartTransmitterTypes() {
 		chartTransmitterTypes.destroy();
 	}
 
+	var chartColors = [];
+	for (var i = 0; i <= Object.keys(chartTransmitterTypesData).length; i++) {
+		chartColors.push(randomColor());
+	}
+
 	chartTransmitterTypes = new Chart($("#chartTransmitterTypes"), {
 		type: "pie",
 		data: {
-			labels: ["RASPPAGER1", "XOS", "SDRPAGER", "DV4mini"],
+			labels: Object.keys(chartTransmitterTypesData),
 			datasets: [{
-				data: chartTransmitterTypesData,
-				backgroundColor: ["#3A01DF", "#DF7401", "#04B431", "#029ACF"],
-				hoverBackgroundColor: ["#3A01DF", "#DF7401", "#04B431", "#029ACF"]
+				data: Object.values(chartTransmitterTypesData),
+				backgroundColor: chartColors,
+				hoverBackgroundColor: chartColors
 			}]
 		}
 	});
+}
+
+function randomColor() {
+	var r = Math.floor(Math.random() * 255);
+	var g = Math.floor(Math.random() * 255);
+	var b = Math.floor(Math.random() * 255);
+	return "rgb(" + r + "," + g + "," + b + ")";
 }
 
 
