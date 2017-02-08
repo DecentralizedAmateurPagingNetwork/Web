@@ -108,6 +108,9 @@ function initPage() {
 		});
 	});
 
+	// enable or disable antenna direction input after selection of antenna type
+	$("#formEditTransmitterAntennaType").on("change", checkTransmitterAntennaTypeAndDirection);
+
 	// add info-text to home-tab
 	$("#homeInfoText").html(config.information);
 
@@ -637,6 +640,7 @@ function addTransmitter() {
 	$("#container6-overview").hide();
 	$("#container6-detail").show();
 	$("#formEditTransmitterName").prop("disabled", false);
+	$("#formEditTransmitterAntennaDirection").prop("disabled", false);
 	$(".timeslotCheckBox").prop("checked", true);
 }
 
@@ -686,6 +690,8 @@ function editTransmitter(name) {
 			$("#formEditTransmitterAntennaLevel").val(data.antennaAboveGroundLevel);
 			$("#formEditTransmitterAntennaDirection").val(data.antennaDirection);
 			$("#formEditTransmitterAntennaGain").val(data.antennaGainDbi);
+
+			checkTransmitterAntennaTypeAndDirection();
 
 			if (data.address) {
 				$("#formEditTransmitterIp").val(data.address.ip_addr);
@@ -1054,6 +1060,15 @@ Number.prototype.pad = function(size) {
 	}
 	return s;
 };
+
+// enable or disable antenna direction input according to selected antenna type
+function checkTransmitterAntennaTypeAndDirection() {
+	if ($("#formEditTransmitterAntennaType").val() === "OMNI") {
+		$("#formEditTransmitterAntennaDirection").val(0).prop("disabled", true);
+	} else {
+		$("#formEditTransmitterAntennaDirection").prop("disabled", false);
+	}
+}
 
 // Check for possible overwriting of existing data
 function checkForOverwriting(dataArray, searchString) {
