@@ -527,10 +527,15 @@ function loadTransmitters() {
 
 			chartTransmitterTypesData = [];
 			$.each(data, function(index, value) {
-				if (chartTransmitterTypesData[value.deviceType] !== undefined) {
-					chartTransmitterTypesData[value.deviceType]++;
+				var deviceType = value.deviceType;
+				if (!deviceType) {
+					deviceType = jQuery.i18n.prop("unknown");
+				}
+
+				if (chartTransmitterTypesData[deviceType] !== undefined) {
+					chartTransmitterTypesData[deviceType]++;
 				} else {
-					chartTransmitterTypesData[value.deviceType] = 1;
+					chartTransmitterTypesData[deviceType] = 1;
 				}
 			});
 			renderChartTransmitterTypes();
