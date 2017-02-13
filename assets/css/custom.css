@@ -39,7 +39,7 @@ body > .navbar {
 	height: 40em;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
 	.page-header h1 {
 		font-size: 4em;
 	}
@@ -56,7 +56,7 @@ body > .navbar {
 	}
 
 	footer li {
-		float:left;
+		float: left;
 		margin: 0 1.5em 1.5em 0;
 	}
 
@@ -73,7 +73,7 @@ body > .navbar {
 }
 
 table.dataTable thead th {
-    width: auto !important;
+	width: auto !important;
 }
 
 /* Bootstrap Additions for Chosen
@@ -87,12 +87,11 @@ select.form-control + .chosen-container.chosen-container-single .chosen-single {
 	line-height: 1.428571429;
 	color: #555;
 	vertical-align: middle;
-	background-color: #fff;
 	border: 1px solid #ccc;
 	border-radius: 4px;
-	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-	background-image: none;
+	background: #fff none;
 }
 
 .has-error select.form-control + .chosen-container.chosen-container-single .chosen-single,
@@ -107,7 +106,6 @@ select.form-control + .chosen-container.chosen-container-single .chosen-single d
 
 select.form-control + .chosen-container .chosen-drop {
 	background-color: #FFF;
-	border: 1px solid #CCC;
 	border: 1px solid rgba(0, 0, 0, 0.15);
 	border-radius: 4px;
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
@@ -124,12 +122,11 @@ select.form-control + .chosen-container .chosen-search input[type=text] {
 	line-height: 1.428571429;
 	color: #555;
 	vertical-align: middle;
-	background-color: #FFF;
 	border: 1px solid #CCC;
 	border-radius: 4px;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-	background-image: none;
+	background: #FFF none;
 }
 
 select.form-control + .chosen-container .chosen-results {
@@ -138,7 +135,7 @@ select.form-control + .chosen-container .chosen-results {
 	background-color: #fff;
 }
 
-select.form-control + .chosen-container .chosen-results li ,
+select.form-control + .chosen-container .chosen-results li,
 select.form-control + .chosen-container .chosen-results li.active-result {
 	display: block;
 	padding: 3px 20px;
@@ -155,8 +152,7 @@ select.form-control + .chosen-container .chosen-results li.active-result:hover,
 select.form-control + .chosen-container .chosen-results li.highlighted {
 	color: #FFF;
 	text-decoration: none;
-	background-color: #428BCA;
-	background-image: none;
+	background: #428BCA none;
 }
 
 select.form-control + .chosen-container-multi .chosen-choices {
@@ -167,12 +163,11 @@ select.form-control + .chosen-container-multi .chosen-choices {
 	line-height: 1.428571429;
 	color: #555;
 	vertical-align: middle;
-	background-color: #FFF;
 	border: 1px solid #CCC;
 	border-radius: 4px;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-	background-image: none;
+	background: #FFF none;
 }
 
 select.form-control + .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
@@ -181,7 +176,6 @@ select.form-control + .chosen-container-multi .chosen-choices li.search-field in
 }
 
 select.form-control + .chosen-container-multi .chosen-choices li.search-choice {
-	background-image: none;
 	padding: 3px 24px 3px 5px;
 	margin: 0 6px 6px 0;
 	font-size: 13px;
@@ -191,11 +185,10 @@ select.form-control + .chosen-container-multi .chosen-choices li.search-choice {
 	white-space: nowrap;
 	vertical-align: middle;
 	cursor: pointer;
-	border: 1px solid #ccc;
 	border-radius: 4px;
 	color: #333;
-	background-color: #FFF;
-	border-color: #CCC;
+	background: #FFF none;
+	border: 1px solid #CCC;
 }
 
 select.form-control + .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
@@ -208,7 +201,7 @@ select.form-control + .chosen-container.chosen-container-single.chosen-container
 select.form-control + .chosen-container .chosen-search input[type=text]:focus {
 	border-color: #66AFE9;
 	outline: 0;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px rgba(102, 175, 233, 0.6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
 select.form-control + .chosen-container-multi .chosen-results li.result-selected {
