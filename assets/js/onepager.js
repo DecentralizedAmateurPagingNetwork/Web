@@ -4,6 +4,7 @@ var config;
 var currentLanguage;
 var currentUsername;
 var isAdmin = false;
+var hamnetDbData;
 var map, layer, markers;
 var mapInited = false;
 
@@ -110,6 +111,11 @@ function initPage() {
 
 	// enable or disable antenna direction input after selection of antenna type
 	$("#formEditTransmitterAntennaType").on("change", checkTransmitterAntennaTypeAndDirection);
+
+	// enter data of selected callsign into form
+	$("#formEditTransmitterNameChooser").chosen().change(function(event) {
+		updateFormFromHamnetDb($(event.target).val());
+	});
 
 	// add info-text to home-tab
 	$("#homeInfoText").html(config.information);
@@ -350,6 +356,80 @@ function loadUpdateData() {
 		},
 		error: function(err) {
 			handleError(err);
+		}
+	});
+}
+
+// find a data source (Hamnet or internet) and trigger a form update
+function loadHamnetDbData() {
+	var hamnetServer = "http://db0sda.ampr.org/dapnet-update/callsignLocation.php";
+	var internetServer = "http://hampager.de/dapnet-update/callsignLocation.php";
+
+	$.ajax({
+		url: hamnetServer,
+		type: "GET",
+		timeout: 1000,
+		success: function(data) {
+			hamnetDbData = data.data;
+			hamnetDbDataIntoGui();
+		},
+		error: function(err) {
+			if (err.status === 0) {
+				$.ajax({
+					url: internetServer,
+					type: "GET",
+					timeout: 3000,
+					success: function(data) {
+						hamnetDbData = data.data;
+						hamnetDbDataIntoGui();
+					},
+					error: function(err) {
+						handleError(err);
+					}
+				});
+			} else {
+				handleError(err);
+			}
+		}
+	});
+}
+
+// place the received data inside the form
+function hamnetDbDataIntoGui() {
+	var callsigns = $("#formEditTransmitterNameChooser");
+	callsigns.empty();
+	$.each(hamnetDbData, function(i, item) {
+		callsigns.append($("<option>", {
+			value: item.callsign,
+			text: item.callsign + " - " + item.name
+		}));
+	});
+	callsigns.trigger("chosen:updated");
+}
+
+// update the form with data from the selected callsign
+function updateFormFromHamnetDb(callsign) {
+	$.each(hamnetDbData, function(i, item) {
+		if (item.callsign === callsign) {
+			$("#formEditTransmitterName").val(item.callsign);
+
+			var latitude = $("#formEditTransmitterLatitude");
+			if (item.latitude < 0) {
+				latitude.val(item.latitude * -1);
+				$("#formEditTransmitterLatitudeOrientation").val("-1");
+			} else {
+				latitude.val(item.latitude);
+				$("#formEditTransmitterLatitudeOrientation").val("1");
+			}
+
+			var longitude = $("#formEditTransmitterLongitude");
+			if (item.longitude < 0) {
+				longitude.val(item.longitude * -1);
+				$("#formEditTransmitterLongitudeOrientation").val("-1");
+			} else {
+				longitude.val(item.longitude);
+				$("#formEditTransmitterLongitudeOrientation").val("1");
+			}
 		}
 	});
 }
@@ -640,6 +720,7 @@ function addTransmitter() {
 	$("#container6-overview").hide();
 	$("#container6-detail").show();
 	$("#formEditTransmitterName").prop("disabled", false);
+	$("#formEditTransmitterNameChooser").prop("disabled", false).trigger("chosen:updated");
 	$("#formEditTransmitterAntennaDirection").prop("disabled", false);
 	$(".timeslotCheckBox").prop("checked", true);
 }
@@ -650,6 +731,7 @@ function editTransmitter(name) {
 	if (name === "" || name === null) return;
 	editTransmitterName = name;
 	$("#formEditTransmitterName").prop("disabled", true);
+	$("#formEditTransmitterNameChooser").prop("disabled", true).trigger("chosen:updated");
 
 	$.ajax({
 		url: config.apiUrl + "/transmitters/" + editTransmitterName,

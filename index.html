@@ -622,8 +622,13 @@
 						<legend data-i18n="transmitters_add_edit_title"></legend>
 						<div class="form-group">
 							<label for="formEditTransmitterName" class="col-lg-2 control-label" data-i18n="transmitters_table_name"></label>
-							<div class="col-lg-10">
+							<div class="col-lg-5">
 								<input type="text" class="form-control" id="formEditTransmitterName">
+							</div>
+							<div class="col-lg-5">
+								<select class="form-control chosen-select" id="formEditTransmitterNameChooser">
+									<option value="_NONE_" selected>_NONE_</option>
+								</select>
 							</div>
 						</div>
 						<div class="form-group">
@@ -1127,6 +1132,7 @@
 						"contactType": "technical support"
 					}]
 				}
+
 
 				</script>
 			</div>

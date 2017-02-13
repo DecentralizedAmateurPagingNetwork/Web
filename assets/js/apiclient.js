@@ -455,6 +455,7 @@ function sendRubricsActivation() {
 
 // Load all Transmitters
 function loadTransmitters() {
+	loadHamnetDbData();
 	$.ajax({
 		url: config.apiUrl + "/transmitters",
 		type: "GET",
