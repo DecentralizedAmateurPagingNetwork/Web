@@ -730,13 +730,21 @@ function returnFromTransmitterDetails() {
 
 	$("#formEditTransmitterName").val("");
 	unselectEverything("#formEditTransmitterNodeName");
+	$("#formEditTransmitterAuthKey").val("");
 	$("#formEditTransmitterLatitude").val("");
 	unselectEverything("#formEditTransmitterLatitudeOrientation");
 	$("#formEditTransmitterLongitude").val("");
 	unselectEverything("#formEditTransmitterLongitudeOrientation");
+	unselectEverything("#formEditTransmitterUsage");
+	unselectEverything("#formEditTransmitterAntennaType");
+	$("#formEditTransmitterAntennaLevel").val("");
+	$("#formEditTransmitterAntennaDirection").val("");
+	$("#formEditTransmitterAntennaGain").val("");
 	$("#formEditTransmitterPower").val("");
 	$("#formEditTransmitterIp").val("");
 	$("#formEditTransmitterPort").val("");
+	$("#formEditTransmitterDeviceType").val("");
+	$("#formEditTransmitterDeviceVersion").val("");
 	unselectEverything("#formEditTransmitterOwners");
 }
 
