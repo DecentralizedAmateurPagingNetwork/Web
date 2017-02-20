@@ -721,7 +721,7 @@ function addTransmitter() {
 	$("#container6-detail").show();
 	$("#formEditTransmitterName").prop("disabled", false);
 	$("#formEditTransmitterNameChooser").prop("disabled", false).trigger("chosen:updated");
-	$("#formEditTransmitterAntennaDirection").prop("disabled", false);
+	$("#formEditTransmitterAntennaDirection").val(0).prop("disabled", true);
 	$(".timeslotCheckBox").prop("checked", true);
 }
 
