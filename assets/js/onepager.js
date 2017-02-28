@@ -1,4 +1,4 @@
-const VERSION = "1.2.4";
+const VERSION = "1.3.0";
 
 var config;
 var currentLanguage;
