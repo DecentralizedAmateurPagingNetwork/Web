@@ -99,6 +99,9 @@ function initPage() {
 	$("#formEditTransmitterAntennaGain").on("change input", function() {
 		numberInputWithDecimal(this, -50, 80, 0);
 	});
+	$("#formEditTransmitterAuthKey").on("change input", function() {
+		passwordInput(this);
+	});
 
 	// show help-text on click for callsigns
 	$("#formEditCallSignsPagersNumberHelpIcon").on("click", function() {
@@ -1148,6 +1151,17 @@ function numberInputWithDecimal(element, min, max, maxDecimals) {
 function numberInput(element, min, max) {
 	// check for other input than numbers AND for values between min and max
 	if (element.value === "" || (element.value.match(/([0-9])$/g) && element.value >= min && element.value <= max)) {
+		$(element.parentElement).removeClass("has-error");
+	} else {
+		$(element.parentElement).addClass("has-error");
+	}
+}
+
+function passwordInput(element) {
+	// check for other input than characters and numbers
+	if (element.value.indexOf(" ") !== -1) {
+		$(element.parentElement).addClass("has-error");
+	} else if (element.value === "" || element.value.match(/(^[a-zA-Z0-9_-]*$)/g)) {
 		$(element.parentElement).removeClass("has-error");
 	} else {
 		$(element.parentElement).addClass("has-error");
