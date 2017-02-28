@@ -1161,7 +1161,7 @@ function passwordInput(element) {
 	// check for other input than characters and numbers
 	if (element.value.indexOf(" ") !== -1) {
 		$(element.parentElement).addClass("has-error");
-	} else if (element.value === "" || element.value.match(/(^[a-zA-Z0-9_-]*$)/g)) {
+	} else if (element.value === "" || element.value.match(/(^[a-zA-Z0-9]+$)/g)) {
 		$(element.parentElement).removeClass("has-error");
 	} else {
 		$(element.parentElement).addClass("has-error");
