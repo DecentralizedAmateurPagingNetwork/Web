@@ -476,7 +476,7 @@ function loadTransmitters() {
 						{data: "nodeName"},
 						{data: noDataEntry},
 						{data: "ownerNames[, ]"},
-						{data: "deviceType"},
+						{data: transmitterDeviceType},
 						{data: statusFormatter},
 						{data: noDataEntry}
 					],
@@ -498,7 +498,7 @@ function loadTransmitters() {
 							}
 						},
 						{data: "ownerNames[, ]"},
-						{data: "deviceType"},
+						{data: transmitterDeviceType},
 						{data: statusFormatter},
 						{
 							data: function(obj) {
@@ -1059,6 +1059,18 @@ function deleteUser(name) {
 			error: handleError
 		});
 	});
+}
+
+function transmitterDeviceType(obj) {
+	var imgType = "";
+	if (obj.usage === "WIDERANGE") {
+		imgType = "<img src=\"./assets/img/transmitter_widerange.png\" title=\"W\" />";
+	} else {
+		imgType = "<img src=\"./assets/img/transmitter_personal.png\" title=\"P\" />";
+	}
+
+	if (obj.deviceType === null) obj.deviceType = "";
+	return imgType + " " + obj.deviceType;
 }
 
 function statusFormatter(obj) {
