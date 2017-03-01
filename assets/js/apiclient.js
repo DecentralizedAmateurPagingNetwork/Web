@@ -568,6 +568,8 @@ function loadTransmitters() {
 			if (markers !== undefined && mapInited) map.removeLayer(markers);
 			markers = new L.FeatureGroup();
 			$.each(data, function(i, item) {
+				if ($("#mapWiderangeOnly").prop("checked") && item.usage !== "WIDERANGE") return true;
+
 				var markerIcon = markerOnline;
 				if (item.status !== "ONLINE") markerIcon = markerOffline;
 

@@ -120,6 +120,9 @@ function initPage() {
 		updateFormFromHamnetDb($(event.target).val());
 	});
 
+	// reload map when map-settings are changed
+	$("#mapWiderangeOnly").on("change", loadTransmitters);
+
 	// add info-text to home-tab
 	$("#homeInfoText").html(config.information);
 
