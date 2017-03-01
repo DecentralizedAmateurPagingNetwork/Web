@@ -514,13 +514,14 @@ function loadTransmitters() {
 			var statCountOnline = 0;
 			var statCountOffline = 0;
 			$.each(data, function(index, value) {
+				if ($("#transmittersWiderangeOnly").prop("checked") && value.usage !== "WIDERANGE") return true;
 				if (value.status === "ONLINE") {
 					statCountOnline++;
 				} else {
 					statCountOffline++;
 				}
 			});
-			$("#statsTransmitterTotal").text(data.length);
+			$("#statsTransmitterTotal").text(statCountOnline + statCountOffline);
 			$("#statsStartTransmitter").text(statCountOnline + " / " + data.length);
 
 			chartTransmitterData = [statCountOnline, statCountOffline];
@@ -528,6 +529,8 @@ function loadTransmitters() {
 
 			chartTransmitterTypesData = [];
 			$.each(data, function(index, value) {
+				if ($("#transmittersWiderangeOnly").prop("checked") && value.usage !== "WIDERANGE") return true;
+
 				var deviceType = value.deviceType;
 				if (!deviceType) {
 					deviceType = jQuery.i18n.prop("unknown");

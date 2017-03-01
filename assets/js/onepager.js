@@ -120,6 +120,9 @@ function initPage() {
 		updateFormFromHamnetDb($(event.target).val());
 	});
 
+	// reload transmitters when transmitter-statistic-settings are changed
+	$("#transmittersWiderangeOnly").on("change", loadTransmitters);
+
 	// reload map when map-settings are changed
 	$("#mapWiderangeOnly").on("change", loadTransmitters);
 
