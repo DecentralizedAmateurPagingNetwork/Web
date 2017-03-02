@@ -1064,9 +1064,9 @@ function deleteUser(name) {
 function transmitterDeviceType(obj) {
 	var imgType = "";
 	if (obj.usage === "WIDERANGE") {
-		imgType = "<img src=\"./assets/img/transmitter_widerange.png\" title=\"W\" />";
+		imgType = "<img src=\"./assets/img/transmitter_widerange.png\" title=\"Widerange\" />";
 	} else {
-		imgType = "<img src=\"./assets/img/transmitter_personal.png\" title=\"P\" />";
+		imgType = "<img src=\"./assets/img/transmitter_personal.png\" title=\"Personal\" />";
 	}
 
 	if (obj.deviceType === null) obj.deviceType = "";
