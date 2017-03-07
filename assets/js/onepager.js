@@ -250,6 +250,8 @@ function loginSuccess(username) {
 			});
 			$("#btnLogin").hide();
 			$("#btnLogout").css("display", "block");
+
+			loadAllData();
 		}
 	});
 }
@@ -280,11 +282,13 @@ function openContainer(id) {
 
 	$("table").css("width", "100%");
 
-	loadOpenTabsData();
+	// temporarily disabled to prevent lagging
+	// loadOpenTabsData();
 }
 
 // load every tab's data
 function loadAllData() {
+	loadHome();
 	loadCalls();
 	loadCallSigns();
 	loadNews();
@@ -307,8 +311,6 @@ function loadOpenTabsData() {
 	} else if (currentlyOpenContainer == 5) {
 		loadRubrics();
 	} else if (currentlyOpenContainer == 6) {
-		// load Nodes to make sure that transmitter-editing is possible
-		loadNodes();
 		loadTransmitters();
 	} else if (currentlyOpenContainer == 7) {
 		loadTransmitterGroups();
