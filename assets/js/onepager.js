@@ -232,8 +232,12 @@ function loginSuccess(username) {
 				isAdmin = true;
 			} else {
 				$("ul.navbar-nav li a[href='#3']").parent().hide();
+				$("#callsigns-add-callsign").hide();
 				$("#rubrics-add-rubric").hide();
+				$("#transmitters-add-transmitter").hide();
+				$("#transmittergroups-add-transmittergroup").hide();
 				$("#nodes-add-node").hide();
+				$("#users-add-user").hide();
 			}
 
 			$("#jumbotronText").text(jQuery.i18n.prop("home_jumbotron_text_loggedin", username));

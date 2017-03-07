@@ -188,7 +188,16 @@ function loadCallSigns() {
 						{data: noDataEntry},
 						{data: noDataEntry},
 						{data: "ownerNames[, ]"},
-						{data: noDataEntry}
+						{
+							data: function(obj) {
+								if (obj.ownerNames.indexOf(currentUsername) !== -1) {
+									return "<a href=\"#4\" onclick=\"editCallSign('" + obj.name + "')\"><i class=\"fa fa-pencil\" title=\"" + jQuery.i18n.prop('container_table_actions_edit') + "\"></i></a> " +
+										"<a href=\"#4\" onclick=\"deleteCallSign('" + obj.name + "')\"><i class=\"fa fa-trash\" title=\"" + jQuery.i18n.prop('container_table_actions_delete') + "\"></i></a>";
+								} else {
+									return "---";
+								}
+							}
+						}
 					],
 					"responsive": true
 				});
@@ -348,7 +357,12 @@ function loadRubrics() {
 					{
 						data: function(obj) {
 							if (!isAdmin) {
-								return "---";
+								if (obj.ownerNames.indexOf(currentUsername) !== -1) {
+									return "<a href=\"#5\" onclick=\"editRubric('" + obj.name + "')\"><i class=\"fa fa-pencil\" title=\"" + jQuery.i18n.prop("container_table_actions_edit") + "\"></i></a> " +
+										"<a href=\"#5\" onclick=\"deleteRubric('" + obj.name + "')\"><i class=\"fa fa-trash\" title=\"" + jQuery.i18n.prop("container_table_actions_delete") + "\"></i></a>";
+								} else {
+									return "---";
+								}
 							} else {
 								return "<a href=\"#5\" onclick=\"editRubric('" + obj.name + "')\"><i class=\"fa fa-pencil\" title=\"" + jQuery.i18n.prop("container_table_actions_edit") + "\"></i></a> " +
 									"<a href=\"#5\" onclick=\"deleteRubric('" + obj.name + "')\"><i class=\"fa fa-trash\" title=\"" + jQuery.i18n.prop("container_table_actions_delete") + "\"></i></a>";
@@ -497,7 +511,16 @@ function loadTransmitters() {
 						{data: "ownerNames[, ]"},
 						{data: transmitterDeviceType},
 						{data: statusFormatter},
-						{data: noDataEntry}
+						{
+							data: function(obj) {
+								if (obj.ownerNames.indexOf(currentUsername) !== -1) {
+									return "<a href=\"#6\" onclick=\"editTransmitter('" + obj.name + "')\"><i class=\"fa fa-pencil\" title=\"" + jQuery.i18n.prop("container_table_actions_edit") + "\"></i></a> " +
+										"<a href=\"#6\" onclick=\"deleteTransmitter('" + obj.name + "')\"><i class=\"fa fa-trash\" title=\"" + jQuery.i18n.prop("container_table_actions_delete") + "\"></i></a>";
+								} else {
+									return "---";
+								}
+							}
+						}
 					],
 					"responsive": true
 				});
