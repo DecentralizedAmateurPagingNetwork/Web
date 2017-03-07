@@ -66,7 +66,7 @@ body > .navbar {
 	}
 }
 
-#navbar-main-nav, #homeStats, #btnLogout, #loggedin, #modalLoginAlert,
+#navbar-main-nav, #btnLogout, #loggedin, #modalLoginAlert,
 #container2, #container3, #container4, #container5, #container6, #container7, #container8, #container9, #container10, #container11, #container12, #container13,
 #container2-detail, #container3-detail, #container4-detail, #container5-detail, #container5-detail2, #container6-detail, #container7-detail, #container8-detail, #container9-detail {
 	display: none;

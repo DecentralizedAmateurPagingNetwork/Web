@@ -242,7 +242,6 @@ function loginSuccess(username) {
 
 			$("#jumbotronText").text(jQuery.i18n.prop("home_jumbotron_text_loggedin", username));
 			$("#navbar-main-nav").show();
-			$("#homeStats").show();
 
 			var loggedInButton = $("#loggedin");
 			loggedInButton.text(username).css("display", "block");
@@ -308,6 +307,8 @@ function loadOpenTabsData() {
 	} else if (currentlyOpenContainer == 5) {
 		loadRubrics();
 	} else if (currentlyOpenContainer == 6) {
+		// load Nodes to make sure that transmitter-editing is possible
+		loadNodes();
 		loadTransmitters();
 	} else if (currentlyOpenContainer == 7) {
 		loadTransmitterGroups();
