@@ -247,8 +247,6 @@ function loginSuccess(username) {
 			});
 			$("#btnLogin").hide();
 			$("#btnLogout").css("display", "block");
-
-			loadAllData();
 		}
 	});
 }
@@ -295,7 +293,9 @@ function loadAllData() {
 
 // load the data of the currently open tab
 function loadOpenTabsData() {
-	if (currentlyOpenContainer == 2) {
+	if (currentlyOpenContainer == 1) {
+		loadHome();
+	} else if (currentlyOpenContainer == 2) {
 		loadCalls();
 	} else if (currentlyOpenContainer == 3) {
 		loadNews();

@@ -6,6 +6,25 @@ var chartNodesData, chartTransmitterData, chartTransmitterTypesData;
  *  # INTERACT WITH THE API #
  *  ######################### */
 
+// Load statistics on home
+function loadHome() {
+	$.ajax({
+		url: config.apiUrl + "/stats",
+		type: "GET",
+		beforeSend: setCookieHeader,
+		success: function(data) {
+			$("#statsStartCalls").text(data.calls);
+			$("#statsStartCallsigns").text(data.callSigns);
+			$("#statsStartNews").text(data.news);
+			$("#statsStartRubrics").text(data.rubrics);
+			$("#statsStartTransmitter").text(data.transmittersOnline + "/" + data.transmittersTotal);
+			$("#statsStartNodes").text(data.nodesOnline + "/" + data.nodesTotal);
+			$("#statsStartUsers").text(data.users);
+		},
+		error: handleError
+	});
+}
+
 // Load all Calls
 function loadCalls() {
 	if (!isAdmin) return;
@@ -43,7 +62,7 @@ function loadCalls() {
 				if (value.emergency) statEmergency++;
 			});
 			$("#statsCallsEmergency").text(statEmergency);
-			$("#statsCallsTotal, #statsStartCalls").text(data.length);
+			$("#statsCallsTotal").text(data.length);
 		},
 		error: handleError
 	});
@@ -112,7 +131,7 @@ function loadNews() {
 				"responsive": true
 			});
 
-			$("#statsNewsTotal, #statsStartNews").text(data.length);
+			$("#statsNewsTotal").text(data.length);
 		},
 		error: handleError
 	});
@@ -522,7 +541,6 @@ function loadTransmitters() {
 				}
 			});
 			$("#statsTransmitterTotal").text(statCountOnline + statCountOffline);
-			$("#statsStartTransmitter").text(statCountOnline + " / " + data.length);
 
 			chartTransmitterData = [statCountOnline, statCountOffline];
 			renderChartTransmitter();
@@ -850,7 +868,6 @@ function loadNodes() {
 				}
 			});
 			$("#statsNodesTotal").text(data.length);
-			$("#statsStartNodes").text(statCountOnline + " / " + data.length);
 
 			chartNodesData = [statCountOnline, statCountOffline];
 			renderChartNode();
@@ -980,7 +997,7 @@ function loadUsers() {
 				if (value.admin) statAdmin++;
 			});
 			$("#statsUsersAdmins").text(statAdmin);
-			$("#statsUsersTotal, #statsStartUsers").text(data.length);
+			$("#statsUsersTotal").text(data.length);
 
 			var usages = $("#formEditCallSignOwners, #formEditRubricOwners, #formEditTransmitterOwners, #formEditTransmitterGroupOwners");
 			usages.empty();
