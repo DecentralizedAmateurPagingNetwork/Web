@@ -284,6 +284,11 @@ function openContainer(id) {
 
 	// temporarily disabled to prevent lagging
 	// loadOpenTabsData();
+
+	// needed because of above hotfix
+	if (id == 13 && !mapInited) {
+		prepareMap();
+	}
 }
 
 // load every tab's data
