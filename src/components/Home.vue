@@ -20,7 +20,7 @@
 						<li><a href="https://github.com/DecentralizedAmateurPagingNetwork/Core" target="_blank">DAPNET Core</a></li>
 						<li><a href="https://github.com/DecentralizedAmateurPagingNetwork/Web" target="_blank">DAPNET Web</a></li>
 						<li><a href="https://github.com/rwth-afu/raspager-proxy" target="_blank">DAPNET Proxy</a></li>
-						<li><a href="https://github.com/rwth-afu/RustPager" target="_blank">RustPager</a></li>
+						<li><a href="https://github.com/rwth-afu/UniPager" target="_blank">UniPager</a></li>
 					</ul>
 				</div>
 			</div>
