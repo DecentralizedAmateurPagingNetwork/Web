@@ -1,0 +1,159 @@
+<template>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="page-header">
+					<h1>Nodes</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-9">
+				<h2>All Nodes
+					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': running }" @click="loadData"></i>
+				</h2>
+
+				<info-error :message="errorMessage"></info-error>
+
+				<tablegrid v-if="table.rows" :columns="table.columns" :data="table.rows" :edit-action="editElement" :delete-action="deleteElement"></tablegrid>
+			</div>
+			<div class="col-lg-3">
+				<div class="actions well">
+					<template v-if="this.$store.getters.user.admin">
+						<legend>Actions</legend>
+						<ul>
+							<li><router-link to="/nodes/new">New Node</router-link></li>
+						</ul>
+						<br/>
+					</template>
+					<legend>Statistics</legend>
+					<ul v-if="table.rows" class="list-group">
+						<li class="list-group-item"><b>Total Nodes</b><span class="badge">{{ statTotal }}</span></li>
+						<li class="list-group-item"><chart-online-offline :chartData="chartData"></chart-online-offline></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script>
+	import ChartOnlineOffline from '@/components/charts/OnlineOffline';
+
+	export default {
+		components: {
+			ChartOnlineOffline
+		},
+		created() {
+			this.loadData();
+		},
+		data() {
+			return {
+				errorMessage: false,
+				running: false,
+				table: {
+					columns: [
+						{
+							id: 'name',
+							title: 'Name'
+						},
+						{
+							id: 'address',
+							title: 'IP-Address'
+						},
+						{
+							id: 'status',
+							title: 'Status'
+						},
+						{
+							id: 'actions',
+							title: 'Actions'
+						}
+					],
+					rows: false
+				}
+			};
+		},
+		computed: {
+			chartData() {
+				let online = this.table.rows.filter(value => value.status.indexOf('ONLINE') !== -1).length;
+
+				return {
+					labels: ['Online', 'Offline'],
+					datasets: [{
+						data: [online, this.statTotal - online],
+						backgroundColor: ['#469408', '#D9230F'],
+						hoverBackgroundColor: ['#469408', '#D9230F']
+					}]
+				};
+			},
+			statTotal() {
+				return this.table.rows.length;
+			}
+		},
+		methods: {
+			loadData() {
+				this.running = true;
+				this.$http.get('nodes').then(response => {
+					// success --> save new data
+
+					response.body.forEach(node => {
+						// add ip and port into address-slot (if admin)
+						if (this.$store.getters.user.admin && node.address !== null) {
+							node.address = node.address.ip_addr + ':' + node.address.port;
+						} else {
+							node.address = '---';
+						}
+
+						// make status more colorful
+						if (node.status === 'ONLINE') {
+							node.status = '<span class="label label-success">ONLINE</span>';
+						} else if (node.status === 'OFFLINE') {
+							node.status = '<span class="label label-primary">OFFLINE</span>';
+						} else {
+							node.status = '<span class="label label-warning">' + node.status + '</span>';
+						}
+
+						// add actions (if admin or owner)
+						node.actions = false;
+						if (this.$store.getters.user.admin) {
+							node.actions = true;
+						}
+					});
+
+					this.table.rows = response.body;
+
+					this.running = false;
+					this.errorMessage = false;
+				}, response => {
+					// error --> show error message
+					this.running = false;
+					this.errorMessage = this.$helpers.getAjaxErrorMessage(response);
+				});
+			},
+			editElement(element) {
+				this.$router.push({name: 'Edit Node', params: {id: element.name}});
+			},
+			deleteElement(element) {
+				this.$dialogs.deleteElement(this, () => {
+					this.$http.delete('nodes/' + element.name, {
+						before(request) {
+							request.headers.delete('Content-Type');
+						}
+					}).then(response => {
+						// success --> reload data
+						this.loadData();
+					}, response => {
+						// error --> show error message
+						this.$dialogs.ajaxError(this, response);
+					});
+				});
+			}
+		}
+	};
+</script>
+
+<style scoped>
+
+</style>

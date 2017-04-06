@@ -1,0 +1,6 @@
+{
+	"api": "http://www.hampager.de:8080",
+	"update": "http://www.hampager.de/dapnet-update/update.php",
+	"hamnetDb": "http://www.hampager.de/dapnet-update/callsignLocation.php",
+	"map": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+}

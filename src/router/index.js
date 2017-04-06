@@ -1,0 +1,189 @@
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from '@/components/Home';
+import CallOverview from '@/components/call/Overview';
+import CallNew from '@/components/call/New';
+import CallsignOverview from '@/components/callsign/Overview';
+import CallsignNew from '@/components/callsign/New';
+import NewsOverview from '@/components/news/Overview';
+import NewsNew from '@/components/news/New';
+import RubricOverview from '@/components/rubric/Overview';
+import RubricNew from '@/components/rubric/New';
+import RubricActivation from '@/components/rubric/Activation';
+import TransmitterOverview from '@/components/transmitter/Overview';
+import TransmitterNew from '@/components/transmitter/New';
+import TransmitterMap from '@/components/transmitter/Map';
+import TransmitterGroupOverview from '@/components/transmitter/group/Overview';
+import TransmitterGroupNew from '@/components/transmitter/group/New';
+import NodeOverview from '@/components/node/Overview';
+import NodeNew from '@/components/node/New';
+import UserOverview from '@/components/user/Overview';
+import UserNew from '@/components/user/New';
+import Login from '@/components/authentication/Login';
+import Logout from '@/components/authentication/Logout';
+import VersionCheck from '@/components/VersionCheck';
+import Impress from '@/components/pages/Impress';
+import Privacy from '@/components/pages/Privacy';
+import NotFound from '@/components/pages/NotFound';
+
+Vue.use(Router);
+
+export default new Router({
+	routes: [
+		{
+			path: '/',
+			name: 'Home',
+			component: Home
+		},
+		{
+			path: '/calls',
+			name: 'Call Overview',
+			component: CallOverview
+		},
+		{
+			path: '/calls/new',
+			name: 'New Call',
+			component: CallNew
+		},
+		{
+			path: '/callsigns',
+			name: 'Callsign Overview',
+			component: CallsignOverview
+		},
+		{
+			path: '/callsigns/new',
+			name: 'New Callsign',
+			component: CallsignNew
+		},
+		{
+			path: '/callsigns/edit/:id',
+			name: 'Edit Callsign',
+			component: CallsignNew
+		},
+		{
+			path: '/news',
+			name: 'News Overview',
+			component: NewsOverview
+		},
+		{
+			path: '/news/new',
+			name: 'New News',
+			component: NewsNew
+		},
+		{
+			path: '/rubrics',
+			name: 'Rubric Overview',
+			component: RubricOverview
+		},
+		{
+			path: '/rubrics/new',
+			name: 'New Rubric',
+			component: RubricNew
+		},
+		{
+			path: '/rubrics/edit/:id',
+			name: 'Edit Rubric',
+			component: RubricNew
+		},
+		{
+			path: '/rubrics/activate',
+			name: 'Activate Rubric',
+			component: RubricActivation
+		},
+		{
+			path: '/transmitters',
+			name: 'Transmitter Overview',
+			component: TransmitterOverview
+		},
+		{
+			path: '/transmitters/new',
+			name: 'New Transmitter',
+			component: TransmitterNew
+		},
+		{
+			path: '/transmitters/edit/:id',
+			name: 'Edit Transmitter',
+			component: TransmitterNew
+		},
+		{
+			path: '/transmitters/map',
+			name: 'Transmitter Map',
+			component: TransmitterMap
+		},
+		{
+			path: '/transmitters/groups',
+			name: 'Transmitter Group Overview',
+			component: TransmitterGroupOverview
+		},
+		{
+			path: '/transmitters/groups/new',
+			name: 'New Transmitter Group',
+			component: TransmitterGroupNew
+		},
+		{
+			path: '/transmitters/groups/edit/:id',
+			name: 'Edit Transmitter Group',
+			component: TransmitterGroupNew
+		},
+		{
+			path: '/nodes',
+			name: 'Node Overview',
+			component: NodeOverview
+		},
+		{
+			path: '/nodes/new',
+			name: 'New Node',
+			component: NodeNew
+		},
+		{
+			path: '/nodes/edit/:id',
+			name: 'Edit Node',
+			component: NodeNew
+		},
+		{
+			path: '/users',
+			name: 'User Overview',
+			component: UserOverview
+		},
+		{
+			path: '/users/new',
+			name: 'New User',
+			component: UserNew
+		},
+		{
+			path: '/users/edit/:id',
+			name: 'Edit User',
+			component: UserNew
+		},
+		{
+			path: '/login',
+			name: 'Login',
+			component: Login
+		},
+		{
+			path: '/logout',
+			name: 'Logout',
+			component: Logout
+		},
+		{
+			path: '/version',
+			name: 'Version Check',
+			component: VersionCheck
+		},
+		{
+			path: '/impress',
+			name: 'Impress',
+			component: Impress
+		},
+		{
+			path: '/privacy',
+			name: 'Privacy',
+			component: Privacy
+		},
+		{
+			path: '*',
+			name: 'Not Found',
+			component: NotFound
+		}
+	]
+});

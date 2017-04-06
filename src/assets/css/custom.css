@@ -1,0 +1,33 @@
+textarea {
+	resize: vertical;
+}
+
+.page-header {
+	margin-top: 50px;
+}
+
+.fa-refresh {
+	color: #c1c1c1;
+	cursor: pointer;
+	font-size: .8em !important;
+}
+
+.help-block {
+	color: #808080;
+}
+
+.help-block > i {
+	cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+	.actions.well {
+		margin-top: 1em
+	}
+}
+
+@media (min-width: 768px) {
+	.page-header h1 {
+		font-size: 3em;
+	}
+}

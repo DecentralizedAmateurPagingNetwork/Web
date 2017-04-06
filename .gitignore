@@ -1,9 +1,14 @@
-# DAPNET Web
-config.json
-assets/js/custom.js
+# dist
+dist/
 
-# Development
-HTTP-Server-*
+# npm
+node_modules/
+npm-debug.log*
 
 # IntelliJ IDEA
 .idea/
+
+# some default urls used for testing
+src/store/defaultMapGermany.json
+src/store/defaultUrlsHamnet.json
+src/store/defaultUrlsInternet.json
