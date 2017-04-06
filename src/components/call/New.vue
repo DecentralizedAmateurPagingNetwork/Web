@@ -51,7 +51,7 @@
 			</div>
 			<div class="col-lg-3">
 				<h2>Information</h2>
-				<p>...</p>
+				<p>Here your recent paging calls are displayed.</p>
 			</div>
 		</div>
 	</div>

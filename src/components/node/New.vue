@@ -67,7 +67,7 @@
 			</div>
 			<div class="col-lg-3">
 				<h2>Information</h2>
-				<p>...</p>
+				<p>This table shows the registered DAPNET Core nodes and is mostly for SysOp information.</p>
 			</div>
 		</div>
 	</div>

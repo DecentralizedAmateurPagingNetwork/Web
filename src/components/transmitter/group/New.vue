@@ -48,7 +48,7 @@
 			</div>
 			<div class="col-lg-3">
 				<h2>Information</h2>
-				<p>...</p>
+				<p>A transmitter group combines one of several transmitters to a logical entity. The group all contains all registered transmitters. Other groups are assigned by their coverage area.</p>
 			</div>
 		</div>
 	</div>

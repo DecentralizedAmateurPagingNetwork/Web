@@ -168,6 +168,7 @@
 					<li v-if="form.address.ip_addr" class="list-group-item"><b>IP-Address</b><span class="badge">{{ form.address.ip_addr }}</span></li>
 					<li v-if="form.address.port" class="list-group-item"><b>Port</b><span class="badge">{{ form.address.port }}</span></li>
 				</ul>
+				<p>This table shows the registered paging transmitters, their online status and additional information. Personal transmitters have low output power and a very small coverage. Wide range transmitters are usually installed at elevated locations leading to a wide coverage area.</p>
 			</div>
 		</div>
 	</div>

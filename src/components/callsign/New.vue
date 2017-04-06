@@ -54,7 +54,7 @@
 			</div>
 			<div class="col-lg-3">
 				<h2>Information</h2>
-				<p>...</p>
+				<p>Callsigns are an allocation between a name (usually your amateur radio callsign) and one or multiple pager IDs.</p>
 			</div>
 		</div>
 	</div>

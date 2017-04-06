@@ -35,8 +35,7 @@
 				</form>
 			</div>
 			<div class="col-lg-3">
-				<h2>Information</h2>
-				<p>...</p>
+				<!-- TODO -->
 			</div>
 		</div>
 	</div>

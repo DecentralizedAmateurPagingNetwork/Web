@@ -50,7 +50,7 @@
 			</div>
 			<div class="col-lg-3">
 				<h2>Information</h2>
-				<p>...</p>
+				<p>This table shows the registered users and their detail information.</p>
 			</div>
 		</div>
 	</div>

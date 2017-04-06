@@ -43,7 +43,7 @@
 			</div>
 			<div class="col-lg-3">
 				<h2>Information</h2>
-				<p>...</p>
+				<p>News are the contents of rubrics. They are up to now only available on Skyper paging receivers.</p>
 			</div>
 		</div>
 	</div>

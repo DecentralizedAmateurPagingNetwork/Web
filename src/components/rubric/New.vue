@@ -54,7 +54,7 @@
 			</div>
 			<div class="col-lg-3">
 				<h2>Information</h2>
-				<p>...</p>
+				<p>Rubrics are Skyper paging receiver based categories which can hold up to 10 messages. Some of them are generated automatically like for example weather information.</p>
 			</div>
 		</div>
 	</div>
