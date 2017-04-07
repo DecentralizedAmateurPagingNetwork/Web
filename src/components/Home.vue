@@ -14,7 +14,7 @@
 			<div class="col-lg-4">
 				<h2>The DAPNET</h2>
 				<div class="well">
-					<img src="~@/assets/img/dapnet-logo.png" alt="DAPNET Logo"/>
+					<img src="~@/assets/img/afu-dapnet-logo.png" alt="DAPNET Logo"/>
 					<h3>Projects</h3>
 					<ul>
 						<li><a href="https://github.com/DecentralizedAmateurPagingNetwork/Core" target="_blank">DAPNET Core</a></li>
