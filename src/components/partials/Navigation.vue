@@ -56,14 +56,17 @@
 </script>
 
 <style scoped>
+	.navbar, .dropdown-menu {
+		background-color: #f4f4f4;
+	}
+
 	.navbar-brand img {
 		width: 6em;
 	}
 
 	@media (min-width: 768px) {
 		.divider-vertical {
-			border-left: 1px solid #F2F2F2;
-			border-right: 1px solid #FFF;
+			border-left: 1px solid #eeeeee;
 			height: 40px;
 			margin: 0 5px;
 		}
