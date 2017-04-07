@@ -2,35 +2,37 @@
 	<div>
 		<div>Search: <input v-model="searchQuery"></div>
 
-		<table class="table table-striped table-hover">
-			<thead>
-				<tr>
-					<th v-for="key in columns" @click="sortBy(key.id)" :class="{ active: sortKey == key.id }">
-						{{ key.title }} <span class="arrow" :class="sortOrders[key.id] > 0 ? 'asc' : 'dsc'"></span>
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr v-for="entry in paginatedData">
-					<td v-for="key in columns">
-						<template v-if="key.id === 'actions'">
-							<template v-if="entry[key.id] === true">
-								<action-buttons :element="entry" :edit-action="editAction" :delete-action="deleteAction"></action-buttons>
+		<div class="table-scrollable">
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th v-for="key in columns" @click="sortBy(key.id)" :class="{ active: sortKey == key.id }">
+							{{ key.title }} <span class="arrow" :class="sortOrders[key.id] > 0 ? 'asc' : 'dsc'"></span>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="entry in paginatedData">
+						<td v-for="key in columns">
+							<template v-if="key.id === 'actions'">
+								<template v-if="entry[key.id] === true">
+									<action-buttons :element="entry" :edit-action="editAction" :delete-action="deleteAction"></action-buttons>
+								</template>
+								<template v-else>
+									---
+								</template>
+							</template>
+							<template v-else-if="key.id === 'status' || key.id === 'deviceType'">
+								<span v-html="entry[key.id]"></span>
 							</template>
 							<template v-else>
-								---
+								{{ entry[key.id] | arrayToString | booleanToString }}
 							</template>
-						</template>
-						<template v-else-if="key.id === 'status' || key.id === 'deviceType'">
-							<span v-html="entry[key.id]"></span>
-						</template>
-						<template v-else>
-							{{ entry[key.id] | arrayToString | booleanToString }}
-						</template>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
 		<div>
 			<button class="btn btn-default btn-xs" @click="movePages(-1)"><i class="fa fa-arrow-left"></i></button>
@@ -183,6 +185,10 @@
 
 	th.active .arrow {
 		opacity: 1;
+	}
+
+	.table-scrollable {
+		overflow-x: scroll;
 	}
 
 	.arrow {
