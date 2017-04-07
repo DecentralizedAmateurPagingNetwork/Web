@@ -112,12 +112,10 @@
 				}
 			},
 			chartData() {
-				let online = this.table.rows.filter(value => value.status.indexOf('ONLINE') !== -1).length;
-
 				return {
 					labels: ['Online', 'Offline'],
 					datasets: [{
-						data: [online, this.statTotal - online],
+						data: [this.statOnline, this.statTotal - this.statOnline],
 						backgroundColor: ['#469408', '#D9230F'],
 						hoverBackgroundColor: ['#469408', '#D9230F']
 					}]
