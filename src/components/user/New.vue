@@ -12,7 +12,8 @@
 			<div class="col-lg-9">
 				<form class="form-horizontal well">
 					<fieldset>
-						<legend>New User</legend>
+						<legend v-if="!this.$route.params.id">New User</legend>
+						<legend v-if="this.$route.params.id">Edit User</legend>
 						<div class="form-group">
 							<label class="col-lg-2 control-label">Name</label>
 							<div class="col-lg-10">
@@ -43,7 +44,8 @@
 						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
 								<button type="submit" @click="submitForm" class="btn btn-primary">Submit</button>
-								<router-link to="/users"><button class="btn btn-default">Abort</button></router-link>							</div>
+								<router-link to="/users"><button class="btn btn-default">Abort</button></router-link>
+							</div>
 						</div>
 					</fieldset>
 				</form>

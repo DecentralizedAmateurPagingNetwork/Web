@@ -12,7 +12,8 @@
 			<div class="col-lg-9">
 				<form class="form-horizontal well">
 					<fieldset>
-						<legend>New Node</legend>
+						<legend v-if="!this.$route.params.id">New Node</legend>
+						<legend v-if="this.$route.params.id">Edit Node</legend>
 						<div class="form-group">
 							<label class="col-lg-2 control-label">Name</label>
 							<div class="col-lg-10">

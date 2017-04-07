@@ -12,7 +12,8 @@
 			<div class="col-lg-9">
 				<form class="form-horizontal well">
 					<fieldset>
-						<legend>New Transmitter</legend>
+						<legend v-if="!this.$route.params.id">New Transmitter</legend>
+						<legend v-if="this.$route.params.id">Edit Transmitter</legend>
 						<div class="form-group">
 							<label class="col-lg-2 control-label">Callsign</label>
 							<div class="col-lg-5">

@@ -12,7 +12,8 @@
 			<div class="col-lg-9">
 				<form class="form-horizontal well">
 					<fieldset>
-						<legend>New Callsign</legend>
+						<legend v-if="!this.$route.params.id">New Callsign</legend>
+						<legend v-if="this.$route.params.id">Edit Callsign</legend>
 						<div class="form-group">
 							<label class="col-lg-2 control-label">Callsign</label>
 							<div class="col-lg-10">
