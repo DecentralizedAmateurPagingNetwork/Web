@@ -22,7 +22,9 @@
 				<div class="actions well">
 					<legend>Actions</legend>
 					<ul>
-						<li><router-link to="/news/new">New News</router-link></li>
+						<li>
+							<router-link to="/news/new">New News</router-link>
+						</li>
 					</ul>
 					<br/>
 					<legend>Statistics</legend>
@@ -87,7 +89,16 @@
 				this.running = true;
 				this.$http.get('news').then(response => {
 					// success --> save new data
-					this.table.rows = response.body;
+
+					// put every rubric's news into the news-array
+					let data = [];
+					for (let key of Object.keys(response.body)) {
+						for (let news of response.body[key]) {
+							data.push(news);
+						}
+					}
+
+					this.table.rows = data;
 
 					this.running = false;
 					this.errorMessage = false;
