@@ -162,10 +162,6 @@
 </script>
 
 <style scoped>
-	table {
-		margin: 1em 0;
-	}
-
 	table > tbody > tr > td {
 		word-break: break-all;
 	}
@@ -188,7 +184,8 @@
 	}
 
 	.table-scrollable {
-		overflow-x: scroll;
+		margin: 1em 0;
+		overflow-x: auto;
 	}
 
 	.arrow {
