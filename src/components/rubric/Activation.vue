@@ -28,7 +28,7 @@
 						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
 								<button type="submit" @click="submitForm" class="btn btn-primary">Submit</button>
-								<button type="reset" @click="resetForm" class="btn btn-default">Reset</button>
+								<router-link to="/rubrics"><button class="btn btn-default">Abort</button></router-link>
 							</div>
 						</div>
 					</fieldset>
@@ -85,11 +85,6 @@
 				}, response => {
 					this.$dialogs.ajaxError(this, response);
 				});
-			},
-			resetForm(event) {
-				event.preventDefault();
-				this.form.number = 1;
-				this.form.transmittergroups = [];
 			}
 		}
 	};
