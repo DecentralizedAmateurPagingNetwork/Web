@@ -27,16 +27,18 @@
 						</ul>
 						<br/>
 					</template>
-					<legend>Statistics</legend>
-					<ul v-if="table.rows" class="list-group">
-						<li class="list-group-item"><b>Total Transmitters</b><span class="badge">{{ statTotal }}</span></li>
-						<li class="list-group-item"><chart-online-offline :chartData="chartData"></chart-online-offline></li>
-						<li class="list-group-item"><chart-transmitter-types :chartData="chartDataDeviceTypes"></chart-transmitter-types></li>
-					</ul>
-					<div class="row">
-						<div class="col-lg-2"><input type="checkbox" v-model="settings.widerangeOnly"></div>
-						<div class="col-lg-10"><label>Show Widerange-transmitter only</label></div>
-					</div>
+					<template v-if="table.rows">
+						<legend>Statistics</legend>
+						<ul class="list-group">
+							<li class="list-group-item"><b>Total Transmitters</b><span class="badge">{{ statTotal }}</span></li>
+							<li class="list-group-item"><chart-online-offline :chartData="chartData"></chart-online-offline></li>
+							<li class="list-group-item"><chart-transmitter-types :chartData="chartDataDeviceTypes"></chart-transmitter-types></li>
+						</ul>
+						<div class="row">
+							<div class="col-lg-2"><input type="checkbox" v-model="settings.widerangeOnly"></div>
+							<div class="col-lg-10"><label>Show Widerange-transmitter only</label></div>
+						</div>
+					</template>
 				</div>
 			</div>
 		</div>

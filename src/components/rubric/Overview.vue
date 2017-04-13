@@ -26,10 +26,12 @@
 						<li><router-link to="/rubrics/activate">Activate Rubrics</router-link></li>
 					</ul>
 					<br/>
-					<legend>Statistics</legend>
-					<ul v-if="table.rows" class="list-group">
-						<li class="list-group-item"><b>Total Rubrics</b><span class="badge">{{ statTotal }}</span></li>
-					</ul>
+					<template v-if="table.rows">
+						<legend>Statistics</legend>
+						<ul class="list-group">
+							<li class="list-group-item"><b>Total Rubrics</b><span class="badge">{{ statTotal }}</span></li>
+						</ul>
+					</template>
 				</div>
 			</div>
 		</div>
