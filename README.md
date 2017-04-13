@@ -4,6 +4,9 @@ Written in the [Vue.js](https://github.com/vuejs/vue) framework and built using 
 
 ## Requirements
 * Installed packages: `git`, `nodejs`, `npm`
+	* You should install a current Node.js version (e.g. v6 LTS) by following [these instructions](https://nodejs.org/en/download/package-manager/)
+	* This process will also install the `npm` binary
+	* Be advised that most linux distributions ship an older version of Node.js which will not work correctly
 * A running webserver (e.g. apache2, nginx, lighttpd, etc.)
 * A running [DAPNET Core](https://github.com/DecentralizedAmateurPagingNetwork/Core) with a reachable REST-interface
 
