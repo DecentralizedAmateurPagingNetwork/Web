@@ -96,7 +96,9 @@
 					let data = [];
 					for (let key of Object.keys(response.body)) {
 						for (let news of response.body[key]) {
-							data.push(news);
+							if (news !== null) {
+								data.push(news);
+							}
 						}
 					}
 
