@@ -34,9 +34,8 @@
 							<li class="list-group-item"><chart-online-offline :chartData="chartData"></chart-online-offline></li>
 							<li class="list-group-item"><chart-transmitter-types :chartData="chartDataDeviceTypes"></chart-transmitter-types></li>
 						</ul>
-						<div class="row">
-							<div class="col-lg-2"><input type="checkbox" v-model="settings.widerangeOnly"></div>
-							<div class="col-lg-10"><label>Show Widerange-transmitter only</label></div>
+						<div class="checkbox">
+							<label><input type="checkbox" v-model="settings.widerangeOnly"> Show Widerange-transmitter only</label>
 						</div>
 					</template>
 				</div>

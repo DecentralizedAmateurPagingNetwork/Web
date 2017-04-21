@@ -22,9 +22,8 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<h2>Settings</h2>
-				<div class="row">
-					<div class="col-lg-1"><input type="checkbox" v-model="settings.widerangeOnly"></div>
-					<div class="col-lg-11"><label>Show Widerange-transmitter only</label></div>
+				<div class="checkbox">
+					<label><input type="checkbox" v-model="settings.widerangeOnly"> Show Widerange-transmitter only</label>
 				</div>
 			</div>
 		</div>
