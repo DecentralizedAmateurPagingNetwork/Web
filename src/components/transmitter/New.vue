@@ -100,6 +100,12 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<label class="col-lg-2 control-label">Identification Address</label>
+							<div class="col-lg-10">
+								<input type="number" v-model.number="form.identificationAddress" min="0" max="2097151" placeholder="0 - 2097151" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
 							<label class="col-lg-2 control-label">Timeslots</label>
 							<div class="col-lg-10">
 								<table style="width: 100%">
@@ -168,6 +174,12 @@
 					<li v-if="form.device.version" class="list-group-item"><b>Version</b><span class="badge">{{ form.device.version }}</span></li>
 					<li v-if="form.address.ip_addr" class="list-group-item"><b>IP-Address</b><span class="badge">{{ form.address.ip_addr }}</span></li>
 					<li v-if="form.address.port" class="list-group-item"><b>Port</b><span class="badge">{{ form.address.port }}</span></li>
+					<li v-if="form.connection.last || form.connection.since" class="list-group-item"><b>Connection</b>
+						<ul>
+							<li v-if="form.connection.last">Last: {{ form.connection.last }}</li>
+							<li v-if="form.connection.since">Since: {{ form.connection.since }}</li>
+						</ul>
+					</li>
 				</ul>
 				<p>This table shows the registered paging transmitters, their online status and additional information. Personal transmitters have low output power and a very small coverage. Wide range transmitters are usually installed at elevated locations leading to a wide coverage area.</p>
 			</div>
@@ -233,6 +245,7 @@
 					this.form.antennalevel = response.body.antennaAboveGroundLevel;
 					this.form.antennadirection = response.body.antennaDirection;
 					this.form.antennagain = response.body.antennaGainDbi;
+					this.form.identificationAddress = response.body.identificationAddress;
 					this.form.timeslot = timeSlot;
 					this.form.owners = ownerNames;
 
@@ -240,6 +253,13 @@
 					this.form.device.version = response.body.deviceVersion;
 					if (response.body.address !== null) {
 						this.form.address = response.body.address;
+					}
+
+					if (response.body.lastConnected !== null) {
+						this.form.connection.last = new Date(response.body.lastConnected).toLocaleString();
+					}
+					if (response.body.connectedSince !== null) {
+						this.form.connection.since = new Date(response.body.connectedSince).toLocaleString();
 					}
 				}, response => {
 					this.$router.push('/transmitters');
@@ -267,6 +287,7 @@
 					antennalevel: 0,
 					antennadirection: 0,
 					antennagain: 0,
+					identificationAddress: 0,
 					timeslot: [],
 					owners: [],
 					device: {
@@ -276,6 +297,10 @@
 					address: {
 						ip_addr: '',
 						port: ''
+					},
+					connection: {
+						last: '',
+						since: ''
 					}
 				},
 				formData: {
@@ -313,6 +338,7 @@
 					antennaType: this.form.antennatype,
 					antennaDirection: this.form.antennadirection,
 					antennaGainDbi: this.form.antennagain,
+					identificationAddress: this.form.identificationAddress,
 					timeSlot: this.form.timeslot.sort().join(''),
 					ownerNames: ownerNames
 				};
