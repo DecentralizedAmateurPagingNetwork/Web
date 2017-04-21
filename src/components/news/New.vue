@@ -28,8 +28,11 @@
 						</div>
 						<div class="form-group">
 							<label class="col-lg-2 control-label">Number</label>
-							<div class="col-lg-10">
-								<input type="number" v-model.number="form.number" min="1" max="10" class="form-control" placeholder="1 - 10">
+							<div class="col-lg-5 checkbox">
+								<label><input type="checkbox" v-model="form.numberNext"> Choose automatically</label>
+							</div>
+							<div class="col-lg-5">
+								<input type="number" v-model.number="form.number" :disabled="form.numberNext == 1" min="1" max="10" class="form-control" placeholder="1 - 10">
 							</div>
 						</div>
 						<div class="form-group">
@@ -63,6 +66,7 @@
 				form: {
 					message: '',
 					rubric: '',
+					numberNext: true,
 					number: 1
 				},
 				formData: {
@@ -89,6 +93,11 @@
 					rubricName: this.form.rubric.name,
 					number: this.form.number
 				};
+
+				// set number to 0 to let the core handle the numbering
+				if (this.form.numberNext) {
+					body.number = 0;
+				}
 
 				this.$http.post('news/', body).then(response => {
 					this.$router.push('/news');
