@@ -1,70 +1,64 @@
 # DAPNET Web
+The default DAPNET Web-frontend.
+Written in the [Vue.js](https://github.com/vuejs/vue) framework and built using [webpack](https://github.com/webpack/webpack).
+
+## Requirements
+* Installed packages: `git`, `nodejs`, `npm`
+	* You should install a current Node.js version (e.g. v6 LTS) by following [these instructions](https://nodejs.org/en/download/package-manager/)
+	* This process will also install the `npm` binary
+	* Be advised that most linux distributions ship an older version of Node.js which will not work correctly
+* A running webserver (e.g. apache2, nginx, lighttpd, etc.)
+* A running [DAPNET Core](https://github.com/DecentralizedAmateurPagingNetwork/Core) with a reachable REST-interface
 
 ## Installation
+1. Download the repository: `git clone https://github.com/DecentralizedAmateurPagingNetwork/Web.git`
+2. Checkout a specific tag: `git checkout tags/v2.0.0`
+	* This is highly recommended for improved stability and a consistent user experience
+3. Change the default url-settings in `src/store/defaultUrls.json`
+4. Change the default custom text (displayed on the home page) in `src/store/defaultText.json`
+	* You may use HTML markup here
+5. Change the default map-settings in `src/store/defaultMap.json`
+6. (Optional) Edit `static/js/custom.js` and insert your custom javascript code (e.g. a Piwik tracking code)
+	* You may use jQuery here
+7. Download all dependencies: `npm install`
+8. Test your setup: `npm run dev`
+	* Open your browser at `http://localhost:8081` and check that each of your customizations was successful
+9. Generate the production build: `npm run build`
+10. Copy your freshly generated files into your webserver's `htdocs` directory
+11. Done!
 
-### Using Git
-* Clone the repository into your webserver's root path: `git clone https://github.com/DecentralizedAmateurPagingNetwork/Web.git`
-* Checkout a specific release / tag: `git checkout tags/v1.2.0`
-* Create a `config.json` file using the example below
-* (Optional) Create a `assets/js/custom.js` file to run custom javascripts
-* Done
-
-### Manually
-* Copy `index.html` and `assets/` into your webserver's root-path
-* Create a `config.json` file using the example below
-* (Optional) Create a `assets/js/custom.js` file to run custom javascripts
-* Done
+### Deployment into a subdirectory
+It is recommended to serve the DAPNET Web module from its own sub-domain.
+If you really need to use a sub-directory, make sure to edit `config/index.js` and adapt the content of line 11 (`publicPath`).
+Now run `npm run build` again and the page should be rendered correctly.
 
 ## Updating
-Before updating make sure to read the changelog!
+Before updating make sure to read the changelog and to backup your customized files (see above)!
 
-### Using Git
-* Update your local repository: `git fetch`
-* Checkout the current release / tag: `git checkout tags/v1.2.0`
-* Done
-
-### Manually
-* Replace all files using the files from the current release. Exceptions:
-	* `config.json`
-	* `assets/js/custom.js`
-* Done
-
-## Config
-Use the example below to create your own `config.json` file:
-```json
-{
-	"apiUrl": "http://localhost:8080",
-	"information": "This is a custom welcome-text displayed on the homepage.<br/>You may use HTML-syntax."
-}
-```
-
-## Translations
-* Translations are stored inside `assets/langs/` and use a simple Key-Value-format.  
-* `languages.json` contains a list of all available languages.
-* Some translation-files are simple links to other translation-files to prevent duplicate content.
-
-### Add your own Translation
-* Copy one of the available translation-files
-* Name it accordingly to the new language
-* Translate the values inside the file
-* Create symbolic links to this file (if necessary)
-* Add the new language-code inside `languages.json`
+1. Update your local repository: `git fetch`
+2. Run through step 2 of the installation process
+3. Make sure that your changes in the files listed in steps 3. to 6. of the installation process are still in place
+4. Run through steps 7. to 10. of the installation process
+5. Done!
 
 ## Changelog
+A list of changes is always available on the [Releases](https://github.com/DecentralizedAmateurPagingNetwork/Web/releases)-page.
 
 ### Create Changelog
 ```bash
-git log v1.0.4...v1.0.5 --pretty=format:'* %s - %h'
+git log v2.0.0...v2.0.1 --pretty=format:'* %s - %h'
 ```
 
-## Used Software
-* [Bootstrap](https://getbootstrap.com) (MIT) / [Bootswatch](https://bootswatch.com) (MIT)
-* [Chart.js](https://github.com/chartjs/Chart.js) (MIT)
-* [Chosen](https://github.com/harvesthq/chosen) (MIT)
-* [DataTables](https://github.com/DataTables/DataTables) (MIT)
-* [Font Awesome](https://fortawesome.github.io/Font-Awesome) (SIL OFL 1.1 / MIT)
-* [jQuery](https://jquery.com) (MIT)
-* [jQuery.i18n.properties](https://github.com/jquery-i18n-properties/jquery-i18n-properties) (MIT)
-* [js-cookie](https://github.com/js-cookie/js-cookie) (MIT)
-* [Leaflet](http://leafletjs.com) (2-clause BSD License)
-* [SweetAlert2](https://github.com/limonte/sweetalert2) (MIT)
+## Directories
+```
+├── build          -> webpack build files
+├── config         -> webpack build config
+├── dist           -> generated webapp (after "npm run build")
+├── src            -> the webapp's source code
+│   ├── assets     -> assets (css, images, etc.) which will be processed by webpack
+│   ├── components -> all vue-components (all pages with their template, javascript and css)
+│   ├── global     -> global methods used by many components
+│   ├── router     -> vue-router configuration
+│   └── store      -> user-data store with its default values
+└── static         -> assets (css, images, etc.) which will not be processed by webpack
+```
