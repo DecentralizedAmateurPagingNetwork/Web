@@ -34,6 +34,17 @@ Vue.use(swalPlugin);
 import globalMethods from './global';
 Vue.use(globalMethods);
 
+// import some totally unsuspicious non-easteregg-like code
+import KonamiCode from 'vue-konami-code';
+Vue.use(KonamiCode, {callback: () => {
+	swal({
+		title: 'DAPNET Web',
+		html: '<i class="fa fa-code" aria-hidden="true" style="color: #607D8B"></i> with ' +
+		'<i class="fa fa-heart" aria-hidden="true" style="color: #F44336"></i> &amp; ' +
+		'<i class="fa fa-coffee" aria-hidden="true" style="color: #795548"></i> in Aachen'
+	});
+}});
+
 // import partials for rendering
 import AppNavigation from '@/components/partials/Navigation';
 Vue.component('app-navigation', AppNavigation);
