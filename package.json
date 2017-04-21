@@ -5,9 +5,9 @@
   "author": "Marvin Menzerath",
   "private": true,
   "scripts": {
-    "dev": "nodejs build/dev-server.js",
-    "start": "nodejs build/dev-server.js",
-    "build": "nodejs build/build.js",
+    "dev": "node build/dev-server.js",
+    "start": "node build/dev-server.js",
+    "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
