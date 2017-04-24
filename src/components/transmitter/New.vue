@@ -176,8 +176,8 @@
 					<li v-if="form.address.port" class="list-group-item"><b>Port</b><span class="badge">{{ form.address.port }}</span></li>
 					<li v-if="form.connection.last || form.connection.since" class="list-group-item"><b>Connection</b>
 						<ul>
-							<li v-if="form.connection.last">Last: {{ form.connection.last }}</li>
-							<li v-if="form.connection.since">Since: {{ form.connection.since }}</li>
+							<li v-if="form.connection.last">Last: <span style="float: right">{{ form.connection.last }}</span></li>
+							<li v-if="form.connection.since">Since: <span style="float: right">{{ form.connection.since }}</span></li>
 						</ul>
 					</li>
 				</ul>
