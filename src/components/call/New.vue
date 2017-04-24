@@ -18,18 +18,21 @@
 							<div class="col-lg-10">
 								<textarea class="form-control" rows="2" maxlength="80" v-model="form.message"></textarea>
 								<span class="help-block">{{ messageCharsRemaining }} / 80 characters remaining.</span>
+								<span class="help-block">Enter your paging text. Your callsign is added automatically.</span>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-lg-2 control-label">Callsigns</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.callsigns" :options="formData.callsigns" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
+								<span class="help-block">Select one or multiple callsigns you what to send the message to.</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Transmittergroups</label>
+							<label class="col-lg-2 control-label">Transmitter Groups</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.transmittergroups" :options="formData.transmittergroups" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
+								<span class="help-block">Select a logical transmitter group that should broadcast you message. Default is all transmitters, but if you know the approximate location of the receiver you might limit the transmitters used for your paging to a certain area. This reduces the load on the transmitters.</span>
 							</div>
 						</div>
 						<div class="form-group">
@@ -38,6 +41,7 @@
 								<label>
 									<input type="checkbox" v-model="form.emergency">
 								</label>
+								<span class="help-block">In case you want your message to be delivered as soon as possible, check this box. No harmful things will happen, the DAPNET will just process your message with maximum priority. Please make a fair use of this feature.</span>
 							</div>
 						</div>
 						<div class="form-group">
