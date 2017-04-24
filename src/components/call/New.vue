@@ -73,6 +73,11 @@
 			this.$http.get('transmitterGroups').then(response => {
 				response.body.forEach(transmittergroup => {
 					this.formData.transmittergroups.push({name: transmittergroup.name});
+
+					// add 'all'-group (if present)
+					if (transmittergroup.name === 'all') {
+						this.form.transmittergroups.push({name: 'all'});
+					}
 				});
 			});
 		},
