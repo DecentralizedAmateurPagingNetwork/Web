@@ -16,7 +16,7 @@ textarea {
 	color: #808080;
 }
 
-.help-block > i {
+.fa-question-circle {
 	cursor: pointer;
 }
 
