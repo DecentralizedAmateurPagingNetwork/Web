@@ -75,7 +75,7 @@
 		data() {
 			return {
 				form: {
-					message: this.$store.getters.user.name + ': ',
+					message: this.$store.getters.user.name.toUpperCase() + ': ',
 					callsigns: [],
 					transmittergroups: [],
 					emergency: false
