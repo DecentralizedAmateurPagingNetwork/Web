@@ -18,22 +18,26 @@
 							<label class="col-lg-2 control-label">Callsign</label>
 							<div class="col-lg-5">
 								<input type="text" v-model="form.name" class="form-control">
+								<span class="help-block">Enter a valid amateur radio callsign of this transmitter. It will be also used for the 10 minute interval transmitter identification message to fulfill the law (at least the German law).</span>
 								<span v-if="editing" class="help-block">Changing this name will create a duplication and <i>not</i> change the element's name.</span>
 							</div>
 							<div class="col-lg-5">
 								<multiselect v-model="formData.hamnetDb.selected" :options="formData.hamnetDb.all" :multiple="false" :close-on-select="true" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
+								<span class="help-block">Easy import of stations from hamnetdb.net. Location data of the selected transmitter site will be copied into the form.</span>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-lg-2 control-label">Node</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.node" :options="formData.nodes" :close-on-select="true" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
+								<span class="help-block">Select the DAPNET-Node which shall receive the transmitter TCP connection. Just this DAPNET-Node will accept connection for this specific transmitter.</span>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-lg-2 control-label">Password</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="form.password" class="form-control">
+								<span class="help-block">Enter a authentication password for this transmitter. In the UniPager webinterface it’s called Auth Key.</span>
 							</div>
 						</div>
 						<div class="form-group">
@@ -58,9 +62,10 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Transmission Power (W)</label>
+							<label class="col-lg-2 control-label">Transmitter Power</label>
 							<div class="col-lg-10">
 								<input type="number" v-model.number="form.power" min="0" max="200" placeholder="0 - 200" class="form-control">
+								<span class="help-block">Enter the transmitter output power including your cable losses.</span>
 							</div>
 						</div>
 						<div class="form-group">
@@ -70,39 +75,45 @@
 									<option value="PERSONAL">Personal</option>
 									<option value="WIDERANGE">Widerange</option>
 								</select>
+								<span class="help-block">For classification of the transmitters, there are two categories: Personal (Transmitters with low output power like RasPager) and Wide Range (Higher output power and elevated location site).</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Antennatype</label>
+							<label class="col-lg-2 control-label">Antenna Type</label>
 							<div class="col-lg-10">
 								<select class="form-control" v-model="form.antennatype">
 									<option value="OMNI">Omni</option>
 									<option value="DIRECTIONAL">Directional</option>
 								</select>
+								<span class="help-block">Please select if you have a omnidirectional antenna (e.g. X-50) or a directional antenna (e.g. Yagi).</span>
 							</div>
 						</div>
 						<div v-if="form.antennatype === 'DIRECTIONAL'" class="form-group">
-							<label class="col-lg-2 control-label">Antennadirection</label>
+							<label class="col-lg-2 control-label">Antenna main beam direction</label>
 							<div class="col-lg-10">
 								<input type="number" v-model.number="form.antennadirection" min="0" max="359" placeholder="0 - 359" class="form-control">
+								<span class="help-block">If this transmitter is connected to a directional antenna, please enter the antenna main beam direction in degrees according to "True North" (in German "rechtweisend Nord").</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Antennalevel (m)</label>
+							<label class="col-lg-2 control-label">Antenna elevation over ground</label>
 							<div class="col-lg-10">
 								<input type="number" v-model.number="form.antennalevel" min="0" max="1000" placeholder="0 - 1000" class="form-control">
+								<span class="help-block">Enter the antenna elevation over ground; NOT over NN (!) in meters.</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Antennagain (dBi)</label>
+							<label class="col-lg-2 control-label">Antenna gain</label>
 							<div class="col-lg-10">
 								<input type="number" v-model.number="form.antennagain" min="-50" max="80" placeholder="-50 - 80" class="form-control">
+								<span class="help-block">Enter the antenna gain in the main lobe direction for directional antennas and the average gain for omnidirectional antennas in dBi (dBi: Gain over isotropic radiator).</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Identification Address</label>
+							<label class="col-lg-2 control-label">Transmitter identification RIC</label>
 							<div class="col-lg-10">
 								<input type="number" v-model.number="form.identificationAddress" min="0" max="2097151" placeholder="0 - 2097151" class="form-control">
+								<span class="help-block">Enter a RIC (default value is 1) which will be used to generate an artificial paging message containing the amateur radio callsign as given in this form.</span>
 							</div>
 						</div>
 						<div class="form-group">
@@ -154,6 +165,7 @@
 							<label class="col-lg-2 control-label">Owner</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.owners" :options="formData.users" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
+								<span class="help-block">If you are an owner, you can change the parameters for this transmitter.</span>
 							</div>
 						</div>
 						<div class="form-group">
