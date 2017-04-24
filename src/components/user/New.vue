@@ -23,8 +23,12 @@
 						</div>
 						<div class="form-group">
 							<label class="col-lg-2 control-label">Password</label>
-							<div class="col-lg-10">
+							<div class="col-lg-9">
 								<input type="password" v-model="form.password" class="form-control">
+								<span v-if="form.passwordGenerated" class="help-block">This is the newly generated password: <code>{{ form.passwordGenerated }}</code></span>
+							</div>
+							<div class="col-lg-1">
+								<button type="button" @click="generatePassword" class="btn btn-warning"><i class="fa fa-repeat"></i></button>
 							</div>
 						</div>
 						<div class="form-group">
@@ -80,6 +84,7 @@
 				form: {
 					name: '',
 					password: '',
+					passwordGenerated: '',
 					email: '',
 					admin: false
 				}
@@ -114,6 +119,18 @@
 				}, response => {
 					this.$dialogs.ajaxError(this, response);
 				});
+			},
+			generatePassword() {
+				// generate password
+				const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+				let password = '';
+				for (let i = 0; i < 20; ++i) {
+					password += chars.charAt(Math.floor(Math.random() * chars.length));
+				}
+
+				// display the new password
+				this.form.password = password;
+				this.form.passwordGenerated = password;
 			}
 		}
 	};
