@@ -81,7 +81,7 @@
 								</select>
 							</div>
 						</div>
-						<div v-if="form.antennatype === 'OMNI'" class="form-group">
+						<div v-if="form.antennatype === 'DIRECTIONAL'" class="form-group">
 							<label class="col-lg-2 control-label">Antennadirection</label>
 							<div class="col-lg-10">
 								<input type="number" v-model.number="form.antennadirection" min="0" max="359" placeholder="0 - 359" class="form-control">
