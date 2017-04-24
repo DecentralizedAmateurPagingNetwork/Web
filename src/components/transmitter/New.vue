@@ -62,13 +62,6 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Transmitter Power</label>
-							<div class="col-lg-10">
-								<input type="number" v-model.number="form.power" min="0" max="200" placeholder="0 - 200" class="form-control">
-								<span class="help-block">Enter the transmitter output power including your cable losses.</span>
-							</div>
-						</div>
-						<div class="form-group">
 							<label class="col-lg-2 control-label">Usage</label>
 							<div class="col-lg-10">
 								<select class="form-control" v-model="form.usage">
@@ -80,40 +73,37 @@
 						</div>
 						<div class="form-group">
 							<label class="col-lg-2 control-label">Antenna Type</label>
-							<div class="col-lg-10">
+							<div class="col-lg-5">
 								<select class="form-control" v-model="form.antennatype">
 									<option value="OMNI">Omni</option>
 									<option value="DIRECTIONAL">Directional</option>
 								</select>
 								<span class="help-block">Please select if you have a omnidirectional antenna (e.g. X-50) or a directional antenna (e.g. Yagi).</span>
 							</div>
-						</div>
-						<div v-if="form.antennatype === 'DIRECTIONAL'" class="form-group">
-							<label class="col-lg-2 control-label">Antenna main beam direction</label>
-							<div class="col-lg-10">
-								<input type="number" v-model.number="form.antennadirection" min="0" max="359" placeholder="0 - 359" class="form-control">
-								<span class="help-block">If this transmitter is connected to a directional antenna, please enter the antenna main beam direction in degrees according to "True North" (in German "rechtweisend Nord").</span>
+							<div class="col-lg-5">
+								<input type="number" v-model.number="form.antennadirection" :disabled="form.antennatype === 'OMNI'" min="0" max="359" placeholder="0 - 359" class="form-control">
+								<span class="help-block"><b>Antenna main beam direction</b>: enter the antenna main beam direction in degrees according to "True North" (in German "rechtweisend Nord").</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Antenna elevation over ground</label>
-							<div class="col-lg-10">
+							<label class="col-lg-2 control-label">Other</label>
+							<div class="col-lg-5">
+								<input type="number" v-model.number="form.power" min="0" max="200" placeholder="0 - 200" class="form-control">
+								<span class="help-block"><b>Transmitter Power</b>: enter the transmitter output power including your cable losses.</span>
+							</div>
+							<div class="col-lg-5">
 								<input type="number" v-model.number="form.antennalevel" min="0" max="1000" placeholder="0 - 1000" class="form-control">
-								<span class="help-block">Enter the antenna elevation over ground; NOT over NN (!) in meters.</span>
+								<span class="help-block"><b>Antenna elevation over ground</b>: enter the antenna elevation over ground; NOT over NN (!) in meters.</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Antenna gain</label>
-							<div class="col-lg-10">
+							<div class="col-lg-5 col-lg-offset-2">
 								<input type="number" v-model.number="form.antennagain" min="-50" max="80" placeholder="-50 - 80" class="form-control">
-								<span class="help-block">Enter the antenna gain in the main lobe direction for directional antennas and the average gain for omnidirectional antennas in dBi (dBi: Gain over isotropic radiator).</span>
+								<span class="help-block"><b>Antenna gain</b>: enter the antenna gain in the main lobe direction for directional antennas and the average gain for omnidirectional antennas in dBi (dBi: Gain over isotropic radiator).</span>
 							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-lg-2 control-label">Transmitter identification RIC</label>
-							<div class="col-lg-10">
+							<div class="col-lg-5">
 								<input type="number" v-model.number="form.identificationAddress" min="0" max="2097151" placeholder="0 - 2097151" class="form-control">
-								<span class="help-block">Enter a RIC (default value is 1) which will be used to generate an artificial paging message containing the amateur radio callsign as given in this form.</span>
+								<span class="help-block"><b>Transmitter identification RIC</b>: enter a RIC (default value is 1) which will be used to generate an artificial paging message containing the amateur radio callsign as given in this form.</span>
 							</div>
 						</div>
 						<div class="form-group">
