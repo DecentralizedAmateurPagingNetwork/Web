@@ -18,7 +18,7 @@
 							<label class="col-lg-2 control-label">Callsign</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="form.callsign" class="form-control">
-								<span class="help-block">Please enter a valid amateur radio callsign of a human or a classifying name of a organization.</span>
+								<span class="help-block">Please enter a valid amateur radio callsign of a human or a classifying name of an organization.</span>
 								<span v-if="editing" class="help-block">Changing this name will create a duplication and <i>not</i> change the element's name.</span>
 							</div>
 						</div>
@@ -33,7 +33,7 @@
 							<label class="col-lg-2 control-label">Pager</label>
 							<div class="col-lg-5">
 								<textarea v-model="form.pager.numbers" class="form-control" rows="5"></textarea>
-								<span class="help-block">Add one or more lines of pager RIC numbers. <i class="fa fa-question-circle" @click="showPagerNumberHelp"></i></span>
+								<span class="help-block">Add one or more lines of pager RIC numbers. <img src="~@/assets/img/pager.jpg" alt="Help" /></span>
 							</div>
 							<div class="col-lg-5">
 								<textarea v-model="form.pager.names" class="form-control" rows="5"></textarea>
@@ -152,13 +152,6 @@
 					this.$router.push('/callsigns');
 				}, response => {
 					this.$dialogs.ajaxError(this, response);
-				});
-			},
-			showPagerNumberHelp() {
-				this.$swal({
-					title: 'Pager Number?',
-					html: 'Please use the following digits as pager number:<br /><img src="./assets/img/pager.jpg" alt="Help" />',
-					type: 'info'
 				});
 			}
 		}

@@ -30,7 +30,7 @@
 							<label class="col-lg-2 control-label">Node</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.node" :options="formData.nodes" :close-on-select="true" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
-								<span class="help-block">Select the DAPNET-Node which shall receive the transmitter TCP connection. Just this DAPNET-Node will accept connection for this specific transmitter.</span>
+								<span class="help-block">Select the DAPNET-Node which shall receive the transmitter TCP connection. Just this DAPNET-Node will accept a connection from this specific transmitter.</span>
 							</div>
 						</div>
 						<div class="form-group">
@@ -82,28 +82,28 @@
 							</div>
 							<div class="col-lg-5">
 								<input type="number" v-model.number="form.antennadirection" :disabled="form.antennatype === 'OMNI'" min="0" max="359" placeholder="0 - 359" class="form-control">
-								<span class="help-block"><b>Antenna main beam direction</b>: enter the antenna main beam direction in degrees according to "True North" (in German "rechtweisend Nord").</span>
+								<span class="help-block"><b>Antenna main beam direction</b>: Enter the antenna main beam direction in degrees according to "True North" (in German "rechtweisend Nord").</span>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-lg-2 control-label">Other</label>
 							<div class="col-lg-5">
 								<input type="number" v-model.number="form.power" min="0" max="200" placeholder="0 - 200" class="form-control">
-								<span class="help-block"><b>Transmitter Power</b>: enter the transmitter output power including your cable losses.</span>
+								<span class="help-block"><b>Transmitter Power</b>: Enter the transmitter output power including your cable losses.</span>
 							</div>
 							<div class="col-lg-5">
 								<input type="number" v-model.number="form.antennalevel" min="0" max="1000" placeholder="0 - 1000" class="form-control">
-								<span class="help-block"><b>Antenna elevation over ground</b>: enter the antenna elevation over ground; NOT over NN (!) in meters.</span>
+								<span class="help-block"><b>Antenna elevation over ground</b>: Enter the antenna elevation over ground; NOT over NN (!) in meters.</span>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-lg-5 col-lg-offset-2">
 								<input type="number" v-model.number="form.antennagain" min="-50" max="80" placeholder="-50 - 80" class="form-control">
-								<span class="help-block"><b>Antenna gain</b>: enter the antenna gain in the main lobe direction for directional antennas and the average gain for omnidirectional antennas in dBi (dBi: Gain over isotropic radiator).</span>
+								<span class="help-block"><b>Antenna gain</b>: Enter the antenna gain in the main lobe direction for directional antennas and the average gain for omnidirectional antennas in dBi (dBi: Gain over isotropic radiator).</span>
 							</div>
 							<div class="col-lg-5">
 								<input type="number" v-model.number="form.identificationAddress" min="0" max="2097151" placeholder="0 - 2097151" class="form-control">
-								<span class="help-block"><b>Transmitter identification RIC</b>: enter a RIC (default value is 1) which will be used to generate an artificial paging message containing the amateur radio callsign as given in this form.</span>
+								<span class="help-block"><b>Transmitter identification RIC</b>: Enter a RIC (default value is 1) which will be used to generate an artificial paging message containing the amateur radio callsign as given in this form.</span>
 							</div>
 						</div>
 						<div class="form-group">
@@ -149,6 +149,14 @@
 										</tr>
 									</tbody>
 								</table>
+								<span class="help-block">
+									As all transmitters use the same frequency a time division multiplex access scheme is used.
+									There are 16 timeslots available.
+									Assign the slots of this transmitter according to you surrounding transmitters in your neighborhood without overlapping timeslots that are assigned to more than one transmitter.
+									You can use the transmitter map to check already assigned timeslots of adjacent transmitters.
+									In case that you cannot fulfill your requirements, contact the adjacent transmitter owners and try to get an agreement.
+									Normally four 4 or less timeslots per transmitter are more than enough.
+								</span>
 							</div>
 						</div>
 						<div class="form-group">
