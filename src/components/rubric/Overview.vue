@@ -63,7 +63,7 @@
 						},
 						{
 							id: 'transmitterGroupNames',
-							title: 'Transmittergroups'
+							title: 'Transmitter Groups'
 						},
 						{
 							id: 'ownerNames',

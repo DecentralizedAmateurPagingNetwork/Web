@@ -34,7 +34,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Transmittergroups</label>
+							<label class="col-lg-2 control-label">Transmitter Groups</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.transmittergroups" :options="formData.transmittergroups" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
 							</div>
@@ -56,7 +56,7 @@
 			</div>
 			<div class="col-lg-3">
 				<h2>Information</h2>
-				<p>Rubrics are Skyper paging receiver based categories which can hold up to 10 messages. Some of them are generated automatically like for example weather information.</p>
+				<p>Rubrics are a Skyper based invention allowing to send news sorted into chategories (the rubrics). Assign the number with care and contact <code>rwth-afu [at] online.de</code> in case of doubt. Be aware that the number of rubrics is limited netwide to 99.</p>
 			</div>
 		</div>
 	</div>

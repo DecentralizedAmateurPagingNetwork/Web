@@ -59,7 +59,7 @@
 						},
 						{
 							id: 'transmitterGroupNames',
-							title: 'Transmittergroups'
+							title: 'Transmitter Groups'
 						},
 						{
 							id: 'text',
