@@ -28,7 +28,7 @@
 								<span v-if="form.passwordGenerated" class="help-block">This is the newly generated password: <code>{{ form.passwordGenerated }}</code></span>
 							</div>
 							<div class="col-lg-1">
-								<button type="button" @click="generatePassword" class="btn btn-warning"><i class="fa fa-repeat"></i></button>
+								<button type="button" @click="generatePassword" title="Generate new random password" class="btn btn-warning" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-repeat"></i></button>
 							</div>
 						</div>
 						<div class="form-group">

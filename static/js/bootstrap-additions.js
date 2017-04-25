@@ -4,4 +4,6 @@ $().ready(function() {
 			$('.navbar-collapse').collapse('hide');
 		}
 	});
+
+	$('[data-toggle="tooltip"]').tooltip();
 });
