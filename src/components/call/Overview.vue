@@ -59,7 +59,7 @@
 						},
 						{
 							id: 'transmitterGroupNames',
-							title: 'Transmitter Groups'
+							title: 'TX Groups'
 						},
 						{
 							id: 'text',
@@ -67,7 +67,7 @@
 						},
 						{
 							id: 'emergency',
-							title: 'Emergency?'
+							title: 'High Prio?'
 						},
 						{
 							id: 'ownerName',
@@ -97,6 +97,11 @@
 				this.running = true;
 				this.$http.get(apiEndpoint).then(response => {
 					// success --> save new data
+
+					response.body.forEach(call => {
+						call.timestamp = new Date(call.timestamp).toLocaleString();
+					});
+
 					this.table.rows = response.body;
 
 					this.running = false;

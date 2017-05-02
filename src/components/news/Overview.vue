@@ -66,7 +66,7 @@
 						},
 						{
 							id: 'number',
-							title: 'Number'
+							title: '#'
 						},
 						{
 							id: 'text',
@@ -97,6 +97,7 @@
 					for (let key of Object.keys(response.body)) {
 						for (let news of response.body[key]) {
 							if (news !== null) {
+								news.timestamp = new Date(news.timestamp).toLocaleString();
 								data.push(news);
 							}
 						}
