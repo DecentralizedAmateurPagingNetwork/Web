@@ -25,7 +25,7 @@
 							<label class="col-lg-2 control-label">Password</label>
 							<div class="col-lg-9">
 								<input type="password" v-model="form.password" class="form-control">
-								<span v-if="form.passwordGenerated" class="help-block">This is the newly generated password: <code>{{ form.passwordGenerated }}</code></span>
+								<span v-if="passwordGenerated" class="help-block">This is the newly generated password: <code>{{ passwordGenerated }}</code></span>
 							</div>
 							<div class="col-lg-1">
 								<button type="button" @click="generatePassword" title="Generate new random password" class="btn btn-warning" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-repeat"></i></button>
@@ -84,10 +84,10 @@
 				form: {
 					name: '',
 					password: '',
-					passwordGenerated: '',
 					email: '',
 					admin: false
-				}
+				},
+				passwordGenerated: ''
 			};
 		},
 		methods: {
@@ -130,7 +130,7 @@
 
 				// display the new password
 				this.form.password = password;
-				this.form.passwordGenerated = password;
+				this.passwordGenerated = password;
 			}
 		}
 	};
