@@ -67,7 +67,7 @@ Vue.config.productionTip = false;
 // router config
 router.beforeEach((to, from, next) => {
 	// check for authentication and redirect to home
-	if (!store.getters.isUserLoggedIn && !(to.path === '/' || to.path === '/login')) {
+	if (!store.getters.isUserLoggedIn && to.meta.requireAuthentication) {
 		next('/');
 		return true;
 	}

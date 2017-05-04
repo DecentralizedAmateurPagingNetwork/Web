@@ -33,157 +33,250 @@ export default new Router({
 		{
 			path: '/',
 			name: 'Home',
-			component: Home
+			component: Home,
+			meta: {
+				requireAuthentication: false
+			}
 		},
 		{
 			path: '/calls',
 			name: 'Call Overview',
-			component: CallOverview
+			component: CallOverview,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/calls/new',
 			name: 'New Call',
-			component: CallNew
+			component: CallNew,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/callsigns',
 			name: 'Callsign Overview',
-			component: CallsignOverview
+			component: CallsignOverview,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/callsigns/new',
 			name: 'New Callsign',
-			component: CallsignNew
+			component: CallsignNew,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/callsigns/edit/:id',
 			name: 'Edit Callsign',
-			component: CallsignNew
+			component: CallsignNew,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/news',
 			name: 'News Overview',
-			component: NewsOverview
+			component: NewsOverview,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/news/new',
 			name: 'New News',
-			component: NewsNew
+			component: NewsNew,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/rubrics',
 			name: 'Rubric Overview',
-			component: RubricOverview
+			component: RubricOverview,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/rubrics/new',
 			name: 'New Rubric',
-			component: RubricNew
+			component: RubricNew,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/rubrics/edit/:id',
 			name: 'Edit Rubric',
-			component: RubricNew
+			component: RubricNew,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/rubrics/activate',
 			name: 'Activate Rubric',
-			component: RubricActivation
+			component: RubricActivation,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/transmitters',
 			name: 'Transmitter Overview',
-			component: TransmitterOverview
+			component: TransmitterOverview,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/transmitters/new',
 			name: 'New Transmitter',
-			component: TransmitterNew
+			component: TransmitterNew,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/transmitters/edit/:id',
 			name: 'Edit Transmitter',
-			component: TransmitterNew
+			component: TransmitterNew,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/transmitters/map',
 			name: 'Transmitter Map',
-			component: TransmitterMap
+			component: TransmitterMap,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/transmitters/groups',
 			name: 'Transmitter Group Overview',
-			component: TransmitterGroupOverview
+			component: TransmitterGroupOverview,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/transmitters/groups/new',
 			name: 'New Transmitter Group',
-			component: TransmitterGroupNew
+			component: TransmitterGroupNew,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/transmitters/groups/edit/:id',
 			name: 'Edit Transmitter Group',
-			component: TransmitterGroupNew
+			component: TransmitterGroupNew,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/nodes',
 			name: 'Node Overview',
-			component: NodeOverview
+			component: NodeOverview,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/nodes/new',
 			name: 'New Node',
-			component: NodeNew
+			component: NodeNew,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/nodes/edit/:id',
 			name: 'Edit Node',
-			component: NodeNew
+			component: NodeNew,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/users',
 			name: 'User Overview',
-			component: UserOverview
+			component: UserOverview,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/users/new',
 			name: 'New User',
-			component: UserNew
+			component: UserNew,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/users/edit/:id',
 			name: 'Edit User',
-			component: UserNew
+			component: UserNew,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/login',
 			name: 'Login',
-			component: Login
+			component: Login,
+			meta: {
+				requireAuthentication: false
+			}
 		},
 		{
 			path: '/logout',
 			name: 'Logout',
-			component: Logout
+			component: Logout,
+			meta: {
+				requireAuthentication: true
+			}
 		},
 		{
 			path: '/version',
 			name: 'Version Check',
-			component: VersionCheck
+			component: VersionCheck,
+			meta: {
+				requireAuthentication: false
+			}
 		},
 		{
 			path: '/impress',
 			name: 'Impress',
-			component: Impress
+			component: Impress,
+			meta: {
+				requireAuthentication: false
+			}
 		},
 		{
 			path: '/privacy',
 			name: 'Privacy',
-			component: Privacy
+			component: Privacy,
+			meta: {
+				requireAuthentication: false
+			}
 		},
 		{
 			path: '*',
 			name: 'Not Found',
-			component: NotFound
+			component: NotFound,
+			meta: {
+				requireAuthentication: false
+			}
 		}
 	]
 });
