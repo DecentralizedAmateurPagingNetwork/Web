@@ -136,6 +136,12 @@
 
 				let returnData = {};
 				this.table.rows.forEach(transmitter => {
+					// use only transmitters which are currently online
+					if (!transmitter.status.includes('ONLINE')) {
+						return true;
+					}
+
+					// hide non-widerange transmitters if checkbox is set
 					if (this.settings.widerangeOnly && transmitter.usage !== 'WIDERANGE') {
 						return true;
 					}
