@@ -110,7 +110,7 @@
 					data.forEach(user => {
 						user.callsigns = [];
 						response.body.forEach(callsign => {
-							if (callsign.ownerNames.indexOf(user.name) !== -1) {
+							if (callsign.ownerNames.includes(user.name)) {
 								user.callsigns.push(callsign.name);
 							}
 						});

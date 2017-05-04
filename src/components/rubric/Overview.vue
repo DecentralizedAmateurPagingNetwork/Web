@@ -92,7 +92,7 @@
 					response.body.forEach(rubric => {
 						// add actions (if admin or owner)
 						rubric.actions = false;
-						if (this.$store.getters.user.admin || rubric.ownerNames.indexOf(this.$store.getters.user.name) !== -1) {
+						if (this.$store.getters.user.admin || rubric.ownerNames.includes(this.$store.getters.user.name)) {
 							rubric.actions = true;
 						}
 					});

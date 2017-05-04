@@ -89,7 +89,7 @@
 					response.body.forEach(transmittergroup => {
 						// add actions (if admin or owner)
 						transmittergroup.actions = false;
-						if (this.$store.getters.user.admin || transmittergroup.ownerNames.indexOf(this.$store.getters.user.name) !== -1) {
+						if (this.$store.getters.user.admin || transmittergroup.ownerNames.includes(this.$store.getters.user.name)) {
 							transmittergroup.actions = true;
 						}
 					});

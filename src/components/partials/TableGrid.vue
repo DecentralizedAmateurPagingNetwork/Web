@@ -71,7 +71,7 @@
 				let order = this.sortOrders[sortKey] || 1;
 				let data = this.data;
 				if (filterKey) {
-					data = data.filter(row => Object.keys(row).some(key => String(row[key]).toLowerCase().indexOf(filterKey) > -1));
+					data = data.filter(row => Object.keys(row).some(key => String(row[key]).toLowerCase().includes(filterKey)));
 				}
 				if (sortKey) {
 					data = data.slice().sort((a, b) => {

@@ -79,7 +79,7 @@
 		},
 		computed: {
 			chartData() {
-				let online = this.table.rows.filter(value => value.status.indexOf('ONLINE') !== -1).length;
+				let online = this.table.rows.filter(value => value.status.includes('ONLINE')).length;
 
 				return {
 					labels: ['Online', 'Offline'],

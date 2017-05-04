@@ -107,9 +107,9 @@
 			},
 			statOnline() {
 				if (this.settings.widerangeOnly) {
-					return this.table.rows.filter(value => value.status.indexOf('ONLINE') !== -1 && value.usage === 'WIDERANGE').length;
+					return this.table.rows.filter(value => value.status.includes('ONLINE') && value.usage === 'WIDERANGE').length;
 				} else {
-					return this.table.rows.filter(value => value.status.indexOf('ONLINE') !== -1).length;
+					return this.table.rows.filter(value => value.status.includes('ONLINE')).length;
 				}
 			},
 			chartData() {
@@ -216,7 +216,7 @@
 
 						// add actions (if admin or owner)
 						transmitter.actions = false;
-						if (this.$store.getters.user.admin || transmitter.ownerNames.indexOf(this.$store.getters.user.name) !== -1) {
+						if (this.$store.getters.user.admin || transmitter.ownerNames.includes(this.$store.getters.user.name)) {
 							transmitter.actions = true;
 						}
 					});

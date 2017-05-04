@@ -100,7 +100,7 @@
 
 						// add actions (if admin or owner)
 						callsign.actions = false;
-						if (this.$store.getters.user.admin || callsign.ownerNames.indexOf(this.$store.getters.user.name) !== -1) {
+						if (this.$store.getters.user.admin || callsign.ownerNames.includes(this.$store.getters.user.name)) {
 							callsign.actions = true;
 						}
 					});
