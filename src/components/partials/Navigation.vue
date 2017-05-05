@@ -16,7 +16,7 @@
 					<li><router-link to="/calls">Calls</router-link></li>
 					<li><router-link to="/callsigns">Callsigns</router-link></li>
 					<li class="divider-vertical"></li>
-					<li><router-link to="/news" v-if="this.$store.getters.user.admin">News</router-link></li>
+					<li><router-link to="/news">News</router-link></li>
 					<li><router-link to="/rubrics">Rubrics</router-link></li>
 					<li class="divider-vertical"></li>
 					<li class="dropdown">

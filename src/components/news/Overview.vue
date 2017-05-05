@@ -42,12 +42,6 @@
 <script>
 	export default {
 		created() {
-			// check if user is admin
-			if (!this.$store.getters.user.admin) {
-				this.$router.push('/');
-				return false;
-			}
-
 			this.loadData();
 		},
 		data() {
