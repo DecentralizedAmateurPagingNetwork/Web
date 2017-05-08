@@ -15,6 +15,7 @@
 					<v-marker v-for="item in markers" :key="item.name" :lat-lng="item.position" :icon="item.icon">
 						<v-popup :content="item.popup"></v-popup>
 					</v-marker>
+					<v-polyline v-for="item in lines" :key="item.name" :lat-lngs="item.position" :color="item.color"></v-polyline>
 				</v-map>
 			</div>
 		</div>
@@ -23,7 +24,8 @@
 			<div class="col-lg-12">
 				<h2>Settings</h2>
 				<div class="checkbox">
-					<label><input type="checkbox" v-model="settings.widerangeOnly"> Show Widerange-transmitter only</label>
+					<label><input type="checkbox" v-model="settings.widerangeOnly"> Show Widerange-transmitter only</label><br />
+					<label><input type="checkbox" v-model="settings.showLines"> Show line from transmitter to node</label>
 				</div>
 			</div>
 		</div>
@@ -39,6 +41,7 @@
 	Vue.component('v-tilelayer', Vue2Leaflet.TileLayer);
 	Vue.component('v-marker', Vue2Leaflet.Marker);
 	Vue.component('v-popup', Vue2Leaflet.Popup);
+	Vue.component('v-polyline', Vue2Leaflet.Polyline);
 
 	export default {
 		created() {
@@ -47,62 +50,124 @@
 		data() {
 			return {
 				settings: {
-					widerangeOnly: true
+					widerangeOnly: true,
+					showLines: false
 				},
 				zoom: this.$store.getters.map.zoom,
 				center: this.$store.getters.map.center,
 				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
 				url: this.$store.getters.url.map,
-				markers: []
+				markers: [],
+				lines: []
 			};
 		},
 		methods: {
 			createMap() {
-				let iconOnline = L.icon({
-					iconUrl: './assets/img/marker-wifi-online.png',
+				let iconNodeOnline = L.icon({
+					iconUrl: './assets/img/marker-node.png',
+					iconSize: [30, 30],
+					iconAnchor: [15, 15],
+					popupAnchor: [0, 0]
+				});
+
+				let iconNodeOffline = L.icon({
+					iconUrl: './assets/img/marker-node.png',
+					iconSize: [30, 30],
+					iconAnchor: [15, 15],
+					popupAnchor: [0, 0]
+				});
+
+				let iconTransmitterOnline = L.icon({
+					iconUrl: './assets/img/marker-transmitter-online.png',
 					iconSize: [28, 30],
 					iconAnchor: [15, 30],
 					popupAnchor: [0, -25]
 				});
 
-				let iconOffline = L.icon({
-					iconUrl: './assets/img/marker-wifi-offline.png',
+				let iconTransmitterOffline = L.icon({
+					iconUrl: './assets/img/marker-transmitter-offline.png',
 					iconSize: [28, 30],
 					iconAnchor: [15, 30],
 					popupAnchor: [0, -25]
 				});
 
-				this.$http.get('transmitters').then(response => {
-					let myMarkers = [];
-					response.body.forEach(transmitter => {
-						// check for widerange-setting
-						if (this.settings.widerangeOnly && transmitter.usage !== 'WIDERANGE') {
-							return true;
-						}
+				this.$http.get('nodes').then(response => {
+					const allNodes = response.body;
 
+					// get node markers
+					let markerNodes = [];
+					response.body.forEach(node => {
 						// find icon
-						let selectedMarkerIcon = iconOnline;
-						if (transmitter.status !== 'ONLINE') {
-							selectedMarkerIcon = iconOffline;
+						let selectedMarkerIcon = iconNodeOnline;
+						if (node.status !== 'ONLINE') {
+							selectedMarkerIcon = iconNodeOffline;
 						}
 
 						// build marker
-						myMarkers.push({
-							name: transmitter.name,
+						markerNodes.push({
+							name: node.name,
 							position: {
-								lat: transmitter.latitude,
-								lng: transmitter.longitude
+								lat: node.latitude,
+								lng: node.longitude
 							},
-							popup: '<b>' + transmitter.name + '</b><br />Transmission Power (W): ' + transmitter.power + '<br />Timeslot: ' + transmitter.timeSlot,
+							popup: '<b>' + node.name + '</b>',
 							icon: selectedMarkerIcon
 						});
 					});
-					this.markers = myMarkers;
+
+					// get transmitter markers
+					this.$http.get('transmitters').then(response => {
+						let markerTransmitters = [];
+						let polylineTransmitters = [];
+
+						response.body.forEach(transmitter => {
+							// check for widerange-setting
+							if (this.settings.widerangeOnly && transmitter.usage !== 'WIDERANGE') {
+								return true;
+							}
+
+							// find icon
+							let selectedMarkerIcon = iconTransmitterOnline;
+							if (transmitter.status !== 'ONLINE') {
+								selectedMarkerIcon = iconTransmitterOffline;
+							}
+
+							// build marker
+							markerTransmitters.push({
+								name: transmitter.name,
+								position: {
+									lat: transmitter.latitude,
+									lng: transmitter.longitude
+								},
+								popup: '<b>' + transmitter.name + '</b><br />Transmission Power (W): ' + transmitter.power + '<br />Timeslot: ' + transmitter.timeSlot,
+								icon: selectedMarkerIcon
+							});
+
+							// build line to node
+							if (this.settings.showLines) {
+								allNodes.forEach(node => {
+									if (node.name === transmitter.nodeName) {
+										polylineTransmitters.push({
+											name: transmitter.name,
+											position: [[node.latitude, node.longitude], [transmitter.latitude, transmitter.longitude]],
+											color: this.$helpers.stringToColor(node.name)
+										});
+									}
+								});
+							}
+						});
+
+						this.markers = markerNodes.concat(markerTransmitters);
+						this.lines = polylineTransmitters;
+					});
 				});
 			}
 		},
 		watch: {
 			'settings.widerangeOnly'() {
+				this.createMap();
+			},
+			'settings.showLines'() {
 				this.createMap();
 			}
 		}
