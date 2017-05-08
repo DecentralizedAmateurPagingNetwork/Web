@@ -175,7 +175,7 @@
 					chartData.labels.push(orderedReturnData[key].name);
 					chartData.datasets[0].data.push(orderedReturnData[key].amount);
 
-					let color = this.getRandomColor();
+					let color = this.$helpers.stringToColor(orderedReturnData[key].name);
 					chartData.datasets[0].backgroundColor.push(color);
 					chartData.datasets[0].hoverBackgroundColor.push(color);
 				}
@@ -248,12 +248,6 @@
 						this.$dialogs.ajaxError(this, response);
 					});
 				});
-			},
-			getRandomColor() {
-				let r = Math.floor(Math.random() * 255);
-				let g = Math.floor(Math.random() * 255);
-				let b = Math.floor(Math.random() * 255);
-				return 'rgb(' + r + ',' + g + ',' + b + ')';
 			}
 		}
 	};
