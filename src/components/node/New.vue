@@ -88,12 +88,17 @@
 				this.$http.get('nodes/' + this.$route.params.id).then(response => {
 					this.editing = true;
 
+					let ownerNames = [];
+					response.body.ownerNames.forEach(owner => {
+						ownerNames.push({name: owner});
+					});
+
 					this.form.name = response.body.name;
 					this.form.latitude.value = Math.abs(response.body.latitude);
 					this.form.latitude.orientation = (response.body.latitude >= 0 ? 1 : -1);
 					this.form.longitude.value = Math.abs(response.body.longitude);
 					this.form.longitude.orientation = (response.body.longitude >= 0 ? 1 : -1);
-					this.form.owners = response.body.ownerNames;
+					this.form.owners = ownerNames;
 					this.form.status = response.body.status;
 				}, response => {
 					this.$router.push('/nodes');
