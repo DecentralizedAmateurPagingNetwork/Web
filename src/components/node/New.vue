@@ -43,6 +43,12 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<label class="col-lg-2 control-label">Owner</label>
+							<div class="col-lg-10">
+								<multiselect v-model="form.owners" :options="formData.users" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
+							</div>
+						</div>
+						<div class="form-group">
 							<label class="col-lg-2 control-label">Status</label>
 							<div class="col-lg-10">
 								<select class="form-control" v-model="form.status">
@@ -71,6 +77,12 @@
 <script>
 	export default {
 		created() {
+			this.$http.get('users').then(response => {
+				response.body.forEach(user => {
+					this.formData.users.push({name: user.name});
+				});
+			});
+
 			// load data of given id
 			if (this.$route.params.id) {
 				this.$http.get('nodes/' + this.$route.params.id).then(response => {
@@ -81,6 +93,7 @@
 					this.form.latitude.orientation = (response.body.latitude >= 0 ? 1 : -1);
 					this.form.longitude.value = Math.abs(response.body.longitude);
 					this.form.longitude.orientation = (response.body.longitude >= 0 ? 1 : -1);
+					this.form.owners = response.body.ownerNames;
 					this.form.status = response.body.status;
 				}, response => {
 					this.$router.push('/nodes');
@@ -100,7 +113,11 @@
 						value: 0,
 						orientation: 1
 					},
+					owners: [],
 					status: 'ONLINE'
+				},
+				formData: {
+					users: []
 				}
 			};
 		},
@@ -113,9 +130,15 @@
 					return false;
 				}
 
+				let ownerNames = [];
+				this.form.owners.forEach(owner => {
+					ownerNames.push(owner.name);
+				});
+
 				let body = {
 					latitude: this.form.latitude.value * this.form.latitude.orientation,
 					longitude: this.form.longitude.value * this.form.longitude.orientation,
+					ownerNames: ownerNames,
 					status: this.form.status
 				};
 
