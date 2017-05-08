@@ -116,8 +116,8 @@
 						// make status more colorful
 						if (node.status === 'ONLINE') {
 							node.status = '<span class="label label-success">ONLINE</span>';
-						} else if (node.status === 'OFFLINE') {
-							node.status = '<span class="label label-primary">OFFLINE</span>';
+						} else if (node.status === 'SUSPENDED') {
+							node.status = '<span class="label label-primary">SUSPENDED</span>';
 						} else {
 							node.status = '<span class="label label-warning">' + node.status + '</span>';
 						}
