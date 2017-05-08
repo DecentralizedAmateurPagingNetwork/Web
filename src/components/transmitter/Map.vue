@@ -25,7 +25,8 @@
 				<h2>Settings</h2>
 				<div class="checkbox">
 					<label><input type="checkbox" v-model="settings.widerangeOnly"> Show Widerange-transmitter only</label><br />
-					<label><input type="checkbox" v-model="settings.showLines"> Show line from transmitter to node</label>
+					<label><input type="checkbox" v-model="settings.showNodes"> Show nodes</label><br />
+					<label v-if="settings.showNodes"><input type="checkbox" v-model="settings.showLines"> Show line from transmitter to node</label>
 				</div>
 			</div>
 		</div>
@@ -51,6 +52,7 @@
 			return {
 				settings: {
 					widerangeOnly: true,
+					showNodes: false,
 					showLines: false
 				},
 				zoom: this.$store.getters.map.zoom,
@@ -104,15 +106,17 @@
 						}
 
 						// build marker
-						markerNodes.push({
-							name: node.name,
-							position: {
-								lat: node.latitude,
-								lng: node.longitude
-							},
-							popup: '<b>' + node.name + '</b>',
-							icon: selectedMarkerIcon
-						});
+						if (this.settings.showNodes) {
+							markerNodes.push({
+								name: node.name,
+								position: {
+									lat: node.latitude,
+									lng: node.longitude
+								},
+								popup: '<b>' + node.name + '</b>',
+								icon: selectedMarkerIcon
+							});
+						}
 					});
 
 					// get transmitter markers
@@ -144,7 +148,7 @@
 							});
 
 							// build line to node
-							if (this.settings.showLines) {
+							if (this.settings.showLines && this.settings.showNodes) {
 								allNodes.forEach(node => {
 									if (node.name === transmitter.nodeName) {
 										polylineTransmitters.push({
@@ -165,6 +169,12 @@
 		},
 		watch: {
 			'settings.widerangeOnly'() {
+				this.createMap();
+			},
+			'settings.showNodes'() {
+				if (!this.showNodes) {
+					this.settings.showLines = false;
+				}
 				this.createMap();
 			},
 			'settings.showLines'() {
