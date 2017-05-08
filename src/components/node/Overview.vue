@@ -16,7 +16,7 @@
 
 				<info-error :message="errorMessage"></info-error>
 
-				<tablegrid v-if="table.rows" :columns="table.columns" :data="table.rows" :edit-action="editElement" :delete-action="deleteElement"></tablegrid>
+				<tablegrid v-if="table.rows" :columns="table.columns" :data="table.rows" :mail-action="mailToOwner" :edit-action="editElement" :delete-action="deleteElement"></tablegrid>
 			</div>
 			<div class="col-lg-3">
 				<div class="actions well">
@@ -63,6 +63,10 @@
 						{
 							id: 'address',
 							title: 'IP-Address'
+						},
+						{
+							id: 'ownerNames',
+							title: 'Owner'
 						},
 						{
 							id: 'status',
@@ -119,7 +123,7 @@
 
 						// add actions (if admin or owner)
 						node.actions = false;
-						if (this.$store.getters.user.admin) {
+						if (this.$store.getters.user.admin || node.ownerNames.includes(this.$store.getters.user.name)) {
 							node.actions = true;
 						}
 					});
@@ -132,6 +136,19 @@
 					// error --> show error message
 					this.running = false;
 					this.errorMessage = this.$helpers.getAjaxErrorMessage(response);
+				});
+			},
+			mailToOwner(element) {
+				let mailTo = [];
+				this.$http.get('users').then(response => {
+					response.body.forEach(user => {
+						if (element.ownerNames.includes(user.name)) {
+							mailTo.push(user.mail);
+						}
+					});
+					window.location.href = 'mailto:' + mailTo.join(',') + '?subject=DAPNET%20Node%3A%20' + element.name;
+				}, response => {
+					this.$dialogs.ajaxError(this, response);
 				});
 			},
 			editElement(element) {
