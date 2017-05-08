@@ -16,7 +16,7 @@
 						<td v-for="key in columns">
 							<template v-if="key.id === 'actions'">
 								<template v-if="entry[key.id] === true">
-									<action-buttons :element="entry" :edit-action="editAction" :delete-action="deleteAction"></action-buttons>
+									<action-buttons :element="entry" :mail-action="mailAction" :edit-action="editAction" :delete-action="deleteAction"></action-buttons>
 								</template>
 								<template v-else>
 									---
@@ -47,6 +47,7 @@
 		props: {
 			data: Array,
 			columns: Array,
+			mailAction: Function,
 			editAction: Function,
 			deleteAction: Function
 		},
