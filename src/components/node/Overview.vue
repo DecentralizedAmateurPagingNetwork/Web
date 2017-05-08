@@ -24,6 +24,7 @@
 						<legend>Actions</legend>
 						<ul>
 							<li><router-link to="/nodes/new">New Node</router-link></li>
+							<li><p class="linklike" @click="mailToAll">Mail to all node-owners</p></li>
 						</ul>
 						<br/>
 					</template>
@@ -168,11 +169,37 @@
 						this.$dialogs.ajaxError(this, response);
 					});
 				});
+			},
+			mailToAll() {
+				let mailTo = [];
+				this.$http.get('users').then(response => {
+					response.body.forEach(user => {
+						// check if user owns a node
+						this.table.rows.forEach(row => {
+							if (row.ownerNames.includes(user.name) && !mailTo.includes(user.mail)) {
+								// add user's mail-address if it is not already in the list
+								mailTo.push(user.mail);
+							}
+						});
+					});
+					window.location.href = 'mailto:' + mailTo.join(',') + '?subject=DAPNET%20Node';
+				}, response => {
+					this.$dialogs.ajaxError(this, response);
+				});
 			}
 		}
 	};
 </script>
 
 <style scoped>
+	.linklike {
+		color: #d9230f;
+		text-decoration: none;
+	}
 
+	.linklike:hover {
+		color: #91170a;
+		cursor: pointer;
+		text-decoration: underline;
+	}
 </style>
