@@ -52,12 +52,6 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Key</label>
-							<div class="col-lg-10">
-								<input type="text" v-model="form.key" class="form-control">
-							</div>
-						</div>
-						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
 								<button type="submit" @click="submitForm" class="btn btn-primary">Submit</button>
 								<router-link to="/nodes"><button class="btn btn-default">Abort</button></router-link>
@@ -88,7 +82,6 @@
 					this.form.longitude.value = Math.abs(response.body.longitude);
 					this.form.longitude.orientation = (response.body.longitude >= 0 ? 1 : -1);
 					this.form.status = response.body.status;
-					this.form.key = response.body.key;
 				}, response => {
 					this.$router.push('/nodes');
 				});
@@ -107,8 +100,7 @@
 						value: 0,
 						orientation: 1
 					},
-					status: 'ONLINE',
-					key: ''
+					status: 'ONLINE'
 				}
 			};
 		},
@@ -124,8 +116,7 @@
 				let body = {
 					latitude: this.form.latitude.value * this.form.latitude.orientation,
 					longitude: this.form.longitude.value * this.form.longitude.orientation,
-					status: this.form.status,
-					key: this.form.key
+					status: this.form.status
 				};
 
 				this.$http.put('nodes/' + this.form.name, body).then(response => {
