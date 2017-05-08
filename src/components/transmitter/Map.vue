@@ -66,14 +66,21 @@
 		methods: {
 			createMap() {
 				let iconNodeOnline = L.icon({
-					iconUrl: './assets/img/marker-node.png',
+					iconUrl: './assets/img/marker-node-online.png',
 					iconSize: [30, 30],
 					iconAnchor: [15, 15],
 					popupAnchor: [0, 0]
 				});
 
-				let iconNodeOffline = L.icon({
-					iconUrl: './assets/img/marker-node.png',
+				let iconNodeSuspended = L.icon({
+					iconUrl: './assets/img/marker-node-suspended.png',
+					iconSize: [30, 30],
+					iconAnchor: [15, 15],
+					popupAnchor: [0, 0]
+				});
+
+				let iconNodeUnknown = L.icon({
+					iconUrl: './assets/img/marker-node-unknown.png',
 					iconSize: [30, 30],
 					iconAnchor: [15, 15],
 					popupAnchor: [0, 0]
@@ -101,8 +108,16 @@
 					response.body.forEach(node => {
 						// find icon
 						let selectedMarkerIcon = iconNodeOnline;
-						if (node.status !== 'ONLINE') {
-							selectedMarkerIcon = iconNodeOffline;
+						if (node.status === 'SUSPENDED') {
+							selectedMarkerIcon = iconNodeSuspended;
+						} else if (node.status !== 'ONLINE') {
+							selectedMarkerIcon = iconNodeUnknown;
+						}
+
+						// set ip-address (if applicable)
+						let popupIp = '';
+						if (node.address !== null) {
+							popupIp = '<br />IP: ' + node.address.ip_addr + ':' + node.address.port;
 						}
 
 						// build marker
@@ -113,7 +128,7 @@
 									lat: node.latitude,
 									lng: node.longitude
 								},
-								popup: '<b>' + node.name + '</b>',
+								popup: '<b>' + node.name + '</b>' + popupIp,
 								icon: selectedMarkerIcon
 							});
 						}
