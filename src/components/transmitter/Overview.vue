@@ -16,7 +16,7 @@
 
 				<info-error :message="errorMessage"></info-error>
 
-				<tablegrid v-if="table.rows" :columns="table.columns" :data="table.rows" :edit-action="editElement" :delete-action="deleteElement"></tablegrid>
+				<tablegrid v-if="table.rows" :columns="table.columns" :data="table.rows" :mail-action="mailToOwner" :edit-action="editElement" :delete-action="deleteElement"></tablegrid>
 			</div>
 			<div class="col-lg-3">
 				<div class="actions well">
@@ -24,6 +24,7 @@
 						<legend>Actions</legend>
 						<ul>
 							<li><router-link to="/transmitters/new">New Transmitter</router-link></li>
+							<li><p class="linklike" @click="mailToAll">Send a mail to all owners</p></li>
 						</ul>
 						<br/>
 					</template>
@@ -231,6 +232,19 @@
 					this.errorMessage = this.$helpers.getAjaxErrorMessage(response);
 				});
 			},
+			mailToOwner(element) {
+				let mailTo = [];
+				this.$http.get('users').then(response => {
+					response.body.forEach(user => {
+						if (element.ownerNames.includes(user.name)) {
+							mailTo.push(user.mail);
+						}
+					});
+					window.location.href = 'mailto:' + mailTo.join(',') + '?subject=DAPNET%20Transmitter%3A%20' + element.name;
+				}, response => {
+					this.$dialogs.ajaxError(this, response);
+				});
+			},
 			editElement(element) {
 				this.$router.push({name: 'Edit Transmitter', params: {id: element.name}});
 			},
@@ -247,6 +261,23 @@
 						// error --> show error message
 						this.$dialogs.ajaxError(this, response);
 					});
+				});
+			},
+			mailToAll() {
+				let mailTo = [];
+				this.$http.get('users').then(response => {
+					response.body.forEach(user => {
+						// check if user owns a transmitter
+						this.table.rows.forEach(row => {
+							if (row.ownerNames.includes(user.name) && !mailTo.includes(user.mail)) {
+								// add user's mail-address if it is not already in the list
+								mailTo.push(user.mail);
+							}
+						});
+					});
+					window.location.href = 'mailto:' + mailTo.join(',') + '?subject=DAPNET%20Transmitter';
+				}, response => {
+					this.$dialogs.ajaxError(this, response);
 				});
 			}
 		}
