@@ -16,7 +16,7 @@
 
 				<info-error :message="errorMessage"></info-error>
 
-				<tablegrid v-if="table.rows" :columns="table.columns" :data="table.rows" :edit-action="editElement" :delete-action="deleteElement"></tablegrid>
+				<tablegrid v-if="table.rows" :columns="table.columns" :data="table.rows" :mail-action="mailToOwner" :edit-action="editElement" :delete-action="deleteElement"></tablegrid>
 			</div>
 			<div class="col-lg-3">
 				<div class="actions well">
@@ -24,6 +24,7 @@
 						<legend>Actions</legend>
 						<ul>
 							<li><router-link to="/users/new">New User</router-link></li>
+							<li><p class="linklike" @click="mailToAll">Send a mail to all owners</p></li>
 						</ul>
 						<br/>
 					</template>
@@ -126,6 +127,9 @@
 					this.table.rows = data;
 				});
 			},
+			mailToOwner(element) {
+				window.location.href = 'mailto:' + element.mail + '?subject=DAPNET%20User%3A%20' + element.name;
+			},
 			editElement(element) {
 				this.$router.push({name: 'Edit User', params: {id: element.name}});
 			},
@@ -143,6 +147,16 @@
 						this.$dialogs.ajaxError(this, response);
 					});
 				});
+			},
+			mailToAll() {
+				let mailTo = [];
+				this.table.rows.forEach(user => {
+					if (!mailTo.includes(user.mail)) {
+						// add user's mail-address if it is not already in the list
+						mailTo.push(user.mail);
+					}
+				});
+				window.location.href = 'mailto:' + mailTo.join(',') + '?subject=DAPNET%20User';
 			}
 		}
 	};
