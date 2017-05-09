@@ -24,7 +24,7 @@
 						<legend>Actions</legend>
 						<ul>
 							<li><router-link to="/nodes/new">New Node</router-link></li>
-							<li><p class="linklike" @click="mailToAll">Mail to all node-owners</p></li>
+							<li><p class="linklike" @click="mailToAll">Send a mail to all owners</p></li>
 						</ul>
 						<br/>
 					</template>
@@ -192,14 +192,5 @@
 </script>
 
 <style scoped>
-	.linklike {
-		color: #d9230f;
-		text-decoration: none;
-	}
 
-	.linklike:hover {
-		color: #91170a;
-		cursor: pointer;
-		text-decoration: underline;
-	}
 </style>

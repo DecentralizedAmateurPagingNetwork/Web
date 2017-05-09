@@ -20,6 +20,17 @@ textarea {
 	cursor: pointer;
 }
 
+.linklike {
+	color: #d9230f;
+	text-decoration: none;
+}
+
+.linklike:hover {
+	color: #91170a;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
 @media (max-width: 1200px) {
 	.actions.well {
 		margin-top: 1em
