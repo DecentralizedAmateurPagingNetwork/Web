@@ -135,6 +135,16 @@
 					return false;
 				}
 
+				// check if location is valid
+				if (this.form.latitude.value === '' || this.form.longitude.value === '') {
+					this.$swal({
+						title: 'Invalid location',
+						html: 'Please check the given location and make sure to use a dot (<code>.</code>) as decimal separator.',
+						type: 'error'
+					});
+					return false;
+				}
+
 				let ownerNames = [];
 				this.form.owners.forEach(owner => {
 					ownerNames.push(owner.name);
