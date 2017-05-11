@@ -363,9 +363,9 @@
 		watch: {
 			'formData.hamnetDb.selected': function(val) {
 				this.form.name = val.callsign;
-				this.form.latitude.value = Math.abs(val.latitude);
+				this.form.latitude.value = Math.abs(val.latitude).toFixed(6);
 				this.form.latitude.orientation = (val.latitude >= 0 ? 1 : -1);
-				this.form.longitude.value = Math.abs(val.longitude);
+				this.form.longitude.value = Math.abs(val.longitude).toFixed(6);
 				this.form.longitude.orientation = (val.longitude >= 0 ? 1 : -1);
 			}
 		}
