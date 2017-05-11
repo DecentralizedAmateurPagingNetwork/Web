@@ -94,9 +94,19 @@
 			submitForm(event) {
 				event.preventDefault();
 
+				// workaround to allow empty password to not change it
+				if (this.$route.params.id && this.form.password === '') {
+					this.form.password = '~~~DO_NOT_CHANGE_PASSWORD~~~';
+				}
+
 				// check for input in all fields
 				if (!this.$helpers.checkForInput(this, this.form)) {
 					return false;
+				}
+
+				// second part of the workaround
+				if (this.$route.params.id && this.form.password === '~~~DO_NOT_CHANGE_PASSWORD~~~') {
+					this.form.password = '';
 				}
 
 				let body = {
