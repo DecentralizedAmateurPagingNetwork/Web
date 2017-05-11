@@ -297,7 +297,7 @@
 					antennalevel: 0,
 					antennadirection: 0,
 					antennagain: 0,
-					identificationAddress: 0,
+					identificationAddress: 1,
 					timeslot: [],
 					owners: [],
 					device: {
