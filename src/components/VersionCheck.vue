@@ -28,37 +28,28 @@
 			this.version.web = pkg.version;
 
 			// get core version
-			this.$http.get('core/core_version').then(response => {
-				this.version.core = response.body;
+			this.$http.get('core/version').then(response => {
+				this.version.core = response.body.core;
+				this.version.api = response.body.api;
 
-				// get api version
-				this.$http.get('core/api_version').then(response => {
-					this.version.api = response.body;
+				// build query string
+				let queryString = '?core=' + this.version.core + '&api=' + this.version.api + '&web=' + this.version.web;
 
-					// build query string
-					let queryString = '?core=' + this.version.core + '&api=' + this.version.api + '&web=' + this.version.web;
-
-					// query update server
-					this.$http.get(this.$store.getters.url.update + queryString, {
-						before(request) {
-							request.headers.delete('Authorization');
-						}
-					}).then(response => {
-						this.displayData = response.body;
-						this.running = false;
-					}, response => {
-						if (response.status === 0) {
-							this.errorMessage = 'Unable to find update-server. Please try again later.';
-						} else {
-							this.errorMessage = 'Unable to find update-information. Please try again later.';
-						}
-						this.running = false;
-					});
-				}, response => {
-					// unable to get api version
-					if (response.status === 0) {
-						this.errorMessage = 'Unable to reach API server. Please try again later.';
+				// query update server
+				this.$http.get(this.$store.getters.url.update + queryString, {
+					before(request) {
+						request.headers.delete('Authorization');
 					}
+				}).then(response => {
+					this.displayData = response.body;
+					this.running = false;
+				}, response => {
+					if (response.status === 0) {
+						this.errorMessage = 'Unable to find update-server. Please try again later.';
+					} else {
+						this.errorMessage = 'Unable to find update-information. Please try again later.';
+					}
+					this.running = false;
 				});
 			}, response => {
 				// unable to get core version

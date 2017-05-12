@@ -31,8 +31,8 @@
 	export default {
 		created() {
 			// get core version
-			this.$http.get('core/core_version').then(response => {
-				this.version.core = response.body;
+			this.$http.get('core/version').then(response => {
+				this.version.core = response.body.core;
 			});
 
 			// get web version
