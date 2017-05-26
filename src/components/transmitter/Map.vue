@@ -158,7 +158,7 @@
 									lat: transmitter.latitude,
 									lng: transmitter.longitude
 								},
-								popup: '<b>' + transmitter.name + '</b><br />Transmission Power (W): ' + transmitter.power + '<br />Timeslot: ' + transmitter.timeSlot,
+								popup: '<b>' + transmitter.name + '</b><br />Usage: ' + transmitter.usage + '<br />Transmission Power (W): ' + transmitter.power + '<br />Timeslot: ' + transmitter.timeSlot + '<br/>Owner: ' + transmitter.ownerNames.join(', '),
 								icon: selectedMarkerIcon
 							});
 
