@@ -173,15 +173,15 @@
 			<div class="col-lg-3">
 				<h2>Information</h2>
 				<ul class="list-group">
-					<li v-if="form.device.type" class="list-group-item"><b>Device</b><span class="badge">{{ form.device.type }}</span></li>
-					<li v-if="form.device.version" class="list-group-item"><b>Version</b><span class="badge">{{ form.device.version }}</span></li>
-					<li v-if="form.nodeName" class="list-group-item"><b>Node</b><span class="badge">{{ form.nodeName }}</span></li>
-					<li v-if="form.address.ip_addr" class="list-group-item"><b>IP-Address</b><span class="badge">{{ form.address.ip_addr }}</span></li>
-					<li v-if="form.address.port" class="list-group-item"><b>Port</b><span class="badge">{{ form.address.port }}</span></li>
-					<li v-if="form.connection.last || form.connection.since" class="list-group-item"><b>Connection</b>
+					<li v-if="nodeInformation.device.type" class="list-group-item"><b>Device</b><span class="badge">{{ nodeInformation.device.type }}</span></li>
+					<li v-if="nodeInformation.device.version" class="list-group-item"><b>Version</b><span class="badge">{{ nodeInformation.device.version }}</span></li>
+					<li v-if="nodeInformation.nodeName" class="list-group-item"><b>Node</b><span class="badge">{{ nodeInformation.nodeName }}</span></li>
+					<li v-if="nodeInformation.address.ip_addr" class="list-group-item"><b>IP-Address</b><span class="badge">{{ nodeInformation.address.ip_addr }}</span></li>
+					<li v-if="nodeInformation.address.port" class="list-group-item"><b>Port</b><span class="badge">{{ nodeInformation.address.port }}</span></li>
+					<li v-if="nodeInformation.connection.last || nodeInformation.connection.since" class="list-group-item"><b>Connection</b>
 						<ul>
-							<li v-if="form.connection.last">Last: <span style="float: right">{{ form.connection.last }}</span></li>
-							<li v-if="form.connection.since">Since: <span style="float: right">{{ form.connection.since }}</span></li>
+							<li v-if="nodeInformation.connection.last">Last: <span style="float: right">{{ nodeInformation.connection.last }}</span></li>
+							<li v-if="nodeInformation.connection.since">Since: <span style="float: right">{{ nodeInformation.connection.since }}</span></li>
 						</ul>
 					</li>
 				</ul>
@@ -231,7 +231,6 @@
 					});
 
 					this.form.name = response.body.name;
-					this.form.nodeName = response.body.nodeName;
 					this.form.password = response.body.authKey;
 					this.form.latitude.value = Math.abs(response.body.latitude);
 					this.form.latitude.orientation = (response.body.latitude >= 0 ? 1 : -1);
@@ -247,17 +246,19 @@
 					this.form.timeslot = timeSlot;
 					this.form.owners = ownerNames;
 
-					this.form.device.type = response.body.deviceType;
-					this.form.device.version = response.body.deviceVersion;
+					this.nodeInformation.nodeName = response.body.nodeName;
+
+					this.nodeInformation.device.type = response.body.deviceType;
+					this.nodeInformation.device.version = response.body.deviceVersion;
 					if (response.body.address !== null) {
-						this.form.address = response.body.address;
+						this.nodeInformation.address = response.body.address;
 					}
 
 					if (response.body.lastConnected !== null) {
-						this.form.connection.last = new Date(response.body.lastConnected).toLocaleString();
+						this.nodeInformation.connection.last = new Date(response.body.lastConnected).toLocaleString();
 					}
 					if (response.body.connectedSince !== null) {
-						this.form.connection.since = new Date(response.body.connectedSince).toLocaleString();
+						this.nodeInformation.connection.since = new Date(response.body.connectedSince).toLocaleString();
 					}
 				}, response => {
 					this.$router.push('/transmitters');
@@ -269,7 +270,6 @@
 				editing: false,
 				form: {
 					name: '',
-					nodeName: '',
 					password: '',
 					latitude: {
 						value: 0,
@@ -287,7 +287,17 @@
 					antennagain: 0,
 					identificationAddress: 1,
 					timeslot: [],
-					owners: [],
+					owners: []
+				},
+				formData: {
+					hamnetDb: {
+						all: [],
+						selected: {}
+					},
+					users: []
+				},
+				nodeInformation: {
+					nodeName: '',
 					device: {
 						type: '',
 						version: ''
@@ -300,13 +310,6 @@
 						last: '',
 						since: ''
 					}
-				},
-				formData: {
-					hamnetDb: {
-						all: [],
-						selected: {}
-					},
-					users: []
 				}
 			};
 		},
