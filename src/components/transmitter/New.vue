@@ -175,6 +175,7 @@
 				<ul class="list-group">
 					<li v-if="form.device.type" class="list-group-item"><b>Device</b><span class="badge">{{ form.device.type }}</span></li>
 					<li v-if="form.device.version" class="list-group-item"><b>Version</b><span class="badge">{{ form.device.version }}</span></li>
+					<li v-if="form.nodeName" class="list-group-item"><b>Node</b><span class="badge">{{ form.nodeName }}</span></li>
 					<li v-if="form.address.ip_addr" class="list-group-item"><b>IP-Address</b><span class="badge">{{ form.address.ip_addr }}</span></li>
 					<li v-if="form.address.port" class="list-group-item"><b>Port</b><span class="badge">{{ form.address.port }}</span></li>
 					<li v-if="form.connection.last || form.connection.since" class="list-group-item"><b>Connection</b>
@@ -230,6 +231,7 @@
 					});
 
 					this.form.name = response.body.name;
+					this.form.nodeName = response.body.nodeName;
 					this.form.password = response.body.authKey;
 					this.form.latitude.value = Math.abs(response.body.latitude);
 					this.form.latitude.orientation = (response.body.latitude >= 0 ? 1 : -1);
@@ -267,6 +269,7 @@
 				editing: false,
 				form: {
 					name: '',
+					nodeName: '',
 					password: '',
 					latitude: {
 						value: 0,
