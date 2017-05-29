@@ -27,13 +27,6 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Node</label>
-							<div class="col-lg-10">
-								<multiselect v-model="form.node" :options="formData.nodes" :close-on-select="true" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
-								<span class="help-block">Select the DAPNET-Node which shall receive the transmitter TCP connection. Just this DAPNET-Node will accept a connection from this specific transmitter.</span>
-							</div>
-						</div>
-						<div class="form-group">
 							<label class="col-lg-2 control-label">Password</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="form.password" class="form-control">
@@ -215,12 +208,6 @@
 				});
 			});
 
-			this.$http.get('nodes').then(response => {
-				response.body.forEach(node => {
-					this.formData.nodes.push({name: node.name});
-				});
-			});
-
 			this.$http.get('users').then(response => {
 				response.body.forEach(user => {
 					this.formData.users.push({name: user.name});
@@ -244,7 +231,6 @@
 
 					this.form.name = response.body.name;
 					this.form.password = response.body.authKey;
-					this.form.node = {name: response.body.nodeName};
 					this.form.latitude.value = Math.abs(response.body.latitude);
 					this.form.latitude.orientation = (response.body.latitude >= 0 ? 1 : -1);
 					this.form.longitude.value = Math.abs(response.body.longitude);
@@ -282,7 +268,6 @@
 				form: {
 					name: '',
 					password: '',
-					node: '',
 					latitude: {
 						value: 0,
 						orientation: 1
@@ -318,7 +303,6 @@
 						all: [],
 						selected: {}
 					},
-					nodes: [],
 					users: []
 				}
 			};
@@ -349,7 +333,6 @@
 
 				let body = {
 					authKey: this.form.password,
-					nodeName: this.form.node.name,
 					latitude: this.form.latitude.value * this.form.latitude.orientation,
 					longitude: this.form.longitude.value * this.form.longitude.orientation,
 					power: this.form.power,
