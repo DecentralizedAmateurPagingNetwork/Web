@@ -116,7 +116,7 @@
 
 						// set ip-address (if applicable)
 						let popupIp = '';
-						if (node.address !== null) {
+						if (node.address !== undefined && node.address !== null) {
 							popupIp = '<br />IP: ' + node.address.ip_addr + ':' + node.address.port;
 						}
 
