@@ -3,6 +3,12 @@
 		<footer>
 			<div class="row">
 				<div class="col-lg-12">
+					<p><b>More:</b></p>
+					<ul class="list-unstyled">
+						<li>
+							<router-link to="/faq">FAQ</router-link>
+						</li>
+					</ul>
 					<p><b>Support us:</b></p>
 					<ul class="list-unstyled">
 						<li><a href="https://github.com/DecentralizedAmateurPagingNetwork" target="_blank">GitHub</a></li>
