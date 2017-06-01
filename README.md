@@ -24,7 +24,7 @@ Written in the [Vue.js](https://github.com/vuejs/vue) framework and built using 
 8. Test your setup: `npm run dev`
 	* Open your browser at `http://localhost:8081` and check that each of your customizations was successful
 9. Generate the production build: `npm run build`
-10. Copy your freshly generated files into your webserver's `htdocs` directory
+10. Copy your freshly generated files from `dist/` into your webserver's `htdocs/` directory
 11. Done!
 
 ### Deployment into a subdirectory
