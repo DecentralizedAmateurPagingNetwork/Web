@@ -3,9 +3,16 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="jumbotron">
-					<h1>Welcome!</h1>
-					<p v-if="!this.$store.getters.isUserLoggedIn">In order to use this service, please <router-link to="/login">login</router-link> first.</p>
-					<p v-if="this.$store.getters.isUserLoggedIn">You are logged in, {{ this.$store.getters.user.name }}.</p>
+					<h1>Welcome to DAPNET Web!</h1>
+					<p>The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts.
+						It is the new and further developed version of the <a href="http://ham-pager.sourceforge.net" target="_blank">FunkrufMaster</a>.
+						It consists of a decentral server cluster feeding paging data to distributed transmitters.<br />
+						The most used frequency is 439.9875 MHz and the protocol is POCSAG.
+						Common paging receivers are of type "Skyper", but there exist others as well.
+						As it is used on amateur radio frequencies, commercial use is forbidden.<br />
+						If you are a licensed amateur radio operator, get your login account now.
+						We are happy for every new transmitter participating in the network.
+						Further information can be found <a href="https://www.afu.rwth-aachen.de/projekte/funkruf-pager-pocsag" target="_blank">here</a>.</p>
 				</div>
 			</div>
 		</div>
@@ -107,5 +114,9 @@
 
 	.jumbotron {
 		margin-top: 50px;
+	}
+
+	.jumbotron > p {
+		font-size: 1.2em;
 	}
 </style>
