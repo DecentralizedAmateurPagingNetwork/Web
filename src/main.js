@@ -83,7 +83,7 @@ router.afterEach((to, from) => {
 
 // resource config
 Vue.http.options.root = store.getters.url.api;
-Vue.http.options.timeout = 10000;
+Vue.http.options.timeout = 30000;
 Vue.http.headers.common['Authorization'] = 'Basic ' + store.getters.user.auth;
 delete Vue.http.headers.common['Content-Type'];
 
