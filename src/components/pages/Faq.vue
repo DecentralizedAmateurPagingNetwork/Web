@@ -22,7 +22,7 @@
 				<p>A RIC is the identifiaction number in the POCSAG world. They can have special meaning like the clock-RIC to set the date and time on your pager. Mostly they identify personally your pager. The assignment between a personal RIC and you is the "Callsign".</p>
 
 				<h2>I cannot add a callsign or a transmitter.</h2>
-				<p>Due to abuse reasons, only admins can add callsigns or transmitters. Please contact <code>rwth-afu [at] online.de</code>.</p>
+				<p>Due to abuse reasons, only admins can add callsigns or transmitters. Please contact <code>rwth-afu [at] online.de</code>. Once your callsign or transmitter is assigned to you, you can edit it by yourself.</p>
 
 				<h2>I want to add a transmitter to the network.</h2>
 				<p>Very nice. We like the network growing. Please send an email to <code>rwth-afu [at] online.de</code> an give the following information:</p>
@@ -42,7 +42,7 @@
 				<ul>
 					<li>Amateur radio callsign.</li>
 					<li>Location Latitude and Longitude (Please in decimal form, e.g. 50.12345)</li>
-					<li>Some reason, why it makes sense to add your node</li>
+					<li>Some reason, why it makes sense to add your node.</li>
 				</ul>
 				<p>Keep in mind that you need a stable HAMNET connection (44.0.0.0/8) to join the cluster network.</p>
 
