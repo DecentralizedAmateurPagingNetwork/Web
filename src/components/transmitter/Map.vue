@@ -24,7 +24,9 @@
 			<div class="col-lg-12">
 				<h2>Settings</h2>
 				<div class="checkbox">
-					<label><input type="checkbox" v-model="settings.widerangeOnly"> Show Widerange-transmitter only</label><br />
+					<label><input type="checkbox" v-model="settings.widerangeOnly"> Show Widerange-transmitter only</label><br /><br />
+					<label><input type="checkbox" v-model="settings.timeslot.active"> Show transmitters by timeslots </label>
+						<input v-model="settings.timeslot.input" :disabled="!settings.timeslot.active"><br /><br />
 					<label><input type="checkbox" v-model="settings.showNodes"> Show nodes</label><br />
 					<label v-if="settings.showNodes"><input type="checkbox" v-model="settings.showLines"> Show line from transmitter to node</label>
 				</div>
@@ -102,6 +104,10 @@
 				},
 				settings: {
 					widerangeOnly: true,
+					timeslot: {
+						active: false,
+						input: ''
+					},
 					showNodes: false,
 					showLines: false
 				},
@@ -157,6 +163,11 @@
 						return true;
 					}
 
+					// check for timeslot-input
+					if (this.settings.timeslot.active && !transmitter.timeSlot.includes(this.settings.timeslot.input)) {
+						return true;
+					}
+
 					// find icon
 					let selectedMarkerIcon = this.icons.iconTransmitterOnline;
 					if (transmitter.status !== 'ONLINE') {
@@ -196,8 +207,14 @@
 			'settings.widerangeOnly'() {
 				this.createMap();
 			},
+			'settings.timeslot.active'() {
+				this.createMap();
+			},
+			'settings.timeslot.input'() {
+				this.createMap();
+			},
 			'settings.showNodes'() {
-				if (!this.showNodes) {
+				if (!this.settings.showNodes) {
 					this.settings.showLines = false;
 				}
 				this.createMap();
