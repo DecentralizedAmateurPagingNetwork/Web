@@ -46,10 +46,60 @@
 
 	export default {
 		created() {
-			this.createMap();
+			// create icons
+			this.icons.iconNodeOnline = L.icon({
+				iconUrl: './assets/img/marker-node-online.png',
+				iconSize: [30, 30],
+				iconAnchor: [15, 15],
+				popupAnchor: [0, 0]
+			});
+
+			this.icons.iconNodeSuspended = L.icon({
+				iconUrl: './assets/img/marker-node-suspended.png',
+				iconSize: [30, 30],
+				iconAnchor: [15, 15],
+				popupAnchor: [0, 0]
+			});
+
+			this.icons.iconNodeUnknown = L.icon({
+				iconUrl: './assets/img/marker-node-unknown.png',
+				iconSize: [30, 30],
+				iconAnchor: [15, 15],
+				popupAnchor: [0, 0]
+			});
+
+			this.icons.iconTransmitterOnline = L.icon({
+				iconUrl: './assets/img/marker-transmitter-online.png',
+				iconSize: [28, 30],
+				iconAnchor: [15, 30],
+				popupAnchor: [0, -25]
+			});
+
+			this.icons.iconTransmitterOffline = L.icon({
+				iconUrl: './assets/img/marker-transmitter-offline.png',
+				iconSize: [28, 30],
+				iconAnchor: [15, 30],
+				popupAnchor: [0, -25]
+			});
+
+			// load transmitters and nodes
+			this.$http.get('nodes').then(response => {
+				this.data.nodes = response.body;
+
+				this.$http.get('transmitters').then(response => {
+					this.data.transmitters = response.body;
+
+					// create map out of loaded data
+					this.createMap();
+				});
+			});
 		},
 		data() {
 			return {
+				data: {
+					nodes: [],
+					transmitters: []
+				},
 				settings: {
 					widerangeOnly: true,
 					showNodes: false,
@@ -59,127 +109,87 @@
 				center: this.$store.getters.map.center,
 				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
 				url: this.$store.getters.url.map,
+				icons: {},
 				markers: [],
 				lines: []
 			};
 		},
 		methods: {
 			createMap() {
-				let iconNodeOnline = L.icon({
-					iconUrl: './assets/img/marker-node-online.png',
-					iconSize: [30, 30],
-					iconAnchor: [15, 15],
-					popupAnchor: [0, 0]
+				// get node markers
+				let markerNodes = [];
+				this.data.nodes.forEach(node => {
+					// find icon
+					let selectedMarkerIcon = this.icons.iconNodeOnline;
+					if (node.status === 'SUSPENDED') {
+						selectedMarkerIcon = this.icons.iconNodeSuspended;
+					} else if (node.status !== 'ONLINE') {
+						selectedMarkerIcon = this.icons.iconNodeUnknown;
+					}
+
+					// set ip-address (if applicable)
+					let popupIp = '';
+					if (node.address !== undefined && node.address !== null) {
+						popupIp = '<br />IP: ' + node.address.ip_addr + ':' + node.address.port;
+					}
+
+					// build marker
+					if (this.settings.showNodes) {
+						markerNodes.push({
+							name: node.name,
+							position: {
+								lat: node.latitude,
+								lng: node.longitude
+							},
+							popup: '<b>' + node.name + '</b>' + popupIp,
+							icon: selectedMarkerIcon
+						});
+					}
 				});
 
-				let iconNodeSuspended = L.icon({
-					iconUrl: './assets/img/marker-node-suspended.png',
-					iconSize: [30, 30],
-					iconAnchor: [15, 15],
-					popupAnchor: [0, 0]
-				});
+				// get transmitter markers
+				let markerTransmitters = [];
+				let polylineTransmitters = [];
 
-				let iconNodeUnknown = L.icon({
-					iconUrl: './assets/img/marker-node-unknown.png',
-					iconSize: [30, 30],
-					iconAnchor: [15, 15],
-					popupAnchor: [0, 0]
-				});
+				this.data.transmitters.forEach(transmitter => {
+					// check for widerange-setting
+					if (this.settings.widerangeOnly && transmitter.usage !== 'WIDERANGE') {
+						return true;
+					}
 
-				let iconTransmitterOnline = L.icon({
-					iconUrl: './assets/img/marker-transmitter-online.png',
-					iconSize: [28, 30],
-					iconAnchor: [15, 30],
-					popupAnchor: [0, -25]
-				});
+					// find icon
+					let selectedMarkerIcon = this.icons.iconTransmitterOnline;
+					if (transmitter.status !== 'ONLINE') {
+						selectedMarkerIcon = this.icons.iconTransmitterOffline;
+					}
 
-				let iconTransmitterOffline = L.icon({
-					iconUrl: './assets/img/marker-transmitter-offline.png',
-					iconSize: [28, 30],
-					iconAnchor: [15, 30],
-					popupAnchor: [0, -25]
-				});
-
-				this.$http.get('nodes').then(response => {
-					const allNodes = response.body;
-
-					// get node markers
-					let markerNodes = [];
-					response.body.forEach(node => {
-						// find icon
-						let selectedMarkerIcon = iconNodeOnline;
-						if (node.status === 'SUSPENDED') {
-							selectedMarkerIcon = iconNodeSuspended;
-						} else if (node.status !== 'ONLINE') {
-							selectedMarkerIcon = iconNodeUnknown;
-						}
-
-						// set ip-address (if applicable)
-						let popupIp = '';
-						if (node.address !== undefined && node.address !== null) {
-							popupIp = '<br />IP: ' + node.address.ip_addr + ':' + node.address.port;
-						}
-
-						// build marker
-						if (this.settings.showNodes) {
-							markerNodes.push({
-								name: node.name,
-								position: {
-									lat: node.latitude,
-									lng: node.longitude
-								},
-								popup: '<b>' + node.name + '</b>' + popupIp,
-								icon: selectedMarkerIcon
-							});
-						}
+					// build marker
+					markerTransmitters.push({
+						name: transmitter.name,
+						position: {
+							lat: transmitter.latitude,
+							lng: transmitter.longitude
+						},
+						popup: '<b>' + transmitter.name + '</b><br />Usage: ' + transmitter.usage + '<br />Transmission Power (W): ' + transmitter.power + '<br />Timeslot: ' + transmitter.timeSlot + '<br/>Owner: ' + transmitter.ownerNames.join(', '),
+						icon: selectedMarkerIcon
 					});
 
-					// get transmitter markers
-					this.$http.get('transmitters').then(response => {
-						let markerTransmitters = [];
-						let polylineTransmitters = [];
-
-						response.body.forEach(transmitter => {
-							// check for widerange-setting
-							if (this.settings.widerangeOnly && transmitter.usage !== 'WIDERANGE') {
-								return true;
-							}
-
-							// find icon
-							let selectedMarkerIcon = iconTransmitterOnline;
-							if (transmitter.status !== 'ONLINE') {
-								selectedMarkerIcon = iconTransmitterOffline;
-							}
-
-							// build marker
-							markerTransmitters.push({
-								name: transmitter.name,
-								position: {
-									lat: transmitter.latitude,
-									lng: transmitter.longitude
-								},
-								popup: '<b>' + transmitter.name + '</b><br />Usage: ' + transmitter.usage + '<br />Transmission Power (W): ' + transmitter.power + '<br />Timeslot: ' + transmitter.timeSlot + '<br/>Owner: ' + transmitter.ownerNames.join(', '),
-								icon: selectedMarkerIcon
-							});
-
-							// build line to node
-							if (this.settings.showLines && this.settings.showNodes) {
-								allNodes.forEach(node => {
-									if (node.name === transmitter.nodeName) {
-										polylineTransmitters.push({
-											name: transmitter.name,
-											position: [[node.latitude, node.longitude], [transmitter.latitude, transmitter.longitude]],
-											color: this.$helpers.stringToColor(node.name)
-										});
-									}
+					// build line to node
+					if (this.settings.showLines && this.settings.showNodes) {
+						this.data.nodes.forEach(node => {
+							if (node.name === transmitter.nodeName) {
+								polylineTransmitters.push({
+									name: transmitter.name,
+									position: [[node.latitude, node.longitude], [transmitter.latitude, transmitter.longitude]],
+									color: this.$helpers.stringToColor(node.name)
 								});
 							}
 						});
-
-						this.markers = markerNodes.concat(markerTransmitters);
-						this.lines = polylineTransmitters;
-					});
+					}
 				});
+
+				this.markers = markerNodes.concat(markerTransmitters);
+				this.lines = polylineTransmitters;
 			}
 		},
 		watch: {
