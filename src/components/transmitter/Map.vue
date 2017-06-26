@@ -26,7 +26,7 @@
 				<div class="checkbox">
 					<label><input type="checkbox" v-model="settings.widerangeOnly"> Show Widerange-transmitter only</label><br /><br />
 					<label><input type="checkbox" v-model="settings.timeslot.active"> Show transmitters by timeslots </label>
-						<input v-model="settings.timeslot.input" :disabled="!settings.timeslot.active"><br /><br />
+						<input type="text" placeholder="timeslots" v-model="settings.timeslot.input" :disabled="!settings.timeslot.active"><br /><br />
 					<label><input type="checkbox" v-model="settings.showNodes"> Show nodes</label><br />
 					<label v-if="settings.showNodes"><input type="checkbox" v-model="settings.showLines"> Show line from transmitter to node</label>
 				</div>
@@ -164,7 +164,7 @@
 					}
 
 					// check for timeslot-input
-					if (this.settings.timeslot.active && !transmitter.timeSlot.includes(this.settings.timeslot.input)) {
+					if (this.settings.timeslot.active && !transmitter.timeSlot.includes(this.settings.timeslot.input.toUpperCase())) {
 						return true;
 					}
 
