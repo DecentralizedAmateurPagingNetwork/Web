@@ -71,6 +71,20 @@
 
 				<h2>Where can I get a Skyper?</h2>
 				<p>We do not have any resources. Please help yourself.</p>
+
+				<h2>Why is the time displayed on my Skyper wrong?</h2>
+				<p>It is not wrong, it's UTC. We know, there are pros and cons of using UTC, but this is the most common understanding.</p>
+				
+				<h2>Some rubics are not transmitted on my transmitter.</h2>
+				<p>Please check, if your transmitter is in a member of all desired transmitter groups that are assigned to a rubric. Especially for the DX-Cluster messages, there were complains about heavy load on some transmitters. So we added another transmitter group of the DX-Cluster messages. If you want to transmit those messages, have your transmitter added to the group.</p>
+
+				<h2>Sometimes my transmitter transmits longer than the assigned timeslots.</h2>
+				<p>We are aware of this bug. It is tracked in this issue: <a href="https://github.com/rwth-afu/UniPager/issues/66" target="_blank">https://github.com/rwth-afu/UniPager/issues/66</a> and will be hopefully solved soon.</p>
+
+				<h2>Is there an SMTP-Interface to DAPNET, so I can send calls with my email program?</h2>
+				<p>Not yet. Feel free to contribute. Use the open documented REST-API and write simple SMTP-Server generating REST calls to the API.</p>
+
+
 			</div>
 		</div>
 	</div>
