@@ -25,16 +25,16 @@
 				<p>Due to abuse reasons, only admins can add callsigns or transmitters. Please contact <code>rwth-afu [at] online.de</code>. Once your callsign or transmitter is assigned to you, you can edit it by yourself.</p>
 
 				<h2>I want to add a transmitter to the network.</h2>
-				<p>Very nice. We like the network growing. Please send an email to <code>rwth-afu [at] online.de</code> an give the following information:</p>
+				<p>Very nice. We like the network growing. Please send an email to <code>rwth-afu [at] online.de</code> and give the following information:</p>
 				<ul>
 					<li>Callsign of the transmitter</li>
 					<li>Location Latitude and Longitude (Please in decimal form, e.g. 50.12345)</li>
 					<li>Type of transmitter: Widerange (> 1 watt) oder Personal (<= 1 watt, e.g. RasPager)</li>
 					<li>Transmitter output power in watt</li>
 					<li>Antenna type (omni or directional)</li>
-					<li>Height of the antenna over ground (!), not above sea level</li>
+					<li>Height of the antenna above ground (!), not above sea level</li>
 					<li>Gain of the antenna minus cable losses in dBi</li>
-					<li>Desired time slots (Please have a look here <a href="http://www.hampager.de/#/transmitters/map" target="_blank">http://www.hampager.de/#/transmitters/map</a> and find out, which timeslots in your neighborhood are already used.)</li>
+					<li>Desired time slots (Please have a look here <a href="http://www.hampager.de/#/transmitters/map" target="_blank">http://www.hampager.de/#/transmitters/map</a> and find out, which timeslots in your neighborhood are already used.) If you are unsure, just let us know and we will find a suitable solution.</li>
 				</ul>
 
 				<h2>I want to add a node to the network.</h2>
@@ -82,7 +82,7 @@
 				<p>We are aware of this bug. It is tracked in this issue: <a href="https://github.com/rwth-afu/UniPager/issues/66" target="_blank">https://github.com/rwth-afu/UniPager/issues/66</a> and will be hopefully solved soon.</p>
 
 				<h2>Is there an SMTP-Interface to DAPNET, so I can send calls with my email program?</h2>
-				<p>Not yet. Feel free to contribute. Use the open documented REST-API and write simple SMTP-Server generating REST calls to the API.</p>
+				<p>Not yet. Feel free to contribute. Use the open documented REST-API and write a simple SMTP server generating REST calls to the API.</p>
 
 
 			</div>
