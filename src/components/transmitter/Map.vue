@@ -127,6 +127,11 @@
 				// get node markers
 				let markerNodes = [];
 				this.data.nodes.forEach(node => {
+					// check for search-input
+					if (!node.name.includes(this.searchQuery.toLowerCase())) {
+						return true;
+					}
+
 					// find icon
 					let selectedMarkerIcon = this.icons.iconNodeOnline;
 					if (node.status === 'SUSPENDED') {
