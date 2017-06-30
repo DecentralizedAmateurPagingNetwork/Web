@@ -10,7 +10,8 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<v-map :zoom="zoom" :center="center" style="height:40em">
+				<div>Search: <input v-model="searchQuery"></div>
+				<v-map :zoom="zoom" :center="center" style="height: 40em; margin-top: 1em">
 					<v-tilelayer :url="url" :attribution="attribution"></v-tilelayer>
 					<v-marker v-for="item in markers" :key="item.name" :lat-lng="item.position" :icon="item.icon">
 						<v-popup :content="item.popup"></v-popup>
@@ -102,6 +103,7 @@
 					nodes: [],
 					transmitters: []
 				},
+				searchQuery: '',
 				settings: {
 					widerangeOnly: true,
 					timeslot: {
@@ -158,6 +160,11 @@
 				let polylineTransmitters = [];
 
 				this.data.transmitters.forEach(transmitter => {
+					// check for search-input
+					if (!transmitter.name.includes(this.searchQuery.toLowerCase())) {
+						return true;
+					}
+
 					// check for widerange-setting
 					if (this.settings.widerangeOnly && transmitter.usage !== 'WIDERANGE') {
 						return true;
@@ -204,6 +211,9 @@
 			}
 		},
 		watch: {
+			'searchQuery'() {
+				this.createMap();
+			},
 			'settings.widerangeOnly'() {
 				this.createMap();
 			},
