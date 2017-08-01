@@ -26,7 +26,7 @@
 							<router-link to="/privacy">Privacy</router-link>
 						</li>
 					</ul>
-					<p><b>Versions:</b> Core: {{ version.core }} / Web: {{ version.web }} / <router-link to="/version">Check</router-link></p>
+					<p><b>Versions:</b> Core: {{ version.core }} / Web: {{ version.web }} ({{ version.webCommit }}) / <router-link to="/version">Check</router-link></p>
 				</div>
 			</div>
 		</footer>
@@ -44,12 +44,15 @@
 			// get web version
 			let pkg = require('../../../package.json');
 			this.version.web = pkg.version;
+
+			console.log();
 		},
 		data() {
 			return {
 				version: {
 					core: 'Unknown',
-					web: 'Unknown'
+					web: 'Unknown',
+					webCommit: process.env.GIT.COMMITHASH.substring(0, 7)
 				}
 			};
 		}

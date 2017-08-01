@@ -51,6 +51,7 @@
     "file-loader": "0.11.2",
     "friendly-errors-webpack-plugin": "1.6.1",
     "function-bind": "1.1.0",
+    "git-revision-webpack-plugin": "2.5.1",
     "html-webpack-plugin": "2.30.1",
     "http-proxy-middleware": "0.17.4",
     "opn": "5.1.0",

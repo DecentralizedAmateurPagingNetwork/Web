@@ -3,6 +3,10 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 
+var webpack = require('webpack')
+var GitRevisionPlugin = require('git-revision-webpack-plugin')
+var gitRev = new GitRevisionPlugin()
+
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -71,5 +75,14 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.GIT': {
+        'VERSION': JSON.stringify(gitRev.version()),
+        'COMMITHASH': JSON.stringify(gitRev.commithash()),
+        'BRANCH': JSON.stringify(gitRev.branch())
+      }
+    })
+  ]
 }
