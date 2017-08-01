@@ -70,7 +70,7 @@
 				<p>There is an easy solution with GM1200 and a RasPi. If you like to get a 19'' Rack, please send an email to <code>dh3wr [at] darc.de</code>. An example can be found here <a href="https://www.afu.rwth-aachen.de/projekte/funkruf-pager-pocsag/funkrufsender-19-zoll-mit-gm1200" target="_blank">https://www.afu.rwth-aachen.de/projekte/funkruf-pager-pocsag/funkrufsender-19-zoll-mit-gm1200</a>.</p>
 
 				<h2>Where can I get a Skyper?</h2>
-				<p>We do not have any resources. Please help yourself.</p>
+				<p>Please help yourself. There is a possiblity to buy at <a href="http://www.funkhandel.com/index.php?a=783" target="_blank">www.funkhandel.com</a>.</p>
 
 				<h2>Why is the time displayed on my Skyper wrong?</h2>
 				<p>It is not wrong, it's UTC. We know, there are pros and cons of using UTC, but this is the most common understanding.</p>
