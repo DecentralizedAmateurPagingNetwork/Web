@@ -82,7 +82,7 @@
 							<label class="col-lg-2 control-label">Other</label>
 							<div class="col-lg-5">
 								<input type="number" v-model.number="form.power" min="0" max="200" placeholder="0 - 200" class="form-control">
-								<span class="help-block"><b>Transmitter Power</b>: Enter the transmitter output power including your cable losses.</span>
+								<span class="help-block"><b>Transmitter Power</b>: Enter the transmitter output power in Watts including your cable losses.</span>
 							</div>
 							<div class="col-lg-5">
 								<input type="number" v-model.number="form.antennalevel" min="0" max="1000" placeholder="0 - 1000" class="form-control">
