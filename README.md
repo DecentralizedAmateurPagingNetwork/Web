@@ -20,7 +20,7 @@ Written in the [Vue.js](https://github.com/vuejs/vue) framework and built using 
 5. Change the default map-settings in `src/store/defaultMap.json`
 6. (Optional) Edit `static/js/custom.js` and insert your custom javascript code (e.g. a Piwik tracking code)
 	* You may use jQuery here
-7. Download all dependencies: `npm install`
+7. Download all dependencies: `npm install --only=prod`
 8. Test your setup: `npm run dev`
 	* Open your browser at `http://localhost:8081` and check that each of your customizations was successful
 9. Generate the production build: `npm run build`
