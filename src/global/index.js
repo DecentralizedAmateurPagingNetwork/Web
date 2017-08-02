@@ -21,7 +21,7 @@ const GlobalMethodsPlugin = {
 					title: 'No Connection',
 					html: 'Unable to reach API server. Please try again later.',
 					type: 'error'
-				});
+				}).catch(context.$swal.noop);
 			} else if (err.status === 400) {
 				// constraint violation
 				let errorText = err.body.message + ':<br/>';
@@ -37,28 +37,28 @@ const GlobalMethodsPlugin = {
 					title: err.body.name + ' (' + err.body.code + ')',
 					html: errorText,
 					type: 'error'
-				});
+				}).catch(context.$swal.noop);
 			} else if (err.status === 403) {
 				// forbidden
 				context.$swal({
 					title: 'Forbidden',
 					html: 'No permission for this request',
 					type: 'error'
-				});
+				}).catch(context.$swal.noop);
 			} else if (err.status === 404) {
 				// not found
 				context.$swal({
 					title: 'Not Found',
 					html: 'Unable to find the requested resource.',
 					type: 'error'
-				});
+				}).catch(context.$swal.noop);
 			} else {
 				// general error
 				context.$swal({
 					title: 'General Error',
 					html: 'Encountered HTTP error code ' + err.status + '.',
 					type: 'error'
-				});
+				}).catch(context.$swal.noop);
 			}
 		};
 
@@ -82,7 +82,7 @@ const GlobalMethodsPlugin = {
 							title: 'Missing input',
 							html: 'Please fill in every field to continue.',
 							type: 'error'
-						});
+						}).catch(context.$swal.noop);
 						return false;
 					}
 				}
