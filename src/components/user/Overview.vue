@@ -24,7 +24,7 @@
 						<legend>Actions</legend>
 						<ul>
 							<li><router-link to="/users/new">New User</router-link></li>
-							<li><p class="linklike" @click="mailToAll">Send a mail to all owners</p></li>
+							<li><p class="linklike" @click="mailToAll">Send a mail to all users</p></li>
 						</ul>
 						<br/>
 					</template>
