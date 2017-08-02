@@ -99,6 +99,14 @@
 					this.$router.push('/callsigns');
 				});
 			}
+
+			this.$http.get('callsigns').then(response => {
+				response.body.forEach(callsign => {
+					callsign.pagers.forEach(pager => {
+						this.formData.pagerRics.push(parseInt(pager.number));
+					});
+				});
+			});
 		},
 		data() {
 			return {
@@ -113,6 +121,7 @@
 					owners: []
 				},
 				formData: {
+					pagerRics: [],
 					users: []
 				}
 			};
@@ -135,6 +144,22 @@
 					item.name = pagerNames[i];
 
 					pagers.push(item);
+				}
+
+				// check for already known pager ric when adding a new transmitter
+				if (!this.$route.params.id) {
+					let abort = false;
+					pagerNumbers.forEach(formNumber => {
+						if (this.formData.pagerRics.includes(parseInt(formNumber))) {
+							this.$swal({
+								title: 'Duplicate pager RIC',
+								html: 'The given pager RIC (' + formNumber + ') is already known.',
+								type: 'error'
+							}).catch(this.$swal.noop);
+							abort = true;
+						}
+					});
+					if (abort) return false;
 				}
 
 				let ownerNames = [];
