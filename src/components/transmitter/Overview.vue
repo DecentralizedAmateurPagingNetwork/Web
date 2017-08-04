@@ -36,7 +36,7 @@
 							<li class="list-group-item"><chart-transmitter-types :chartData="chartDataDeviceTypes"></chart-transmitter-types></li>
 						</ul>
 						<div class="checkbox">
-							<label><input type="checkbox" v-model="settings.widerangeOnly"> Show Widerange-transmitter only</label>
+							<label><input type="checkbox" v-model="settings.widerangeOnly"> Widerange-transmitter only</label>
 						</div>
 					</template>
 				</div>
