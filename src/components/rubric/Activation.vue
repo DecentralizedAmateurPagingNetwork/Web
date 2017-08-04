@@ -34,9 +34,6 @@
 					</fieldset>
 				</form>
 			</div>
-			<div class="col-lg-3">
-				<!-- TODO -->
-			</div>
 		</div>
 	</div>
 </template>
