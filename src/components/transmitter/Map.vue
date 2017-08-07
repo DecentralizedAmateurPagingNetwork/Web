@@ -149,6 +149,10 @@
 					}
 
 					// build marker
+					let nameLink = '<a href="/#/nodes/edit/' + node.name + '">' + node.name + '</a>';
+					if (!this.$store.getters.user.admin) {
+						nameLink = node.name;
+					}
 					if (this.settings.showNodes) {
 						markerNodes.push({
 							name: node.name,
@@ -156,7 +160,7 @@
 								lat: node.latitude,
 								lng: node.longitude
 							},
-							popup: '<b>' + node.name + '</b>' + popupIp,
+							popup: '<b>' + nameLink + '</b>' + popupIp,
 							icon: selectedMarkerIcon
 						});
 					}
@@ -194,13 +198,17 @@
 					}
 
 					// build marker
+					let nameLink = '<a href="/#/transmitters/edit/' + transmitter.name + '">' + transmitter.name + '</a>';
+					if (!this.$store.getters.user.admin) {
+						nameLink = transmitter.name;
+					}
 					markerTransmitters.push({
 						name: transmitter.name,
 						position: {
 							lat: transmitter.latitude,
 							lng: transmitter.longitude
 						},
-						popup: '<b>' + transmitter.name + '</b><br />Usage: ' + transmitter.usage + '<br />Transmission Power (W): ' + transmitter.power + '<br />Timeslot: ' + transmitter.timeSlot + '<br/>Owner: ' + transmitter.ownerNames.join(', '),
+						popup: '<b>' + nameLink + '</a></b><br />Usage: ' + transmitter.usage + '<br />Transmission Power (W): ' + transmitter.power + '<br />Timeslot: ' + transmitter.timeSlot + '<br/>Owner: ' + transmitter.ownerNames.join(', '),
 						icon: selectedMarkerIcon
 					});
 
