@@ -25,6 +25,7 @@
 			<div class="col-lg-12">
 				<h2>Settings</h2>
 				<div class="checkbox">
+					<label><input type="checkbox" v-model="settings.onlineOnly"> Show online transmitters only</label><br />
 					<label><input type="checkbox" v-model="settings.widerangeOnly"> Show Widerange-transmitter only</label><br /><br />
 					<label><input type="checkbox" v-model="settings.timeslot.active"> Show transmitters by timeslots </label>
 						<input type="text" placeholder="timeslots" v-model="settings.timeslot.input" :disabled="!settings.timeslot.active"><br /><br />
@@ -105,6 +106,7 @@
 				},
 				searchQuery: '',
 				settings: {
+					onlineOnly: true,
 					widerangeOnly: true,
 					timeslot: {
 						active: false,
@@ -165,6 +167,11 @@
 				let polylineTransmitters = [];
 
 				this.data.transmitters.forEach(transmitter => {
+					// check for hideOffline-setting
+					if (this.settings.onlineOnly && transmitter.status !== 'ONLINE') {
+						return true;
+					}
+
 					// check for search-input
 					if (!transmitter.name.includes(this.searchQuery.toLowerCase())) {
 						return true;
@@ -217,6 +224,9 @@
 		},
 		watch: {
 			'searchQuery'() {
+				this.createMap();
+			},
+			'settings.onlineOnly'() {
 				this.createMap();
 			},
 			'settings.widerangeOnly'() {
