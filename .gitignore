@@ -13,3 +13,6 @@ package-lock.json
 src/store/defaultMapGermany.json
 src/store/defaultUrlsHamnet.json
 src/store/defaultUrlsInternet.json
+
+# map coverage (see README)
+static/coverage/
