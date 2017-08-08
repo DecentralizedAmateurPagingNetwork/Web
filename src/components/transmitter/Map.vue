@@ -12,8 +12,11 @@
 			<div class="col-lg-12">
 				<div>Search: <input v-model="searchQuery"></div>
 				<v-map :zoom="zoom" :center="center" style="height: 40em; margin-top: 1em">
+					<v-group v-for="item in coverageLayers" :key="item.url">
+						<v-image-overlay :url="item.url" :bounds="item.bounds"></v-image-overlay>
+					</v-group>
 					<v-tilelayer :url="url" :attribution="attribution"></v-tilelayer>
-					<v-marker v-for="item in markers" :key="item.name" :lat-lng="item.position" :icon="item.icon">
+					<v-marker v-for="item in markers" :key="item.name" :lat-lng="item.position" :icon="item.icon" v-on:l-click="showCoverage(item.name)">
 						<v-popup :content="item.popup"></v-popup>
 					</v-marker>
 					<v-polyline v-for="item in lines" :key="item.name" :lat-lngs="item.position" :color="item.color"></v-polyline>
@@ -43,6 +46,8 @@
 	import L from 'leaflet';
 	import '../../../node_modules/leaflet/dist/leaflet.css';
 	Vue.component('v-map', Vue2Leaflet.Map);
+	Vue.component('v-group', Vue2Leaflet.LayerGroup);
+	Vue.component('v-image-overlay', Vue2Leaflet.ImageOverlay);
 	Vue.component('v-tilelayer', Vue2Leaflet.TileLayer);
 	Vue.component('v-marker', Vue2Leaflet.Marker);
 	Vue.component('v-popup', Vue2Leaflet.Popup);
@@ -121,7 +126,8 @@
 				url: this.$store.getters.url.map,
 				icons: {},
 				markers: [],
-				lines: []
+				lines: [],
+				coverageLayers: []
 			};
 		},
 		methods: {
@@ -208,7 +214,11 @@
 							lat: transmitter.latitude,
 							lng: transmitter.longitude
 						},
-						popup: '<b>' + nameLink + '</a></b><br />Usage: ' + transmitter.usage + '<br />Transmission Power (W): ' + transmitter.power + '<br />Timeslot: ' + transmitter.timeSlot + '<br/>Owner: ' + transmitter.ownerNames.join(', '),
+						popup: '<b>' + nameLink + '</a></b><br />' +
+							'Usage: ' + transmitter.usage + '<br />' +
+							'Transmission Power (W): ' + transmitter.power + '<br />' +
+							'Timeslot: ' + transmitter.timeSlot + '<br/>' +
+							'Owner: ' + transmitter.ownerNames.join(', '),
 						icon: selectedMarkerIcon
 					});
 
@@ -228,6 +238,30 @@
 
 				this.markers = markerNodes.concat(markerTransmitters);
 				this.lines = polylineTransmitters;
+			},
+			showCoverage(name) {
+				this.coverageLayers = [];
+
+				// load transmitter-coverage-information (if available)
+				this.$http.get('/assets/coverage/' + name + '.txt').then(response => {
+					let lines = response.body.split('\n');
+					let bounds = [[lines[1], lines[3]], [lines[2], lines[4]]];
+
+					this.coverageLayers.push({
+						url: '/assets/coverage/' + name + '_green.png',
+						bounds: bounds
+					});
+					this.coverageLayers.push({
+						url: '/assets/coverage/' + name + '_yellow.png',
+						bounds: bounds
+					});
+					this.coverageLayers.push({
+						url: '/assets/coverage/' + name + '_red.png',
+						bounds: bounds
+					});
+				}, () => {
+					// 404 if no data found
+				});
 			}
 		},
 		watch: {
