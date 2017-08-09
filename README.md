@@ -20,12 +20,14 @@ Written in the [Vue.js](https://github.com/vuejs/vue) framework and built using 
 5. Change the default map-settings in `src/store/defaultMap.json`
 6. (Optional) Edit `static/js/custom.js` and insert your custom javascript code (e.g. a Piwik tracking code)
 	* You may use jQuery here
-7. Download all dependencies: `npm install`
-8. Test your setup: `npm run dev`
+7. Download the latest coverage-data from the central server and setup a cronjob to update these files regularly
+	* TODO
+8. Download all dependencies: `npm install`
+9. Test your setup: `npm run dev`
 	* Open your browser at `http://localhost:8081` and check that each of your customizations was successful
-9. Generate the production build: `npm run build`
-10. Copy your freshly generated files from `dist/` into your webserver's `htdocs/` directory
-11. Done!
+10. Generate the production build: `npm run build`
+11. Copy your freshly generated files from `dist/` into your webserver's `htdocs/` directory
+12. Done!
 
 ### Deployment into a subdirectory
 It is recommended to serve the DAPNET Web module from its own sub-domain.
@@ -38,7 +40,7 @@ Before updating make sure to read the changelog and to backup your customized fi
 1. Update your local repository: `git fetch`
 2. Run through step 2 of the installation process
 3. Make sure that your changes in the files listed in steps 3. to 6. of the installation process are still in place
-4. Run through steps 7. to 10. of the installation process
+4. Run through steps 8. to 11. of the installation process
 5. Done!
 
 ## Changelog
