@@ -12,8 +12,8 @@
 			<div class="col-lg-12">
 				<div>Search: <input v-model="searchQuery"></div>
 				<v-map :zoom="zoom" :center="center" style="height: 40em; margin-top: 1em">
-					<v-group v-for="item in coverageLayers" :key="item.url">
-						<v-image-overlay :url="item.url" :bounds="item.bounds"></v-image-overlay>
+					<v-group v-for="item in coverageLayers" :key="item.name">
+						<v-image-overlay :url="item.url" :bounds="item.bounds" :opacity="0.8"></v-image-overlay>
 					</v-group>
 					<v-tilelayer :url="url" :attribution="attribution"></v-tilelayer>
 					<v-marker v-for="item in markers" :key="item.name" :lat-lng="item.position" :icon="item.icon" v-on:l-click="showCoverage(item.name)">
@@ -25,7 +25,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col-lg-12">
+			<div class="col-lg-8">
 				<h2>Settings</h2>
 				<div class="checkbox">
 					<label><input type="checkbox" v-model="settings.onlineOnly"> Show online transmitters only</label><br />
@@ -34,6 +34,12 @@
 						<input type="text" placeholder="timeslots" v-model="settings.timeslot.input" :disabled="!settings.timeslot.active"><br /><br />
 					<label><input type="checkbox" v-model="settings.showNodes"> Show nodes</label><br />
 					<label v-if="settings.showNodes"><input type="checkbox" v-model="settings.showLines"> Show line from transmitter to node</label>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<h2>Actions</h2>
+				<div class="checkbox">
+					<button v-on:click="removeCoverage()">Remove all coverage-overlays</button>
 				</div>
 			</div>
 		</div>
@@ -240,28 +246,31 @@
 				this.lines = polylineTransmitters;
 			},
 			showCoverage(name) {
-				this.coverageLayers = [];
+				// remove clicked transmitter's overlay (if shown) and stop
+				let stop = false;
+				this.coverageLayers.forEach(layer => {
+					if (layer.name === name) {
+						this.coverageLayers = this.coverageLayers.filter(item => item !== layer);
+						stop = true;
+					}
+				});
+				if (stop) return false;
 
 				// load transmitter-coverage-information (if available)
 				this.$http.get('/assets/coverage/' + name + '.txt').then(response => {
 					let lines = response.body.split('\n');
-					let bounds = [[lines[1], lines[3]], [lines[2], lines[4]]];
 
 					this.coverageLayers.push({
-						url: '/assets/coverage/' + name + '_green.png',
-						bounds: bounds
-					});
-					this.coverageLayers.push({
-						url: '/assets/coverage/' + name + '_yellow.png',
-						bounds: bounds
-					});
-					this.coverageLayers.push({
-						url: '/assets/coverage/' + name + '_red.png',
-						bounds: bounds
+						name: name,
+						url: '/assets/coverage/' + name + '.png',
+						bounds: [[lines[1], lines[3]], [lines[2], lines[4]]]
 					});
 				}, () => {
 					// 404 if no data found
 				});
+			},
+			removeCoverage() {
+				this.coverageLayers = [];
 			}
 		},
 		watch: {
