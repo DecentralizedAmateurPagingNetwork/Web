@@ -33,7 +33,7 @@
 					<label><input type="checkbox" v-model="settings.timeslot.active"> Show transmitters by timeslots </label>
 						<input type="text" placeholder="timeslots" v-model="settings.timeslot.input" :disabled="!settings.timeslot.active"><br /><br />
 					<label><input type="checkbox" v-model="settings.showNodes"> Show nodes</label><br />
-					<label v-if="settings.showNodes"><input type="checkbox" v-model="settings.showLines"> Show line from transmitter to node</label>
+					<label><input type="checkbox" v-model="settings.showLines" :disabled="!settings.showNodes"> Show line from transmitter to node</label>
 				</div>
 			</div>
 			<div class="col-lg-4">
