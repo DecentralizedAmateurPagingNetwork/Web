@@ -62,6 +62,10 @@
 							title: 'Name'
 						},
 						{
+							id: 'version',
+							title: 'Version'
+						},
+						{
 							id: 'address',
 							title: 'IP-Address'
 						},
