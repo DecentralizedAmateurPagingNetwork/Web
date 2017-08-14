@@ -11,7 +11,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div>Search: <input v-model="searchQuery"></div>
-				<v-map :zoom="zoom" :center="center" style="height: 40em; margin-top: 1em">
+				<v-map ref="leafletMap" :zoom="zoom" :center="center" style="height: 40em; margin-top: 1em">
 					<v-group v-for="item in coverageLayers" :key="item.name">
 						<v-image-overlay :url="item.url" :bounds="item.bounds" :opacity="0.8"></v-image-overlay>
 					</v-group>
@@ -39,7 +39,10 @@
 			<div class="col-lg-4">
 				<h2>Actions</h2>
 				<div class="checkbox">
-					<button v-on:click="removeCoverage()">Remove all coverage-overlays</button>
+					<ul>
+						<li><p class="linklike" @click="showAllCoverage">Show all coverage-overlays</p></li>
+						<li><p class="linklike" @click="removeAllCoverage">Remove all coverage-overlays</p></li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -183,25 +186,7 @@
 				let polylineTransmitters = [];
 
 				this.data.transmitters.forEach(transmitter => {
-					// check for hideOffline-setting
-					if (this.settings.onlineOnly && transmitter.status !== 'ONLINE') {
-						return true;
-					}
-
-					// check for search-input
-					if (!transmitter.name.includes(this.searchQuery.toLowerCase())) {
-						return true;
-					}
-
-					// check for widerange-setting
-					if (this.settings.widerangeOnly && transmitter.usage !== 'WIDERANGE') {
-						return true;
-					}
-
-					// check for timeslot-input
-					if (this.settings.timeslot.active && !transmitter.timeSlot.includes(this.settings.timeslot.input.toUpperCase())) {
-						return true;
-					}
+					if (this.skipThisTransmitter(transmitter)) return true;
 
 					// find icon
 					let selectedMarkerIcon = this.icons.iconTransmitterOnline;
@@ -269,8 +254,54 @@
 					// 404 if no data found
 				});
 			},
-			removeCoverage() {
+			showAllCoverage() {
+				this.$swal({
+					title: 'Load coverage-overlays?',
+					text: 'Press "Continue" to load all coverage-overlays for the currently visible transmitters. This may take some time and put your device under heavy load.',
+					type: 'question',
+					showCancelButton: true,
+					confirmButtonText: 'Continue',
+					cancelButtonText: 'Cancel'
+				}).then(() => {
+					this.removeAllCoverage();
+
+					// check if transmitter is in current map bounds and visible
+					const mapBounds = this.$refs.leafletMap.mapObject.getBounds();
+					this.data.transmitters.forEach(transmitter => {
+						if (this.skipThisTransmitter(transmitter)) return true;
+
+						const transmitterPos = L.latLng(transmitter.latitude, transmitter.longitude);
+						if (mapBounds.contains(transmitterPos)) {
+							this.showCoverage(transmitter.name);
+						}
+					});
+				}).catch(this.$swal.noop);
+			},
+			removeAllCoverage() {
 				this.coverageLayers = [];
+			},
+			skipThisTransmitter(transmitter) {
+				// check for hideOffline-setting
+				if (this.settings.onlineOnly && transmitter.status !== 'ONLINE') {
+					return true;
+				}
+
+				// check for search-input
+				if (!transmitter.name.includes(this.searchQuery.toLowerCase())) {
+					return true;
+				}
+
+				// check for widerange-setting
+				if (this.settings.widerangeOnly && transmitter.usage !== 'WIDERANGE') {
+					return true;
+				}
+
+				// check for timeslot-input
+				if (this.settings.timeslot.active && !transmitter.timeSlot.includes(this.settings.timeslot.input.toUpperCase())) {
+					return true;
+				}
+
+				return false;
 			}
 		},
 		watch: {
