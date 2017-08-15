@@ -263,19 +263,41 @@
 					confirmButtonText: 'Continue',
 					cancelButtonText: 'Cancel'
 				}).then(() => {
-					this.removeAllCoverage();
-
 					// check if transmitter is in current map bounds and visible
+					let showCoverageOf = [];
 					const mapBounds = this.$refs.leafletMap.mapObject.getBounds();
 					this.data.transmitters.forEach(transmitter => {
 						if (this.skipThisTransmitter(transmitter)) return true;
 
 						const transmitterPos = L.latLng(transmitter.latitude, transmitter.longitude);
 						if (mapBounds.contains(transmitterPos)) {
-							this.showCoverage(transmitter.name);
+							showCoverageOf.push(transmitter);
 						}
 					});
+
+					// check if the number of overlays exceeds a threshold of 20
+					if (showCoverageOf.length >= 20) {
+						this.$swal({
+							title: 'Are you really sure?',
+							html: 'You are going to load and display the coverage of <b>' + showCoverageOf.length + ' transmitters</b>. This will take some time and put your device under heavy load.',
+							type: 'warning',
+							showCancelButton: true,
+							confirmButtonText: 'Yes, I am sure and I won\'t blame the developer if my browser crashes',
+							cancelButtonText: 'Cancel'
+						}).then(() => {
+							helper(showCoverageOf);
+						}).catch(this.$swal.noop);
+					} else {
+						helper(showCoverageOf);
+					}
 				}).catch(this.$swal.noop);
+
+				const helper = transmitterList => {
+					this.removeAllCoverage();
+					transmitterList.forEach(transmitter => {
+						this.showCoverage(transmitter.name);
+					});
+				};
 			},
 			removeAllCoverage() {
 				this.coverageLayers = [];
