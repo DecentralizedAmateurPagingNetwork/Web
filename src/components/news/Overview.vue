@@ -30,7 +30,7 @@
 					<template v-if="table.rows">
 						<legend>Statistics</legend>
 						<ul class="list-group">
-							<li class="list-group-item"><b>Total Calls</b><span class="badge">{{ statTotal }}</span></li>
+							<li class="list-group-item"><b>Total News</b><span class="badge">{{ statTotal }}</span></li>
 						</ul>
 					</template>
 				</div>
