@@ -3,7 +3,7 @@ The default DAPNET Web-frontend.
 Written in the [Vue.js](https://github.com/vuejs/vue) framework and built using [webpack](https://github.com/webpack/webpack).
 
 ## Requirements
-* Installed packages: `git`, `nodejs`, `npm`
+* Installed packages: `git`, `nodejs`, `npm`, `wget`
 	* You should install a current Node.js version (e.g. v6 LTS) by following [these instructions](https://nodejs.org/en/download/package-manager/)
 	* This process will also install the `npm` binary
 	* Be advised that most linux distributions ship an older version of Node.js which will not work correctly
@@ -21,7 +21,10 @@ Written in the [Vue.js](https://github.com/vuejs/vue) framework and built using 
 6. (Optional) Edit `static/js/custom.js` and insert your custom javascript code (e.g. a Piwik tracking code)
 	* You may use jQuery here
 7. Download the latest coverage-data from the central server and setup a cronjob to update these files regularly
-	* TODO
+	* Create directory `static/coverage/`
+	* Run initial download of coverage-files: `cd static/coverage && wget -m -nv -nH -nd -np -R "index.html*" -e robots=off http://web.db0sda.ampr.org/dapnet-coverage/`
+	* Put the line above into a cronjob, adapt the local path and make sure it runs regularly
+	* **Be aware:** this process does not create a new build. If you need to always have the latest coverage-files, you should let `wget` download those files directly into the `dist/assets/coverage`-directory
 8. Download all dependencies: `npm install`
 9. Test your setup: `npm run dev`
 	* Open your browser at `http://localhost:8081` and check that each of your customizations was successful
