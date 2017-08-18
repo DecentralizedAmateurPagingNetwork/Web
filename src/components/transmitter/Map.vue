@@ -107,6 +107,9 @@
 				this.$http.get('transmitters').then(response => {
 					this.data.transmitters = response.body;
 
+					// add scale to map
+					L.control.scale({ imperial: false }).addTo(this.$refs.leafletMap.mapObject);
+
 					// create map out of loaded data
 					this.createMap();
 				});
