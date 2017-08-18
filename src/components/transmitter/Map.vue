@@ -211,6 +211,7 @@
 						popup: '<b>' + nameLink + '</a></b><br />' +
 							'Usage: ' + transmitter.usage + '<br />' +
 							'Transmission Power (W): ' + transmitter.power + '<br />' +
+							'Height (m): ' + transmitter.antennaAboveGroundLevel + '<br />' +
 							'Timeslot: ' + transmitter.timeSlot + '<br/>' +
 							'Owner: ' + transmitter.ownerNames.join(', '),
 						icon: selectedMarkerIcon
