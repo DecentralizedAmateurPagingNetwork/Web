@@ -14,10 +14,10 @@ Written in the [Vue.js](https://github.com/vuejs/vue) framework and built using 
 1. Download the repository: `git clone https://github.com/DecentralizedAmateurPagingNetwork/Web.git`
 2. Checkout a specific tag: `git checkout tags/v2.0.0`
 	* This is highly recommended for improved stability and a consistent user experience
-3. Change the default url-settings in `src/store/defaultUrls.json`
-4. Change the default custom text (displayed on the home page) in `src/store/defaultText.json`
+3. Copy `src/store/defaultUrls.json.example` to `src/store/defaultUrls.json` and change the default url-settings
+4. Copy `src/store/defaultText.json.example` to `src/store/defaultText.json` and change the default custom text (displayed on the home page)
 	* You may use HTML markup here
-5. Change the default map-settings in `src/store/defaultMap.json`
+5. Copy `src/store/defaultMap.json.example` to `src/store/defaultMap.json` and change the default map-settings
 6. (Optional) Edit `static/js/custom.js` and insert your custom javascript code (e.g. a Piwik tracking code)
 	* You may use jQuery here
 7. Download the latest coverage-data from the central server and setup a cronjob to update these files regularly
@@ -47,9 +47,8 @@ Before updating make sure to read the changelog and to backup your customized fi
 
 1. Update your local repository: `git fetch`
 2. Run through step 2 of the installation process
-3. Make sure that your changes in the files listed in steps 3. to 6. of the installation process are still in place
-4. Run through steps 8. to 11. of the installation process
-5. Done!
+3. Run through steps 8. to 11. of the installation process
+4. Done!
 
 ## Changelog
 A list of changes is always available on the [Releases](https://github.com/DecentralizedAmateurPagingNetwork/Web/releases)-page.

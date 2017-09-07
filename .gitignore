@@ -9,10 +9,10 @@ package-lock.json
 # IntelliJ IDEA
 .idea/
 
-# some default urls used for testing
-src/store/defaultMapGermany.json
-src/store/defaultUrlsHamnet.json
-src/store/defaultUrlsInternet.json
+# default url stores (see README)
+src/store/defaultMap.json
+src/store/defaultText.json
+src/store/defaultUrls.json
 
 # map coverage (see README)
 static/coverage/
