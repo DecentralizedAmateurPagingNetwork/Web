@@ -5,6 +5,13 @@ if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
 
+// check for existing url-files
+var fileExists = require('file-exists')
+if (!fileExists.sync('src/store/defaultMap.json') || !fileExists.sync('src/store/defaultText.json') || !fileExists.sync('src/store/defaultUrls.json')) {
+  console.log('> ERROR: missing src/store/defaultXXX.json file(s)!')
+  process.exit(1)
+}
+
 var opn = require('opn')
 var path = require('path')
 var express = require('express')

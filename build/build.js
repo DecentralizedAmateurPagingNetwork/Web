@@ -2,6 +2,12 @@ require('./check-versions')()
 
 process.env.NODE_ENV = 'production'
 
+var fileExists = require('file-exists')
+if (!fileExists.sync('src/store/defaultMap.json') || !fileExists.sync('src/store/defaultText.json') || !fileExists.sync('src/store/defaultUrls.json')) {
+  console.log('> ERROR: missing src/store/defaultXXX.json file(s)!')
+  process.exit(1)
+}
+
 var ora = require('ora')
 var rm = require('rimraf')
 var path = require('path')

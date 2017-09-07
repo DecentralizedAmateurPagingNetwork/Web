@@ -48,6 +48,7 @@
     "expose-loader": "0.7.3",
     "express": "4.15.4",
     "extract-text-webpack-plugin": "3.0.0",
+    "file-exists": "^4.0.0",
     "file-loader": "0.11.2",
     "friendly-errors-webpack-plugin": "1.6.1",
     "function-bind": "1.1.0",
@@ -71,8 +72,8 @@
     "webpack-merge": "4.1.0"
   },
   "engines": {
-    "node": ">= 4.0.0",
-    "npm": ">= 3.0.0"
+    "node": ">= 6.0.0",
+    "npm": ">= 3.8.0"
   },
   "browserslist": [
     "> 1%",
