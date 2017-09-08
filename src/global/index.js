@@ -112,7 +112,6 @@ const GlobalMethodsPlugin = {
 			let ret = [];
 			let steps = Math.floor(360 / amount);
 			for (let i = 1; i <= amount; i++) {
-				console.log(i * steps);
 				ret.push('hsl(' + (i * steps) + ', 100%, 30%)');
 			}
 
