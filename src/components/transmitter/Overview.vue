@@ -87,6 +87,10 @@
 							title: 'Status'
 						},
 						{
+							id: 'connectedSince',
+							title: 'Connected since'
+						},
+						{
 							id: 'actions',
 							title: 'Actions'
 						}
@@ -197,7 +201,7 @@
 					response.body.forEach(transmitter => {
 						// add ip and port into address-slot (if admin)
 						if (this.$store.getters.user.admin && transmitter.address !== null) {
-							transmitter.address = transmitter.address.ip_addr + ':' + transmitter.address.port;
+							transmitter.address = transmitter.address.ip_addr;
 						} else {
 							transmitter.address = '---';
 						}
@@ -217,6 +221,13 @@
 							transmitter.status = '<span class="label label-primary">OFFLINE</span>';
 						} else {
 							transmitter.status = '<span class="label label-warning">' + transmitter.status + '</span>';
+						}
+
+						// format connectedSince
+						if (transmitter.connectedSince !== null) {
+							transmitter.connectedSince = new Date(transmitter.connectedSince).toLocaleString();
+						} else {
+							transmitter.connectedSince = '---';
 						}
 
 						// add actions (if admin or owner)

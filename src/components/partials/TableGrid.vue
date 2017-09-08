@@ -76,9 +76,18 @@
 				}
 				if (sortKey) {
 					data = data.slice().sort((a, b) => {
-						if (sortKey === 'timestamp') {
-							a = new Date(a[sortKey]);
-							b = new Date(b[sortKey]);
+						if (sortKey === 'timestamp' || sortKey === 'connectedSince') {
+							if (a[sortKey] !== '---') {
+								a = new Date(a[sortKey]);
+							} else {
+								return 1;
+							}
+
+							if (b[sortKey] !== '---') {
+								b = new Date(b[sortKey]);
+							} else {
+								return -1;
+							}
 
 							return (a === b ? 0 : a > b ? -1 : 1) * order;
 						} else {
