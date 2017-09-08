@@ -16,7 +16,8 @@
 
 				<info-error :message="errorMessage"></info-error>
 
-				<tablegrid v-if="table.rows" :columns="table.columns" :data="table.rows" :mail-action="mailToOwner" :edit-action="editElement" :delete-action="deleteElement"></tablegrid>
+				<tablegrid v-if="table.rows" :columns="table.columns" :data="table.rows" :mail-action="mailToOwner"
+				           :edit-action="editElement" :delete-action="deleteElement" :send-rubrics-action="sendRubrics"></tablegrid>
 			</div>
 			<div class="col-lg-3">
 				<div class="actions well">
@@ -276,6 +277,15 @@
 						// error --> show error message
 						this.$dialogs.ajaxError(this, response);
 					});
+				});
+			},
+			sendRubrics(element) {
+				this.$http.get('transmitterControl/sendRubricNames/' + element.name).then(() => {
+					// success
+					this.$dialogs.success(this);
+				}, response => {
+					// error --> show error message
+					this.$dialogs.ajaxError(this, response);
 				});
 			},
 			mailToAll() {
