@@ -32,6 +32,12 @@ textarea {
 	text-decoration: underline;
 }
 
+@media (min-width: 1330px) {
+	.container {
+		width: 1300px;
+	}
+}
+
 @media (max-width: 1200px) {
 	.actions.well {
 		margin-top: 1em
