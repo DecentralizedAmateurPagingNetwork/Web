@@ -168,6 +168,8 @@
 					orderedReturnData[key] = returnData[key];
 				});
 
+				const distColors = this.$helpers.getDistributedColors(Object.keys(orderedReturnData).length);
+				let count = 0;
 				for (let key in orderedReturnData) {
 					if (!orderedReturnData.hasOwnProperty(key)) {
 						return true;
@@ -176,9 +178,11 @@
 					chartData.labels.push(orderedReturnData[key].name);
 					chartData.datasets[0].data.push(orderedReturnData[key].amount);
 
-					let color = this.$helpers.stringToColor(orderedReturnData[key].name);
+					let color = distColors[count];
 					chartData.datasets[0].backgroundColor.push(color);
 					chartData.datasets[0].hoverBackgroundColor.push(color);
+
+					count++;
 				}
 
 				return chartData;

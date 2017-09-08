@@ -107,6 +107,17 @@ const GlobalMethodsPlugin = {
 
 			return 'hsl(' + hash % 360 + ', 100%, 30%)';
 		};
+
+		Vue.prototype.$helpers.getDistributedColors = function(amount) {
+			let ret = [];
+			let steps = Math.floor(360 / amount);
+			for (let i = 1; i <= amount; i++) {
+				console.log(i * steps);
+				ret.push('hsl(' + (i * steps) + ', 100%, 30%)');
+			}
+
+			return ret;
+		};
 	}
 };
 
