@@ -2,6 +2,14 @@ const GlobalMethodsPlugin = {
 	install(Vue) {
 		Vue.prototype.$dialogs = {};
 
+		Vue.prototype.$dialogs.success = function(context) {
+			context.$swal({
+				title: 'Success',
+				text: 'Operation successfully executed.',
+				type: 'success'
+			}).catch(context.$swal.noop);
+		};
+
 		Vue.prototype.$dialogs.deleteElement = function(context, workFunction) {
 			context.$swal({
 				title: 'Are you sure?',
