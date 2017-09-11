@@ -200,8 +200,8 @@
 					// success --> save new data
 
 					response.body.forEach(transmitter => {
-						// add ip and port into address-slot (if admin)
-						if (this.$store.getters.user.admin && transmitter.address !== null) {
+						// add ip (if available)
+						if (transmitter.address !== undefined) {
 							transmitter.address = transmitter.address.ip_addr;
 						} else {
 							transmitter.address = '---';

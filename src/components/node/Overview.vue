@@ -110,9 +110,9 @@
 					// success --> save new data
 
 					response.body.forEach(node => {
-						// add ip and port into address-slot (if admin)
-						if (this.$store.getters.user.admin && node.address !== null) {
-							node.address = node.address.ip_addr + ':' + node.address.port;
+						// add ip (if available)
+						if (node.address !== undefined) {
+							node.address = node.address.ip_addr;
 						} else {
 							node.address = '---';
 						}

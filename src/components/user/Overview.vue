@@ -91,6 +91,11 @@
 				this.$http.get('users').then(response => {
 					// success --> save new data
 					response.body.forEach(user => {
+						// add email address (if available)
+						if (user.mail === undefined) {
+							user.mail = '---';
+						}
+
 						// add actions (if admin or owner)
 						user.actions = false;
 						if (this.$store.getters.user.admin || user.name === this.$store.getters.user.name) {
