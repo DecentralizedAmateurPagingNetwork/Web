@@ -201,7 +201,7 @@
 
 					response.body.forEach(transmitter => {
 						// add ip (if available)
-						if (transmitter.address !== undefined) {
+						if (transmitter.address !== undefined && transmitter.address !== null) {
 							transmitter.address = transmitter.address.ip_addr;
 						} else {
 							transmitter.address = '---';
