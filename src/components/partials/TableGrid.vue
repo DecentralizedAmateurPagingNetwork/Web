@@ -1,6 +1,16 @@
 <template>
 	<div>
-		<div>Search: <input v-model="searchQuery"></div>
+		<div class="row">
+			<div class="col-lg-4">Search: <input v-model="searchQuery" style="width: 15em"></div>
+
+			<div class="col-lg-3 col-lg-push-5">
+				<div id="paginationHolder">
+					<button class="btn btn-default btn-xs" @click="movePages(-1)"><i class="fa fa-arrow-left"></i></button>
+					&nbsp;Page <input v-model.number="gotoPage" type="number" min="1" :max="totalPages" style="width: 5em"> of {{ totalPages }}&nbsp;
+					<button class="btn btn-default btn-xs" @click="movePages(1)"><i class="fa fa-arrow-right"></i></button>
+				</div>
+			</div>
+		</div>
 
 		<div class="table-scrollable">
 			<table class="table table-striped table-hover">
@@ -33,12 +43,6 @@
 					</tr>
 				</tbody>
 			</table>
-		</div>
-
-		<div>
-			<button class="btn btn-default btn-xs" @click="movePages(-1)"><i class="fa fa-arrow-left"></i></button>
-			&nbsp;Page <input v-model.number="gotoPage" type="number" min="1" :max="totalPages"> of {{ totalPages }}&nbsp;
-			<button class="btn btn-default btn-xs" @click="movePages(1)"><i class="fa fa-arrow-right"></i></button>
 		</div>
 	</div>
 </template>
@@ -219,5 +223,17 @@
 		border-left: 4px solid transparent;
 		border-right: 4px solid transparent;
 		border-top: 4px solid #000;
+	}
+
+	@media (min-width: 1200px) {
+		#paginationHolder {
+			float: right;
+		}
+	}
+
+	@media (max-width: 1200px) {
+		#paginationHolder {
+			margin: .5em 0 0 0;
+		}
 	}
 </style>
