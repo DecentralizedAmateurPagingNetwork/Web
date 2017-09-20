@@ -36,6 +36,14 @@
 							<template v-else-if="key.id === 'status' || key.id === 'deviceType'">
 								<span v-html="entry[key.id]"></span>
 							</template>
+							<template v-else-if="key.id === 'timestamp' || key.id === 'connectedSince'">
+								<template v-if="entry[key.id] === null">
+									---
+								</template>
+								<template v-else>
+									{{ entry[key.id] | timestampToLocaleString }}
+								</template>
+							</template>
 							<template v-else>
 								{{ entry[key.id] | arrayToString | booleanToString }}
 							</template>
@@ -140,6 +148,9 @@
 				} else {
 					return v;
 				}
+			},
+			timestampToLocaleString(v) {
+				return new Date(v).toLocaleString();
 			}
 		},
 		methods: {

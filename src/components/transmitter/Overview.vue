@@ -224,13 +224,6 @@
 							transmitter.status = '<span class="label label-warning">' + transmitter.status + '</span>';
 						}
 
-						// format connectedSince
-						if (transmitter.connectedSince !== null) {
-							transmitter.connectedSince = new Date(transmitter.connectedSince).toLocaleString();
-						} else {
-							transmitter.connectedSince = '---';
-						}
-
 						// add actions (if admin or owner)
 						transmitter.actions = false;
 						if (this.$store.getters.user.admin || transmitter.ownerNames.includes(this.$store.getters.user.name)) {

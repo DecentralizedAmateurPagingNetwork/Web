@@ -98,10 +98,6 @@
 				this.$http.get(apiEndpoint).then(response => {
 					// success --> save new data
 
-					response.body.forEach(call => {
-						call.timestamp = new Date(call.timestamp).toLocaleString();
-					});
-
 					this.table.rows = response.body;
 
 					this.running = false;
