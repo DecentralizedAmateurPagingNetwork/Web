@@ -1,11 +1,12 @@
-var path = require('path')
-var utils = require('./utils')
-var config = require('../config')
-var vueLoaderConfig = require('./vue-loader.conf')
+'use strict'
+const path = require('path')
+const utils = require('./utils')
+const config = require('../config')
+const vueLoaderConfig = require('./vue-loader.conf')
 
-var webpack = require('webpack')
-var GitRevisionPlugin = require('git-revision-webpack-plugin')
-var gitRev = new GitRevisionPlugin()
+const webpack = require('webpack')
+const GitRevisionPlugin = require('git-revision-webpack-plugin')
+const gitRev = new GitRevisionPlugin()
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
