@@ -146,22 +146,6 @@
 					pagers.push(item);
 				}
 
-				// check for already known pager ric when adding a new transmitter
-				if (!this.$route.params.id) {
-					let abort = false;
-					pagerNumbers.forEach(formNumber => {
-						if (this.formData.pagerRics.includes(parseInt(formNumber))) {
-							this.$swal({
-								title: 'Duplicate pager RIC',
-								html: 'The given pager RIC (' + formNumber + ') is already known.',
-								type: 'error'
-							}).catch(this.$swal.noop);
-							abort = true;
-						}
-					});
-					if (abort) return false;
-				}
-
 				let ownerNames = [];
 				this.form.owners.forEach(owner => {
 					ownerNames.push(owner.name);
@@ -173,11 +157,37 @@
 					ownerNames: ownerNames
 				};
 
-				this.$http.put('callsigns/' + this.form.callsign, body).then(response => {
-					this.$router.push('/callsigns');
-				}, response => {
-					this.$dialogs.ajaxError(this, response);
+				// check for already known pager ric
+				let noWarning = true;
+				pagerNumbers.forEach(formNumber => {
+					if (this.formData.pagerRics.includes(parseInt(formNumber))) {
+						noWarning = false;
+						this.$swal({
+							title: 'Duplicate pager RIC',
+							html: 'The given pager RIC (' + formNumber + ') is already known.',
+							type: 'warning',
+							showCancelButton: true,
+							confirmButtonText: 'I know what I\'m doing'
+						}).then(() => {
+							// send
+							this.$http.put('callsigns/' + this.form.callsign, body).then(response => {
+								this.$router.push('/callsigns');
+							}, response => {
+								this.$dialogs.ajaxError(this, response);
+							});
+						}, () => {
+							// abort aka do nothing
+						});
+					}
 				});
+
+				if (noWarning) {
+					this.$http.put('callsigns/' + this.form.callsign, body).then(response => {
+						this.$router.push('/callsigns');
+					}, response => {
+						this.$dialogs.ajaxError(this, response);
+					});
+				}
 			}
 		}
 	};
