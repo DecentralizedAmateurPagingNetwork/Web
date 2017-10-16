@@ -1,8 +1,8 @@
 <script>
 	import {Pie, mixins} from 'vue-chartjs';
 
-	export default Pie.extend({
-		mixins: [mixins.reactiveProp],
+	export default {
+		mixins: [Pie, mixins.reactiveProp],
 		data() {
 			return {
 				chartOptions: {
@@ -16,5 +16,5 @@
 		mounted() {
 			this.renderChart(this.chartData, this.chartOptions);
 		}
-	});
+	};
 </script>
