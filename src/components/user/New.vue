@@ -94,6 +94,16 @@
 			submitForm(event) {
 				event.preventDefault();
 
+				// workaround to prevent broken authentication when using a colon in password
+				if (this.form.password.includes(':')) {
+					this.$swal({
+						title: 'Forbidden character',
+						html: 'Your password must not contain a colon (<code>:</code>), otherwise it may brake your login.',
+						type: 'error'
+					}).catch(this.$swal.noop);
+					return false;
+				}
+
 				// workaround to allow empty password to not change it
 				if (this.$route.params.id && this.form.password === '') {
 					this.form.password = '~~~DO_NOT_CHANGE_PASSWORD~~~';
