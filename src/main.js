@@ -14,28 +14,29 @@ import 'vue-multiselect/dist/vue-multiselect.min.css';
 import 'sweetalert2/dist/sweetalert2.css';
 import '@/assets/css/custom.css';
 
-// import ajax component
+// import libraries and components
 import VueResource from 'vue-resource';
-Vue.use(VueResource);
-
-// import multiselect
 import Multiselect from 'vue-multiselect';
-Vue.component('multiselect', Multiselect);
-
-// import sweetAlert2
 import swal from 'sweetalert2';
+import globalMethods from './global';
+import KonamiCode from 'vue-konami-code';
+
+// import partials for rendering
+import AppNavigation from '@/components/partials/Navigation';
+import TableGrid from '@/components/partials/TableGrid';
+import ActionButtons from '@/components/partials/ActionButtons';
+import InfoError from '@/components/partials/InfoError';
+import AppFooter from '@/components/partials/Footer';
+
+// add libraries and components
+Vue.use(VueResource);
+Vue.component('multiselect', Multiselect);
 const swalPlugin = {};
 swalPlugin.install = function(Vue) {
 	Vue.prototype.$swal = swal;
 };
 Vue.use(swalPlugin);
-
-// import global methods
-import globalMethods from './global';
 Vue.use(globalMethods);
-
-// import some totally unsuspicious non-easteregg-like code
-import KonamiCode from 'vue-konami-code';
 Vue.use(KonamiCode, {callback: () => {
 	swal({
 		title: 'DAPNET Web',
@@ -45,20 +46,11 @@ Vue.use(KonamiCode, {callback: () => {
 	});
 }});
 
-// import partials for rendering
-import AppNavigation from '@/components/partials/Navigation';
+// add partials for rendering
 Vue.component('app-navigation', AppNavigation);
-
-import TableGrid from '@/components/partials/TableGrid';
 Vue.component('tablegrid', TableGrid);
-
-import ActionButtons from '@/components/partials/ActionButtons';
 Vue.component('action-buttons', ActionButtons);
-
-import InfoError from '@/components/partials/InfoError';
 Vue.component('info-error', InfoError);
-
-import AppFooter from '@/components/partials/Footer';
 Vue.component('app-footer', AppFooter);
 
 // remove tip from console
