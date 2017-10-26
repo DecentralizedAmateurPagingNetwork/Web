@@ -37,7 +37,7 @@
 								<input type="text" v-model="form.email" class="form-control">
 							</div>
 						</div>
-						<div class="form-group">
+						<div class="form-group" v-if="this.$store.getters.user.admin">
 							<label class="col-lg-2 control-label">Admin?</label>
 							<div class="col-lg-10 checkbox">
 								<label>
