@@ -127,7 +127,7 @@
 
 				this.$http.put('users/' + this.form.name, body).then(response => {
 					// changed own password --> change auth-data
-					if (this.form.name === this.$store.getters.user.name) {
+					if (this.form.name === this.$store.getters.user.name && this.form.password !== '') {
 						this.$store.commit('login', {
 							name: this.form.name,
 							auth: btoa(this.form.name + ':' + this.form.password),
