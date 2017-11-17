@@ -49,6 +49,9 @@
 				<h2>I do not receive the rubrics on my skyper.</h2>
 				<p>Please activate your skyper on <a href="http://www.hampager.de/#/rubrics" target="_blank">http://www.hampager.de/#/rubrics</a> using the "Activate Rubrics" function. You have to provide your pager ID (RIC).</p>
 
+				<h2>I do not have skyper but a AlphaPOC receiver. How can I receive the rubric's content.</h2>
+				<p>New rubric content is send both in skyper format and to RIC number (1000 + <rubric-number>). So Rubric number 31 is RIC 1031. Add this RIC to your receiver.</p>
+
 				<h2>I want to add a rubric to the network.</h2>
 				<p>Please send an email to <code>rwth-afu [at] online.de</code> and give the following information:</p>
 				<ul>
