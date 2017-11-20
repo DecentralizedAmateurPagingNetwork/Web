@@ -41,10 +41,10 @@
 				<p>Please send an email to <code>rwth-afu [at] online.de</code> and give the following information:</p>
 				<ul>
 					<li>Amateur radio callsign.</li>
-					<li>Location Latitude and Longitude (Please in decimal form, e.g. 50.12345)</li>
+					<li>Location Latitude and Longitude (Please in decimal form, e.g. N 50.12345 E 006.12345)</li>
 					<li>Some reason, why it makes sense to add your node.</li>
 				</ul>
-				<p>Keep in mind that you need a stable HAMNET connection (44.0.0.0/8) to join the cluster network.</p>
+				<p>Keep in mind that you need a stable HAMNET connection (44.0.0.0/8) to join the cluster network. There is no connection possible from "normal" Internet. If you don't have a HAMNET connection, you can set up a permanent VPN connection into the HAMNET. Contact us in that case, we have a solution.</p>
 
 				<h2>I do not receive the rubrics on my skyper.</h2>
 				<p>Please activate your skyper on <a href="http://www.hampager.de/#/rubrics" target="_blank">http://www.hampager.de/#/rubrics</a> using the "Activate Rubrics" function. You have to provide your pager ID (RIC).</p>
@@ -82,7 +82,11 @@
 				<p>It is not wrong, it's UTC. We know, there are pros and cons of using UTC, but this is the most common understanding.</p>
 				
 				<h2>Some rubics are not transmitted on my transmitter.</h2>
-				<p>Please check, if your transmitter is in a member of all desired transmitter groups that are assigned to a rubric. Especially for the DX-Cluster messages, there were complains about heavy load on some transmitters. So we added another transmitter group of the DX-Cluster messages. If you want to transmit those messages, have your transmitter added to the group.</p>
+				<p>Please check, if your transmitter is a member of all desired transmitter groups that are assigned to a rubric. Especially for the DX-Cluster messages, there were complains about heavy load on some transmitters. So we added another transmitter group of the DX-Cluster messages. If you want to transmit those messages, have your transmitter added to the group.</p>
+				
+				<h2>In the statistics, I see almost 60 % of all transmitters offline. Is you network mostly not working?</h2>
+				<p>No. The offline transmitters are registred in DAPNET, but not online at the moment. There are a lot of transmitters registered where we don't know the actual status of setup. There may be several transmitters that were registered for test reasons, but never really used. There is an automatic algorithm that deletes transmitters that have not been online for three month. But we don't habe any means to distinguish between intentionally offline transmitters and non-intentionally offline transmitters.</p>
+
 
 				<h2>Is there an SMTP-Interface to DAPNET, so I can send calls with my email program?</h2>
 				<p>Not yet. Feel free to contribute. Use the open documented REST-API and write a simple SMTP server generating REST calls to the API.</p>
