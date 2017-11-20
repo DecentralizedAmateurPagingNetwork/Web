@@ -84,8 +84,8 @@
 				<h2>Some rubics are not transmitted on my transmitter.</h2>
 				<p>Please check, if your transmitter is a member of all desired transmitter groups that are assigned to a rubric. Especially for the DX-Cluster messages, there were complains about heavy load on some transmitters. So we added another transmitter group of the DX-Cluster messages. If you want to transmit those messages, have your transmitter added to the group.</p>
 				
-				<h2>In the statistics, I see almost 60 % of all transmitters offline. Is you network mostly not working?</h2>
-				<p>No. The offline transmitters are registred in DAPNET, but not online at the moment. There are a lot of transmitters registered where we don't know the actual status of setup. There may be several transmitters that were registered for test reasons, but never really used. There is an automatic algorithm that deletes transmitters that have not been online for three month. But we don't habe any means to distinguish between intentionally offline transmitters and non-intentionally offline transmitters.</p>
+				<h2>In the statistics, I see almost 60 % of all transmitters offline. Is your network mostly not working?</h2>
+				<p>No. The offline transmitters are registred in DAPNET, but not online at the moment. There are a lot of transmitters registered where we don't know the actual status of setup. There may be several transmitters that were registered for test reasons, but never really used. There is an automatic algorithm that deletes transmitters that have not been online for three month. But we don't have any means to distinguish between intentionally offline transmitters and non-intentionally offline transmitters.</p>
 
 
 				<h2>Is there an SMTP-Interface to DAPNET, so I can send calls with my email program?</h2>
