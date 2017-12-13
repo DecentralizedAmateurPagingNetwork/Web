@@ -9,6 +9,12 @@
 				<h2>I do not have an account. How do I get one?</h2>
 				<p>Due to the reason that you can trigger amateur radio transmissions with your account, please apply for an account by emailing to <code>rwth-afu [at] online.de</code> and provide some prove that you are a licensed amateur radio operator. Also give your Pager ID (RIC) as you can see here: <br/><img src="~@/assets/img/pager.jpg" /></p>
 
+				<h2>Where do I get a registration for my Skyper or other receiver?</h2>
+				<p>Please write to <code>rwth-afu [at] online.de</code></p>
+				
+				<h2>I want to change my associated RIC or add one. Do I need to contact somebody?</h2>
+				<p>No, once the callsign is added, you can edit it by yourself as owner.</p>
+			
 				<h2>I emailed 10 minutes ago. No answer yet. How long does it take to get an account?</h2>
 				<p>We review the applications in our free time. So please be patient for some days.</p>
 
