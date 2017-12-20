@@ -59,7 +59,7 @@
 				<p>New rubric content is send both in skyper format and to RIC number (1000 + <rubric-number>). So Rubric number 31 is RIC 1031. Add this RIC to your receiver.</p>
 
 				<h2>What RIC should I assign to my AlphaPOC receiver, as there is no pre-defined RIC on these devices?</h2>
-				<p>It is now common sense to take your DMR ID an substract 60000 from it. So DMR ID 2621234 will result in POCSAG RIC 2021234. If you don't have a DMR ID assigned to you, please contact us and we will assign you a sepearte RIC.</p>
+				<p>It is now common sense to take your DMR ID an substract 600000 from it. So DMR ID 2621234 will result in POCSAG RIC 2021234. If you don't have a DMR ID assigned to you, please contact us and we will assign you a sepearte RIC.</p>
 
 				<h2>I want to add a rubric to the network.</h2>
 				<p>Please send an email to <code>rwth-afu [at] online.de</code> and give the following information:</p>
