@@ -66,7 +66,7 @@
 						},
 						{
 							id: 'callsigns',
-							title: 'Callsigns'
+							title: 'Subscribers'
 						},
 						{
 							id: 'actions',

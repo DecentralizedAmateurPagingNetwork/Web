@@ -55,7 +55,7 @@
 						},
 						{
 							id: 'callSignNames',
-							title: 'Callsigns'
+							title: 'Subscribers'
 						},
 						{
 							id: 'transmitterGroupNames',

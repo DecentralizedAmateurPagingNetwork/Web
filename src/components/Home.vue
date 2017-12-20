@@ -50,7 +50,7 @@
 
 				<ul v-if="stats.data" class="list-group">
 					<li class="list-group-item"><b>Calls</b><span class="badge">{{ stats.data.calls }}</span></li>
-					<li class="list-group-item"><b>Callsigns</b><span class="badge">{{ stats.data.callSigns }}</span></li>
+					<li class="list-group-item"><b>Subscribers</b><span class="badge">{{ stats.data.callSigns }}</span></li>
 					<li class="list-group-item"><b>News</b><span class="badge">{{ stats.data.news }}</span></li>
 					<li class="list-group-item"><b>Rubrics</b><span class="badge">{{ stats.data.rubrics }}</span></li>
 					<li class="list-group-item"><b>Transmitters</b><span class="badge">{{ statTransmitter }}</span></li>
