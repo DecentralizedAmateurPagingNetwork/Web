@@ -173,7 +173,7 @@
 					}
 					if (this.settings.showNodes) {
 						markerNodes.push({
-							name: node.name,
+							name: 'n_' + node.name,
 							position: {
 								lat: node.latitude,
 								lng: node.longitude
@@ -203,7 +203,7 @@
 						nameLink = transmitter.name;
 					}
 					markerTransmitters.push({
-						name: transmitter.name,
+						name: 't_' + transmitter.name,
 						position: {
 							lat: transmitter.latitude,
 							lng: transmitter.longitude
@@ -221,11 +221,19 @@
 					if (this.settings.showLines && this.settings.showNodes) {
 						this.data.nodes.forEach(node => {
 							if (node.name === transmitter.nodeName) {
-								polylineTransmitters.push({
-									name: transmitter.name,
-									position: [[node.latitude, node.longitude], [transmitter.latitude, transmitter.longitude]],
-									color: this.$helpers.stringToColor(node.name)
+								// check if markerNodes includes the current node
+								let drawLine = false;
+								markerNodes.forEach(markerNode => {
+									if (markerNode.name === 'n_' + node.name) drawLine = true;
 								});
+
+								if (drawLine) {
+									polylineTransmitters.push({
+										name: 'l_' + transmitter.name,
+										position: [[node.latitude, node.longitude], [transmitter.latitude, transmitter.longitude]],
+										color: this.$helpers.stringToColor(node.name)
+									});
+								}
 							}
 						});
 					}
@@ -235,9 +243,17 @@
 				this.lines = polylineTransmitters;
 			},
 			showCoverage(name) {
+				// check if the user clicked on a transmitter and fix name
+				if (name.substring(0, 2) !== 't_') {
+					return false;
+				} else {
+					name = name.substring(2);
+				}
+
 				// remove clicked transmitter's overlay (if shown) and stop
 				let stop = false;
 				this.coverageLayers.forEach(layer => {
+					layer.name = layer.name.substring(2);
 					if (layer.name === name) {
 						this.coverageLayers = this.coverageLayers.filter(item => item !== layer);
 						stop = true;
@@ -250,7 +266,7 @@
 					let lines = response.body.split('\n');
 
 					this.coverageLayers.push({
-						name: name,
+						name: 'c_' + name,
 						url: '/assets/coverage/' + name + '.png',
 						bounds: [[lines[1], lines[3]], [lines[2], lines[4]]]
 					});
@@ -299,7 +315,7 @@
 				const helper = transmitterList => {
 					this.removeAllCoverage();
 					transmitterList.forEach(transmitter => {
-						this.showCoverage(transmitter.name);
+						this.showCoverage('t_' + transmitter.name);
 					});
 				};
 			},
