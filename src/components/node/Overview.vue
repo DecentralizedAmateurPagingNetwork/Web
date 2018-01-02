@@ -111,7 +111,7 @@
 
 					response.body.forEach(node => {
 						// add ip (if available)
-						if (node.address !== undefined) {
+						if (node.address !== null) {
 							node.address = node.address.ip_addr;
 						} else {
 							node.address = '---';

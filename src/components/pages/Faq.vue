@@ -9,6 +9,12 @@
 				<h2>I do not have an account. How do I get one?</h2>
 				<p>Due to the reason that you can trigger amateur radio transmissions with your account, please apply for an account by emailing to <code>rwth-afu [at] online.de</code> and provide some prove that you are a licensed amateur radio operator. Also give your Pager ID (RIC) as you can see here: <br/><img src="~@/assets/img/pager.jpg" /></p>
 
+				<h2>Where do I get a registration for my Skyper or other receiver?</h2>
+				<p>Please write to <code>rwth-afu [at] online.de</code></p>
+				
+				<h2>I want to change my associated RIC or add one. Do I need to contact somebody?</h2>
+				<p>No, once the callsign is added, you can edit it by yourself as owner.</p>
+			
 				<h2>I emailed 10 minutes ago. No answer yet. How long does it take to get an account?</h2>
 				<p>We review the applications in our free time. So please be patient for some days.</p>
 
@@ -41,13 +47,19 @@
 				<p>Please send an email to <code>rwth-afu [at] online.de</code> and give the following information:</p>
 				<ul>
 					<li>Amateur radio callsign.</li>
-					<li>Location Latitude and Longitude (Please in decimal form, e.g. 50.12345)</li>
+					<li>Location Latitude and Longitude (Please in decimal form, e.g. N 50.12345 E 006.12345)</li>
 					<li>Some reason, why it makes sense to add your node.</li>
 				</ul>
-				<p>Keep in mind that you need a stable HAMNET connection (44.0.0.0/8) to join the cluster network.</p>
+				<p>Keep in mind that you need a stable HAMNET connection (44.0.0.0/8) to join the cluster network. There is no connection possible from "normal" Internet. If you don't have a HAMNET connection, you can set up a permanent VPN connection into the HAMNET. Contact us in that case, we have a solution.</p>
 
 				<h2>I do not receive the rubrics on my skyper.</h2>
 				<p>Please activate your skyper on <a href="http://www.hampager.de/#/rubrics" target="_blank">http://www.hampager.de/#/rubrics</a> using the "Activate Rubrics" function. You have to provide your pager ID (RIC).</p>
+
+				<h2>I do not have skyper but a AlphaPOC receiver. How can I receive the rubric's content?</h2>
+				<p>New rubric content is send both in skyper format and to RIC number (1000 + rubric-number). So Rubric number 31 is RIC 1031. Add this RIC to your receiver.</p>
+
+				<h2>What RIC should I assign to my AlphaPOC receiver, as there is no pre-defined RIC on these devices?</h2>
+				<p>It is now common sense to take your DMR ID an substract 600000 from it. So DMR ID 2621234 will result in POCSAG RIC 2021234. If you don't have a DMR ID assigned to you, please contact us and we will assign you a sepearte RIC.</p>
 
 				<h2>I want to add a rubric to the network.</h2>
 				<p>Please send an email to <code>rwth-afu [at] online.de</code> and give the following information:</p>
@@ -76,10 +88,11 @@
 				<p>It is not wrong, it's UTC. We know, there are pros and cons of using UTC, but this is the most common understanding.</p>
 				
 				<h2>Some rubics are not transmitted on my transmitter.</h2>
-				<p>Please check, if your transmitter is in a member of all desired transmitter groups that are assigned to a rubric. Especially for the DX-Cluster messages, there were complains about heavy load on some transmitters. So we added another transmitter group of the DX-Cluster messages. If you want to transmit those messages, have your transmitter added to the group.</p>
+				<p>Please check, if your transmitter is a member of all desired transmitter groups that are assigned to a rubric. Especially for the DX-Cluster messages, there were complains about heavy load on some transmitters. So we added another transmitter group of the DX-Cluster messages. If you want to transmit those messages, have your transmitter added to the group.</p>
+				
+				<h2>In the statistics, I see almost 60 % of all transmitters offline. Is your network mostly not working?</h2>
+				<p>No. The offline transmitters are registred in DAPNET, but not online at the moment. There are a lot of transmitters registered where we don't know the actual status of setup. There may be several transmitters that were registered for test reasons, but never really used. There is an automatic algorithm that deletes transmitters that have not been online for three month. But we don't have any means to distinguish between intentionally offline transmitters and non-intentionally offline transmitters.</p>
 
-				<h2>Sometimes my transmitter transmits longer than the assigned timeslots.</h2>
-				<p>We are aware of this bug. It is tracked in this issue: <a href="https://github.com/rwth-afu/UniPager/issues/66" target="_blank">https://github.com/rwth-afu/UniPager/issues/66</a> and will be hopefully solved soon.</p>
 
 				<h2>Is there an SMTP-Interface to DAPNET, so I can send calls with my email program?</h2>
 				<p>Not yet. Feel free to contribute. Use the open documented REST-API and write a simple SMTP server generating REST calls to the API.</p>

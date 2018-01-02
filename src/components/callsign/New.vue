@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Callsigns</h1>
+					<h1>Subscribers</h1>
 				</div>
 			</div>
 		</div>
@@ -12,10 +12,10 @@
 			<div class="col-lg-9">
 				<form class="form-horizontal well">
 					<fieldset>
-						<legend v-if="!this.$route.params.id">New Callsign</legend>
-						<legend v-if="this.$route.params.id">Edit Callsign</legend>
+						<legend v-if="!this.$route.params.id">New Subscriber</legend>
+						<legend v-if="this.$route.params.id">Edit Subscriber</legend>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Callsign</label>
+							<label class="col-lg-2 control-label">Subscriber</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="form.callsign" class="form-control">
 								<span class="help-block">Please enter a valid amateur radio callsign of a human or a classifying name of an organization.</span>
@@ -58,7 +58,7 @@
 			</div>
 			<div class="col-lg-3">
 				<h2>Information</h2>
-				<p>Callsigns are an allocation between a name (usually your amateur radio callsign) and one or multiple pager IDs.</p>
+				<p>Subscribers are an allocation between a name (usually your amateur radio callsign) and one or multiple pager IDs.</p>
 			</div>
 		</div>
 	</div>

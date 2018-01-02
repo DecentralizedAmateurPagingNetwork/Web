@@ -14,7 +14,7 @@
 				<ul v-if="this.$store.getters.isUserLoggedIn" class="nav navbar-nav">
 					<li class="divider-vertical"></li>
 					<li><router-link to="/calls">Calls</router-link></li>
-					<li><router-link to="/callsigns">Callsigns</router-link></li>
+					<li><router-link to="/callsigns">Subscribers</router-link></li>
 					<li class="divider-vertical"></li>
 					<li><router-link to="/news">News</router-link></li>
 					<li><router-link to="/rubrics">Rubrics</router-link></li>

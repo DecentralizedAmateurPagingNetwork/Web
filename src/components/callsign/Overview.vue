@@ -3,14 +3,14 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Callsigns</h1>
+					<h1>Subscribers</h1>
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-lg-9">
-				<h2>All Callsigns
+				<h2>All Subscribers
 					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': running }" @click="loadData"></i>
 				</h2>
 
@@ -24,7 +24,7 @@
 						<legend>Actions</legend>
 						<ul>
 							<li>
-								<router-link to="/callsigns/new">New Callsign</router-link>
+								<router-link to="/callsigns/new">New Subscriber</router-link>
 							</li>
 						</ul>
 						<br/>
@@ -32,7 +32,7 @@
 					<template v-if="table.rows">
 						<legend>Statistics</legend>
 						<ul class="list-group">
-							<li class="list-group-item"><b>Total Callsigns</b><span class="badge">{{ statTotal }}</span></li>
+							<li class="list-group-item"><b>Total Subscribers</b><span class="badge">{{ statTotal }}</span></li>
 						</ul>
 					</template>
 				</div>
@@ -54,7 +54,7 @@
 					columns: [
 						{
 							id: 'name',
-							title: 'Callsign'
+							title: 'Subscriber'
 						},
 						{
 							id: 'description',

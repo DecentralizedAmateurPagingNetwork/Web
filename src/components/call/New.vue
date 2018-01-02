@@ -17,14 +17,14 @@
 							<label class="col-lg-2 control-label">Message</label>
 							<div class="col-lg-10">
 								<textarea class="form-control" rows="2" maxlength="80" v-model="form.message"></textarea>
-								<span class="help-block">{{ messageCharsRemaining }} / 80 characters remaining.<br />Enter your paging text. Your callsign is added automatically.</span>
+								<span class="help-block">{{ messageCharsRemaining }} / 80 characters remaining.<br />Enter your paging text. Your user name is added automatically.</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Callsigns</label>
+							<label class="col-lg-2 control-label">Subscribers</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.callsigns" :options="formData.callsigns" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
-								<span class="help-block">Select one or multiple callsigns you what to send the message to.</span>
+								<span class="help-block">Select one or multiple subscribers you what to send the message to.</span>
 							</div>
 						</div>
 						<div class="form-group">

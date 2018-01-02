@@ -14,7 +14,7 @@
 					<fieldset>
 						<legend>Activate Rubric</legend>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Pager-number</label>
+							<label class="col-lg-2 control-label">Pager-Number (your RIC)</label>
 							<div class="col-lg-10">
 								<input type="number" v-model.number="form.number" min="0" max="2097151" placeholder="0 - 2097151" class="form-control">
 							</div>
@@ -34,6 +34,10 @@
 					</fieldset>
 				</form>
 			</div>
+			<div class="col-lg-3">
+				<h2>Information</h2>
+				<p>Use the function to send an activation call to your Skyper. After succesful reception, you can select the rubrics on "Skyper Setup" in the skyper menu.</p>
+			</div>			
 		</div>
 	</div>
 </template>
