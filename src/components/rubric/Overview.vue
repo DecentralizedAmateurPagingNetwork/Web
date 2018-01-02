@@ -33,10 +33,8 @@
 						</ul>
 					</template>
 				</div>
-			</div>
-			<div class="col-lg-3">
 				<h2>Information</h2>
-				<p>This is a list of all rubrics on the DAPNET. A rubric number can by assigned to several transmitter groups. Keep in mind that the transmitter groups are disjunct for the same rubric number in order to avoid overlapping number assigments.<br />Use the Activate Rubrics to enable the reception of rubrics on your Skyper.</p>
+				<p>This is a list of all rubrics on the DAPNET. A rubric number can by assigned to several transmitter groups. Keep in mind that the transmitter groups are disjunct for the same rubric number in order to avoid overlapping number assigments.<br />Use the Activate Rubrics button to enable the reception of rubrics on your Skyper.</p>
 			</div>
 		</div>
 	</div>
