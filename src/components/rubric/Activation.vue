@@ -36,8 +36,8 @@
 			</div>
 			<div class="col-lg-3">
 				<h2>Information</h2>
-				<p>Use the function to send an activation call to your Skyper. After succesful reception, you can select the rubrics on "Skyper Setup" in the skyper menu.</p>
-			</div>			
+				<p>Use the function to send an activation call to your Skyper. After successful reception, you can select the rubrics on "Skyper Setup" in the skyper menu.</p>
+			</div>
 		</div>
 	</div>
 </template>
