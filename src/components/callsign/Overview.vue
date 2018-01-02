@@ -36,6 +36,8 @@
 						</ul>
 					</template>
 				</div>
+				<h2>Information</h2>
+				<p>A subscriber is the logical connection between a name (the callsign) and one or multiple RIC numbers, for example a Skyper address.</p>
 			</div>
 		</div>
 	</div>

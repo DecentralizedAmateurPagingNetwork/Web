@@ -34,6 +34,8 @@
 						</ul>
 					</template>
 				</div>
+				<h2>Information</h2>
+				<p>The content displayed here are NOT general news about DAPNET, but the recently sent content to rubrics. Every time a user updates the 10 available rubric messages slots, this change will be displayed here.</p>
 			</div>
 		</div>
 	</div>

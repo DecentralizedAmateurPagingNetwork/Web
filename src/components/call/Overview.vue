@@ -33,6 +33,8 @@
 						</ul>
 					</template>
 				</div>
+				<h2>Information</h2>
+				<p>Calls are personal paging transmission to individual receivers.</p>
 			</div>
 		</div>
 	</div>
