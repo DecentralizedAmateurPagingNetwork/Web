@@ -100,7 +100,7 @@
 						title: 'Forbidden character',
 						html: 'Your password must not contain a colon (<code>:</code>), otherwise it may brake your login.',
 						type: 'error'
-					}).catch(this.$swal.noop);
+					});
 					return false;
 				}
 

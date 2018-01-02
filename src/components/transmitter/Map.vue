@@ -290,11 +290,11 @@
 							cancelButtonText: 'Cancel'
 						}).then(() => {
 							helper(showCoverageOf);
-						}).catch(this.$swal.noop);
+						});
 					} else {
 						helper(showCoverageOf);
 					}
-				}).catch(this.$swal.noop);
+				});
 
 				const helper = transmitterList => {
 					this.removeAllCoverage();

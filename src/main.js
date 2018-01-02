@@ -11,7 +11,6 @@ import store from './store';
 import '@/assets/css/fonts.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'vue-multiselect/dist/vue-multiselect.min.css';
-import 'sweetalert2/dist/sweetalert2.css';
 import '@/assets/css/custom.css';
 
 // import libraries and components
