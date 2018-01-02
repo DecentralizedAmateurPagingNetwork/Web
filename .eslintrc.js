@@ -16,14 +16,12 @@ module.exports = {
 		'html'
 	],
 	// add your custom rules here
-	'rules': {
-		// allow paren-less arrow functions
-		'arrow-parens': 0,
+	rules: {
 		// allow async-await
-		'generator-star-spacing': 0,
-		'indent': ['error', 'tab', { "SwitchCase": 1 }],
+		'generator-star-spacing': 'off',
+		'indent': ['error', 'tab', { 'SwitchCase': 1 }],
 		// allow debugger during development
-		'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 		'no-tabs': 0,
 		'semi': ['error', 'always'],
 		'space-before-function-paren': ['error', 'never']

@@ -52,7 +52,7 @@
 				version: {
 					core: 'Unknown',
 					web: 'Unknown',
-					webCommit: process.env.GIT.COMMITHASH.substring(0, 7)
+					webCommit: process.env.GITCOMMITHASH.substring(0, 7)
 				}
 			};
 		}
