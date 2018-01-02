@@ -11,10 +11,10 @@
 
 				<h2>Where do I get a registration for my Skyper or other receiver?</h2>
 				<p>Please write to <code>rwth-afu [at] online.de</code></p>
-				
+
 				<h2>I want to change my associated RIC or add one. Do I need to contact somebody?</h2>
 				<p>No, once the callsign is added, you can edit it by yourself as owner.</p>
-			
+
 				<h2>I emailed 10 minutes ago. No answer yet. How long does it take to get an account?</h2>
 				<p>We review the applications in our free time. So please be patient for some days.</p>
 
@@ -23,7 +23,7 @@
 
 				<h2>What is a transmitter?</h2>
 				<p>A transmitter is a device that puts the POCSAG signal on the air. There are many hardware configurations, like C9000, RasPager. Have a look at <a href="https://www.afu.rwth-aachen.de/projekte/funkruf-pager-pocsag" target="_blank">https://www.afu.rwth-aachen.de/projekte/funkruf-pager-pocsag</a>.</p>
-				
+
 				<h2>What is a RIC?</h2>
 				<p>A RIC is the identifiaction number in the POCSAG world. They can have special meaning like the clock-RIC to set the date and time on your pager. Mostly they identify personally your pager. The assignment between a personal RIC and you is the "Callsign".</p>
 
@@ -86,18 +86,15 @@
 
 				<h2>Why is the time displayed on my Skyper wrong?</h2>
 				<p>It is not wrong, it's UTC. We know, there are pros and cons of using UTC, but this is the most common understanding.</p>
-				
+
 				<h2>Some rubics are not transmitted on my transmitter.</h2>
 				<p>Please check, if your transmitter is a member of all desired transmitter groups that are assigned to a rubric. Especially for the DX-Cluster messages, there were complains about heavy load on some transmitters. So we added another transmitter group of the DX-Cluster messages. If you want to transmit those messages, have your transmitter added to the group.</p>
-				
+
 				<h2>In the statistics, I see almost 60 % of all transmitters offline. Is your network mostly not working?</h2>
 				<p>No. The offline transmitters are registred in DAPNET, but not online at the moment. There are a lot of transmitters registered where we don't know the actual status of setup. There may be several transmitters that were registered for test reasons, but never really used. There is an automatic algorithm that deletes transmitters that have not been online for three month. But we don't have any means to distinguish between intentionally offline transmitters and non-intentionally offline transmitters.</p>
 
-
 				<h2>Is there an SMTP-Interface to DAPNET, so I can send calls with my email program?</h2>
 				<p>Not yet. Feel free to contribute. Use the open documented REST-API and write a simple SMTP server generating REST calls to the API.</p>
-
-
 			</div>
 		</div>
 	</div>
