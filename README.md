@@ -42,6 +42,20 @@ It is recommended to serve the DAPNET Web module from its own sub-domain.
 If you really need to use a sub-directory, make sure to edit `config/index.js` and adapt the content of line 11 (`publicPath`).
 Now run `npm run build` again and the page should be rendered correctly.
 
+### Access with port tcp/80 only
+In case you want to server users who have strong firewall restrictions and cannot access the default API Port 8080, you can use your apache webserver with `mod_proxy` to redirect the API calls from port tcp/80 to the API Port. Add these lines to your apache config and restart apache:
+```
+ProxyPass "/api" "http://YOURNODEURL:8080"
+ProxyPassReverse "/api" "http://YOURNODEURL:8080"
+```
+The file `defaultUrls.json` has to be adapted by
+```
+{
+    "api": "http://YOURWEBSERVERURL/api",
+    ...
+}
+```
+
 ## Updating
 Before updating make sure to read the changelog and to backup your customized files (see above)!
 
@@ -49,19 +63,6 @@ Before updating make sure to read the changelog and to backup your customized fi
 2. Run through step 2 of the installation process
 3. Run through steps 8. to 11. of the installation process
 4. Done!
-
-## Access with port tcp/80 only
-In case you want to server users who have strong firewall restrictions and cannot access the default API Port 8080, you can use your apache webserver with `mod_proxy` to redirect the API calls from port tcp/80 to the API Port. Add these lines to your apache config and restart apache:
-```bash
-	ProxyPass "/api" "http://YOURNODEURL:8080
-        ProxyPassReverse "/api" "http://YOURNODEURL:8080"
-```
-The file `defaultUrls.json` has to be adapted by
-```bash
-{
-        "api": "http://YOURWEBSERVERURL/api",
-...
-```
 
 ## Changelog
 A list of changes is always available on the [Releases](https://github.com/DecentralizedAmateurPagingNetwork/Web/releases)-page.
