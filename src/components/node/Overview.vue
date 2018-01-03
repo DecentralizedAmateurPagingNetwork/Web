@@ -36,6 +36,8 @@
 						</ul>
 					</template>
 				</div>
+				<h2>Information</h2>
+				<p>Nodes are the instances of the DAPNET cluster. This list shows the status of them. Due to the "not so good" long range connectivity of the HAMNET, cluster nodes come and go from time to time. This is very unsatisfying, we are working on a solution.</p>
 			</div>
 		</div>
 	</div>

@@ -36,6 +36,8 @@
 						</ul>
 					</template>
 				</div>
+				<h2>Information</h2>
+				<p>This is an overview of all registered user account on the DAPNET network. If you are not an admin, you don't see other user's details. You can edit your user by yourself, e.g. change your passwort or your email address.</p>
 			</div>
 		</div>
 	</div>

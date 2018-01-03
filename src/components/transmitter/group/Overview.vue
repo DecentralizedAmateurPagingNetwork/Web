@@ -34,6 +34,8 @@
 						</ul>
 					</template>
 				</div>
+				<h2>Information</h2>
+				<p>A transmitter group is a logical association of one or multiple transmitters to a group. This is necessary to divide the transmitters into regional areas, as not all content has to be transmitted on the whole network. Both personal calls as well als rubric's content have to be linked to a transmitter group. Only transmitters that are member of this group will get the information from the DAPNET node in order to transmit it.</p>
 			</div>
 		</div>
 	</div>
