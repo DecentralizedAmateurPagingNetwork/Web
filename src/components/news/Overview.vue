@@ -3,14 +3,14 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>News</h1>
+					<h1>Rubric Content</h1>
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-lg-9">
-				<h2>All News
+				<h2>All Rubric Content
 					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': running }" @click="loadData"></i>
 				</h2>
 
@@ -23,14 +23,14 @@
 					<legend>Actions</legend>
 					<ul>
 						<li>
-							<router-link to="/news/new">New News</router-link>
+							<router-link to="/news/new">New Rubric Content</router-link>
 						</li>
 					</ul>
 					<br/>
 					<template v-if="table.rows">
 						<legend>Statistics</legend>
 						<ul class="list-group">
-							<li class="list-group-item"><b>Total News</b><span class="badge">{{ statTotal }}</span></li>
+							<li class="list-group-item"><b>Total Rubric Content</b><span class="badge">{{ statTotal }}</span></li>
 						</ul>
 					</template>
 				</div>

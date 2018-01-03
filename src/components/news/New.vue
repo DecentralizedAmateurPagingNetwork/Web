@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>News</h1>
+					<h1>Rubric Content</h1>
 				</div>
 			</div>
 		</div>
@@ -12,7 +12,7 @@
 			<div class="col-lg-9">
 				<form class="form-horizontal well">
 					<fieldset>
-						<legend>New News</legend>
+						<legend>New Rubric Content</legend>
 						<div class="form-group">
 							<label class="col-lg-2 control-label">Message</label>
 							<div class="col-lg-10">
@@ -46,7 +46,7 @@
 			</div>
 			<div class="col-lg-3">
 				<h2>Information</h2>
-				<p>News are the contents of rubrics. They are up to now only available on Skyper paging receivers.</p>
+				<p>These are the contents of rubrics. They are up to now only available on Skyper paging receivers.</p>
 			</div>
 		</div>
 	</div>

@@ -81,7 +81,7 @@ export default new Router({
 		},
 		{
 			path: '/news',
-			name: 'News Overview',
+			name: 'Rubric Content Overview',
 			component: NewsOverview,
 			meta: {
 				requireAuthentication: true
@@ -89,7 +89,7 @@ export default new Router({
 		},
 		{
 			path: '/news/new',
-			name: 'New News',
+			name: 'New Rubric Content',
 			component: NewsNew,
 			meta: {
 				requireAuthentication: true
