@@ -24,7 +24,7 @@
 						<legend>Actions</legend>
 						<ul>
 							<li>
-								<router-link to="/callsigns/new">New Subscriber</router-link>
+								<router-link to="/subscribers/new">New Subscriber</router-link>
 							</li>
 						</ul>
 						<br/>

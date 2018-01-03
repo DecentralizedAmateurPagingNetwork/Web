@@ -56,41 +56,25 @@ export default new Router({
 			}
 		},
 		{
-			path: '/callsigns',
-			name: 'Callsign Overview',
+			path: '/subscribers',
+			name: 'Subscribers Overview',
 			component: CallsignOverview,
 			meta: {
 				requireAuthentication: true
 			}
 		},
 		{
-			path: '/callsigns/new',
-			name: 'New Callsign',
+			path: '/subscribers/new',
+			name: 'New Subscriber',
 			component: CallsignNew,
 			meta: {
 				requireAuthentication: true
 			}
 		},
 		{
-			path: '/callsigns/edit/:id',
-			name: 'Edit Callsign',
+			path: '/subscribers/edit/:id',
+			name: 'Edit Subscriber',
 			component: CallsignNew,
-			meta: {
-				requireAuthentication: true
-			}
-		},
-		{
-			path: '/news',
-			name: 'Rubric Content Overview',
-			component: NewsOverview,
-			meta: {
-				requireAuthentication: true
-			}
-		},
-		{
-			path: '/news/new',
-			name: 'New Rubric Content',
-			component: NewsNew,
 			meta: {
 				requireAuthentication: true
 			}
@@ -121,8 +105,24 @@ export default new Router({
 		},
 		{
 			path: '/rubrics/activate',
-			name: 'Activate Rubric',
+			name: 'Activate Rubrics',
 			component: RubricActivation,
+			meta: {
+				requireAuthentication: true
+			}
+		},
+		{
+			path: '/rubrics/content',
+			name: 'Rubric Content Overview',
+			component: NewsOverview,
+			meta: {
+				requireAuthentication: true
+			}
+		},
+		{
+			path: '/rubrics/content/new',
+			name: 'New Rubric Content',
+			component: NewsNew,
 			meta: {
 				requireAuthentication: true
 			}

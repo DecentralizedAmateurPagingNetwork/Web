@@ -23,7 +23,7 @@
 					<legend>Actions</legend>
 					<ul>
 						<li>
-							<router-link to="/news/new">New Rubric Content</router-link>
+							<router-link to="/rubrics/content/new">New Rubric Content</router-link>
 						</li>
 					</ul>
 					<br/>

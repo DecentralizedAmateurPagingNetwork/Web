@@ -38,7 +38,7 @@
 						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
 								<button type="submit" @click="submitForm" class="btn btn-primary">Submit</button>
-								<router-link to="/news"><button class="btn btn-default">Abort</button></router-link>
+								<router-link to="/rubrics/content"><button class="btn btn-default">Abort</button></router-link>
 							</div>
 						</div>
 					</fieldset>
@@ -100,7 +100,7 @@
 				}
 
 				this.$http.post('news/', body).then(response => {
-					this.$router.push('/news');
+					this.$router.push('/rubrics/content');
 				}, response => {
 					this.$dialogs.ajaxError(this, response);
 				});

@@ -23,7 +23,6 @@
 					<legend>Actions</legend>
 					<ul>
 						<li v-if="this.$store.getters.user.admin"><router-link to="/rubrics/new">New Rubric</router-link></li>
-						<li><router-link to="/rubrics/activate">Activate Rubrics</router-link></li>
 					</ul>
 					<br/>
 					<template v-if="table.rows">

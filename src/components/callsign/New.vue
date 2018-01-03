@@ -50,7 +50,7 @@
 						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
 								<button type="submit" @click="submitForm" class="btn btn-primary">Submit</button>
-								<router-link to="/callsigns"><button class="btn btn-default">Abort</button></router-link>
+								<router-link to="/subscribers"><button class="btn btn-default">Abort</button></router-link>
 							</div>
 						</div>
 					</fieldset>
@@ -96,7 +96,7 @@
 					this.form.pager.names = pagerNames.trim();
 					this.form.owners = ownerNames;
 				}, response => {
-					this.$router.push('/callsigns');
+					this.$router.push('/subscribers');
 				});
 			}
 
@@ -171,7 +171,7 @@
 						}).then(() => {
 							// send
 							this.$http.put('callsigns/' + this.form.callsign, body).then(response => {
-								this.$router.push('/callsigns');
+								this.$router.push('/subscribers');
 							}, response => {
 								this.$dialogs.ajaxError(this, response);
 							});
@@ -183,7 +183,7 @@
 
 				if (noWarning) {
 					this.$http.put('callsigns/' + this.form.callsign, body).then(response => {
-						this.$router.push('/callsigns');
+						this.$router.push('/subscribers');
 					}, response => {
 						this.$dialogs.ajaxError(this, response);
 					});

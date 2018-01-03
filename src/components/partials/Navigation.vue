@@ -14,13 +14,15 @@
 				<ul v-if="this.$store.getters.isUserLoggedIn" class="nav navbar-nav">
 					<li class="divider-vertical"></li>
 					<li><router-link to="/calls">Calls</router-link></li>
-					<li><router-link to="/callsigns">Subscribers</router-link></li>
+					<li><router-link to="/subscribers">Subscribers</router-link></li>
 					<li class="divider-vertical"></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Rubrics <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><router-link to="/rubrics">All Rubrics</router-link></li>
-							<li><router-link to="/news">Rubric Content</router-link></li>
+							<li><router-link to="/rubrics/activate">Activate Rubrics</router-link></li>
+							<div class="divider"></div>
+							<li><router-link to="/rubrics/content">Rubric Content</router-link></li>
 						</ul>
 					</li>
 					<li class="divider-vertical"></li>
