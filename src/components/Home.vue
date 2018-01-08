@@ -12,7 +12,7 @@
 						As it is used on amateur radio frequencies, commercial use is forbidden.<br />
 						If you are a licensed amateur radio operator, get your login account now.
 						We are happy for every new transmitter participating in the network.
-						Further information can be found <a href="https://www.afu.rwth-aachen.de/projekte/funkruf-pager-pocsag" target="_blank">here</a>.</p>
+						Further information can be found <a href="http://doku.hampager.de" target="_blank">here</a>.</p>
 				</div>
 			</div>
 		</div>
