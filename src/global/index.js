@@ -23,7 +23,9 @@ const GlobalMethodsPlugin = {
 				confirmButtonColor: '#DD6B55',
 				confirmButtonText: 'Yes',
 				cancelButtonText: 'Cancel'
-			}).then(workFunction);
+			}).then(result => {
+				if (result.value) workFunction();
+			});
 		};
 
 		Vue.prototype.$dialogs.ajaxError = function(context, err) {
