@@ -21,7 +21,7 @@
 					</tr>
 					<tr>
 						<td>E-Mail:</td>
-						<td>rwth-afu@online.de</td>
+						<td>support@hampager.de</td>
 					</tr>
 					<tr>
 						<td>Webseite:</td>

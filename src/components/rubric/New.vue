@@ -56,7 +56,7 @@
 			</div>
 			<div class="col-lg-3">
 				<h2>Information</h2>
-				<p>Rubrics are a Skyper based invention allowing to send news sorted into chategories (the rubrics). Assign the number with care and contact <code>rwth-afu [at] online.de</code> in case of doubt. Be aware that the number of rubrics is limited netwide to 99.</p>
+				<p>Rubrics are a Skyper based invention allowing to send news sorted into chategories (the rubrics). Assign the number with care and contact <code>rsupport [at] hampager.de</code> in case of doubt. Be aware that the number of rubrics is limited netwide to 99.</p>
 			</div>
 		</div>
 	</div>

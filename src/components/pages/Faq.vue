@@ -7,10 +7,10 @@
 				</div>
 
 				<h2>I do not have an account. How do I get one?</h2>
-				<p>Due to the reason that you can trigger amateur radio transmissions with your account, please apply for an account by emailing to <code>rwth-afu [at] online.de</code> and provide some prove that you are a licensed amateur radio operator. Also give your Pager ID (RIC) as you can see here: <br/><img src="~@/assets/img/pager.jpg" /></p>
+				<p>Due to the reason that you can trigger amateur radio transmissions with your account, please apply for an account by emailing to <code>support [at] hampager.de</code> and provide some prove that you are a licensed amateur radio operator. Also give your Pager ID (RIC) as you can see here: <br/><img src="~@/assets/img/pager.jpg" /></p>
 
 				<h2>Where do I get a registration for my Skyper or other receiver?</h2>
-				<p>Please write to <code>rwth-afu [at] online.de</code></p>
+				<p>Please write to <code>support [at] hampager.de</code></p>
 
 				<h2>I want to change my associated RIC or add one. Do I need to contact somebody?</h2>
 				<p>No, once the callsign is added, you can edit it by yourself as owner.</p>
@@ -28,10 +28,10 @@
 				<p>A RIC is the identifiaction number in the POCSAG world. They can have special meaning like the clock-RIC to set the date and time on your pager. Mostly they identify personally your pager. The assignment between a personal RIC and you is the "Callsign".</p>
 
 				<h2>I cannot add a callsign or a transmitter.</h2>
-				<p>Due to abuse reasons, only admins can add callsigns or transmitters. Please contact <code>rwth-afu [at] online.de</code>. Once your callsign or transmitter is assigned to you, you can edit it by yourself.</p>
+				<p>Due to abuse reasons, only admins can add callsigns or transmitters. Please contact <code>support [at] hampager.de</code>. Once your callsign or transmitter is assigned to you, you can edit it by yourself.</p>
 
 				<h2>I want to add a transmitter to the network.</h2>
-				<p>Very nice. We like the network growing. Please send an email to <code>rwth-afu [at] online.de</code> and give the following information:</p>
+				<p>Very nice. We like the network growing. Please send an email to <code>support [at] hampager.de</code> and give the following information:</p>
 				<ul>
 					<li>Callsign of the transmitter</li>
 					<li>Location Latitude and Longitude (Please in decimal form, e.g. 50.12345)</li>
@@ -44,7 +44,7 @@
 				</ul>
 
 				<h2>I want to add a node to the network.</h2>
-				<p>Please send an email to <code>rwth-afu [at] online.de</code> and give the following information:</p>
+				<p>Please send an email to <code>support [at] hampager.de</code> and give the following information:</p>
 				<ul>
 					<li>Amateur radio callsign.</li>
 					<li>Location Latitude and Longitude (Please in decimal form, e.g. N 50.12345 E 006.12345)</li>
@@ -62,7 +62,7 @@
 				<p>It is now common sense to take your DMR ID an substract 600000 from it. So DMR ID 2621234 will result in POCSAG RIC 2021234. If you don't have a DMR ID assigned to you, please contact us and we will assign you a sepearte RIC.</p>
 
 				<h2>I want to add a rubric to the network.</h2>
-				<p>Please send an email to <code>rwth-afu [at] online.de</code> and give the following information:</p>
+				<p>Please send an email to <code>support [at] hampager.de</code> and give the following information:</p>
 				<ul>
 					<li>The desired name</li>
 					<li>The content you want to provide</li>
