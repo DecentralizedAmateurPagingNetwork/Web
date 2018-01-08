@@ -118,7 +118,7 @@
 				});
 			},
 			editElement(element) {
-				this.$router.push({name: 'Edit Callsign', params: {id: element.name}});
+				this.$router.push({name: 'Edit Subscriber', params: {id: element.name}});
 			},
 			deleteElement(element) {
 				this.$dialogs.deleteElement(this, () => {
