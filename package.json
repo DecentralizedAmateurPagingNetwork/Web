@@ -13,7 +13,7 @@
   "dependencies": {
     "chart.js": "2.7.1",
     "font-awesome": "4.7.0",
-    "sweetalert2": "7.3.2",
+    "sweetalert2": "7.3.4",
     "vue": "2.5.13",
     "vue-chartjs": "3.0.2",
     "vue-konami-code": "1.0.0",
@@ -71,7 +71,7 @@
     "vue-template-compiler": "2.5.13",
     "webpack": "3.10.0",
     "webpack-bundle-analyzer": "2.9.1",
-    "webpack-dev-server": "2.9.7",
+    "webpack-dev-server": "2.10.0",
     "webpack-merge": "4.1.1"
   },
   "engines": {
