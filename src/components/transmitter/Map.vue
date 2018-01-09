@@ -282,7 +282,9 @@
 					showCancelButton: true,
 					confirmButtonText: 'Continue',
 					cancelButtonText: 'Cancel'
-				}).then(() => {
+				}).then(result => {
+					if (!result.value) return false;
+
 					// check if transmitter is in current map bounds and visible
 					let showCoverageOf = [];
 					const mapBounds = this.$refs.leafletMap.mapObject.getBounds();
@@ -304,8 +306,8 @@
 							showCancelButton: true,
 							confirmButtonText: 'Yes, I am sure and I won\'t blame the developer if my browser crashes',
 							cancelButtonText: 'Cancel'
-						}).then(() => {
-							helper(showCoverageOf);
+						}).then(result => {
+							if (result.value) helper(showCoverageOf);
 						});
 					} else {
 						helper(showCoverageOf);
