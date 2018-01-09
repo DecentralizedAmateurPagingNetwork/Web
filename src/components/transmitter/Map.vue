@@ -253,8 +253,8 @@
 				// remove clicked transmitter's overlay (if shown) and stop
 				let stop = false;
 				this.coverageLayers.forEach(layer => {
-					layer.name = layer.name.substring(2);
-					if (layer.name === name) {
+					let layerName = layer.name.substring(2);
+					if (layerName === name) {
 						this.coverageLayers = this.coverageLayers.filter(item => item !== layer);
 						stop = true;
 					}
