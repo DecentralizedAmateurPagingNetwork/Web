@@ -12,7 +12,7 @@
 						As it is used on amateur radio frequencies, commercial use is forbidden.<br />
 						If you are a licensed amateur radio operator, get your login account now.
 						We are happy for every new transmitter participating in the network.
-						Further information can be found <a href="http://doku.hampager.de" target="_blank">here</a>.</p>
+						There is comprehensive documentation on the DAPNET Project available at the <a href="http://doku.hampager.de" target="_blank">DAPNET DokuWiki</a>.</p>
 				</div>
 			</div>
 		</div>
