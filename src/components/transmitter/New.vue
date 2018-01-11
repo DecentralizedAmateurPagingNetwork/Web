@@ -29,7 +29,7 @@
 						<div class="form-group">
 							<label class="col-lg-2 control-label">Password</label>
 							<div class="col-lg-10">
-								<input type="text" v-model="form.password" class="form-control">
+								<input type="text" v-model.trim="form.password" class="form-control">
 								<span class="help-block">Enter a authentication password for this transmitter. In the UniPager webinterface it’s called Auth Key.</span>
 							</div>
 						</div>
