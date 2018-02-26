@@ -35,7 +35,7 @@
 				<ul>
 					<li>Callsign of the transmitter</li>
 					<li>Location Latitude and Longitude (Please in decimal form, e.g. 50.12345)</li>
-					<li>Type of transmitter: Widerange (> 1 watt) oder Personal (<= 1 watt, e.g. RasPager)</li>
+					<li>Type of transmitter: Widerange (&gt; 1 watt) oder Personal (&lt;= 1 watt, e.g. RasPager)</li>
 					<li>Transmitter output power in watt</li>
 					<li>Antenna type (omni or directional)</li>
 					<li>Height of the antenna above ground (!), not above sea level</li>

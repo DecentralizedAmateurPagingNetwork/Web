@@ -28,6 +28,16 @@ module.exports = {
 		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 		'no-tabs': 0,
 		'semi': ['error', 'always'],
-		'space-before-function-paren': ['error', 'never']
-	}
+		'space-before-function-paren': ['error', 'never'],
+
+	},
+	"overrides": [{
+		"files": ["*.vue"],
+		"rules": {
+			"indent": "off",
+			// TODO: re-enable this rule after https://github.com/vuejs/eslint-plugin-vue/issues/407 is fixed
+			// 'vue/script-indent': ['error', 'tab', { 'baseIndent': 1 }]
+			'vue/script-indent': 0
+		}
+	}]
 };

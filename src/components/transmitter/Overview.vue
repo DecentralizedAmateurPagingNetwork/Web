@@ -17,7 +17,7 @@
 				<info-error :message="errorMessage"></info-error>
 
 				<tablegrid v-if="table.rows" :columns="table.columns" :data="table.rows" :mail-action="mailToOwner"
-				           :edit-action="editElement" :delete-action="deleteElement" :send-rubrics-action="sendRubrics"></tablegrid>
+					:edit-action="editElement" :delete-action="deleteElement" :send-rubrics-action="sendRubrics"></tablegrid>
 			</div>
 			<div class="col-lg-3">
 				<div class="actions well">
@@ -42,7 +42,7 @@
 					</template>
 				</div>
 				<h2>Information</h2>
-				<p>This overview shows all registered transmitters of the DAPNET network. Before you can connect your transmitter to one of the DAPNET-Nodes, it has to be registered by one of the admins. There are two classes of transmitters: Widerange (>= 1 Watt) and Personal (< 1 Watt). Why is there such a big number of offline transmitters? These are transmitters which have been registered in the past, but apparently are not online now. There is no information stored which transmitters "should" be online and which not.<br>Transmitters have one or multiple owners who can change the settings by themselves. Each transmitter is assigned to one or max. 16 timeslots. This is necessary as they transmit all on the same frequency, but not overlapping at the same time. Be aware to assign no timeslots to your transmitter that are already used in you coverage area. Contact one of the admins, if you need help.</p>
+				<p>This overview shows all registered transmitters of the DAPNET network. Before you can connect your transmitter to one of the DAPNET-Nodes, it has to be registered by one of the admins. There are two classes of transmitters: Widerange (&gt; 1 Watt) and Personal (&lt;= 1 Watt). Why is there such a big number of offline transmitters? These are transmitters which have been registered in the past, but apparently are not online now. There is no information stored which transmitters "should" be online and which not.<br>Transmitters have one or multiple owners who can change the settings by themselves. Each transmitter is assigned to one or max. 16 timeslots. This is necessary as they transmit all on the same frequency, but not overlapping at the same time. Be aware to assign no timeslots to your transmitter that are already used in you coverage area. Contact one of the admins, if you need help.</p>
 			</div>
 		</div>
 	</div>

@@ -16,18 +16,18 @@
 			<table class="table table-striped table-hover">
 				<thead>
 					<tr>
-						<th v-for="key in columns" @click="sortBy(key.id)" :class="{ active: sortKey == key.id }">
+						<th v-for="key in columns" :key="key.id" @click="sortBy(key.id)" :class="{ active: sortKey === key.id }">
 							{{ key.title }} <span class="arrow" :class="sortOrders[key.id] > 0 ? 'asc' : 'dsc'"></span>
 						</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="entry in paginatedData">
-						<td v-for="key in columns">
+					<tr v-for="entry in paginatedData" :key="entry.id">
+						<td v-for="key in columns" :key="key.id">
 							<template v-if="key.id === 'actions'">
 								<template v-if="entry[key.id] === true">
 									<action-buttons :element="entry" :mail-action="mailAction" :edit-action="editAction"
-									                :delete-action="deleteAction" :send-rubrics-action="sendRubricsAction"></action-buttons>
+										:delete-action="deleteAction" :send-rubrics-action="sendRubricsAction"></action-buttons>
 								</template>
 								<template v-else>
 									---
