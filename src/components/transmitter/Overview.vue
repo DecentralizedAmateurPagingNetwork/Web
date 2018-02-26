@@ -155,7 +155,7 @@
 					}
 
 					let deviceTypeSplitted = transmitter.deviceType.split(' ');
-					let deviceType = deviceTypeSplitted[deviceTypeSplitted.length - 1];
+					let deviceType = deviceTypeSplitted[deviceTypeSplitted.length - 2];
 
 					if (!deviceType || deviceType === '---') {
 						deviceType = 'Unknown';
@@ -211,10 +211,15 @@
 
 						// add icon to device
 						if (transmitter.deviceType === null) transmitter.deviceType = '---';
+						if (transmitter.deviceVersion === null) {
+							transmitter.deviceVersion = '';
+						} else {
+							transmitter.deviceVersion = ' v' + transmitter.deviceVersion;
+						}
 						if (transmitter.usage === 'WIDERANGE') {
-							transmitter.deviceType = '<img src="./assets/img/transmitter_widerange.png" title="Widerange"> ' + transmitter.deviceType;
+							transmitter.deviceType = '<img src="./assets/img/transmitter_widerange.png" title="Widerange"> ' + transmitter.deviceType + transmitter.deviceVersion;
 						} else if (transmitter.usage === 'PERSONAL') {
-							transmitter.deviceType = '<img src="./assets/img/transmitter_personal.png" title="Personal"> ' + transmitter.deviceType;
+							transmitter.deviceType = '<img src="./assets/img/transmitter_personal.png" title="Personal"> ' + transmitter.deviceType + transmitter.deviceVersion;
 						}
 
 						// make status more colorful
