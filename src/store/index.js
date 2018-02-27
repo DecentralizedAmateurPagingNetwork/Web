@@ -16,6 +16,7 @@ export default new Vuex.Store({
 			auth: '',
 			admin: false
 		},
+		language: 'en',
 		customText: defaultText,
 		map: defaultMap
 	},
@@ -28,6 +29,9 @@ export default new Vuex.Store({
 		},
 		isUserLoggedIn: state => {
 			return (state.user.name !== 'Guest' && state.user.auth !== '');
+		},
+		language: state => {
+			return state.language;
 		},
 		customText: state => {
 			return state.customText;
@@ -50,13 +54,17 @@ export default new Vuex.Store({
 			state.user.admin = false;
 
 			Vue.http.headers.common['Authorization'] = '';
+		},
+		changeLanguage(state, payload) {
+			state.language = payload.language;
 		}
 	},
 	plugins: [
 		VuexPersistedState({
 			key: 'dapnet-web',
 			paths: [
-				'user'
+				'user',
+				'language'
 			]
 		})
 	]

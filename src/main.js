@@ -3,7 +3,8 @@
 import Vue from 'vue';
 import App from './App';
 
-// import router and store (including their configuration)
+// import i18n, router and store (including their configuration)
+import i18n from './i18n';
 import router from './router';
 import store from './store';
 
@@ -55,6 +56,9 @@ Vue.component('app-footer', AppFooter);
 // remove tip from console
 Vue.config.productionTip = false;
 
+// set initial locale
+i18n.locale = store.getters.language;
+
 // router config
 router.beforeEach((to, from, next) => {
 	// check for authentication and redirect to home
@@ -88,6 +92,7 @@ console.log('More information: https://github.com/DecentralizedAmateurPagingNetw
 /* eslint-disable no-new */
 new Vue({
 	el: '#app',
+	i18n,
 	router,
 	store,
 	components: {App},

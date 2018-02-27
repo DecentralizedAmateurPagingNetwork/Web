@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="jumbotron">
-					<h1>Welcome to <template v-if="(new Date()).getDate() === 1 && (new Date()).getMonth() === 3">DABNET</template><template v-else>DAPNET</template> Web!</h1>
+					<h1>{{ $t('home.welcome.title') }}</h1>
 					<p>The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts.
 						It is the new and further developed version of the <a href="http://ham-pager.sourceforge.net" target="_blank">FunkrufMaster</a>.
 						It consists of a decentral server cluster feeding paging data to distributed transmitters.<br />

@@ -3,6 +3,11 @@
 		<footer>
 			<div class="row">
 				<div class="col-lg-12">
+					<p><b>Language:</b></p>
+					<ul class="list-unstyled">
+						<li><p v-on:click="changeLanguage('en')" class="linklike">English</p></li>
+						<li><p v-on:click="changeLanguage('de')" class="linklike">German</p></li>
+					</ul>
 					<p><b>More:</b></p>
 					<ul class="list-unstyled">
 						<li>
@@ -55,6 +60,14 @@
 					webCommit: process.env.GITCOMMITHASH.substring(0, 7)
 				}
 			};
+		},
+		methods: {
+			changeLanguage(lang) {
+				this.$root.$i18n.locale = lang;
+				this.$store.commit('changeLanguage', {
+					language: lang
+				});
+			}
 		}
 	};
 </script>
