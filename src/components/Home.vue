@@ -4,25 +4,17 @@
 			<div class="col-lg-12">
 				<div class="jumbotron">
 					<h1>{{ $t('home.welcome.title') }}</h1>
-					<p>The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts.
-						It is the new and further developed version of the <a href="http://ham-pager.sourceforge.net" target="_blank">FunkrufMaster</a>.
-						It consists of a decentral server cluster feeding paging data to distributed transmitters.<br />
-						The most used frequency is 439.9875 MHz and the protocol is POCSAG.
-						Common paging receivers are of type "Skyper", but there exist others as well.
-						As it is used on amateur radio frequencies, commercial use is forbidden.<br />
-						If you are a licensed amateur radio operator, get your login account now.
-						We are happy for every new transmitter participating in the network.
-						There is comprehensive documentation on the DAPNET Project available at the <a href="http://doku.hampager.de" target="_blank">DAPNET DokuWiki</a>.</p>
+					<p v-html="$t('home.welcome.text')"></p>
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-lg-4">
-				<h2>The DAPNET</h2>
+				<h2>{{ $t('home.information.dapnet.title') }}</h2>
 				<div class="well">
 					<img src="~@/assets/img/afu-dapnet-logo.png" alt="DAPNET Logo"/>
-					<h3>Projects</h3>
+					<h3>{{ $t('home.information.dapnet.projects') }}</h3>
 					<ul>
 						<li><a href="https://github.com/DecentralizedAmateurPagingNetwork/Core" target="_blank">DAPNET Core</a></li>
 						<li><a href="https://github.com/DecentralizedAmateurPagingNetwork/Web" target="_blank">DAPNET Web</a></li>
@@ -37,25 +29,25 @@
 			</div>
 
 			<div class="col-lg-4">
-				<h2>Information</h2>
+				<h2>{{ $t('home.information.information.title') }}</h2>
 				<p v-html="this.$store.getters.customText"></p>
 			</div>
 
 			<div class="col-lg-4">
-				<h2>Statistics
+				<h2>{{ $t('home.information.statistics.title') }}
 					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': stats.running }" @click="loadData"></i>
 				</h2>
 
 				<info-error :message="stats.errorMessage"></info-error>
 
 				<ul v-if="stats.data" class="list-group">
-					<li class="list-group-item"><b>Calls</b><span class="badge">{{ stats.data.calls }}</span></li>
-					<li class="list-group-item"><b>Subscribers</b><span class="badge">{{ stats.data.callSigns }}</span></li>
-					<li class="list-group-item"><b>Rubric Content</b><span class="badge">{{ stats.data.news }}</span></li>
-					<li class="list-group-item"><b>Rubrics</b><span class="badge">{{ stats.data.rubrics }}</span></li>
-					<li class="list-group-item"><b>Transmitters</b><span class="badge">{{ statTransmitter }}</span></li>
-					<li class="list-group-item"><b>Nodes</b><span class="badge">{{ statNodes }}</span></li>
-					<li class="list-group-item"><b>Users</b><span class="badge">{{ stats.data.users }}</span></li>
+					<li class="list-group-item"><b>{{ $t('home.information.statistics.calls') }}</b><span class="badge">{{ stats.data.calls }}</span></li>
+					<li class="list-group-item"><b>{{ $t('home.information.statistics.subscribers') }}</b><span class="badge">{{ stats.data.callSigns }}</span></li>
+					<li class="list-group-item"><b>{{ $t('home.information.statistics.rubric-content') }}</b><span class="badge">{{ stats.data.news }}</span></li>
+					<li class="list-group-item"><b>{{ $t('home.information.statistics.rubrics') }}</b><span class="badge">{{ stats.data.rubrics }}</span></li>
+					<li class="list-group-item"><b>{{ $t('home.information.statistics.transmitters') }}</b><span class="badge">{{ statTransmitter }}</span></li>
+					<li class="list-group-item"><b>{{ $t('home.information.statistics.nodes') }}</b><span class="badge">{{ statNodes }}</span></li>
+					<li class="list-group-item"><b>{{ $t('home.information.statistics.users') }}</b><span class="badge">{{ stats.data.users }}</span></li>
 				</ul>
 			</div>
 		</div>
@@ -97,9 +89,9 @@
 					this.stats.running = false;
 
 					if (response.status === 0) {
-						this.stats.errorMessage = 'Unable to reach API server. Please try again later.';
+						this.stats.errorMessage = this.$i18n.t('rest.errors.api-unreachable');
 					} else {
-						this.stats.errorMessage = 'Unhandled HTTP error (' + response.status + '). Please try again later.';
+						this.stats.errorMessage = this.$i18n.t('rest.errors.http-error', { status: response.status });
 					}
 				});
 			}

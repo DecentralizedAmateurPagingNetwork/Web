@@ -13,32 +13,32 @@
 			<div class="navbar-collapse collapse" id="navbar-main">
 				<ul v-if="this.$store.getters.isUserLoggedIn" class="nav navbar-nav">
 					<li class="divider-vertical"></li>
-					<li><router-link to="/calls">Calls</router-link></li>
-					<li><router-link to="/subscribers">Subscribers</router-link></li>
+					<li><router-link to="/calls">{{ $t('navigation.calls') }}</router-link></li>
+					<li><router-link to="/subscribers">{{ $t('navigation.subscribers') }}</router-link></li>
 					<li class="divider-vertical"></li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Rubrics <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ $t('navigation.rubrics.title') }} <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><router-link to="/rubrics">All Rubrics</router-link></li>
-							<li><router-link to="/rubrics/activate">Activate Rubrics</router-link></li>
+							<li><router-link to="/rubrics">{{ $t('navigation.rubrics.all') }}</router-link></li>
+							<li><router-link to="/rubrics/activate">{{ $t('navigation.rubrics.activate') }}</router-link></li>
 							<div class="divider"></div>
-							<li><router-link to="/rubrics/content">Rubric Content</router-link></li>
+							<li><router-link to="/rubrics/content">{{ $t('navigation.rubrics.content') }}</router-link></li>
 						</ul>
 					</li>
 					<li class="divider-vertical"></li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Transmitters <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ $t('navigation.transmitters.title') }} <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><router-link to="/transmitters">All Transmitters</router-link></li>
-							<li><router-link to="/transmitters/map">Map</router-link></li>
+							<li><router-link to="/transmitters">{{ $t('navigation.transmitters.all') }}</router-link></li>
+							<li><router-link to="/transmitters/map">{{ $t('navigation.transmitters.map') }}</router-link></li>
 							<div class="divider"></div>
-							<li><router-link to="/transmitters/groups">Transmitter Groups</router-link></li>
+							<li><router-link to="/transmitters/groups">{{ $t('navigation.transmitters.groups') }}</router-link></li>
 						</ul>
 					</li>
 					<li class="divider-vertical"></li>
-					<li><router-link to="/nodes">Nodes</router-link></li>
+					<li><router-link to="/nodes">{{ $t('navigation.nodes') }}</router-link></li>
 					<li class="divider-vertical"></li>
-					<li><router-link to="/users">Users</router-link></li>
+					<li><router-link to="/users">{{ $t('navigation.users') }}</router-link></li>
 					<li class="divider-vertical"></li>
 				</ul>
 
