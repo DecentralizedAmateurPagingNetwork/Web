@@ -1,93 +1,49 @@
 {
-  "navigation": {
-	"calls": "Rufe",
-	"subscribers": "Abonnenten",
-	"rubrics": {
-	  "title": "Rubriken",
-	  "all": "Alle Rubriken",
-	  "activate": "Rubriken aktivieren",
-	  "content": "Rubriken Inhalt"
-	},
-	"transmitters": {
-	  "title": "Sender",
-	  "all": "Alle Sender",
-	  "map": "Karte",
-	  "groups": "Sendergruppen"
-	},
-	"nodes": "Knoten",
-	"users": "Nutzer",
-	"settings": "Einstellungen",
-	"login": "Anmelden",
-	"logout": "Abmelden"
-  },
-  "transmitter": {
-	"title": "Sender",
-	"table": {
-	  "caption": "Alle Sender",
-	  "callsign": "Rufzeichen",
-	  "node": "Knoten",
-	  "ipaddress": "IP Adresse",
-	  "owner": "Besitzer",
-	  "device": "Gerät",
-	  "status": "Status",
-	  "connectedsince": "Verbunden seit",
-	  "actions": "Aktionen"
-	},
-	"actions": {
-	  "newtransmitter": "Neuer Sender",
-	  "sendmailtoallowner": "Sende Email an alle Besitzer"
-	},
-	"statistics": {
-	  "title": "Statistiken",
-	  "totaltransmitters": "Gesamtzahl Sender",
-	  "online": "Online",
-	  "offline": "Offline",
-	  "wideragneonly": "Nur Weitbereichssender"
-	},
-	"information": {
-	  "title": "Information",
-	  "text": "HIER MUSS NOCH UEBERSETZT WERDEN...This overview shows all registered transmitters of the DAPNET network. Before you can connect your transmitter to one of the DAPNET-Nodes, it has to be registered by one of the admins. There are two classes of transmitters: Widerange (&gt; 1 Watt) and Personal (&lt;= 1 Watt). Why is there such a big number of offline transmitters? These are transmitters which have been registered in the past, but apparently are not online now. There is no information stored which transmitters should be online and which not.<br>Transmitters have one or multiple owners who can change the settings by themselves. Each transmitter is assigned to one or max. 16 timeslots. This is necessary as they transmit all on the same frequency, but not overlapping at the same time. Be aware to assign no timeslots to your transmitter that are already used in you coverage area. Contact one of the admins, if you need help."
-	}
-  },
-  "table": {
-	"search": "Suchen",
-	"page": "Seite",
-	"of": "von"
-  },
-  "home": {
-	"welcome": {
-	  "title": "Willkommen beim DAPNET Web!",
-	  "text": "The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts. It is the new and further developed version of the <a href=\"http://ham-pager.sourceforge.net\" target=\"_blank\">FunkrufMaster</a>. It consists of a decentral server cluster feeding paging data to distributed transmitters.<br> The most used frequency is 439.9875 MHz and the protocol is POCSAG. Common paging receivers are of type \"Skyper\", but there exist others as well. As it is used on amateur radio frequencies, commercial use is forbidden.<br> If you are a licensed amateur radio operator, get your login account now. We are happy for every new transmitter participating in the network. There is comprehensive documentation on the DAPNET Project available at the <a href=\"http://doku.hampager.de\" target=\"_blank\">DAPNET DokuWiki</a>."
-	},
-	"information": {
-	  "dapnet": {
-		"title": "Das DAPNET",
-		"projects": "Projekte"
-	  },
-	  "information": {
-		"title": "Informationen"
-	  },
-	  "statistics": {
-		"title": "Statistiken",
+	"navigation": {
 		"calls": "Rufe",
 		"subscribers": "Abonnenten",
-		"rubric-content": "Rubriken Inhalt",
-		"rubrics": "Rubriken",
-		"transmitters": "Sender",
+		"rubrics": {
+			"title": "Rubriken",
+			"all": "Alle Rubriken",
+			"activate": "Rubriken aktivieren",
+			"content": "Rubriken Inhalt"
+		},
+		"transmitters": {
+			"title": "Sender",
+			"all": "Alle Sender",
+			"map": "Karte",
+			"groups": "Sendergruppen"
+		},
 		"nodes": "Knoten",
-		"users": "Nutzer"
-	  }
-	}
-  },
-  "footer": {
-	"language": {
-	  "title": "Sprache",
-	  "english": "Englisch",
-	  "german": "Deutsch"
+		"users": "Nutzer",
+		"settings": "Einstellungen",
+		"login": "Anmelden",
+		"logout": "Abmelden"
 	},
-	"more": {
-	  "title": "Mehr",
-	  "faq": "FAQ"
+	"home": {
+		"welcome": {
+			"title": "Willkommen beim DAPNET Web!",
+			"text": "The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts. It is the new and further developed version of the <a href=\"http://ham-pager.sourceforge.net\" target=\"_blank\">FunkrufMaster</a>. It consists of a decentral server cluster feeding paging data to distributed transmitters.<br> The most used frequency is 439.9875 MHz and the protocol is POCSAG. Common paging receivers are of type \"Skyper\", but there exist others as well. As it is used on amateur radio frequencies, commercial use is forbidden.<br> If you are a licensed amateur radio operator, get your login account now. We are happy for every new transmitter participating in the network. There is comprehensive documentation on the DAPNET Project available at the <a href=\"http://doku.hampager.de\" target=\"_blank\">DAPNET DokuWiki</a>."
+		},
+		"information": {
+			"dapnet": {
+				"title": "Das DAPNET",
+				"projects": "Projekte"
+			},
+			"information": {
+				"title": "Informationen"
+			},
+			"statistics": {
+				"title": "Statistiken",
+				"calls": "Rufe",
+				"subscribers": "Abonnenten",
+				"rubric-content": "Rubriken Inhalt",
+				"rubrics": "Rubriken",
+				"transmitters": "Sender",
+				"nodes": "Knoten",
+				"users": "Nutzer"
+			}
+		}
 	},
 	"transmitter": {
 		"title": "Sender",
@@ -147,23 +103,24 @@
 			"check": "Prüfen"
 		}
 	},
-	"contact": {
-	  "title": "Kontaktiere uns",
-	  "twitter": "Twitter",
-	  "facebook": "Facebook",
-	  "contact": "Kontakt",
-	  "impress": "Impressum",
-	  "privacy": "Datenschutz"
+	"table": {
+		"search": "Suche",
+		"pagination": {
+			"page": "Seite",
+			"of": "von"
+		},
+		"actionbuttons": {
+			"edit": "Bearbeiten",
+			"delete": "Löschen",
+			"email": "E-Mail senden",
+			"rubrics": "Rubriken senden"
+		}
 	},
-	"versions": {
-	  "title": "Versionen",
-	  "check": "Prüfen"
+	"rest": {
+		"errors": {
+			"title": "Fehler",
+			"api-unreachable": "API-Server zur Zeit nicht erreichbar. Bitte versuchen Sie es später erneut.",
+			"http-error": "Unbehandelter HTTP Fehler {status}. Bitte versuchen Sie es später erneut."
+		}
 	}
-  },
-  "rest": {
-	"errors": {
-	  "api-unreachable": "API-Server zur Zeit nicht erreichbar. Bitte versuchen Sie es später erneut.",
-	  "http-error": "Unbehandelter HTTP Fehler {status}. Bitte versuchen Sie es später erneut."
-	}
-  }
 }

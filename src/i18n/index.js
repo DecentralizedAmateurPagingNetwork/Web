@@ -8,8 +8,7 @@ const i18n = new VueI18n({
 	fallbackLocale: 'en',
 	messages: {
 		'en': require('./en.json'),
-		'de': require('./de.json'),
-		'es': require('./es.json')
+		'de': require('./de.json')
 	}
 });
 

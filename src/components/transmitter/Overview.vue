@@ -121,16 +121,6 @@
 					return this.table.rows.filter(value => value.status.includes('ONLINE')).length;
 				}
 			},
-			chartData() {
-				return {
-					labels: [this.$i18n.t('transmitter.statistics.online');, this.$i18n.t('transmitter.statistics.online');],
-					datasets: [{
-						data: [this.statOnline, this.statTotal - this.statOnline],
-						backgroundColor: ['#469408', '#D9230F'],
-						hoverBackgroundColor: ['#469408', '#D9230F']
-					}]
-				};
-			},
 			chartDataDeviceTypes() {
 				let chartData = {
 					labels: [],
