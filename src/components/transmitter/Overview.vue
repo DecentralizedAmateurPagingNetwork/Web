@@ -32,8 +32,9 @@
 					<template v-if="table.rows">
 						<legend>Statistics</legend>
 						<ul class="list-group">
-							<li class="list-group-item"><b>Total Transmitters</b><span class="badge">{{ statTotal }}</span></li>
-							<li class="list-group-item"><chart-online-offline :chartData="chartData"></chart-online-offline></li>
+							<li class="list-group-item"><b>Widerange</b><span class="badge">{{ stats.widerange.online }} / {{ stats.widerange.offline }} / {{ stats.widerange.total }}</span></li>
+							<li class="list-group-item"><b>Personal</b><span class="badge">{{ stats.personal.online }} / {{ stats.personal.offline }} / {{ stats.personal.total }}</span></li>
+							<li class="list-group-item"><b>Total</b><span class="badge">{{ stats.total.online }} / {{ stats.total.offline }} / {{ stats.total.total }}</span></li>
 							<li class="list-group-item"><chart-transmitter-types :chartData="chartDataDeviceTypes"></chart-transmitter-types></li>
 						</ul>
 						<div class="checkbox">
@@ -49,12 +50,11 @@
 </template>
 
 <script>
-	import ChartOnlineOffline from '@/components/charts/OnlineOffline';
 	import ChartTransmitterTypes from '@/components/charts/TransmitterTypes';
 
 	export default {
 		components: {
-			ChartOnlineOffline, ChartTransmitterTypes
+			ChartTransmitterTypes
 		},
 		created() {
 			this.loadData();
@@ -106,28 +106,23 @@
 			};
 		},
 		computed: {
-			statTotal() {
-				if (this.settings.widerangeOnly) {
-					return this.table.rows.filter(value => value.usage === 'WIDERANGE').length;
-				} else {
-					return this.table.rows.length;
-				}
-			},
-			statOnline() {
-				if (this.settings.widerangeOnly) {
-					return this.table.rows.filter(value => value.status.includes('ONLINE') && value.usage === 'WIDERANGE').length;
-				} else {
-					return this.table.rows.filter(value => value.status.includes('ONLINE')).length;
-				}
-			},
-			chartData() {
+			stats() {
 				return {
-					labels: ['Online', 'Offline'],
-					datasets: [{
-						data: [this.statOnline, this.statTotal - this.statOnline],
-						backgroundColor: ['#469408', '#D9230F'],
-						hoverBackgroundColor: ['#469408', '#D9230F']
-					}]
+					widerange: {
+						online: this.table.rows.filter(value => value.status.includes('ONLINE') && value.usage === 'WIDERANGE').length,
+						offline: this.table.rows.filter(value => !value.status.includes('ONLINE') && value.usage === 'WIDERANGE').length,
+						total: this.table.rows.filter(value => value.usage === 'WIDERANGE').length
+					},
+					personal: {
+						online: this.table.rows.filter(value => value.status.includes('ONLINE') && value.usage === 'PERSONAL').length,
+						offline: this.table.rows.filter(value => !value.status.includes('ONLINE') && value.usage === 'PERSONAL').length,
+						total: this.table.rows.filter(value => value.usage === 'PERSONAL').length
+					},
+					total: {
+						online: this.table.rows.filter(value => value.status.includes('ONLINE')).length,
+						offline: this.table.rows.filter(value => !value.status.includes('ONLINE')).length,
+						total: this.table.rows.length
+					}
 				};
 			},
 			chartDataDeviceTypes() {
