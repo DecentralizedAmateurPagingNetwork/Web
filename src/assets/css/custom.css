@@ -32,6 +32,11 @@ textarea {
 	text-decoration: underline;
 }
 
+/* temporary fix until SweetAlert2 releases a new version */
+.swal2-container {
+	zoom: 1.5;
+}
+
 @media (min-width: 1330px) {
 	.container {
 		width: 1300px;
