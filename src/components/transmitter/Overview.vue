@@ -101,7 +101,7 @@
 					rows: false
 				},
 				settings: {
-					widerangeOnly: true
+					widerangeOnly: false
 				}
 			};
 		},

@@ -1,8 +1,8 @@
 <script>
-	import {Pie, mixins} from 'vue-chartjs';
+	import {Doughnut, mixins} from 'vue-chartjs';
 
 	export default {
-		mixins: [Pie, mixins.reactiveProp],
+		mixins: [Doughnut, mixins.reactiveProp],
 		data() {
 			return {
 				chartOptions: {
