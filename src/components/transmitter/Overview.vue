@@ -50,12 +50,11 @@
 </template>
 
 <script>
-	import ChartOnlineOffline from '@/components/charts/OnlineOffline';
 	import ChartTransmitterTypes from '@/components/charts/TransmitterTypes';
 
 	export default {
 		components: {
-			ChartOnlineOffline, ChartTransmitterTypes
+			ChartTransmitterTypes
 		},
 		created() {
 			this.loadData();
@@ -102,24 +101,29 @@
 					rows: false
 				},
 				settings: {
-					widerangeOnly: true
+					widerangeOnly: false
 				}
 			};
 		},
 		computed: {
-			statTotal() {
-				if (this.settings.widerangeOnly) {
-					return this.table.rows.filter(value => value.usage === 'WIDERANGE').length;
-				} else {
-					return this.table.rows.length;
-				}
-			},
-			statOnline() {
-				if (this.settings.widerangeOnly) {
-					return this.table.rows.filter(value => value.status.includes('ONLINE') && value.usage === 'WIDERANGE').length;
-				} else {
-					return this.table.rows.filter(value => value.status.includes('ONLINE')).length;
-				}
+			stats() {
+				return {
+					widerange: {
+						online: this.table.rows.filter(value => value.status.includes('ONLINE') && value.usage === 'WIDERANGE').length,
+						offline: this.table.rows.filter(value => !value.status.includes('ONLINE') && value.usage === 'WIDERANGE').length,
+						total: this.table.rows.filter(value => value.usage === 'WIDERANGE').length
+					},
+					personal: {
+						online: this.table.rows.filter(value => value.status.includes('ONLINE') && value.usage === 'PERSONAL').length,
+						offline: this.table.rows.filter(value => !value.status.includes('ONLINE') && value.usage === 'PERSONAL').length,
+						total: this.table.rows.filter(value => value.usage === 'PERSONAL').length
+					},
+					total: {
+						online: this.table.rows.filter(value => value.status.includes('ONLINE')).length,
+						offline: this.table.rows.filter(value => !value.status.includes('ONLINE')).length,
+						total: this.table.rows.length
+					}
+				};
 			},
 			chartDataDeviceTypes() {
 				let chartData = {
