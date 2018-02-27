@@ -3,14 +3,14 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>{{ $t('transmitter.title') }}</h1>
+					<h1>Transmitters</h1>
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-lg-9">
-				<h2>{{ $t('transmitter.table.caption') }}
+				<h2>All Transmitters
 					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': running }" @click="loadData"></i>
 				</h2>
 
@@ -22,27 +22,27 @@
 			<div class="col-lg-3">
 				<div class="actions well">
 					<template v-if="this.$store.getters.user.admin">
-						<legend>{{ $t('transmitter.table.actions') }}</legend>
+						<legend>Actions</legend>
 						<ul>
-							<li><router-link to="/transmitters/new">{{ $t('transmitter.actions.newtransmitter') }}</router-link></li>
-							<li><p class="linklike" @click="mailToAll">{{ $t('transmitter.actions.sendmailtoallowner') }}</p></li>
+							<li><router-link to="/transmitters/new">New Transmitter</router-link></li>
+							<li><p class="linklike" @click="mailToAll">Send a mail to all owners</p></li>
 						</ul>
 						<br/>
 					</template>
 					<template v-if="table.rows">
-						<legend>{{ $t('transmitter.statistics.title') }}</legend>
+						<legend>Statistics</legend>
 						<ul class="list-group">
-							<li class="list-group-item"><b>{{ $t('transmitter.statistics.totaltransmitters') }}</b><span class="badge">{{ statTotal }}</span></li>
+							<li class="list-group-item"><b>Total Transmitters</b><span class="badge">{{ statTotal }}</span></li>
 							<li class="list-group-item"><chart-online-offline :chartData="chartData"></chart-online-offline></li>
 							<li class="list-group-item"><chart-transmitter-types :chartData="chartDataDeviceTypes"></chart-transmitter-types></li>
 						</ul>
 						<div class="checkbox">
-							<label><input type="checkbox" v-model="settings.widerangeOnly">{{ $t('transmitter.statistics.widerangeonly') }}</label>
+							<label><input type="checkbox" v-model="settings.widerangeOnly"> Widerange-transmitter only</label>
 						</div>
 					</template>
 				</div>
-				<h2>{{ $t('transmitter.information.title') }}</h2>
-				<p v-html="$t('transmitter.information.text')"></p>
+				<h2>Information</h2>
+				<p>This overview shows all registered transmitters of the DAPNET network. Before you can connect your transmitter to one of the DAPNET-Nodes, it has to be registered by one of the admins. There are two classes of transmitters: Widerange (&gt; 1 Watt) and Personal (&lt;= 1 Watt). Why is there such a big number of offline transmitters? These are transmitters which have been registered in the past, but apparently are not online now. There is no information stored which transmitters "should" be online and which not.<br>Transmitters have one or multiple owners who can change the settings by themselves. Each transmitter is assigned to one or max. 16 timeslots. This is necessary as they transmit all on the same frequency, but not overlapping at the same time. Be aware to assign no timeslots to your transmitter that are already used in you coverage area. Contact one of the admins, if you need help.</p>
 			</div>
 		</div>
 	</div>
@@ -67,35 +67,35 @@
 					columns: [
 						{
 							id: 'name',
-							title: this.$i18n.t('transmitter.table.callsign');
+							title: 'Callsign'
 						},
 						{
 							id: 'nodeName',
-							title: this.$i18n.t('transmitter.table.node');
+							title: 'Node'
 						},
 						{
 							id: 'address',
-							title: this.$i18n.t('transmitter.table.ipaddress');
+							title: 'IP-Address'
 						},
 						{
 							id: 'ownerNames',
-							title: this.$i18n.t('transmitter.table.owner');
+							title: 'Owner'
 						},
 						{
 							id: 'deviceType',
-							title: this.$i18n.t('transmitter.table.device');
+							title: 'Device'
 						},
 						{
 							id: 'status',
-							title: this.$i18n.t('transmitter.table.status');
+							title: 'Status'
 						},
 						{
 							id: 'connectedSince',
-							title: this.$i18n.t('transmitter.table.connectedsince');
+							title: 'Connected since'
 						},
 						{
 							id: 'actions',
-							title: this.$i18n.t('transmitter.table.actions');
+							title: 'Actions'
 						}
 					],
 					rows: false
@@ -122,7 +122,7 @@
 			},
 			chartData() {
 				return {
-					labels: [this.$i18n.t('transmitter.statistics.online');, this.$i18n.t('transmitter.statistics.online');],
+					labels: ['Online', 'Offline'],
 					datasets: [{
 						data: [this.statOnline, this.statTotal - this.statOnline],
 						backgroundColor: ['#469408', '#D9230F'],
