@@ -24,7 +24,7 @@
 						<div class="form-group">
 							<label class="col-lg-2 control-label">Latitude / Longitude</label>
 							<div class="col-lg-3">
-								<input type="number" v-model.number="form.latitude.value" min="0" max="90" placeholder="0 - 90" class="form-control">
+								<input type="number" lang="en-150" v-model.number="form.latitude.value" min="0" max="90" placeholder="0 - 90" class="form-control">
 							</div>
 							<div class="col-lg-2">
 								<select class="form-control" v-model.number="form.latitude.orientation">
@@ -33,7 +33,7 @@
 								</select>
 							</div>
 							<div class="col-lg-3">
-								<input type="number" v-model.number="form.longitude.value" min="0" max="180" placeholder="0 - 180" class="form-control">
+								<input type="number" lang="en-150" v-model.number="form.longitude.value" min="0" max="180" placeholder="0 - 180" class="form-control">
 							</div>
 							<div class="col-lg-2">
 								<select class="form-control" v-model.number="form.longitude.orientation">
