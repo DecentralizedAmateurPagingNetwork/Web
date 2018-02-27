@@ -46,10 +46,10 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ this.$store.getters.user.name }} <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li v-if="this.$store.getters.isUserLoggedIn"><router-link :to="{ name: 'Edit User', params: { id: this.$store.getters.user.name }}">Settings</router-link></li>
+							<li v-if="this.$store.getters.isUserLoggedIn"><router-link :to="{ name: 'Edit User', params: { id: this.$store.getters.user.name }}">{{ $t('navigation.settings') }}</router-link></li>
 							<div v-if="this.$store.getters.isUserLoggedIn" class="divider"></div>
-							<li v-if="!this.$store.getters.isUserLoggedIn"><router-link to="/login">Login</router-link></li>
-							<li v-if="this.$store.getters.isUserLoggedIn"><router-link to="/logout">Logout</router-link></li>
+							<li v-if="!this.$store.getters.isUserLoggedIn"><router-link to="/login">{{ $t('navigation.login') }}</router-link></li>
+							<li v-if="this.$store.getters.isUserLoggedIn"><router-link to="/logout">{{ $t('navigation.logout') }}</router-link></li>
 						</ul>
 					</li>
 				</ul>
