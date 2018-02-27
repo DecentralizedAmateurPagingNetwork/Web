@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Transmitters</h1>
+					<h1>{{ $t('transmitter.title') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -12,36 +12,36 @@
 			<div class="col-lg-9">
 				<form class="form-horizontal well">
 					<fieldset>
-						<legend v-if="!this.$route.params.id">New Transmitter</legend>
-						<legend v-if="this.$route.params.id">Edit Transmitter</legend>
+						<legend v-if="!this.$route.params.id">{{ $t('transmitter.new.newtransmitter') }}</legend>
+						<legend v-if="this.$route.params.id">{{ $t('transmitter.new.edittransmitter') }}</legend>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Callsign</label>
+							<label class="col-lg-2 control-label">{{ $t('transmitter.new.callsign.title') }}</label>
 							<div class="col-lg-5">
 								<input type="text" v-model="form.name" class="form-control">
-								<span class="help-block">Enter a valid amateur radio callsign of this transmitter. It will be also used for the 10 minute interval transmitter identification message to fulfill the law (at least the German law).</span>
-								<span v-if="editing" class="help-block">Changing this name will create a duplication and <i>not</i> change the element's name.</span>
+								<span class="help-block">{{ $t('transmitter.new.callsign.help') }}</span>
+								<span v-if="editing" class="help-block"><p v-html="$t('transmitter.new.callsignhelp.edit')"></p></span>  <!-- NOT SURE -->
 							</div>
 							<div class="col-lg-5">
 								<multiselect v-model="formData.hamnetDb.selected" :options="formData.hamnetDb.all" :multiple="false" :close-on-select="true" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
-								<span class="help-block">Easy import of stations from hamnetdb.net. Location data of the selected transmitter site will be copied into the form.</span>
+								<span class="help-block">{{ $t('transmitter.new.import.help') }}</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Password</label>
+							<label class="col-lg-2 control-label">{{ $t('transmitter.new.password.title') }}</label>
 							<div class="col-lg-10">
 								<input type="text" v-model.trim="form.password" class="form-control">
-								<span class="help-block">Enter a authentication password for this transmitter. In the UniPager webinterface it’s called Auth Key.</span>
+								<span class="help-block">{{ $t('transmitter.new.password.help') }}</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Latitude / Longitude</label>
+							<label class="col-lg-2 control-label">{{ $t('transmitter.new.latlong.title') }}</label>
 							<div class="col-lg-3">
 								<input type="number" lang="en-150" v-model.number="form.latitude.value" min="0" max="90" placeholder="0 - 90" class="form-control">
 							</div>
 							<div class="col-lg-2">
 								<select class="form-control" v-model.number="form.latitude.orientation">
-									<option value="1">North</option>
-									<option value="-1">South</option>
+									<option value="1">{{ $t('transmitter.new.latlong.north') }}</option>
+									<option value="-1">{{ $t('transmitter.new.latlong.south') }}</option>
 								</select>
 							</div>
 							<div class="col-lg-3">
@@ -49,58 +49,58 @@
 							</div>
 							<div class="col-lg-2">
 								<select class="form-control" v-model.number="form.longitude.orientation">
-									<option value="1">East</option>
-									<option value="-1">West</option>
+									<option value="1">{{ $t('transmitter.new.latlong.east') }}</option>
+									<option value="-1">{{ $t('transmitter.new.latlong.west') }}</option>
 								</select>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Usage</label>
+							<label class="col-lg-2 control-label">{{ $t('transmitter.new.usage.title') }}</label>
 							<div class="col-lg-10">
 								<select class="form-control" v-model="form.usage">
-									<option value="PERSONAL">Personal</option>
-									<option value="WIDERANGE">Widerange</option>
+									<option value="PERSONAL">{{ $t('transmitter.new.usage.personal') }}</option>
+									<option value="WIDERANGE">{{ $t('transmitter.new.usage.widerange') }}</option>
 								</select>
-								<span class="help-block">For classification of the transmitters, there are two categories: Personal (Transmitters with low output power like RasPager) and Wide Range (Higher output power and elevated location site).</span>
+								<span class="help-block">{{ $t('transmitter.new.usage.help') }}</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Antenna Type</label>
+							<label class="col-lg-2 control-label">{{ $t('transmitter.new.antennatype.title') }}</label>
 							<div class="col-lg-5">
 								<select class="form-control" v-model="form.antennatype">
-									<option value="OMNI">Omni</option>
-									<option value="DIRECTIONAL">Directional</option>
+									<option value="OMNI">{{ $t('transmitter.new.antennatype.omni') }}</option>
+									<option value="DIRECTIONAL">{{ $t('transmitter.new.antennatype.directional') }}</option>
 								</select>
-								<span class="help-block">Please select if you have a omnidirectional antenna (e.g. X-50) or a directional antenna (e.g. Yagi).</span>
+								<span class="help-block">{{ $t('transmitter.new.antennatype.help') }}</span>
 							</div>
 							<div class="col-lg-5">
 								<input type="number" v-model.number="form.antennadirection" :disabled="form.antennatype === 'OMNI'" min="0" max="359" placeholder="0 - 359" class="form-control">
-								<span class="help-block"><b>Antenna main beam direction</b>: Enter the antenna main beam direction in degrees according to "True North" (in German "rechtweisend Nord").</span>
+								<span class="help-block"><p v-html="$t('transmitter.new.antennadirection.help')"></p></span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Other</label>
+							<label class="col-lg-2 control-label">{{ $t('transmitter.new.antennatype.other') }}</label>
 							<div class="col-lg-5">
 								<input type="number" v-model.number="form.power" min="0" max="200" placeholder="0 - 200" class="form-control">
-								<span class="help-block"><b>Transmitter Power</b>: Enter the transmitter output power in Watts including your cable losses.</span>
+								<span class="help-block"><p v-html="$t('transmitter.new.other.power.help')"></p></span>
 							</div>
 							<div class="col-lg-5">
 								<input type="number" v-model.number="form.antennalevel" min="0" max="1000" placeholder="0 - 1000" class="form-control">
-								<span class="help-block"><b>Antenna elevation over ground</b>: Enter the antenna elevation over ground; NOT over NN (!) in meters.</span>
+								<span class="help-block"><p v-html="$t('transmitter.new.other.antennalevel.help')"></p></span>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-lg-5 col-lg-offset-2">
 								<input type="number" v-model.number="form.antennagain" min="-50" max="80" placeholder="-50 - 80" class="form-control">
-								<span class="help-block"><b>Antenna gain</b>: Enter the antenna gain in the main lobe direction for directional antennas and the average gain for omnidirectional antennas in dBi (dBi: Gain over isotropic radiator).</span>
+								<span class="help-block"><p v-html="$t('transmitter.new.other.antennagain.help')"></p></span>
 							</div>
 							<div class="col-lg-5">
 								<input type="number" v-model.number="form.identificationAddress" min="0" max="2097151" placeholder="0 - 2097151" class="form-control">
-								<span class="help-block"><b>Transmitter identification RIC</b>: Enter a RIC (default value is 1) which will be used to generate an artificial paging message containing the amateur radio callsign as given in this form.</span>
+								<span class="help-block"><p v-html="$t('transmitter.new.other.txidentric.help')"></p></span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Timeslots</label>
+							<label class="col-lg-2 control-label">{{ $t('transmitter.new.timeslots.title') }}</label>
 							<div class="col-lg-10">
 								<table style="width: 100%">
 									<tbody style="text-align: center">
@@ -142,28 +142,21 @@
 										</tr>
 									</tbody>
 								</table>
-								<span class="help-block">
-									As all transmitters use the same frequency a time division multiplex access scheme is used.
-									There are 16 timeslots available.
-									Assign the slots of this transmitter according to you surrounding transmitters in your neighborhood without overlapping timeslots that are assigned to more than one transmitter.
-									You can use the transmitter map to check already assigned timeslots of adjacent transmitters.
-									In case that you cannot fulfill your requirements, contact the adjacent transmitter owners and try to get an agreement.
-									Normally four 4 or less timeslots per transmitter are more than enough.
-								</span>
+								<span class="help-block">{{ $t('transmitter.new.timeslots.help') }}</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Owner</label>
+							<label class="col-lg-2 control-label">{{ $t('transmitter.new.owner.title') }}</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.owners" :options="formData.users" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
-								<span class="help-block">If you are an owner, you can change the parameters for this transmitter.</span>
+								<span class="help-block">{{ $t('transmitter.new.owner.help') }}/span>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
-								<button type="submit" @click="submitForm" class="btn btn-primary">Submit</button>
+								<button type="submit" @click="submitForm" class="btn btn-primary">{{ $t('general.submit') }}</button>
 								<router-link to="/transmitters">
-									<button class="btn btn-default">Abort</button>
+									<button class="btn btn-default">{{ $t('general.abort') }}</button>
 								</router-link>
 							</div>
 						</div>
@@ -171,7 +164,7 @@
 				</form>
 			</div>
 			<div class="col-lg-3">
-				<h2>Information</h2>
+				<h2>{{ $t('transmitter.new.table.title') }}</h2>
 				<ul class="list-group">
 					<li v-if="nodeInformation.device.type" class="list-group-item"><b>Device</b><span class="badge">{{ nodeInformation.device.type }}</span></li>
 					<li v-if="nodeInformation.device.version" class="list-group-item"><b>Version</b><span class="badge">{{ nodeInformation.device.version }}</span></li>
@@ -185,7 +178,7 @@
 						</ul>
 					</li>
 				</ul>
-				<p>This table shows the registered paging transmitters, their online status and additional information. Personal transmitters have low output power and a very small coverage. Wide range transmitters are usually installed at elevated locations leading to a wide coverage area.</p>
+				<p>{{ $t('transmitter.new.table.description') }}</p>
 			</div>
 		</div>
 	</div>
