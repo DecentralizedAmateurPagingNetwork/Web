@@ -15,7 +15,10 @@
 			"groups": "Transmitter Groups"
 		},
 		"nodes": "Nodes",
-		"users": "Users"
+		"users": "Users",
+		"settings": "Settings",
+		"login": "Login",
+		"logout": "Logout"
 	},
 	"home": {
 		"welcome": {

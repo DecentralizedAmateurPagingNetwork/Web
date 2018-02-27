@@ -15,7 +15,10 @@
 			"groups": "Sendergruppen"
 		},
 		"nodes": "Knoten",
-		"users": "Nutzer"
+		"users": "Nutzer",
+		"settings": "Einstellungen",
+		"login": "Anmelden",
+		"logout": "Abmelden"
 	},
 	"home": {
 		"welcome": {
