@@ -38,6 +38,12 @@ textarea {
 	}
 }
 
+@media (min-width: 1430px) {
+	.container {
+		width: 1400px;
+	}
+}
+
 @media (max-width: 1200px) {
 	.actions.well {
 		margin-top: 1em

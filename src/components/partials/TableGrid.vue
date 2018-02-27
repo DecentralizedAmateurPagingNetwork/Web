@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-4">Search: <input v-model="searchQuery" style="width: 15em"></div>
 
-			<div class="col-lg-3 col-lg-push-5">
+			<div class="col-lg-4 col-lg-push-4">
 				<div id="paginationHolder">
 					<button class="btn btn-default btn-xs" @click="movePages(-1)"><i class="fa fa-arrow-left"></i></button>
 					&nbsp;Page <input v-model.number="gotoPage" type="number" min="1" :max="totalPages" style="width: 5em"> of {{ totalPages }}&nbsp;
@@ -144,7 +144,13 @@
 				}
 			},
 			timestampToLocaleString(v) {
-				return new Date(v).toLocaleString();
+				return new Date(v).toLocaleString('de-DE', {
+					day: '2-digit',
+					month: '2-digit',
+					year: '2-digit',
+					hour: '2-digit',
+					minute: '2-digit'
+				});
 			}
 		},
 		methods: {
