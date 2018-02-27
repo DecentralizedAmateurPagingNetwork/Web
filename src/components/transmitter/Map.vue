@@ -324,6 +324,14 @@
 			removeAllCoverage() {
 				this.coverageLayers = [];
 			},
+			removeOrphanedCoverageLayers() {
+				this.coverageLayers.forEach(layer => {
+					let layerName = layer.name.substring(2);
+					if (!layerName.includes(this.searchQuery.toLowerCase())) {
+						this.coverageLayers = this.coverageLayers.filter(item => item !== layer);
+					}
+				});
+			},
 			skipThisTransmitter(transmitter) {
 				// check for hideOffline-setting
 				if (this.settings.onlineOnly && transmitter.status !== 'ONLINE') {
@@ -351,6 +359,7 @@
 		watch: {
 			'searchQuery'() {
 				this.createMap();
+				this.removeOrphanedCoverageLayers();
 			},
 			'settings.onlineOnly'() {
 				this.createMap();
