@@ -3,14 +3,14 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Transmitters</h1>
+					<h1>{{ $t('transmitter.title') }}</h1>
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-lg-9">
-				<h2>All Transmitters
+				<h2>{{ $t('transmitter.table.caption') }}
 					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': running }" @click="loadData"></i>
 				</h2>
 
@@ -22,39 +22,39 @@
 			<div class="col-lg-3">
 				<div class="actions well">
 					<template v-if="this.$store.getters.user.admin">
-						<legend>Actions</legend>
+						<legend>{{ $t('transmitter.table.actions') }}</legend>
 						<ul>
-							<li><router-link to="/transmitters/new">New Transmitter</router-link></li>
-							<li><p class="linklike" @click="mailToAll">Send a mail to all owners</p></li>
+							<li><router-link to="/transmitters/new">{{ $t('transmitter.actions.newtransmitter') }}</router-link></li>
+							<li><p class="linklike" @click="mailToAll">{{ $t('transmitter.actions.sendmailtoallowner') }}</p></li>
 						</ul>
 						<br/>
 					</template>
 					<template v-if="table.rows">
-						<legend>Statistics</legend>
+						<legend>{{ $t('transmitter.statistics.title') }}</legend>
 						<ul class="list-group">
-							<li class="list-group-item"><b>Widerange</b><span class="badge">{{ stats.widerange.online }} / {{ stats.widerange.offline }} / {{ stats.widerange.total }}</span></li>
-							<li class="list-group-item"><b>Personal</b><span class="badge">{{ stats.personal.online }} / {{ stats.personal.offline }} / {{ stats.personal.total }}</span></li>
-							<li class="list-group-item"><b>Total</b><span class="badge">{{ stats.total.online }} / {{ stats.total.offline }} / {{ stats.total.total }}</span></li>
+							<li class="list-group-item"><b>{{ $t('transmitter.statistics.totaltransmitters') }}</b><span class="badge">{{ statTotal }}</span></li>
+							<li class="list-group-item"><chart-online-offline :chartData="chartData"></chart-online-offline></li>
 							<li class="list-group-item"><chart-transmitter-types :chartData="chartDataDeviceTypes"></chart-transmitter-types></li>
 						</ul>
 						<div class="checkbox">
-							<label><input type="checkbox" v-model="settings.widerangeOnly"> Widerange-transmitter only</label>
+							<label><input type="checkbox" v-model="settings.widerangeOnly">{{ $t('transmitter.statistics.widerangeonly') }}</label>
 						</div>
 					</template>
 				</div>
-				<h2>Information</h2>
-				<p>This overview shows all registered transmitters of the DAPNET network. Before you can connect your transmitter to one of the DAPNET-Nodes, it has to be registered by one of the admins. There are two classes of transmitters: Widerange (&gt; 1 Watt) and Personal (&lt;= 1 Watt). Why is there such a big number of offline transmitters? These are transmitters which have been registered in the past, but apparently are not online now. There is no information stored which transmitters "should" be online and which not.<br>Transmitters have one or multiple owners who can change the settings by themselves. Each transmitter is assigned to one or max. 16 timeslots. This is necessary as they transmit all on the same frequency, but not overlapping at the same time. Be aware to assign no timeslots to your transmitter that are already used in you coverage area. Contact one of the admins, if you need help.</p>
+				<h2>{{ $t('transmitter.information.title') }}</h2>
+				<p v-html="$t('transmitter.information.text')"></p>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+	import ChartOnlineOffline from '@/components/charts/OnlineOffline';
 	import ChartTransmitterTypes from '@/components/charts/TransmitterTypes';
 
 	export default {
 		components: {
-			ChartTransmitterTypes
+			ChartOnlineOffline, ChartTransmitterTypes
 		},
 		created() {
 			this.loadData();
@@ -67,62 +67,67 @@
 					columns: [
 						{
 							id: 'name',
-							title: 'Callsign'
+							title: this.$i18n.t('transmitter.table.callsign');
 						},
 						{
 							id: 'nodeName',
-							title: 'Node'
+							title: this.$i18n.t('transmitter.table.node');
 						},
 						{
 							id: 'address',
-							title: 'IP-Address'
+							title: this.$i18n.t('transmitter.table.ipaddress');
 						},
 						{
 							id: 'ownerNames',
-							title: 'Owner'
+							title: this.$i18n.t('transmitter.table.owner');
 						},
 						{
 							id: 'deviceType',
-							title: 'Device'
+							title: this.$i18n.t('transmitter.table.device');
 						},
 						{
 							id: 'status',
-							title: 'Status'
+							title: this.$i18n.t('transmitter.table.status');
 						},
 						{
 							id: 'connectedSince',
-							title: 'Connected since'
+							title: this.$i18n.t('transmitter.table.connectedsince');
 						},
 						{
 							id: 'actions',
-							title: 'Actions'
+							title: this.$i18n.t('transmitter.table.actions');
 						}
 					],
 					rows: false
 				},
 				settings: {
-					widerangeOnly: false
+					widerangeOnly: true
 				}
 			};
 		},
 		computed: {
-			stats() {
+			statTotal() {
+				if (this.settings.widerangeOnly) {
+					return this.table.rows.filter(value => value.usage === 'WIDERANGE').length;
+				} else {
+					return this.table.rows.length;
+				}
+			},
+			statOnline() {
+				if (this.settings.widerangeOnly) {
+					return this.table.rows.filter(value => value.status.includes('ONLINE') && value.usage === 'WIDERANGE').length;
+				} else {
+					return this.table.rows.filter(value => value.status.includes('ONLINE')).length;
+				}
+			},
+			chartData() {
 				return {
-					widerange: {
-						online: this.table.rows.filter(value => value.status.includes('ONLINE') && value.usage === 'WIDERANGE').length,
-						offline: this.table.rows.filter(value => !value.status.includes('ONLINE') && value.usage === 'WIDERANGE').length,
-						total: this.table.rows.filter(value => value.usage === 'WIDERANGE').length
-					},
-					personal: {
-						online: this.table.rows.filter(value => value.status.includes('ONLINE') && value.usage === 'PERSONAL').length,
-						offline: this.table.rows.filter(value => !value.status.includes('ONLINE') && value.usage === 'PERSONAL').length,
-						total: this.table.rows.filter(value => value.usage === 'PERSONAL').length
-					},
-					total: {
-						online: this.table.rows.filter(value => value.status.includes('ONLINE')).length,
-						offline: this.table.rows.filter(value => !value.status.includes('ONLINE')).length,
-						total: this.table.rows.length
-					}
+					labels: [this.$i18n.t('transmitter.statistics.online');, this.$i18n.t('transmitter.statistics.online');],
+					datasets: [{
+						data: [this.statOnline, this.statTotal - this.statOnline],
+						backgroundColor: ['#469408', '#D9230F'],
+						hoverBackgroundColor: ['#469408', '#D9230F']
+					}]
 				};
 			},
 			chartDataDeviceTypes() {
