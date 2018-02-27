@@ -50,11 +50,12 @@
 </template>
 
 <script>
+	import ChartOnlineOffline from '@/components/charts/OnlineOffline';
 	import ChartTransmitterTypes from '@/components/charts/TransmitterTypes';
 
 	export default {
 		components: {
-			ChartTransmitterTypes
+			ChartOnlineOffline, ChartTransmitterTypes
 		},
 		created() {
 			this.loadData();
@@ -101,28 +102,33 @@
 					rows: false
 				},
 				settings: {
-					widerangeOnly: false
+					widerangeOnly: true
 				}
 			};
 		},
 		computed: {
-			stats() {
+			statTotal() {
+				if (this.settings.widerangeOnly) {
+					return this.table.rows.filter(value => value.usage === 'WIDERANGE').length;
+				} else {
+					return this.table.rows.length;
+				}
+			},
+			statOnline() {
+				if (this.settings.widerangeOnly) {
+					return this.table.rows.filter(value => value.status.includes('ONLINE') && value.usage === 'WIDERANGE').length;
+				} else {
+					return this.table.rows.filter(value => value.status.includes('ONLINE')).length;
+				}
+			},
+			chartData() {
 				return {
-					widerange: {
-						online: this.table.rows.filter(value => value.status.includes('ONLINE') && value.usage === 'WIDERANGE').length,
-						offline: this.table.rows.filter(value => !value.status.includes('ONLINE') && value.usage === 'WIDERANGE').length,
-						total: this.table.rows.filter(value => value.usage === 'WIDERANGE').length
-					},
-					personal: {
-						online: this.table.rows.filter(value => value.status.includes('ONLINE') && value.usage === 'PERSONAL').length,
-						offline: this.table.rows.filter(value => !value.status.includes('ONLINE') && value.usage === 'PERSONAL').length,
-						total: this.table.rows.filter(value => value.usage === 'PERSONAL').length
-					},
-					total: {
-						online: this.table.rows.filter(value => value.status.includes('ONLINE')).length,
-						offline: this.table.rows.filter(value => !value.status.includes('ONLINE')).length,
-						total: this.table.rows.length
-					}
+					labels: [this.$i18n.t('transmitter.statistics.online');, this.$i18n.t('transmitter.statistics.online');],
+					datasets: [{
+						data: [this.statOnline, this.statTotal - this.statOnline],
+						backgroundColor: ['#469408', '#D9230F'],
+						hoverBackgroundColor: ['#469408', '#D9230F']
+					}]
 				};
 			},
 			chartDataDeviceTypes() {
