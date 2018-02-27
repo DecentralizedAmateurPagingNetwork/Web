@@ -1,6 +1,6 @@
 <template>
 	<div v-if="message" class="alert alert-danger">
-		<h4>Error</h4>
+		<h4>{{ $t('rest.errors.title') }}</h4>
 		{{ message }}
 	</div>
 </template>

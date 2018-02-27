@@ -1,12 +1,12 @@
 <template>
 	<div>
 		<div class="row">
-			<div class="col-lg-4">Search: <input v-model="searchQuery" style="width: 15em"></div>
+			<div class="col-lg-4">{{ $t('table.search') }}: <input v-model="searchQuery" style="width: 15em"></div>
 
 			<div class="col-lg-4 col-lg-push-4">
 				<div id="paginationHolder">
 					<button class="btn btn-default btn-xs" @click="movePages(-1)"><i class="fa fa-arrow-left"></i></button>
-					&nbsp;Page <input v-model.number="gotoPage" type="number" min="1" :max="totalPages" style="width: 5em"> of {{ totalPages }}&nbsp;
+					&nbsp;{{ $t('table.pagination.page') }} <input v-model.number="gotoPage" type="number" min="1" :max="totalPages" style="width: 5em"> {{ $t('table.pagination.of') }} {{ totalPages }}&nbsp;
 					<button class="btn btn-default btn-xs" @click="movePages(1)"><i class="fa fa-arrow-right"></i></button>
 				</div>
 			</div>

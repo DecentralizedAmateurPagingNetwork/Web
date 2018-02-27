@@ -73,8 +73,22 @@
 			"check": "Check"
 		}
 	},
+	"table": {
+		"search": "Search",
+		"pagination": {
+			"page": "Page",
+			"of": "of"
+		},
+		"actionbuttons": {
+			"edit": "Edit",
+			"delete": "Delete",
+			"email": "Send email",
+			"rubrics": "Send rubrics"
+		}
+	},
 	"rest": {
 		"errors": {
+			"title": "Error",
 			"api-unreachable": "Unable to reach API server. Please try again later.",
 			"http-error": "Unhandled HTTP error {status}. Please try again later."
 		}

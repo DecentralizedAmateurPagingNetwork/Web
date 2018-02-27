@@ -73,8 +73,22 @@
 			"check": "Prüfen"
 		}
 	},
+	"table": {
+		"search": "Suche",
+		"pagination": {
+			"page": "Seite",
+			"of": "von"
+		},
+		"actionbuttons": {
+			"edit": "Bearbeiten",
+			"delete": "Löschen",
+			"email": "E-Mail senden",
+			"rubrics": "Rubriken senden"
+		}
+	},
 	"rest": {
 		"errors": {
+			"title": "Fehler",
 			"api-unreachable": "API-Server zur Zeit nicht erreichbar. Bitte versuchen Sie es später erneut.",
 			"http-error": "Unbehandelter HTTP Fehler {status}. Bitte versuchen Sie es später erneut."
 		}
