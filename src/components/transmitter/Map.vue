@@ -3,14 +3,14 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Map</h1>
+					<h1>{{ $t('transmitter.map.title') }}</h1>
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-lg-12">
-				<div>Search: <input v-model="searchQuery"></div>
+				<div>{{ $t('general.search') }}: <input v-model="searchQuery"></div>
 				<v-map ref="leafletMap" :zoom="zoom" :center="center" style="height: 40em; margin-top: 1em">
 					<v-group v-for="item in coverageLayers" :key="item.name">
 						<v-image-overlay :url="item.url" :bounds="item.bounds" :opacity="0.8"></v-image-overlay>
@@ -26,22 +26,22 @@
 
 		<div class="row">
 			<div class="col-lg-8">
-				<h2>Settings</h2>
+				<h2>{{ $t('transmitter.settings.title') }}</h2>
 				<div class="checkbox">
-					<label><input type="checkbox" v-model="settings.onlineOnly"> Show online transmitters only</label><br />
-					<label><input type="checkbox" v-model="settings.widerangeOnly"> Show Widerange-transmitter only</label><br /><br />
-					<label><input type="checkbox" v-model="settings.timeslot.active"> Show transmitters by timeslots </label>
+					<label><input type="checkbox" v-model="settings.onlineOnly"> {{ $t('transmitter.map.checkbox.showonlineonly') }}</label><br />
+					<label><input type="checkbox" v-model="settings.widerangeOnly"> {{ $t('transmitter.map.checkbox.showwiderangeonly') }}</label><br /><br />
+					<label><input type="checkbox" v-model="settings.timeslot.active"> {{ $t('transmitter.map.checkbox.showtimeslot') }}</label>
 						<input type="text" placeholder="timeslots" v-model="settings.timeslot.input" :disabled="!settings.timeslot.active"><br /><br />
-					<label><input type="checkbox" v-model="settings.showNodes"> Show nodes</label><br />
-					<label><input type="checkbox" v-model="settings.showLines" :disabled="!settings.showNodes"> Show line from transmitter to node</label>
+					<label><input type="checkbox" v-model="settings.showNodes"> {{ $t('transmitter.map.checkbox.shownodes') }}</label><br />
+					<label><input type="checkbox" v-model="settings.showLines" :disabled="!settings.showNodes"> {{ $t('transmitter.map.checkbox.shownodeline') }}</label>
 				</div>
 			</div>
 			<div class="col-lg-4">
-				<h2>Actions</h2>
+				<h2>{{ $t('transmitter.map.actions.title') }}</h2>
 				<div class="checkbox">
 					<ul>
-						<li><p class="linklike" @click="showAllCoverage">Show all coverage-overlays</p></li>
-						<li><p class="linklike" @click="removeAllCoverage">Remove all coverage-overlays</p></li>
+						<li><p class="linklike" @click="showAllCoverage">{{ $t('transmitter.map.actions.showallcoverage') }}</p></li>
+						<li><p class="linklike" @click="removeAllCoverage">{{ $t('transmitter.map.actions.removeallcoverage') }}</p></li>
 					</ul>
 				</div>
 			</div>

@@ -138,7 +138,25 @@
 			  	"title": "Information",
 			  	"description": "This table shows the registered paging transmitters, their online status and additional information. Personal transmitters have low output power and a very small coverage. Wide range transmitters are usually installed at elevated locations leading to a wide coverage area."
 			}
-	  	}
+	  	},
+	  	"map": {
+		  	"title": "Map",
+		  	"settings": {
+			  "title": "Settings"
+			},
+		  	"checkbox": {
+			  	"showonlineonly": "Show online transmitters only",
+			  	"showwiderangeonly": "Show Widerange-transmitter only",
+			  	"showbytimeslot": "Show transmitters by timeslots",
+			  	"shownodes": "Show nodes",
+			  	"shownodeline": "Show line from transmitter to node"
+			},
+		  	"actions": {
+			  	"title": "Actions",
+			  	"showallcoverage": "Show all coverage-overlays",
+			  	"removeallcoverage": "Remove all coverage-overlays"
+			}
+		}
 	},
 	"footer": {
 		"language": {
@@ -190,6 +208,7 @@
 	},
 	"general": {
 	  "submit": "Submit",
-	"abort": "Abort"
+	  "abort": "Abort",
+	  "search": "Search"
   }
 }
