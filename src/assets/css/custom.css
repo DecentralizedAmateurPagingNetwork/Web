@@ -33,8 +33,8 @@ textarea {
 }
 
 /* temporary fix until SweetAlert2 releases a new version */
-.swal2-container {
-	zoom: 1.5;
+.swal2-popup {
+	font-size: 1.6rem !important;
 }
 
 @media (min-width: 1330px) {
