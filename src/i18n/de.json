@@ -72,89 +72,89 @@
 		},
 		"information": {
 			"title": "Informationen",
-			"text": "TODO: This overview shows all registered transmitters of the DAPNET network. Before you can connect your transmitter to one of the DAPNET-Nodes, it has to be registered by one of the admins. There are two classes of transmitters: Widerange (&gt; 1 Watt) and Personal (&lt;= 1 Watt). Why is there such a big number of offline transmitters? These are transmitters which have been registered in the past, but apparently are not online now. There is no information stored which transmitters \"should\" be online and which not.<br>Transmitters have one or multiple owners who can change the settings by themselves. Each transmitter is assigned to one or max. 16 timeslots. This is necessary as they transmit all on the same frequency, but not overlapping at the same time. Be aware to assign no timeslots to your transmitter that are already used in you coverage area. Contact one of the admins, if you need help."
+			"text": "Diese Übersicht zeigt alle im DAPNET angemeldeten Sender. Bevor ein Sender mit einem der DAPNET Knoten verbunden werden kann, muss dieser erst von einem Administrator angelegt werden.<br />Es gibt zwei Klassen von Sendern: Weitbereichssender (&gt; 1 Watt) und persönliche Sender (&lt;= 1 Watt).<br />Warum gibt es eine solch große Anzahl an Sendern, die offline sind? Diese Sender wurden meist in der Vergangenheit angelegt wurden, aber zur Zeit offensichtlich nicht betrieben werden. Es gibt keine Festlegung, welches Sender online sein \"sollten\" und welche nicht.<br />Sender haben einen oder mehrere Besitzer, die die Einstellungen selbstständig ändern können. Jeder Sender hat 1 bis max. 16 Zeitschlitzen zugewiesen. Dies ist notwendig, da alle Sender auf der gleichen Frequenz. Eine überlappende Zeitschlitzvergabe in der Ausleuchtung eines Bereiches zwischen den Sendern ist streng zu vermeiden. Daher bitte keine Zeitschlitze einem Sender zuordnen, die bereit von anderen Sendern im Abdeckgungsbereich seines Senders benutzt werden. Bitte Kontakt mit <code>support [at] hampager.de</code> aufnehmen, wenn es Unklarheiten oder Fragen gibt."
 		},
 		"new": {
 			"newtransmitter": "Neuer Sender",
 			"edittransmitter": "Ändere Sender",
 			"callsign": {
 			"title": "Rufzeichen",
-			"help": "Enter a valid amateur radio callsign of this transmitter. It will be also used for the 10 minute interval transmitter identification message to fulfill the law (at least the German law).",
-			"helpedit": "Changing this name will create a duplication and <i>not</i> change the element's name."
+			"help": "Bitte hier ein gültiges Amateurfunk-Rufzeichen des Senders eingeben. Dieser Eintrag wird ebenfalls dazu verwendet, die 10 minütige Rufzeichenaussendung durch den Sender entsprechend der deutschen Gesetzgebung zu erzeugen.",
+			"helpedit": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Senders."
 			},
 			"import": {
-			  "help": "Easy import of stations from hamnetdb.net. Location data of the selected transmitter site will be copied into the form."
+			  "help": "Einfache Übernahme der Sender-Position von hamnetdb.net. Die Position des ausgewählten Eintrags wird automatisch in das Formular eingefügt."
 			},
 			"password": {
-				"title": "Password",
-			  	"help": "Enter a authentication password for this transmitter. In the UniPager webinterface it’s called Auth Key."
+				"title": "Passwort",
+			  	"help": "Bitte eine Authentifizierungspasswort für diesen Sender festlegen. Im UniPager Webinterface wird dies \"Auth Key\" genannt."
 			},
 			"latlong": {
-		  		"title": "Latitude / Longitude",
-		 		"north": "North",
-		  		"south": "South",
-		 		 "east": "East",
+		  		"title": "Breite / Länge",
+		 		"north": "Nord",
+		  		"south": "Süd",
+		 		 "east": "Ost",
 		 		 "west": "West"
 			},
 			"usage": {
-		  		"title": "Usage",
-		  		"personal": "Personal",
-		  		"widerange": "Widerange"
-		  		"help": "For classification of the transmitters, there are two categories: Personal (Transmitters with low output power like RasPager) and Wide Range (Higher output power and elevated location site)."
+		  		"title": "Verwendungsart",
+		  		"personal": "Persönlich",
+		  		"widerange": "Weitbereich",
+		  		"help": "TODO: For classification of the transmitters, there are two categories: Personal (Transmitters with low output power like RasPager) and Wide Range (Higher output power and elevated location site)."
 			},
 			"antennatype": {
-		  		"title": "Antenna Type",
-		  		"omni": "Omni",
-		  		"directional": "Directional",
-		  		"help": "Please select if you have a omnidirectional antenna (e.g. X-50) or a directional antenna (e.g. Yagi)."
+		  		"title": "Antennenart",
+		  		"omni": "Rundstrahler",
+		  		"directional": "Richtantenne",
+		  		"help": "Bitte die Antennenart auswählen. Beispiele für einen Rundstrahler ist eine X-50, eine Richtantenne ist z.B. eine Yagi."
 			},
 			"antennadirection": {
-		  		"help": "<b>Antenna main beam direction</b>: Enter the antenna main beam direction in degrees according to \"True North\" (in German \"rechtweisend Nord\")."
+		  		"help": "<b>Antennenhauptstrahlrichtung</b>: Bitte die Antennenhauptstrahlrichtung in Grad angeben. Als Referenz \"rechtweisend Nord\" verwenden."
 			},
 			"other": {
-		  		"title": "Other",
+		  		"title": "Weitere Einstellungen",
 		  		"power": {
-				"help": "<b>Transmitter Power</b>: Enter the transmitter output power in Watts including your cable losses."
+				"help": "<b>Sendeleistung</b>: Bitte die Sendeleistung am Ausgang des Sender inkl. der Kabelverluste angeben. Dies entspricht der am Antennenstecker ankommendne Leistung. Die Einheit ist Watt."
 		  	},
 		  	"antennalevel": {
-				"help": "<b>Antenna elevation over ground</b>: Enter the antenna elevation over ground; NOT over NN (!) in meters."
+				"help": "<b>Antennenhöhe über Grund</b>: Bitte die Antennenhöhe über Grund NICHT ÜBER NN (!) in Meter angeben."
 		  	},
 		  	"antennagain": {
-				"help": "<b>Antenna gain</b>: Enter the antenna gain in the main lobe direction for directional antennas and the average gain for omnidirectional antennas in dBi (dBi: Gain over isotropic radiator)."
+				"help": "<b>Antennengewinn</b>: Bitte den Antennengewinn in Hauptstrahlrichtung für Richtantennen und den mittleren Gewinn für Rundstrahlantennen in dBi angeben. (dBi: Gewinn im Vergleich zu einem isotropen Kugelstrahler)."
 		  	},
 		  	"txidentric": {
-				"help": "<b>Transmitter identification RIC</b>: Enter a RIC (default value is 1) which will be used to generate an artificial paging message containing the amateur radio callsign as given in this form."
+				"help": "<b>Identifizierungs-RIC des Senders</b>: Bitte eine RIC (der Normalfall ist 1) eigeben, die verwendet werden soll, um die Rufzeichennennung zu versenden. Diese künstiliche Nachricht enthält den unter \"Rufzeichen\" eingegebenen Text."
 		  	}
 		},
 		"timeslots": {
-			"title": "Timeslots",
-		  	"help": "As all transmitters use the same frequency a time division multiplex access scheme is used. There are 16 timeslots available. Assign the slots of this transmitter according to you surrounding transmitters in your neighborhood without overlapping timeslots that are assigned to more than one transmitter. You can use the transmitter map to check already assigned timeslots of adjacent transmitters. In case that you cannot fulfill your requirements, contact the adjacent transmitter owners and try to get an agreement. Normally four 4 or less timeslots per transmitter are more than enough."
+			"title": "Zeitschlitze",
+		  	"help": "TODO: As all transmitters use the same frequency a time division multiplex access scheme is used. There are 16 timeslots available. Assign the slots of this transmitter according to you surrounding transmitters in your neighborhood without overlapping timeslots that are assigned to more than one transmitter. You can use the transmitter map to check already assigned timeslots of adjacent transmitters. In case that you cannot fulfill your requirements, contact the adjacent transmitter owners and try to get an agreement. Normally four 4 or less timeslots per transmitter are more than enough."
 		},
 		"owner": {
-			"title": "owner",
-		  	"help": "If you are an owner, you can change the parameters for this transmitter."
+			"title": "Besitzer",
+		  	"help": "Besitzer können die Einstellungen eines Senders selbstständig ändern."
 		},
 		"table": {
 		  	"title": "Information",
-		  	"description": "This table shows the registered paging transmitters, their online status and additional information. Personal transmitters have low output power and a very small coverage. Wide range transmitters are usually installed at elevated locations leading to a wide coverage area."
+		  	"description": "TODO: This table shows the registered paging transmitters, their online status and additional information. Personal transmitters have low output power and a very small coverage. Wide range transmitters are usually installed at elevated locations leading to a wide coverage area."
 		}
 	  },
 	  "map": {
-			"title": "Map",
+			"title": "Karte",
 			"settings": {
-		 	 "title": "Settings"
+		 	 "title": "Einstellungen"
 			},
 			"checkbox": {
-		  		"showonlineonly": "Show online transmitters only",
-		  		"showwiderangeonly": "Show Widerange-transmitter only",
-				"showbytimeslot": "Show transmitters by timeslots",
-				"shownodes": "Show nodes",
-		  		"shownodeline": "Show line from transmitter to node"
+		  		"showonlineonly": "Nur Sender, die online sind, anzeigen.",
+		  		"showwiderangeonly": "Neu Weitbereichssender anzeigen",
+				"showbytimeslot": "Nur Sender anzeigen, die die angegeben Zeitschlitze zugewiesen haben",
+				"shownodes": "Knoten anzeigen",
+		  		"shownodeline": "Eine Linie vom Sender zum Knoten, mit dem er verbunden ist, anzeigen"
 			},
 			"actions": {
-		  		"title": "Actions",
-		  		"showallcoverage": "Show all coverage-overlays",
-		  		"removeallcoverage": "Remove all coverage-overlays"
+		  		"title": "Aktionen",
+		  		"showallcoverage": "Abdeckungsbereiche von allen Sendern anzeigen",
+		  		"removeallcoverage": "Alle Abdeckungsbereiche entfernen"
 			}
 	  	}
 	},
@@ -213,7 +213,7 @@
 		"totalrubrics": "Alle Rubriken",
 		"information": {
 		  "title": "Information",
-		  "help": "Dies ist eine Liste aller Rubiken im DAPNET. Ein Rubik kann einer oder mehreren Sender-Gruppen zugewiesen werden. Bitte darauf auchden das die Sender-Gruppen unterschiedlich sind, falls eine Rubiken-Nummer mehrfach verwendet wird. Dies vermeidet überlappende Zuordnungen.<br />BUm dem Empfang der Rubriken auf dem Skyper freizuschalten bitte die Funktion \"Rubriken aktivieren\" verwenden."
+		  "help": "Dies ist eine Liste aller Rubiken im DAPNET. Ein Rubik kann einer oder mehreren Sender-Gruppen zugewiesen werden. Bitte darauf achten, dass die Sender-Gruppen unterschiedlich sind, falls eine Rubiken-Nummer mehrfach verwendet wird. Dies vermeidet überlappende Zuordnungen.<br />BUm dem Empfang der Rubriken auf dem Skyper freizuschalten bitte die Funktion \"Rubriken aktivieren\" verwenden."
 		},
 		"table": {
 		  "number": "Nummer",
@@ -226,7 +226,7 @@
 	  },
 	  "new": {
 		"newrubric": "Neue Rubrik",
-		"editrubric": "Editiere Rubrik",
+		"editrubric": "Ändere Rubrik",
 		"name": "Name",
 		"namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieser Rubrik.",
 		"label": "Bezeichung",
