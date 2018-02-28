@@ -290,5 +290,50 @@
 			}
 	  }
 
+	},
+		  "calls": {
+			"overview": {
+			  "actions": "Actions",
+			  "allcalls": "All Calls",
+			  "newcall": "New Call",
+			  "statistics": "Statistics",
+			  "emergencies": "Emergencies",
+			  "totalcalls": "Total Calls",
+			  "information": {
+				"title": "Information",
+				"help": "Calls are personal paging transmission to individual receivers."
+			  },
+			  "table": {
+				"timestamp": "Timestamp",
+				"subscribers": "Subscribers",
+				"txgroups": "TX Groups",
+				"message": "Message",
+				"emergency": "High Prio?",
+				"owner": "Owner"
+			  }
+			},
+			"new": {
+			  "newcall": "New Call",
+			  "message": {
+				"title": "Message",
+				"charactersremaining": "characters remaining.<br />Enter your paging text. Your user name is added automatically."
+			  },
+			  "subscribers": {
+				"title": "Subscribers",
+				"help": "Select one or multiple subscribers you what to send the message to."
+			  },
+			  "transmittergroups": {
+				"title": "Transmitter Groups",
+				"help": "Select a logical transmitter group that should broadcast your message. Default is all transmitters, but if you know the approximate location of the receiver you might limit the transmitters used for your paging to a certain area. This reduces the load on the transmitters."
+			  },
+			  "emergency": {
+				"title": "Emergency?",
+				"help": "In case you want your message to be delivered as soon as possible, check this box. No harmful things will happen, the DAPNET will just process your message with maximum priority. Please make a fair use of this feature."
+			  },
+			  "information": {
+				"title": "Information",
+				"help": "Here your recent paging calls are displayed."
+			  }
+		}
 	}
 }

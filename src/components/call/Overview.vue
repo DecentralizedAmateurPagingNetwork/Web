@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Calls</h1>
+					<h1>{{ $t('navigation.calls') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -20,21 +20,21 @@
 			</div>
 			<div class="col-lg-3">
 				<div class="actions well">
-					<legend>Actions</legend>
+					<legend>{{ $t('calls.overview.actions') }}</legend>
 					<ul>
-						<li><router-link to="/calls/new">New Call</router-link></li>
+						<li><router-link to="/calls/new">{{ $t('calls.overview.newcall') }}</router-link></li>
 					</ul>
 					<br/>
 					<template v-if="table.rows">
-						<legend>Statistics</legend>
+						<legend>{{ $t('calls.statistics') }}</legend>
 						<ul class="list-group">
 							<li class="list-group-item"><b>Emergencies</b><span class="badge">{{ statEmergencies }}</span></li>
 							<li class="list-group-item"><b>Total Calls</b><span class="badge">{{ statTotal }}</span></li>
 						</ul>
 					</template>
 				</div>
-				<h2>Information</h2>
-				<p>Calls are personal paging transmission to individual receivers.</p>
+				<h2>{{ $t('calls.overview.information.title') }}</h2>
+				<p>{{ $t('calls.overview.information.help') }}</p>
 			</div>
 		</div>
 	</div>
@@ -53,27 +53,27 @@
 					columns: [
 						{
 							id: 'timestamp',
-							title: 'Timestamp'
+							title: this.$i18n.t('calls.overview.table.timestamp')
 						},
 						{
 							id: 'callSignNames',
-							title: 'Subscribers'
+							title: this.$i18n.t('calls.overview.table.subscribers')
 						},
 						{
 							id: 'transmitterGroupNames',
-							title: 'TX Groups'
+							title: this.$i18n.t('calls.overview.table.TX Groups')
 						},
 						{
 							id: 'text',
-							title: 'Message'
+							title: this.$i18n.t('calls.overview.table.message')
 						},
 						{
 							id: 'emergency',
-							title: 'High Prio?'
+							title: this.$i18n.t('calls.overview.table.emergency')
 						},
 						{
 							id: 'ownerName',
-							title: 'Owner'
+							title: this.$i18n.t('calls.overview.table.owner')
 						}
 					],
 					rows: false

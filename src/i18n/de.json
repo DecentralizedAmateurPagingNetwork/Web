@@ -284,5 +284,50 @@
 		"help": "Ein Teilnehmer-Eintrag ist eine logische Verknüpfung zwischen einem Bezeichner (meist das Rufzeichen des Besitzers des Meldeempfängers) und einer oder mehreren RICs."
 	  }
 	}
+  },
+  "calls": {
+	"overview": {
+	  "actions": "Aktionen",
+	  "allcalls": "Alle Rufe",
+	  "newcall": "Neuer Ruf",
+	  "statistics": "Statistiken",
+	  "emergencies": "Notfall-Alamierungen",
+	  "totalcalls": "Gesamtanzahl Rufe",
+	  "information": {
+		"title": "Information",
+		"help": "Rufe sind persönliche Funkmeldenachrichten an individuelle Funkmeldeempfänger."
+	  },
+	  "table": {
+		"timestamp": "Zeitstempel",
+		"subscribers": "Teilnehmer",
+		"txgroups": "Sender-Gruppen",
+		"message": "Nachricht",
+		"emergency": "Hohe Priorität?",
+		"owner": "Besitzer"
+	  }
+	},
+	"new": {
+	  "newcall": "Neuer Ruf",
+	  "message": {
+		"title": "Nachricht",
+		"charactersremaining": "Zeichen verbleibend.<br />Bitte den Nachrichtentext eingeben. Das Absender-Rufzeichen wird automatisch hinzugefügt."
+	  },
+	  "subscribers": {
+		"title": "Empfänger",
+		"help": "Einen oder mehrere Teilnehmer als Empfänger des Rufs auswählen."
+	  },
+	  "transmittergroups": {
+		"title": "Sender-Gruppen",
+		"help": "Eine Sender-Gruppe auswählen, mit deren Sendern der Ruf ausgesendet wird. Im Normalfall sind das alle Sender, aber wenn der Aufenthaltsort des Empfängers bekannt ist, kann eine kleinere Sendergruppe gewählt werden. Dies verringert die Last auf den Sendern."
+	  },
+	  "emergency": {
+		"title": "Notfall?",
+		"help": "Wenn die Nachricht so schnell wie möglich versandt werden soll, kann diese Box ausgewählt werden. Es werden keinen schlimmen Dinge geschehen; DAPNET wird nur die Nachricht mit der maximalen Priorität verarbeiten. Bitte diese Funktion fair verwenden."
+	  },
+	  "information": {
+		"title": "Information",
+		"help": "Hier werden Ihre letzten Rufe angezeigt."
+	  }
+	}
   }
 }

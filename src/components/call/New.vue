@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Calls</h1>
+					<h1>{{ $t('navigation.calls') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -12,49 +12,49 @@
 			<div class="col-lg-9">
 				<form class="form-horizontal well">
 					<fieldset>
-						<legend>New Call</legend>
+						<legend>{{ $t('calls.new.newcall') }}</legend>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Message</label>
+							<label class="col-lg-2 control-label">{{ $t('calls.new.message.title') }}</label>
 							<div class="col-lg-10">
 								<textarea class="form-control" rows="2" maxlength="80" v-model="form.message"></textarea>
-								<span class="help-block">{{ messageCharsRemaining }} / 80 characters remaining.<br />Enter your paging text. Your user name is added automatically.</span>
+								<span class="help-block">{{ messageCharsRemaining }} / <p v-html="$t('calls.new.message.charactersremaining')"></p></span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Subscribers</label>
+							<label class="col-lg-2 control-label">{{ $t('calls.new.subscribers.title') }}</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.callsigns" :options="formData.callsigns" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
-								<span class="help-block">Select one or multiple subscribers you what to send the message to.</span>
+								<span class="help-block">{{ $t('calls.new.subscribers.help') }}</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Transmitter Groups</label>
+							<label class="col-lg-2 control-label">{{ $t('calls.new.subscribers.title') }}</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.transmittergroups" :options="formData.transmittergroups" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
-								<span class="help-block">Select a logical transmitter group that should broadcast your message. Default is all transmitters, but if you know the approximate location of the receiver you might limit the transmitters used for your paging to a certain area. This reduces the load on the transmitters.</span>
+								<span class="help-block">{{ $t('calls.new.subscribers.help') }}</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Emergency?</label>
+							<label class="col-lg-2 control-label">{{ $t('calls.new.emergency.title') }}</label>
 							<div class="col-lg-10 checkbox">
 								<label>
 									<input type="checkbox" v-model="form.emergency">
 								</label>
-								<span class="help-block">In case you want your message to be delivered as soon as possible, check this box. No harmful things will happen, the DAPNET will just process your message with maximum priority. Please make a fair use of this feature.</span>
+								<span class="help-block">{{ $t('calls.new.emergency.help') }}</span>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
-								<button type="submit" @click="submitForm" class="btn btn-primary">Submit</button>
-								<router-link to="/calls"><button class="btn btn-default">Abort</button></router-link>
+								<button type="submit" @click="submitForm" class="btn btn-primary">{{ $t('general.submit') }}</button>
+								<router-link to="/calls"><button class="btn btn-default">{{ $t('general.abort') }}</button></router-link>
 							</div>
 						</div>
 					</fieldset>
 				</form>
 			</div>
 			<div class="col-lg-3">
-				<h2>Information</h2>
-				<p>Here your recent paging calls are displayed.</p>
+				<h2>{{ $t('calls.new.information.title') }}</h2>
+				<p>{{ $t('calls.new.information.help') }}</p>
 			</div>
 		</div>
 	</div>
