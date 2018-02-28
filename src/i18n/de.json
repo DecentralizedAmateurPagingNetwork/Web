@@ -1,7 +1,7 @@
 {
 	"navigation": {
 		"calls": "Rufe",
-		"subscribers": "Abonnenten",
+		"subscribers": "Teilnehmer",
 		"rubrics": {
 			"title": "Rubriken",
 			"all": "Alle Rubriken",
@@ -246,5 +246,43 @@
 		},
 		"transmittergroup": "Sender-Gruppen"
 	  }
+	},
+  "subscribers": {
+	"overview": {
+	  "actions": "Aktionen",
+	  "newsubscriber": "Neuer Teilnehmer",
+	  "allsubscribers": "Alle Teilnehmer",
+	  "totalsubscribers": "Gesamtanzahl Teilnehmer",
+	  "information": {
+		"title": "Information",
+		"help": "Ein Teilnehmer-Eintrag ist eine logische Verknüpfung zwischen einem Bezeichner (meist das Rufzeichen des Besitzers des Meldeempfängers) und einer oder mehreren RICs, zum Beispiel die Skyper Adresse."
+	  }
+	},
+	"new": {
+	  "newsubscriber": "Neuer Teilnehmer",
+	  "editsubscriber": "Ändere Teilnehmer",
+	  "subscriber":{
+		"title": "Teilnehmer",
+		"help": "Bitte ein gültige Amateurfunk-Rufzeichen oder einen klassifizierenden Namen einer Organisation eingeben.",
+		"info": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Teilnehmer-Eintrags."
+	  },
+	  "description": {
+		"title": "Beschreibung",
+		"help": "Bitte hier den Vornamen oder eine andere sinnvolle Beschreibung dieses Eintrags eingeben."
+	  },
+	  "pager": {
+		"title": "Funkmeldeempfänger",
+		"helprics": "Eine oder mehrere RIC Nummern in einzelnen Zeilen hinzufügen.",
+		"helpnames": "Entsprechend der Anzahl der Zeilen in der linken Box eine entsprechende Beschreibung für die RIC Nummer angeben."
+	  },
+	  "owner": {
+		"title": "Besitzer",
+		"help": "Der Besitzer eines Teilnehmers kann seine Einstellungen ändern."
+	  },
+	  "information": {
+		"title": "Information",
+		"help": "Ein Teilnehmer-Eintrag ist eine logische Verknüpfung zwischen einem Bezeichner (meist das Rufzeichen des Besitzers des Meldeempfängers) und einer oder mehreren RICs."
+	  }
 	}
+  }
 }

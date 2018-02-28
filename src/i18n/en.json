@@ -251,5 +251,44 @@
 			},
 		  	"transmittergroup": "Transmitter Groups"
 		}
-  	}
+  	},
+  	"subscribers": {
+	  	"overview": {
+	  		"actions": "Actions",
+	  		"newsubscriber": "New Subscriber",
+	  		"allsubscribers": "All Subscribers",
+	  		"totalsubscribers": "Total Subscribers",
+	  		"information": {
+			  "title": "Information",
+			  "help": "A subscriber is the logical connection between a name (the callsign) and one or multiple RIC numbers, for example a Skyper address."
+			}
+		},
+	  "new": {
+			"newsubscriber": "New Subscriber",
+			"editsubscriber": "Edit Subscriber",
+			"subscriber":{
+			  	"title": "Subscriber",
+			  	"help": "Please enter a valid amateur radio callsign of a human or a classifying name of an organization.",
+			  	"info": "Changing this name will create a duplication and <i>not</i> change the element's name."
+			},
+			"description": {
+			  "title": "Description",
+			  "help": "Provide your name or any other useful description of this entry."
+			},
+			"pager": {
+			  	"title": "Pager",
+			  	"helprics": "Add one or more lines of pager RIC numbers.",
+			  	"helpnames": "Add a corresponding number for lines as a description for the RIC numbers given in the first box."
+			},
+			"owner": {
+			  	"title": "Owner",
+			  	"help": "An owner of a subscriber association can edit its parameters."
+			},
+			"information": {
+			  "title": "Information",
+			  "help": "Subscribers are an allocation between a name (usually your amateur radio callsign) and one or multiple pager IDs (RICs)."
+			}
+	  }
+
+	}
 }

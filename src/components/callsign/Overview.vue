@@ -3,14 +3,14 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Subscribers</h1>
+					<h1>{{ $t('navigation.subscribers') }}</h1>
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-lg-9">
-				<h2>All Subscribers
+				<h2>{{ $t('subscribers.overview.allsubscribers') }}
 					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': running }" @click="loadData"></i>
 				</h2>
 
@@ -21,10 +21,10 @@
 			<div class="col-lg-3">
 				<div class="actions well">
 					<template v-if="this.$store.getters.user.admin">
-						<legend>Actions</legend>
+						<legend>{{ $t('subscribers.overview.actions') }}</legend>
 						<ul>
 							<li>
-								<router-link to="/subscribers/new">New Subscriber</router-link>
+								<router-link to="/subscribers/new">{{ $t('subscribers.overview.newsubscriber') }}</router-link>
 							</li>
 						</ul>
 						<br/>
@@ -32,12 +32,12 @@
 					<template v-if="table.rows">
 						<legend>Statistics</legend>
 						<ul class="list-group">
-							<li class="list-group-item"><b>Total Subscribers</b><span class="badge">{{ statTotal }}</span></li>
+							<li class="list-group-item"><b>{{ $t('subscribers.overview.totalsubscribers') }}</b><span class="badge">{{ statTotal }}</span></li>
 						</ul>
 					</template>
 				</div>
-				<h2>Information</h2>
-				<p>A subscriber is the logical connection between a name (the callsign) and one or multiple RIC numbers, for example a Skyper address.</p>
+				<h2>{{ $t('subscribers.overview.information.title') }}</h2>
+				<p>{{ $t('subscribers.overview.information.help') }}</p>
 			</div>
 		</div>
 	</div>

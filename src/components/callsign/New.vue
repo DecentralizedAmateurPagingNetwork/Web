@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Subscribers</h1>
+					<h1>S{{ $t('navigation.subscribers') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -12,53 +12,53 @@
 			<div class="col-lg-9">
 				<form class="form-horizontal well">
 					<fieldset>
-						<legend v-if="!this.$route.params.id">New Subscriber</legend>
-						<legend v-if="this.$route.params.id">Edit Subscriber</legend>
+						<legend v-if="!this.$route.params.id">{{ $t('subscribers.new.newsubscriber') }}</legend>
+						<legend v-if="this.$route.params.id">{{ $t('subscribers.new.editsubscriber') }}</legend>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Subscriber</label>
+							<label class="col-lg-2 control-label">{{ $t('subscribers.new.subscriber.title') }}</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="form.callsign" class="form-control">
-								<span class="help-block">Please enter a valid amateur radio callsign of a human or a classifying name of an organization.</span>
-								<span v-if="editing" class="help-block">Changing this name will create a duplication and <i>not</i> change the element's name.</span>
+								<span class="help-block">{{ $t('subscribers.new.subscriber.help') }}</span>
+								<span v-if="editing" class="help-block"><p v-html="$t('subscribers.new.subscriber.info')"></p></span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Description</label>
+							<label class="col-lg-2 control-label">{{ $t('subscribers.new.description.title') }}</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="form.description" class="form-control">
-								<span class="help-block">Provide your name or any other useful description of this entry.</span>
+								<span class="help-block">{{ $t('subscribers.new.description.help') }}</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Pager</label>
+							<label class="col-lg-2 control-label">{{ $t('subscribers.new.pager.title') }}</label>
 							<div class="col-lg-5">
 								<textarea v-model="form.pager.numbers" class="form-control" rows="5"></textarea>
-								<span class="help-block">Add one or more lines of pager RIC numbers. <img src="~@/assets/img/pager.jpg" alt="Help" /></span>
+								<span class="help-block">{{ $t('subscribers.new.pager.helprics') }} <img src="~@/assets/img/pager.jpg" alt="Help" /></span>
 							</div>
 							<div class="col-lg-5">
 								<textarea v-model="form.pager.names" class="form-control" rows="5"></textarea>
-								<span class="help-block">Add a corresponding number for lines as a description for the RIC numbers given in the first box.</span>
+								<span class="help-block">{{ $t('subscribers.new.pager.helpnames') }}</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Owner</label>
+							<label class="col-lg-2 control-label">{{ $t('subscribers.new.owner.title') }}</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.owners" :options="formData.users" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
-								<span class="help-block">An owner of a callsign association can edit the parameters of this callsign.</span>
+								<span class="help-block">{{ $t('subscribers.new.owner.help') }}</span>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
-								<button type="submit" @click="submitForm" class="btn btn-primary">Submit</button>
-								<router-link to="/subscribers"><button class="btn btn-default">Abort</button></router-link>
+								<button type="submit" @click="submitForm" class="btn btn-primary">{{ $t('general.submit') }}</button>
+								<router-link to="/subscribers"><button class="btn btn-default">{{ $t('general.abort') }}</button></router-link>
 							</div>
 						</div>
 					</fieldset>
 				</form>
 			</div>
 			<div class="col-lg-3">
-				<h2>Information</h2>
-				<p>Subscribers are an allocation between a name (usually your amateur radio callsign) and one or multiple pager IDs.</p>
+				<h2>{{ $t('subscribers.new.information.title') }}</h2>
+				<p>{{ $t('subscribers.new.information.help') }}</p>
 			</div>
 		</div>
 	</div>
