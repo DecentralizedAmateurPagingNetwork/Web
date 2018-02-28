@@ -100,7 +100,7 @@
 		  		"title": "Verwendungsart",
 		  		"personal": "Persönlich",
 		  		"widerange": "Weitbereich",
-		  		"help": "TODO: For classification of the transmitters, there are two categories: Personal (Transmitters with low output power like RasPager) and Wide Range (Higher output power and elevated location site)."
+		  		"help": "Zur Einordnung der Sender gibt es zwei Kategorien: Persönliche Sender (Sender mit einer geringen Strahlungsleistung wie z.B. der Raspager und Weitbereichssender mit einen hohen Strahlungsleistung und einem im Gelände erhöhten Standort."
 			},
 			"antennatype": {
 		  		"title": "Antennenart",
@@ -128,7 +128,7 @@
 		},
 		"timeslots": {
 			"title": "Zeitschlitze",
-		  	"help": "TODO: As all transmitters use the same frequency a time division multiplex access scheme is used. There are 16 timeslots available. Assign the slots of this transmitter according to you surrounding transmitters in your neighborhood without overlapping timeslots that are assigned to more than one transmitter. You can use the transmitter map to check already assigned timeslots of adjacent transmitters. In case that you cannot fulfill your requirements, contact the adjacent transmitter owners and try to get an agreement. Normally four 4 or less timeslots per transmitter are more than enough."
+		  	"help": "Da alle Sender die gleiche Frequenz benutzen, wird eine Zeitmultiplex-Verfahren eingesetzt. Es gibt 16 Zeitschlitze. Bitte die Zuweisung der Zeitschlitze so vornehmen, dass es im Abdeckungsbereich dieses Senders keine Überschneidungen mit Zuordnungen von anderen bereits existierenden Sendern gibt. Die Kartenansicht kann dazu verwendet werden, sich einen Überblick über die bereits vorhandenen Sender und ihrer Zeitschlitze zu verschaffen.		Falls die Anforderungen dieses Senders zur Belegung von Zeitschlitzen durch die bestehende Zuweisung nicht erfüllt werden kann, bitte die Besitzer der umliegenden Sender kontaktieren und für eine Lösung sorgen. Im Normallfall sind 4 oder weniger Zeitschlitze pro Sender mehr als genug."
 		},
 		"owner": {
 			"title": "Besitzer",
@@ -136,7 +136,7 @@
 		},
 		"table": {
 		  	"title": "Information",
-		  	"description": "TODO: This table shows the registered paging transmitters, their online status and additional information. Personal transmitters have low output power and a very small coverage. Wide range transmitters are usually installed at elevated locations leading to a wide coverage area."
+		  	"description": "Diese Tabelle zeigt die angmeldeten Sender, ihren Online-Status und weitere Informationen. Pernsönliche Sender müssen eine geringe Strahlungsleistung und einen sehr begrenzten Abdeckungsbereich haben, wie z.B. der Raspager. Weitbereichssender sind gewöhnlicherweise an hohen Standorten installiert und haben einen großen Abdeckungsbereich"
 		}
 	  },
 	  "map": {
