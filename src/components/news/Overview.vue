@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Rubric Content</h1>
+					<h1>{{ $t('navigation.rubrics.content') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -20,22 +20,22 @@
 			</div>
 			<div class="col-lg-3">
 				<div class="actions well">
-					<legend>Actions</legend>
+					<legend>{{ $t('news.overview.actions') }}</legend>
 					<ul>
 						<li>
-							<router-link to="/rubrics/content/new">New Rubric Content</router-link>
+							<router-link to="/rubrics/content/new">{{ $t('news.overview.newrubriccontent') }}</router-link>
 						</li>
 					</ul>
 					<br/>
 					<template v-if="table.rows">
 						<legend>Statistics</legend>
 						<ul class="list-group">
-							<li class="list-group-item"><b>Total Rubric Content</b><span class="badge">{{ statTotal }}</span></li>
+							<li class="list-group-item"><b>{{ $t('news.overview.totalrubriccontent') }</b><span class="badge">{{ statTotal }}</span></li>
 						</ul>
 					</template>
 				</div>
-				<h2>Information</h2>
-				<p>The content displayed here are NOT general news about DAPNET, but the recently sent content to rubrics. Every time a user updates the 10 available rubric messages slots, this change will be displayed here.</p>
+				<h2>{{ $t('news.overview.information.title') }}</h2>
+				<p>{{ $t('news.overview.information.help') }}</p>
 			</div>
 		</div>
 	</div>
@@ -54,23 +54,23 @@
 					columns: [
 						{
 							id: 'timestamp',
-							title: 'Timestamp'
+							title: this.$i18n.t('news.overview.table.timestamp')
 						},
 						{
 							id: 'rubricName',
-							title: 'Rubric'
+							title: this.$i18n.t('news.overview.table.rubric')
 						},
 						{
 							id: 'number',
-							title: '#'
+							title: this.$i18n.t('news.overview.table.number')
 						},
 						{
 							id: 'text',
-							title: 'Message'
+							title: this.$i18n.t('news.overview.table.message')
 						},
 						{
 							id: 'ownerName',
-							title: 'Owner'
+							title: this.$i18n.t('news.overview.table.owner')
 						}
 					],
 					rows: false

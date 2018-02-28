@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Rubric Content</h1>
+					<h1>{{ $t('navigation.rubrics.content') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -12,24 +12,24 @@
 			<div class="col-lg-9">
 				<form class="form-horizontal well">
 					<fieldset>
-						<legend>New Rubric Content</legend>
+						<legend>{{ $t('news.new.newrubriccontent') }}</legend>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Message</label>
+							<label class="col-lg-2 control-label">{{ $t('news.new.message') }}</label>
 							<div class="col-lg-10">
 								<textarea v-model="form.message" rows="2" maxlength="80" class="form-control"></textarea>
-								<span class="help-block">{{ messageCharsRemaining }} / 80 characters remaining.</span>
+								<span class="help-block">{{ messageCharsRemaining }} / 80 {{ $t('news.new.charactersremaining') }}.</span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Rubric</label>
+							<label class="col-lg-2 control-label">{{ $t('news.new.rubrics') }}</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.rubric" :options="formData.rubrics" :close-on-select="true" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Number</label>
+							<label class="col-lg-2 control-label">{{ $t('news.new.number') }}</label>
 							<div class="col-lg-5 checkbox">
-								<label><input type="checkbox" v-model="form.numberNext"> Choose automatically</label>
+								<label><input type="checkbox" v-model="form.numberNext"> {{ $t('news.new.chooseautomatically') }}</label>
 							</div>
 							<div class="col-lg-5">
 								<input type="number" v-model.number="form.number" :disabled="form.numberNext == 1" min="1" max="10" class="form-control" placeholder="1 - 10">
@@ -37,16 +37,16 @@
 						</div>
 						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
-								<button type="submit" @click="submitForm" class="btn btn-primary">Submit</button>
-								<router-link to="/rubrics/content"><button class="btn btn-default">Abort</button></router-link>
+								<button type="submit" @click="submitForm" class="btn btn-primary">{{ $t('general.submit') }}</button>
+								<router-link to="/rubrics/content"><button class="btn btn-default">{{ $t('general.abort') }}</button></router-link>
 							</div>
 						</div>
 					</fieldset>
 				</form>
 			</div>
 			<div class="col-lg-3">
-				<h2>Information</h2>
-				<p>These are the contents of rubrics. They are up to now only available on Skyper paging receivers.</p>
+				<h2>{{ $t('news.new.information.title') }}/h2>
+				<p>{{ $t('news.new.information.help') }}</p>
 			</div>
 		</div>
 	</div>

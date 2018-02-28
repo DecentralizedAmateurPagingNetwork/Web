@@ -335,5 +335,36 @@
 				"help": "Here your recent paging calls are displayed."
 			  }
 		}
-	}
+	},
+  "news": {
+		"overview": {
+		  	"allrubriccontent": "All Rubric Content",
+		  	"actions": "Actions",
+		  	"newrubriccontent": "New Rubric Content",
+		  	"totalrubriccontent": "Total Rubic Content",
+		  	"Information": {
+			  	"title:": "Information",
+			  	"help": "The content displayed here are NOT general news about DAPNET, but the recently sent content to rubrics. Every time a user updates the 10 available rubric messages slots, this change will be displayed here."
+			},
+		  	"table": {
+			  	"timestamp": "Timestamp",
+			  	"rubric": "Rubric",
+			  	"number": "#",
+			  	"message": "Message",
+			  	"owner": "Owner"
+			}
+		},
+		"new": {
+		  	"newrubriccontent": "New Rubric Content",
+		  	"message": "Message",
+			"charactersremaining": "characters remaining",
+		  	"rubric": "Rubric",
+		  	"number": "Number",
+		  	"chooseautomatically": "Choose automatically",
+		  	"information": {
+			  	"title:": "Information",
+			  	"help": "These are the contents of rubrics. They are up to now only available on Skyper paging receivers."
+			}
+		}
+  }
 }
