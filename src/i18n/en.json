@@ -336,7 +336,7 @@
 			  }
 		}
 	},
-  "news": {
+  	"news": {
 		"overview": {
 		  	"allrubriccontent": "All Rubric Content",
 		  	"actions": "Actions",
@@ -363,8 +363,8 @@
 		  	"chooseautomatically": "Choose automatically",
 		  	"information": {
 			  	"title:": "Information",
-			  	"help": "These are the contents of rubrics. They are up to now only available on Skyper paging receivers."
+			  	"help": "These are the contents of rubrics. They are up to now only available on Skyper paging receivers in this form, but also sent as personal calls to RIC 1000 + (Rubric-Number) for reception with e.g. AlphaPoc."
 			}
 		}
-  }
+	}
 }

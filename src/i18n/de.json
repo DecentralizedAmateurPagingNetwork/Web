@@ -329,5 +329,36 @@
 		"help": "Hier werden Ihre letzten Rufe angezeigt."
 	  }
 	}
+  },
+  "news": {
+	"overview": {
+	  "allrubriccontent": "Inhalt aller Rubriken",
+	  "actions": "Aktionen",
+	  "newrubriccontent": "Neuer Rubriken Inhalt",
+	  "totalrubriccontent": "Gesamtzahl der Rubriken-Einträge",
+	  "Information": {
+		"title:": "Information",
+		"help": "Der hier dargestellte Inhalt sind NICHT allegemeine Nachrichten zu DAPNET sondern die zuletzt in die Rubriken eingestellten Meldungen. Jedes mal, wenn einer der 10 verfügbaren Rubriken-Inhalte pro Rubrik geändert wird, wird dies hier aufgeführt."
+	  },
+	  "table": {
+		"timestamp": "Zeitstempel",
+		"rubric": "Rubrik",
+		"number": "#",
+		"message": "Nachricht",
+		"owner": "Besitzer"
+	  }
+	},
+	"new": {
+	  "newrubriccontent": "Neuer Rubriken Inhalt",
+	  "message": "Nachricht",
+	  "charactersremaining": "verbleidende Zeichen",
+	  "rubric": "Rubrik",
+	  "number": "Nummer",
+	  "chooseautomatically": "Automatisch bestimmen",
+	  "information": {
+		"title:": "Information",
+		"help": "Diese ist der Inhalt aller Rubriken. Sie sind in dieser geordenten Form bsi jetzt nur auf Skypern zu lesen. Allerdings werden Sie auch als persönlicher Ruf an die RIC 1000 + (Rubrik-Nummer) ausgesendet, z.B. für AlphaPoc-Meldeempfänger."
+	  }
+	}
   }
 }
