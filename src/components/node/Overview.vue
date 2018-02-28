@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Nodes</h1>
+					<h1>{{ $t('navigation.nodes') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -21,23 +21,23 @@
 			<div class="col-lg-3">
 				<div class="actions well">
 					<template v-if="this.$store.getters.user.admin">
-						<legend>Actions</legend>
+						<legend>{{ $t('nodes.overview.actions') }}</legend>
 						<ul>
-							<li><router-link to="/nodes/new">New Node</router-link></li>
-							<li><p class="linklike" @click="mailToAll">Send a mail to all owners</p></li>
+							<li><router-link to="/nodes/new">{{ $t('nodes.overview.newnode') }}</router-link></li>
+							<li><p class="linklike" @click="mailToAll">{{ $t('nodes.overview.sendmailtoallowners') }}</p></li>
 						</ul>
 						<br/>
 					</template>
 					<template v-if="table.rows">
-						<legend>Statistics</legend>
+						<legend>{{ $t('nodes.overview.statstics.title') }}</legend>
 						<ul class="list-group">
-							<li class="list-group-item"><b>Total Nodes</b><span class="badge">{{ statTotal }}</span></li>
+							<li class="list-group-item"><b>{{ $t('nodes.overview.statstics.totalnodes') }}</b><span class="badge">{{ statTotal }}</span></li>
 							<li class="list-group-item"><chart-online-offline :chartData="chartData"></chart-online-offline></li>
 						</ul>
 					</template>
 				</div>
-				<h2>Information</h2>
-				<p>Nodes are the instances of the DAPNET cluster. This list shows the status of them. Due to the "not so good" long range connectivity of the HAMNET, cluster nodes come and go from time to time. This is very unsatisfying, we are working on a solution.</p>
+				<h2>{{ $t('nodes.overview.information.title') }}</h2>
+				<p>{{ $t('nodes.overview.information.help') }}</p>
 			</div>
 		</div>
 	</div>
@@ -61,27 +61,27 @@
 					columns: [
 						{
 							id: 'name',
-							title: 'Name'
+							title: this.$i18n.t('nodes.overview.table.name')
 						},
 						{
 							id: 'version',
-							title: 'Version'
+							title: this.$i18n.t('nodes.overview.table.version')
 						},
 						{
 							id: 'address',
-							title: 'IP-Address'
+							title: this.$i18n.t('nodes.overview.table.ipaddress')
 						},
 						{
 							id: 'ownerNames',
-							title: 'Owner'
+							title: this.$i18n.t('nodes.overview.table.owner')
 						},
 						{
 							id: 'status',
-							title: 'Status'
+							title: this.$i18n.t('nodes.overview.table.status')
 						},
 						{
 							id: 'actions',
-							title: 'Actions'
+							title: this.$i18n.t('nodes.overview.table.actions')
 						}
 					],
 					rows: false

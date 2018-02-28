@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Nodes</h1>
+					<h1>{{ $t('navigation.nodes') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -12,24 +12,24 @@
 			<div class="col-lg-9">
 				<form class="form-horizontal well">
 					<fieldset>
-						<legend v-if="!this.$route.params.id">New Node</legend>
-						<legend v-if="this.$route.params.id">Edit Node</legend>
+						<legend v-if="!this.$route.params.id">{{ $t('nodes.new.newnode') }}</legend>
+						<legend v-if="this.$route.params.id">{{ $t('nodes.new.editnode') }}</legend>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Name</label>
+							<label class="col-lg-2 control-label">{{ $t('nodes.new.name.title') }}</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="form.name" class="form-control">
-								<span v-if="editing" class="help-block">Changing this name will create a duplication and <i>not</i> change the element's name.</span>
+								<span v-if="editing" class="help-block"><p v-html="$t('nodes.new.name.help')"></p></span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Latitude / Longitude</label>
+							<label class="col-lg-2 control-label">{{ $t('nodes.new.latlong') }}</label>
 							<div class="col-lg-3">
 								<input type="number" lang="en-150" v-model.number="form.latitude.value" min="0" max="90" placeholder="0 - 90" class="form-control">
 							</div>
 							<div class="col-lg-2">
 								<select class="form-control" v-model.number="form.latitude.orientation">
-									<option value="1">North</option>
-									<option value="-1">South</option>
+									<option value="1">{{ $t('nodes.new.north') }}</option>
+									<option value="-1">{{ $t('nodes.new.south') }}</option>
 								</select>
 							</div>
 							<div class="col-lg-3">
@@ -37,8 +37,8 @@
 							</div>
 							<div class="col-lg-2">
 								<select class="form-control" v-model.number="form.longitude.orientation">
-									<option value="1">East</option>
-									<option value="-1">West</option>
+									<option value="1">{{ $t('nodes.new.east') }}</option>
+									<option value="-1">{{ $t('nodes.new.west') }}</option>
 								</select>
 							</div>
 						</div>
@@ -49,26 +49,26 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Status</label>
+							<label class="col-lg-2 control-label">{{ $t('nodes.new.status.title') }}</label>
 							<div class="col-lg-10">
 								<select class="form-control" v-model="form.status">
-									<option value="ONLINE">Online</option>
-									<option value="SUSPENDED">Suspended</option>
+									<option value="ONLINE">{{ $t('nodes.new.status.online') }}</option>
+									<option value="SUSPENDED">{{ $t('nodes.new.status.suspended') }}</option>
 								</select>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
-								<button type="submit" @click="submitForm" class="btn btn-primary">Submit</button>
-								<router-link to="/nodes"><button class="btn btn-default">Abort</button></router-link>
+								<button type="submit" @click="submitForm" class="btn btn-primary">{{ $t('general.submit') }}</button>
+								<router-link to="/nodes"><button class="btn btn-default">{{ $t('general.abord') }}</button></router-link>
 							</div>
 						</div>
 					</fieldset>
 				</form>
 			</div>
 			<div class="col-lg-3">
-				<h2>Information</h2>
-				<p>This table shows the registered DAPNET Core nodes and is mostly for SysOp information.</p>
+				<h2>{{ $t('nodes.new.information.title') }}</h2>
+				<p>{{ $t('nodes.new.information.help') }}</p>
 			</div>
 		</div>
 	</div>

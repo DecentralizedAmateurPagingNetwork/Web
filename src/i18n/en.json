@@ -366,5 +366,50 @@
 			  	"help": "These are the contents of rubrics. They are up to now only available on Skyper paging receivers in this form, but also sent as personal calls to RIC 1000 + (Rubric-Number) for reception with e.g. AlphaPoc."
 			}
 		}
-	}
+	},
+  "nodes": {
+		"overview": {
+		  	"actions": "Actions",
+		  	"newnode": "New Node",
+		  	"sendmailtoallowners": "Send a mail to all owners",
+		  	"statistics": {
+				"title:": "Statistics",
+			  	"totalnodes": "Total Nodes"
+			},
+		  	"information": {
+			  	"title": "Information",
+			  	"help": "Nodes are the instances of the DAPNET cluster. This list shows the status of them."
+			},
+		  	"table": {
+				"name": "Name",
+				"version": "Version",
+				"ipaddress": "IP-Address",
+				"status": "Status",
+				"actions": "Actions"
+		  	}
+		},
+		"new": {
+	  		"newnode": "New Node",
+		  	"editnode": "Edit Node",
+		  	"name": {
+			  "title": "Name",
+			  "help": "Changing this name will create a duplication and <i>not</i> change the element's name."
+			},
+		  	"latlong": "Latitude / Longitud",
+		  	"north": "North",
+		  	"south": "South",
+		  	"east": "East",
+		  	"west": "West",
+		  	"owner": "Owner",
+		  	"status": {
+			  	"title": "Status",
+			  	"online": "Online",
+			  	"suspended": "Suspended"
+			},
+		  	"information": {
+				"title": "Information",
+				"help": "This table shows the registered DAPNET Core nodes and is mostly for SysOp information."
+			  }
+		}
+  }
 }

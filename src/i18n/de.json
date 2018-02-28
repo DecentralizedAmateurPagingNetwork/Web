@@ -360,5 +360,50 @@
 		"help": "Diese ist der Inhalt aller Rubriken. Sie sind in dieser geordenten Form bsi jetzt nur auf Skypern zu lesen. Allerdings werden Sie auch als persönlicher Ruf an die RIC 1000 + (Rubrik-Nummer) ausgesendet, z.B. für AlphaPoc-Meldeempfänger."
 	  }
 	}
+  },
+  "nodes": {
+	"overview": {
+	  "actions": "Aktionen",
+	  "newnode": "Neuer Knoten",
+	  "sendmailtoallowners": "Sende Email an alle Besitzer von Knoten",
+	  "statistics": {
+		"title:": "Statistiken",
+		"totalnodes": "Gesamtzahl aller Nodes"
+	  },
+	  "information": {
+		"title": "Information",
+		"help": "Konten sind Instanzen des DAPNET-Verbundes, deren Status hier gezeigt wird."
+	  },
+	  "table": {
+		"name": "Name",
+		"version": "Version",
+		"ipaddress": "IP-Adresse",
+		"status": "Status",
+		"actions": "Aktionen"
+	  }
+	},
+	"new": {
+	  "newnode": "Neuer Knoten",
+	  "editnode": "Ändere Konten",
+	  "name": {
+		"title": "Name",
+		"help": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Knotens."
+	  },
+	  "latlong": "Breite / Länge",
+	  "north": "Nord",
+	  "south": "Süd",
+	  "east": "Ost",
+	  "west": "West",
+	  "owner": "Besitzer",
+	  "status": {
+		"title": "Status",
+		"online": "Online",
+		"suspended": "abgeschaltet"
+	  },
+	  "information": {
+		"title": "Information",
+		"help": "Diese Tabelle zeige alle angemelteten DAPNET Knoten und ist hauptsächlicht zur Information von Betreibern von Sendern oder Knoten gedacht.."
+	  }
+	}
   }
 }
