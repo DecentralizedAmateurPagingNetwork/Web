@@ -3,14 +3,14 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Rubrics</h1>
+					<h1>{{ $t('navigation.rubrics.title') }}</h1>
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-lg-9">
-				<h2>All Rubrics
+				<h2>{{ $t('navigation.rubrics.all') }}
 					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': running }" @click="loadData"></i>
 				</h2>
 
@@ -20,20 +20,20 @@
 			</div>
 			<div class="col-lg-3">
 				<div class="actions well">
-					<legend>Actions</legend>
+					<legend>{{ $t('rubric.overview.actions') }}</legend>
 					<ul>
 						<li v-if="this.$store.getters.user.admin"><router-link to="/rubrics/new">New Rubric</router-link></li>
 					</ul>
 					<br/>
 					<template v-if="table.rows">
-						<legend>Statistics</legend>
+						<legend>{{ $t('rubric.overview.statistics') }}</legend>
 						<ul class="list-group">
-							<li class="list-group-item"><b>Total Rubrics</b><span class="badge">{{ statTotal }}</span></li>
+							<li class="list-group-item"><b>{{ $t('rubric.overview.totalrubrics') }}</b><span class="badge">{{ statTotal }}</span></li>
 						</ul>
 					</template>
 				</div>
-				<h2>Information</h2>
-				<p>This is a list of all rubrics on the DAPNET. A rubric number can by assigned to several transmitter groups. Keep in mind that the transmitter groups are disjunct for the same rubric number in order to avoid overlapping number assigments.<br />Use the Activate Rubrics button to enable the reception of rubrics on your Skyper.</p>
+				<h2>{{ $t('rubric.overview.information.title') }}</h2>
+				<p><p v-html="$t('rubric.overview.information.help')"></p></p>  <!-- ´PLEASE CHECK -->
 			</div>
 		</div>
 	</div>
@@ -52,27 +52,27 @@
 					columns: [
 						{
 							id: 'number',
-							title: 'Number'
+							title: this.$i18n.t('rubric.overview.table.number')
 						},
 						{
 							id: 'name',
-							title: 'Name'
+							title: this.$i18n.t('rubric.overview.table.name')
 						},
 						{
 							id: 'label',
-							title: 'Label'
+							title: this.$i18n.t('rubric.overview.table.label')
 						},
 						{
 							id: 'transmitterGroupNames',
-							title: 'Transmitter Groups'
+							title: this.$i18n.t('rubric.overview.table.Transmitter Groups')
 						},
 						{
 							id: 'ownerNames',
-							title: 'Owner'
+							title: this.$i18n.t('rubric.overview.table.owner')
 						},
 						{
 							id: 'actions',
-							title: 'Actions'
+							title: this.$i18n.t('rubric.overview.table.actions')
 						}
 					],
 					rows: false

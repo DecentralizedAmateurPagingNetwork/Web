@@ -99,7 +99,7 @@
 			"usage": {
 				"title": "Usage",
 			  	"personal": "Personal",
-		  	"widerange": "Widerange"
+		  	"widerange": "Widerange",
 		  	"help": "For classification of the transmitters, there are two categories: Personal (Transmitters with low output power like RasPager) and Wide Range (Higher output power and elevated location site)."
 			},
 			"antennatype": {
@@ -210,5 +210,46 @@
 	  "submit": "Submit",
 	  "abort": "Abort",
 	  "search": "Search"
-  }
+  	},
+  	"rubric": {
+		"overview": {
+		  	"actions": "Actions",
+		 	"statistics:": "Statistics",
+		  	"totalrubrics": "Total Rubrics",
+		  	"information": {
+				"title": "Information",
+			  	"help": "This is a list of all rubrics on the DAPNET. A rubric number can by assigned to several transmitter groups. Keep in mind that the transmitter groups are disjunct for the same rubric number in order to avoid overlapping number assigments.<br />Use the Activate Rubrics button to enable the reception of rubrics on your Skyper."
+			},
+			"table": {
+				"number": "Number",
+			  	"name": "Name",
+			  	"label": "Label",
+			  	"transmittergroup": "Transmitter Groups",
+			  	"owner": "Owner",
+			  	"actions": "Actions"
+			}
+		},
+		"new": {
+			"newrubric": "New Rubric",
+		  	"editrubirc": "Edit Rubric",
+		  	"name": "Name",
+		  	"namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
+		  	"label": "Label",
+		  	"number": "Number",
+			"transmittergroup": "Transmitter Groups",
+			"owner": "Owner",
+		  	"information": {
+			  	"title": "Information",
+			  	"help": "Rubrics are a Skyper based invention allowing to send news sorted into chategories (the rubrics). Assign the number with care and contact <code>support [at] hampager.de</code> in case of doubt. Be aware that the number of rubrics is limited netwide to 99."
+			}
+		},
+	  	"activation": {
+		  	"pagernumber": "Pager-Number (your RIC)",
+		  	"information": {
+			  	"title": "Information",
+			  	"help": "Use the function to send an activation call to your Skyper. After successful reception, you can select the rubrics on \"Skyper Setup\" in the skyper menu."
+			},
+		  	"transmittergroup": "Transmitter Groups"
+		}
+  	}
 }

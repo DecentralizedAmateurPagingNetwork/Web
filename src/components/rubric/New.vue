@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Rubrics</h1>
+					<h1>{{ $t('navigation.rubrics.title') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -12,51 +12,51 @@
 			<div class="col-lg-9">
 				<form class="form-horizontal well">
 					<fieldset>
-						<legend v-if="!this.$route.params.id">New Rubric</legend>
-						<legend v-if="this.$route.params.id">Edit Rubric</legend>
+						<legend v-if="!this.$route.params.id">{{ $t('rubric.new.newrubric') }}</legend>
+						<legend v-if="this.$route.params.id">{{ $t('rubric.new.editrubric') }}</legend>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Name</label>
+							<label class="col-lg-2 control-label">{{ $t('rubric.new.name') }}</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="form.name" class="form-control">
-								<span v-if="editing" class="help-block">Changing this name will create a duplication and <i>not</i> change the element's name.</span>
+								<span v-if="editing" class="help-block"><p v-html="$t('rubric.new.namehelp')"></p></span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Label</label>
+							<label class="col-lg-2 control-label">{{ $t('rubric.new.label') }}</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="form.label" class="form-control">
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Number</label>
+							<label class="col-lg-2 control-label">{{ $t('rubric.new.number') }}</label>
 							<div class="col-lg-10">
 								<input type="number" v-model.number="form.number" min="1" max="99" placeholder="1 - 99" class="form-control">
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Transmitter Groups</label>
+							<label class="col-lg-2 control-label">{{ $t('rubric.new.transmittergroup') }}</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.transmittergroups" :options="formData.transmittergroups" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Owner</label>
+							<label class="col-lg-2 control-label">{{ $t('rubric.new.owner') }}</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.owners" :options="formData.users" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
-								<button type="submit" @click="submitForm" class="btn btn-primary">Submit</button>
-								<router-link to="/rubrics"><button class="btn btn-default">Abort</button></router-link>
+								<button type="submit" @click="submitForm" class="btn btn-primary">{{ $t('general.submit') }}</button>
+								<router-link to="/rubrics"><button class="btn btn-default">{{ $t('general.abort') }}</button></router-link>
 							</div>
 						</div>
 					</fieldset>
 				</form>
 			</div>
 			<div class="col-lg-3">
-				<h2>Information</h2>
-				<p>Rubrics are a Skyper based invention allowing to send news sorted into chategories (the rubrics). Assign the number with care and contact <code>support [at] hampager.de</code> in case of doubt. Be aware that the number of rubrics is limited netwide to 99.</p>
+				<h2>{{ $t('rubric.new.information.title') }}Information</h2>
+				<p><p v-html="$t('rubric.new.information.help')"></p></p>  <!-- ´PLEASE CHECK -->
 			</div>
 		</div>
 	</div>

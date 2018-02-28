@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Rubrics</h1>
+					<h1>{{ $t('navigation.rubrics.title') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -12,31 +12,31 @@
 			<div class="col-lg-9">
 				<form class="form-horizontal well">
 					<fieldset>
-						<legend>Activate Rubric</legend>
+						<legend>{{ $t('navigation.rubrics.activate') }}</legend>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Pager-Number (your RIC)</label>
+							<label class="col-lg-2 control-label">{{ $t('rubric..activation.pagernumber') }}</label>
 							<div class="col-lg-10">
 								<input type="number" v-model.number="form.number" min="0" max="2097151" placeholder="0 - 2097151" class="form-control">
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Transmitter Groups</label>
+							<label class="col-lg-2 control-label">{{ $t('rubric.activation.transmittergroup') }}</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.transmittergroups" :options="formData.transmittergroups" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
-								<button type="submit" @click="submitForm" class="btn btn-primary">Submit</button>
-								<router-link to="/rubrics"><button class="btn btn-default">Abort</button></router-link>
+								<button type="submit" @click="submitForm" class="btn btn-primary">{{ $t('general.submit') }}</button>
+								<router-link to="/rubrics"><button class="btn btn-default">{{ $t('general.abort') }}</button></router-link>
 							</div>
 						</div>
 					</fieldset>
 				</form>
 			</div>
 			<div class="col-lg-3">
-				<h2>Information</h2>
-				<p>Use the function to send an activation call to your Skyper. After successful reception, you can select the rubrics on "Skyper Setup" in the skyper menu.</p>
+				<h2>{{ $t('rubric.activation.information.title') }}</h2>
+				<p>{{ $t('rubric.activation.information.help') }}</p>
 			</div>
 		</div>
 	</div>
