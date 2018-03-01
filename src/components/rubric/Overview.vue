@@ -33,7 +33,7 @@
 					</template>
 				</div>
 				<h2>{{ $t('rubric.overview.information.title') }}</h2>
-				<p><p v-html="$t('rubric.overview.information.help')"></p></p>  <!-- ´PLEASE CHECK -->
+				<p>{{ $t('rubric.overview.information.help') }}</p>
 			</div>
 		</div>
 	</div>

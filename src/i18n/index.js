@@ -13,11 +13,4 @@ const i18n = new VueI18n({
 	}
 });
 
-if (module.hot) {
-	module.hot.accept(['./en.json', './de.json'], () => {
-		i18n.setLocaleMessage('en', require('./en.json'));
-		i18n.setLocaleMessage('ja', require('./de.json'));
-	});
-}
-
 export default i18n;

@@ -19,7 +19,7 @@
 							<div class="col-lg-5">
 								<input type="text" v-model="form.name" class="form-control">
 								<span class="help-block">{{ $t('transmitter.new.callsign.help') }}</span>
-								<span v-if="editing" class="help-block"><p v-html="$t('transmitter.new.callsignhelp.edit')"></p></span>  <!-- NOT SURE -->
+								<span v-if="editing" class="help-block">{{ $t('transmitter.new.callsignhelp.edit') }}</span>
 							</div>
 							<div class="col-lg-5">
 								<multiselect v-model="formData.hamnetDb.selected" :options="formData.hamnetDb.all" :multiple="false" :close-on-select="true" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
@@ -149,7 +149,7 @@
 							<label class="col-lg-2 control-label">{{ $t('transmitter.new.owner.title') }}</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.owners" :options="formData.users" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
-								<span class="help-block">{{ $t('transmitter.new.owner.help') }}/span>
+								<span class="help-block">{{ $t('transmitter.new.owner.help') }}</span>
 							</div>
 						</div>
 						<div class="form-group">

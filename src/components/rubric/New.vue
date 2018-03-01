@@ -56,7 +56,7 @@
 			</div>
 			<div class="col-lg-3">
 				<h2>{{ $t('rubric.new.information.title') }}Information</h2>
-				<p><p v-html="$t('rubric.new.information.help')"></p></p>  <!-- ´PLEASE CHECK -->
+				<p>{{ $t('rubric.new.information.help') }}</p>
 			</div>
 		</div>
 	</div>

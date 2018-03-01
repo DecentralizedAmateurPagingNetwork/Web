@@ -7,6 +7,7 @@
 					<ul class="list-unstyled">
 						<li><p v-on:click="changeLanguage('en')" class="linklike">{{ $t('footer.language.english') }}</p></li>
 						<li><p v-on:click="changeLanguage('de')" class="linklike">{{ $t('footer.language.german') }}</p></li>
+						<li><p v-on:click="changeLanguage('es')" class="linklike">{{ $t('footer.language.spanish') }}</p></li>
 					</ul>
 					<p><b>{{ $t('footer.more.title') }}:</b></p>
 					<ul class="list-unstyled">

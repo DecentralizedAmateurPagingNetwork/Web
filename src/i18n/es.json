@@ -1,116 +1,116 @@
 {
-  "navigation": {
-	"calls": "Llamadas",
-	"subscribers": "Subscribers",
-	"rubrics": {
-	  "title": "Rúbricas",
-	  "all": "Todas las rúbricas",
-	  "activate": "Activate Rubrics",
-	  "content": "Contenido de rúbrica"
-	},
-	"transmitters": {
-	  "title": "Transmisores",
-	  "all": "Todos los transmisores",
-	  "map": "Mapa",
-	  "groups": "Groupos de transmisores"
-	},
-	"nodes": "Nodes",
-	"users": "Users",
-	"settings": "Settings",
-	"login": "Login",
-	"logout": "Logout"
-  },
-  "transmitter": {
-	"title": "Transmitters",
-	"table": {
-	  "caption": "All Transmitters",
-	  "callsign": "Indicative",
-	  "node": "Node",
-	  "ipaddress": "Dirección IP",
-	  "owner": "dueño",
-	  "device": "Device",
-	  "status": "Estatus",
-	  "connectedsince": "Conectado desde",
-	  "actions": "Acciones"
-	},
-	"actions": {
-	  "newtransmitter": "Nuevo transmisor",
-	  "sendmailtoallowner": "Envia un correo a todas los dueños"
-	},
-	"statistics": {
-	  "title": "Statistics",
-	  "totaltransmitters": "Total Transmitters",
-	  "online": "Online",
-	  "offline": "Offline",
-	  "wideragneonly": "Widerange-transmitter only"
-	},
-	"information": {
-	  "title": "Information",
-	  "text": "This overview shows all registered transmitters of the DAPNET network. Before you can connect your transmitter to one of the DAPNET-Nodes, it has to be registered by one of the admins. There are two classes of transmitters: Widerange (&gt; 1 Watt) and Personal (&lt;= 1 Watt). Why is there such a big number of offline transmitters? These are transmitters which have been registered in the past, but apparently are not online now. There is no information stored which transmitters "should" be online and which not.<br>Transmitters have one or multiple owners who can change the settings by themselves. Each transmitter is assigned to one or max. 16 timeslots. This is necessary as they transmit all on the same frequency, but not overlapping at the same time. Be aware to assign no timeslots to your transmitter that are already used in you coverage area. Contact one of the admins, if you need help."
-	}
-  },
-  "table": {
-	"search": "Search",
-	"page": "Page",
-	"of": "of"
-  },
-  "home": {
-	"welcome": {
-	  "title": "Welcome to DAPNET Web!",
-	  "text": "The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts. It is the new and further developed version of the <a href=\"http://ham-pager.sourceforge.net\" target=\"_blank\">FunkrufMaster</a>. It consists of a decentral server cluster feeding paging data to distributed transmitters.<br> The most used frequency is 439.9875 MHz and the protocol is POCSAG. Common paging receivers are of type \"Skyper\", but there exist others as well. As it is used on amateur radio frequencies, commercial use is forbidden.<br> If you are a licensed amateur radio operator, get your login account now. We are happy for every new transmitter participating in the network. There is comprehensive documentation on the DAPNET Project available at the <a href=\"http://doku.hampager.de\" target=\"_blank\">DAPNET DokuWiki</a>."
-	},
-	"information": {
-	  "dapnet": {
-		"title": "The DAPNET",
-		"projects": "Projects"
-	  },
-	  "information": {
-		"title": "Information"
-	  },
-	  "statistics": {
-		"title": "Statistics",
-		"calls": "Calls",
+	"navigation": {
+		"calls": "Llamadas",
 		"subscribers": "Subscribers",
-		"rubric-content": "Rubric Content",
-		"rubrics": "Rubrics",
-		"transmitters": "Transmitters",
+		"rubrics": {
+			"title": "Rúbricas",
+			"all": "Todas las rúbricas",
+			"activate": "Activate Rubrics",
+			"content": "Contenido de rúbrica"
+		},
+		"transmitters": {
+			"title": "Transmisores",
+			"all": "Todos los transmisores",
+			"map": "Mapa",
+			"groups": "Groupos de transmisores"
+		},
 		"nodes": "Nodes",
-		"users": "Users"
-	  }
+		"users": "Users",
+		"settings": "Settings",
+		"login": "Login",
+		"logout": "Logout"
+	},
+	"transmitter": {
+		"title": "Transmitters",
+		"table": {
+			"caption": "All Transmitters",
+			"callsign": "Indicative",
+			"node": "Node",
+			"ipaddress": "Dirección IP",
+			"owner": "dueño",
+			"device": "Device",
+			"status": "Estatus",
+			"connectedsince": "Conectado desde",
+			"actions": "Acciones"
+		},
+		"actions": {
+			"newtransmitter": "Nuevo transmisor",
+			"sendmailtoallowner": "Envia un correo a todas los dueños"
+		},
+		"statistics": {
+			"title": "Statistics",
+			"totaltransmitters": "Total Transmitters",
+			"online": "Online",
+			"offline": "Offline",
+			"wideragneonly": "Widerange-transmitter only"
+		},
+		"information": {
+			"title": "Information",
+			"text": "This overview shows all registered transmitters of the DAPNET network. Before you can connect your transmitter to one of the DAPNET-Nodes, it has to be registered by one of the admins. There are two classes of transmitters: Widerange (&gt; 1 Watt) and Personal (&lt;= 1 Watt). Why is there such a big number of offline transmitters? These are transmitters which have been registered in the past, but apparently are not online now. There is no information stored which transmitters \"should\" be online and which not.<br>Transmitters have one or multiple owners who can change the settings by themselves. Each transmitter is assigned to one or max. 16 timeslots. This is necessary as they transmit all on the same frequency, but not overlapping at the same time. Be aware to assign no timeslots to your transmitter that are already used in you coverage area. Contact one of the admins, if you need help."
+		}
+	},
+	"table": {
+		"search": "Search",
+		"page": "Page",
+		"of": "of"
+	},
+	"home": {
+		"welcome": {
+			"title": "Welcome to DAPNET Web!",
+			"text": "The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts. It is the new and further developed version of the <a href=\"http://ham-pager.sourceforge.net\" target=\"_blank\">FunkrufMaster</a>. It consists of a decentral server cluster feeding paging data to distributed transmitters.<br> The most used frequency is 439.9875 MHz and the protocol is POCSAG. Common paging receivers are of type \"Skyper\", but there exist others as well. As it is used on amateur radio frequencies, commercial use is forbidden.<br> If you are a licensed amateur radio operator, get your login account now. We are happy for every new transmitter participating in the network. There is comprehensive documentation on the DAPNET Project available at the <a href=\"http://doku.hampager.de\" target=\"_blank\">DAPNET DokuWiki</a>."
+		},
+		"information": {
+			"dapnet": {
+				"title": "The DAPNET",
+				"projects": "Projects"
+			},
+			"information": {
+				"title": "Information"
+			},
+			"statistics": {
+				"title": "Statistics",
+				"calls": "Calls",
+				"subscribers": "Subscribers",
+				"rubric-content": "Rubric Content",
+				"rubrics": "Rubrics",
+				"transmitters": "Transmitters",
+				"nodes": "Nodes",
+				"users": "Users"
+			}
+		}
+	},
+	"footer": {
+		"language": {
+			"title": "Language",
+			"english": "English",
+			"german": "German"
+		},
+		"more": {
+			"title": "More",
+			"faq": "FAQ"
+		},
+		"support": {
+			"title": "Support us",
+			"github": "GitHub",
+			"rwth-amateur-radio": "RWTH Amateur Radio"
+		},
+		"contact": {
+			"title": "Contact us",
+			"twitter": "Twitter",
+			"facebook": "Facebook",
+			"contact": "Contact",
+			"impress": "Impress",
+			"privacy": "Privacy"
+		},
+		"versions": {
+			"title": "Versions",
+			"check": "Check"
+		}
+	},
+	"rest": {
+		"errors": {
+			"api-unreachable": "Unable to reach API server. Please try again later.",
+			"http-error": "Unhandled HTTP error {status}. Please try again later."
+		}
 	}
-  },
-  "footer": {
-	"language": {
-	  "title": "Language",
-	  "english": "English",
-	  "german": "German"
-	},
-	"more": {
-	  "title": "More",
-	  "faq": "FAQ"
-	},
-	"support": {
-	  "title": "Support us",
-	  "github": "GitHub",
-	  "rwth-amateur-radio": "RWTH Amateur Radio"
-	},
-	"contact": {
-	  "title": "Contact us",
-	  "twitter": "Twitter",
-	  "facebook": "Facebook",
-	  "contact": "Contact",
-	  "impress": "Impress",
-	  "privacy": "Privacy"
-	},
-	"versions": {
-	  "title": "Versions",
-	  "check": "Check"
-	}
-  },
-  "rest": {
-	"errors": {
-	  "api-unreachable": "Unable to reach API server. Please try again later.",
-	  "http-error": "Unhandled HTTP error {status}. Please try again later."
-	}
-  }
 }
