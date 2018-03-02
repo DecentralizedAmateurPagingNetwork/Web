@@ -342,6 +342,7 @@
 	},
 	"nodes": {
 		"overview": {
+		  	"allnodes": "All Nodes",
 			"newnode": "New Node",
 			"sendmailtoallowners": "Send a mail to all owners",
 			"statistics": {
@@ -402,7 +403,7 @@
 		"overview": {
 		  	"newtxgroup": "New Transmitter Groups",
 		  	"alltxgroups": "All Transmitter Groups",
-		  	"totaltxgroup": "Total Groups",
+		  	"totaltxgroups": "Total Groups",
 		  	"information": {
 			  	"help": "A transmitter group is a logical association of one or multiple transmitters to a group. This is necessary to divide the transmitters into regional areas, as not all content has to be transmitted on the whole network. Both personal calls as well als rubric's content have to be linked to a transmitter group. Only transmitters that are member of this group will get the information from the DAPNET node in order to transmit it."
 			}

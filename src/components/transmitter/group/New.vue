@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>{{ $t('navigation.groups') }}</h1>
+					<h1>{{ $t('navigation.transmitters.groups') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -49,7 +49,7 @@
 				</form>
 			</div>
 			<div class="col-lg-3">
-				<h2>{{ $t('general.informatnon') }}</h2>
+				<h2>{{ $t('general.information') }}</h2>
 				<p></p>
 			</div>
 		</div>

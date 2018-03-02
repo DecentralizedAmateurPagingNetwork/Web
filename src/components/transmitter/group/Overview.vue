@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>{{ $t('navigation.groups') }}</h1>
+					<h1>{{ $t('navigation.transmitters.groups') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -23,7 +23,7 @@
 					<template v-if="this.$store.getters.user.admin">
 						<legend>{{ $t('general.actions') }}</legend>
 						<ul>
-							<li><router-link to="/transmitters/groups/new">{{ $t('group.overview.newtxgroups') }}</router-link></li>
+							<li><router-link to="/transmitters/groups/new">{{ $t('group.overview.newtxgroup') }}</router-link></li>
 						</ul>
 						<br/>
 					</template>

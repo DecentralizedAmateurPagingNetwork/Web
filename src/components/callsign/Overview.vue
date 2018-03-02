@@ -30,7 +30,7 @@
 						<br/>
 					</template>
 					<template v-if="table.rows">
-						<legend>Statistics</legend>
+						<legend>{{ $t('general.statistics') }}</legend>
 						<ul class="list-group">
 							<li class="list-group-item"><b>{{ $t('subscribers.overview.totalsubscribers') }}</b><span class="badge">{{ statTotal }}</span></li>
 						</ul>
