@@ -10,7 +10,7 @@
 
 		<div class="row">
 			<div class="col-lg-9">
-				<h2>All Rubric Content
+				<h2>{{ $t('news.overview.allrubriccontent') }}
 					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': running }" @click="loadData"></i>
 				</h2>
 
@@ -28,7 +28,7 @@
 					</ul>
 					<br/>
 					<template v-if="table.rows">
-						<legend>Statistics</legend>
+						<legend>{{ $t('general.statistics') }}</legend>
 						<ul class="list-group">
 							<li class="list-group-item"><b>{{ $t('news.overview.totalrubriccontent') }}</b><span class="badge">{{ statTotal }}</span></li>
 						</ul>

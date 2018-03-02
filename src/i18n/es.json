@@ -84,13 +84,6 @@
 		"title": "Password",
 		"help": "Enter a authentication password for this transmitter. In the UniPager webinterface it’s called Auth Key."
 	  },
-	  "latlong": {
-		"title": "Latitude / Longitude",
-		"north": "North",
-		"south": "South",
-		"east": "East",
-		"west": "West"
-	  },
 	  "usage": {
 		"title": "Usage",
 		"personal": "Personal",
@@ -207,7 +200,15 @@
 	"information": "Information",
 	"owner": "Dueño",
 	"actions" :"Acciones",
-	"statistics": "Estadisticas"
+	"statistics": "Estadisticas",
+	"latlong": {
+	  "title": "Breite / Länge",
+	  "north": "Nord",
+	  "south": "South",
+	  "east": "Ost",
+	  "west": "West"
+	}
+
   },
   "rubric": {
 	"overview": {
@@ -374,11 +375,6 @@
 		"title": "Name",
 		"help": "Changing this name will create a duplication and <i>not</i> change the element's name."
 	  },
-	  "latlong": "Latitude / Longitud",
-	  "north": "North",
-	  "south": "South",
-	  "east": "East",
-	  "west": "West",
 	  "status": {
 		"title": "Status",
 		"online": "Online",

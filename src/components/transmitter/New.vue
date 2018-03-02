@@ -34,14 +34,14 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">{{ $t('transmitter.new.latlong.title') }}</label>
+							<label class="col-lg-2 control-label">{{ $t('general.latlong.title') }}</label>
 							<div class="col-lg-3">
 								<input type="number" lang="en-150" v-model.number="form.latitude.value" min="0" max="90" placeholder="0 - 90" class="form-control">
 							</div>
 							<div class="col-lg-2">
 								<select class="form-control" v-model.number="form.latitude.orientation">
-									<option value="1">{{ $t('transmitter.new.latlong.north') }}</option>
-									<option value="-1">{{ $t('transmitter.new.latlong.south') }}</option>
+									<option value="1">{{ $t('general.latlong.north') }}</option>
+									<option value="-1">{{ $t('general.latlong.south') }}</option>
 								</select>
 							</div>
 							<div class="col-lg-3">
@@ -49,8 +49,8 @@
 							</div>
 							<div class="col-lg-2">
 								<select class="form-control" v-model.number="form.longitude.orientation">
-									<option value="1">{{ $t('transmitter.new.latlong.east') }}</option>
-									<option value="-1">{{ $t('transmitter.new.latlong.west') }}</option>
+									<option value="1">{{ $t('general.latlong.east') }}</option>
+									<option value="-1">{{ $t('general.latlong.west') }}</option>
 								</select>
 							</div>
 						</div>

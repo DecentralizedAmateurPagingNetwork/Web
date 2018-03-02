@@ -84,13 +84,6 @@
 				"title": "Passwort",
 				"help": "Bitte eine Authentifizierungspasswort für diesen Sender festlegen. Im UniPager Webinterface wird dies \"Auth Key\" genannt."
 			},
-			"latlong": {
-				"title": "Breite / Länge",
-				"north": "Nord",
-				"south": "Süd",
-				"east": "Ost",
-				"west": "West"
-			},
 			"usage": {
 				"title": "Verwendungsart",
 				"personal": "Persönlich",
@@ -206,7 +199,14 @@
 	  	"information": "Information",
 	  	"owner": "Besitzer",
 	 	"actions": "Aktionen",
-	  	"statistics:": "Statistiken"
+	  	"statistics:": "Statistiken",
+		"latlong": {
+			"title": "Breite / Länge",
+			"north": "Nord",
+			"south": "Süd",
+			"east": "Ost",
+			"west": "West"
+	  	}
 	},
 	"rubric": {
 		"overview": {
@@ -366,11 +366,6 @@
 				"title": "Name",
 				"help": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Knotens."
 			},
-			"latlong": "Breite / Länge",
-			"north": "Nord",
-			"south": "Süd",
-			"east": "Ost",
-			"west": "West",
 			"status": {
 				"title": "Status",
 				"online": "Online",
