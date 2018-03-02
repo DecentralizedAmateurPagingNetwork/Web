@@ -15,7 +15,7 @@
 						<legend v-if="!this.$route.params.id">{{ $t('subscribers.new.newsubscriber') }}</legend>
 						<legend v-if="this.$route.params.id">{{ $t('subscribers.new.editsubscriber') }}</legend>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">{{ $t('subscribers.new.subscriber.title') }}</label>
+							<label class="col-lg-2 control-label">{{ $t('navigation.subscribers') }}</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="form.callsign" class="form-control">
 								<span class="help-block">{{ $t('subscribers.new.subscriber.help') }}</span>

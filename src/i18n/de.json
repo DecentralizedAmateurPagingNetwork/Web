@@ -34,9 +34,7 @@
 				"title": "Informationen"
 			},
 			"statistics": {
-				"title": "Statistiken",
 				"calls": "Rufe",
-				"subscribers": "Abonnenten",
 				"rubric-content": "Rubriken Inhalt",
 				"rubrics": "Rubriken",
 				"transmitters": "Sender",
@@ -61,7 +59,6 @@
 			"sendmailtoallowners": "Sende Email an alle Besitzer"
 		  },
 		  "statistics": {
-			"title": "Statistiken",
 			"widerange": "Weitbereich",
 			"personal": "Persönlich",
 			"total": "Gesamt",
@@ -208,11 +205,11 @@
 		"search": "Suchen",
 	  	"information": "Information",
 	  	"owner": "Besitzer",
-	 	"actions": "Aktionen"
+	 	"actions": "Aktionen",
+	  	"statistics:": "Statistiken"
 	},
 	"rubric": {
 		"overview": {
-			"statistics:": "Statistiken",
 			"totalrubrics": "Alle Rubriken",
 			"information": {
 				"help": "Dies ist eine Liste aller Rubiken im DAPNET. Ein Rubik kann einer oder mehreren Sender-Gruppen zugewiesen werden. Bitte darauf achten, dass die Sender-Gruppen unterschiedlich sind, falls eine Rubiken-Nummer mehrfach verwendet wird. Dies vermeidet überlappende Zuordnungen.<br />BUm dem Empfang der Rubriken auf dem Skyper freizuschalten bitte die Funktion \"Rubriken aktivieren\" verwenden."
@@ -282,7 +279,6 @@
 		"overview": {
 			"allcalls": "Alle Rufe",
 			"newcall": "Neuer Ruf",
-			"statistics": "Statistiken",
 			"emergencies": "Notfall-Alamierungen",
 			"totalcalls": "Gesamtanzahl Rufe",
 			"information": {
@@ -290,7 +286,6 @@
 			},
 			"table": {
 				"timestamp": "Zeitstempel",
-				"subscribers": "Teilnehmer",
 				"txgroups": "Sender-Gruppen",
 				"message": "Nachricht",
 				"emergency": "Hohe Priorität?",
@@ -303,7 +298,6 @@
 				"charactersremaining": "80 Zeichen verbleibend.<br />Bitte den Nachrichtentext eingeben. Das Absender-Rufzeichen wird automatisch hinzugefügt."
 			},
 			"subscribers": {
-				"title": "Empfänger",
 				"help": "Einen oder mehrere Teilnehmer als Empfänger des Rufs auswählen."
 			},
 			"transmittergroups": {
@@ -353,7 +347,6 @@
 			"newnode": "Neuer Knoten",
 			"sendmailtoallowners": "Sende Email an alle Besitzer von Knoten",
 			"statistics": {
-				"title:": "Statistiken",
 				"totalnodes": "Gesamtzahl aller Nodes"
 			},
 			"information": {

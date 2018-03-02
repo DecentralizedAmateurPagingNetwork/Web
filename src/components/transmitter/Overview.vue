@@ -30,7 +30,7 @@
 						<br/>
 					</template>
 					<template v-if="table.rows">
-						<legend>{{ $t('transmitter.statistics.title') }}</legend>
+						<legend>{{ $t('general.statistics') }}</legend>
 						<ul class="list-group">
 							<li class="list-group-item"><b>{{ $t('transmitter.overview.statistics.widerange') }}</b><span class="badge">{{ stats.widerange.online }} / {{ stats.widerange.offline }} / {{ stats.widerange.total }}</span></li>
 							<li class="list-group-item"><b>{{ $t('transmitter.overview.statistics.personal') }}</b><span class="badge">{{ stats.personal.online }} / {{ stats.personal.offline }} / {{ stats.personal.total }}</span></li>

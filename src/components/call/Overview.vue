@@ -26,7 +26,7 @@
 					</ul>
 					<br/>
 					<template v-if="table.rows">
-						<legend>{{ $t('calls.overview.statistics') }}</legend>
+						<legend>{{ $t('general.statistics') }}</legend>
 						<ul class="list-group">
 							<li class="list-group-item"><b>{{ $t('calls.overview.emergencies') }}</b><span class="badge">{{ statEmergencies }}</span></li>
 							<li class="list-group-item"><b>{{ $t('calls.overview.totalcalls') }}</b><span class="badge">{{ statTotal }}</span></li>
@@ -57,7 +57,7 @@
 						},
 						{
 							id: 'callSignNames',
-							title: this.$i18n.t('calls.overview.table.subscribers')
+							title: this.$i18n.t('navigation.subscribers')
 						},
 						{
 							id: 'transmitterGroupNames',

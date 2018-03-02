@@ -34,7 +34,7 @@
 			</div>
 
 			<div class="col-lg-4">
-				<h2>{{ $t('home.information.statistics.title') }}
+				<h2>{{ $t('navigation.subscribers') }}
 					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': stats.running }" @click="loadData"></i>
 				</h2>
 
@@ -42,7 +42,7 @@
 
 				<ul v-if="stats.data" class="list-group">
 					<li class="list-group-item"><b>{{ $t('home.information.statistics.calls') }}</b><span class="badge">{{ stats.data.calls }}</span></li>
-					<li class="list-group-item"><b>{{ $t('home.information.statistics.subscribers') }}</b><span class="badge">{{ stats.data.callSigns }}</span></li>
+					<li class="list-group-item"><b>{{ $t('navigation.subscribers') }}</b><span class="badge">{{ stats.data.callSigns }}</span></li>
 					<li class="list-group-item"><b>{{ $t('home.information.statistics.rubric-content') }}</b><span class="badge">{{ stats.data.news }}</span></li>
 					<li class="list-group-item"><b>{{ $t('home.information.statistics.rubrics') }}</b><span class="badge">{{ stats.data.rubrics }}</span></li>
 					<li class="list-group-item"><b>{{ $t('home.information.statistics.transmitters') }}</b><span class="badge">{{ statTransmitter }}</span></li>

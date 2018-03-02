@@ -26,7 +26,7 @@
 					</ul>
 					<br/>
 					<template v-if="table.rows">
-						<legend>{{ $t('rubric.overview.statistics') }}</legend>
+						<legend>{{ $t('general.statistics') }}</legend>
 						<ul class="list-group">
 							<li class="list-group-item"><b>{{ $t('rubric.overview.totalrubrics') }}</b><span class="badge">{{ statTotal }}</span></li>
 						</ul>

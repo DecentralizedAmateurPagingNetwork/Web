@@ -34,9 +34,7 @@
 		"title": "Information"
 	  },
 	  "statistics": {
-		"title": "Statistics",
 		"calls": "Calls",
-		"subscribers": "Subscribers",
 		"rubric-content": "Rubric Content",
 		"rubrics": "Rubrics",
 		"transmitters": "Transmitters",
@@ -61,7 +59,6 @@
 		"sendmailtoallowners": "Envia un correo a todas los dueños"
 	  },
 	  "statistics": {
-		"title": "Statistics",
 		"widerange": "Widerange",
 		"personal": "Personal",
 		"total": "Total",
@@ -209,11 +206,11 @@
 	"search": "Search",
 	"information": "Information",
 	"owner": "Dueño",
-	"actions" :"Acciones"
+	"actions" :"Acciones",
+	"statistics": "Estadisticas"
   },
   "rubric": {
 	"overview": {
-	  "statistics:": "Statistics",
 	  "totalrubrics": "Total Rubrics",
 	  "information": {
 		"title": "Information",
@@ -288,7 +285,6 @@
 	"overview": {
 	  "allcalls": "All Calls",
 	  "newcall": "New Call",
-	  "statistics": "Statistics",
 	  "emergencies": "Emergencies",
 	  "totalcalls": "Total Calls",
 	  "information": {
@@ -297,7 +293,6 @@
 	  },
 	  "table": {
 		"timestamp": "Timestamp",
-		"subscribers": "Subscribers",
 		"txgroups": "TX Groups",
 		"message": "Message",
 		"emergency": "High Prio?",
@@ -360,7 +355,6 @@
 	  "newnode": "New Node",
 	  "sendmailtoallowners": "Send a mail to all owners",
 	  "statistics": {
-		"title:": "Statistics",
 		"totalnodes": "Total Nodes"
 	  },
 	  "information": {

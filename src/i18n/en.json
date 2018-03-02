@@ -31,9 +31,7 @@
 				"projects": "Projects"
 			},
 			"statistics": {
-				"title": "Statistics",
 				"calls": "Calls",
-				"subscribers": "Subscribers",
 				"rubric-content": "Rubric Content",
 				"rubrics": "Rubrics",
 				"transmitters": "Transmitters",
@@ -58,7 +56,6 @@
 			"sendmailtoallowners": "Send a mail to all owners"
 		  },
 		  "statistics": {
-			"title": "Statistics",
 			"widerange": "Widerange",
 			"personal": "Personal",
 			"total": "Total",
@@ -206,11 +203,11 @@
 		"search": "Search",
 	  	"information": "Information",
 	  	"owner": "Owner",
-	  	"actions": "Actions"
+	  	"actions": "Actions",
+	  	"statistics:": "Statistics"
 	},
 	"rubric": {
 		"overview": {
-			"statistics:": "Statistics",
 			"totalrubrics": "Total Rubrics",
 			"information": {
 				"help": "This is a list of all rubrics on the DAPNET. A rubric number can by assigned to several transmitter groups. Keep in mind that the transmitter groups are disjunct for the same rubric number in order to avoid overlapping number assigments.<br />Use the Activate Rubrics button to enable the reception of rubrics on your Skyper."
@@ -255,8 +252,8 @@
 			"newsubscriber": "New Subscriber",
 			"editsubscriber": "Edit Subscriber",
 			"subscriber": {
-				"title": "Subscriber",
-				"help": "Please enter a valid amateur radio callsign of a human or a classifying name of an organization.",
+			  	"title": "Subscriber",
+			  	"help": "Please enter a valid amateur radio callsign of a human or a classifying name of an organization.",
 				"info": "Changing this name will create a duplication and <i>not</i> change the element's name."
 			},
 			"description": {
@@ -280,7 +277,6 @@
 		"overview": {
 			"allcalls": "All Calls",
 			"newcall": "New Call",
-			"statistics": "Statistics",
 			"emergencies": "Emergencies",
 			"totalcalls": "Total Calls",
 			"information": {
@@ -288,7 +284,6 @@
 			},
 			"table": {
 				"timestamp": "Timestamp",
-				"subscribers": "Subscribers",
 				"txgroups": "TX Groups",
 				"message": "Message",
 				"emergency": "High Prio?",
@@ -301,7 +296,6 @@
 				"charactersremaining": "80 characters remaining.<br />Enter your paging text. Your user name is added automatically."
 			},
 			"subscribers": {
-				"title": "Subscribers",
 				"help": "Select one or multiple subscribers you what to send the message to."
 			},
 			"transmittergroups": {
@@ -349,7 +343,6 @@
 			"newnode": "New Node",
 			"sendmailtoallowners": "Send a mail to all owners",
 			"statistics": {
-				"title:": "Statistics",
 				"totalnodes": "Total Nodes"
 			},
 			"information": {
