@@ -11,9 +11,7 @@
 					</ul>
 					<p><b>{{ $t('footer.more.title') }}:</b></p>
 					<ul class="list-unstyled">
-						<li>
-							<router-link to="/faq">{{ $t('footer.more.faq') }}</router-link>
-						</li>
+						<li><a href="http://hampager.de/dokuwiki/doku.php?id=faq" target="_blank">{{ $t('footer.more.faq') }}</a></li>
 					</ul>
 					<p><b>{{ $t('footer.support.title') }}:</b></p>
 					<ul class="list-unstyled">

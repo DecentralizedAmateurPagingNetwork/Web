@@ -22,7 +22,6 @@ import UserNew from '@/components/user/New';
 import Login from '@/components/authentication/Login';
 import Logout from '@/components/authentication/Logout';
 import VersionCheck from '@/components/VersionCheck';
-import Faq from '@/components/pages/Faq';
 import Impress from '@/components/pages/Impress';
 import Privacy from '@/components/pages/Privacy';
 import NotFound from '@/components/pages/NotFound';
@@ -245,14 +244,6 @@ export default new Router({
 			component: Logout,
 			meta: {
 				requireAuthentication: true
-			}
-		},
-		{
-			path: '/faq',
-			name: 'FAQ',
-			component: Faq,
-			meta: {
-				requireAuthentication: false
 			}
 		},
 		{
