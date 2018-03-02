@@ -305,7 +305,6 @@
 		"charactersremaining": "80 characters remaining.<br />Enter your paging text. Your user name is added automatically."
 	  },
 	  "subscribers": {
-		"title": "Subscribers",
 		"help": "Select one or multiple subscribers you what to send the message to."
 	  },
 	  "transmittergroups": {
@@ -415,5 +414,24 @@
   },
   "versioncheck": {
 	"title": "Version Check"
+  },
+  "group": {
+	"overview": {
+	  "newtxgroup": "New Transmitter Groups",
+	  "alltxgroups": "All Transmitter Groups",
+	  "totaltxgroup": "Total Groups",
+	  "information": {
+		"help": "A transmitter group is a logical association of one or multiple transmitters to a group. This is necessary to divide the transmitters into regional areas, as not all content has to be transmitted on the whole network. Both personal calls as well als rubric's content have to be linked to a transmitter group. Only transmitters that are member of this group will get the information from the DAPNET node in order to transmit it."
+	  }
+	},
+	"new": {
+	  "newtxgroup": "New Transmitter Group",
+	  "edittxgroup": "Edit Transmitter Group",
+	  "namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
+	  "information": {
+		"help": "A transmitter group combines one of several transmitters to a logical entity. The group all contains all registered transmitters. Other groups are assigned by their coverage area."
+	  }
+	}
   }
+
 }

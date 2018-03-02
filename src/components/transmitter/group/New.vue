@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Transmitter Groups</h1>
+					<h1>{{ $t('navigation.groups') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -12,45 +12,45 @@
 			<div class="col-lg-9">
 				<form class="form-horizontal well">
 					<fieldset>
-						<legend v-if="!this.$route.params.id">New Transmitter Group</legend>
-						<legend v-if="this.$route.params.id">Edit Transmitter Group</legend>
+						<legend v-if="!this.$route.params.id">{{ $t('group.new.newtxgroups') }}</legend>
+						<legend v-if="this.$route.params.id">{{ $t('group.new.edittxgroups') }}</legend>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Name</label>
+							<label class="col-lg-2 control-label">{{ $t('general.name') }}</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="form.name" class="form-control">
-								<span v-if="editing" class="help-block">Changing this name will create a duplication and <i>not</i> change the element's name.</span>
+								<span v-if="editing" class="help-block"><p v-html="$t('group.new.namehelp')"></p></span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Description</label>
+							<label class="col-lg-2 control-label">{{ $t('general.description') }}</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="form.description" class="form-control">
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Transmitters</label>
+							<label class="col-lg-2 control-label">{{ $t('navigation.transmitters.title') }}</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.transmitters" :options="formData.transmitters" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Owner</label>
+							<label class="col-lg-2 control-label">{{ $t('general.owner') }}</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.owners" :options="formData.users" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
-								<button type="submit" @click="submitForm" class="btn btn-primary">Submit</button>
-								<router-link to="/transmitters/groups"><button class="btn btn-default">Abort</button></router-link>
+								<button type="submit" @click="submitForm" class="btn btn-primary">{{ $t('general.submit') }}</button>
+								<router-link to="/transmitters/groups"><button class="btn btn-default">{{ $t('general.abort') }}</button></router-link>
 							</div>
 						</div>
 					</fieldset>
 				</form>
 			</div>
 			<div class="col-lg-3">
-				<h2>Information</h2>
-				<p>A transmitter group combines one of several transmitters to a logical entity. The group all contains all registered transmitters. Other groups are assigned by their coverage area.</p>
+				<h2>{{ $t('general.informatnon') }}</h2>
+				<p></p>
 			</div>
 		</div>
 	</div>

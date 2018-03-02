@@ -405,5 +405,24 @@
   },
   "versioncheck": {
 	"title": "Versionsüberprüfung"
+  },
+  "group": {
+	"overview": {
+	  "newtxgroup": "Neue Sender-Gruppe",
+	  "alltxgroups": "Alle Sender-Gruppen",
+	  "totaltxgroup": "Gesamtzahl der Sender-Gruppen",
+	  "information": {
+		"help": "A transmitter group is a logical association of one or multiple transmitters to a group. This is necessary to divide the transmitters into regional areas, as not all content has to be transmitted on the whole network. Both personal calls as well als rubric's content have to be linked to a transmitter group. Only transmitters that are member of this group will get the information from the DAPNET node in order to transmit it."
+	  }
+	},
+	"new": {
+	  "newtxgroup": "Neue Sender-Gruppe",
+	  "edittxgroup": "Ändere Sender-Gruppe",
+	  "namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieser Sender-Gruppe.",
+	  "information": {
+		"help": "A transmitter group combines one of several transmitters to a logical entity. The group all contains all registered transmitters. Other groups are assigned by their coverage area."
+	  }
+	}
   }
+
 }

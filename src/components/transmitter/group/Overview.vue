@@ -3,14 +3,14 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Transmitter Groups</h1>
+					<h1>{{ $t('navigation.groups') }}</h1>
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-lg-9">
-				<h2>All Transmitter Groups
+				<h2>{{ $t('group.overview.alltxgroups') }}
 					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': running }" @click="loadData"></i>
 				</h2>
 
@@ -21,21 +21,21 @@
 			<div class="col-lg-3">
 				<div class="actions well">
 					<template v-if="this.$store.getters.user.admin">
-						<legend>Actions</legend>
+						<legend>{{ $t('general.actions') }}</legend>
 						<ul>
-							<li><router-link to="/transmitters/groups/new">New Transmitter Group</router-link></li>
+							<li><router-link to="/transmitters/groups/new">{{ $t('group.overview.newtxgroups') }}</router-link></li>
 						</ul>
 						<br/>
 					</template>
 					<template v-if="table.rows">
-						<legend>Statistics</legend>
+						<legend>{{ $t('general.statistics') }}</legend>
 						<ul class="list-group">
-							<li class="list-group-item"><b>Total Groups</b><span class="badge">{{ statTotal }}</span></li>
+							<li class="list-group-item"><b>{{ $t('group.overview.totaltxgroups') }}</b><span class="badge">{{ statTotal }}</span></li>
 						</ul>
 					</template>
 				</div>
-				<h2>Information</h2>
-				<p>A transmitter group is a logical association of one or multiple transmitters to a group. This is necessary to divide the transmitters into regional areas, as not all content has to be transmitted on the whole network. Both personal calls as well als rubric's content have to be linked to a transmitter group. Only transmitters that are member of this group will get the information from the DAPNET node in order to transmit it.</p>
+				<h2>{{ $t('general.information') }}</h2>
+				<p>{{ $t('group.overview.information.help') }}/p>
 			</div>
 		</div>
 	</div>
@@ -54,23 +54,23 @@
 					columns: [
 						{
 							id: 'name',
-							title: 'Name'
+							title: this.$i18n.t('general.name')
 						},
 						{
 							id: 'description',
-							title: 'Description'
+							title: this.$i18n.t('general.description')
 						},
 						{
 							id: 'transmitterNames',
-							title: 'Transmitters'
+							title: this.$i18n.t('navigation.transmitters.title')
 						},
 						{
 							id: 'ownerNames',
-							title: 'Owner'
+							title: this.$i18n.t('general.owner')
 						},
 						{
 							id: 'actions',
-							title: 'Actions'
+							title: this.$i18n.t('general.actions')
 						}
 					],
 					rows: false

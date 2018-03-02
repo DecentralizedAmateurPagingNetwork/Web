@@ -204,7 +204,9 @@
 	  	"information": "Information",
 	  	"owner": "Owner",
 	  	"actions": "Actions",
-	  	"statistics:": "Statistics"
+	  	"statistics:": "Statistics",
+	  	"description": "Description",
+	  	"name": "Name"
 	},
 	"rubric": {
 		"overview": {
@@ -216,7 +218,7 @@
 				"number": "Number",
 				"name": "Name",
 				"label": "Label",
-				"transmittergroup": "Transmitter Groups",
+				"transmittergroup": "Transmitter Groups"
 			}
 		},
 		"new": {
@@ -286,7 +288,7 @@
 				"timestamp": "Timestamp",
 				"txgroups": "TX Groups",
 				"message": "Message",
-				"emergency": "High Prio?",
+				"emergency": "High Prio?"
 			}
 		},
 		"new": {
@@ -323,7 +325,7 @@
 				"timestamp": "Timestamp",
 				"rubric": "Rubric",
 				"number": "#",
-				"message": "Message",
+				"message": "Message"
 			}
 		},
 		"new": {
@@ -352,7 +354,7 @@
 				"name": "Name",
 				"version": "Version",
 				"ipaddress": "IP-Address",
-				"status": "Status",
+				"status": "Status"
 			}
 		},
 		"new": {
@@ -400,5 +402,23 @@
   },
   "versioncheck": {
 		"title": "Version Check"
+  },
+  "group": {
+		"overview": {
+		  	"newtxgroup": "New Transmitter Groups",
+		  	"alltxgroups": "All Transmitter Groups",
+		  	"totaltxgroup": "Total Groups",
+		  	"information": {
+			  	"help": "A transmitter group is a logical association of one or multiple transmitters to a group. This is necessary to divide the transmitters into regional areas, as not all content has to be transmitted on the whole network. Both personal calls as well als rubric's content have to be linked to a transmitter group. Only transmitters that are member of this group will get the information from the DAPNET node in order to transmit it."
+			}
+		},
+		"new": {
+		  "newtxgroup": "New Transmitter Group",
+		  "edittxgroup": "Edit Transmitter Group",
+		  "namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
+		  "information": {
+				"help": "A transmitter group combines one of several transmitters to a logical entity. The group all contains all registered transmitters. Other groups are assigned by their coverage area."
+		  }
+		}
   }
 }
