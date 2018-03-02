@@ -30,9 +30,6 @@
 				"title": "The DAPNET",
 				"projects": "Projects"
 			},
-			"information": {
-				"title": "Information"
-			},
 			"statistics": {
 				"title": "Statistics",
 				"calls": "Calls",
@@ -41,7 +38,7 @@
 				"rubrics": "Rubrics",
 				"transmitters": "Transmitters",
 				"nodes": "Nodes",
-				"users": "Users"traa
+				"users": "Users"
 			}
 		}
 	},
@@ -211,7 +208,8 @@
 	"general": {
 		"submit": "Submit",
 		"abort": "Abort",
-		"search": "Search"
+		"search": "Search",
+	  	"information": "Information"
 	},
 	"rubric": {
 		"overview": {
@@ -219,7 +217,6 @@
 			"statistics:": "Statistics",
 			"totalrubrics": "Total Rubrics",
 			"information": {
-				"title": "Information",
 				"help": "This is a list of all rubrics on the DAPNET. A rubric number can by assigned to several transmitter groups. Keep in mind that the transmitter groups are disjunct for the same rubric number in order to avoid overlapping number assigments.<br />Use the Activate Rubrics button to enable the reception of rubrics on your Skyper."
 			},
 			"table": {
@@ -241,14 +238,12 @@
 			"transmittergroup": "Transmitter Groups",
 			"owner": "Owner",
 			"information": {
-				"title": "Information",
 				"help": "Rubrics are a Skyper based invention allowing to send news sorted into chategories (the rubrics). Assign the number with care and contact <code>support [at] hampager.de</code> in case of doubt. Be aware that the number of rubrics is limited netwide to 99."
 			}
 		},
 		"activation": {
 			"pagernumber": "Pager-Number (your RIC)",
 			"information": {
-				"title": "Information",
 				"help": "Use the function to send an activation call to your Skyper. After successful reception, you can select the rubrics on \"Skyper Setup\" in the skyper menu."
 			},
 			"transmittergroup": "Transmitter Groups"
@@ -261,7 +256,6 @@
 			"allsubscribers": "All Subscribers",
 			"totalsubscribers": "Total Subscribers",
 			"information": {
-				"title": "Information",
 				"help": "A subscriber is the logical connection between a name (the callsign) and one or multiple RIC numbers, for example a Skyper address."
 			}
 		},
@@ -287,7 +281,6 @@
 				"help": "An owner of a subscriber association can edit its parameters."
 			},
 			"information": {
-				"title": "Information",
 				"help": "Subscribers are an allocation between a name (usually your amateur radio callsign) and one or multiple pager IDs (RICs)."
 			}
 		}
@@ -301,7 +294,6 @@
 			"emergencies": "Emergencies",
 			"totalcalls": "Total Calls",
 			"information": {
-				"title": "Information",
 				"help": "Calls are personal paging transmission to individual receivers."
 			},
 			"table": {
@@ -332,7 +324,6 @@
 				"help": "In case you want your message to be delivered as soon as possible, check this box. No harmful things will happen, the DAPNET will just process your message with maximum priority. Please make a fair use of this feature."
 			},
 			"information": {
-				"title": "Information",
 				"help": "Here your recent paging calls are displayed."
 			}
 		}
@@ -344,7 +335,6 @@
 			"newrubriccontent": "New Rubric Content",
 			"totalrubriccontent": "Total Rubic Content",
 			"information": {
-				"title:": "Information",
 				"help": "The content displayed here are NOT general news about DAPNET, but the recently sent content to rubrics. Every time a user updates the 10 available rubric messages slots, this change will be displayed here."
 			},
 			"table": {
@@ -363,7 +353,6 @@
 			"number": "Number",
 			"chooseautomatically": "Choose automatically",
 			"information": {
-				"title:": "Information",
 				"help": "These are the contents of rubrics. They are up to now only available on Skyper paging receivers in this form, but also sent as personal calls to RIC 1000 + (Rubric-Number) for reception with e.g. AlphaPoc."
 			}
 		}
@@ -378,7 +367,6 @@
 				"totalnodes": "Total Nodes"
 			},
 			"information": {
-				"title": "Information",
 				"help": "Nodes are the instances of the DAPNET cluster. This list shows the status of them."
 			},
 			"table": {
@@ -409,7 +397,6 @@
 				"suspended": "Suspended"
 			},
 			"information": {
-				"title": "Information",
 				"help": "This table shows the registered DAPNET Core nodes and is mostly for SysOp information."
 			}
 		}
@@ -418,7 +405,6 @@
 		"username": "Username",
 		"password": "Password",
 		"information": {
-		  	"title":"Information",
 		  	"help": "..."
 		}
   },

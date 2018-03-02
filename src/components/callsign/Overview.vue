@@ -36,7 +36,7 @@
 						</ul>
 					</template>
 				</div>
-				<h2>{{ $t('subscribers.overview.information.title') }}</h2>
+				<h2>{{ $t('general.information') }}</h2>
 				<p>{{ $t('subscribers.overview.information.help') }}</p>
 			</div>
 		</div>

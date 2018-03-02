@@ -32,7 +32,7 @@
 						</ul>
 					</template>
 				</div>
-				<h2>{{ $t('rubric.overview.information.title') }}</h2>
+				<h2>{{ $t('general.information') }}</h2>
 				<p>{{ $t('rubric.overview.information.help') }}</p>
 			</div>
 		</div>

@@ -35,7 +35,7 @@
 				</form>
 			</div>
 			<div class="col-lg-3">
-				<h2>{{ $t('rubric.activation.information.title') }}</h2>
+				<h2>{{ $t('general.information') }}</h2>
 				<p>{{ $t('rubric.activation.information.help') }}</p>
 			</div>
 		</div>

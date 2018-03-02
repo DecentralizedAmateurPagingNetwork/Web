@@ -38,7 +38,7 @@
 			</div>
 
 			<div class="col-lg-4">
-				<h2>{{ $t('login.information.title') }}</h2>
+				<h2>{{ $t('general.information') }}</h2>
 				<p>{{ $t('login.information.help') }}</p>
 			</div>
 		</div>

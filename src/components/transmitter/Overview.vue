@@ -3,14 +3,14 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>{{ $t('transmitter.title') }}</h1>
+					<h1>{{ $t('navigation.transmitters.title') }}</h1>
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-lg-9">
-				<h2>{{ $t('transmitter.table.title') }}
+				<h2>{{ $t('transmitter.overview.table.title') }}
 					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': running }" @click="loadData"></i>
 				</h2>
 
@@ -22,28 +22,28 @@
 			<div class="col-lg-3">
 				<div class="actions well">
 					<template v-if="this.$store.getters.user.admin">
-						<legend>{{ $t('transmitter.actions.title') }}</legend>
+						<legend>{{ $t('transmitter.overview.actions.title') }}</legend>
 						<ul>
-							<li><router-link to="/transmitters/new">{{ $t('transmitter.actions.newtransmitter') }}</router-link></li>
-							<li><p class="linklike" @click="mailToAll">{{ $t('transmitter.actions.sendmailtoallowners') }}</p></li>
+							<li><router-link to="/transmitters/new">{{ $t('transmitter.overview.actions.newtransmitter') }}</router-link></li>
+							<li><p class="linklike" @click="mailToAll">{{ $t('transmitter.overview.actions.sendmailtoallowners') }}</p></li>
 						</ul>
 						<br/>
 					</template>
 					<template v-if="table.rows">
 						<legend>{{ $t('transmitter.statistics.title') }}</legend>
 						<ul class="list-group">
-							<li class="list-group-item"><b>{{ $t('transmitter.statistics.widerange') }}</b><span class="badge">{{ stats.widerange.online }} / {{ stats.widerange.offline }} / {{ stats.widerange.total }}</span></li>
-							<li class="list-group-item"><b>{{ $t('transmitter.statistics.personal') }}</b><span class="badge">{{ stats.personal.online }} / {{ stats.personal.offline }} / {{ stats.personal.total }}</span></li>
-							<li class="list-group-item"><b>{{ $t('transmitter.statistics.total') }}</b><span class="badge">{{ stats.total.online }} / {{ stats.total.offline }} / {{ stats.total.total }}</span></li>
+							<li class="list-group-item"><b>{{ $t('transmitter.overview.statistics.widerange') }}</b><span class="badge">{{ stats.widerange.online }} / {{ stats.widerange.offline }} / {{ stats.widerange.total }}</span></li>
+							<li class="list-group-item"><b>{{ $t('transmitter.overview.statistics.personal') }}</b><span class="badge">{{ stats.personal.online }} / {{ stats.personal.offline }} / {{ stats.personal.total }}</span></li>
+							<li class="list-group-item"><b>{{ $t('transmitter.overview.statistics.total') }}</b><span class="badge">{{ stats.total.online }} / {{ stats.total.offline }} / {{ stats.total.total }}</span></li>
 							<li class="list-group-item"><chart-transmitter-types :chartData="chartDataDeviceTypes"></chart-transmitter-types></li>
 						</ul>
 						<div class="checkbox">
-							<label><input type="checkbox" v-model="settings.widerangeOnly"> {{ $t('transmitter.statistics.widerangeonly') }}</label>
+							<label><input type="checkbox" v-model="settings.widerangeOnly"> {{ $t('transmitter.overview.statistics.widerangeonly') }}</label>
 						</div>
 					</template>
 				</div>
-				<h2>{{ $t('transmitter.information.title') }}</h2>
-				<p v-html="$t('transmitter.information.text')"></p>
+				<h2>{{ $t('general.information') }}</h2>
+				<p v-html="$t('transmitter.overview.information.text')"></p>
 			</div>
 		</div>
 	</div>
@@ -67,35 +67,35 @@
 					columns: [
 						{
 							id: 'name',
-							title: this.$i18n.t('transmitter.table.callsign')
+							title: this.$i18n.t('transmitter.overview.table.callsign')
 						},
 						{
 							id: 'nodeName',
-							title: this.$i18n.t('transmitter.table.node')
+							title: this.$i18n.t('transmitter.overview.table.node')
 						},
 						{
 							id: 'address',
-							title: this.$i18n.t('transmitter.table.ipaddress')
+							title: this.$i18n.t('transmitter.overview.table.ipaddress')
 						},
 						{
 							id: 'ownerNames',
-							title: this.$i18n.t('transmitter.table.owner')
+							title: this.$i18n.t('transmitter.overview.table.owner')
 						},
 						{
 							id: 'deviceType',
-							title: this.$i18n.t('transmitter.table.device')
+							title: this.$i18n.t('transmitter.overview.table.device')
 						},
 						{
 							id: 'status',
-							title: this.$i18n.t('transmitter.table.status')
+							title: this.$i18n.t('transmitter.overview.table.status')
 						},
 						{
 							id: 'connectedSince',
-							title: this.$i18n.t('transmitter.table.connectedsince')
+							title: this.$i18n.t('transmitter.overview.table.connectedsince')
 						},
 						{
 							id: 'actions',
-							title: this.$i18n.t('transmitter.table.actions')
+							title: this.$i18n.t('transmitter.overview.table.actions')
 						}
 					],
 					rows: false

@@ -29,7 +29,7 @@
 			</div>
 
 			<div class="col-lg-4">
-				<h2>{{ $t('home.information.information.title') }}</h2>
+				<h2>{{ $t('general.information') }}</h2>
 				<p v-html="this.$store.getters.customText"></p>
 			</div>
 

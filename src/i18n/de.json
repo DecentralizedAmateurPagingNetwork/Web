@@ -211,7 +211,8 @@
 	"general": {
 		"submit": "Absenden",
 		"abort": "Abbrechen",
-		"search": "Suchen"
+		"search": "Suchen",
+	  	"information": "Information"
 	},
 	"rubric": {
 		"overview": {

@@ -53,7 +53,7 @@
 				</form>
 			</div>
 			<div class="col-lg-3">
-				<h2>{{ $t('calls.new.information.title') }}</h2>
+				<h2>{{ $t('general.information') }}</h2>
 				<p>{{ $t('calls.new.information.help') }}</p>
 			</div>
 		</div>
