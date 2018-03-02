@@ -26,11 +26,11 @@
 
 		<div class="row">
 			<div class="col-lg-8">
-				<h2>{{ $t('transmitter.settings.title') }}</h2>
+				<h2>{{ $t('transmitter.map.settings.title') }}</h2>
 				<div class="checkbox">
 					<label><input type="checkbox" v-model="settings.onlineOnly"> {{ $t('transmitter.map.checkbox.showonlineonly') }}</label><br />
 					<label><input type="checkbox" v-model="settings.widerangeOnly"> {{ $t('transmitter.map.checkbox.showwiderangeonly') }}</label><br /><br />
-					<label><input type="checkbox" v-model="settings.timeslot.active"> {{ $t('transmitter.map.checkbox.showtimeslot') }}</label>
+					<label><input type="checkbox" v-model="settings.timeslot.active"> {{ $t('transmitter.map.checkbox.showbytimeslot') }}</label>
 						<input type="text" placeholder="timeslots" v-model="settings.timeslot.input" :disabled="!settings.timeslot.active"><br /><br />
 					<label><input type="checkbox" v-model="settings.showNodes"> {{ $t('transmitter.map.checkbox.shownodes') }}</label><br />
 					<label><input type="checkbox" v-model="settings.showLines" :disabled="!settings.showNodes"> {{ $t('transmitter.map.checkbox.shownodeline') }}</label>

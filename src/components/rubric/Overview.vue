@@ -64,7 +64,7 @@
 						},
 						{
 							id: 'transmitterGroupNames',
-							title: this.$i18n.t('rubric.overview.table.Transmitter Groups')
+							title: this.$i18n.t('rubric.overview.table.transmittergroup')
 						},
 						{
 							id: 'ownerNames',

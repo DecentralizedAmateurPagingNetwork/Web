@@ -29,9 +29,9 @@
 						<br/>
 					</template>
 					<template v-if="table.rows">
-						<legend>{{ $t('nodes.overview.statstics.title') }}</legend>
+						<legend>{{ $t('nodes.overview.statistics.title') }}</legend>
 						<ul class="list-group">
-							<li class="list-group-item"><b>{{ $t('nodes.overview.statstics.totalnodes') }}</b><span class="badge">{{ statTotal }}</span></li>
+							<li class="list-group-item"><b>{{ $t('nodes.overview.statistics.totalnodes') }}</b><span class="badge">{{ statTotal }}</span></li>
 							<li class="list-group-item"><chart-online-offline :chartData="chartData"></chart-online-offline></li>
 						</ul>
 					</template>

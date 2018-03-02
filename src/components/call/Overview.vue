@@ -26,10 +26,10 @@
 					</ul>
 					<br/>
 					<template v-if="table.rows">
-						<legend>{{ $t('calls.statistics') }}</legend>
+						<legend>{{ $t('calls.overview.statistics') }}</legend>
 						<ul class="list-group">
-							<li class="list-group-item"><b>Emergencies</b><span class="badge">{{ statEmergencies }}</span></li>
-							<li class="list-group-item"><b>Total Calls</b><span class="badge">{{ statTotal }}</span></li>
+							<li class="list-group-item"><b>{{ $t('calls.overview.emergencies') }}</b><span class="badge">{{ statEmergencies }}</span></li>
+							<li class="list-group-item"><b>{{ $t('calls.overview.totalcalls') }}</b><span class="badge">{{ statTotal }}</span></li>
 						</ul>
 					</template>
 				</div>
@@ -61,7 +61,7 @@
 						},
 						{
 							id: 'transmitterGroupNames',
-							title: this.$i18n.t('calls.overview.table.TX Groups')
+							title: this.$i18n.t('calls.overview.table.txgroups')
 						},
 						{
 							id: 'text',

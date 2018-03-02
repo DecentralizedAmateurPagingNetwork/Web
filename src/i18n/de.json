@@ -207,6 +207,11 @@
 			"http-error": "Unbehandelter HTTP Fehler {status}. Bitte versuchen Sie es später erneut."
 		}
 	},
+	"general": {
+		"submit": "Absenden",
+		"abort": "Abbrechen",
+		"search": "Suchen"
+	},
 	"rubric": {
 		"overview": {
 			"actions": "Aktionen",
@@ -311,7 +316,7 @@
 			"newcall": "Neuer Ruf",
 			"message": {
 				"title": "Nachricht",
-				"charactersremaining": "Zeichen verbleibend.<br />Bitte den Nachrichtentext eingeben. Das Absender-Rufzeichen wird automatisch hinzugefügt."
+				"charactersremaining": "80 Zeichen verbleibend.<br />Bitte den Nachrichtentext eingeben. Das Absender-Rufzeichen wird automatisch hinzugefügt."
 			},
 			"subscribers": {
 				"title": "Empfänger",
@@ -379,6 +384,7 @@
 				"name": "Name",
 				"version": "Version",
 				"ipaddress": "IP-Adresse",
+				"owner": "Besitzer",
 				"status": "Status",
 				"actions": "Aktionen"
 			}

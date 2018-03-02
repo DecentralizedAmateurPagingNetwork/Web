@@ -14,7 +14,7 @@
 					<fieldset>
 						<legend>{{ $t('navigation.rubrics.activate') }}</legend>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">{{ $t('rubric..activation.pagernumber') }}</label>
+							<label class="col-lg-2 control-label">{{ $t('rubric.activation.pagernumber') }}</label>
 							<div class="col-lg-10">
 								<input type="number" v-model.number="form.number" min="0" max="2097151" placeholder="0 - 2097151" class="form-control">
 							</div>
