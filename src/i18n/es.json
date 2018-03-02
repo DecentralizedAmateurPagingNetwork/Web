@@ -52,14 +52,11 @@
 		"callsign": "Indicativo",
 		"node": "Node",
 		"ipaddress": "Dirección IP",
-		"owner": "Dueño",
 		"device": "Device",
 		"status": "Estatus",
-		"connectedsince": "Connected since",
-		"actions": "Actions"
+		"connectedsince": "Connected since"
 	  },
 	  "actions": {
-		"title": "Acciones",
 		"newtransmitter": "Nuevo transmisor",
 		"sendmailtoallowners": "Envia un correo a todas los dueños"
 	  },
@@ -132,7 +129,6 @@
 		"help": "As all transmitters use the same frequency a time division multiplex access scheme is used. There are 16 timeslots available. Assign the slots of this transmitter according to you surrounding transmitters in your neighborhood without overlapping timeslots that are assigned to more than one transmitter. You can use the transmitter map to check already assigned timeslots of adjacent transmitters. In case that you cannot fulfill your requirements, contact the adjacent transmitter owners and try to get an agreement. Normally four 4 or less timeslots per transmitter are more than enough."
 	  },
 	  "owner": {
-		"title": "owner",
 		"help": "If you are an owner, you can change the parameters for this transmitter."
 	  },
 	  "table": {
@@ -153,7 +149,6 @@
 		"shownodeline": "Show line from transmitter to node"
 	  },
 	  "actions": {
-		"title": "Actions",
 		"showallcoverage": "Show all coverage-overlays",
 		"removeallcoverage": "Remove all coverage-overlays"
 	  }
@@ -212,11 +207,12 @@
 	"submit": "Submit",
 	"abort": "Abort",
 	"search": "Search",
-	"information": "Information"
+	"information": "Information",
+	"owner": "Dueño",
+	"actions" :"Acciones"
   },
   "rubric": {
 	"overview": {
-	  "actions": "Actions",
 	  "statistics:": "Statistics",
 	  "totalrubrics": "Total Rubrics",
 	  "information": {
@@ -228,8 +224,6 @@
 		"name": "Name",
 		"label": "Label",
 		"transmittergroup": "Transmitter Groups",
-		"owner": "Owner",
-		"actions": "Actions"
 	  }
 	},
 	"new": {
@@ -240,7 +234,6 @@
 	  "label": "Label",
 	  "number": "Number",
 	  "transmittergroup": "Transmitter Groups",
-	  "owner": "Owner",
 	  "information": {
 		"title": "Information",
 		"help": "Rubrics are a Skyper based invention allowing to send news sorted into chategories (the rubrics). Assign the number with care and contact <code>support [at] hampager.de</code> in case of doubt. Be aware that the number of rubrics is limited netwide to 99."
@@ -257,7 +250,6 @@
   },
   "subscribers": {
 	"overview": {
-	  "actions": "Actions",
 	  "newsubscriber": "New Subscriber",
 	  "allsubscribers": "All Subscribers",
 	  "totalsubscribers": "Total Subscribers",
@@ -284,7 +276,6 @@
 		"helpnames": "Add a corresponding number for lines as a description for the RIC numbers given in the first box."
 	  },
 	  "owner": {
-		"title": "Owner",
 		"help": "An owner of a subscriber association can edit its parameters."
 	  },
 	  "information": {
@@ -295,7 +286,6 @@
   },
   "calls": {
 	"overview": {
-	  "actions": "Actions",
 	  "allcalls": "All Calls",
 	  "newcall": "New Call",
 	  "statistics": "Statistics",
@@ -311,7 +301,6 @@
 		"txgroups": "TX Groups",
 		"message": "Message",
 		"emergency": "High Prio?",
-		"owner": "Owner"
 	  }
 	},
 	"new": {
@@ -341,11 +330,9 @@
   "news": {
 	"overview": {
 	  "allrubriccontent": "All Rubric Content",
-	  "actions": "Actions",
 	  "newrubriccontent": "New Rubric Content",
 	  "totalrubriccontent": "Total Rubic Content",
 	  "information": {
-		"title:": "Information",
 		"help": "The content displayed here are NOT general news about DAPNET, but the recently sent content to rubrics. Every time a user updates the 10 available rubric messages slots, this change will be displayed here."
 	  },
 	  "table": {
@@ -353,7 +340,6 @@
 		"rubric": "Rubric",
 		"number": "#",
 		"message": "Message",
-		"owner": "Owner"
 	  }
 	},
 	"new": {
@@ -371,7 +357,6 @@
   },
   "nodes": {
 	"overview": {
-	  "actions": "Actions",
 	  "newnode": "New Node",
 	  "sendmailtoallowners": "Send a mail to all owners",
 	  "statistics": {
@@ -386,9 +371,7 @@
 		"name": "Name",
 		"version": "Version",
 		"ipaddress": "IP-Address",
-		"owner": "Owner",
-		"status": "Status",
-		"actions": "Actions"
+		"status": "Status"
 	  }
 	},
 	"new": {
@@ -403,7 +386,6 @@
 	  "south": "South",
 	  "east": "East",
 	  "west": "West",
-	  "owner": "Owner",
 	  "status": {
 		"title": "Status",
 		"online": "Online",

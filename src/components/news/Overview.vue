@@ -20,7 +20,7 @@
 			</div>
 			<div class="col-lg-3">
 				<div class="actions well">
-					<legend>{{ $t('news.overview.actions') }}</legend>
+					<legend>{{ $t('general.actions') }}</legend>
 					<ul>
 						<li>
 							<router-link to="/rubrics/content/new">{{ $t('news.overview.newrubriccontent') }}</router-link>
@@ -70,7 +70,7 @@
 						},
 						{
 							id: 'ownerName',
-							title: this.$i18n.t('news.overview.table.owner')
+							title: this.$i18n.t('general.owner')
 						}
 					],
 					rows: false

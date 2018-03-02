@@ -22,7 +22,7 @@
 			<div class="col-lg-3">
 				<div class="actions well">
 					<template v-if="this.$store.getters.user.admin">
-						<legend>{{ $t('transmitter.overview.actions.title') }}</legend>
+						<legend>{{ $t('general.actions') }}</legend>
 						<ul>
 							<li><router-link to="/transmitters/new">{{ $t('transmitter.overview.actions.newtransmitter') }}</router-link></li>
 							<li><p class="linklike" @click="mailToAll">{{ $t('transmitter.overview.actions.sendmailtoallowners') }}</p></li>
@@ -79,7 +79,7 @@
 						},
 						{
 							id: 'ownerNames',
-							title: this.$i18n.t('transmitter.overview.table.owner')
+							title: this.$i18n.t('general.owner')
 						},
 						{
 							id: 'deviceType',
@@ -95,7 +95,7 @@
 						},
 						{
 							id: 'actions',
-							title: this.$i18n.t('transmitter.overview.table.actions')
+							title: this.$i18n.t('general.actions')
 						}
 					],
 					rows: false

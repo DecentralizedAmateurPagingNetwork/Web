@@ -20,7 +20,7 @@
 			</div>
 			<div class="col-lg-3">
 				<div class="actions well">
-					<legend>{{ $t('rubric.overview.actions') }}</legend>
+					<legend>{{ $t('general.actions') }}</legend>
 					<ul>
 						<li v-if="this.$store.getters.user.admin"><router-link to="/rubrics/new">New Rubric</router-link></li>
 					</ul>
@@ -68,11 +68,11 @@
 						},
 						{
 							id: 'ownerNames',
-							title: this.$i18n.t('rubric.overview.table.owner')
+							title: this.$i18n.t('general.owner')
 						},
 						{
 							id: 'actions',
-							title: this.$i18n.t('rubric.overview.table.actions')
+							title: this.$i18n.t('general.actions')
 						}
 					],
 					rows: false

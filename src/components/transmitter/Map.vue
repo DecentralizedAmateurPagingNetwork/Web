@@ -37,7 +37,7 @@
 				</div>
 			</div>
 			<div class="col-lg-4">
-				<h2>{{ $t('transmitter.map.actions.title') }}</h2>
+				<h2>{{ $t('general.actions') }}</h2>
 				<div class="checkbox">
 					<ul>
 						<li><p class="linklike" @click="showAllCoverage">{{ $t('transmitter.map.actions.showallcoverage') }}</p></li>

@@ -52,14 +52,11 @@
 			"callsign": "Rufzeichen",
 			"node": "Knoten",
 			"ipaddress": "IP Adresse",
-			"owner": "Besitzer",
 			"device": "Gerät",
 			"status": "Status",
-			"connectedsince": "Verbunden seit",
-			"actions": "Aktionen"
+			"connectedsince": "Verbunden seit"
 		  },
 		  "actions": {
-			"title": "Aktionen",
 			"newtransmitter": "Neuer Sender",
 			"sendmailtoallowners": "Sende Email an alle Besitzer"
 		  },
@@ -132,7 +129,6 @@
 				"help": "Da alle Sender die gleiche Frequenz benutzen, wird eine Zeitmultiplex-Verfahren eingesetzt. Es gibt 16 Zeitschlitze. Bitte die Zuweisung der Zeitschlitze so vornehmen, dass es im Abdeckungsbereich dieses Senders keine Überschneidungen mit Zuordnungen von anderen bereits existierenden Sendern gibt. Die Kartenansicht kann dazu verwendet werden, sich einen Überblick über die bereits vorhandenen Sender und ihrer Zeitschlitze zu verschaffen.<br>Falls die Anforderungen dieses Senders zur Belegung von Zeitschlitzen durch die bestehende Zuweisung nicht erfüllt werden kann, bitte die Besitzer der umliegenden Sender kontaktieren und für eine Lösung sorgen. Im Normallfall sind 4 oder weniger Zeitschlitze pro Sender mehr als genug."
 			},
 			"owner": {
-				"title": "Besitzer",
 				"help": "Besitzer können die Einstellungen eines Senders selbstständig ändern."
 			},
 			"table": {
@@ -152,7 +148,6 @@
 				"shownodeline": "Eine Linie vom Sender zum Knoten, mit dem er verbunden ist, anzeigen"
 			},
 			"actions": {
-				"title": "Aktionen",
 				"showallcoverage": "Abdeckungsbereiche von allen Sendern anzeigen",
 				"removeallcoverage": "Alle Abdeckungsbereiche entfernen"
 			}
@@ -211,11 +206,12 @@
 		"submit": "Absenden",
 		"abort": "Abbrechen",
 		"search": "Suchen",
-	  	"information": "Information"
+	  	"information": "Information",
+	  	"owner": "Besitzer",
+	 	"actions": "Aktionen"
 	},
 	"rubric": {
 		"overview": {
-			"actions": "Aktionen",
 			"statistics:": "Statistiken",
 			"totalrubrics": "Alle Rubriken",
 			"information": {
@@ -226,8 +222,6 @@
 				"name": "Name",
 				"label": "Bezeichnung",
 				"transmittergroup": "Sender-Gruppen",
-				"owner": "Besitzer",
-				"actions": "Aktionen"
 			}
 		},
 		"new": {
@@ -238,7 +232,6 @@
 			"label": "Bezeichung",
 			"number": "Nummer",
 			"transmittergroup": "Sender-Gruppen",
-			"owner": "Besitzer",
 			"information": {
 				"help": "Rubriken sind eine Erfindung für die Skyper, die es ermöglicht, Nachrichten in einer strukturierten Weise zu versenden. Bitte bei der Zuordnung der Rubiken-Nummer mit Bedacht handeln und mit <code>support [at] hampager.de</code> Kontakt aufnehmen, falls Unklarheiten bestehen. Bedenkt, dass die Anzahl der Rubiken im ganzen DAPNET auf 99 beschränkt ist."
 			}
@@ -253,7 +246,6 @@
 	},
 	"subscribers": {
 		"overview": {
-			"actions": "Aktionen",
 			"newsubscriber": "Neuer Teilnehmer",
 			"allsubscribers": "Alle Teilnehmer",
 			"totalsubscribers": "Gesamtanzahl Teilnehmer",
@@ -279,7 +271,6 @@
 				"helpnames": "Entsprechend der Anzahl der Zeilen in der linken Box eine entsprechende Beschreibung für die RIC Nummer angeben."
 			},
 			"owner": {
-				"title": "Besitzer",
 				"help": "Der Besitzer eines Teilnehmers kann seine Einstellungen ändern."
 			},
 			"information": {
@@ -289,7 +280,6 @@
 	},
 	"calls": {
 		"overview": {
-			"actions": "Aktionen",
 			"allcalls": "Alle Rufe",
 			"newcall": "Neuer Ruf",
 			"statistics": "Statistiken",
@@ -304,7 +294,6 @@
 				"txgroups": "Sender-Gruppen",
 				"message": "Nachricht",
 				"emergency": "Hohe Priorität?",
-				"owner": "Besitzer"
 			}
 		},
 		"new": {
@@ -333,7 +322,6 @@
 	"news": {
 		"overview": {
 			"allrubriccontent": "Inhalt aller Rubriken",
-			"actions": "Aktionen",
 			"newrubriccontent": "Neuer Rubriken Inhalt",
 			"totalrubriccontent": "Gesamtzahl der Rubriken-Einträge",
 			"Information": {
@@ -344,8 +332,7 @@
 				"timestamp": "Zeitstempel",
 				"rubric": "Rubrik",
 				"number": "#",
-				"message": "Nachricht",
-				"owner": "Besitzer"
+				"message": "Nachricht"
 			}
 		},
 		"new": {
@@ -363,7 +350,6 @@
 	},
 	"nodes": {
 		"overview": {
-			"actions": "Aktionen",
 			"newnode": "Neuer Knoten",
 			"sendmailtoallowners": "Sende Email an alle Besitzer von Knoten",
 			"statistics": {
@@ -377,9 +363,7 @@
 				"name": "Name",
 				"version": "Version",
 				"ipaddress": "IP-Adresse",
-				"owner": "Besitzer",
-				"status": "Status",
-				"actions": "Aktionen"
+				"status": "Status"
 			}
 		},
 		"new": {
@@ -394,7 +378,6 @@
 			"south": "Süd",
 			"east": "Ost",
 			"west": "West",
-			"owner": "Besitzer",
 			"status": {
 				"title": "Status",
 				"online": "Online",

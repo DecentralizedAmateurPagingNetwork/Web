@@ -21,7 +21,7 @@
 			<div class="col-lg-3">
 				<div class="actions well">
 					<template v-if="this.$store.getters.user.admin">
-						<legend>{{ $t('nodes.overview.actions') }}</legend>
+						<legend>{{ $t('general.actions') }}</legend>
 						<ul>
 							<li><router-link to="/nodes/new">{{ $t('nodes.overview.newnode') }}</router-link></li>
 							<li><p class="linklike" @click="mailToAll">{{ $t('nodes.overview.sendmailtoallowners') }}</p></li>
@@ -73,7 +73,7 @@
 						},
 						{
 							id: 'ownerNames',
-							title: this.$i18n.t('nodes.overview.table.owner')
+							title: this.$i18n.t('general.owner')
 						},
 						{
 							id: 'status',
@@ -81,7 +81,7 @@
 						},
 						{
 							id: 'actions',
-							title: this.$i18n.t('nodes.overview.table.actions')
+							title: this.$i18n.t('general.actions')
 						}
 					],
 					rows: false

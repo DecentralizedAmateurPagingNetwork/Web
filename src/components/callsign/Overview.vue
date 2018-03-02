@@ -21,7 +21,7 @@
 			<div class="col-lg-3">
 				<div class="actions well">
 					<template v-if="this.$store.getters.user.admin">
-						<legend>{{ $t('subscribers.overview.actions') }}</legend>
+						<legend>{{ $t('general.actions') }}</legend>
 						<ul>
 							<li>
 								<router-link to="/subscribers/new">{{ $t('subscribers.overview.newsubscriber') }}</router-link>
