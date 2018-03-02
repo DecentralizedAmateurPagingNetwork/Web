@@ -288,7 +288,7 @@
 				"timestamp": "Zeitstempel",
 				"txgroups": "Sender-Gruppen",
 				"message": "Nachricht",
-				"emergency": "Hohe Priorität?",
+				"emergency": "Hohe Priorität?"
 			}
 		},
 		"new": {
