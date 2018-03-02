@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Login</h1>
+					<h1>{{ $t('navigation.login') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -12,25 +12,25 @@
 			<div class="col-lg-8">
 				<form class="form-horizontal well">
 					<fieldset>
-						<legend>Login</legend>
+						<legend>{{ $t('navigation.login') }}</legend>
 
 						<info-error :message="errorMessage"></info-error>
 
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Username</label>
+							<label class="col-lg-2 control-label">{{ $t('login.username') }}</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="username" class="form-control" placeholder="Username">
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Password</label>
+							<label class="col-lg-2 control-label">{{ $t('login.password') }}</label>
 							<div class="col-lg-10">
 								<input type="password" v-model="password" class="form-control" placeholder="Password">
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
-								<button type="submit" @click="submitForm" class="btn btn-primary">Submit</button>
+								<button type="submit" @click="submitForm" class="btn btn-primary">{{ $t('general.submit') }}</button>
 							</div>
 						</div>
 					</fieldset>
@@ -38,8 +38,8 @@
 			</div>
 
 			<div class="col-lg-4">
-				<h2>Information</h2>
-				<p>...</p>
+				<h2>{{ $t('login.information.title') }}</h2>
+				<p>{{ $t('login.information.help') }}</p>
 			</div>
 		</div>
 	</div>

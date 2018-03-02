@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Error 404 - Not Found</h1>
+					<h1>{{ $t('error404.title') }}</h1>
 				</div>
 				<div>
 					<svg xmlns="http://www.w3.org/2000/svg" width="30%" viewBox="0 0 64 64" enable-background="new 0 0 64 64">
@@ -36,7 +36,7 @@
 						<path fill="#c28fef" d="m47.7 62l-.8-12.3h-7.7l-1.1 12.3z"/>
 					</svg>
 				</div>
-				<p>Emoji provided for free by <a href="http://emojione.com" target="_blank">EmojiOne</a>.</p>
+				<p>{{ $t('error404.emoji') }}<a href="http://emojione.com" target="_blank">EmojiOne</a>.</p>
 			</div>
 		</div>
 	</div>

@@ -3,9 +3,9 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Logout</h1>
+					<h1>{{ $t('navigation.logout') }}</h1>
 				</div>
-				<p>If you see this page, something went wrong.</p>
+				<p>{{ $t('logout.seepagewrong') }}</p>
 				<div>
 					<svg xmlns="http://www.w3.org/2000/svg" width="30%" viewBox="0 0 64 64" enable-background="new 0 0 64 64">
 						<circle cx="32" cy="32" r="30" fill="#ffdd67"/>
@@ -24,7 +24,7 @@
 						<circle cx="43.5" cy="29.1" r="4.5" fill="#664e27"/>
 					</svg>
 				</div>
-				<p>Emoji provided for free by <a href="http://emojione.com" target="_blank">EmojiOne</a>.</p>
+				<p>{{ $t('logout.emoji') }}<a href="http://emojione.com" target="_blank">EmojiOne</a>.</p>
 			</div>
 		</div>
 	</div>

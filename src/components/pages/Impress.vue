@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Impress</h1>
+					<h1>{{ $t('impress.title') }}</h1>
 				</div>
 
 				<p>Angaben gemäß § 5 TMG:</p>
