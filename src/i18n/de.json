@@ -207,7 +207,8 @@
 			"south": "Süd",
 			"east": "Ost",
 			"west": "West"
-	  	}
+	  	},
+	 	"password": "Passwort"
 	},
 	"rubric": {
 		"overview": {
@@ -418,6 +419,33 @@
 	  "namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieser Sender-Gruppe.",
 	  "information": {
 		"help": "A transmitter group combines one of several transmitters to a logical entity. The group all contains all registered transmitters. Other groups are assigned by their coverage area."
+	  }
+	}
+  },
+  "users": {
+	"general": {
+	  "email": "Email",
+	  "admin": "Admin?",
+	  "newuser" : "Neuer Nutzer"
+	},
+	"overview": {
+	  "allusers": "Alle Nutzer",
+	  "sendemailallusers": "Sende eine Email an alle Nutzer",
+	  "totaladmins" : "Gesamtzahl Administratoren",
+	  "totalusers": "Gesamtzahl Nutzer",
+	  "information": {
+		"help": "This is an overview of all registered user account on the DAPNET network. If you are not an admin, you don't see other user's details. You can edit your user by yourself, e.g. change your passwort or your email address."
+	  }
+	},
+	"new": {
+	  "edituser": "Ändere Nutzer",
+	  "namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Knotens.",
+	  "password": {
+		"help": "Das ist das neue zufällig Passwort:",
+		"randompassword": "Neues zufälliges Passwort erzeugen"
+	  },
+	  "information": {
+		"help": "Dies Tabelle zeigt die registrierten Nutzer und deren Details."
 	  }
 	}
   }

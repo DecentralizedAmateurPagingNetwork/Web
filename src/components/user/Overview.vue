@@ -3,14 +3,14 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Users</h1>
+					<h1>{{ $t('navigation.users') }}</h1>
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-lg-9">
-				<h2>All Users
+				<h2>{{ $t('users.overview.allusers') }}
 					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': running }" @click="loadData"></i>
 				</h2>
 
@@ -21,23 +21,23 @@
 			<div class="col-lg-3">
 				<div class="actions well">
 					<template v-if="this.$store.getters.user.admin">
-						<legend>Actions</legend>
+						<legend>{{ $t('general.actions') }}</legend>
 						<ul>
 							<li><router-link to="/users/new">New User</router-link></li>
-							<li><p class="linklike" @click="mailToAll">Send a mail to all users</p></li>
+							<li><p class="linklike" @click="mailToAll">{{ $t('users.overview.sendemailallusers') }}</p></li>
 						</ul>
 						<br/>
 					</template>
 					<template v-if="table.rows">
-						<legend>Statistics</legend>
+						<legend>{{ $t('general.statistics') }}</legend>
 						<ul class="list-group">
-							<li class="list-group-item"><b>Total Administrators</b><span class="badge">{{ statAdministrators }}</span></li>
-							<li class="list-group-item"><b>Total Users</b><span class="badge">{{ statTotal }}</span></li>
+							<li class="list-group-item"><b>{{ $t('users.overview.totaladmins') }}</b><span class="badge">{{ statAdministrators }}</span></li>
+							<li class="list-group-item"><b>{{ $t('users.overview.totalusers') }}</b><span class="badge">{{ statTotal }}</span></li>
 						</ul>
 					</template>
 				</div>
-				<h2>Information</h2>
-				<p>This is an overview of all registered user account on the DAPNET network. If you are not an admin, you don't see other user's details. You can edit your user by yourself, e.g. change your passwort or your email address.</p>
+				<h2>{{ $t('general.information') }}</h2>
+				<p>{{ $t('users.overview.information.help') }}</p>
 			</div>
 		</div>
 	</div>
@@ -56,23 +56,23 @@
 					columns: [
 						{
 							id: 'name',
-							title: 'Name'
+							title: this.$i18n.t('general.name')
 						},
 						{
 							id: 'mail',
-							title: 'Email'
+							title: this.$i18n.t('users.general.table.email')
 						},
 						{
 							id: 'admin',
-							title: 'Admin?'
+							title: this.$i18n.t('users.general.table.admin')
 						},
 						{
 							id: 'callsigns',
-							title: 'Subscribers'
+							title: this.$i18n.t('navigation.subscribers')
 						},
 						{
 							id: 'actions',
-							title: 'Actions'
+							title: this.$i18n.t('general.actions')
 						}
 					],
 					rows: false

@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Users</h1>
+					<h1>{{ $t('navigation.users') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -12,33 +12,33 @@
 			<div class="col-lg-9">
 				<form class="form-horizontal well">
 					<fieldset>
-						<legend v-if="!this.$route.params.id">New User</legend>
-						<legend v-if="this.$route.params.id">Edit User</legend>
+						<legend v-if="!this.$route.params.id">{{ $t('users.general.newuser') }}</legend>
+						<legend v-if="this.$route.params.id">{{ $t('users.new.edituser') }}</legend>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Name</label>
+							<label class="col-lg-2 control-label">{{ $t('general.name') }}</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="form.name" class="form-control">
-								<span v-if="editing" class="help-block">Changing this name will create a duplication and <i>not</i> change the element's name.</span>
+								<span v-if="editing" class="help-block"><p v-html="$t('users.new.namehelp')"></p></span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Password</label>
+							<label class="col-lg-2 control-label">{{ $t('general.password') }}</label>
 							<div class="col-lg-9">
 								<input type="password" v-model="form.password" class="form-control">
-								<span v-if="passwordGenerated" class="help-block">This is the newly generated password: <code>{{ passwordGenerated }}</code></span>
+								<span v-if="passwordGenerated" class="help-block">{{ $t('users.new.password.randompassword') }} <code>{{ passwordGenerated }}</code></span>
 							</div>
 							<div class="col-lg-1">
 								<button type="button" @click="generatePassword" title="Generate new random password" class="btn btn-warning" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-repeat"></i></button>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">Email</label>
+							<label class="col-lg-2 control-label">{{ $t('users.general.email') }}</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="form.email" class="form-control">
 							</div>
 						</div>
 						<div class="form-group" v-if="this.$store.getters.user.admin">
-							<label class="col-lg-2 control-label">Admin?</label>
+							<label class="col-lg-2 control-label">{{ $t('users.general.admin') }}</label>
 							<div class="col-lg-10 checkbox">
 								<label>
 									<input type="checkbox" v-model="form.admin">
@@ -47,16 +47,16 @@
 						</div>
 						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
-								<button type="submit" @click="submitForm" class="btn btn-primary">Submit</button>
-								<router-link to="/users"><button class="btn btn-default">Abort</button></router-link>
+								<button type="submit" @click="submitForm" class="btn btn-primary">{{ $t('general.submit') }}</button>
+								<router-link to="/users"><button class="btn btn-default">{{ $t('general.abort') }}</button></router-link>
 							</div>
 						</div>
 					</fieldset>
 				</form>
 			</div>
 			<div class="col-lg-3">
-				<h2>Information</h2>
-				<p>This table shows the registered users and their detail information.</p>
+				<h2>{{ $t('general.information') }}</h2>
+				<p>{{ $t('users.new.information.help') }}</p>
 			</div>
 		</div>
 	</div>
