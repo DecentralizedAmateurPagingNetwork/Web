@@ -218,7 +218,7 @@
 				"number": "Nummer",
 				"name": "Name",
 				"label": "Bezeichnung",
-				"transmittergroup": "Sender-Gruppen",
+				"transmittergroup": "Sender-Gruppen"
 			}
 		},
 		"new": {
