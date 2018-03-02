@@ -136,7 +136,6 @@
 				"help": "Besitzer können die Einstellungen eines Senders selbstständig ändern."
 			},
 			"table": {
-				"title": "Information",
 				"description": "Diese Tabelle zeigt die angmeldeten Sender, ihren Online-Status und weitere Informationen. Pernsönliche Sender müssen eine geringe Strahlungsleistung und einen sehr begrenzten Abdeckungsbereich haben, wie z.B. der Raspager. Weitbereichssender sind gewöhnlicherweise an hohen Standorten installiert und haben einen großen Abdeckungsbereich"
 			}
 		},
@@ -220,7 +219,6 @@
 			"statistics:": "Statistiken",
 			"totalrubrics": "Alle Rubriken",
 			"information": {
-				"title": "Information",
 				"help": "Dies ist eine Liste aller Rubiken im DAPNET. Ein Rubik kann einer oder mehreren Sender-Gruppen zugewiesen werden. Bitte darauf achten, dass die Sender-Gruppen unterschiedlich sind, falls eine Rubiken-Nummer mehrfach verwendet wird. Dies vermeidet überlappende Zuordnungen.<br />BUm dem Empfang der Rubriken auf dem Skyper freizuschalten bitte die Funktion \"Rubriken aktivieren\" verwenden."
 			},
 			"table": {
@@ -242,14 +240,12 @@
 			"transmittergroup": "Sender-Gruppen",
 			"owner": "Besitzer",
 			"information": {
-				"title": "Information",
 				"help": "Rubriken sind eine Erfindung für die Skyper, die es ermöglicht, Nachrichten in einer strukturierten Weise zu versenden. Bitte bei der Zuordnung der Rubiken-Nummer mit Bedacht handeln und mit <code>support [at] hampager.de</code> Kontakt aufnehmen, falls Unklarheiten bestehen. Bedenkt, dass die Anzahl der Rubiken im ganzen DAPNET auf 99 beschränkt ist."
 			}
 		},
 		"activation": {
 			"pagernumber": "Pager-Nummer (Ihre RIC)",
 			"information": {
-				"title": "Information",
 				"help": "Diese Funktion sende einen Freischaltungsruf an Ihren Skyper. Wenn der Empfang erfolgreich war, können danach die Rubiken durch den Menüpunkt \"Skyper Setup\" im Skyper Menü abonniert werden."
 			},
 			"transmittergroup": "Sender-Gruppen"
@@ -262,7 +258,6 @@
 			"allsubscribers": "Alle Teilnehmer",
 			"totalsubscribers": "Gesamtanzahl Teilnehmer",
 			"information": {
-				"title": "Information",
 				"help": "Ein Teilnehmer-Eintrag ist eine logische Verknüpfung zwischen einem Bezeichner (meist das Rufzeichen des Besitzers des Meldeempfängers) und einer oder mehreren RICs, zum Beispiel die Skyper Adresse."
 			}
 		},
@@ -288,7 +283,6 @@
 				"help": "Der Besitzer eines Teilnehmers kann seine Einstellungen ändern."
 			},
 			"information": {
-				"title": "Information",
 				"help": "Ein Teilnehmer-Eintrag ist eine logische Verknüpfung zwischen einem Bezeichner (meist das Rufzeichen des Besitzers des Meldeempfängers) und einer oder mehreren RICs."
 			}
 		}
@@ -302,7 +296,6 @@
 			"emergencies": "Notfall-Alamierungen",
 			"totalcalls": "Gesamtanzahl Rufe",
 			"information": {
-				"title": "Information",
 				"help": "Rufe sind persönliche Funkmeldenachrichten an individuelle Funkmeldeempfänger."
 			},
 			"table": {
@@ -333,7 +326,6 @@
 				"help": "Wenn die Nachricht so schnell wie möglich versandt werden soll, kann diese Box ausgewählt werden. Es werden keinen schlimmen Dinge geschehen; DAPNET wird nur die Nachricht mit der maximalen Priorität verarbeiten. Bitte diese Funktion fair verwenden."
 			},
 			"information": {
-				"title": "Information",
 				"help": "Hier werden Ihre letzten Rufe angezeigt."
 			}
 		}
@@ -379,7 +371,6 @@
 				"totalnodes": "Gesamtzahl aller Nodes"
 			},
 			"information": {
-				"title": "Information",
 				"help": "Konten sind Instanzen des DAPNET-Verbundes, deren Status hier gezeigt wird."
 			},
 			"table": {
@@ -410,7 +401,6 @@
 				"suspended": "abgeschaltet"
 			},
 			"information": {
-				"title": "Information",
 				"help": "Diese Tabelle zeige alle angemelteten DAPNET Knoten und ist hauptsächlicht zur Information von Betreibern von Sendern oder Knoten gedacht.."
 			}
 		}
