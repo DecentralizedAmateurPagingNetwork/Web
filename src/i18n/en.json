@@ -412,5 +412,30 @@
 				"help": "This table shows the registered DAPNET Core nodes and is mostly for SysOp information."
 			}
 		}
-	}
+	},
+  "login": {
+		"username": "Username",
+		"password": "Password",
+		"information": {
+		  	"title":"Information",
+		  	"help": "..."
+		}
+  },
+  "logout": {
+		"seepagewrong": "If you see this page, something went wrong.",
+		"emoji": "Emoji provided for free by"
+  },
+  "impress": {
+		"title": "Impress"
+  },
+  "error404": {
+		"title": "Error 404 - Not Found",
+		"emoji": "Emoji provided for free by"
+  },
+  "privacy": {
+		"title": "Privacy"
+  },
+  "versioncheck": {
+		"title": "Version Check"
+  }
 }

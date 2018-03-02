@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>Privacy</h1>
+					<h1>{{ $t('privacy.title') }}</h1>
 				</div>
 
 				<h2>Datenschutz</h2>

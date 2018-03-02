@@ -412,5 +412,30 @@
 				"help": "Diese Tabelle zeige alle angemelteten DAPNET Knoten und ist hauptsächlicht zur Information von Betreibern von Sendern oder Knoten gedacht.."
 			}
 		}
+	},
+  "login": {
+	"username": "Benutzername",
+	"password": "Passwort",
+	"information": {
+	  "title":"Information",
+	  "help": "..."
 	}
+  },
+  "logout": {
+	"seepagewrong": "Wenn Sie diese Seite sehen, ist etwas schief gelaufen.",
+	"emoji": "Emoji kostenlos bereitgestellt durch"
+  },
+  "impress": {
+	"title": "Impressum"
+  },
+  "error404": {
+	"title": "Error 404 - Nicht gefunden",
+	"emoji": "Emoji kostenlos bereitgestellt durch"
+  },
+  "privacy": {
+	"title": "Datenschutz"
+  },
+  "versioncheck": {
+	"title": "Versionsüberprüfung"
+  }
 }
