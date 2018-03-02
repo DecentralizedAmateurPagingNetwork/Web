@@ -46,8 +46,8 @@
 		}
 	},
 	"transmitter": {
-		"title": "Sender",
-		"table": {
+	  	"overview": {
+		  "table": {
 			"title": "Alle Sender",
 			"callsign": "Rufzeichen",
 			"node": "Knoten",
@@ -57,22 +57,23 @@
 			"status": "Status",
 			"connectedsince": "Verbunden seit",
 			"actions": "Aktionen"
-		},
-		"actions": {
+		  },
+		  "actions": {
 			"title": "Aktionen",
 			"newtransmitter": "Neuer Sender",
 			"sendmailtoallowners": "Sende Email an alle Besitzer"
-		},
-		"statistics": {
+		  },
+		  "statistics": {
 			"title": "Statistiken",
 			"widerange": "Weitbereich",
 			"personal": "Persönlich",
 			"total": "Gesamt",
 			"widerangeonly": "Nur Weitbereichssender"
-		},
-		"information": {
+		  },
+		  "information": {
 			"title": "Informationen",
 			"text": "Diese Übersicht zeigt alle im DAPNET angemeldeten Sender. Bevor ein Sender mit einem der DAPNET Knoten verbunden werden kann, muss dieser erst von einem Administrator angelegt werden.<br />Es gibt zwei Klassen von Sendern: Weitbereichssender (&gt; 1 Watt) und persönliche Sender (&lt;= 1 Watt).<br />Warum gibt es eine solch große Anzahl an Sendern, die offline sind? Diese Sender wurden meist in der Vergangenheit angelegt wurden, aber zur Zeit offensichtlich nicht betrieben werden. Es gibt keine Festlegung, welches Sender online sein \"sollten\" und welche nicht.<br />Sender haben einen oder mehrere Besitzer, die die Einstellungen selbstständig ändern können. Jeder Sender hat 1 bis max. 16 Zeitschlitzen zugewiesen. Dies ist notwendig, da alle Sender auf der gleichen Frequenz. Eine überlappende Zeitschlitzvergabe in der Ausleuchtung eines Bereiches zwischen den Sendern ist streng zu vermeiden. Daher bitte keine Zeitschlitze einem Sender zuordnen, die bereit von anderen Sendern im Abdeckgungsbereich seines Senders benutzt werden. Bitte Kontakt mit <code>support [at] hampager.de</code> aufnehmen, wenn es Unklarheiten oder Fragen gibt."
+		  }
 		},
 		"new": {
 			"newtransmitter": "Neuer Sender",

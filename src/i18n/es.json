@@ -46,33 +46,34 @@
 	}
   },
 	"transmitter": {
-	"title": "Transmissores",
-	"table": {
-	  "title": "Todos los transmisores",
-	  "callsign": "Indicativo",
-	  "node": "Node",
-	  "ipaddress": "Dirección IP",
-	  "owner": "Dueño",
-	  "device": "Device",
-	  "status": "Estatus",
-	  "connectedsince": "Connected since",
-	  "actions": "Actions"
-	},
-	"actions": {
-	  "title": "Acciones",
-	  "newtransmitter": "Nuevo transmisor",
-	  "sendmailtoallowners": "Envia un correo a todas los dueños"
-	},
-	"statistics": {
-	  "title": "Statistics",
-	  "widerange": "Widerange",
-	  "personal": "Personal",
-	  "total": "Total",
-	  "widerangeonly": "Widerange-transmitter only"
-	},
-	"information": {
-	  "title": "Information",
-	  "text": "This overview shows all registered transmitters of the DAPNET network. Before you can connect your transmitter to one of the DAPNET-Nodes, it has to be registered by one of the admins. There are two classes of transmitters: Widerange (&gt; 1 Watt) and Personal (&lt;= 1 Watt). Why is there such a big number of offline transmitters? These are transmitters which have been registered in the past, but apparently are not online now. There is no information stored which transmitters \"should\" be online and which not.<br>Transmitters have one or multiple owners who can change the settings by themselves. Each transmitter is assigned to one or max. 16 timeslots. This is necessary as they transmit all on the same frequency, but not overlapping at the same time. Be aware to assign no timeslots to your transmitter that are already used in you coverage area. Contact one of the admins, if you need help."
+	"overview": {
+	  "table": {
+		"title": "Todos los transmisores",
+		"callsign": "Indicativo",
+		"node": "Node",
+		"ipaddress": "Dirección IP",
+		"owner": "Dueño",
+		"device": "Device",
+		"status": "Estatus",
+		"connectedsince": "Connected since",
+		"actions": "Actions"
+	  },
+	  "actions": {
+		"title": "Acciones",
+		"newtransmitter": "Nuevo transmisor",
+		"sendmailtoallowners": "Envia un correo a todas los dueños"
+	  },
+	  "statistics": {
+		"title": "Statistics",
+		"widerange": "Widerange",
+		"personal": "Personal",
+		"total": "Total",
+		"widerangeonly": "Widerange-transmitter only"
+	  },
+	  "information": {
+		"title": "Information",
+		"text": "This overview shows all registered transmitters of the DAPNET network. Before you can connect your transmitter to one of the DAPNET-Nodes, it has to be registered by one of the admins. There are two classes of transmitters: Widerange (&gt; 1 Watt) and Personal (&lt;= 1 Watt). Why is there such a big number of offline transmitters? These are transmitters which have been registered in the past, but apparently are not online now. There is no information stored which transmitters \"should\" be online and which not.<br>Transmitters have one or multiple owners who can change the settings by themselves. Each transmitter is assigned to one or max. 16 timeslots. This is necessary as they transmit all on the same frequency, but not overlapping at the same time. Be aware to assign no timeslots to your transmitter that are already used in you coverage area. Contact one of the admins, if you need help."
+	  }
 	},
 	"new": {
 	  "newtransmitter": "New Transmitter",
