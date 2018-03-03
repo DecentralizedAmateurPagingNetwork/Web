@@ -199,7 +199,7 @@
 	  	"information": "Information",
 	  	"owner": "Besitzer",
 	 	"actions": "Aktionen",
-	  	"statistics:": "Statistiken",
+	  	"statistics": "Statistiken",
 	  	"description": "Beschreibung",
 		"latlong": {
 			"title": "Breite / Länge",
