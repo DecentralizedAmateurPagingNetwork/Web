@@ -297,7 +297,7 @@
 	  },
 	  "table": {
 		"timestamp": "Marca de tiempo",
-		"txgroups": "Groupos de transmisores",
+		"txgroups": "Grupos de transmisores",
 		"message": "Mensaje",
 		"emergency": "Alta Prio?"
 	  }
@@ -432,23 +432,23 @@
 	"general": {
 	  "email": "Email",
 	  "admin": "Admin?",
-	  "newuser" : "New User"
+	  "newuser" : "Nuevo Usuario"
 	},
 	"overview": {
-	  "allusers": "All Users",
-	  "sendemailallusers": "Send a mail to all users",
-	  "totaladmins" : "Total Administrators",
-	  "totalusers": "Total Users",
+	  "allusers": "Todos los Usuarios",
+	  "sendemailallusers": "Enviar un correo a todos los usuarios",
+	  "totaladmins" : "Total Admins",
+	  "totalusers": "Total Usuarios",
 	  "information": {
 		"help": "This is an overview of all registered user account on the DAPNET network. If you are not an admin, you don't see other user's details. You can edit your user by yourself, e.g. change your passwort or your email address."
 	  }
 	},
 	"new": {
-	  "edituser": "Edit User",
+	  "edituser": "Editar Usuario",
 	  "namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
 	  "password": {
-		"help": "This is the newly generated password:",
-		"randompassword": "Generate new random password"
+		"help": "Eso es la una nueva contraseña aleatoria:",
+		"randompassword": "Generar una nueva contraseña aleatoria"
 	  },
 	  "information": {
 		"help": "This table shows the registered users and their detail information."
