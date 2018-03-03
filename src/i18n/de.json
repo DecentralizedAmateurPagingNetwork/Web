@@ -65,7 +65,6 @@
 			"widerangeonly": "Nur Weitbereichssender"
 		  },
 		  "information": {
-			"title": "Informationen",
 			"text": "Diese Übersicht zeigt alle im DAPNET angemeldeten Sender. Bevor ein Sender mit einem der DAPNET Knoten verbunden werden kann, muss dieser erst von einem Administrator angelegt werden.<br />Es gibt zwei Klassen von Sendern: Weitbereichssender (&gt; 1 Watt) und persönliche Sender (&lt;= 1 Watt).<br />Warum gibt es eine solch große Anzahl an Sendern, die offline sind? Diese Sender wurden meist in der Vergangenheit angelegt wurden, aber zur Zeit offensichtlich nicht betrieben werden. Es gibt keine Festlegung, welches Sender online sein \"sollten\" und welche nicht.<br />Sender haben einen oder mehrere Besitzer, die die Einstellungen selbstständig ändern können. Jeder Sender hat 1 bis max. 16 Zeitschlitzen zugewiesen. Dies ist notwendig, da alle Sender auf der gleichen Frequenz. Eine überlappende Zeitschlitzvergabe in der Ausleuchtung eines Bereiches zwischen den Sendern ist streng zu vermeiden. Daher bitte keine Zeitschlitze einem Sender zuordnen, die bereit von anderen Sendern im Abdeckgungsbereich seines Senders benutzt werden. Bitte Kontakt mit <code>support [at] hampager.de</code> aufnehmen, wenn es Unklarheiten oder Fragen gibt."
 		  }
 		},
@@ -208,7 +207,9 @@
 			"east": "Ost",
 			"west": "West"
 	  	},
-	 	"password": "Passwort"
+	 	"password": "Passwort",
+	  "yes": "Ja",
+	  "no": "Nein"
 	},
 	"rubric": {
 		"overview": {
@@ -265,7 +266,6 @@
 				"info": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Teilnehmer-Eintrags."
 			},
 			"description": {
-				"title": "Beschreibung",
 				"help": "Bitte hier den Vornamen oder eine andere sinnvolle Beschreibung dieses Eintrags eingeben."
 			},
 			"pager": {
@@ -338,7 +338,7 @@
 		"new": {
 			"newrubriccontent": "Neuer Rubriken Inhalt",
 			"message": "Nachricht",
-			"charactersremaining": "verbleidende Zeichen",
+			"charactersremaining": "verbleibende Zeichen",
 			"rubric": "Rubrik",
 			"number": "Nummer",
 			"chooseautomatically": "Automatisch bestimmen",
@@ -414,7 +414,7 @@
 	  "alltxgroups": "Alle Sender-Gruppen",
 	  "totaltxgroups": "Gesamtzahl der Sender-Gruppen",
 	  "information": {
-		"help": "A transmitter group is a logical association of one or multiple transmitters to a group. This is necessary to divide the transmitters into regional areas, as not all content has to be transmitted on the whole network. Both personal calls as well als rubric's content have to be linked to a transmitter group. Only transmitters that are member of this group will get the information from the DAPNET node in order to transmit it."
+		"help": "Eine Sender-Gruppe ist ein logischer Zusammenschluss von einen oder mehreren Senders zu einem gemeinsamen Bezeichner. Dies ist notwendig, um die Sender ein regionale Zonen aufzuteilen, da nicht jeder Inhalt über das ganze Netzwerk ausgestrahlt werden muss. Sowohl persönliche Rufe, wie auch Rubriken-Inhalte müssen einer Sender-Gruppe zugewiesen werden. Nur die in der oder den zugewiesenen Gruppen enthaltenen Sender werden vom DAPNET Knoten mit den betreffenden Daten versorgt."
 	  }
 	},
 	"new": {
@@ -422,7 +422,7 @@
 	  "edittxgroup": "Ändere Sender-Gruppe",
 	  "namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieser Sender-Gruppe.",
 	  "information": {
-		"help": "A transmitter group combines one of several transmitters to a logical entity. The group all contains all registered transmitters. Other groups are assigned by their coverage area."
+		"help": "Eine Sender-Gruppe kominiert einen oder mehrere Sender zu einer logischen Einheit."
 	  }
 	}
   },
@@ -435,7 +435,7 @@
 	"overview": {
 	  "allusers": "Alle Nutzer",
 	  "sendemailallusers": "Sende eine Email an alle Nutzer",
-	  "totaladmins" : "Gesamtzahl Administratoren",
+	  "totaladmins" : "Gesamtzahl Admin",
 	  "totalusers": "Gesamtzahl Nutzer",
 	  "information": {
 		"help": "This is an overview of all registered user account on the DAPNET network. If you are not an admin, you don't see other user's details. You can edit your user by yourself, e.g. change your passwort or your email address."

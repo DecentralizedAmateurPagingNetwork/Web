@@ -23,7 +23,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">{{ $t('subscribers.new.description.title') }}</label>
+							<label class="col-lg-2 control-label">{{ $t('general.description') }}</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="form.description" class="form-control">
 								<span class="help-block">{{ $t('subscribers.new.description.help') }}</span>

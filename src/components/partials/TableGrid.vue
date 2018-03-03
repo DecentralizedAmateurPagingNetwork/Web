@@ -136,9 +136,9 @@
 			},
 			booleanToString(v) {
 				if (v === true) {
-					return 'Yes';
+					return this.$i18n.t('general.yes');
 				} else if (v === false) {
-					return 'No';
+					return this.$i18n.t('general.no');
 				} else {
 					return v;
 				}
