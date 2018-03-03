@@ -60,11 +60,11 @@
 						},
 						{
 							id: 'mail',
-							title: this.$i18n.t('users.general.table.email')
+							title: this.$i18n.t('users.general.email')
 						},
 						{
 							id: 'admin',
-							title: this.$i18n.t('users.general.table.admin')
+							title: this.$i18n.t('users.general.admin')
 						},
 						{
 							id: 'callsigns',
