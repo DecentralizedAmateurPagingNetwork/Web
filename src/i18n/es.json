@@ -257,6 +257,10 @@
 	  "information": {
 		"title": "Information",
 		"help": "A subscriber is the logical connection between a name (the callsign) and one or multiple RIC numbers, for example a Skyper address."
+	  },
+	  "table": {
+		"pager" : "Pager",
+		"subscriber": "Subscriber"
 	  }
 	},
 	"new": {

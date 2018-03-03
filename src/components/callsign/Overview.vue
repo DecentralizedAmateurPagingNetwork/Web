@@ -56,23 +56,23 @@
 					columns: [
 						{
 							id: 'name',
-							title: 'Subscriber'
+							title: this.$i18n.t('subscribers.overview.table.subscriber')
 						},
 						{
 							id: 'description',
-							title: 'Description'
+							title: this.$i18n.t('general.description')
 						},
 						{
 							id: 'pagers',
-							title: 'Pager'
+							title: this.$i18n.t('subscribers.overview.table.pager')
 						},
 						{
 							id: 'ownerNames',
-							title: 'Owner'
+							title: this.$i18n.t('general.owner')
 						},
 						{
 							id: 'actions',
-							title: 'Actions'
+							title: this.$i18n.t('general.actions')
 						}
 					],
 					rows: false

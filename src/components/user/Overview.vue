@@ -23,7 +23,7 @@
 					<template v-if="this.$store.getters.user.admin">
 						<legend>{{ $t('general.actions') }}</legend>
 						<ul>
-							<li><router-link to="/users/new">New User</router-link></li>
+							<li><router-link to="/users/new">{{ $t('users.general.newuser') }}</router-link></li>
 							<li><p class="linklike" @click="mailToAll">{{ $t('users.overview.sendemailallusers') }}</p></li>
 						</ul>
 						<br/>

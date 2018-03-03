@@ -250,7 +250,11 @@
 			"totalsubscribers": "Gesamtanzahl Teilnehmer",
 			"information": {
 				"help": "Ein Teilnehmer-Eintrag ist eine logische Verknüpfung zwischen einem Bezeichner (meist das Rufzeichen des Besitzers des Meldeempfängers) und einer oder mehreren RICs, zum Beispiel die Skyper Adresse."
-			}
+			},
+		  	"table": {
+				"pager" : "Funkmeldeempfänger",
+				"subscriber": "Teilnehmer"
+		  	}
 		},
 		"new": {
 			"newsubscriber": "Neuer Teilnehmer",
