@@ -201,6 +201,7 @@
 		"actions": "Aktionen",
 		"statistics": "Statistiken",
 		"description": "Beschreibung",
+		"name": "Name",
 		"latlong": {
 			"title": "Breite / Länge",
 			"north": "Nord",
