@@ -131,7 +131,7 @@
 			},
 			"checkbox": {
 				"showonlineonly": "Nur Sender, die online sind, anzeigen.",
-				"showwiderangeonly": "Neu Weitbereichssender anzeigen",
+				"showwiderangeonly": "Nur Weitbereichssender anzeigen",
 				"showbytimeslot": "Nur Sender anzeigen, die die angegeben Zeitschlitze zugewiesen haben",
 				"shownodes": "Knoten anzeigen",
 				"shownodeline": "Eine Linie vom Sender zum Knoten, mit dem er verbunden ist, anzeigen"
