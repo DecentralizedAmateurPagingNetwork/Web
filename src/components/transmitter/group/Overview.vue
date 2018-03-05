@@ -35,7 +35,7 @@
 					</template>
 				</div>
 				<h2>{{ $t('general.information') }}</h2>
-				<p>{{ $t('group.overview.information.help') }}/p>
+				<p>{{ $t('group.overview.information.help') }}</p>
 			</div>
 		</div>
 	</div>

@@ -12,13 +12,13 @@
 			<div class="col-lg-9">
 				<form class="form-horizontal well">
 					<fieldset>
-						<legend v-if="!this.$route.params.id">{{ $t('group.new.newtxgroups') }}</legend>
-						<legend v-if="this.$route.params.id">{{ $t('group.new.edittxgroups') }}</legend>
+						<legend v-if="!this.$route.params.id">{{ $t('group.new.newtxgroup') }}</legend>
+						<legend v-if="this.$route.params.id">{{ $t('group.new.edittxgroup') }}</legend>
 						<div class="form-group">
 							<label class="col-lg-2 control-label">{{ $t('general.name') }}</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="form.name" class="form-control">
-								<span v-if="editing" class="help-block"><p v-html="$t('group.new.namehelp')"></p></span>
+								<span v-if="editing" class="help-block">{{ $t('group.new.namehelp') }}</span>
 							</div>
 						</div>
 						<div class="form-group">

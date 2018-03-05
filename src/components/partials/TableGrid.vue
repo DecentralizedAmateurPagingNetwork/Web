@@ -45,7 +45,7 @@
 								</template>
 							</template>
 							<template v-else>
-								{{ entry[key.id] | arrayToString | booleanToString }}
+								{{ booleanToString(arrayToString(entry[key.id])) }}
 							</template>
 						</td>
 					</tr>
@@ -127,22 +127,6 @@
 			}
 		},
 		filters: {
-			arrayToString(v) {
-				if (v instanceof Array) {
-					return v.join(', ');
-				} else {
-					return v;
-				}
-			},
-			booleanToString(v) {
-				if (v === true) {
-					return 'Yes';
-				} else if (v === false) {
-					return 'No';
-				} else {
-					return v;
-				}
-			},
 			timestampToLocaleString(v) {
 				return new Date(v).toLocaleString('de-DE', {
 					day: '2-digit',
@@ -164,6 +148,23 @@
 				let newStartRow = this.startRow + (v * this.rowsPerPage);
 				if (newStartRow >= 0 && newStartRow < this.filteredData.length) {
 					this.startRow = newStartRow;
+				}
+			},
+			// next two methods are not filters anymore to allow usage of this
+			arrayToString(v) {
+				if (v instanceof Array) {
+					return v.join(', ');
+				} else {
+					return v;
+				}
+			},
+			booleanToString(v) {
+				if (v === true) {
+					return this.$i18n.t('general.yes');
+				} else if (v === false) {
+					return this.$i18n.t('general.no');
+				} else {
+					return v;
 				}
 			}
 		},
