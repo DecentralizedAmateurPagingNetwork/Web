@@ -43,7 +43,7 @@
 			</div>
 
 			<div class="col-lg-4">
-				<h2>{{ $t('navigation.statistics') }}
+				<h2>{{ $t('general.statistics') }}
 					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': stats.running }" @click="loadData"></i>
 				</h2>
 
