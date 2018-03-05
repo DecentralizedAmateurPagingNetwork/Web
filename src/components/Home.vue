@@ -10,7 +10,7 @@
 								<p v-html="$t('home.carousel.' + index + '.text')"></p>
 							</slide>
 							<slide :key="index + 9">
-								<img :src="'./assets/img/carousel/img' + index + '.jpg'" alt="Carousel Item" />
+								<img :src="'./assets/img/carousel/img' + index + '.jpg'" class="carousel-image" alt="Carousel Item" />
 							</slide>
 						</template>
 					</carousel>
@@ -121,7 +121,8 @@
 		font-size: 1.2em;
 	}
 
-	.VueCarousel, .VueCarousel-wrapper, .VueCarousel-slide {
-		max-height: 400px;
+	.carousel-image {
+		float: right;
+		max-width: 400px;
 	}
 </style>
