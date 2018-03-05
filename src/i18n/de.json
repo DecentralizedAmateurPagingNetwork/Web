@@ -188,8 +188,32 @@
 	"rest": {
 		"errors": {
 			"title": "Fehler",
+			"no-connection": "Keine Verbindung",
 			"api-unreachable": "API-Server zur Zeit nicht erreichbar. Bitte versuchen Sie es später erneut.",
-			"http-error": "Unbehandelter HTTP Fehler {status}. Bitte versuchen Sie es später erneut."
+			"permissions": "Ungültige Anmeldedaten oder keine Berechtigungen für diese Anfrage. Bitte prüfen Sie Nutzername und Passwort.",
+			"http-error": "Unbehandelter HTTP Fehler {status}. Bitte versuchen Sie es später erneut.",
+			"403": {
+				"title": "Verboten",
+				"text": "Keine Berechtigung für diese Anfrage."
+			},
+			"404": {
+				"title": "Nicht gefunden",
+				"text": "Konnte die gewählte Resource nicht finden."
+			}
+		}
+	},
+	"alerts": {
+		"success": {
+			"title": "Erfolg",
+			"text": "Operation erfolgreich durchgeführt."
+		},
+		"delete": {
+			"title": "Sind Sie sicher?",
+			"text": "Sie können diese Daten nicht wiederherstellen, sobald sie gelöscht wurden."
+		},
+		"input": {
+			"title": "Fehlende Eingaben",
+			"text": "Bitte füllen Sie alle Eingabefelder aus, um fortzufahren."
 		}
 	},
 	"general": {

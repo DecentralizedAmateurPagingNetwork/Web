@@ -4,8 +4,8 @@ const GlobalMethodsPlugin = {
 
 		Vue.prototype.$dialogs.success = function(context) {
 			context.$swal({
-				title: 'Success',
-				text: 'Operation successfully executed.',
+				title: context.$i18n.t('alerts.success.title'),
+				text: context.$i18n.t('alerts.success.text'),
 				type: 'success',
 				toast: true,
 				position: 'bottom-end',
@@ -16,13 +16,13 @@ const GlobalMethodsPlugin = {
 
 		Vue.prototype.$dialogs.deleteElement = function(context, workFunction) {
 			context.$swal({
-				title: 'Are you sure?',
-				text: 'You will not be able to recover this data once it is deleted.',
+				title: context.$i18n.t('alerts.delete.title'),
+				text: context.$i18n.t('alerts.delete.text'),
 				type: 'warning',
 				showCancelButton: true,
 				confirmButtonColor: '#DD6B55',
-				confirmButtonText: 'Yes',
-				cancelButtonText: 'Cancel'
+				confirmButtonText: context.$i18n.t('general.yes'),
+				cancelButtonText: context.$i18n.t('general.abort')
 			}).then(result => {
 				if (result.value) workFunction();
 			});
@@ -32,8 +32,8 @@ const GlobalMethodsPlugin = {
 			if (err.status === 0) {
 				// no connection
 				context.$swal({
-					title: 'No Connection',
-					html: 'Unable to reach API server. Please try again later.',
+					title: context.$i18n.t('rest.errors.no-connection'),
+					html: context.$i18n.t('rest.errors.api-unreachable'),
 					type: 'error'
 				});
 			} else if (err.status === 400) {
@@ -55,22 +55,22 @@ const GlobalMethodsPlugin = {
 			} else if (err.status === 403) {
 				// forbidden
 				context.$swal({
-					title: 'Forbidden',
-					html: 'No permission for this request',
+					title: context.$i18n.t('rest.errors.403.title'),
+					html: context.$i18n.t('rest.errors.403.text'),
 					type: 'error'
 				});
 			} else if (err.status === 404) {
 				// not found
 				context.$swal({
-					title: 'Not Found',
-					html: 'Unable to find the requested resource.',
+					title: context.$i18n.t('rest.errors.404.title'),
+					html: context.$i18n.t('rest.errors.404.text'),
 					type: 'error'
 				});
 			} else {
 				// general error
 				context.$swal({
-					title: 'General Error',
-					html: 'Encountered HTTP error code ' + err.status + '.',
+					title: context.$i18n.t('rest.errors.title'),
+					html: context.$i18n.t('rest.errors.http-error', { status: err.status }),
 					type: 'error'
 				});
 			}
@@ -78,13 +78,13 @@ const GlobalMethodsPlugin = {
 
 		Vue.prototype.$helpers = {};
 
-		Vue.prototype.$helpers.getAjaxErrorMessage = function(response) {
+		Vue.prototype.$helpers.getAjaxErrorMessage = function(context, response) {
 			if (response.status === 0) {
-				return 'Unable to reach API server. Please try again later.';
+				return context.$i18n.t('rest.errors.api-unreachable');
 			} else if (response.status === 401 || response.status === 403) {
-				return 'Invalid login credentials or no permission for this request. Please check username and password.';
+				return context.$i18n.t('rest.errors.permissions');
 			} else {
-				return 'Unhandled HTTP error (' + response.status + '). Please try again later.';
+				return context.$i18n.t('rest.errors.http-error', { status: response.status });
 			}
 		};
 
@@ -93,8 +93,8 @@ const GlobalMethodsPlugin = {
 				if (form.hasOwnProperty(key)) {
 					if (form[key].length === 0 || form[key] === '') {
 						context.$swal({
-							title: 'Missing input',
-							html: 'Please fill in every field to continue.',
+							title: context.$i18n.t('alerts.input.title'),
+							html: context.$i18n.t('alerts.input.text'),
 							type: 'error'
 						});
 						return false;

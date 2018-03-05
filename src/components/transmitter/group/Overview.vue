@@ -103,7 +103,7 @@
 				}, response => {
 					// error --> show error message
 					this.running = false;
-					this.errorMessage = this.$helpers.getAjaxErrorMessage(response);
+					this.errorMessage = this.$helpers.getAjaxErrorMessage(this, response);
 				});
 			},
 			editElement(element) {

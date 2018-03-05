@@ -188,8 +188,32 @@
 	"rest": {
 		"errors": {
 			"title": "Error",
+			"no-connection": "No Connection",
 			"api-unreachable": "Unable to reach API server. Please try again later.",
-			"http-error": "Unhandled HTTP error {status}. Please try again later."
+			"permissions": "Invalid login credentials or no permission for this request. Please check username and password.",
+			"http-error": "Unhandled HTTP error {status}. Please try again later.",
+			"403": {
+				"title": "Forbidden",
+				"text": "No permission for this request."
+			},
+			"404": {
+				"title": "Not Found",
+				"text": "Unable to find the requested resource."
+			}
+		}
+	},
+	"alerts": {
+		"success": {
+			"title": "Success",
+			"text": "Operation successfully executed."
+		},
+		"delete": {
+			"title": "Are you sure?",
+			"text": "You will not be able to recover this data once it is deleted."
+		},
+		"input": {
+			"title": "Missing input",
+			"text": "Please fill in every field to continue."
 		}
 	},
 	"general": {
