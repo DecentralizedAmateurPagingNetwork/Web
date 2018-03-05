@@ -4,12 +4,12 @@
 			<div class="col-lg-12">
 				<div class="jumbotron">
 					<carousel :autoplay="true" :autoplay-timeout="5000" :loop="true" :navigation-enabled="true" :per-page="2" :scroll-per-page="true" pagination-color="#d0d0d0" pagination-active-color="#a0a0a0">
-						<template v-for="index in 9">
+						<template v-for="index in 10">
 							<slide :key="index">
 								<h2>{{ $t('home.carousel.' + index + '.title') }}</h2>
 								<p v-html="$t('home.carousel.' + index + '.text')"></p>
 							</slide>
-							<slide :key="index + 9">
+							<slide :key="index + 10">
 								<img :src="'./assets/img/carousel/img' + index + '.jpg'" class="carousel-image" alt="Carousel Item" />
 							</slide>
 						</template>

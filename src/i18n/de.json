@@ -27,40 +27,40 @@
 				"text": "Das DAPNET (Decentralized Amateur Paging Network) ist ein durch Funkamateure betriebenes Netzwerk. Es ist die neue und weiter entwickelte Version des <a href=\"http://ham-pager.sourceforge.net\" target=\"_blank\">FunkrufMasters</a>. Es besteht aus einen dezentralen Verbund von Servern, welcher Daten zu Funkrufen an verteilte Sender ausliefert.<br />Die übliche Frequenz ist 439,9875 MHz mit 1200 Baud POCSAG-Protokoll. Übliche Empfänger sind \"Skyper\", aber es gibt auch weitere Arten. Da dieses Netzwerk auf Amateurfunk-Frequenzen arbeitet ist eine kommerzielle Nutzung verboten.<br />Wenn Sie Inhaber einer gültigen Genehmigung zur Teilnahme am Amateurfunkdienst sind, können Sie Ihren Zugang direkt beantragen. Wir freuen uns auch über jeden neuen Sender im Netzwerk. Eine umfangreiche Dokumentation ist im <a href=\"http://doku.hampager.de\" target=\"_blank\">DAPNET DokuWiki</a> verfügbar."
 			},
 			"2": {
-				"title": "TODO",
-				"text": "TODO"
+				"title": "Raspager Sender",
+				"text": "Senders mit geringer Reichweite als günstige Aufsteckplatine für einen Raspberry Pi"
 			},
 			"3": {
-				"title": "TODO",
-				"text": "TODO"
+				"title": "Kartendarstellung mit Abdeckungsanzeige",
+				"text": "Die Sender werden auf einer Karte dargestellt. Ebenfalls kann der simulierte Abdeckungsbereich angezeigt werden."
 			},
 			"4": {
-				"title": "TODO",
-				"text": "TODO"
+				"title": "Berührungsempflindliche Anzeige für Sender",
+				"text": "Zur einfachen Kontrolle und Konfiguration gibt es einen Anzeige basierend auf einem Nextion-Display. Der Anschluss an den Sender geschieht über die UART auf dem GPIO-Anschluss eines Raspberry Pis oder durch einen USB-auf-Seriell-Wandler."
 			},
 			"5": {
-				"title": "TODO",
-				"text": "TODO"
+				"title": "Unipager - Eine einzige Software für alle Sender-Arten",
+				"text": "Die Unipager-Software in der modernen Programmiersprache RUST geschrieben ermöglichte den Aufbau aller Sender-Arten: Raspager, Ericsscon C9000 (mit Zuatzplatine), die Soundkarten-Variante und die RFM69-Lösung. Ein Debian-Paket ist für einfache Installation und Updates verfügbar."
 			},
 			"6": {
-				"title": "TODO",
-				"text": "TODO"
+				"title": "Moderner Funkmeldeempfänger: Swissphone",
+				"text": "Ein High-End Modell für Benutzer mit besonderen Ansprüchen."
 			},
 			"7": {
-				"title": "TODO",
-				"text": "TODO"
+				"title": "SDR-basierter Sender mit GM1200 oder ähnlichem Funkgerät",
+				"text": "Alles was benötigt wird ist ein 9k6 fähiges Funkgerät und ein einfaches Audio-Interface. Das Touch-Display kann ebenfalls verwendet werden."
 			},
 			"8": {
-				"title": "TODO",
-				"text": "TODO"
+				"title": "Ersatz für die Skyper: Funkmeldeempfänger AlphaPOC 6002R",
+				"text": "Der auf dem Markt befindliche Pager ist klein, handlich und kann ohne Umbau betrieben werden. Die Einstellung der Frequenz und der RIC kann direkt am Gerät geschehen."
 			},
 			"9": {
-				"title": "TODO",
-				"text": "TODO"
+				"title": "Stuktur des DAPNETs",
+				"text": "Moderne Techniken unter der Haube: Das DAPNET wartet mit seiner REST-Schnittstelle und der Verwendung von Websockets mit up-to-date Techniken aus dem Bereich des professionellen Internets auf."
 			},
 			"10": {
-				"title": "Support by ticket system",
-				"text": "Support requests are handled by a team for quick response time and maximum knowledge sharing"
+				"title": "Unterstützung durch eine Ticket-System",
+				"text": "Anfragen zur Einrichtung von Sendern und Hilfe werden über ein Ticket-System abgehandelt. So wird die Abhänigkeit einer One-Man-Show vermieden und das vorhandene Wissen sowie die Arbeit von mehreren Freiwilligen getragen."
 			}
 		},
 		"information": {
@@ -154,7 +154,7 @@
 			},
 			"timeslots": {
 				"title": "Zeitschlitze",
-				"help": "Da alle Sender die gleiche Frequenz benutzen, wird eine Zeitmultiplex-Verfahren eingesetzt. Es gibt 16 Zeitschlitze. Bitte die Zuweisung der Zeitschlitze so vornehmen, dass es im Abdeckungsbereich dieses Senders keine Überschneidungen mit Zuordnungen von anderen bereits existierenden Sendern gibt. Die Kartenansicht kann dazu verwendet werden, sich einen Überblick über die bereits vorhandenen Sender und ihrer Zeitschlitze zu verschaffen.<br>Falls die Anforderungen dieses Senders zur Belegung von Zeitschlitzen durch die bestehende Zuweisung nicht erfüllt werden kann, bitte die Besitzer der umliegenden Sender kontaktieren und für eine Lösung sorgen. Im Normallfall sind 4 oder weniger Zeitschlitze pro Sender mehr als genug."
+				"help": "Da alle Sender die gleiche Frequenz benutzen, wird ein Zeitmultiplex-Verfahren eingesetzt. Es gibt 16 Zeitschlitze. Bitte die Zuweisung der Zeitschlitze so vornehmen, dass es im Abdeckungsbereich dieses Senders keine Überschneidungen mit Zuordnungen von anderen bereits existierenden Sendern gibt. Die Kartenansicht kann dazu verwendet werden, sich einen Überblick über die bereits vorhandenen Sender und ihrer Zeitschlitze zu verschaffen.<br>Falls die Anforderungen dieses Senders zur Belegung von Zeitschlitzen durch die bestehende Zuweisung nicht erfüllt werden kann, bitte die Besitzer der umliegenden Sender kontaktieren und für eine Lösung sorgen. Im Normallfall sind 4 oder weniger Zeitschlitze pro Sender mehr als genug."
 			},
 			"owner": {
 				"help": "Besitzer können die Einstellungen eines Senders selbstständig ändern."
@@ -227,12 +227,12 @@
 		"errors": {
 			"title": "Fehler",
 			"no-connection": "Keine Verbindung",
-			"api-unreachable": "API-Server zur Zeit nicht erreichbar. Bitte versuchen Sie es später erneut.",
+			"api-unreachable": "API-Server zur Zeit nicht erreichbar. Bitte versuchen Sie es später erneut. Sollte das Problem nicht behoben sein, öffnen Sie bitte ein Ticket im Ticket-System.",
 			"permissions": "Ungültige Anmeldedaten oder keine Berechtigungen für diese Anfrage. Bitte prüfen Sie Nutzername und Passwort.",
 			"http-error": "Unbehandelter HTTP Fehler {status}. Bitte versuchen Sie es später erneut.",
 			"403": {
 				"title": "Verboten",
-				"text": "Keine Berechtigung für diese Anfrage."
+				"text": "Keine Berechtigung für diese Anfrage. Wenn dies ein Zustand ist, der Ihrer Meinung nach nicht akzeptabel ist, bitte ein Ticket aufmachen."
 			},
 			"404": {
 				"title": "Nicht gefunden",
@@ -377,7 +377,7 @@
 			},
 			"emergency": {
 				"title": "Notfall?",
-				"help": "Wenn die Nachricht so schnell wie möglich versandt werden soll, kann diese Box ausgewählt werden. Es werden keinen schlimmen Dinge geschehen; DAPNET wird nur die Nachricht mit der maximalen Priorität verarbeiten. Bitte diese Funktion fair verwenden."
+				"help": "Wenn die Nachricht so schnell wie möglich versandt werden soll, kann diese Box ausgewählt werden. Es werden keine schlimmen Dinge geschehen; DAPNET wird nur die Nachricht mit der maximalen Priorität verarbeiten. Bitte diese Funktion fair verwenden."
 			},
 			"information": {
 				"help": "Hier werden Ihre letzten Rufe angezeigt."
@@ -390,7 +390,7 @@
 			"newrubriccontent": "Neuer Rubriken Inhalt",
 			"totalrubriccontent": "Gesamtzahl der Rubriken-Einträge",
 			"information": {
-				"help": "Der hier dargestellte Inhalt sind NICHT allegemeine Nachrichten zu DAPNET sondern die zuletzt in die Rubriken eingestellten Meldungen. Jedes mal, wenn einer der 10 verfügbaren Rubriken-Inhalte pro Rubrik geändert wird, wird dies hier aufgeführt."
+				"help": "Der hier dargestellte Inhalt sind NICHT allgemeine Nachrichten zu DAPNET sondern die zuletzt in die Rubriken eingestellten Meldungen. Jedes Mal, wenn einer der 10 verfügbaren Rubriken-Inhalte pro Rubrik geändert wird, wird dies hier aufgeführt."
 			},
 			"table": {
 				"timestamp": "Zeitstempel",
@@ -478,7 +478,7 @@
 			"alltxgroups": "Alle Sender-Gruppen",
 			"totaltxgroups": "Gesamtzahl der Sender-Gruppen",
 			"information": {
-				"help": "Eine Sender-Gruppe ist ein logischer Zusammenschluss von einen oder mehreren Senders zu einem gemeinsamen Bezeichner. Dies ist notwendig, um die Sender ein regionale Zonen aufzuteilen, da nicht jeder Inhalt über das ganze Netzwerk ausgestrahlt werden muss. Sowohl persönliche Rufe, wie auch Rubriken-Inhalte müssen einer Sender-Gruppe zugewiesen werden. Nur die in der oder den zugewiesenen Gruppen enthaltenen Sender werden vom DAPNET Knoten mit den betreffenden Daten versorgt."
+				"help": "Eine Sender-Gruppe ist ein logischer Zusammenschluss von einem oder mehreren Sendern zu einem gemeinsamen Bezeichner. Dies ist notwendig, um die Sender ein regionale Zonen aufzuteilen, da nicht jeder Inhalt über das ganze Netzwerk ausgestrahlt werden muss. Sowohl persönliche Rufe, wie auch Rubriken-Inhalte müssen einer Sender-Gruppe zugewiesen werden. Nur die in der oder den zugewiesenen Gruppen enthaltenen Sender werden vom DAPNET Knoten mit den betreffenden Daten versorgt."
 			}
 		},
 		"new": {
@@ -502,7 +502,7 @@
 			"totaladmins": "Gesamtzahl Admin",
 			"totalusers": "Gesamtzahl Nutzer",
 			"information": {
-				"help": "This is an overview of all registered user account on the DAPNET network. If you are not an admin, you don't see other user's details. You can edit your user by yourself, e.g. change your passwort or your email address."
+				"help": "Dies ist eine Übersicht aller Benutzerzugänge im DAPNET Netzwerk. Wenn Sie kein Administor sind, werden Ihnen nicht die Details der Benutzerzugänge von anderen Benutzern angezeigt. Die können die Einstellungen Ihres Benutzerzugangs selbst ändern, z.B. das Passwort oder Ihre Email-Adresse."
 			}
 		},
 		"new": {

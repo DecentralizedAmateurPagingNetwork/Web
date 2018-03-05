@@ -28,15 +28,15 @@
 			},
 			"2": {
 				"title": "Transmitter Raspager",
-				"text": "A low-cost and low-power personal Transmitter"
+				"text": "A low-cost and low-power personal transmitter as an add-on board for Raspberry Pi."
 			},
 			"3": {
 				"title": "Coverage Map",
-				"text": "Transmitters are displayed on a map with their simulated coverage area"
+				"text": "Transmitters are displayed on a map with their simulated coverage area."
 			},
 			"4": {
 				"title": "Touch Display for Transmitters",
-				"text": "Easy-to-use graphical control display based on Nextion Displays. Connection to transmitter host via UART or USB2UART"
+				"text": "Easy-to-use graphical control display based on Nextion Displays. Connection to transmitter host via UART or USB2UART."
 			},
 			"5": {
 				"title": "Unipager - One software for all transmitter types",
@@ -51,7 +51,7 @@
 				"text": "All you need is a Raspberry Pi, a 9600 Baud-ready radio and a simple audio interface. Also feasable in combination with the touch display"
 			},
 			"8": {
-				"title": "AlphaPOC 6002 R paging reciever",
+				"title": "AlphaPOC 6002R paging reciever",
 				"text": "Commercially avaiable, small and no modification needed. Easy on-pager programming"
 			},
 			"9": {
