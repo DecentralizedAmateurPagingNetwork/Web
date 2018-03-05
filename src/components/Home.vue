@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="jumbotron">
-					<carousel :autoplay="true" :autoplay-timeout="5000" :loop="true" :per-page="2" :scroll-per-page="true" pagination-color="#d0d0d0" pagination-active-color="#a0a0a0">
+					<carousel :autoplay="true" :autoplay-timeout="5000" :loop="true" :navigation-enabled="true" :per-page="2" :scroll-per-page="true" pagination-color="#d0d0d0" pagination-active-color="#a0a0a0">
 						<template v-for="index in 9">
 							<slide :key="index">
 								<h2>{{ $t('home.carousel.' + index + '.title') }}</h2>
@@ -119,5 +119,9 @@
 
 	.jumbotron > p {
 		font-size: 1.2em;
+	}
+
+	.VueCarousel, .VueCarousel-wrapper, .VueCarousel-slide {
+		max-height: 400px;
 	}
 </style>
