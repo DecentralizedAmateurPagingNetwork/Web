@@ -4,27 +4,15 @@
 			<div class="col-lg-12">
 				<div class="jumbotron">
 					<carousel :autoplay="true" :autoplay-timeout="5000" :loop="true" :per-page="2" :scroll-per-page="true" pagination-color="#d0d0d0" pagination-active-color="#a0a0a0">
-						<slide>
-							<h1>{{ $t('home.welcome.title') }}</h1>
-							<p v-html="$t('home.welcome.text')"></p>
-						</slide>
-						<slide>
-							<img src="~@/assets/img/afu-dapnet-logo.png" alt="DAPNET Logo"/>
-						</slide>
-						<slide>
-							<h1>{{ $t('home.welcome.title') }}</h1>
-							<p v-html="$t('home.welcome.text')"></p>
-						</slide>
-						<slide>
-							<img src="~@/assets/img/afu-dapnet-logo.png" alt="DAPNET Logo"/>
-						</slide>
-						<slide>
-							<h1>{{ $t('home.welcome.title') }}</h1>
-							<p v-html="$t('home.welcome.text')"></p>
-						</slide>
-						<slide>
-							<img src="~@/assets/img/afu-dapnet-logo.png" alt="DAPNET Logo"/>
-						</slide>
+						<template v-for="index in 9">
+							<slide :key="index">
+								<h2>{{ $t('home.carousel.' + index + '.title') }}</h2>
+								<p v-html="$t('home.carousel.' + index + '.text')"></p>
+							</slide>
+							<slide :key="index + 9">
+								<img :src="'./assets/img/carousel/img' + index + '.jpg'" alt="Carousel Item" />
+							</slide>
+						</template>
 					</carousel>
 				</div>
 			</div>

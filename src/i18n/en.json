@@ -21,9 +21,43 @@
 		"logout": "Logout"
 	},
 	"home": {
-		"welcome": {
-			"title": "Welcome to DAPNET Web!",
-			"text": "The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts. It is the new and further developed version of the <a href=\"http://ham-pager.sourceforge.net\" target=\"_blank\">FunkrufMaster</a>. It consists of a decentral server cluster feeding paging data to distributed transmitters.<br> The most used frequency is 439.9875 MHz and the protocol is POCSAG. Common paging receivers are of type \"Skyper\", but there exist others as well. As it is used on amateur radio frequencies, commercial use is forbidden.<br> If you are a licensed amateur radio operator, get your login account now. We are happy for every new transmitter participating in the network. There is comprehensive documentation on the DAPNET Project available at the <a href=\"http://doku.hampager.de\" target=\"_blank\">DAPNET DokuWiki</a>."
+		"carousel": {
+			"1": {
+				"title": "Welcome to DAPNET Web!",
+				"text": "The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts. It is the new and further developed version of the <a href=\"http://ham-pager.sourceforge.net\" target=\"_blank\">FunkrufMaster</a>. It consists of a decentral server cluster feeding paging data to distributed transmitters.<br> The most used frequency is 439.9875 MHz and the protocol is POCSAG. Common paging receivers are of type \"Skyper\", but there exist others as well. As it is used on amateur radio frequencies, commercial use is forbidden.<br> If you are a licensed amateur radio operator, get your login account now. We are happy for every new transmitter participating in the network. There is comprehensive documentation on the DAPNET Project available at the <a href=\"http://doku.hampager.de\" target=\"_blank\">DAPNET DokuWiki</a>."
+			},
+			"2": {
+				"title": "TODO",
+				"text": "TODO"
+			},
+			"3": {
+				"title": "TODO",
+				"text": "TODO"
+			},
+			"4": {
+				"title": "TODO",
+				"text": "TODO"
+			},
+			"5": {
+				"title": "TODO",
+				"text": "TODO"
+			},
+			"6": {
+				"title": "TODO",
+				"text": "TODO"
+			},
+			"7": {
+				"title": "TODO",
+				"text": "TODO"
+			},
+			"8": {
+				"title": "TODO",
+				"text": "TODO"
+			},
+			"9": {
+				"title": "TODO",
+				"text": "TODO"
+			}
 		},
 		"information": {
 			"dapnet": {
