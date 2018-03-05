@@ -48,19 +48,19 @@
 			},
 			"7": {
 				"title": "SDR based Transmitter with GM1200",
-				"text": "All you need is a Raspberry Pi, a 9600 Baud-ready radio and a simple audio interface. Also feasable in combination with the touch display"
+				"text": "All you need is a Raspberry Pi, a 9600 Baud-ready radio and a simple audio interface. Also feasable in combination with the touch display."
 			},
 			"8": {
 				"title": "AlphaPOC 6002R paging reciever",
-				"text": "Commercially avaiable, small and no modification needed. Easy on-pager programming"
+				"text": "Commercially avaiable, small and no modification needed. Easy on-pager programming."
 			},
 			"9": {
 				"title": "Structure of DAPNET",
-				"text": "Transparent and up-to-date comminication protocols like REST and Websocket are used"
+				"text": "Transparent and up-to-date comminication protocols like REST and Websocket are used."
 			},
 		  "10": {
 			"title": "Support by ticket system",
-			"text": "Support requests are handled by a team for quick response time and maximum knowledge sharing"
+			"text": "Support requests are handled by a team for quick response time and maximum knowledge sharing."
 		  }
 		},
 		"information": {
