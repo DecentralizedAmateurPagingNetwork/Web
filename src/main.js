@@ -16,6 +16,7 @@ import '@/assets/css/custom.css';
 
 // import libraries and components
 import VueResource from 'vue-resource';
+import VueCarousel from 'vue-carousel';
 import Multiselect from 'vue-multiselect';
 import swal from 'sweetalert2';
 import globalMethods from './global';
@@ -30,6 +31,7 @@ import AppFooter from '@/components/partials/Footer';
 
 // add libraries and components
 Vue.use(VueResource);
+Vue.use(VueCarousel);
 Vue.component('multiselect', Multiselect);
 const swalPlugin = {};
 swalPlugin.install = function(Vue) {

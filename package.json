@@ -15,6 +15,7 @@
     "font-awesome": "4.7.0",
     "sweetalert2": "7.13.1",
     "vue": "2.5.13",
+    "vue-carousel": "0.6.9",
     "vue-chartjs": "3.2.1",
     "vue-i18n": "7.4.2",
     "vue-konami-code": "1.0.0",
