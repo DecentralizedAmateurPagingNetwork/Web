@@ -41,29 +41,29 @@
 		}
 	},
 	"transmitter": {
-	  	"overview": {
-		  "table": {
-			"title": "All Transmitters",
-			"callsign": "Callsign",
-			"node": "Node",
-			"ipaddress": "IP-Address",
-			"device": "Device",
-			"status": "Status",
-			"connectedsince": "Connected since"
-		  },
-		  "actions": {
-			"newtransmitter": "New Transmitter",
-			"sendmailtoallowners": "Send a mail to all owners"
-		  },
-		  "statistics": {
-			"widerange": "Widerange",
-			"personal": "Personal",
-			"total": "Total",
-			"widerangeonly": "Widerange-transmitter only"
-		  },
-		  "information": {
-			"text": "This overview shows all registered transmitters of the DAPNET network. Before you can connect your transmitter to one of the DAPNET-Nodes, it has to be registered by one of the admins. There are two classes of transmitters: Widerange (&gt; 1 Watt) and Personal (&lt;= 1 Watt). Why is there such a big number of offline transmitters? These are transmitters which have been registered in the past, but apparently are not online now. There is no information stored which transmitters \"should\" be online and which not.<br>Transmitters have one or multiple owners who can change the settings by themselves. Each transmitter is assigned to one or max. 16 timeslots. This is necessary as they transmit all on the same frequency, but not overlapping at the same time. Be aware to assign no timeslots to your transmitter that are already used in you coverage area. Contact one of the admins, if you need help."
-		  }
+		"overview": {
+			"table": {
+				"title": "All Transmitters",
+				"callsign": "Callsign",
+				"node": "Node",
+				"ipaddress": "IP-Address",
+				"device": "Device",
+				"status": "Status",
+				"connectedsince": "Connected since"
+			},
+			"actions": {
+				"newtransmitter": "New Transmitter",
+				"sendmailtoallowners": "Send a mail to all owners"
+			},
+			"statistics": {
+				"widerange": "Widerange",
+				"personal": "Personal",
+				"total": "Total",
+				"widerangeonly": "Widerange-transmitter only"
+			},
+			"information": {
+				"text": "This overview shows all registered transmitters of the DAPNET network. Before you can connect your transmitter to one of the DAPNET-Nodes, it has to be registered by one of the admins. There are two classes of transmitters: Widerange (&gt; 1 Watt) and Personal (&lt;= 1 Watt). Why is there such a big number of offline transmitters? These are transmitters which have been registered in the past, but apparently are not online now. There is no information stored which transmitters \"should\" be online and which not.<br>Transmitters have one or multiple owners who can change the settings by themselves. Each transmitter is assigned to one or max. 16 timeslots. This is necessary as they transmit all on the same frequency, but not overlapping at the same time. Be aware to assign no timeslots to your transmitter that are already used in you coverage area. Contact one of the admins, if you need help."
+			}
 		},
 		"new": {
 			"newtransmitter": "New Transmitter",
@@ -90,6 +90,7 @@
 				"title": "Antenna Type",
 				"omni": "Omni",
 				"directional": "Directional",
+				"other": "Other",
 				"help": "Please select if you have a omnidirectional antenna (e.g. X-50) or a directional antenna (e.g. Yagi)."
 			},
 			"antennadirection": {
@@ -118,7 +119,6 @@
 				"help": "If you are an owner, you can change the parameters for this transmitter."
 			},
 			"table": {
-				"title": "Information",
 				"description": "This table shows the registered paging transmitters, their online status and additional information. Personal transmitters have low output power and a very small coverage. Wide range transmitters are usually installed at elevated locations leading to a wide coverage area."
 			}
 		},
@@ -193,22 +193,22 @@
 		"submit": "Submit",
 		"abort": "Abort",
 		"search": "Search",
-	  	"information": "Information",
-	  	"owner": "Owner",
-	  	"actions": "Actions",
-	  	"statistics": "Statistics",
-	  	"description": "Description",
-	  	"name": "Name",
+		"information": "Information",
+		"owner": "Owner",
+		"actions": "Actions",
+		"statistics": "Statistics",
+		"description": "Description",
+		"name": "Name",
 		"latlong": {
 			"title": "Latitude / Longitude",
 			"north": "North",
 			"south": "South",
 			"east": "East",
 			"west": "West"
-	  	},
-	  	"password": "Password",
-	  	"yes": "Yes",
-	  	"no": "No"
+		},
+		"password": "Password",
+		"yes": "Yes",
+		"no": "No"
 	},
 	"rubric": {
 		"overview": {
@@ -251,17 +251,17 @@
 			"information": {
 				"help": "A subscriber is the logical connection between a name (the callsign) and one or multiple RIC numbers, for example a Skyper address."
 			},
-		  	"table": {
-			  	"pager" : "Pager",
-			  	"subscriber": "Subscriber"
+			"table": {
+				"pager": "Pager",
+				"subscriber": "Subscriber"
 			}
 		},
 		"new": {
 			"newsubscriber": "New Subscriber",
 			"editsubscriber": "Edit Subscriber",
 			"subscriber": {
-			  	"title": "Subscriber",
-			  	"help": "Please enter a valid amateur radio callsign of a human or a classifying name of an organization.",
+				"title": "Subscriber",
+				"help": "Please enter a valid amateur radio callsign of a human or a classifying name of an organization.",
 				"info": "Changing this name will create a duplication and <i>not</i> change the element's name."
 			},
 			"description": {
@@ -273,6 +273,7 @@
 				"helpnames": "Add a corresponding number for lines as a description for the RIC numbers given in the first box."
 			},
 			"owner": {
+				"title": "Owner",
 				"help": "An owner of a subscriber association can edit its parameters."
 			},
 			"information": {
@@ -337,7 +338,7 @@
 			"newrubriccontent": "New Rubric Content",
 			"message": "Message",
 			"charactersremaining": "characters remaining",
-			"rubric": "Rubric",
+			"rubrics": "Rubrics",
 			"number": "Number",
 			"chooseautomatically": "Choose automatically",
 			"information": {
@@ -347,7 +348,7 @@
 	},
 	"nodes": {
 		"overview": {
-		  	"allnodes": "All Nodes",
+			"allnodes": "All Nodes",
 			"newnode": "New Node",
 			"sendmailtoallowners": "Send a mail to all owners",
 			"statistics": {
@@ -380,75 +381,73 @@
 			}
 		}
 	},
-  "login": {
+	"login": {
 		"username": "Username",
 		"password": "Password",
 		"information": {
-		  	"help": "..."
+			"help": "..."
 		}
-  },
-  "logout": {
+	},
+	"logout": {
 		"seepagewrong": "If you see this page, something went wrong.",
 		"emoji": "Emoji provided for free by"
-  },
-  "impress": {
+	},
+	"impress": {
 		"title": "Impress"
-  },
-  "error404": {
+	},
+	"error404": {
 		"title": "Error 404 - Not Found",
 		"emoji": "Emoji provided for free by"
-  },
-  "privacy": {
+	},
+	"privacy": {
 		"title": "Privacy"
-  },
-  "versioncheck": {
+	},
+	"versioncheck": {
 		"title": "Version Check"
-  },
-  "group": {
+	},
+	"group": {
 		"overview": {
-		  	"newtxgroup": "New Transmitter Groups",
-		  	"alltxgroups": "All Transmitter Groups",
-		  	"totaltxgroups": "Total Groups",
-		  	"information": {
-			  	"help": "A transmitter group is a logical association of one or multiple transmitters to a group. This is necessary to divide the transmitters into regional areas, as not all content has to be transmitted on the whole network. Both personal calls as well als rubric's content have to be linked to a transmitter group. Only transmitters that are member of this group will get the information from the DAPNET node in order to transmit it."
+			"newtxgroup": "New Transmitter Groups",
+			"alltxgroups": "All Transmitter Groups",
+			"totaltxgroups": "Total Groups",
+			"information": {
+				"help": "A transmitter group is a logical association of one or multiple transmitters to a group. This is necessary to divide the transmitters into regional areas, as not all content has to be transmitted on the whole network. Both personal calls as well als rubric's content have to be linked to a transmitter group. Only transmitters that are member of this group will get the information from the DAPNET node in order to transmit it."
 			}
 		},
 		"new": {
-		  "newtxgroup": "New Transmitter Group",
-		  "edittxgroup": "Edit Transmitter Group",
-		  "namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
-		  "information": {
+			"newtxgroup": "New Transmitter Group",
+			"edittxgroup": "Edit Transmitter Group",
+			"namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
+			"information": {
 				"help": "A transmitter group combines one of several transmitters to a logical entity."
-		  }
+			}
 		}
-  },
-  "users": {
+	},
+	"users": {
 		"general": {
-		  "email": "Email",
-		  "admin": "Admin?",
-		  "newuser" : "New User"
+			"email": "Email",
+			"admin": "Admin?",
+			"newuser": "New User"
 		},
 		"overview": {
-		  	"allusers": "All Users",
-		  	"sendemailallusers": "Send a mail to all users",
-		  	"totaladmins" : "Total Administrators",
-		  	"totalusers": "Total Users",
-		  	"information": {
-			  	"help": "This is an overview of all registered user account on the DAPNET network. If you are not an admin, you don't see other user's details. You can edit your user by yourself, e.g. change your passwort or your email address."
+			"allusers": "All Users",
+			"sendemailallusers": "Send a mail to all users",
+			"totaladmins": "Total Administrators",
+			"totalusers": "Total Users",
+			"information": {
+				"help": "This is an overview of all registered user account on the DAPNET network. If you are not an admin, you don't see other user's details. You can edit your user by yourself, e.g. change your passwort or your email address."
 			}
 		},
 		"new": {
-		  	"edituser": "Edit User",
-		  	"namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
-		  	"password": {
+			"edituser": "Edit User",
+			"namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
+			"password": {
 				"help": "This is the newly generated password:",
-			  	"randompassword": "Generate new random password"
+				"randompassword": "Generate new random password"
 			},
-		  	"information": {
-			  	"help": "This table shows the registered users and their detail information."
+			"information": {
+				"help": "This table shows the registered users and their detail information."
 			}
-
-
 		}
-  }
+	}
 }

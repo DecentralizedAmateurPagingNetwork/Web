@@ -60,7 +60,7 @@
 						<div class="form-group">
 							<div class="col-lg-10 col-lg-offset-2">
 								<button type="submit" @click="submitForm" class="btn btn-primary">{{ $t('general.submit') }}</button>
-								<router-link to="/nodes"><button class="btn btn-default">{{ $t('general.abord') }}</button></router-link>
+								<router-link to="/nodes"><button class="btn btn-default">{{ $t('general.abort') }}</button></router-link>
 							</div>
 						</div>
 					</fieldset>

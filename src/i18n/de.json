@@ -44,29 +44,29 @@
 		}
 	},
 	"transmitter": {
-	  	"overview": {
-		  "table": {
-			"title": "Alle Sender",
-			"callsign": "Rufzeichen",
-			"node": "Knoten",
-			"ipaddress": "IP Adresse",
-			"device": "Gerät",
-			"status": "Status",
-			"connectedsince": "Verbunden seit"
-		  },
-		  "actions": {
-			"newtransmitter": "Neuer Sender",
-			"sendmailtoallowners": "Sende Email an alle Besitzer"
-		  },
-		  "statistics": {
-			"widerange": "Weitbereich",
-			"personal": "Persönlich",
-			"total": "Gesamt",
-			"widerangeonly": "Nur Weitbereichssender"
-		  },
-		  "information": {
-			"text": "Diese Übersicht zeigt alle im DAPNET angemeldeten Sender. Bevor ein Sender mit einem der DAPNET Knoten verbunden werden kann, muss dieser erst von einem Administrator angelegt werden.<br />Es gibt zwei Klassen von Sendern: Weitbereichssender (&gt; 1 Watt) und persönliche Sender (&lt;= 1 Watt).<br />Warum gibt es eine solch große Anzahl an Sendern, die offline sind? Diese Sender wurden meist in der Vergangenheit angelegt wurden, aber zur Zeit offensichtlich nicht betrieben werden. Es gibt keine Festlegung, welches Sender online sein \"sollten\" und welche nicht.<br />Sender haben einen oder mehrere Besitzer, die die Einstellungen selbstständig ändern können. Jeder Sender hat 1 bis max. 16 Zeitschlitzen zugewiesen. Dies ist notwendig, da alle Sender auf der gleichen Frequenz. Eine überlappende Zeitschlitzvergabe in der Ausleuchtung eines Bereiches zwischen den Sendern ist streng zu vermeiden. Daher bitte keine Zeitschlitze einem Sender zuordnen, die bereit von anderen Sendern im Abdeckgungsbereich seines Senders benutzt werden. Bitte Kontakt mit <code>support [at] hampager.de</code> aufnehmen, wenn es Unklarheiten oder Fragen gibt."
-		  }
+		"overview": {
+			"table": {
+				"title": "Alle Sender",
+				"callsign": "Rufzeichen",
+				"node": "Knoten",
+				"ipaddress": "IP Adresse",
+				"device": "Gerät",
+				"status": "Status",
+				"connectedsince": "Verbunden seit"
+			},
+			"actions": {
+				"newtransmitter": "Neuer Sender",
+				"sendmailtoallowners": "Sende Email an alle Besitzer"
+			},
+			"statistics": {
+				"widerange": "Weitbereich",
+				"personal": "Persönlich",
+				"total": "Gesamt",
+				"widerangeonly": "Nur Weitbereichssender"
+			},
+			"information": {
+				"text": "Diese Übersicht zeigt alle im DAPNET angemeldeten Sender. Bevor ein Sender mit einem der DAPNET Knoten verbunden werden kann, muss dieser erst von einem Administrator angelegt werden.<br />Es gibt zwei Klassen von Sendern: Weitbereichssender (&gt; 1 Watt) und persönliche Sender (&lt;= 1 Watt).<br />Warum gibt es eine solch große Anzahl an Sendern, die offline sind? Diese Sender wurden meist in der Vergangenheit angelegt wurden, aber zur Zeit offensichtlich nicht betrieben werden. Es gibt keine Festlegung, welches Sender online sein \"sollten\" und welche nicht.<br />Sender haben einen oder mehrere Besitzer, die die Einstellungen selbstständig ändern können. Jeder Sender hat 1 bis max. 16 Zeitschlitzen zugewiesen. Dies ist notwendig, da alle Sender auf der gleichen Frequenz. Eine überlappende Zeitschlitzvergabe in der Ausleuchtung eines Bereiches zwischen den Sendern ist streng zu vermeiden. Daher bitte keine Zeitschlitze einem Sender zuordnen, die bereit von anderen Sendern im Abdeckgungsbereich seines Senders benutzt werden. Bitte Kontakt mit <code>support [at] hampager.de</code> aufnehmen, wenn es Unklarheiten oder Fragen gibt."
+			}
 		},
 		"new": {
 			"newtransmitter": "Neuer Sender",
@@ -93,6 +93,7 @@
 				"title": "Antennenart",
 				"omni": "Rundstrahler",
 				"directional": "Richtantenne",
+				"other": "Weiteres",
 				"help": "Bitte die Antennenart auswählen. Beispiele für einen Rundstrahler ist eine X-50, eine Richtantenne ist z.B. eine Yagi."
 			},
 			"antennadirection": {
@@ -195,21 +196,21 @@
 		"submit": "Absenden",
 		"abort": "Abbrechen",
 		"search": "Suchen",
-	  	"information": "Information",
-	  	"owner": "Besitzer",
-	 	"actions": "Aktionen",
-	  	"statistics": "Statistiken",
-	  	"description": "Beschreibung",
+		"information": "Information",
+		"owner": "Besitzer",
+		"actions": "Aktionen",
+		"statistics": "Statistiken",
+		"description": "Beschreibung",
 		"latlong": {
 			"title": "Breite / Länge",
 			"north": "Nord",
 			"south": "Süd",
 			"east": "Ost",
 			"west": "West"
-	  	},
-	 	"password": "Passwort",
-	  "yes": "Ja",
-	  "no": "Nein"
+		},
+		"password": "Passwort",
+		"yes": "Ja",
+		"no": "Nein"
 	},
 	"rubric": {
 		"overview": {
@@ -252,10 +253,10 @@
 			"information": {
 				"help": "Ein Teilnehmer-Eintrag ist eine logische Verknüpfung zwischen einem Bezeichner (meist das Rufzeichen des Besitzers des Meldeempfängers) und einer oder mehreren RICs, zum Beispiel die Skyper Adresse."
 			},
-		  	"table": {
-				"pager" : "Funkmeldeempfänger",
+			"table": {
+				"pager": "Funkmeldeempfänger",
 				"subscriber": "Teilnehmer"
-		  	}
+			}
 		},
 		"new": {
 			"newsubscriber": "Neuer Teilnehmer",
@@ -274,6 +275,7 @@
 				"helpnames": "Entsprechend der Anzahl der Zeilen in der linken Box eine entsprechende Beschreibung für die RIC Nummer angeben."
 			},
 			"owner": {
+				"title": "Besitzer",
 				"help": "Der Besitzer eines Teilnehmers kann seine Einstellungen ändern."
 			},
 			"information": {
@@ -324,8 +326,7 @@
 			"allrubriccontent": "Inhalt aller Rubriken",
 			"newrubriccontent": "Neuer Rubriken Inhalt",
 			"totalrubriccontent": "Gesamtzahl der Rubriken-Einträge",
-			"Information": {
-				"title:": "Information",
+			"information": {
 				"help": "Der hier dargestellte Inhalt sind NICHT allegemeine Nachrichten zu DAPNET sondern die zuletzt in die Rubriken eingestellten Meldungen. Jedes mal, wenn einer der 10 verfügbaren Rubriken-Inhalte pro Rubrik geändert wird, wird dies hier aufgeführt."
 			},
 			"table": {
@@ -339,7 +340,7 @@
 			"newrubriccontent": "Neuer Rubriken Inhalt",
 			"message": "Nachricht",
 			"charactersremaining": "verbleibende Zeichen",
-			"rubric": "Rubrik",
+			"rubrics": "Rubriken",
 			"number": "Nummer",
 			"chooseautomatically": "Automatisch bestimmen",
 			"information": {
@@ -350,7 +351,7 @@
 	},
 	"nodes": {
 		"overview": {
-		  	"allnodes": "Alle Knoten",
+			"allnodes": "Alle Knoten",
 			"newnode": "Neuer Knoten",
 			"sendmailtoallowners": "Sende Email an alle Besitzer von Knoten",
 			"statistics": {
@@ -383,75 +384,74 @@
 			}
 		}
 	},
-  "login": {
-	"username": "Benutzername",
-	"password": "Passwort",
-	"information": {
-	  "title":"Information",
-	  "help": "..."
-	}
-  },
-  "logout": {
-	"seepagewrong": "Wenn Sie diese Seite sehen, ist etwas schief gelaufen.",
-	"emoji": "Emoji kostenlos bereitgestellt durch"
-  },
-  "impress": {
-	"title": "Impressum"
-  },
-  "error404": {
-	"title": "Error 404 - Nicht gefunden",
-	"emoji": "Emoji kostenlos bereitgestellt durch"
-  },
-  "privacy": {
-	"title": "Datenschutz"
-  },
-  "versioncheck": {
-	"title": "Versionsüberprüfung"
-  },
-  "group": {
-	"overview": {
-	  "newtxgroup": "Neue Sender-Gruppe",
-	  "alltxgroups": "Alle Sender-Gruppen",
-	  "totaltxgroups": "Gesamtzahl der Sender-Gruppen",
-	  "information": {
-		"help": "Eine Sender-Gruppe ist ein logischer Zusammenschluss von einen oder mehreren Senders zu einem gemeinsamen Bezeichner. Dies ist notwendig, um die Sender ein regionale Zonen aufzuteilen, da nicht jeder Inhalt über das ganze Netzwerk ausgestrahlt werden muss. Sowohl persönliche Rufe, wie auch Rubriken-Inhalte müssen einer Sender-Gruppe zugewiesen werden. Nur die in der oder den zugewiesenen Gruppen enthaltenen Sender werden vom DAPNET Knoten mit den betreffenden Daten versorgt."
-	  }
+	"login": {
+		"username": "Benutzername",
+		"password": "Passwort",
+		"information": {
+			"title": "Information",
+			"help": "..."
+		}
 	},
-	"new": {
-	  "newtxgroup": "Neue Sender-Gruppe",
-	  "edittxgroup": "Ändere Sender-Gruppe",
-	  "namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieser Sender-Gruppe.",
-	  "information": {
-		"help": "Eine Sender-Gruppe kominiert einen oder mehrere Sender zu einer logischen Einheit."
-	  }
-	}
-  },
-  "users": {
-	"general": {
-	  "email": "Email",
-	  "admin": "Admin?",
-	  "newuser" : "Neuer Nutzer"
+	"logout": {
+		"seepagewrong": "Wenn Sie diese Seite sehen, ist etwas schief gelaufen.",
+		"emoji": "Emoji kostenlos bereitgestellt durch"
 	},
-	"overview": {
-	  "allusers": "Alle Nutzer",
-	  "sendemailallusers": "Sende eine Email an alle Nutzer",
-	  "totaladmins" : "Gesamtzahl Admin",
-	  "totalusers": "Gesamtzahl Nutzer",
-	  "information": {
-		"help": "This is an overview of all registered user account on the DAPNET network. If you are not an admin, you don't see other user's details. You can edit your user by yourself, e.g. change your passwort or your email address."
-	  }
+	"impress": {
+		"title": "Impressum"
 	},
-	"new": {
-	  "edituser": "Ändere Nutzer",
-	  "namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Knotens.",
-	  "password": {
-		"help": "Das ist das neue zufällig Passwort:",
-		"randompassword": "Neues zufälliges Passwort erzeugen"
-	  },
-	  "information": {
-		"help": "Dies Tabelle zeigt die registrierten Nutzer und deren Details."
-	  }
+	"error404": {
+		"title": "Error 404 - Nicht gefunden",
+		"emoji": "Emoji kostenlos bereitgestellt durch"
+	},
+	"privacy": {
+		"title": "Datenschutz"
+	},
+	"versioncheck": {
+		"title": "Versionsüberprüfung"
+	},
+	"group": {
+		"overview": {
+			"newtxgroup": "Neue Sender-Gruppe",
+			"alltxgroups": "Alle Sender-Gruppen",
+			"totaltxgroups": "Gesamtzahl der Sender-Gruppen",
+			"information": {
+				"help": "Eine Sender-Gruppe ist ein logischer Zusammenschluss von einen oder mehreren Senders zu einem gemeinsamen Bezeichner. Dies ist notwendig, um die Sender ein regionale Zonen aufzuteilen, da nicht jeder Inhalt über das ganze Netzwerk ausgestrahlt werden muss. Sowohl persönliche Rufe, wie auch Rubriken-Inhalte müssen einer Sender-Gruppe zugewiesen werden. Nur die in der oder den zugewiesenen Gruppen enthaltenen Sender werden vom DAPNET Knoten mit den betreffenden Daten versorgt."
+			}
+		},
+		"new": {
+			"newtxgroup": "Neue Sender-Gruppe",
+			"edittxgroup": "Ändere Sender-Gruppe",
+			"namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieser Sender-Gruppe.",
+			"information": {
+				"help": "Eine Sender-Gruppe kominiert einen oder mehrere Sender zu einer logischen Einheit."
+			}
+		}
+	},
+	"users": {
+		"general": {
+			"email": "Email",
+			"admin": "Admin?",
+			"newuser": "Neuer Nutzer"
+		},
+		"overview": {
+			"allusers": "Alle Nutzer",
+			"sendemailallusers": "Sende eine Email an alle Nutzer",
+			"totaladmins": "Gesamtzahl Admin",
+			"totalusers": "Gesamtzahl Nutzer",
+			"information": {
+				"help": "This is an overview of all registered user account on the DAPNET network. If you are not an admin, you don't see other user's details. You can edit your user by yourself, e.g. change your passwort or your email address."
+			}
+		},
+		"new": {
+			"edituser": "Ändere Nutzer",
+			"namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Knotens.",
+			"password": {
+				"help": "Das ist das neue zufällig Passwort:",
+				"randompassword": "Neues zufälliges Passwort erzeugen"
+			},
+			"information": {
+				"help": "Dies Tabelle zeigt die registrierten Nutzer und deren Details."
+			}
+		}
 	}
-  }
-
 }

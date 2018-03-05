@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>{{ $t('transmitter.title') }}</h1>
+					<h1>{{ $t('navigation.transmitters.title') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -164,7 +164,7 @@
 				</form>
 			</div>
 			<div class="col-lg-3">
-				<h2>{{ $t('transmitter.new.table.title') }}</h2>
+				<h2>{{ $t('general.information') }}</h2>
 				<ul class="list-group">
 					<li v-if="nodeInformation.device.type" class="list-group-item"><b>Device</b><span class="badge">{{ nodeInformation.device.type }}</span></li>
 					<li v-if="nodeInformation.device.version" class="list-group-item"><b>Version</b><span class="badge">{{ nodeInformation.device.version }}</span></li>

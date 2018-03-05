@@ -20,439 +20,440 @@
 		"login": "Login",
 		"logout": "Logout"
 	},
-  "home": {
-	"welcome": {
-	  "title": "Bienvenido a DAPNET Web!",
-	  "text": "The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts. It is the new and further developed version of the <a href=\"http://ham-pager.sourceforge.net\" target=\"_blank\">FunkrufMaster</a>. It consists of a decentral server cluster feeding paging data to distributed transmitters.<br> The most used frequency is 439.9875 MHz and the protocol is POCSAG. Common paging receivers are of type \"Skyper\", but there exist others as well. As it is used on amateur radio frequencies, commercial use is forbidden.<br> If you are a licensed amateur radio operator, get your login account now. We are happy for every new transmitter participating in the network. There is comprehensive documentation on the DAPNET Project available at the <a href=\"http://doku.hampager.de\" target=\"_blank\">DAPNET DokuWiki</a>."
-	},
-	"information": {
-	  "dapnet": {
-		"title": "El DAPNET",
-		"projects": "Projects"
-	  },
-	  "information": {
-		"title": "Información"
-	  },
-	  "statistics": {
-		"calls": "Llamadas",
-		"rubric-content": "Contenido de Rúbrica",
-		"rubrics": "Rúbricas",
-		"transmitters": "Transmisores",
-		"nodes": "Nodos",
-		"users": "Usuarios"
-	  }
-	}
-  },
-	"transmitter": {
-	"overview": {
-	  "table": {
-		"title": "Todos los transmisores",
-		"callsign": "Indicativo",
-		"node": "Node",
-		"ipaddress": "Dirección IP",
-		"device": "Device",
-		"status": "Estatus",
-		"connectedsince": "Conectado desde"
-	  },
-	  "actions": {
-		"newtransmitter": "Nuevo transmisor",
-		"sendmailtoallowners": "Envia un correo a todas los dueños"
-	  },
-	  "statistics": {
-		"widerange": "Alcance amplia",
-		"personal": "Personal",
-		"total": "Total",
-		"widerangeonly": "solamente alcance amplia"
-	  },
-	  "information": {
-		"text": "This overview shows all registered transmitters of the DAPNET network. Before you can connect your transmitter to one of the DAPNET-Nodes, it has to be registered by one of the admins. There are two classes of transmitters: Widerange (&gt; 1 Watt) and Personal (&lt;= 1 Watt). Why is there such a big number of offline transmitters? These are transmitters which have been registered in the past, but apparently are not online now. There is no information stored which transmitters \"should\" be online and which not.<br>Transmitters have one or multiple owners who can change the settings by themselves. Each transmitter is assigned to one or max. 16 timeslots. This is necessary as they transmit all on the same frequency, but not overlapping at the same time. Be aware to assign no timeslots to your transmitter that are already used in you coverage area. Contact one of the admins, if you need help."
-	  }
-	},
-	"new": {
-	  "newtransmitter": "Nuevo Transmisor",
-	  "edittransmitter": "Cambiar Transmisor",
-	  "callsign": {
-		"title": "Señal de llamada",
-		"help": "Enter a valid amateur radio callsign of this transmitter. It will be also used for the 10 minute interval transmitter identification message to fulfill the law (at least the German law).",
-		"helpedit": "Changing this name will create a duplication and <i>not</i> change the element's name."
-	  },
-	  "import": {
-		"help": "Easy import of stations from hamnetdb.net. Location data of the selected transmitter site will be copied into the form."
-	  },
-	  "password": {
-		"title": "Contraseña",
-		"help": "Enter a authentication password for this transmitter. In the UniPager webinterface it’s called Auth Key."
-	  },
-	  "usage": {
-		"title": "Uso",
-		"personal": "Personal",
-		"widerange": "Alcance amplia",
-		"help": "For classification of the transmitters, there are two categories: Personal (Transmitters with low output power like RasPager) and Wide Range (Higher output power and elevated location site)."
-	  },
-	  "antennatype": {
-		"title": "Tipo de antena",
-		"omni": "Omni",
-		"directional": "Direccional",
-		"help": "Please select if you have a omnidirectional antenna (e.g. X-50) or a directional antenna (e.g. Yagi)."
-	  },
-	  "antennadirection": {
-		"help": "<b>Dirección del haz principal de la antena</b>: Enter the antenna main beam direction in degrees according to \"True North\" (in German \"rechtweisend Nord\")."
-	  },
-	  "other": {
-		"title": "Otro",
-		"power": {
-		  "help": "<b>Potencia del transmisor</b>: Enter the transmitter output power in Watts including your cable losses."
+	"home": {
+		"welcome": {
+			"title": "Bienvenido a DAPNET Web!",
+			"text": "The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts. It is the new and further developed version of the <a href=\"http://ham-pager.sourceforge.net\" target=\"_blank\">FunkrufMaster</a>. It consists of a decentral server cluster feeding paging data to distributed transmitters.<br> The most used frequency is 439.9875 MHz and the protocol is POCSAG. Common paging receivers are of type \"Skyper\", but there exist others as well. As it is used on amateur radio frequencies, commercial use is forbidden.<br> If you are a licensed amateur radio operator, get your login account now. We are happy for every new transmitter participating in the network. There is comprehensive documentation on the DAPNET Project available at the <a href=\"http://doku.hampager.de\" target=\"_blank\">DAPNET DokuWiki</a>."
 		},
-		"antennalevel": {
-		  "help": "<b>Antena elevación sobre el suelo</b>: Enter the antenna elevation over ground; NOT over NN (!) in meters."
-		},
-		"antennagain": {
-		  "help": "<b>Ganancia de la antena</b>: Enter the antenna gain in the main lobe direction for directional antennas and the average gain for omnidirectional antennas in dBi (dBi: Gain over isotropic radiator)."
-		},
-		"txidentric": {
-		  "help": "<b>Identificación del transmisor RIC</b>: Enter a RIC (default value is 1) which will be used to generate an artificial paging message containing the amateur radio callsign as given in this form."
+		"information": {
+			"dapnet": {
+				"title": "El DAPNET",
+				"projects": "Projects"
+			},
+			"information": {
+				"title": "Información"
+			},
+			"statistics": {
+				"calls": "Llamadas",
+				"rubric-content": "Contenido de Rúbrica",
+				"rubrics": "Rúbricas",
+				"transmitters": "Transmisores",
+				"nodes": "Nodos",
+				"users": "Usuarios"
+			}
 		}
-	  },
-	  "timeslots": {
-		"title": "Intervalo de Tiempo",
-		"help": "As all transmitters use the same frequency a time division multiplex access scheme is used. There are 16 timeslots available. Assign the slots of this transmitter according to you surrounding transmitters in your neighborhood without overlapping timeslots that are assigned to more than one transmitter. You can use the transmitter map to check already assigned timeslots of adjacent transmitters. In case that you cannot fulfill your requirements, contact the adjacent transmitter owners and try to get an agreement. Normally four 4 or less timeslots per transmitter are more than enough."
-	  },
-	  "owner": {
-		"help": "If you are an owner, you can change the parameters for this transmitter."
-	  },
-	  "table": {
-		"description": "This table shows the registered paging transmitters, their online status and additional information. Personal transmitters have low output power and a very small coverage. Wide range transmitters are usually installed at elevated locations leading to a wide coverage area."
-	  }
 	},
-	"map": {
-	  "title": "Mapa",
-	  "settings": {
-		"title": "Ajustes"
-	  },
-	  "checkbox": {
-		"showonlineonly": "Mostrar solo transmisores en línea",
-		"showwiderangeonly": "Show Widerange-transmitter only",
-		"showbytimeslot": "Mostrar transmisores por intervalo de tiempo",
-		"shownodes": "Show nodos",
-		"shownodeline": "Show linea desde el transmisor al nodo"
-	  },
-	  "actions": {
-		"showallcoverage": "Show all coverage-overlays",
-		"removeallcoverage": "Remove all coverage-overlays"
-	  }
-	}
-  },
-  "footer": {
-	"language": {
-	  "title": "Language",
-	  "english": "English",
-	  "german": "German",
-	  "spanish": "Spanish"
+	"transmitter": {
+		"overview": {
+			"table": {
+				"title": "Todos los transmisores",
+				"callsign": "Indicativo",
+				"node": "Node",
+				"ipaddress": "Dirección IP",
+				"device": "Device",
+				"status": "Estatus",
+				"connectedsince": "Conectado desde"
+			},
+			"actions": {
+				"newtransmitter": "Nuevo transmisor",
+				"sendmailtoallowners": "Envia un correo a todas los dueños"
+			},
+			"statistics": {
+				"widerange": "Alcance amplia",
+				"personal": "Personal",
+				"total": "Total",
+				"widerangeonly": "solamente alcance amplia"
+			},
+			"information": {
+				"text": "This overview shows all registered transmitters of the DAPNET network. Before you can connect your transmitter to one of the DAPNET-Nodes, it has to be registered by one of the admins. There are two classes of transmitters: Widerange (&gt; 1 Watt) and Personal (&lt;= 1 Watt). Why is there such a big number of offline transmitters? These are transmitters which have been registered in the past, but apparently are not online now. There is no information stored which transmitters \"should\" be online and which not.<br>Transmitters have one or multiple owners who can change the settings by themselves. Each transmitter is assigned to one or max. 16 timeslots. This is necessary as they transmit all on the same frequency, but not overlapping at the same time. Be aware to assign no timeslots to your transmitter that are already used in you coverage area. Contact one of the admins, if you need help."
+			}
+		},
+		"new": {
+			"newtransmitter": "Nuevo Transmisor",
+			"edittransmitter": "Cambiar Transmisor",
+			"callsign": {
+				"title": "Señal de llamada",
+				"help": "Enter a valid amateur radio callsign of this transmitter. It will be also used for the 10 minute interval transmitter identification message to fulfill the law (at least the German law).",
+				"helpedit": "Changing this name will create a duplication and <i>not</i> change the element's name."
+			},
+			"import": {
+				"help": "Easy import of stations from hamnetdb.net. Location data of the selected transmitter site will be copied into the form."
+			},
+			"password": {
+				"title": "Contraseña",
+				"help": "Enter a authentication password for this transmitter. In the UniPager webinterface it’s called Auth Key."
+			},
+			"usage": {
+				"title": "Uso",
+				"personal": "Personal",
+				"widerange": "Alcance amplia",
+				"help": "For classification of the transmitters, there are two categories: Personal (Transmitters with low output power like RasPager) and Wide Range (Higher output power and elevated location site)."
+			},
+			"antennatype": {
+				"title": "Tipo de antena",
+				"omni": "Omni",
+				"directional": "Direccional",
+				"other": "Other",
+				"help": "Please select if you have a omnidirectional antenna (e.g. X-50) or a directional antenna (e.g. Yagi)."
+			},
+			"antennadirection": {
+				"help": "<b>Dirección del haz principal de la antena</b>: Enter the antenna main beam direction in degrees according to \"True North\" (in German \"rechtweisend Nord\")."
+			},
+			"other": {
+				"title": "Otro",
+				"power": {
+					"help": "<b>Potencia del transmisor</b>: Enter the transmitter output power in Watts including your cable losses."
+				},
+				"antennalevel": {
+					"help": "<b>Antena elevación sobre el suelo</b>: Enter the antenna elevation over ground; NOT over NN (!) in meters."
+				},
+				"antennagain": {
+					"help": "<b>Ganancia de la antena</b>: Enter the antenna gain in the main lobe direction for directional antennas and the average gain for omnidirectional antennas in dBi (dBi: Gain over isotropic radiator)."
+				},
+				"txidentric": {
+					"help": "<b>Identificación del transmisor RIC</b>: Enter a RIC (default value is 1) which will be used to generate an artificial paging message containing the amateur radio callsign as given in this form."
+				}
+			},
+			"timeslots": {
+				"title": "Intervalo de Tiempo",
+				"help": "As all transmitters use the same frequency a time division multiplex access scheme is used. There are 16 timeslots available. Assign the slots of this transmitter according to you surrounding transmitters in your neighborhood without overlapping timeslots that are assigned to more than one transmitter. You can use the transmitter map to check already assigned timeslots of adjacent transmitters. In case that you cannot fulfill your requirements, contact the adjacent transmitter owners and try to get an agreement. Normally four 4 or less timeslots per transmitter are more than enough."
+			},
+			"owner": {
+				"help": "If you are an owner, you can change the parameters for this transmitter."
+			},
+			"table": {
+				"description": "This table shows the registered paging transmitters, their online status and additional information. Personal transmitters have low output power and a very small coverage. Wide range transmitters are usually installed at elevated locations leading to a wide coverage area."
+			}
+		},
+		"map": {
+			"title": "Mapa",
+			"settings": {
+				"title": "Ajustes"
+			},
+			"checkbox": {
+				"showonlineonly": "Mostrar solo transmisores en línea",
+				"showwiderangeonly": "Show Widerange-transmitter only",
+				"showbytimeslot": "Mostrar transmisores por intervalo de tiempo",
+				"shownodes": "Show nodos",
+				"shownodeline": "Show linea desde el transmisor al nodo"
+			},
+			"actions": {
+				"showallcoverage": "Show all coverage-overlays",
+				"removeallcoverage": "Remove all coverage-overlays"
+			}
+		}
 	},
-	"more": {
-	  "title": "Más",
-	  "faq": "FAQ"
+	"footer": {
+		"language": {
+			"title": "Language",
+			"english": "English",
+			"german": "German",
+			"spanish": "Spanish"
+		},
+		"more": {
+			"title": "Más",
+			"faq": "FAQ"
+		},
+		"support": {
+			"title": "Apoyanos ya",
+			"github": "GitHub",
+			"rwth-amateur-radio": "RWTH Amateur Radio"
+		},
+		"contact": {
+			"title": "Contáctenos",
+			"twitter": "Twitter",
+			"facebook": "Facebook",
+			"contact": "Contacto",
+			"impress": "Impress",
+			"privacy": "Privacy"
+		},
+		"versions": {
+			"title": "Versions",
+			"check": "Comprobar"
+		}
 	},
-	"support": {
-	  "title": "Apoyanos ya",
-	  "github": "GitHub",
-	  "rwth-amateur-radio": "RWTH Amateur Radio"
+	"table": {
+		"search": "Buscar",
+		"pagination": {
+			"page": "pagina",
+			"of": "de"
+		},
+		"actionbuttons": {
+			"edit": "Editar",
+			"delete": "Borrar",
+			"email": "Enviar correo",
+			"rubrics": "Emitir nombres de Rúbricas"
+		}
 	},
-	"contact": {
-	  "title": "Contáctenos",
-	  "twitter": "Twitter",
-	  "facebook": "Facebook",
-	  "contact": "Contacto",
-	  "impress": "Impress",
-	  "privacy": "Privacy"
+	"rest": {
+		"errors": {
+			"title": "Error",
+			"api-unreachable": "Unable to reach API server. Please try again later.",
+			"http-error": "Unhandled HTTP error {status}. Please try again later."
+		}
 	},
-	"versions": {
-	  "title": "Versions",
-	  "check": "Comprobar"
-	}
-  },
-  "table": {
-	"search": "Buscar",
-	"pagination": {
-	  "page": "pagina",
-	  "of": "de"
-	},
-	"actionbuttons": {
-	  "edit": "Editar",
-	  "delete": "Borrar",
-	  "email": "Enviar correo",
-	  "rubrics": "Emitir nombres de Rúbricas"
-	}
-  },
-  "rest": {
-	"errors": {
-	  "title": "Error",
-	  "api-unreachable": "Unable to reach API server. Please try again later.",
-	  "http-error": "Unhandled HTTP error {status}. Please try again later."
-	}
-  },
-  "general": {
-	"submit": "Enviar",
-	"abort": "anular",
-	"search": "Buscar",
-	"information": "información",
-	"owner": "Dueño",
-	"actions" :"Acciones",
-	"statistics": "Estadísticas",
-	"description": "Descripción",
-	"name": "Nombre",
-	"latlong": {
-	  "title": "Latitud / Longitug",
-	  "north": "norte",
-	  "south": "sur",
-	  "east": "este",
-	  "west": "oeste"
-	},
-	"password": "Contraseña",
-	"yes": "Sí",
-	"no": "No"
-
-  },
-  "rubric": {
-	"overview": {
-	  "totalrubrics": "Total Rubrics",
-	  "information": {
-		"title": "Information",
-		"help": "This is a list of all rubrics on the DAPNET. A rubric number can by assigned to several transmitter groups. Keep in mind that the transmitter groups are disjunct for the same rubric number in order to avoid overlapping number assigments.<br />Use the Activate Rubrics button to enable the reception of rubrics on your Skyper."
-	  },
-	  "table": {
-		"number": "Number",
-		"name": "Name",
-		"label": "Label",
-		"transmittergroup": "Transmitter Groups"
-	  }
-	},
-	"new": {
-	  "newrubric": "New Rubric",
-	  "editrubirc": "Edit Rubric",
-	  "name": "Name",
-	  "namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
-	  "label": "Label",
-	  "number": "Number",
-	  "transmittergroup": "Transmitter Groups",
-	  "information": {
-		"title": "Information",
-		"help": "Rubrics are a Skyper based invention allowing to send news sorted into chategories (the rubrics). Assign the number with care and contact <code>support [at] hampager.de</code> in case of doubt. Be aware that the number of rubrics is limited netwide to 99."
-	  }
-	},
-	"activation": {
-	  "pagernumber": "Pager-Number (your RIC)",
-	  "information": {
-		"title": "Information",
-		"help": "Use the function to send an activation call to your Skyper. After successful reception, you can select the rubrics on \"Skyper Setup\" in the skyper menu."
-	  },
-	  "transmittergroup": "Transmitter Groups"
-	}
-  },
-  "subscribers": {
-	"overview": {
-	  "newsubscriber": "Nuevo suscriptor",
-	  "allsubscribers": "Todos los suscriptores",
-	  "totalsubscribers": "Total suscriptors",
-	  "information": {
-		"help": "A subscriber is the logical connection between a name (the callsign) and one or multiple RIC numbers, for example a Skyper address."
-	  },
-	  "table": {
-		"pager" : "Pager",
-		"subscriber": "Suscriptor"
-	  }
-	},
-	"new": {
-	  "newsubscriber": "Nuevo suscriptor",
-	  "editsubscriber": "Editar suscriptor",
-	  "subscriber": {
-		"title": "Suscriptor",
-		"help": "Please enter a valid amateur radio callsign of a human or a classifying name of an organization.",
-		"info": "Changing this name will create a duplication and <i>not</i> change the element's name."
-	  },
-	  "description": {
-		"help": "Provide your name or any other useful description of this entry."
-	  },
-	  "pager": {
-		"title": "Buscapersonas",
-		"helprics": "Add one or more lines of pager RIC numbers.",
-		"helpnames": "Add a corresponding number for lines as a description for the RIC numbers given in the first box."
-	  },
-	  "owner": {
-		"help": "An owner of a subscriber association can edit its parameters."
-	  },
-	  "information": {
-		"help": "Subscribers are an allocation between a name (usually your amateur radio callsign) and one or multiple pager IDs (RICs)."
-	  }
-	}
-  },
-  "calls": {
-	"overview": {
-	  "allcalls": "Todas las llamadas",
-	  "newcall": "Nueva llamada",
-	  "emergencies": "Emergencias",
-	  "totalcalls": "Total llamadas",
-	  "information": {
-		"help": "Calls are personal paging transmission to individual receivers."
-	  },
-	  "table": {
-		"timestamp": "Marca de tiempo",
-		"txgroups": "Grupos de transmisores",
-		"message": "Mensaje",
-		"emergency": "Alta Prio?"
-	  }
-	},
-	"new": {
-	  "newcall": "Nueva llamada",
-	  "message": {
-		"title": "Mensaje",
-		"charactersremaining": "80 characters remaining.<br />Enter your paging text. Your user name is added automatically."
-	  },
-	  "subscribers": {
-		"help": "Select one or multiple subscribers you what to send the message to."
-	  },
-	  "transmittergroups": {
-		"title": "Groupos de transmisores",
-		"help": "Select a logical transmitter group that should broadcast your message. Default is all transmitters, but if you know the approximate location of the receiver you might limit the transmitters used for your paging to a certain area. This reduces the load on the transmitters."
-	  },
-	  "emergency": {
-		"title": "Emergencia?",
-		"help": "In case you want your message to be delivered as soon as possible, check this box. No harmful things will happen, the DAPNET will just process your message with maximum priority. Please make a fair use of this feature."
-	  },
-	  "information": {
-		"help": "Here your recent paging calls are displayed."
-	  }
-	}
-  },
-  "news": {
-	"overview": {
-	  "allrubriccontent": "All Rubric Content",
-	  "newrubriccontent": "New Rubric Content",
-	  "totalrubriccontent": "Total Rubic Content",
-	  "information": {
-		"help": "The content displayed here are NOT general news about DAPNET, but the recently sent content to rubrics. Every time a user updates the 10 available rubric messages slots, this change will be displayed here."
-	  },
-	  "table": {
-		"timestamp": "Marca de tiempo",
-		"rubric": "Rubric",
-		"number": "#",
-		"message": "Mensaje"
-	  }
-	},
-	"new": {
-	  "newrubriccontent": "New Rubric Content",
-	  "message": "Mensaje",
-	  "charactersremaining": "characters remaining",
-	  "rubric": "Rubric",
-	  "number": "Numero",
-	  "chooseautomatically": "Choose automatically",
-	  "information": {
-		"help": "These are the contents of rubrics. They are up to now only available on Skyper paging receivers in this form, but also sent as personal calls to RIC 1000 + (Rubric-Number) for reception with e.g. AlphaPoc."
-	  }
-	}
-  },
-  "nodes": {
-	"overview": {
-	  "allnodes": "Todos los Nodos",
-	  "newnode": "Nuevo Nodo",
-	  "sendmailtoallowners": "Send a mail to all owners",
-	  "statistics": {
-		"totalnodes": "Total Nodos"
-	  },
-	  "information": {
-		"help": "Nodes are the instances of the DAPNET cluster. This list shows the status of them."
-	  },
-	  "table": {
-		"name": "Nombre",
-		"version": "Version",
-		"ipaddress": "Dirección IP",
-		"status": "Estado"
-	  }
-	},
-	"new": {
-	  "newnode": "Nuevo Nodo",
-	  "editnode": "Editar Nodo",
-	  "name": {
-		"title": "Nombre",
-		"help": "Changing this name will create a duplication and <i>not</i> change the element's name."
-	  },
-	  "status": {
-		"title": "Estado",
-		"online": "Online",
-		"suspended": "Suspendido"
-	  },
-	  "information": {
-		"help": "This table shows the registered DAPNET Core nodes and is mostly for SysOp information."
-	  }
-	}
-  },
-  "login": {
-	"username": "Nombre de usuario",
-	"password": "Contraseña",
-	"information": {
-	  "help": "..."
-	}
-  },
-  "logout": {
-	"seepagewrong": "If you see this page, something went wrong.",
-	"emoji": "Emoji provided for free by"
-  },
-  "impress": {
-	"title": "Impress"
-  },
-  "error404": {
-	"title": "Error 404 - Not Found",
-	"emoji": "Emoji provided for free by"
-  },
-  "privacy": {
-	"title": "Privacy"
-  },
-  "versioncheck": {
-	"title": "Version Check"
-  },
-  "group": {
-	"overview": {
-	  "newtxgroup": "New Transmitter Groups",
-	  "alltxgroups": "All Transmitter Groups",
-	  "totaltxgroups": "Total Groups",
-	  "information": {
-		"help": "A transmitter group is a logical association of one or multiple transmitters to a group. This is necessary to divide the transmitters into regional areas, as not all content has to be transmitted on the whole network. Both personal calls as well als rubric's content have to be linked to a transmitter group. Only transmitters that are member of this group will get the information from the DAPNET node in order to transmit it."
-	  }
-	},
-	"new": {
-	  "newtxgroup": "New Transmitter Group",
-	  "edittxgroup": "Edit Transmitter Group",
-	  "namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
-	  "information": {
-		"help": "A transmitter group combines one of several transmitters to a logical entity."
-	  }
-	}
-  },
-  "users": {
 	"general": {
-	  "email": "Email",
-	  "admin": "Admin?",
-	  "newuser" : "Nuevo Usuario"
+		"submit": "Enviar",
+		"abort": "anular",
+		"search": "Buscar",
+		"information": "información",
+		"owner": "Dueño",
+		"actions": "Acciones",
+		"statistics": "Estadísticas",
+		"description": "Descripción",
+		"name": "Nombre",
+		"latlong": {
+			"title": "Latitud / Longitug",
+			"north": "norte",
+			"south": "sur",
+			"east": "este",
+			"west": "oeste"
+		},
+		"password": "Contraseña",
+		"yes": "Sí",
+		"no": "No"
 	},
-	"overview": {
-	  "allusers": "Todos los Usuarios",
-	  "sendemailallusers": "Enviar un correo a todos los usuarios",
-	  "totaladmins" : "Total Admins",
-	  "totalusers": "Total Usuarios",
-	  "information": {
-		"help": "This is an overview of all registered user account on the DAPNET network. If you are not an admin, you don't see other user's details. You can edit your user by yourself, e.g. change your passwort or your email address."
-	  }
+	"rubric": {
+		"overview": {
+			"totalrubrics": "Total Rubrics",
+			"information": {
+				"title": "Information",
+				"help": "This is a list of all rubrics on the DAPNET. A rubric number can by assigned to several transmitter groups. Keep in mind that the transmitter groups are disjunct for the same rubric number in order to avoid overlapping number assigments.<br />Use the Activate Rubrics button to enable the reception of rubrics on your Skyper."
+			},
+			"table": {
+				"number": "Number",
+				"name": "Name",
+				"label": "Label",
+				"transmittergroup": "Transmitter Groups"
+			}
+		},
+		"new": {
+			"newrubric": "New Rubric",
+			"editrubirc": "Edit Rubric",
+			"name": "Name",
+			"namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
+			"label": "Label",
+			"number": "Number",
+			"transmittergroup": "Transmitter Groups",
+			"information": {
+				"title": "Information",
+				"help": "Rubrics are a Skyper based invention allowing to send news sorted into chategories (the rubrics). Assign the number with care and contact <code>support [at] hampager.de</code> in case of doubt. Be aware that the number of rubrics is limited netwide to 99."
+			}
+		},
+		"activation": {
+			"pagernumber": "Pager-Number (your RIC)",
+			"information": {
+				"title": "Information",
+				"help": "Use the function to send an activation call to your Skyper. After successful reception, you can select the rubrics on \"Skyper Setup\" in the skyper menu."
+			},
+			"transmittergroup": "Transmitter Groups"
+		}
 	},
-	"new": {
-	  "edituser": "Editar Usuario",
-	  "namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
-	  "password": {
-		"help": "Eso es la una nueva contraseña aleatoria:",
-		"randompassword": "Generar una nueva contraseña aleatoria"
-	  },
-	  "information": {
-		"help": "This table shows the registered users and their detail information."
-	  }
+	"subscribers": {
+		"overview": {
+			"newsubscriber": "Nuevo suscriptor",
+			"allsubscribers": "Todos los suscriptores",
+			"totalsubscribers": "Total suscriptors",
+			"information": {
+				"help": "A subscriber is the logical connection between a name (the callsign) and one or multiple RIC numbers, for example a Skyper address."
+			},
+			"table": {
+				"pager": "Pager",
+				"subscriber": "Suscriptor"
+			}
+		},
+		"new": {
+			"newsubscriber": "Nuevo suscriptor",
+			"editsubscriber": "Editar suscriptor",
+			"subscriber": {
+				"title": "Suscriptor",
+				"help": "Please enter a valid amateur radio callsign of a human or a classifying name of an organization.",
+				"info": "Changing this name will create a duplication and <i>not</i> change the element's name."
+			},
+			"description": {
+				"help": "Provide your name or any other useful description of this entry."
+			},
+			"pager": {
+				"title": "Buscapersonas",
+				"helprics": "Add one or more lines of pager RIC numbers.",
+				"helpnames": "Add a corresponding number for lines as a description for the RIC numbers given in the first box."
+			},
+			"owner": {
+				"title": "Owner",
+				"help": "An owner of a subscriber association can edit its parameters."
+			},
+			"information": {
+				"help": "Subscribers are an allocation between a name (usually your amateur radio callsign) and one or multiple pager IDs (RICs)."
+			}
+		}
+	},
+	"calls": {
+		"overview": {
+			"allcalls": "Todas las llamadas",
+			"newcall": "Nueva llamada",
+			"emergencies": "Emergencias",
+			"totalcalls": "Total llamadas",
+			"information": {
+				"help": "Calls are personal paging transmission to individual receivers."
+			},
+			"table": {
+				"timestamp": "Marca de tiempo",
+				"txgroups": "Grupos de transmisores",
+				"message": "Mensaje",
+				"emergency": "Alta Prio?"
+			}
+		},
+		"new": {
+			"newcall": "Nueva llamada",
+			"message": {
+				"title": "Mensaje",
+				"charactersremaining": "80 characters remaining.<br />Enter your paging text. Your user name is added automatically."
+			},
+			"subscribers": {
+				"help": "Select one or multiple subscribers you what to send the message to."
+			},
+			"transmittergroups": {
+				"title": "Groupos de transmisores",
+				"help": "Select a logical transmitter group that should broadcast your message. Default is all transmitters, but if you know the approximate location of the receiver you might limit the transmitters used for your paging to a certain area. This reduces the load on the transmitters."
+			},
+			"emergency": {
+				"title": "Emergencia?",
+				"help": "In case you want your message to be delivered as soon as possible, check this box. No harmful things will happen, the DAPNET will just process your message with maximum priority. Please make a fair use of this feature."
+			},
+			"information": {
+				"help": "Here your recent paging calls are displayed."
+			}
+		}
+	},
+	"news": {
+		"overview": {
+			"allrubriccontent": "All Rubric Content",
+			"newrubriccontent": "New Rubric Content",
+			"totalrubriccontent": "Total Rubic Content",
+			"information": {
+				"help": "The content displayed here are NOT general news about DAPNET, but the recently sent content to rubrics. Every time a user updates the 10 available rubric messages slots, this change will be displayed here."
+			},
+			"table": {
+				"timestamp": "Marca de tiempo",
+				"rubric": "Rubric",
+				"number": "#",
+				"message": "Mensaje"
+			}
+		},
+		"new": {
+			"newrubriccontent": "New Rubric Content",
+			"message": "Mensaje",
+			"charactersremaining": "characters remaining",
+			"rubrics": "Rubrics",
+			"number": "Numero",
+			"chooseautomatically": "Choose automatically",
+			"information": {
+				"help": "These are the contents of rubrics. They are up to now only available on Skyper paging receivers in this form, but also sent as personal calls to RIC 1000 + (Rubric-Number) for reception with e.g. AlphaPoc."
+			}
+		}
+	},
+	"nodes": {
+		"overview": {
+			"allnodes": "Todos los Nodos",
+			"newnode": "Nuevo Nodo",
+			"sendmailtoallowners": "Send a mail to all owners",
+			"statistics": {
+				"totalnodes": "Total Nodos"
+			},
+			"information": {
+				"help": "Nodes are the instances of the DAPNET cluster. This list shows the status of them."
+			},
+			"table": {
+				"name": "Nombre",
+				"version": "Version",
+				"ipaddress": "Dirección IP",
+				"status": "Estado"
+			}
+		},
+		"new": {
+			"newnode": "Nuevo Nodo",
+			"editnode": "Editar Nodo",
+			"name": {
+				"title": "Nombre",
+				"help": "Changing this name will create a duplication and <i>not</i> change the element's name."
+			},
+			"status": {
+				"title": "Estado",
+				"online": "Online",
+				"suspended": "Suspendido"
+			},
+			"information": {
+				"help": "This table shows the registered DAPNET Core nodes and is mostly for SysOp information."
+			}
+		}
+	},
+	"login": {
+		"username": "Nombre de usuario",
+		"password": "Contraseña",
+		"information": {
+			"help": "..."
+		}
+	},
+	"logout": {
+		"seepagewrong": "If you see this page, something went wrong.",
+		"emoji": "Emoji provided for free by"
+	},
+	"impress": {
+		"title": "Impress"
+	},
+	"error404": {
+		"title": "Error 404 - Not Found",
+		"emoji": "Emoji provided for free by"
+	},
+	"privacy": {
+		"title": "Privacy"
+	},
+	"versioncheck": {
+		"title": "Version Check"
+	},
+	"group": {
+		"overview": {
+			"newtxgroup": "New Transmitter Groups",
+			"alltxgroups": "All Transmitter Groups",
+			"totaltxgroups": "Total Groups",
+			"information": {
+				"help": "A transmitter group is a logical association of one or multiple transmitters to a group. This is necessary to divide the transmitters into regional areas, as not all content has to be transmitted on the whole network. Both personal calls as well als rubric's content have to be linked to a transmitter group. Only transmitters that are member of this group will get the information from the DAPNET node in order to transmit it."
+			}
+		},
+		"new": {
+			"newtxgroup": "New Transmitter Group",
+			"edittxgroup": "Edit Transmitter Group",
+			"namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
+			"information": {
+				"help": "A transmitter group combines one of several transmitters to a logical entity."
+			}
+		}
+	},
+	"users": {
+		"general": {
+			"email": "Email",
+			"admin": "Admin?",
+			"newuser": "Nuevo Usuario"
+		},
+		"overview": {
+			"allusers": "Todos los Usuarios",
+			"sendemailallusers": "Enviar un correo a todos los usuarios",
+			"totaladmins": "Total Admins",
+			"totalusers": "Total Usuarios",
+			"information": {
+				"help": "This is an overview of all registered user account on the DAPNET network. If you are not an admin, you don't see other user's details. You can edit your user by yourself, e.g. change your passwort or your email address."
+			}
+		},
+		"new": {
+			"edituser": "Editar Usuario",
+			"namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
+			"password": {
+				"help": "Eso es la una nueva contraseña aleatoria:",
+				"randompassword": "Generar una nueva contraseña aleatoria"
+			},
+			"information": {
+				"help": "This table shows the registered users and their detail information."
+			}
+		}
 	}
-  }
 }
