@@ -36,28 +36,32 @@
 			},
 			"4": {
 				"title": "Touch Display for Transmitters",
-				"text": "Easy-to-use graphical control display based on Nextion"
+				"text": "Easy-to-use graphical control display based on Nextion Displays. Connection to transmitter host via UART or USB2UART"
 			},
 			"5": {
 				"title": "Unipager - One software for all transmitter types",
 				"text": "Written in RUST, the Unipager software controls all transmitter types: Raspager, Ericsson C9000, Soundcard and RFM69. A Debian package is avaiable for easy install and update."
 			},
 			"6": {
-				"title": "Modern Paging receiver Swissphone",
-				"text": ""
+				"title": "Modern paging receiver Swissphone",
+				"text": "High-End model for pro-users."
 			},
 			"7": {
 				"title": "SDR based Transmitter with GM1200",
-				"text": "All you need is a Raspberry Pi, a 9600 Baud-ready radio and a simple audio interface"
+				"text": "All you need is a Raspberry Pi, a 9600 Baud-ready radio and a simple audio interface. Also feasable in combination with the touch display"
 			},
 			"8": {
 				"title": "AlphaPOC 6002 R paging reciever",
-				"text": "Commercially avaiable, small and no modification needed"
+				"text": "Commercially avaiable, small and no modification needed. Easy on-pager programming"
 			},
 			"9": {
 				"title": "Structure of DAPNET",
 				"text": "Transparent and up-to-date comminication protocols like REST and Websocket are used"
-			}
+			},
+		  "10": {
+			"title": "Support by ticket system",
+			"text": "Support requests are handled by a team for quick response time and maximum knowledge sharing"
+		  }
 		},
 		"information": {
 			"dapnet": {
