@@ -32,9 +32,9 @@
 					<template v-if="table.rows">
 						<legend>{{ $t('general.statistics') }}</legend>
 						<ul class="list-group">
-							<li class="list-group-item"><b>{{ $t('transmitter.overview.statistics.widerange') }}</b><span class="badge">{{ stats.widerange.online }} / {{ stats.widerange.offline }} / {{ stats.widerange.total }}</span></li>
-							<li class="list-group-item"><b>{{ $t('transmitter.overview.statistics.personal') }}</b><span class="badge">{{ stats.personal.online }} / {{ stats.personal.offline }} / {{ stats.personal.total }}</span></li>
-							<li class="list-group-item"><b>{{ $t('transmitter.overview.statistics.total') }}</b><span class="badge">{{ stats.total.online }} / {{ stats.total.offline }} / {{ stats.total.total }}</span></li>
+							<li class="list-group-item"><b>{{ $t('transmitter.overview.statistics.widerange') }}</b><span class="badge">{{ stats.widerange.online }} / {{ stats.widerange.total }}</span></li>
+							<li class="list-group-item"><b>{{ $t('transmitter.overview.statistics.personal') }}</b><span class="badge">{{ stats.personal.online }} / {{ stats.personal.total }}</span></li>
+							<li class="list-group-item"><b>{{ $t('transmitter.overview.statistics.total') }}</b><span class="badge">{{ stats.total.online }} / {{ stats.total.total }}</span></li>
 							<li class="list-group-item"><chart-transmitter-types :chartData="chartDataDeviceTypes"></chart-transmitter-types></li>
 						</ul>
 						<div class="checkbox">
@@ -110,17 +110,14 @@
 				return {
 					widerange: {
 						online: this.table.rows.filter(value => value.status.includes('ONLINE') && value.usage === 'WIDERANGE').length,
-						offline: this.table.rows.filter(value => !value.status.includes('ONLINE') && value.usage === 'WIDERANGE').length,
 						total: this.table.rows.filter(value => value.usage === 'WIDERANGE').length
 					},
 					personal: {
 						online: this.table.rows.filter(value => value.status.includes('ONLINE') && value.usage === 'PERSONAL').length,
-						offline: this.table.rows.filter(value => !value.status.includes('ONLINE') && value.usage === 'PERSONAL').length,
 						total: this.table.rows.filter(value => value.usage === 'PERSONAL').length
 					},
 					total: {
 						online: this.table.rows.filter(value => value.status.includes('ONLINE')).length,
-						offline: this.table.rows.filter(value => !value.status.includes('ONLINE')).length,
 						total: this.table.rows.length
 					}
 				};
