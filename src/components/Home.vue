@@ -3,7 +3,21 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="jumbotron">
-					<carousel :autoplay="true" :autoplay-timeout="5000" :loop="true" :per-page="1" pagination-color="#d0d0d0" pagination-active-color="#a0a0a0">
+					<carousel :autoplay="true" :autoplay-timeout="5000" :loop="true" :per-page="2" :scroll-per-page="true" pagination-color="#d0d0d0" pagination-active-color="#a0a0a0">
+						<slide>
+							<h1>{{ $t('home.welcome.title') }}</h1>
+							<p v-html="$t('home.welcome.text')"></p>
+						</slide>
+						<slide>
+							<img src="~@/assets/img/afu-dapnet-logo.png" alt="DAPNET Logo"/>
+						</slide>
+						<slide>
+							<h1>{{ $t('home.welcome.title') }}</h1>
+							<p v-html="$t('home.welcome.text')"></p>
+						</slide>
+						<slide>
+							<img src="~@/assets/img/afu-dapnet-logo.png" alt="DAPNET Logo"/>
+						</slide>
 						<slide>
 							<h1>{{ $t('home.welcome.title') }}</h1>
 							<p v-html="$t('home.welcome.text')"></p>
