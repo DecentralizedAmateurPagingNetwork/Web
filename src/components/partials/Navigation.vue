@@ -46,9 +46,9 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ $t('footer.language.title') }} <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a v-on:click="changeLanguage('en')">{{ $t('footer.language.english') }}</a></li>
-							<li><a v-on:click="changeLanguage('de')">{{ $t('footer.language.german') }}</a></li>
-							<li><a v-on:click="changeLanguage('es')">{{ $t('footer.language.spanish') }}</a></li>
+							<li class="clickable"><a v-on:click="changeLanguage('en')"><span class="flag-icon flag-icon-gb"></span> {{ $t('footer.language.english') }}</a></li>
+							<li class="clickable"><a v-on:click="changeLanguage('de')"><span class="flag-icon flag-icon-de"></span> {{ $t('footer.language.german') }}</a></li>
+							<li class="clickable"><a v-on:click="changeLanguage('es')"><span class="flag-icon flag-icon-es"></span> {{ $t('footer.language.spanish') }}</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -67,6 +67,8 @@
 </template>
 
 <script>
+	import 'flag-icon-css/css/flag-icon.min.css';
+
 	export default {
 		methods: {
 			changeLanguage(lang) {
@@ -86,6 +88,10 @@
 
 	.navbar-brand img {
 		width: 6em;
+	}
+
+	.clickable {
+		cursor: pointer;
 	}
 
 	@media (min-width: 768px) {
