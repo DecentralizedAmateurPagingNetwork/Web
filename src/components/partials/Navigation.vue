@@ -44,6 +44,14 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ $t('footer.language.title') }} <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a v-on:click="changeLanguage('en')">{{ $t('footer.language.english') }}</a></li>
+							<li><a v-on:click="changeLanguage('de')">{{ $t('footer.language.german') }}</a></li>
+							<li><a v-on:click="changeLanguage('es')">{{ $t('footer.language.spanish') }}</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ this.$store.getters.user.name }} <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li v-if="this.$store.getters.isUserLoggedIn"><router-link :to="{ name: 'Edit User', params: { id: this.$store.getters.user.name }}">{{ $t('navigation.settings') }}</router-link></li>
@@ -59,7 +67,16 @@
 </template>
 
 <script>
-
+	export default {
+		methods: {
+			changeLanguage(lang) {
+				this.$root.$i18n.locale = lang;
+				this.$store.commit('changeLanguage', {
+					language: lang
+				});
+			}
+		}
+	};
 </script>
 
 <style scoped>
