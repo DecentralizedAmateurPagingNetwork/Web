@@ -58,7 +58,7 @@
 						<v-popup :content="item.popup"></v-popup>
 					</v-marker>
 				</v-map>
-				<p><router-link to="/transmitters/map">{{ $t('home.information.map') }}</router-link></p>
+				<p v-if="this.$store.getters.isUserLoggedIn"><router-link to="/transmitters/map">{{ $t('home.information.map') }}</router-link></p>
 			</div>
 
 			<div class="col-lg-4">
