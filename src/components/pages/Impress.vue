@@ -7,9 +7,9 @@
 				</div>
 
 				<p>Angaben gemäß § 5 TMG:</p>
-				<p>Ralf Wilke<br/>
-					Amateurfunkgruppe an der RWTH Aachen<br/>
-					Institut für Hochfrequenztechnik<br/>
+				<p>Ralf Wilke<br>
+					Amateurfunkgruppe an der RWTH Aachen<br>
+					Institut für Hochfrequenztechnik<br>
 					52074 Aachen
 				</p>
 

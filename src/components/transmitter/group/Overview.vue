@@ -25,7 +25,7 @@
 						<ul>
 							<li><router-link to="/transmitters/groups/new">{{ $t('group.overview.newtxgroup') }}</router-link></li>
 						</ul>
-						<br/>
+						<br>
 					</template>
 					<template v-if="table.rows">
 						<legend>{{ $t('general.statistics') }}</legend>

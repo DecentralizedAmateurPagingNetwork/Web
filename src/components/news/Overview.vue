@@ -26,7 +26,7 @@
 							<router-link to="/rubrics/content/new">{{ $t('news.overview.newrubriccontent') }}</router-link>
 						</li>
 					</ul>
-					<br/>
+					<br>
 					<template v-if="table.rows">
 						<legend>{{ $t('general.statistics') }}</legend>
 						<ul class="list-group">

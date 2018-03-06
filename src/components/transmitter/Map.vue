@@ -28,11 +28,11 @@
 			<div class="col-lg-8">
 				<h2>{{ $t('transmitter.map.settings.title') }}</h2>
 				<div class="checkbox">
-					<label><input type="checkbox" v-model="settings.onlineOnly"> {{ $t('transmitter.map.checkbox.showonlineonly') }}</label><br />
-					<label><input type="checkbox" v-model="settings.widerangeOnly"> {{ $t('transmitter.map.checkbox.showwiderangeonly') }}</label><br /><br />
+					<label><input type="checkbox" v-model="settings.onlineOnly"> {{ $t('transmitter.map.checkbox.showonlineonly') }}</label><br>
+					<label><input type="checkbox" v-model="settings.widerangeOnly"> {{ $t('transmitter.map.checkbox.showwiderangeonly') }}</label><br><br>
 					<label><input type="checkbox" v-model="settings.timeslot.active"> {{ $t('transmitter.map.checkbox.showbytimeslot') }}</label>
-						<input type="text" placeholder="timeslots" v-model="settings.timeslot.input" :disabled="!settings.timeslot.active"><br /><br />
-					<label><input type="checkbox" v-model="settings.showNodes"> {{ $t('transmitter.map.checkbox.shownodes') }}</label><br />
+						<input type="text" placeholder="timeslots" v-model="settings.timeslot.input" :disabled="!settings.timeslot.active"><br><br>
+					<label><input type="checkbox" v-model="settings.showNodes"> {{ $t('transmitter.map.checkbox.shownodes') }}</label><br>
 					<label><input type="checkbox" v-model="settings.showLines" :disabled="!settings.showNodes"> {{ $t('transmitter.map.checkbox.shownodeline') }}</label>
 				</div>
 			</div>
@@ -163,7 +163,7 @@
 					// set ip-address (if applicable)
 					let popupIp = '';
 					if (node.address !== undefined && node.address !== null) {
-						popupIp = '<br />IP: ' + node.address.ip_addr + ':' + node.address.port;
+						popupIp = '<br>IP: ' + node.address.ip_addr + ':' + node.address.port;
 					}
 
 					// build marker
@@ -208,12 +208,13 @@
 							lat: transmitter.latitude,
 							lng: transmitter.longitude
 						},
-						popup: '<b>' + nameLink + '</a></b><br />' +
-							'Usage: ' + transmitter.usage + '<br />' +
-							'Transmission Power (W): ' + transmitter.power + '<br />' +
-							'Height (m): ' + transmitter.antennaAboveGroundLevel + '<br />' +
-							'Timeslot: ' + transmitter.timeSlot + '<br/>' +
-							'Owner: ' + transmitter.ownerNames.join(', '),
+						popup: '<b>' + nameLink + '</a></b><br>' +
+							'Usage: ' + transmitter.usage + '<br>' +
+							'Transmission Power (W): ' + transmitter.power + '<br>' +
+							'Height (m): ' + transmitter.antennaAboveGroundLevel + '<br>' +
+							'Timeslot: ' + transmitter.timeSlot + '<br>' +
+							'Owner: ' + transmitter.ownerNames.join(', ') + '<br><br>' +
+							'<a href="/#/transmitters/map/' + transmitter.name + '">' + this.$i18n.t('general.permalink') + '</a>',
 						icon: selectedMarkerIcon
 					});
 
@@ -236,6 +237,17 @@
 								}
 							}
 						});
+					}
+
+					// center given transmitter (if required)
+					if (this.$route.params.id && this.$route.params.id === transmitter.name) {
+						this.center = [transmitter.latitude, transmitter.longitude];
+
+						// very ugly workaround to allow zooming into the given transmitter
+						// needed, because otherwise the map will zoom into the old center
+						setTimeout(() => {
+							this.zoom = 10;
+						}, 500);
 					}
 				});
 

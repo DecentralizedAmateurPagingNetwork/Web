@@ -26,7 +26,7 @@
 							<li><router-link to="/users/new">{{ $t('users.general.newuser') }}</router-link></li>
 							<li><p class="linklike" @click="mailToAll">{{ $t('users.overview.sendemailallusers') }}</p></li>
 						</ul>
-						<br/>
+						<br>
 					</template>
 					<template v-if="table.rows">
 						<legend>{{ $t('general.statistics') }}</legend>

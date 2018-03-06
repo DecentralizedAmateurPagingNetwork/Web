@@ -27,7 +27,7 @@
 								<router-link to="/subscribers/new">{{ $t('subscribers.overview.newsubscriber') }}</router-link>
 							</li>
 						</ul>
-						<br/>
+						<br>
 					</template>
 					<template v-if="table.rows">
 						<legend>{{ $t('general.statistics') }}</legend>
