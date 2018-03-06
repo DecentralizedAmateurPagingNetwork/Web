@@ -7,16 +7,16 @@
 						<template v-for="index in 10">
 							<slide :key="index">
 								<div class="row">
-									<div class="col-lg-8">
+									<div class="col-lg-7">
 										<h2>{{ $t('home.carousel.' + index + '.title') }}</h2>
 										<p v-html="$t('home.carousel.' + index + '.text')"></p>
 									</div>
-									<div class="col-lg-4">
+									<div class="col-lg-5">
 										<template v-if="getLink(index)">
-											<a :href="getLink(index)" target="_blank"><img :src="'./assets/img/carousel/img' + index + '.png'" alt="Carousel Item" /></a>
+											<a :href="getLink(index)" target="_blank"><img :src="'./assets/img/carousel/img' + index + '.png'" alt="Carousel Item" class="slide-image" /></a>
 										</template>
 										<template v-else>
-											<img :src="'./assets/img/carousel/img' + index + '.png'" alt="Carousel Item" />
+											<img :src="'./assets/img/carousel/img' + index + '.png'" alt="Carousel Item" class="slide-image" />
 										</template>
 									</div>
 								</div>
@@ -31,7 +31,7 @@
 			<div class="col-lg-4">
 				<h2>{{ $t('home.information.dapnet.title') }}</h2>
 				<div class="well">
-					<img src="~@/assets/img/afu-dapnet-logo.png" alt="DAPNET Logo"/>
+					<img src="~@/assets/img/afu-dapnet-logo.png" alt="DAPNET Logo" />
 					<h3>{{ $t('home.information.dapnet.projects') }}</h3>
 					<ul>
 						<li><a href="https://github.com/DecentralizedAmateurPagingNetwork/Core" target="_blank">DAPNET Core</a></li>
@@ -217,5 +217,15 @@
 
 	.jumbotron > p {
 		font-size: 1.2em;
+	}
+
+	.slide-image img {
+		width: 100%;
+	}
+
+	@media (min-width: 1200px) {
+		.slide-image {
+			max-width: 400px;
+		}
 	}
 </style>
