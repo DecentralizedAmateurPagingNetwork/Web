@@ -78,9 +78,7 @@
 				"title": "Das DAPNET",
 				"projects": "Projekte"
 			},
-			"information": {
-				"title": "Informationen"
-			},
+			"map": "Vollständige Kartenansicht öffnen",
 			"statistics": {
 				"calls": "Rufe",
 				"rubric-content": "Rubriken Inhalt",
