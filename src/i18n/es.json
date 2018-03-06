@@ -281,7 +281,8 @@
 		},
 		"password": "Contraseña",
 		"yes": "Sí",
-		"no": "No"
+		"no": "No",
+		"permalink": "Permalink"
 	},
 	"rubric": {
 		"overview": {

@@ -213,7 +213,8 @@
 							'Transmission Power (W): ' + transmitter.power + '<br />' +
 							'Height (m): ' + transmitter.antennaAboveGroundLevel + '<br />' +
 							'Timeslot: ' + transmitter.timeSlot + '<br/>' +
-							'Owner: ' + transmitter.ownerNames.join(', '),
+							'Owner: ' + transmitter.ownerNames.join(', ') + '<br /><br />' +
+							'<a href="/#/transmitters/map/' + transmitter.name + '">' + this.$i18n.t('general.permalink') + '</a>',
 						icon: selectedMarkerIcon
 					});
 
@@ -236,6 +237,17 @@
 								}
 							}
 						});
+					}
+
+					// center given transmitter (if required)
+					if (this.$route.params.id && this.$route.params.id === transmitter.name) {
+						this.center = [transmitter.latitude, transmitter.longitude];
+
+						// very ugly workaround to allow zooming into the given transmitter
+						// needed, because otherwise the map will zoom into the old center
+						setTimeout(() => {
+							this.zoom = 10;
+						}, 500);
 					}
 				});
 

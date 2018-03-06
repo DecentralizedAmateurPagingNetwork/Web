@@ -281,7 +281,8 @@
 		},
 		"password": "Password",
 		"yes": "Yes",
-		"no": "No"
+		"no": "No",
+		"permalink": "Permalink"
 	},
 	"rubric": {
 		"overview": {

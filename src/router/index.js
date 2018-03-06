@@ -159,6 +159,14 @@ export default new Router({
 			}
 		},
 		{
+			path: '/transmitters/map/:id',
+			name: 'Transmitter Map Details',
+			component: TransmitterMap,
+			meta: {
+				requireAuthentication: true
+			}
+		},
+		{
 			path: '/transmitters/groups',
 			name: 'Transmitter Group Overview',
 			component: TransmitterGroupOverview,
