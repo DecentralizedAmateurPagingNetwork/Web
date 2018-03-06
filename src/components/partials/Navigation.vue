@@ -49,6 +49,8 @@
 							<li class="clickable"><a v-on:click="changeLanguage('en')"><span class="flag-icon flag-icon-gb"></span> {{ $t('footer.language.english') }}</a></li>
 							<li class="clickable"><a v-on:click="changeLanguage('de')"><span class="flag-icon flag-icon-de"></span> {{ $t('footer.language.german') }}</a></li>
 							<li class="clickable"><a v-on:click="changeLanguage('es')"><span class="flag-icon flag-icon-es"></span> {{ $t('footer.language.spanish') }}</a></li>
+							<li class="clickable"><a v-on:click="changeLanguage('fr')"><span class="flag-icon flag-icon-fr"></span> {{ $t('footer.language.french') }}</a></li>
+							<li class="clickable"><a v-on:click="changeLanguage('pl')"><span class="flag-icon flag-icon-pl"></span> {{ $t('footer.language.polish') }}</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
