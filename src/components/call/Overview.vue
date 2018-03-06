@@ -24,7 +24,7 @@
 					<ul>
 						<li><router-link to="/calls/new">{{ $t('calls.overview.newcall') }}</router-link></li>
 					</ul>
-					<br/>
+					<br>
 					<template v-if="table.rows">
 						<legend>{{ $t('general.statistics') }}</legend>
 						<ul class="list-group">

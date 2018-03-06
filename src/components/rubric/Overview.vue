@@ -24,7 +24,7 @@
 					<ul>
 						<li v-if="this.$store.getters.user.admin"><router-link to="/rubrics/new">New Rubric</router-link></li>
 					</ul>
-					<br/>
+					<br>
 					<template v-if="table.rows">
 						<legend>{{ $t('general.statistics') }}</legend>
 						<ul class="list-group">

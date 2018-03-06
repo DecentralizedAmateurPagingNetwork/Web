@@ -24,7 +24,7 @@
 		"carousel": {
 			"1": {
 				"title": "Willkommen beim DAPNET Web!",
-				"text": "Das DAPNET (Decentralized Amateur Paging Network) ist ein durch Funkamateure betriebenes Netzwerk. Es ist die neue und weiter entwickelte Version des <a href=\"http://ham-pager.sourceforge.net\" target=\"_blank\">FunkrufMasters</a>. Es besteht aus einen dezentralen Verbund von Servern, welcher Daten zu Funkrufen an verteilte Sender ausliefert.<br />Die übliche Frequenz ist 439,9875 MHz mit 1200 Baud POCSAG-Protokoll. Übliche Empfänger sind \"Skyper\", aber es gibt auch weitere Arten. Da dieses Netzwerk auf Amateurfunk-Frequenzen arbeitet ist eine kommerzielle Nutzung verboten.<br />Wenn Sie Inhaber einer gültigen Genehmigung zur Teilnahme am Amateurfunkdienst sind, können Sie Ihren Zugang direkt beantragen. Wir freuen uns auch über jeden neuen Sender im Netzwerk. Eine umfangreiche Dokumentation ist im <a href=\"http://doku.hampager.de\" target=\"_blank\">DAPNET DokuWiki</a> verfügbar.",
+				"text": "Das DAPNET (Decentralized Amateur Paging Network) ist ein durch Funkamateure betriebenes Netzwerk. Es ist die neue und weiter entwickelte Version des <a href=\"http://ham-pager.sourceforge.net\" target=\"_blank\">FunkrufMasters</a>. Es besteht aus einen dezentralen Verbund von Servern, welcher Daten zu Funkrufen an verteilte Sender ausliefert.<br>Die übliche Frequenz ist 439,9875 MHz mit 1200 Baud POCSAG-Protokoll. Übliche Empfänger sind \"Skyper\", aber es gibt auch weitere Arten. Da dieses Netzwerk auf Amateurfunk-Frequenzen arbeitet ist eine kommerzielle Nutzung verboten.<br>Wenn Sie Inhaber einer gültigen Genehmigung zur Teilnahme am Amateurfunkdienst sind, können Sie Ihren Zugang direkt beantragen. Wir freuen uns auch über jeden neuen Sender im Netzwerk. Eine umfangreiche Dokumentation ist im <a href=\"http://doku.hampager.de\" target=\"_blank\">DAPNET DokuWiki</a> verfügbar.",
 				"link": ""
 			},
 			"2": {
@@ -111,7 +111,7 @@
 				"widerangeonly": "Nur Weitbereichssender"
 			},
 			"information": {
-				"text": "Diese Übersicht zeigt alle im DAPNET angemeldeten Sender. Bevor ein Sender mit einem der DAPNET Knoten verbunden werden kann, muss dieser erst von einem Administrator angelegt werden.<br />Es gibt zwei Klassen von Sendern: Weitbereichssender (&gt; 1 Watt) und persönliche Sender (&lt;= 1 Watt).<br />Warum gibt es eine solch große Anzahl an Sendern, die offline sind? Diese Sender wurden meist in der Vergangenheit angelegt wurden, aber zur Zeit offensichtlich nicht betrieben werden. Es gibt keine Festlegung, welches Sender online sein \"sollten\" und welche nicht.<br />Sender haben einen oder mehrere Besitzer, die die Einstellungen selbstständig ändern können. Jeder Sender hat 1 bis max. 16 Zeitschlitzen zugewiesen. Dies ist notwendig, da alle Sender auf der gleichen Frequenz. Eine überlappende Zeitschlitzvergabe in der Ausleuchtung eines Bereiches zwischen den Sendern ist streng zu vermeiden. Daher bitte keine Zeitschlitze einem Sender zuordnen, die bereit von anderen Sendern im Abdeckgungsbereich seines Senders benutzt werden. Bitte Kontakt mit <code>support [at] hampager.de</code> aufnehmen, wenn es Unklarheiten oder Fragen gibt."
+				"text": "Diese Übersicht zeigt alle im DAPNET angemeldeten Sender. Bevor ein Sender mit einem der DAPNET Knoten verbunden werden kann, muss dieser erst von einem Administrator angelegt werden.<br>Es gibt zwei Klassen von Sendern: Weitbereichssender (&gt; 1 Watt) und persönliche Sender (&lt;= 1 Watt).<br>Warum gibt es eine solch große Anzahl an Sendern, die offline sind? Diese Sender wurden meist in der Vergangenheit angelegt wurden, aber zur Zeit offensichtlich nicht betrieben werden. Es gibt keine Festlegung, welches Sender online sein \"sollten\" und welche nicht.<br>Sender haben einen oder mehrere Besitzer, die die Einstellungen selbstständig ändern können. Jeder Sender hat 1 bis max. 16 Zeitschlitzen zugewiesen. Dies ist notwendig, da alle Sender auf der gleichen Frequenz. Eine überlappende Zeitschlitzvergabe in der Ausleuchtung eines Bereiches zwischen den Sendern ist streng zu vermeiden. Daher bitte keine Zeitschlitze einem Sender zuordnen, die bereit von anderen Sendern im Abdeckgungsbereich seines Senders benutzt werden. Bitte Kontakt mit <code>support [at] hampager.de</code> aufnehmen, wenn es Unklarheiten oder Fragen gibt."
 			}
 		},
 		"new": {
@@ -288,7 +288,7 @@
 		"overview": {
 			"totalrubrics": "Alle Rubriken",
 			"information": {
-				"help": "Dies ist eine Liste aller Rubiken im DAPNET. Ein Rubik kann einer oder mehreren Sender-Gruppen zugewiesen werden. Bitte darauf achten, dass die Sender-Gruppen unterschiedlich sind, falls eine Rubiken-Nummer mehrfach verwendet wird. Dies vermeidet überlappende Zuordnungen.<br />BUm dem Empfang der Rubriken auf dem Skyper freizuschalten bitte die Funktion \"Rubriken aktivieren\" verwenden."
+				"help": "Dies ist eine Liste aller Rubiken im DAPNET. Ein Rubik kann einer oder mehreren Sender-Gruppen zugewiesen werden. Bitte darauf achten, dass die Sender-Gruppen unterschiedlich sind, falls eine Rubiken-Nummer mehrfach verwendet wird. Dies vermeidet überlappende Zuordnungen.<br>BUm dem Empfang der Rubriken auf dem Skyper freizuschalten bitte die Funktion \"Rubriken aktivieren\" verwenden."
 			},
 			"table": {
 				"number": "Nummer",
@@ -375,7 +375,7 @@
 			"newcall": "Neuer Ruf",
 			"message": {
 				"title": "Nachricht",
-				"charactersremaining": "80 Zeichen verbleibend.<br />Bitte den Nachrichtentext eingeben. Das Absender-Rufzeichen wird automatisch hinzugefügt."
+				"charactersremaining": "80 Zeichen verbleibend.<br>Bitte den Nachrichtentext eingeben. Das Absender-Rufzeichen wird automatisch hinzugefügt."
 			},
 			"subscribers": {
 				"help": "Einen oder mehrere Teilnehmer als Empfänger des Rufs auswählen."

@@ -26,7 +26,7 @@
 							<li><router-link to="/nodes/new">{{ $t('nodes.overview.newnode') }}</router-link></li>
 							<li><p class="linklike" @click="mailToAll">{{ $t('nodes.overview.sendmailtoallowners') }}</p></li>
 						</ul>
-						<br/>
+						<br>
 					</template>
 					<template v-if="table.rows">
 						<legend>{{ $t('general.statistics') }}</legend>

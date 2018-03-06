@@ -288,7 +288,7 @@
 		"overview": {
 			"totalrubrics": "Total Rubrics",
 			"information": {
-				"help": "This is a list of all rubrics on the DAPNET. A rubric number can by assigned to several transmitter groups. Keep in mind that the transmitter groups are disjunct for the same rubric number in order to avoid overlapping number assigments.<br />Use the Activate Rubrics button to enable the reception of rubrics on your Skyper."
+				"help": "This is a list of all rubrics on the DAPNET. A rubric number can by assigned to several transmitter groups. Keep in mind that the transmitter groups are disjunct for the same rubric number in order to avoid overlapping number assigments.<br>Use the Activate Rubrics button to enable the reception of rubrics on your Skyper."
 			},
 			"table": {
 				"number": "Number",
@@ -375,7 +375,7 @@
 			"newcall": "New Call",
 			"message": {
 				"title": "Message",
-				"charactersremaining": "80 characters remaining.<br />Enter your paging text. Your user name is added automatically."
+				"charactersremaining": "80 characters remaining.<br>Enter your paging text. Your user name is added automatically."
 			},
 			"subscribers": {
 				"help": "Select one or multiple subscribers you what to send the message to."

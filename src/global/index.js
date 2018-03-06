@@ -38,13 +38,13 @@ const GlobalMethodsPlugin = {
 				});
 			} else if (err.status === 400) {
 				// constraint violation
-				let errorText = err.body.message + ':<br/>';
+				let errorText = err.body.message + ':<br>';
 				if (err.body.code === 4001) {
 					let jsonErrors = '<ul style="text-align:left">';
 					err.body.violations.forEach(violation => {
 						jsonErrors += '<li>' + violation.field + ' ' + violation.message + ' (' + violation.code + ' - ' + violation.constraint + ')</li>';
 					});
-					errorText += '</ul><br />' + jsonErrors;
+					errorText += '</ul><br>' + jsonErrors;
 				}
 
 				context.$swal({

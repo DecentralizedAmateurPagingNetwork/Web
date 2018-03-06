@@ -37,7 +37,7 @@
 						<li><a href="https://github.com/DecentralizedAmateurPagingNetwork/Core" target="_blank">DAPNET Core</a></li>
 						<li><a href="https://github.com/DecentralizedAmateurPagingNetwork/Web" target="_blank">DAPNET Web</a></li>
 						<li>
-							<a href="https://github.com/DecentralizedAmateurPagingNetwork/DAPNETApp" target="_blank">DAPNET App</a><br />
+							<a href="https://github.com/DecentralizedAmateurPagingNetwork/DAPNETApp" target="_blank">DAPNET App</a><br>
 							<a href="https://play.google.com/store/apps/details?id=de.hampager.dapnetmobile" target="_blank"><img src="~@/assets/img/google-play.png" style="width: 50%" alt="Google Play" /></a>
 						</li>
 						<li><a href="https://github.com/rwth-afu/raspager-proxy" target="_blank">DAPNET Proxy</a></li>
@@ -162,11 +162,11 @@
 								lat: transmitter.latitude,
 								lng: transmitter.longitude
 							},
-							popup: '<b>' + transmitter.name + '</a></b><br />' +
-							'Usage: ' + transmitter.usage + '<br />' +
-							'Transmission Power (W): ' + transmitter.power + '<br />' +
-							'Height (m): ' + transmitter.antennaAboveGroundLevel + '<br />' +
-							'Timeslot: ' + transmitter.timeSlot + '<br/>' +
+							popup: '<b>' + transmitter.name + '</a></b><br>' +
+							'Usage: ' + transmitter.usage + '<br>' +
+							'Transmission Power (W): ' + transmitter.power + '<br>' +
+							'Height (m): ' + transmitter.antennaAboveGroundLevel + '<br>' +
+							'Timeslot: ' + transmitter.timeSlot + '<br>' +
 							'Owner: ' + transmitter.ownerNames.join(', '),
 							icon: icon
 						});
