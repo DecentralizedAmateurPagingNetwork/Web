@@ -49,6 +49,12 @@
 			<div class="col-lg-4">
 				<h2>{{ $t('general.information') }}</h2>
 				<p v-html="this.$store.getters.customText"></p>
+				<v-map :zoom="map.zoom" :center="map.center" style="height: 25em; margin-top: 1em">
+					<v-tilelayer :url="map.url" :attribution="map.attribution"></v-tilelayer>
+					<v-marker v-for="item in map.markers" :key="item.name" :lat-lng="item.position" :icon="item.icon">
+						<v-popup :content="item.popup"></v-popup>
+					</v-marker>
+				</v-map>
 			</div>
 
 			<div class="col-lg-4">
@@ -73,12 +79,29 @@
 </template>
 
 <script>
+	import Vue from 'vue';
+	import Vue2Leaflet from 'vue2-leaflet';
+	import L from 'leaflet';
+	import '../../node_modules/leaflet/dist/leaflet.css';
+	Vue.component('v-map', Vue2Leaflet.Map);
+	Vue.component('v-tilelayer', Vue2Leaflet.TileLayer);
+	Vue.component('v-marker', Vue2Leaflet.Marker);
+	Vue.component('v-popup', Vue2Leaflet.Popup);
+
 	export default {
 		created() {
 			this.loadData();
+			this.loadMap();
 		},
 		data() {
 			return {
+				map: {
+					zoom: this.$store.getters.map.zoom,
+					center: this.$store.getters.map.center,
+					attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
+					url: this.$store.getters.url.map,
+					markers: []
+				},
 				stats: {
 					errorMessage: false,
 					running: false,
@@ -111,6 +134,38 @@
 					} else {
 						this.stats.errorMessage = this.$i18n.t('rest.errors.http-error', { status: response.status });
 					}
+				});
+			},
+			loadMap() {
+				const icon = L.icon({
+					iconUrl: './assets/img/marker-transmitter-online.png',
+					iconSize: [28, 30],
+					iconAnchor: [15, 30],
+					popupAnchor: [0, -25]
+				});
+
+				this.$http.get('transmitters').then(response => {
+					const transmitters = response.body;
+
+					transmitters.forEach(transmitter => {
+						if (transmitter.status !== 'ONLINE') return true;
+
+						// build marker
+						this.map.markers.push({
+							name: transmitter.name,
+							position: {
+								lat: transmitter.latitude,
+								lng: transmitter.longitude
+							},
+							popup: '<b>' + transmitter.name + '</a></b><br />' +
+							'Usage: ' + transmitter.usage + '<br />' +
+							'Transmission Power (W): ' + transmitter.power + '<br />' +
+							'Height (m): ' + transmitter.antennaAboveGroundLevel + '<br />' +
+							'Timeslot: ' + transmitter.timeSlot + '<br/>' +
+							'Owner: ' + transmitter.ownerNames.join(', '),
+							icon: icon
+						});
+					});
 				});
 			},
 			getLink(index) {
