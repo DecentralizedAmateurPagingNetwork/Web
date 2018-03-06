@@ -3,14 +3,23 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="jumbotron">
-					<carousel :autoplay="true" :autoplay-timeout="5000" :loop="true" :navigation-enabled="true" :per-page="2" :scroll-per-page="true" pagination-color="#d0d0d0" pagination-active-color="#a0a0a0">
+					<carousel :autoplay="true" :autoplay-timeout="5000" :loop="true" :navigation-enabled="true" :per-page="1" pagination-color="#d0d0d0" pagination-active-color="#a0a0a0">
 						<template v-for="index in 10">
 							<slide :key="index">
-								<h2>{{ $t('home.carousel.' + index + '.title') }}</h2>
-								<p v-html="$t('home.carousel.' + index + '.text')"></p>
-							</slide>
-							<slide :key="index + 10">
-								<img :src="'./assets/img/carousel/img' + index + '.jpg'" class="carousel-image" alt="Carousel Item" />
+								<div class="row">
+									<div class="col-lg-8">
+										<h2>{{ $t('home.carousel.' + index + '.title') }}</h2>
+										<p v-html="$t('home.carousel.' + index + '.text')"></p>
+									</div>
+									<div class="col-lg-4">
+										<template v-if="getLink(index)">
+											<a :href="getLink(index)"><img :src="'./assets/img/carousel/img' + index + '.jpg'" alt="Carousel Item" /></a>
+										</template>
+										<template v-else>
+											<img :src="'./assets/img/carousel/img' + index + '.jpg'" alt="Carousel Item" />
+										</template>
+									</div>
+								</div>
 							</slide>
 						</template>
 					</carousel>
@@ -103,6 +112,9 @@
 						this.stats.errorMessage = this.$i18n.t('rest.errors.http-error', { status: response.status });
 					}
 				});
+			},
+			getLink(index) {
+				return this.$i18n.t('home.carousel.' + index + '.link');
 			}
 		}
 	};
@@ -119,10 +131,5 @@
 
 	.jumbotron > p {
 		font-size: 1.2em;
-	}
-
-	.carousel-image {
-		float: right;
-		max-width: 400px;
 	}
 </style>

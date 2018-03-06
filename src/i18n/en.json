@@ -24,44 +24,54 @@
 		"carousel": {
 			"1": {
 				"title": "Welcome to DAPNET Web!",
-				"text": "The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts. It is the new and further developed version of the <a href=\"http://ham-pager.sourceforge.net\" target=\"_blank\">FunkrufMaster</a>. It consists of a decentral server cluster feeding paging data to distributed transmitters.<br> The most used frequency is 439.9875 MHz and the protocol is POCSAG. Common paging receivers are of type \"Skyper\", but there exist others as well. As it is used on amateur radio frequencies, commercial use is forbidden.<br> If you are a licensed amateur radio operator, get your login account now. We are happy for every new transmitter participating in the network. There is comprehensive documentation on the DAPNET Project available at the <a href=\"http://doku.hampager.de\" target=\"_blank\">DAPNET DokuWiki</a>."
+				"text": "The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts. It is the new and further developed version of the <a href=\"http://ham-pager.sourceforge.net\" target=\"_blank\">FunkrufMaster</a>. It consists of a decentral server cluster feeding paging data to distributed transmitters.<br> The most used frequency is 439.9875 MHz and the protocol is POCSAG. Common paging receivers are of type \"Skyper\", but there exist others as well. As it is used on amateur radio frequencies, commercial use is forbidden.<br> If you are a licensed amateur radio operator, get your login account now. We are happy for every new transmitter participating in the network. There is comprehensive documentation on the DAPNET Project available at the <a href=\"http://doku.hampager.de\" target=\"_blank\">DAPNET DokuWiki</a>.",
+				"link": ""
 			},
 			"2": {
 				"title": "Transmitter Raspager",
-				"text": "A low-cost and low-power personal transmitter as an add-on board for Raspberry Pi."
+				"text": "A low-cost and low-power personal transmitter as an add-on board for Raspberry Pi.",
+				"link": ""
 			},
 			"3": {
 				"title": "Coverage Map",
-				"text": "Transmitters are displayed on a map with their simulated coverage area."
+				"text": "Transmitters are displayed on a map with their simulated coverage area.",
+				"link": ""
 			},
 			"4": {
 				"title": "Touch Display for Transmitters",
-				"text": "Easy-to-use graphical control display based on Nextion Displays. Connection to transmitter host via UART or USB2UART."
+				"text": "Easy-to-use graphical control display based on Nextion Displays. Connection to transmitter host via UART or USB2UART.",
+				"link": ""
 			},
 			"5": {
 				"title": "Unipager - One software for all transmitter types",
-				"text": "Written in RUST, the Unipager software controls all transmitter types: Raspager, Ericsson C9000, Soundcard and RFM69. A Debian package is avaiable for easy install and update."
+				"text": "Written in RUST, the Unipager software controls all transmitter types: Raspager, Ericsson C9000, Soundcard and RFM69. A Debian package is avaiable for easy install and update.",
+				"link": ""
 			},
 			"6": {
 				"title": "Modern paging receiver Swissphone",
-				"text": "High-End model for pro-users."
+				"text": "High-End model for pro-users.",
+				"link": ""
 			},
 			"7": {
 				"title": "SDR based Transmitter with GM1200",
-				"text": "All you need is a Raspberry Pi, a 9600 Baud-ready radio and a simple audio interface. Also feasable in combination with the touch display."
+				"text": "All you need is a Raspberry Pi, a 9600 Baud-ready radio and a simple audio interface. Also feasable in combination with the touch display.",
+				"link": ""
 			},
 			"8": {
 				"title": "AlphaPOC 6002R paging reciever",
-				"text": "Commercially avaiable, small and no modification needed. Easy on-pager programming."
+				"text": "Commercially avaiable, small and no modification needed. Easy on-pager programming.",
+				"link": ""
 			},
 			"9": {
 				"title": "Structure of DAPNET",
-				"text": "Transparent and up-to-date comminication protocols like REST and Websocket are used."
+				"text": "Transparent and up-to-date comminication protocols like REST and Websocket are used.",
+				"link": ""
 			},
-		  "10": {
-			"title": "Support by ticket system",
-			"text": "Support requests are handled by a team for quick response time and maximum knowledge sharing."
-		  }
+			"10": {
+				"title": "Support by ticket system",
+				"text": "Support requests are handled by a team for quick response time and maximum knowledge sharing.",
+				"link": ""
+			}
 		},
 		"information": {
 			"dapnet": {

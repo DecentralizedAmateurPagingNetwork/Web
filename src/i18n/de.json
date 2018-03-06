@@ -24,43 +24,53 @@
 		"carousel": {
 			"1": {
 				"title": "Willkommen beim DAPNET Web!",
-				"text": "Das DAPNET (Decentralized Amateur Paging Network) ist ein durch Funkamateure betriebenes Netzwerk. Es ist die neue und weiter entwickelte Version des <a href=\"http://ham-pager.sourceforge.net\" target=\"_blank\">FunkrufMasters</a>. Es besteht aus einen dezentralen Verbund von Servern, welcher Daten zu Funkrufen an verteilte Sender ausliefert.<br />Die übliche Frequenz ist 439,9875 MHz mit 1200 Baud POCSAG-Protokoll. Übliche Empfänger sind \"Skyper\", aber es gibt auch weitere Arten. Da dieses Netzwerk auf Amateurfunk-Frequenzen arbeitet ist eine kommerzielle Nutzung verboten.<br />Wenn Sie Inhaber einer gültigen Genehmigung zur Teilnahme am Amateurfunkdienst sind, können Sie Ihren Zugang direkt beantragen. Wir freuen uns auch über jeden neuen Sender im Netzwerk. Eine umfangreiche Dokumentation ist im <a href=\"http://doku.hampager.de\" target=\"_blank\">DAPNET DokuWiki</a> verfügbar."
+				"text": "Das DAPNET (Decentralized Amateur Paging Network) ist ein durch Funkamateure betriebenes Netzwerk. Es ist die neue und weiter entwickelte Version des <a href=\"http://ham-pager.sourceforge.net\" target=\"_blank\">FunkrufMasters</a>. Es besteht aus einen dezentralen Verbund von Servern, welcher Daten zu Funkrufen an verteilte Sender ausliefert.<br />Die übliche Frequenz ist 439,9875 MHz mit 1200 Baud POCSAG-Protokoll. Übliche Empfänger sind \"Skyper\", aber es gibt auch weitere Arten. Da dieses Netzwerk auf Amateurfunk-Frequenzen arbeitet ist eine kommerzielle Nutzung verboten.<br />Wenn Sie Inhaber einer gültigen Genehmigung zur Teilnahme am Amateurfunkdienst sind, können Sie Ihren Zugang direkt beantragen. Wir freuen uns auch über jeden neuen Sender im Netzwerk. Eine umfangreiche Dokumentation ist im <a href=\"http://doku.hampager.de\" target=\"_blank\">DAPNET DokuWiki</a> verfügbar.",
+				"link": ""
 			},
 			"2": {
 				"title": "Raspager Sender",
-				"text": "Senders mit geringer Reichweite als günstige Aufsteckplatine für einen Raspberry Pi"
+				"text": "Senders mit geringer Reichweite als günstige Aufsteckplatine für einen Raspberry Pi",
+				"link": ""
 			},
 			"3": {
 				"title": "Kartendarstellung mit Abdeckungsanzeige",
-				"text": "Die Sender werden auf einer Karte dargestellt. Ebenfalls kann der simulierte Abdeckungsbereich angezeigt werden."
+				"text": "Die Sender werden auf einer Karte dargestellt. Ebenfalls kann der simulierte Abdeckungsbereich angezeigt werden.",
+				"link": ""
 			},
 			"4": {
 				"title": "Berührungsempflindliche Anzeige für Sender",
-				"text": "Zur einfachen Kontrolle und Konfiguration gibt es eine farbige Anzeige basierend auf einem Nextion-Display. Der Anschluss an den Sender geschieht über die UART auf dem GPIO-Anschluss eines Raspberry Pis oder durch einen USB-auf-Seriell-Wandler."
+				"text": "Zur einfachen Kontrolle und Konfiguration gibt es eine farbige Anzeige basierend auf einem Nextion-Display. Der Anschluss an den Sender geschieht über die UART auf dem GPIO-Anschluss eines Raspberry Pis oder durch einen USB-auf-Seriell-Wandler.",
+				"link": ""
 			},
 			"5": {
 				"title": "Unipager - Eine einzige Software für alle Sender-Arten",
-				"text": "Die Unipager-Software in der modernen Programmiersprache RUST geschrieben ermöglichte den Aufbau aller Sender-Arten: Raspager, Ericsscon C9000 (mit Zuatzplatine), die Soundkarten-Variante und die RFM69-Lösung. Ein Debian-Paket ist für einfache Installation und Updates verfügbar."
+				"text": "Die Unipager-Software in der modernen Programmiersprache RUST geschrieben ermöglichte den Aufbau aller Sender-Arten: Raspager, Ericsscon C9000 (mit Zuatzplatine), die Soundkarten-Variante und die RFM69-Lösung. Ein Debian-Paket ist für einfache Installation und Updates verfügbar.",
+				"link": ""
 			},
 			"6": {
 				"title": "Moderner Funkmeldeempfänger: Swissphone",
-				"text": "Ein High-End Modell für Benutzer mit besonderen Ansprüchen."
+				"text": "Ein High-End Modell für Benutzer mit besonderen Ansprüchen.",
+				"link": ""
 			},
 			"7": {
 				"title": "SDR-basierter Sender mit GM1200 oder ähnlichem Funkgerät",
-				"text": "Alles was benötigt wird ist ein 9k6 fähiges Funkgerät und ein einfaches Audio-Interface. Das Touch-Display kann ebenfalls verwendet werden."
+				"text": "Alles was benötigt wird ist ein 9k6 fähiges Funkgerät und ein einfaches Audio-Interface. Das Touch-Display kann ebenfalls verwendet werden.",
+				"link": ""
 			},
 			"8": {
 				"title": "Ersatz für die Skyper: Funkmeldeempfänger AlphaPOC 6002R",
-				"text": "Der auf dem Markt befindliche Pager ist klein, handlich und kann ohne Umbau betrieben werden. Die Einstellung der Frequenz und der RIC kann direkt am Gerät geschehen."
+				"text": "Der auf dem Markt befindliche Pager ist klein, handlich und kann ohne Umbau betrieben werden. Die Einstellung der Frequenz und der RIC kann direkt am Gerät geschehen.",
+				"link": ""
 			},
 			"9": {
 				"title": "Stuktur des DAPNETs",
-				"text": "Moderne Techniken unter der Haube: Das DAPNET wartet mit seiner REST-Schnittstelle und der Verwendung von Websockets mit up-to-date Techniken aus dem Bereich des professionellen Internets auf."
+				"text": "Moderne Techniken unter der Haube: Das DAPNET wartet mit seiner REST-Schnittstelle und der Verwendung von Websockets mit up-to-date Techniken aus dem Bereich des professionellen Internets auf.",
+				"link": ""
 			},
 			"10": {
 				"title": "Unterstützung durch ein Ticket-System",
-				"text": "Anfragen zur Einrichtung von Sendern und Hilfe werden über ein Ticket-System abgehandelt. So wird die Abhänigkeit einer One-Man-Show vermieden und das vorhandene Wissen sowie die Arbeit von mehreren Freiwilligen getragen. Dadurch wird einen hohe Qualität und eine kurze Antwortzeit erreicht. Die Bearbeiter werder natürlich auf über einen DAPNET-Funkruf beim Eintreffen eines neuen Tickets informiert."
+				"text": "Anfragen zur Einrichtung von Sendern und Hilfe werden über ein Ticket-System abgehandelt. So wird die Abhänigkeit einer One-Man-Show vermieden und das vorhandene Wissen sowie die Arbeit von mehreren Freiwilligen getragen. Dadurch wird einen hohe Qualität und eine kurze Antwortzeit erreicht. Die Bearbeiter werder natürlich auf über einen DAPNET-Funkruf beim Eintreffen eines neuen Tickets informiert.",
+				"link": ""
 			}
 		},
 		"information": {
