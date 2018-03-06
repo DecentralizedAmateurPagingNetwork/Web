@@ -252,23 +252,23 @@
 	},
 	"alerts": {
 		"success": {
-			"title": "Success",
-			"text": "Operation successfully executed."
+			"title": "Éxito",
+			"text": "Operación ejecutada con éxito."
 		},
 		"delete": {
-			"title": "Are you sure?",
-			"text": "You will not be able to recover this data once it is deleted."
+			"title": "Estás seguro?",
+			"text": "No podrá recuperar estos datos una vez que se eliminend."
 		},
 		"input": {
-			"title": "Missing input",
-			"text": "Please fill in every field to continue."
+			"title": "Registro faltante",
+			"text": "Por favor complete cada campo para continuar."
 		}
 	},
 	"general": {
 		"submit": "Enviar",
 		"abort": "anular",
 		"search": "Buscar",
-		"information": "información",
+		"information": "Información",
 		"owner": "Dueño",
 		"actions": "Acciones",
 		"statistics": "Estadísticas",
@@ -290,36 +290,33 @@
 		"overview": {
 			"totalrubrics": "Total Rubrics",
 			"information": {
-				"title": "Information",
 				"help": "This is a list of all rubrics on the DAPNET. A rubric number can by assigned to several transmitter groups. Keep in mind that the transmitter groups are disjunct for the same rubric number in order to avoid overlapping number assigments.<br>Use the Activate Rubrics button to enable the reception of rubrics on your Skyper."
 			},
 			"table": {
-				"number": "Number",
-				"name": "Name",
-				"label": "Label",
-				"transmittergroup": "Transmitter Groups"
+				"number": "Número",
+				"name": "Nombre",
+				"label": "Etiqueta",
+				"transmittergroup": "Grupos de transmisores"
 			}
 		},
 		"new": {
-			"newrubric": "New Rubric",
-			"editrubirc": "Edit Rubric",
-			"name": "Name",
-			"namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
-			"label": "Label",
-			"number": "Number",
-			"transmittergroup": "Transmitter Groups",
+			"newrubric": "Nueva rúbrica",
+			"editrubirc": "Editar rúbrica",
+			"name": "Nombre",
+			"namehelp": "Cambiar este nombre creará una duplicación y <i> no </ i> cambiará el nombre del elemento.",
+			"label": "Etiqueta",
+			"number": "Nombre",
+			"transmittergroup": "Grupos de transmisores",
 			"information": {
-				"title": "Information",
 				"help": "Rubrics are a Skyper based invention allowing to send news sorted into chategories (the rubrics). Assign the number with care and contact <code>support [at] hampager.de</code> in case of doubt. Be aware that the number of rubrics is limited netwide to 99."
 			}
 		},
 		"activation": {
 			"pagernumber": "Pager-Number (your RIC)",
 			"information": {
-				"title": "Information",
 				"help": "Use the function to send an activation call to your Skyper. After successful reception, you can select the rubrics on \"Skyper Setup\" in the skyper menu."
 			},
-			"transmittergroup": "Transmitter Groups"
+			"transmittergroup": "Grupos de transmisores"
 		}
 	},
 	"subscribers": {
@@ -341,10 +338,10 @@
 			"subscriber": {
 				"title": "Suscriptor",
 				"help": "Please enter a valid amateur radio callsign of a human or a classifying name of an organization.",
-				"info": "Changing this name will create a duplication and <i>not</i> change the element's name."
+				"info": "Cambiar este nombre creará una duplicación y <i> no </ i> cambiará el nombre del elemento."
 			},
 			"description": {
-				"help": "Provide your name or any other useful description of this entry."
+				"help": "Proporcione su nombre o cualquier otra descripción útil de este elemento."
 			},
 			"pager": {
 				"title": "Buscapersonas",
@@ -352,8 +349,8 @@
 				"helpnames": "Add a corresponding number for lines as a description for the RIC numbers given in the first box."
 			},
 			"owner": {
-				"title": "Owner",
-				"help": "An owner of a subscriber association can edit its parameters."
+				"title": "Dueño",
+				"help": "Un dueño de una asociación de suscriptores puede editar sus parámetros"
 			},
 			"information": {
 				"help": "Subscribers are an allocation between a name (usually your amateur radio callsign) and one or multiple pager IDs (RICs)."
@@ -383,25 +380,25 @@
 				"charactersremaining": "80 characters remaining.<br>Enter your paging text. Your user name is added automatically."
 			},
 			"subscribers": {
-				"help": "Select one or multiple subscribers you what to send the message to."
+				"help": "Seleccione uno o varios suscriptores a qué enviar el mensaje."
 			},
 			"transmittergroups": {
 				"title": "Groupos de transmisores",
-				"help": "Select a logical transmitter group that should broadcast your message. Default is all transmitters, but if you know the approximate location of the receiver you might limit the transmitters used for your paging to a certain area. This reduces the load on the transmitters."
+				"help": "Seleccione un grupo transmisor lógico que debe transmitir su mensaje. Por defecto son todos los transmisores, pero si conoce la ubicación aproximada del receptor, puede limitar los transmisores utilizados para su paginación a un área determinada. Esto reduce la carga en los transmisores."
 			},
 			"emergency": {
 				"title": "Emergencia?",
-				"help": "In case you want your message to be delivered as soon as possible, check this box. No harmful things will happen, the DAPNET will just process your message with maximum priority. Please make a fair use of this feature."
+				"help": "En caso de que desee que su mensaje se entregue lo antes posible, marque esta casilla. No ocurrirán cosas dañinas, DAPNET solo procesará su mensaje con la máxima prioridad. Por favor haz un uso justo de esta característica."
 			},
 			"information": {
-				"help": "Here your recent paging calls are displayed."
+				"help": "Aquí se muestran sus llamadas recientes."
 			}
 		}
 	},
 	"news": {
 		"overview": {
 			"allrubriccontent": "All Rubric Content",
-			"newrubriccontent": "New Rubric Content",
+			"newrubriccontent": "Nuevo contenido de rúbrica",
 			"totalrubriccontent": "Total Rubic Content",
 			"information": {
 				"help": "The content displayed here are NOT general news about DAPNET, but the recently sent content to rubrics. Every time a user updates the 10 available rubric messages slots, this change will be displayed here."
@@ -414,12 +411,12 @@
 			}
 		},
 		"new": {
-			"newrubriccontent": "New Rubric Content",
+			"newrubriccontent": "Nuevo contenido de rúbrica",
 			"message": "Mensaje",
-			"charactersremaining": "characters remaining",
-			"rubrics": "Rubrics",
+			"charactersremaining": "caracteres restantes",
+			"rubrics": "Rúbricas",
 			"number": "Numero",
-			"chooseautomatically": "Choose automatically",
+			"chooseautomatically": "Elija automáticamente",
 			"information": {
 				"help": "These are the contents of rubrics. They are up to now only available on Skyper paging receivers in this form, but also sent as personal calls to RIC 1000 + (Rubric-Number) for reception with e.g. AlphaPoc."
 			}
@@ -434,7 +431,7 @@
 				"totalnodes": "Total Nodos"
 			},
 			"information": {
-				"help": "Nodes are the instances of the DAPNET cluster. This list shows the status of them."
+				"help": "Los nodos son las instancias del clúster DAPNET. Esta lista muestra el estado de ellos."
 			},
 			"table": {
 				"name": "Nombre",
@@ -448,7 +445,7 @@
 			"editnode": "Editar Nodo",
 			"name": {
 				"title": "Nombre",
-				"help": "Changing this name will create a duplication and <i>not</i> change the element's name."
+				"help": "Cambiar este nombre creará una duplicación y <i> no </ i> cambiará el nombre del elemento."
 			},
 			"status": {
 				"title": "Estado",
@@ -456,7 +453,7 @@
 				"suspended": "Suspendido"
 			},
 			"information": {
-				"help": "This table shows the registered DAPNET Core nodes and is mostly for SysOp information."
+				"help": "Esta tabla muestra los nodos DAPNET Core registrados y es principalmente para información SysOp."
 			}
 		}
 	},
@@ -468,21 +465,21 @@
 		}
 	},
 	"logout": {
-		"seepagewrong": "If you see this page, something went wrong.",
-		"emoji": "Emoji provided for free by"
+		"seepagewrong": "Si ves esta página, algo salió mal.",
+		"emoji": "Emoji proporcionado de forma gratuita por"
 	},
 	"impress": {
 		"title": "Impress"
 	},
 	"error404": {
 		"title": "Error 404 - Not Found",
-		"emoji": "Emoji provided for free by"
+		"emoji": "Emoji proporcionado de forma gratuita por"
 	},
 	"privacy": {
-		"title": "Privacy"
+		"title": "política de privacidad"
 	},
 	"versioncheck": {
-		"title": "Version Check"
+		"title": "Verificación de versión"
 	},
 	"group": {
 		"overview": {
@@ -519,13 +516,13 @@
 		},
 		"new": {
 			"edituser": "Editar Usuario",
-			"namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
+			"namehelp": "Cambiar este nombre creará una duplicación y <i> no </ i> cambiará el nombre del elemento.",
 			"password": {
 				"help": "Eso es la una nueva contraseña aleatoria:",
 				"randompassword": "Generar una nueva contraseña aleatoria"
 			},
 			"information": {
-				"help": "This table shows the registered users and their detail information."
+				"help": "Esta tabla muestra los usuarios registrados y su información detallada."
 			}
 		}
 	}
