@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="jumbotron">
-					<carousel :autoplay="true" :autoplay-timeout="5000" :loop="true" :navigation-enabled="true" :per-page="1" pagination-color="#d0d0d0" pagination-active-color="#a0a0a0">
+					<carousel :autoplay="true" :autoplay-hover-pause="true" :autoplay-timeout="5000" :loop="true" :navigation-enabled="true" :per-page="1" pagination-color="#d0d0d0" pagination-active-color="#a0a0a0">
 						<template v-for="index in 10">
 							<slide :key="index">
 								<div class="row">
@@ -49,7 +49,7 @@
 			<div class="col-lg-4">
 				<h2>{{ $t('general.information') }}</h2>
 				<p v-html="this.$store.getters.customText"></p>
-				<v-map :zoom="map.zoom" :center="map.center" style="height: 25em; margin-top: 1em">
+				<v-map :zoom="map.zoom" :center="map.center" style="height: 30em; margin-top: 1em">
 					<v-tilelayer :url="map.url" :attribution="map.attribution"></v-tilelayer>
 					<v-marker v-for="item in map.markers" :key="item.name" :lat-lng="item.position" :icon="item.icon">
 						<v-popup :content="item.popup"></v-popup>
