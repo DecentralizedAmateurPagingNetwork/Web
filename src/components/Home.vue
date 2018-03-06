@@ -50,8 +50,11 @@
 				<h2>{{ $t('general.information') }}</h2>
 				<p v-html="this.$store.getters.customText"></p>
 				<v-map :zoom="map.zoom" :center="map.center" style="height: 30em; margin-top: 1em">
+					<v-group v-for="item in map.coverageLayers" :key="item.name">
+						<v-image-overlay :url="item.url" :bounds="item.bounds" :opacity="0.8"></v-image-overlay>
+					</v-group>
 					<v-tilelayer :url="map.url" :attribution="map.attribution"></v-tilelayer>
-					<v-marker v-for="item in map.markers" :key="item.name" :lat-lng="item.position" :icon="item.icon">
+					<v-marker v-for="item in map.markers" :key="item.name" :lat-lng="item.position" :icon="item.icon" v-on:l-click="showCoverage(item.name)">
 						<v-popup :content="item.popup"></v-popup>
 					</v-marker>
 				</v-map>
@@ -101,7 +104,8 @@
 					center: this.$store.getters.map.center,
 					attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
 					url: this.$store.getters.url.map,
-					markers: []
+					markers: [],
+					coverageLayers: []
 				},
 				stats: {
 					errorMessage: false,
@@ -153,7 +157,7 @@
 
 						// build marker
 						this.map.markers.push({
-							name: transmitter.name,
+							name: 't_' + transmitter.name,
 							position: {
 								lat: transmitter.latitude,
 								lng: transmitter.longitude
@@ -167,6 +171,32 @@
 							icon: icon
 						});
 					});
+				});
+			},
+			showCoverage(name) {
+				name = name.substring(2);
+
+				// remove clicked transmitter's overlay (if shown) and stop
+				let stop = false;
+				this.map.coverageLayers.forEach(layer => {
+					if (layer.name.substring(2) === name) {
+						this.map.coverageLayers = this.map.coverageLayers.filter(item => item !== layer);
+						stop = true;
+					}
+				});
+				if (stop) return false;
+
+				// load transmitter-coverage-information (if available)
+				this.$http.get('/assets/coverage/' + name + '.txt').then(response => {
+					let lines = response.body.split('\n');
+
+					this.map.coverageLayers.push({
+						name: 'c_' + name,
+						url: '/assets/coverage/' + name + '.png',
+						bounds: [[lines[1], lines[3]], [lines[2], lines[4]]]
+					});
+				}, () => {
+					// 404 if no data found
 				});
 			},
 			getLink(index) {
