@@ -13,6 +13,7 @@
   "dependencies": {
     "chart.js": "2.7.2",
     "font-awesome": "4.7.0",
+    "leaflet.fullscreen": "1.4.4",
     "sweetalert2": "7.13.1",
     "vue": "2.5.13",
     "vue-carousel": "0.6.9",

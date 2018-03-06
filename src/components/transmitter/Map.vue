@@ -11,7 +11,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div>{{ $t('general.search') }}: <input v-model="searchQuery"></div>
-				<v-map ref="leafletMap" :zoom="zoom" :center="center" style="height: 40em; margin-top: 1em">
+				<v-map ref="leafletMap" :zoom="zoom" :center="center" v-on:l-ready="mapReady" style="height: 40em; margin-top: 1em">
 					<v-group v-for="item in coverageLayers" :key="item.name">
 						<v-image-overlay :url="item.url" :bounds="item.bounds" :opacity="0.8"></v-image-overlay>
 					</v-group>
@@ -54,6 +54,8 @@
 	import Vue2Leaflet from 'vue2-leaflet';
 	import L from 'leaflet';
 	import '../../../node_modules/leaflet/dist/leaflet.css';
+	import '../../../node_modules/leaflet.fullscreen/Control.FullScreen.js';
+	import '../../../node_modules/leaflet.fullscreen/Control.FullScreen.css';
 	Vue.component('v-map', Vue2Leaflet.Map);
 	Vue.component('v-group', Vue2Leaflet.LayerGroup);
 	Vue.component('v-image-overlay', Vue2Leaflet.ImageOverlay);
@@ -106,9 +108,6 @@
 
 				this.$http.get('transmitters').then(response => {
 					this.data.transmitters = response.body;
-
-					// add scale to map
-					L.control.scale({ imperial: false }).addTo(this.$refs.leafletMap.mapObject);
 
 					// create map out of loaded data
 					this.createMap();
@@ -253,6 +252,13 @@
 
 				this.markers = markerNodes.concat(markerTransmitters);
 				this.lines = polylineTransmitters;
+			},
+			mapReady() {
+				// add scale to map
+				L.control.scale({ imperial: false }).addTo(this.$refs.leafletMap.mapObject);
+
+				// add fullscreen button to map
+				L.control.fullscreen().addTo(this.$refs.leafletMap.mapObject);
 			},
 			showCoverage(name) {
 				// check if the user clicked on a transmitter and fix name
