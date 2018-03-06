@@ -3,12 +3,6 @@
 		<footer>
 			<div class="row">
 				<div class="col-lg-12">
-					<p><b>{{ $t('footer.language.title') }}:</b></p>
-					<ul class="list-unstyled">
-						<li><p v-on:click="changeLanguage('en')" class="linklike">{{ $t('footer.language.english') }}</p></li>
-						<li><p v-on:click="changeLanguage('de')" class="linklike">{{ $t('footer.language.german') }}</p></li>
-						<li><p v-on:click="changeLanguage('es')" class="linklike">{{ $t('footer.language.spanish') }}</p></li>
-					</ul>
 					<p><b>{{ $t('footer.more.title') }}:</b></p>
 					<ul class="list-unstyled">
 						<li><a href="http://hampager.de/dokuwiki/doku.php?id=faq" target="_blank">{{ $t('footer.more.faq') }}</a></li>
@@ -48,8 +42,6 @@
 			// get web version
 			let pkg = require('../../../package.json');
 			this.version.web = pkg.version;
-
-			console.log();
 		},
 		data() {
 			return {

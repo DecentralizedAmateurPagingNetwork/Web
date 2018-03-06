@@ -194,7 +194,9 @@
 			"title": "Sprache",
 			"english": "Englisch",
 			"german": "Deutsch",
-			"spanish": "Spanisch"
+			"spanish": "Spanisch",
+			"french": "Französisch",
+			"polish": "Polnisch"
 		},
 		"more": {
 			"title": "Mehr",

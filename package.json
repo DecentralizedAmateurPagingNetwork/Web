@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "chart.js": "2.7.2",
+    "flag-icon-css": "3.0.0",
     "font-awesome": "4.7.0",
     "leaflet.fullscreen": "1.4.4",
     "sweetalert2": "7.13.1",
