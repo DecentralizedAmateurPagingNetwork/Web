@@ -49,7 +49,7 @@
 			<div class="col-lg-4">
 				<h2>{{ $t('general.information') }}</h2>
 				<p v-html="this.$store.getters.customText"></p>
-				<v-map :zoom="map.zoom" :center="map.center" style="height: 30em; margin-top: 1em">
+				<v-map ref="leafletMap" :zoom="map.zoom" :center="map.center" v-on:l-ready="mapReady" style="height: 30em; margin-top: 1em">
 					<v-group v-for="item in map.coverageLayers" :key="item.name">
 						<v-image-overlay :url="item.url" :bounds="item.bounds" :opacity="0.8"></v-image-overlay>
 					</v-group>
@@ -87,6 +87,8 @@
 	import Vue2Leaflet from 'vue2-leaflet';
 	import L from 'leaflet';
 	import '../../node_modules/leaflet/dist/leaflet.css';
+	import '../../node_modules/leaflet.fullscreen/Control.FullScreen.js';
+	import '../../node_modules/leaflet.fullscreen/Control.FullScreen.css';
 	Vue.component('v-map', Vue2Leaflet.Map);
 	Vue.component('v-tilelayer', Vue2Leaflet.TileLayer);
 	Vue.component('v-marker', Vue2Leaflet.Marker);
@@ -172,6 +174,10 @@
 						});
 					});
 				});
+			},
+			mapReady() {
+				// add fullscreen button to map
+				L.control.fullscreen().addTo(this.$refs.leafletMap.mapObject);
 			},
 			showCoverage(name) {
 				name = name.substring(2);
