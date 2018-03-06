@@ -13,10 +13,10 @@
 									</div>
 									<div class="col-lg-4">
 										<template v-if="getLink(index)">
-											<a :href="getLink(index)" target="_blank"><img :src="'./assets/img/carousel/img' + index + '.jpg'" alt="Carousel Item" /></a>
+											<a :href="getLink(index)" target="_blank"><img :src="'./assets/img/carousel/img' + index + '.png'" alt="Carousel Item" /></a>
 										</template>
 										<template v-else>
-											<img :src="'./assets/img/carousel/img' + index + '.jpg'" alt="Carousel Item" />
+											<img :src="'./assets/img/carousel/img' + index + '.png'" alt="Carousel Item" />
 										</template>
 									</div>
 								</div>
