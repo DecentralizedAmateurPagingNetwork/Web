@@ -38,7 +38,7 @@
 				"link": ""
 			},
 			"4": {
-				"title": "Berührungsempflindliche Anzeige für Sender",
+				"title": "Berührungsempfindliche Anzeige für Sender",
 				"text": "Zur einfachen Kontrolle und Konfiguration gibt es eine farbige Anzeige basierend auf einem Nextion-Display. Der Anschluss an den Sender geschieht über die UART auf dem GPIO-Anschluss eines Raspberry Pis oder durch einen USB-auf-Seriell-Wandler.",
 				"link": "http://hampager.de/dokuwiki/doku.php?id=unipagernextion"
 			},
@@ -63,7 +63,7 @@
 				"link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription"
 			},
 			"9": {
-				"title": "Stuktur des DAPNETs",
+				"title": "Struktur des DAPNETs",
 				"text": "Moderne Techniken unter der Haube: Das DAPNET wartet mit seiner REST-Schnittstelle und der Verwendung von Websockets mit up-to-date Techniken aus dem Bereich des professionellen Internets auf.",
 				"link": ""
 			},

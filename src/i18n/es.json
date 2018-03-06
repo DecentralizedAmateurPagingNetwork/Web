@@ -28,57 +28,57 @@
 				"link": ""
 			},
 			"2": {
-				"title": "TODO",
-				"text": "TODO",
-				"link": ""
+				"title": "Transmisor Raspager",
+				"text": "A low-cost and low-power personal transmitter as an add-on board for Raspberry Pi.",
+				"link": "http://hampager.de/dokuwiki/doku.php?id=raspager"
 			},
 			"3": {
-				"title": "TODO",
-				"text": "TODO",
+				"title": "Coverage Map",
+				"text": "Transmitters are displayed on a map with their simulated coverage area.",
 				"link": ""
 			},
-			"4": {
-				"title": "TODO",
-				"text": "TODO",
-				"link": ""
+		 	"4": {
+				"title": "Touch Display for Transmitters",
+				"text": "Easy-to-use graphical control display based on Nextion Displays. Connection to transmitter host via UART or USB2UART.",
+				"link": "http://hampager.de/dokuwiki/doku.php?id=unipagernextion"
 			},
 			"5": {
-				"title": "TODO",
-				"text": "TODO",
-				"link": ""
+				"title": "Unipager - One software for all transmitter types",
+				"text": "Written in RUST, the Unipager software controls all transmitter types: Raspager, Ericsson C9000, Soundcard and RFM69. A Debian package is avaiable for easy install and update.",
+				"link": "http://hampager.de/dokuwiki/doku.php?id=unipager"
 			},
 			"6": {
-				"title": "TODO",
-				"text": "TODO",
-				"link": ""
+				"title": "Modern paging receiver Swissphone",
+				"text": "High-End model for pro-users.",
+				"link": "http://hampager.de/dokuwiki/doku.php?id=swissphonedescription"
 			},
 			"7": {
-				"title": "TODO",
-				"text": "TODO",
-				"link": ""
+				"title": "SDR based Transmitter with GM1200",
+				"text": "All you need is a Raspberry Pi, a 9600 Baud-ready radio and a simple audio interface. Also feasable in combination with the touch display.",
+				"link": "http://hampager.de/dokuwiki/doku.php?id=9k6"
 			},
-			"8": {
-				"title": "TODO",
-				"text": "TODO",
-				"link": ""
-			},
+			 "8": {
+			   "title": "AlphaPOC 6002R paging reciever",
+			   "text": "Commercially avaiable, small and no modification needed. Easy on-pager programming.",
+			   "link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription"
+			 },
 			"9": {
-				"title": "TODO",
-				"text": "TODO",
+				"title": "Structure of DAPNET",
+				"text": "Transparent and up-to-date comminication protocols like REST and Websocket are used.",
 				"link": ""
 			},
 			"10": {
 				"title": "Support by ticket system",
-				"text": "Support requests are handled by a team for quick response time and maximum knowledge sharing",
-				"link": ""
-		  }
+				"text": "Support requests are handled by a team for quick response time and maximum knowledge sharing.",
+				"link": "https://support.hampager.de/"
+			}
 		},
 		"information": {
 			"dapnet": {
 				"title": "El DAPNET",
-				"projects": "Projects"
+				"projects": "Proyectos"
 			},
-			"map": "Go to full map view",
+			"map": "Ir a la vista completa del mapa",
 			"statistics": {
 				"calls": "Llamadas",
 				"rubric-content": "Contenido de Rúbrica",
@@ -165,7 +165,7 @@
 				"help": "As all transmitters use the same frequency a time division multiplex access scheme is used. There are 16 timeslots available. Assign the slots of this transmitter according to you surrounding transmitters in your neighborhood without overlapping timeslots that are assigned to more than one transmitter. You can use the transmitter map to check already assigned timeslots of adjacent transmitters. In case that you cannot fulfill your requirements, contact the adjacent transmitter owners and try to get an agreement. Normally four 4 or less timeslots per transmitter are more than enough."
 			},
 			"owner": {
-				"help": "If you are an owner, you can change the parameters for this transmitter."
+				"help": "Si usted es dueño, puede cambiar los parámetros de este transmisor."
 			},
 			"table": {
 				"description": "This table shows the registered paging transmitters, their online status and additional information. Personal transmitters have low output power and a very small coverage. Wide range transmitters are usually installed at elevated locations leading to a wide coverage area."
@@ -234,17 +234,17 @@
 	"rest": {
 		"errors": {
 			"title": "Error",
-			"no-connection": "No Connection",
+			"no-connection": "Sin conexión",
 			"api-unreachable": "Unable to reach API server. Please try again later.",
 			"permissions": "Invalid login credentials or no permission for this request. Please check username and password.",
 			"http-error": "Unhandled HTTP error {status}. Please try again later.",
 			"403": {
-				"title": "Forbidden",
-				"text": "No permission for this request."
+				"title": "Prohibido",
+				"text": "No permission para esta solicitud."
 			},
 			"404": {
-				"title": "Not Found",
-				"text": "Unable to find the requested resource."
+				"title": "Extraviado",
+				"text": "No se puede encontrar el recurso solicitado."
 			}
 		}
 	},
