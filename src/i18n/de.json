@@ -30,7 +30,7 @@
 			"2": {
 				"title": "Raspager Sender",
 				"text": "Senders mit geringer Reichweite als günstige Aufsteckplatine für einen Raspberry Pi",
-				"link": ""
+				"link": "http://hampager.de/dokuwiki/doku.php?id=raspager"
 			},
 			"3": {
 				"title": "Kartendarstellung mit Abdeckungsanzeige",
@@ -40,27 +40,27 @@
 			"4": {
 				"title": "Berührungsempflindliche Anzeige für Sender",
 				"text": "Zur einfachen Kontrolle und Konfiguration gibt es eine farbige Anzeige basierend auf einem Nextion-Display. Der Anschluss an den Sender geschieht über die UART auf dem GPIO-Anschluss eines Raspberry Pis oder durch einen USB-auf-Seriell-Wandler.",
-				"link": ""
+				"link": "http://hampager.de/dokuwiki/doku.php?id=unipagernextion"
 			},
 			"5": {
 				"title": "Unipager - Eine einzige Software für alle Sender-Arten",
 				"text": "Die Unipager-Software in der modernen Programmiersprache RUST geschrieben ermöglichte den Aufbau aller Sender-Arten: Raspager, Ericsscon C9000 (mit Zuatzplatine), die Soundkarten-Variante und die RFM69-Lösung. Ein Debian-Paket ist für einfache Installation und Updates verfügbar.",
-				"link": ""
+				"link": "http://hampager.de/dokuwiki/doku.php?id=unipager"
 			},
 			"6": {
 				"title": "Moderner Funkmeldeempfänger: Swissphone",
 				"text": "Ein High-End Modell für Benutzer mit besonderen Ansprüchen.",
-				"link": ""
+				"link": "http://hampager.de/dokuwiki/doku.php?id=swissphonedescription"
 			},
 			"7": {
 				"title": "SDR-basierter Sender mit GM1200 oder ähnlichem Funkgerät",
 				"text": "Alles was benötigt wird ist ein 9k6 fähiges Funkgerät und ein einfaches Audio-Interface. Das Touch-Display kann ebenfalls verwendet werden.",
-				"link": ""
+				"link": "http://hampager.de/dokuwiki/doku.php?id=9k6"
 			},
 			"8": {
 				"title": "Ersatz für die Skyper: Funkmeldeempfänger AlphaPOC 6002R",
 				"text": "Der auf dem Markt befindliche Pager ist klein, handlich und kann ohne Umbau betrieben werden. Die Einstellung der Frequenz und der RIC kann direkt am Gerät geschehen.",
-				"link": ""
+				"link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription"
 			},
 			"9": {
 				"title": "Stuktur des DAPNETs",
@@ -70,7 +70,7 @@
 			"10": {
 				"title": "Unterstützung durch ein Ticket-System",
 				"text": "Anfragen zur Einrichtung von Sendern und Hilfe werden über ein Ticket-System abgehandelt. So wird die Abhänigkeit einer One-Man-Show vermieden und das vorhandene Wissen sowie die Arbeit von mehreren Freiwilligen getragen. Dadurch wird einen hohe Qualität und eine kurze Antwortzeit erreicht. Die Bearbeiter werder natürlich auf über einen DAPNET-Funkruf beim Eintreffen eines neuen Tickets informiert.",
-				"link": ""
+				"link": "https://support.hampager.de/"
 			}
 		},
 		"information": {
