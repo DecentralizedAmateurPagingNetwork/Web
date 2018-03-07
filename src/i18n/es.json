@@ -30,7 +30,7 @@
             "1": {
                 "title": "Bienvenido a DAPNET Web!",
                 "text": "The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts. As it is used on amateur radio frequencies, commercial use is forbidden.<br>If you are a licensed amateur radio operator, get your login account now.",
-                "link": ""
+                "link": "NONE"
             },
             "2": {
                 "title": "Transmisor Raspager",
@@ -40,7 +40,7 @@
             "3": {
                 "title": "Coverage Map",
                 "text": "Transmitters are displayed on a map with their simulated coverage area.",
-                "link": ""
+                "link": "NONE"
             },
             "4": {
                 "title": "Touch Display for Transmitters",
@@ -70,7 +70,7 @@
             "9": {
                 "title": "Structure of DAPNET",
                 "text": "Transparent and up-to-date comminication protocols like REST and Websocket are used.",
-                "link": ""
+                "link": "NONE"
             },
             "10": {
                 "title": "Support by ticket system",
@@ -124,8 +124,7 @@
             "edittransmitter": "Cambiar Transmisor",
             "callsign": {
                 "title": "Señal de llamada",
-                "help": "Enter a valid amateur radio callsign of this transmitter. It will be also used for the 10 minute interval transmitter identification message to fulfill the law (at least the German law).",
-                "helpedit": "Changing this name will create a duplication and <i>not</i> change the element's name."
+                "help": "Enter a valid amateur radio callsign of this transmitter. It will be also used for the 10 minute interval transmitter identification message to fulfill the law (at least the German law)."
             },
             "import": {
                 "help": "Easy import of stations from hamnetdb.net. Location data of the selected transmitter site will be copied into the form."
@@ -298,7 +297,8 @@
         "password": "Contraseña",
         "yes": "Sí",
         "no": "No",
-        "permalink": "Permalink"
+        "permalink": "Permalink",
+        "duplication": "Cambiar este nombre creará una duplicación y <i> no </ i> cambiará el nombre del elemento."
     },
     "rubric": {
         "overview": {
@@ -316,14 +316,13 @@
         "new": {
             "newrubric": "Nueva rúbrica",
             "name": "Nombre",
-            "namehelp": "Cambiar este nombre creará una duplicación y <i> no </ i> cambiará el nombre del elemento.",
             "label": "Etiqueta",
             "number": "Nombre",
             "transmittergroup": "Grupos de transmisores",
             "information": {
                 "help": "Rubrics are a Skyper based invention allowing to send news sorted into chategories (the rubrics). Assign the number with care and contact <code>support [at] hampager.de</code> in case of doubt. Be aware that the number of rubrics is limited netwide to 99."
             },
-            "editrubric": ""
+            "editrubric": "Edit Rubric"
         },
         "activation": {
             "pagernumber": "Pager-Number (your RIC)",
@@ -350,9 +349,7 @@
             "newsubscriber": "Nuevo suscriptor",
             "editsubscriber": "Editar suscriptor",
             "subscriber": {
-                "title": "Suscriptor",
-                "help": "Please enter a valid amateur radio callsign of a human or a classifying name of an organization.",
-                "info": "Cambiar este nombre creará una duplicación y <i> no </ i> cambiará el nombre del elemento."
+                "title": "Suscriptor"
             },
             "description": {
                 "help": "Proporcione su nombre o cualquier otra descripción útil de este elemento."
@@ -458,8 +455,7 @@
             "newnode": "Nuevo Nodo",
             "editnode": "Editar Nodo",
             "name": {
-                "title": "Nombre",
-                "help": "Cambiar este nombre creará una duplicación y <i> no </ i> cambiará el nombre del elemento."
+                "title": "Nombre"
             },
             "status": {
                 "title": "Estado",
@@ -475,8 +471,7 @@
         "username": "Nombre de usuario",
         "password": "Contraseña",
         "information": {
-            "help": "...",
-            "title": ""
+            "help": "..."
         }
     },
     "logout": {
@@ -508,7 +503,6 @@
         "new": {
             "newtxgroup": "New Transmitter Group",
             "edittxgroup": "Edit Transmitter Group",
-            "namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
             "information": {
                 "help": "A transmitter group combines one of several transmitters to a logical entity."
             }
@@ -531,7 +525,6 @@
         },
         "new": {
             "edituser": "Editar Usuario",
-            "namehelp": "Cambiar este nombre creará una duplicación y <i> no </ i> cambiará el nombre del elemento.",
             "password": {
                 "help": "Eso es la una nueva contraseña aleatoria:",
                 "randompassword": "Generar una nueva contraseña aleatoria"
