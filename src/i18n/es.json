@@ -37,7 +37,7 @@
 				"text": "Transmitters are displayed on a map with their simulated coverage area.",
 				"link": ""
 			},
-		 	"4": {
+			"4": {
 				"title": "Touch Display for Transmitters",
 				"text": "Easy-to-use graphical control display based on Nextion Displays. Connection to transmitter host via UART or USB2UART.",
 				"link": "http://hampager.de/dokuwiki/doku.php?id=unipagernextion"
@@ -57,11 +57,11 @@
 				"text": "All you need is a Raspberry Pi, a 9600 Baud-ready radio and a simple audio interface. Also feasable in combination with the touch display.",
 				"link": "http://hampager.de/dokuwiki/doku.php?id=9k6"
 			},
-			 "8": {
-			   "title": "AlphaPOC 6002R paging reciever",
-			   "text": "Commercially avaiable, small and no modification needed. Easy on-pager programming.",
-			   "link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription"
-			 },
+			"8": {
+				"title": "AlphaPOC 6002R paging reciever",
+				"text": "Commercially avaiable, small and no modification needed. Easy on-pager programming.",
+				"link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription"
+			},
 			"9": {
 				"title": "Structure of DAPNET",
 				"text": "Transparent and up-to-date comminication protocols like REST and Websocket are used.",
