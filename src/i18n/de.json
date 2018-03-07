@@ -323,7 +323,7 @@
             "information": {
                 "help": "Rubriken sind eine Erfindung für die Skyper, die es ermöglicht, Nachrichten in einer strukturierten Weise zu versenden. Bitte bei der Zuordnung der Rubiken-Nummer mit Bedacht handeln und mit <code>support [at] hampager.de</code> Kontakt aufnehmen, falls Unklarheiten bestehen. Bedenkt, dass die Anzahl der Rubiken im ganzen DAPNET auf 99 beschränkt ist."
             },
-            "editrubric": ""
+            "editrubric": "Ändere Rubrik"
         },
         "activation": {
             "pagernumber": "Pager-Nummer (Ihre RIC)",
@@ -475,8 +475,7 @@
         "username": "Benutzername",
         "password": "Passwort",
         "information": {
-            "help": "...",
-            "title": ""
+            "help": "..."
         }
     },
     "logout": {
