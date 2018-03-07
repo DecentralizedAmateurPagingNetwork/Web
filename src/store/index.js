@@ -33,6 +33,10 @@ export default new Vuex.Store({
 		language: state => {
 			return state.language;
 		},
+		languageFlag: state => {
+			if (state.language === 'en') return 'gb';
+			return state.language;
+		},
 		customText: state => {
 			return state.customText;
 		},

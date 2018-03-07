@@ -192,11 +192,11 @@
 	"footer": {
 		"language": {
 			"title": "Language",
-			"english": "English",
-			"german": "German",
-			"spanish": "Spanish",
-			"french": "French",
-			"polish": "Polish"
+			"en": "English",
+			"de": "German",
+			"es": "Spanish",
+			"fr": "French",
+			"pl": "Polish"
 		},
 		"more": {
 			"title": "Más",
