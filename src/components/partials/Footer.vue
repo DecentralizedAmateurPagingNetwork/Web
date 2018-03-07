@@ -3,10 +3,6 @@
 		<footer>
 			<div class="row">
 				<div class="col-lg-12">
-					<p><b>{{ $t('footer.more.title') }}:</b></p>
-					<ul class="list-unstyled">
-						<li><a href="http://hampager.de/dokuwiki/doku.php?id=faq" target="_blank">{{ $t('footer.more.faq') }}</a></li>
-					</ul>
 					<p><b>{{ $t('footer.support.title') }}:</b></p>
 					<ul class="list-unstyled">
 						<li><a href="https://github.com/DecentralizedAmateurPagingNetwork" target="_blank">{{ $t('footer.support.github') }}</a></li>
