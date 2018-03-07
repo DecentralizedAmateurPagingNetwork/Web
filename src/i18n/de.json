@@ -349,7 +349,8 @@
             "newsubscriber": "Neuer Teilnehmer",
             "editsubscriber": "Ändere Teilnehmer",
             "subscriber": {
-                "title": "Teilnehmer"
+                "title": "Teilnehmer",
+                "help": "Bitte ein gültiges Amateurfunk-Rufzeichen oder einen klassifizierenden Namen einer Organisation eingeben."
             },
             "description": {
                 "help": "Bitte hier den Vornamen oder eine andere sinnvolle Beschreibung dieses Eintrags eingeben."
