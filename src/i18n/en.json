@@ -350,7 +350,7 @@
             "editsubscriber": "Edit Subscriber",
             "subscriber": {
                 "title": "Subscriber",
-				"help": "Please enter a valid amateur radio callsign of a human or a classifying name of an organization."
+                "help": "Please enter a valid amateur radio callsign of a human or a classifying name of an organization."
             },
             "description": {
                 "help": "Provide your name or any other useful description of this entry."
