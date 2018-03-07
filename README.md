@@ -64,6 +64,10 @@ Before updating make sure to read the changelog and to backup your customized fi
 3. Run through steps 8. to 11. of the installation process
 4. Done!
 
+## Translation
+You are welcome to contribute translations to this project using [this link](https://poeditor.com/join/project/a4fVmB7IPr).
+We try to sync those strings with the GitHub repository as often as possible.
+
 ## Changelog
 A list of changes is always available on the [Releases](https://github.com/DecentralizedAmateurPagingNetwork/Web/releases)-page.
 
