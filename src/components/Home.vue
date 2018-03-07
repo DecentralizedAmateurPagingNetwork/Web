@@ -12,7 +12,7 @@
 										<p v-html="$t('home.carousel.' + index + '.text')"></p>
 									</div>
 									<div class="col-lg-5">
-										<template v-if="getLink(index)">
+										<template v-if="getLink(index) && getLink(index) !== 'NONE'">
 											<a :href="getLink(index)" target="_blank"><img :src="'./assets/img/carousel/img' + index + '.png'" alt="Carousel Item" class="slide-image" /></a>
 										</template>
 										<template v-else>
