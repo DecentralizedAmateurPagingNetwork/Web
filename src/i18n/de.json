@@ -30,7 +30,7 @@
             "1": {
                 "title": "Willkommen beim DAPNET Web!",
                 "text": "Das DAPNET (Decentralized Amateur Paging Network) ist ein durch Funkamateure betriebenes Netzwerk. Da dieses Netzwerk auf Amateurfunk-Frequenzen arbeitet ist eine kommerzielle Nutzung verboten.<br>Wenn Sie Funkamateur sind, können Sie Ihren Zugang direkt beantragen.",
-                "link": ""
+                "link": "NONE"
             },
             "2": {
                 "title": "Raspager Sender",
@@ -40,7 +40,7 @@
             "3": {
                 "title": "Kartendarstellung mit Abdeckungsanzeige",
                 "text": "Die Sender werden auf einer Karte dargestellt. Ebenfalls kann der simulierte Abdeckungsbereich angezeigt werden.",
-                "link": ""
+                "link": "NONE"
             },
             "4": {
                 "title": "Berührungsempfindliche Anzeige für Sender",
@@ -70,7 +70,7 @@
             "9": {
                 "title": "Struktur des DAPNETs",
                 "text": "Moderne Techniken unter der Haube: Das DAPNET wartet mit seiner REST-Schnittstelle und der Verwendung von Websockets mit up-to-date Techniken aus dem Bereich des professionellen Internets auf.",
-                "link": ""
+                "link": "NONE"
             },
             "10": {
                 "title": "Unterstützung durch ein Ticket-System",
@@ -124,8 +124,7 @@
             "edittransmitter": "Ändere Sender",
             "callsign": {
                 "title": "Rufzeichen",
-                "help": "Bitte hier ein gültiges Amateurfunk-Rufzeichen des Senders eingeben. Dieser Eintrag wird ebenfalls dazu verwendet, die 10 minütige Rufzeichenaussendung durch den Sender entsprechend der deutschen Gesetzgebung zu erzeugen.",
-                "helpedit": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Senders."
+                "help": "Bitte hier ein gültiges Amateurfunk-Rufzeichen des Senders eingeben. Dieser Eintrag wird ebenfalls dazu verwendet, die 10 minütige Rufzeichenaussendung durch den Sender entsprechend der deutschen Gesetzgebung zu erzeugen."
             },
             "import": {
                 "help": "Einfache Übernahme der Sender-Position von hamnetdb.net. Die Position des ausgewählten Eintrags wird automatisch in das Formular eingefügt."
@@ -298,7 +297,8 @@
         "password": "Passwort",
         "yes": "Ja",
         "no": "Nein",
-        "permalink": "Permanentlink"
+        "permalink": "Permanentlink",
+        "duplication": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Elements."
     },
     "rubric": {
         "overview": {
@@ -316,7 +316,6 @@
         "new": {
             "newrubric": "Neue Rubrik",
             "name": "Name",
-            "namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieser Rubrik.",
             "label": "Bezeichung",
             "number": "Nummer",
             "transmittergroup": "Sender-Gruppen",
@@ -350,9 +349,7 @@
             "newsubscriber": "Neuer Teilnehmer",
             "editsubscriber": "Ändere Teilnehmer",
             "subscriber": {
-                "title": "Teilnehmer",
-                "help": "Bitte ein gültiges Amateurfunk-Rufzeichen oder einen klassifizierenden Namen einer Organisation eingeben.",
-                "info": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Teilnehmer-Eintrags."
+                "title": "Teilnehmer"
             },
             "description": {
                 "help": "Bitte hier den Vornamen oder eine andere sinnvolle Beschreibung dieses Eintrags eingeben."
@@ -458,8 +455,7 @@
             "newnode": "Neuer Knoten",
             "editnode": "Ändere Konten",
             "name": {
-                "title": "Name",
-                "help": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Knotens."
+                "title": "Name"
             },
             "status": {
                 "title": "Status",
@@ -507,7 +503,6 @@
         "new": {
             "newtxgroup": "Neue Sender-Gruppe",
             "edittxgroup": "Ändere Sender-Gruppe",
-            "namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieser Sender-Gruppe.",
             "information": {
                 "help": "Eine Sender-Gruppe kominiert einen oder mehrere Sender zu einer logischen Einheit."
             }
@@ -530,7 +525,6 @@
         },
         "new": {
             "edituser": "Ändere Nutzer",
-            "namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Knotens.",
             "password": {
                 "help": "Das ist das neue zufällig Passwort:",
                 "randompassword": "Neues zufälliges Passwort erzeugen"
