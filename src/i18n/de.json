@@ -16,6 +16,11 @@
 		},
 		"nodes": "Knoten",
 		"users": "Nutzer",
+		"more": {
+			"title": "Mehr",
+			"wiki": "Dokumentation",
+			"support": "Support"
+		},
 		"settings": "Einstellungen",
 		"login": "Anmelden",
 		"logout": "Abmelden"

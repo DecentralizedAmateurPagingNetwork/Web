@@ -16,6 +16,11 @@
 		},
 		"nodes": "Nodes",
 		"users": "Users",
+		"more": {
+			"title": "More",
+			"wiki": "Documentation",
+			"support": "Support"
+		},
 		"settings": "Settings",
 		"login": "Login",
 		"logout": "Logout"
