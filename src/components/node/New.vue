@@ -18,7 +18,7 @@
 							<label class="col-lg-2 control-label">{{ $t('nodes.new.name.title') }}</label>
 							<div class="col-lg-10">
 								<input type="text" v-model="form.name" class="form-control">
-								<span v-if="editing" class="help-block"><p v-html="$t('nodes.new.name.help')"></p></span>
+								<span v-if="editing" v-html="this.$i18n.t('general.duplication')" class="help-block"></span>
 							</div>
 						</div>
 						<div class="form-group">

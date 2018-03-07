@@ -125,7 +125,7 @@
             "callsign": {
                 "title": "Callsign",
                 "help": "Enter a valid amateur radio callsign of this transmitter. It will be also used for the 10 minute interval transmitter identification message to fulfill the law (at least the German law).",
-                "helpedit": "Changing this name will create a duplication and <i>not</i> change the element's name."
+                "helpedit": ""
             },
             "import": {
                 "help": "Easy import of stations from hamnetdb.net. Location data of the selected transmitter site will be copied into the form."
@@ -298,7 +298,8 @@
         "password": "Password",
         "yes": "Yes",
         "no": "No",
-        "permalink": "Permalink"
+        "permalink": "Permalink",
+		"duplication": "Changing this name will create a duplication and <i>not</i> change the element's name."
     },
     "rubric": {
         "overview": {
@@ -316,7 +317,6 @@
         "new": {
             "newrubric": "New Rubric",
             "name": "Name",
-            "namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
             "label": "Label",
             "number": "Number",
             "transmittergroup": "Transmitter Groups",
@@ -351,8 +351,7 @@
             "editsubscriber": "Edit Subscriber",
             "subscriber": {
                 "title": "Subscriber",
-                "help": "Please enter a valid amateur radio callsign of a human or a classifying name of an organization.",
-                "info": "Changing this name will create a duplication and <i>not</i> change the element's name."
+                "help": "Please enter a valid amateur radio callsign of a human or a classifying name of an organization."
             },
             "description": {
                 "help": "Provide your name or any other useful description of this entry."
@@ -458,8 +457,7 @@
             "newnode": "New Node",
             "editnode": "Edit Node",
             "name": {
-                "title": "Name",
-                "help": "Changing this name will create a duplication and <i>not</i> change the element's name."
+                "title": "Name"
             },
             "status": {
                 "title": "Status",
@@ -507,7 +505,6 @@
         "new": {
             "newtxgroup": "New Transmitter Group",
             "edittxgroup": "Edit Transmitter Group",
-            "namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
             "information": {
                 "help": "A transmitter group combines one of several transmitters to a logical entity."
             }
@@ -530,7 +527,6 @@
         },
         "new": {
             "edituser": "Edit User",
-            "namehelp": "Changing this name will create a duplication and <i>not</i> change the element's name.",
             "password": {
                 "help": "This is the newly generated password:",
                 "randompassword": "Generate new random password"

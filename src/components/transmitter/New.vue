@@ -19,7 +19,7 @@
 							<div class="col-lg-5">
 								<input type="text" v-model="form.name" class="form-control">
 								<span class="help-block">{{ $t('transmitter.new.callsign.help') }}</span>
-								<span v-if="editing" class="help-block">{{ $t('transmitter.new.callsignhelp.edit') }}</span>
+								<span v-if="editing" v-html="this.$i18n.t('general.duplication')" class="help-block"></span>
 							</div>
 							<div class="col-lg-5">
 								<multiselect v-model="formData.hamnetDb.selected" :options="formData.hamnetDb.all" :multiple="false" :close-on-select="true" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>

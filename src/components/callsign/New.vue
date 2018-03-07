@@ -19,7 +19,7 @@
 							<div class="col-lg-10">
 								<input type="text" v-model="form.callsign" class="form-control">
 								<span class="help-block">{{ $t('subscribers.new.subscriber.help') }}</span>
-								<span v-if="editing" class="help-block"><p v-html="$t('subscribers.new.subscriber.info')"></p></span>
+								<span v-if="editing" v-html="this.$i18n.t('general.duplication')" class="help-block"></span>
 							</div>
 						</div>
 						<div class="form-group">
