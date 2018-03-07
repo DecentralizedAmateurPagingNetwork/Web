@@ -349,7 +349,8 @@
             "newsubscriber": "Nuevo suscriptor",
             "editsubscriber": "Editar suscriptor",
             "subscriber": {
-                "title": "Suscriptor"
+                "title": "Suscriptor",
+                "help": "Please enter a valid amateur radio callsign of a human or a classifying name of an organization."
             },
             "description": {
                 "help": "Proporcione su nombre o cualquier otra descripción útil de este elemento."
