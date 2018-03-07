@@ -53,27 +53,27 @@
 					columns: [
 						{
 							id: 'timestamp',
-							title: this.$i18n.t('calls.overview.table.timestamp')
+							title: 'calls.overview.table.timestamp'
 						},
 						{
 							id: 'callSignNames',
-							title: this.$i18n.t('navigation.subscribers')
+							title: 'navigation.subscribers'
 						},
 						{
 							id: 'transmitterGroupNames',
-							title: this.$i18n.t('calls.overview.table.txgroups')
+							title: 'calls.overview.table.txgroups'
 						},
 						{
 							id: 'text',
-							title: this.$i18n.t('calls.overview.table.message')
+							title: 'calls.overview.table.message'
 						},
 						{
 							id: 'emergency',
-							title: this.$i18n.t('calls.overview.table.emergency')
+							title: 'calls.overview.table.emergency'
 						},
 						{
 							id: 'ownerName',
-							title: this.$i18n.t('general.owner')
+							title: 'general.owner'
 						}
 					],
 					rows: false

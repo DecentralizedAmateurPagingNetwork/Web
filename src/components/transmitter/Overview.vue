@@ -67,35 +67,35 @@
 					columns: [
 						{
 							id: 'name',
-							title: this.$i18n.t('transmitter.overview.table.callsign')
+							title: 'transmitter.overview.table.callsign'
 						},
 						{
 							id: 'nodeName',
-							title: this.$i18n.t('transmitter.overview.table.node')
+							title: 'transmitter.overview.table.node'
 						},
 						{
 							id: 'address',
-							title: this.$i18n.t('transmitter.overview.table.ipaddress')
+							title: 'transmitter.overview.table.ipaddress'
 						},
 						{
 							id: 'ownerNames',
-							title: this.$i18n.t('general.owner')
+							title: 'general.owner'
 						},
 						{
 							id: 'deviceType',
-							title: this.$i18n.t('transmitter.overview.table.device')
+							title: 'transmitter.overview.table.device'
 						},
 						{
 							id: 'status',
-							title: this.$i18n.t('transmitter.overview.table.status')
+							title: 'transmitter.overview.table.status'
 						},
 						{
 							id: 'connectedSince',
-							title: this.$i18n.t('transmitter.overview.table.connectedsince')
+							title: 'transmitter.overview.table.connectedsince'
 						},
 						{
 							id: 'actions',
-							title: this.$i18n.t('general.actions')
+							title: 'general.actions'
 						}
 					],
 					rows: false

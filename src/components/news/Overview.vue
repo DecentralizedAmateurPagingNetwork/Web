@@ -54,23 +54,23 @@
 					columns: [
 						{
 							id: 'timestamp',
-							title: this.$i18n.t('news.overview.table.timestamp')
+							title: 'news.overview.table.timestamp'
 						},
 						{
 							id: 'rubricName',
-							title: this.$i18n.t('news.overview.table.rubric')
+							title: 'news.overview.table.rubric'
 						},
 						{
 							id: 'number',
-							title: this.$i18n.t('news.overview.table.number')
+							title: 'news.overview.table.number'
 						},
 						{
 							id: 'text',
-							title: this.$i18n.t('news.overview.table.message')
+							title: 'news.overview.table.message'
 						},
 						{
 							id: 'ownerName',
-							title: this.$i18n.t('general.owner')
+							title: 'general.owner'
 						}
 					],
 					rows: false

@@ -61,27 +61,27 @@
 					columns: [
 						{
 							id: 'name',
-							title: this.$i18n.t('nodes.overview.table.name')
+							title: 'nodes.overview.table.name'
 						},
 						{
 							id: 'version',
-							title: this.$i18n.t('nodes.overview.table.version')
+							title: 'nodes.overview.table.version'
 						},
 						{
 							id: 'address',
-							title: this.$i18n.t('nodes.overview.table.ipaddress')
+							title: 'nodes.overview.table.ipaddress'
 						},
 						{
 							id: 'ownerNames',
-							title: this.$i18n.t('general.owner')
+							title: 'general.owner'
 						},
 						{
 							id: 'status',
-							title: this.$i18n.t('nodes.overview.table.status')
+							title: 'nodes.overview.table.status'
 						},
 						{
 							id: 'actions',
-							title: this.$i18n.t('general.actions')
+							title: 'general.actions'
 						}
 					],
 					rows: false

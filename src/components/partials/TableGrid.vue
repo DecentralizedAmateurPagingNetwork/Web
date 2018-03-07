@@ -17,7 +17,7 @@
 				<thead>
 					<tr>
 						<th v-for="key in columns" :key="key.id" @click="sortBy(key.id)" :class="{ active: sortKey === key.id }">
-							{{ key.title }} <span class="arrow" :class="sortOrders[key.id] > 0 ? 'asc' : 'dsc'"></span>
+							{{ $t(key.title) }} <span class="arrow" :class="sortOrders[key.id] > 0 ? 'asc' : 'dsc'"></span>
 						</th>
 					</tr>
 				</thead>

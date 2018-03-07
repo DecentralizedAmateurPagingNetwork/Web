@@ -56,23 +56,23 @@
 					columns: [
 						{
 							id: 'name',
-							title: this.$i18n.t('general.name')
+							title: 'general.name'
 						},
 						{
 							id: 'mail',
-							title: this.$i18n.t('users.general.email')
+							title: 'users.general.email'
 						},
 						{
 							id: 'admin',
-							title: this.$i18n.t('users.general.admin')
+							title: 'users.general.admin'
 						},
 						{
 							id: 'callsigns',
-							title: this.$i18n.t('navigation.subscribers')
+							title: 'navigation.subscribers'
 						},
 						{
 							id: 'actions',
-							title: this.$i18n.t('general.actions')
+							title: 'general.actions'
 						}
 					],
 					rows: false

@@ -52,27 +52,27 @@
 					columns: [
 						{
 							id: 'number',
-							title: this.$i18n.t('rubric.overview.table.number')
+							title: 'rubric.overview.table.number'
 						},
 						{
 							id: 'name',
-							title: this.$i18n.t('rubric.overview.table.name')
+							title: 'rubric.overview.table.name'
 						},
 						{
 							id: 'label',
-							title: this.$i18n.t('rubric.overview.table.label')
+							title: 'rubric.overview.table.label'
 						},
 						{
 							id: 'transmitterGroupNames',
-							title: this.$i18n.t('rubric.overview.table.transmittergroup')
+							title: 'rubric.overview.table.transmittergroup'
 						},
 						{
 							id: 'ownerNames',
-							title: this.$i18n.t('general.owner')
+							title: 'general.owner'
 						},
 						{
 							id: 'actions',
-							title: this.$i18n.t('general.actions')
+							title: 'general.actions'
 						}
 					],
 					rows: false
