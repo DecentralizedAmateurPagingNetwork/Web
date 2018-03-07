@@ -191,6 +191,17 @@
 			"actions": {
 				"showallcoverage": "Abdeckungsbereiche von allen Sendern anzeigen",
 				"removeallcoverage": "Alle Abdeckungsbereiche entfernen"
+			},
+			"alerts": {
+				"load": {
+					"title": "Load coverage-overlays?",
+					"text": "Press \"Continue\" to load all coverage-overlays for the currently visible transmitters. This may take some time and put your device under heavy load."
+				},
+				"confirm": {
+					"title": "Are you really sure?",
+					"text": "You are going to load and display the coverage of <b> {amount} transmitters</b>. This will take some time and put your device under heavy load.",
+					"continue": "Yes, I am sure and I won't blame the developer if my browser crashes."
+				}
 			}
 		}
 	},
@@ -267,6 +278,7 @@
 		}
 	},
 	"general": {
+		"continue": "Continue",
 		"submit": "Absenden",
 		"abort": "Abbrechen",
 		"search": "Suchen",

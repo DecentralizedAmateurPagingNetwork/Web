@@ -191,6 +191,17 @@
 			"actions": {
 				"showallcoverage": "Abdeckungsbereiche von allen Sendern anzeigen",
 				"removeallcoverage": "Alle Abdeckungsbereiche entfernen"
+			},
+			"alerts": {
+				"load": {
+					"title": "Abdeckungsbereiche laden?",
+					"text": "Drücken Sie auf \"Fortfahren\", um alle Abdeckungsbereiche für aktuell sichtbare Sender zu laden. Dies kann einige Zeit dauern und Ihr Endgerät einer erhöhten Last aussetzen."
+				},
+				"confirm": {
+					"title": "Sind Sie wirklich sicher?",
+					"text": "Sie versuchen gerade, die Abdeckungsbereiche von <b> {amount} Sendern</b> zu laden. Dies wird einige Zeit dauern und Ihr Endgerät einer erhöhten Last aussetzen.",
+					"continue": "Ja, ich bin sicher und werde es nicht dem Entwickler vorwerfen, falls mein Browser abstürzen sollte."
+				}
 			}
 		}
 	},
@@ -267,6 +278,7 @@
 		}
 	},
 	"general": {
+		"continue": "Fortfahren",
 		"submit": "Absenden",
 		"abort": "Abbrechen",
 		"search": "Suchen",

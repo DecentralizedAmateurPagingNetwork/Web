@@ -294,12 +294,12 @@
 			},
 			showAllCoverage() {
 				this.$swal({
-					title: 'Load coverage-overlays?',
-					text: 'Press "Continue" to load all coverage-overlays for the currently visible transmitters. This may take some time and put your device under heavy load.',
+					title: this.$i18n.t('transmitter.map.alerts.load.title'),
+					text: this.$i18n.t('transmitter.map.alerts.load.text'),
 					type: 'question',
 					showCancelButton: true,
-					confirmButtonText: 'Continue',
-					cancelButtonText: 'Cancel'
+					confirmButtonText: this.$i18n.t('general.continue'),
+					cancelButtonText: this.$i18n.t('general.abort')
 				}).then(result => {
 					if (!result.value) return false;
 
@@ -318,12 +318,12 @@
 					// check if the number of overlays exceeds a threshold of 20
 					if (showCoverageOf.length >= 20) {
 						this.$swal({
-							title: 'Are you really sure?',
-							html: 'You are going to load and display the coverage of <b>' + showCoverageOf.length + ' transmitters</b>. This will take some time and put your device under heavy load.',
+							title: this.$i18n.t('transmitter.map.alerts.confirm.title'),
+							html: this.$i18n.t('transmitter.map.alerts.confirm.text', { amount: String(showCoverageOf.length) }),
 							type: 'warning',
 							showCancelButton: true,
-							confirmButtonText: 'Yes, I am sure and I won\'t blame the developer if my browser crashes',
-							cancelButtonText: 'Cancel'
+							confirmButtonText: this.$i18n.t('transmitter.map.alerts.confirm.continue'),
+							cancelButtonText: this.$i18n.t('general.abort')
 						}).then(result => {
 							if (result.value) helper(showCoverageOf);
 						});
