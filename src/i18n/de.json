@@ -1,545 +1,544 @@
 {
-	"navigation": {
-		"calls": "Rufe",
-		"subscribers": "Teilnehmer",
-		"rubrics": {
-			"title": "Rubriken",
-			"all": "Alle Rubriken",
-			"activate": "Rubriken aktivieren",
-			"content": "Rubriken Inhalt"
-		},
-		"transmitters": {
-			"title": "Sender",
-			"all": "Alle Sender",
-			"map": "Karte",
-			"groups": "Sendergruppen"
-		},
-		"nodes": "Knoten",
-		"users": "Nutzer",
-		"help": {
-			"title": "Hilfe",
-			"wiki": "Dokumentation",
-			"support": "Support"
-		},
-		"settings": "Einstellungen",
-		"login": "Anmelden",
-		"logout": "Abmelden"
-	},
-	"home": {
-		"carousel": {
-			"1": {
-				"title": "Willkommen beim DAPNET Web!",
-				"text": "Das DAPNET (Decentralized Amateur Paging Network) ist ein durch Funkamateure betriebenes Netzwerk. Da dieses Netzwerk auf Amateurfunk-Frequenzen arbeitet ist eine kommerzielle Nutzung verboten.<br>Wenn Sie Funkamateur sind, können Sie Ihren Zugang direkt beantragen.",
-				"link": ""
-			},
-			"2": {
-				"title": "Raspager Sender",
-				"text": "Senders mit geringer Reichweite als günstige Aufsteckplatine für einen Raspberry Pi",
-				"link": "http://hampager.de/dokuwiki/doku.php?id=raspager"
-			},
-			"3": {
-				"title": "Kartendarstellung mit Abdeckungsanzeige",
-				"text": "Die Sender werden auf einer Karte dargestellt. Ebenfalls kann der simulierte Abdeckungsbereich angezeigt werden.",
-				"link": ""
-			},
-			"4": {
-				"title": "Berührungsempfindliche Anzeige für Sender",
-				"text": "Zur einfachen Kontrolle und Konfiguration gibt es eine farbige Anzeige basierend auf einem Nextion-Display. Der Anschluss an den Sender geschieht über die UART auf dem GPIO-Anschluss eines Raspberry Pis oder durch einen USB-auf-Seriell-Wandler.",
-				"link": "http://hampager.de/dokuwiki/doku.php?id=unipagernextion"
-			},
-			"5": {
-				"title": "Unipager - Eine einzige Software für alle Sender-Arten",
-				"text": "Die Unipager-Software in der modernen Programmiersprache RUST geschrieben ermöglichte den Aufbau aller Sender-Arten: Raspager, Ericsscon C9000 (mit Zuatzplatine), die Soundkarten-Variante und die RFM69-Lösung. Ein Debian-Paket ist für einfache Installation und Updates verfügbar.",
-				"link": "http://hampager.de/dokuwiki/doku.php?id=unipager"
-			},
-			"6": {
-				"title": "Moderner Funkmeldeempfänger: Swissphone",
-				"text": "Ein High-End Modell für Benutzer mit besonderen Ansprüchen.",
-				"link": "http://hampager.de/dokuwiki/doku.php?id=swissphonedescription"
-			},
-			"7": {
-				"title": "SDR-basierter Sender mit GM1200 oder ähnlichem Funkgerät",
-				"text": "Alles was benötigt wird ist ein 9k6 fähiges Funkgerät und ein einfaches Audio-Interface. Das Touch-Display kann ebenfalls verwendet werden.",
-				"link": "http://hampager.de/dokuwiki/doku.php?id=9k6"
-			},
-			"8": {
-				"title": "Ersatz für die Skyper: Funkmeldeempfänger AlphaPOC 6002R",
-				"text": "Der auf dem Markt befindliche Pager ist klein, handlich und kann ohne Umbau betrieben werden. Die Einstellung der Frequenz und der RIC kann direkt am Gerät geschehen.",
-				"link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription"
-			},
-			"9": {
-				"title": "Struktur des DAPNETs",
-				"text": "Moderne Techniken unter der Haube: Das DAPNET wartet mit seiner REST-Schnittstelle und der Verwendung von Websockets mit up-to-date Techniken aus dem Bereich des professionellen Internets auf.",
-				"link": ""
-			},
-			"10": {
-				"title": "Unterstützung durch ein Ticket-System",
-				"text": "Anfragen zur Einrichtung von Sendern und Hilfe werden über ein Ticket-System abgehandelt. So wird die Abhänigkeit einer One-Man-Show vermieden und das vorhandene Wissen sowie die Arbeit von mehreren Freiwilligen getragen. Dadurch wird eine hohe Qualität und eine kurze Antwortzeit erreicht.",
-				"link": "https://support.hampager.de/"
-			}
-		},
-		"information": {
-			"dapnet": {
-				"title": "Das DAPNET",
-				"projects": "Projekte"
-			},
-			"map": "Vollständige Kartenansicht öffnen",
-			"statistics": {
-				"calls": "Rufe",
-				"rubric-content": "Rubriken Inhalt",
-				"rubrics": "Rubriken",
-				"transmitters": "Sender",
-				"nodes": "Knoten",
-				"users": "Nutzer"
-			}
-		}
-	},
-	"transmitter": {
-		"overview": {
-			"table": {
-				"title": "Alle Sender",
-				"callsign": "Rufzeichen",
-				"node": "Knoten",
-				"ipaddress": "IP Adresse",
-				"device": "Gerät",
-				"status": "Status",
-				"connectedsince": "Verbunden seit"
-			},
-			"actions": {
-				"newtransmitter": "Neuer Sender",
-				"sendmailtoallowners": "Sende Email an alle Besitzer"
-			},
-			"statistics": {
-				"widerange": "Weitbereich",
-				"personal": "Persönlich",
-				"total": "Gesamt",
-				"widerangeonly": "Nur Weitbereichssender"
-			},
-			"information": {
-				"text": "Diese Übersicht zeigt alle im DAPNET angemeldeten Sender. Bevor ein Sender mit einem der DAPNET Knoten verbunden werden kann, muss dieser erst von einem Administrator angelegt werden.<br>Es gibt zwei Klassen von Sendern: Weitbereichssender (&gt; 1 Watt) und persönliche Sender (&lt;= 1 Watt).<br>Warum gibt es eine solch große Anzahl an Sendern, die offline sind? Diese Sender wurden meist in der Vergangenheit angelegt wurden, aber zur Zeit offensichtlich nicht betrieben werden. Es gibt keine Festlegung, welches Sender online sein \"sollten\" und welche nicht.<br>Sender haben einen oder mehrere Besitzer, die die Einstellungen selbstständig ändern können. Jeder Sender hat 1 bis max. 16 Zeitschlitzen zugewiesen. Dies ist notwendig, da alle Sender auf der gleichen Frequenz. Eine überlappende Zeitschlitzvergabe in der Ausleuchtung eines Bereiches zwischen den Sendern ist streng zu vermeiden. Daher bitte keine Zeitschlitze einem Sender zuordnen, die bereit von anderen Sendern im Abdeckgungsbereich seines Senders benutzt werden. Bitte Kontakt mit <code>support [at] hampager.de</code> aufnehmen, wenn es Unklarheiten oder Fragen gibt."
-			}
-		},
-		"new": {
-			"newtransmitter": "Neuer Sender",
-			"edittransmitter": "Ändere Sender",
-			"callsign": {
-				"title": "Rufzeichen",
-				"help": "Bitte hier ein gültiges Amateurfunk-Rufzeichen des Senders eingeben. Dieser Eintrag wird ebenfalls dazu verwendet, die 10 minütige Rufzeichenaussendung durch den Sender entsprechend der deutschen Gesetzgebung zu erzeugen.",
-				"helpedit": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Senders."
-			},
-			"import": {
-				"help": "Einfache Übernahme der Sender-Position von hamnetdb.net. Die Position des ausgewählten Eintrags wird automatisch in das Formular eingefügt."
-			},
-			"password": {
-				"title": "Passwort",
-				"help": "Bitte eine Authentifizierungspasswort für diesen Sender festlegen. Im UniPager Webinterface wird dies \"Auth Key\" genannt."
-			},
-			"usage": {
-				"title": "Verwendungsart",
-				"personal": "Persönlich",
-				"widerange": "Weitbereich",
-				"help": "Zur Einordnung der Sender gibt es zwei Kategorien: Persönliche Sender (Sender mit einer geringen Strahlungsleistung wie z.B. der Raspager und Weitbereichssender mit einen hohen Strahlungsleistung und einem im Gelände erhöhten Standort."
-			},
-			"antennatype": {
-				"title": "Antennenart",
-				"omni": "Rundstrahler",
-				"directional": "Richtantenne",
-				"other": "Weiteres",
-				"help": "Bitte die Antennenart auswählen. Beispiele für einen Rundstrahler ist eine X-50, eine Richtantenne ist z.B. eine Yagi."
-			},
-			"antennadirection": {
-				"help": "<b>Antennenhauptstrahlrichtung</b>: Bitte die Antennenhauptstrahlrichtung in Grad angeben. Als Referenz \"rechtweisend Nord\" verwenden."
-			},
-			"other": {
-				"title": "Weitere Einstellungen",
-				"power": {
-					"help": "<b>Sendeleistung</b>: Bitte die Sendeleistung am Ausgang des Sender inkl. der Kabelverluste angeben. Dies entspricht der am Antennenstecker ankommendne Leistung. Die Einheit ist Watt."
-				},
-				"antennalevel": {
-					"help": "<b>Antennenhöhe über Grund</b>: Bitte die Antennenhöhe über Grund NICHT ÜBER NN (!) in Meter angeben."
-				},
-				"antennagain": {
-					"help": "<b>Antennengewinn</b>: Bitte den Antennengewinn in Hauptstrahlrichtung für Richtantennen und den mittleren Gewinn für Rundstrahlantennen in dBi angeben. (dBi: Gewinn im Vergleich zu einem isotropen Kugelstrahler)."
-				},
-				"txidentric": {
-					"help": "<b>Identifizierungs-RIC des Senders</b>: Bitte eine RIC (der Normalfall ist 1) eigeben, die verwendet werden soll, um die Rufzeichennennung zu versenden. Diese künstiliche Nachricht enthält den unter \"Rufzeichen\" eingegebenen Text."
-				}
-			},
-			"timeslots": {
-				"title": "Zeitschlitze",
-				"help": "Da alle Sender die gleiche Frequenz benutzen, wird ein Zeitmultiplex-Verfahren eingesetzt. Es gibt 16 Zeitschlitze. Bitte die Zuweisung der Zeitschlitze so vornehmen, dass es im Abdeckungsbereich dieses Senders keine Überschneidungen mit Zuordnungen von anderen bereits existierenden Sendern gibt. Die Kartenansicht kann dazu verwendet werden, sich einen Überblick über die bereits vorhandenen Sender und ihrer Zeitschlitze zu verschaffen.<br>Falls die Anforderungen dieses Senders zur Belegung von Zeitschlitzen durch die bestehende Zuweisung nicht erfüllt werden kann, bitte die Besitzer der umliegenden Sender kontaktieren und für eine Lösung sorgen. Im Normallfall sind 4 oder weniger Zeitschlitze pro Sender mehr als genug."
-			},
-			"owner": {
-				"help": "Besitzer können die Einstellungen eines Senders selbstständig ändern."
-			},
-			"table": {
-				"description": "Diese Tabelle zeigt die angmeldeten Sender, ihren Online-Status und weitere Informationen. Pernsönliche Sender müssen eine geringe Strahlungsleistung und einen sehr begrenzten Abdeckungsbereich haben, wie z.B. der Raspager. Weitbereichssender sind gewöhnlicherweise an hohen Standorten installiert und haben einen großen Abdeckungsbereich"
-			}
-		},
-		"map": {
-			"title": "Karte",
-			"settings": {
-				"title": "Einstellungen"
-			},
-			"checkbox": {
-				"showonlineonly": "Nur Sender, die online sind, anzeigen.",
-				"showwiderangeonly": "Nur Weitbereichssender anzeigen",
-				"showbytimeslot": "Nur Sender anzeigen, die die angegeben Zeitschlitze zugewiesen haben",
-				"shownodes": "Knoten anzeigen",
-				"shownodeline": "Eine Linie vom Sender zum Knoten, mit dem er verbunden ist, anzeigen"
-			},
-			"actions": {
-				"showallcoverage": "Abdeckungsbereiche von allen Sendern anzeigen",
-				"removeallcoverage": "Alle Abdeckungsbereiche entfernen"
-			},
-			"alerts": {
-				"load": {
-					"title": "Abdeckungsbereiche laden?",
-					"text": "Drücken Sie auf \"Fortfahren\", um alle Abdeckungsbereiche für aktuell sichtbare Sender zu laden. Dies kann einige Zeit dauern und Ihr Endgerät einer erhöhten Last aussetzen."
-				},
-				"confirm": {
-					"title": "Sind Sie wirklich sicher?",
-					"text": "Sie versuchen gerade, die Abdeckungsbereiche von <b> {amount} Sendern</b> zu laden. Dies wird einige Zeit dauern und Ihr Endgerät einer erhöhten Last aussetzen.",
-					"continue": "Ja, ich bin sicher und werde es nicht dem Entwickler vorwerfen, falls mein Browser abstürzen sollte."
-				}
-			}
-		}
-	},
-	"footer": {
-		"language": {
-			"title": "Sprache",
-			"en": "Englisch",
-			"de": "Deutsch",
-			"es": "Spanisch",
-			"nl": "Niederländisch",
-			"fr": "Französisch",
-			"pl": "Polnisch"
-		},
-		"support": {
-			"title": "Unterstütze uns",
-			"github": "GitHub",
-			"rwth-amateur-radio": "RWTH Amateurfunkgruppe"
-		},
-		"contact": {
-			"title": "Kontaktiere uns",
-			"twitter": "Twitter",
-			"facebook": "Facebook",
-			"contact": "Kontakt",
-			"impress": "Impressum",
-			"privacy": "Datenschutz"
-		},
-		"versions": {
-			"title": "Versionen",
-			"check": "Prüfen"
-		}
-	},
-	"table": {
-		"search": "Suche",
-		"pagination": {
-			"page": "Seite",
-			"of": "von"
-		},
-		"actionbuttons": {
-			"edit": "Bearbeiten",
-			"delete": "Löschen",
-			"email": "E-Mail senden",
-			"rubrics": "Rubriken senden"
-		}
-	},
-	"rest": {
-		"errors": {
-			"title": "Fehler",
-			"no-connection": "Keine Verbindung",
-			"api-unreachable": "API-Server zur Zeit nicht erreichbar. Bitte versuchen Sie es später erneut. Sollte das Problem nicht behoben sein, öffnen Sie bitte ein Ticket im Ticket-System.",
-			"permissions": "Ungültige Anmeldedaten oder keine Berechtigungen für diese Anfrage. Bitte prüfen Sie Nutzername und Passwort.",
-			"http-error": "Unbehandelter HTTP Fehler {status}. Bitte versuchen Sie es später erneut.",
-			"403": {
-				"title": "Verboten",
-				"text": "Keine Berechtigung für diese Anfrage. Wenn dies ein Zustand ist, der Ihrer Meinung nach nicht akzeptabel ist, bitte ein Ticket aufmachen."
-			},
-			"404": {
-				"title": "Nicht gefunden",
-				"text": "Konnte die gewählte Resource nicht finden."
-			}
-		}
-	},
-	"alerts": {
-		"success": {
-			"title": "Erfolg",
-			"text": "Operation erfolgreich durchgeführt."
-		},
-		"delete": {
-			"title": "Sind Sie sicher?",
-			"text": "Sie können diese Daten nicht wiederherstellen, sobald sie gelöscht wurden."
-		},
-		"input": {
-			"title": "Fehlende Eingaben",
-			"text": "Bitte füllen Sie alle Eingabefelder aus, um fortzufahren."
-		}
-	},
-	"general": {
-		"continue": "Fortfahren",
-		"submit": "Absenden",
-		"abort": "Abbrechen",
-		"search": "Suchen",
-		"information": "Information",
-		"owner": "Besitzer",
-		"actions": "Aktionen",
-		"statistics": "Statistiken",
-		"description": "Beschreibung",
-		"name": "Name",
-		"latlong": {
-			"title": "Breite / Länge",
-			"north": "Nord",
-			"south": "Süd",
-			"east": "Ost",
-			"west": "West"
-		},
-		"password": "Passwort",
-		"yes": "Ja",
-		"no": "Nein",
-		"permalink": "Permanentlink"
-	},
-	"rubric": {
-		"overview": {
-			"totalrubrics": "Alle Rubriken",
-			"information": {
-				"help": "Dies ist eine Liste aller Rubiken im DAPNET. Ein Rubik kann einer oder mehreren Sender-Gruppen zugewiesen werden. Bitte darauf achten, dass die Sender-Gruppen unterschiedlich sind, falls eine Rubiken-Nummer mehrfach verwendet wird. Dies vermeidet überlappende Zuordnungen.<br>BUm dem Empfang der Rubriken auf dem Skyper freizuschalten bitte die Funktion \"Rubriken aktivieren\" verwenden."
-			},
-			"table": {
-				"number": "Nummer",
-				"name": "Name",
-				"label": "Bezeichnung",
-				"transmittergroup": "Sender-Gruppen"
-			}
-		},
-		"new": {
-			"newrubric": "Neue Rubrik",
-			"editrubric": "Ändere Rubrik",
-			"name": "Name",
-			"namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieser Rubrik.",
-			"label": "Bezeichung",
-			"number": "Nummer",
-			"transmittergroup": "Sender-Gruppen",
-			"information": {
-				"help": "Rubriken sind eine Erfindung für die Skyper, die es ermöglicht, Nachrichten in einer strukturierten Weise zu versenden. Bitte bei der Zuordnung der Rubiken-Nummer mit Bedacht handeln und mit <code>support [at] hampager.de</code> Kontakt aufnehmen, falls Unklarheiten bestehen. Bedenkt, dass die Anzahl der Rubiken im ganzen DAPNET auf 99 beschränkt ist."
-			}
-		},
-		"activation": {
-			"pagernumber": "Pager-Nummer (Ihre RIC)",
-			"information": {
-				"help": "Diese Funktion sende einen Freischaltungsruf an Ihren Skyper. Wenn der Empfang erfolgreich war, können danach die Rubiken durch den Menüpunkt \"Skyper Setup\" im Skyper Menü abonniert werden."
-			},
-			"transmittergroup": "Sender-Gruppen"
-		}
-	},
-	"subscribers": {
-		"overview": {
-			"newsubscriber": "Neuer Teilnehmer",
-			"allsubscribers": "Alle Teilnehmer",
-			"totalsubscribers": "Gesamtanzahl Teilnehmer",
-			"information": {
-				"help": "Ein Teilnehmer-Eintrag ist eine logische Verknüpfung zwischen einem Bezeichner (meist das Rufzeichen des Besitzers des Meldeempfängers) und einer oder mehreren RICs, zum Beispiel die Skyper Adresse."
-			},
-			"table": {
-				"pager": "Funkmeldeempfänger",
-				"subscriber": "Teilnehmer"
-			}
-		},
-		"new": {
-			"newsubscriber": "Neuer Teilnehmer",
-			"editsubscriber": "Ändere Teilnehmer",
-			"subscriber": {
-				"title": "Teilnehmer",
-				"help": "Bitte ein gültiges Amateurfunk-Rufzeichen oder einen klassifizierenden Namen einer Organisation eingeben.",
-				"info": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Teilnehmer-Eintrags."
-			},
-			"description": {
-				"help": "Bitte hier den Vornamen oder eine andere sinnvolle Beschreibung dieses Eintrags eingeben."
-			},
-			"pager": {
-				"title": "Funkmeldeempfänger",
-				"helprics": "Eine oder mehrere RIC Nummern in einzelnen Zeilen hinzufügen.",
-				"helpnames": "Entsprechend der Anzahl der Zeilen in der linken Box eine entsprechende Beschreibung für die RIC Nummer angeben."
-			},
-			"owner": {
-				"title": "Besitzer",
-				"help": "Der Besitzer eines Teilnehmers kann seine Einstellungen ändern."
-			},
-			"information": {
-				"help": "Ein Teilnehmer-Eintrag ist eine logische Verknüpfung zwischen einem Bezeichner (meist das Rufzeichen des Besitzers des Meldeempfängers) und einer oder mehreren RICs."
-			}
-		}
-	},
-	"calls": {
-		"overview": {
-			"allcalls": "Alle Rufe",
-			"newcall": "Neuer Ruf",
-			"emergencies": "Notfall-Alamierungen",
-			"totalcalls": "Gesamtanzahl Rufe",
-			"information": {
-				"help": "Rufe sind persönliche Funkmeldenachrichten an individuelle Funkmeldeempfänger."
-			},
-			"table": {
-				"timestamp": "Zeitstempel",
-				"txgroups": "Sender-Gruppen",
-				"message": "Nachricht",
-				"emergency": "Hohe Priorität?"
-			}
-		},
-		"new": {
-			"newcall": "Neuer Ruf",
-			"message": {
-				"title": "Nachricht",
-				"charactersremaining": "80 Zeichen verbleibend.<br>Bitte den Nachrichtentext eingeben. Das Absender-Rufzeichen wird automatisch hinzugefügt."
-			},
-			"subscribers": {
-				"help": "Einen oder mehrere Teilnehmer als Empfänger des Rufs auswählen."
-			},
-			"transmittergroups": {
-				"title": "Sender-Gruppen",
-				"help": "Eine Sender-Gruppe auswählen, mit deren Sendern der Ruf ausgesendet wird. Im Normalfall sind das alle Sender, aber wenn der Aufenthaltsort des Empfängers bekannt ist, kann eine kleinere Sendergruppe gewählt werden. Dies verringert die Last auf den Sendern."
-			},
-			"emergency": {
-				"title": "Notfall?",
-				"help": "Wenn die Nachricht so schnell wie möglich versandt werden soll, kann diese Box ausgewählt werden. Es werden keine schlimmen Dinge geschehen; DAPNET wird nur die Nachricht mit der maximalen Priorität verarbeiten. Bitte diese Funktion fair verwenden."
-			},
-			"information": {
-				"help": "Hier werden Ihre letzten Rufe angezeigt."
-			}
-		}
-	},
-	"news": {
-		"overview": {
-			"allrubriccontent": "Inhalt aller Rubriken",
-			"newrubriccontent": "Neuer Rubriken Inhalt",
-			"totalrubriccontent": "Gesamtzahl der Rubriken-Einträge",
-			"information": {
-				"help": "Der hier dargestellte Inhalt sind NICHT allgemeine Nachrichten zu DAPNET sondern die zuletzt in die Rubriken eingestellten Meldungen. Jedes Mal, wenn einer der 10 verfügbaren Rubriken-Inhalte pro Rubrik geändert wird, wird dies hier aufgeführt."
-			},
-			"table": {
-				"timestamp": "Zeitstempel",
-				"rubric": "Rubrik",
-				"number": "#",
-				"message": "Nachricht"
-			}
-		},
-		"new": {
-			"newrubriccontent": "Neuer Rubriken Inhalt",
-			"message": "Nachricht",
-			"charactersremaining": "verbleibende Zeichen",
-			"rubrics": "Rubriken",
-			"number": "Nummer",
-			"chooseautomatically": "Automatisch bestimmen",
-			"information": {
-				"title:": "Information",
-				"help": "Diese ist der Inhalt aller Rubriken. Sie sind in dieser geordenten Form bsi jetzt nur auf Skypern zu lesen. Allerdings werden Sie auch als persönlicher Ruf an die RIC 1000 + (Rubrik-Nummer) ausgesendet, z.B. für AlphaPoc-Meldeempfänger."
-			}
-		}
-	},
-	"nodes": {
-		"overview": {
-			"allnodes": "Alle Knoten",
-			"newnode": "Neuer Knoten",
-			"sendmailtoallowners": "Sende Email an alle Besitzer von Knoten",
-			"statistics": {
-				"totalnodes": "Gesamtzahl aller Nodes"
-			},
-			"information": {
-				"help": "Konten sind Instanzen des DAPNET-Verbundes, deren Status hier gezeigt wird."
-			},
-			"table": {
-				"name": "Name",
-				"version": "Version",
-				"ipaddress": "IP-Adresse",
-				"status": "Status"
-			}
-		},
-		"new": {
-			"newnode": "Neuer Knoten",
-			"editnode": "Ändere Konten",
-			"name": {
-				"title": "Name",
-				"help": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Knotens."
-			},
-			"status": {
-				"title": "Status",
-				"online": "Online",
-				"suspended": "abgeschaltet"
-			},
-			"information": {
-				"help": "Diese Tabelle zeige alle angemelteten DAPNET Knoten und ist hauptsächlich zur Information von Betreibern von Sendern oder Knoten gedacht."
-			}
-		}
-	},
-	"login": {
-		"username": "Benutzername",
-		"password": "Passwort",
-		"information": {
-			"title": "Information",
-			"help": "..."
-		}
-	},
-	"logout": {
-		"seepagewrong": "Wenn Sie diese Seite sehen, ist etwas schief gelaufen.",
-		"emoji": "Emoji kostenlos bereitgestellt durch"
-	},
-	"impress": {
-		"title": "Impressum"
-	},
-	"error404": {
-		"title": "Error 404 - Nicht gefunden",
-		"emoji": "Emoji kostenlos bereitgestellt durch"
-	},
-	"privacy": {
-		"title": "Datenschutz"
-	},
-	"versioncheck": {
-		"title": "Versionsüberprüfung"
-	},
-	"group": {
-		"overview": {
-			"newtxgroup": "Neue Sender-Gruppe",
-			"alltxgroups": "Alle Sender-Gruppen",
-			"totaltxgroups": "Gesamtzahl der Sender-Gruppen",
-			"information": {
-				"help": "Eine Sender-Gruppe ist ein logischer Zusammenschluss von einem oder mehreren Sendern zu einem gemeinsamen Bezeichner. Dies ist notwendig, um die Sender ein regionale Zonen aufzuteilen, da nicht jeder Inhalt über das ganze Netzwerk ausgestrahlt werden muss. Sowohl persönliche Rufe, wie auch Rubriken-Inhalte müssen einer Sender-Gruppe zugewiesen werden. Nur die in der oder den zugewiesenen Gruppen enthaltenen Sender werden vom DAPNET Knoten mit den betreffenden Daten versorgt."
-			}
-		},
-		"new": {
-			"newtxgroup": "Neue Sender-Gruppe",
-			"edittxgroup": "Ändere Sender-Gruppe",
-			"namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieser Sender-Gruppe.",
-			"information": {
-				"help": "Eine Sender-Gruppe kominiert einen oder mehrere Sender zu einer logischen Einheit."
-			}
-		}
-	},
-	"users": {
-		"general": {
-			"email": "Email",
-			"admin": "Admin?",
-			"newuser": "Neuer Nutzer"
-		},
-		"overview": {
-			"allusers": "Alle Nutzer",
-			"sendemailallusers": "Sende eine Email an alle Nutzer",
-			"totaladmins": "Gesamtzahl Admin",
-			"totalusers": "Gesamtzahl Nutzer",
-			"information": {
-				"help": "Dies ist eine Übersicht aller Benutzerzugänge im DAPNET Netzwerk. Wenn Sie kein Administor sind, werden Ihnen nicht die Details der Benutzerzugänge von anderen Benutzern angezeigt. Die können die Einstellungen Ihres Benutzerzugangs selbst ändern, z.B. das Passwort oder Ihre Email-Adresse."
-			}
-		},
-		"new": {
-			"edituser": "Ändere Nutzer",
-			"namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Knotens.",
-			"password": {
-				"help": "Das ist das neue zufällig Passwort:",
-				"randompassword": "Neues zufälliges Passwort erzeugen"
-			},
-			"information": {
-				"help": "Dies Tabelle zeigt die registrierten Nutzer und deren Details."
-			}
-		}
-	}
+    "navigation": {
+        "calls": "Rufe",
+        "subscribers": "Teilnehmer",
+        "rubrics": {
+            "title": "Rubriken",
+            "all": "Alle Rubriken",
+            "activate": "Rubriken aktivieren",
+            "content": "Rubriken Inhalt"
+        },
+        "transmitters": {
+            "title": "Sender",
+            "all": "Alle Sender",
+            "map": "Karte",
+            "groups": "Sendergruppen"
+        },
+        "nodes": "Knoten",
+        "users": "Nutzer",
+        "help": {
+            "title": "Hilfe",
+            "wiki": "Dokumentation",
+            "support": "Support"
+        },
+        "settings": "Einstellungen",
+        "login": "Anmelden",
+        "logout": "Abmelden"
+    },
+    "home": {
+        "carousel": {
+            "1": {
+                "title": "Willkommen beim DAPNET Web!",
+                "text": "Das DAPNET (Decentralized Amateur Paging Network) ist ein durch Funkamateure betriebenes Netzwerk. Da dieses Netzwerk auf Amateurfunk-Frequenzen arbeitet ist eine kommerzielle Nutzung verboten.<br>Wenn Sie Funkamateur sind, können Sie Ihren Zugang direkt beantragen.",
+                "link": ""
+            },
+            "2": {
+                "title": "Raspager Sender",
+                "text": "Senders mit geringer Reichweite als günstige Aufsteckplatine für einen Raspberry Pi",
+                "link": "http://hampager.de/dokuwiki/doku.php?id=raspager"
+            },
+            "3": {
+                "title": "Kartendarstellung mit Abdeckungsanzeige",
+                "text": "Die Sender werden auf einer Karte dargestellt. Ebenfalls kann der simulierte Abdeckungsbereich angezeigt werden.",
+                "link": ""
+            },
+            "4": {
+                "title": "Berührungsempfindliche Anzeige für Sender",
+                "text": "Zur einfachen Kontrolle und Konfiguration gibt es eine farbige Anzeige basierend auf einem Nextion-Display. Der Anschluss an den Sender geschieht über die UART auf dem GPIO-Anschluss eines Raspberry Pis oder durch einen USB-auf-Seriell-Wandler.",
+                "link": "http://hampager.de/dokuwiki/doku.php?id=unipagernextion"
+            },
+            "5": {
+                "title": "Unipager - Eine einzige Software für alle Sender-Arten",
+                "text": "Die Unipager-Software in der modernen Programmiersprache RUST geschrieben ermöglichte den Aufbau aller Sender-Arten: Raspager, Ericsscon C9000 (mit Zuatzplatine), die Soundkarten-Variante und die RFM69-Lösung. Ein Debian-Paket ist für einfache Installation und Updates verfügbar.",
+                "link": "http://hampager.de/dokuwiki/doku.php?id=unipager"
+            },
+            "6": {
+                "title": "Moderner Funkmeldeempfänger: Swissphone",
+                "text": "Ein High-End Modell für Benutzer mit besonderen Ansprüchen.",
+                "link": "http://hampager.de/dokuwiki/doku.php?id=swissphonedescription"
+            },
+            "7": {
+                "title": "SDR-basierter Sender mit GM1200 oder ähnlichem Funkgerät",
+                "text": "Alles was benötigt wird ist ein 9k6 fähiges Funkgerät und ein einfaches Audio-Interface. Das Touch-Display kann ebenfalls verwendet werden.",
+                "link": "http://hampager.de/dokuwiki/doku.php?id=9k6"
+            },
+            "8": {
+                "title": "Ersatz für die Skyper: Funkmeldeempfänger AlphaPOC 6002R",
+                "text": "Der auf dem Markt befindliche Pager ist klein, handlich und kann ohne Umbau betrieben werden. Die Einstellung der Frequenz und der RIC kann direkt am Gerät geschehen.",
+                "link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription"
+            },
+            "9": {
+                "title": "Struktur des DAPNETs",
+                "text": "Moderne Techniken unter der Haube: Das DAPNET wartet mit seiner REST-Schnittstelle und der Verwendung von Websockets mit up-to-date Techniken aus dem Bereich des professionellen Internets auf.",
+                "link": ""
+            },
+            "10": {
+                "title": "Unterstützung durch ein Ticket-System",
+                "text": "Anfragen zur Einrichtung von Sendern und Hilfe werden über ein Ticket-System abgehandelt. So wird die Abhänigkeit einer One-Man-Show vermieden und das vorhandene Wissen sowie die Arbeit von mehreren Freiwilligen getragen. Dadurch wird eine hohe Qualität und eine kurze Antwortzeit erreicht.",
+                "link": "https://support.hampager.de/"
+            }
+        },
+        "information": {
+            "dapnet": {
+                "title": "Das DAPNET",
+                "projects": "Projekte"
+            },
+            "map": "Vollständige Kartenansicht öffnen",
+            "statistics": {
+                "calls": "Rufe",
+                "rubric-content": "Rubriken Inhalt",
+                "rubrics": "Rubriken",
+                "transmitters": "Sender",
+                "nodes": "Knoten",
+                "users": "Nutzer"
+            }
+        }
+    },
+    "transmitter": {
+        "overview": {
+            "table": {
+                "title": "Alle Sender",
+                "callsign": "Rufzeichen",
+                "node": "Knoten",
+                "ipaddress": "IP Adresse",
+                "device": "Gerät",
+                "status": "Status",
+                "connectedsince": "Verbunden seit"
+            },
+            "actions": {
+                "newtransmitter": "Neuer Sender",
+                "sendmailtoallowners": "Sende Email an alle Besitzer"
+            },
+            "statistics": {
+                "widerange": "Weitbereich",
+                "personal": "Persönlich",
+                "total": "Gesamt",
+                "widerangeonly": "Nur Weitbereichssender"
+            },
+            "information": {
+                "text": "Diese Übersicht zeigt alle im DAPNET angemeldeten Sender. Bevor ein Sender mit einem der DAPNET Knoten verbunden werden kann, muss dieser erst von einem Administrator angelegt werden.<br>Es gibt zwei Klassen von Sendern: Weitbereichssender (&gt; 1 Watt) und persönliche Sender (&lt;= 1 Watt).<br>Warum gibt es eine solch große Anzahl an Sendern, die offline sind? Diese Sender wurden meist in der Vergangenheit angelegt wurden, aber zur Zeit offensichtlich nicht betrieben werden. Es gibt keine Festlegung, welches Sender online sein \"sollten\" und welche nicht.<br>Sender haben einen oder mehrere Besitzer, die die Einstellungen selbstständig ändern können. Jeder Sender hat 1 bis max. 16 Zeitschlitzen zugewiesen. Dies ist notwendig, da alle Sender auf der gleichen Frequenz. Eine überlappende Zeitschlitzvergabe in der Ausleuchtung eines Bereiches zwischen den Sendern ist streng zu vermeiden. Daher bitte keine Zeitschlitze einem Sender zuordnen, die bereit von anderen Sendern im Abdeckgungsbereich seines Senders benutzt werden. Bitte Kontakt mit <code>support [at] hampager.de</code> aufnehmen, wenn es Unklarheiten oder Fragen gibt."
+            }
+        },
+        "new": {
+            "newtransmitter": "Neuer Sender",
+            "edittransmitter": "Ändere Sender",
+            "callsign": {
+                "title": "Rufzeichen",
+                "help": "Bitte hier ein gültiges Amateurfunk-Rufzeichen des Senders eingeben. Dieser Eintrag wird ebenfalls dazu verwendet, die 10 minütige Rufzeichenaussendung durch den Sender entsprechend der deutschen Gesetzgebung zu erzeugen.",
+                "helpedit": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Senders."
+            },
+            "import": {
+                "help": "Einfache Übernahme der Sender-Position von hamnetdb.net. Die Position des ausgewählten Eintrags wird automatisch in das Formular eingefügt."
+            },
+            "password": {
+                "title": "Passwort",
+                "help": "Bitte eine Authentifizierungspasswort für diesen Sender festlegen. Im UniPager Webinterface wird dies \"Auth Key\" genannt."
+            },
+            "usage": {
+                "title": "Verwendungsart",
+                "personal": "Persönlich",
+                "widerange": "Weitbereich",
+                "help": "Zur Einordnung der Sender gibt es zwei Kategorien: Persönliche Sender (Sender mit einer geringen Strahlungsleistung wie z.B. der Raspager und Weitbereichssender mit einen hohen Strahlungsleistung und einem im Gelände erhöhten Standort."
+            },
+            "antennatype": {
+                "title": "Antennenart",
+                "omni": "Rundstrahler",
+                "directional": "Richtantenne",
+                "other": "Weiteres",
+                "help": "Bitte die Antennenart auswählen. Beispiele für einen Rundstrahler ist eine X-50, eine Richtantenne ist z.B. eine Yagi."
+            },
+            "antennadirection": {
+                "help": "<b>Antennenhauptstrahlrichtung</b>: Bitte die Antennenhauptstrahlrichtung in Grad angeben. Als Referenz \"rechtweisend Nord\" verwenden."
+            },
+            "other": {
+                "title": "Weitere Einstellungen",
+                "power": {
+                    "help": "<b>Sendeleistung</b>: Bitte die Sendeleistung am Ausgang des Sender inkl. der Kabelverluste angeben. Dies entspricht der am Antennenstecker ankommendne Leistung. Die Einheit ist Watt."
+                },
+                "antennalevel": {
+                    "help": "<b>Antennenhöhe über Grund</b>: Bitte die Antennenhöhe über Grund NICHT ÜBER NN (!) in Meter angeben."
+                },
+                "antennagain": {
+                    "help": "<b>Antennengewinn</b>: Bitte den Antennengewinn in Hauptstrahlrichtung für Richtantennen und den mittleren Gewinn für Rundstrahlantennen in dBi angeben. (dBi: Gewinn im Vergleich zu einem isotropen Kugelstrahler)."
+                },
+                "txidentric": {
+                    "help": "<b>Identifizierungs-RIC des Senders</b>: Bitte eine RIC (der Normalfall ist 1) eigeben, die verwendet werden soll, um die Rufzeichennennung zu versenden. Diese künstiliche Nachricht enthält den unter \"Rufzeichen\" eingegebenen Text."
+                }
+            },
+            "timeslots": {
+                "title": "Zeitschlitze",
+                "help": "Da alle Sender die gleiche Frequenz benutzen, wird ein Zeitmultiplex-Verfahren eingesetzt. Es gibt 16 Zeitschlitze. Bitte die Zuweisung der Zeitschlitze so vornehmen, dass es im Abdeckungsbereich dieses Senders keine Überschneidungen mit Zuordnungen von anderen bereits existierenden Sendern gibt. Die Kartenansicht kann dazu verwendet werden, sich einen Überblick über die bereits vorhandenen Sender und ihrer Zeitschlitze zu verschaffen.<br>Falls die Anforderungen dieses Senders zur Belegung von Zeitschlitzen durch die bestehende Zuweisung nicht erfüllt werden kann, bitte die Besitzer der umliegenden Sender kontaktieren und für eine Lösung sorgen. Im Normallfall sind 4 oder weniger Zeitschlitze pro Sender mehr als genug."
+            },
+            "owner": {
+                "help": "Besitzer können die Einstellungen eines Senders selbstständig ändern."
+            },
+            "table": {
+                "description": "Diese Tabelle zeigt die angmeldeten Sender, ihren Online-Status und weitere Informationen. Pernsönliche Sender müssen eine geringe Strahlungsleistung und einen sehr begrenzten Abdeckungsbereich haben, wie z.B. der Raspager. Weitbereichssender sind gewöhnlicherweise an hohen Standorten installiert und haben einen großen Abdeckungsbereich"
+            }
+        },
+        "map": {
+            "title": "Karte",
+            "settings": {
+                "title": "Einstellungen"
+            },
+            "checkbox": {
+                "showonlineonly": "Nur Sender, die online sind, anzeigen.",
+                "showwiderangeonly": "Nur Weitbereichssender anzeigen",
+                "showbytimeslot": "Nur Sender anzeigen, die die angegeben Zeitschlitze zugewiesen haben",
+                "shownodes": "Knoten anzeigen",
+                "shownodeline": "Eine Linie vom Sender zum Knoten, mit dem er verbunden ist, anzeigen"
+            },
+            "actions": {
+                "showallcoverage": "Abdeckungsbereiche von allen Sendern anzeigen",
+                "removeallcoverage": "Alle Abdeckungsbereiche entfernen"
+            },
+            "alerts": {
+                "load": {
+                    "title": "Abdeckungsbereiche laden?",
+                    "text": "Drücken Sie auf \"Fortfahren\", um alle Abdeckungsbereiche für aktuell sichtbare Sender zu laden. Dies kann einige Zeit dauern und Ihr Endgerät einer erhöhten Last aussetzen."
+                },
+                "confirm": {
+                    "title": "Sind Sie wirklich sicher?",
+                    "text": "Sie versuchen gerade, die Abdeckungsbereiche von <b> {amount} Sendern</b> zu laden. Dies wird einige Zeit dauern und Ihr Endgerät einer erhöhten Last aussetzen.",
+                    "continue": "Ja, ich bin sicher und werde es nicht dem Entwickler vorwerfen, falls mein Browser abstürzen sollte."
+                }
+            }
+        }
+    },
+    "footer": {
+        "language": {
+            "title": "Sprache",
+            "en": "Englisch",
+            "de": "Deutsch",
+            "es": "Spanisch",
+            "nl": "Niederländisch",
+            "fr": "Französisch",
+            "pl": "Polnisch"
+        },
+        "support": {
+            "title": "Unterstütze uns",
+            "github": "GitHub",
+            "rwth-amateur-radio": "RWTH Amateurfunkgruppe"
+        },
+        "contact": {
+            "title": "Kontaktiere uns",
+            "twitter": "Twitter",
+            "facebook": "Facebook",
+            "contact": "Kontakt",
+            "impress": "Impressum",
+            "privacy": "Datenschutz"
+        },
+        "versions": {
+            "title": "Versionen",
+            "check": "Prüfen"
+        }
+    },
+    "table": {
+        "search": "Suche",
+        "pagination": {
+            "page": "Seite",
+            "of": "von"
+        },
+        "actionbuttons": {
+            "edit": "Bearbeiten",
+            "delete": "Löschen",
+            "email": "E-Mail senden",
+            "rubrics": "Rubriken senden"
+        }
+    },
+    "rest": {
+        "errors": {
+            "title": "Fehler",
+            "no-connection": "Keine Verbindung",
+            "api-unreachable": "API-Server zur Zeit nicht erreichbar. Bitte versuchen Sie es später erneut. Sollte das Problem nicht behoben sein, öffnen Sie bitte ein Ticket im Ticket-System.",
+            "permissions": "Ungültige Anmeldedaten oder keine Berechtigungen für diese Anfrage. Bitte prüfen Sie Nutzername und Passwort.",
+            "http-error": "Unbehandelter HTTP Fehler {status}. Bitte versuchen Sie es später erneut.",
+            "403": {
+                "title": "Verboten",
+                "text": "Keine Berechtigung für diese Anfrage. Wenn dies ein Zustand ist, der Ihrer Meinung nach nicht akzeptabel ist, bitte ein Ticket aufmachen."
+            },
+            "404": {
+                "title": "Nicht gefunden",
+                "text": "Konnte die gewählte Resource nicht finden."
+            }
+        }
+    },
+    "alerts": {
+        "success": {
+            "title": "Erfolg",
+            "text": "Operation erfolgreich durchgeführt."
+        },
+        "delete": {
+            "title": "Sind Sie sicher?",
+            "text": "Sie können diese Daten nicht wiederherstellen, sobald sie gelöscht wurden."
+        },
+        "input": {
+            "title": "Fehlende Eingaben",
+            "text": "Bitte füllen Sie alle Eingabefelder aus, um fortzufahren."
+        }
+    },
+    "general": {
+        "continue": "Fortfahren",
+        "submit": "Absenden",
+        "abort": "Abbrechen",
+        "search": "Suchen",
+        "information": "Information",
+        "owner": "Besitzer",
+        "actions": "Aktionen",
+        "statistics": "Statistiken",
+        "description": "Beschreibung",
+        "name": "Name",
+        "latlong": {
+            "title": "Breite / Länge",
+            "north": "Nord",
+            "south": "Süd",
+            "east": "Ost",
+            "west": "West"
+        },
+        "password": "Passwort",
+        "yes": "Ja",
+        "no": "Nein",
+        "permalink": "Permanentlink"
+    },
+    "rubric": {
+        "overview": {
+            "totalrubrics": "Alle Rubriken",
+            "information": {
+                "help": "Dies ist eine Liste aller Rubiken im DAPNET. Ein Rubik kann einer oder mehreren Sender-Gruppen zugewiesen werden. Bitte darauf achten, dass die Sender-Gruppen unterschiedlich sind, falls eine Rubiken-Nummer mehrfach verwendet wird. Dies vermeidet überlappende Zuordnungen.<br>BUm dem Empfang der Rubriken auf dem Skyper freizuschalten bitte die Funktion \"Rubriken aktivieren\" verwenden."
+            },
+            "table": {
+                "number": "Nummer",
+                "name": "Name",
+                "label": "Bezeichnung",
+                "transmittergroup": "Sender-Gruppen"
+            }
+        },
+        "new": {
+            "newrubric": "Neue Rubrik",
+            "name": "Name",
+            "namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieser Rubrik.",
+            "label": "Bezeichung",
+            "number": "Nummer",
+            "transmittergroup": "Sender-Gruppen",
+            "information": {
+                "help": "Rubriken sind eine Erfindung für die Skyper, die es ermöglicht, Nachrichten in einer strukturierten Weise zu versenden. Bitte bei der Zuordnung der Rubiken-Nummer mit Bedacht handeln und mit <code>support [at] hampager.de</code> Kontakt aufnehmen, falls Unklarheiten bestehen. Bedenkt, dass die Anzahl der Rubiken im ganzen DAPNET auf 99 beschränkt ist."
+            },
+            "editrubric": ""
+        },
+        "activation": {
+            "pagernumber": "Pager-Nummer (Ihre RIC)",
+            "information": {
+                "help": "Diese Funktion sende einen Freischaltungsruf an Ihren Skyper. Wenn der Empfang erfolgreich war, können danach die Rubiken durch den Menüpunkt \"Skyper Setup\" im Skyper Menü abonniert werden."
+            },
+            "transmittergroup": "Sender-Gruppen"
+        }
+    },
+    "subscribers": {
+        "overview": {
+            "newsubscriber": "Neuer Teilnehmer",
+            "allsubscribers": "Alle Teilnehmer",
+            "totalsubscribers": "Gesamtanzahl Teilnehmer",
+            "information": {
+                "help": "Ein Teilnehmer-Eintrag ist eine logische Verknüpfung zwischen einem Bezeichner (meist das Rufzeichen des Besitzers des Meldeempfängers) und einer oder mehreren RICs, zum Beispiel die Skyper Adresse."
+            },
+            "table": {
+                "pager": "Funkmeldeempfänger",
+                "subscriber": "Teilnehmer"
+            }
+        },
+        "new": {
+            "newsubscriber": "Neuer Teilnehmer",
+            "editsubscriber": "Ändere Teilnehmer",
+            "subscriber": {
+                "title": "Teilnehmer",
+                "help": "Bitte ein gültiges Amateurfunk-Rufzeichen oder einen klassifizierenden Namen einer Organisation eingeben.",
+                "info": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Teilnehmer-Eintrags."
+            },
+            "description": {
+                "help": "Bitte hier den Vornamen oder eine andere sinnvolle Beschreibung dieses Eintrags eingeben."
+            },
+            "pager": {
+                "title": "Funkmeldeempfänger",
+                "helprics": "Eine oder mehrere RIC Nummern in einzelnen Zeilen hinzufügen.",
+                "helpnames": "Entsprechend der Anzahl der Zeilen in der linken Box eine entsprechende Beschreibung für die RIC Nummer angeben."
+            },
+            "owner": {
+                "title": "Besitzer",
+                "help": "Der Besitzer eines Teilnehmers kann seine Einstellungen ändern."
+            },
+            "information": {
+                "help": "Ein Teilnehmer-Eintrag ist eine logische Verknüpfung zwischen einem Bezeichner (meist das Rufzeichen des Besitzers des Meldeempfängers) und einer oder mehreren RICs."
+            }
+        }
+    },
+    "calls": {
+        "overview": {
+            "allcalls": "Alle Rufe",
+            "newcall": "Neuer Ruf",
+            "emergencies": "Notfall-Alamierungen",
+            "totalcalls": "Gesamtanzahl Rufe",
+            "information": {
+                "help": "Rufe sind persönliche Funkmeldenachrichten an individuelle Funkmeldeempfänger."
+            },
+            "table": {
+                "timestamp": "Zeitstempel",
+                "txgroups": "Sender-Gruppen",
+                "message": "Nachricht",
+                "emergency": "Hohe Priorität?"
+            }
+        },
+        "new": {
+            "newcall": "Neuer Ruf",
+            "message": {
+                "title": "Nachricht",
+                "charactersremaining": "80 Zeichen verbleibend.<br>Bitte den Nachrichtentext eingeben. Das Absender-Rufzeichen wird automatisch hinzugefügt."
+            },
+            "subscribers": {
+                "help": "Einen oder mehrere Teilnehmer als Empfänger des Rufs auswählen."
+            },
+            "transmittergroups": {
+                "title": "Sender-Gruppen",
+                "help": "Eine Sender-Gruppe auswählen, mit deren Sendern der Ruf ausgesendet wird. Im Normalfall sind das alle Sender, aber wenn der Aufenthaltsort des Empfängers bekannt ist, kann eine kleinere Sendergruppe gewählt werden. Dies verringert die Last auf den Sendern."
+            },
+            "emergency": {
+                "title": "Notfall?",
+                "help": "Wenn die Nachricht so schnell wie möglich versandt werden soll, kann diese Box ausgewählt werden. Es werden keine schlimmen Dinge geschehen; DAPNET wird nur die Nachricht mit der maximalen Priorität verarbeiten. Bitte diese Funktion fair verwenden."
+            },
+            "information": {
+                "help": "Hier werden Ihre letzten Rufe angezeigt."
+            }
+        }
+    },
+    "news": {
+        "overview": {
+            "allrubriccontent": "Inhalt aller Rubriken",
+            "newrubriccontent": "Neuer Rubriken Inhalt",
+            "totalrubriccontent": "Gesamtzahl der Rubriken-Einträge",
+            "information": {
+                "help": "Der hier dargestellte Inhalt sind NICHT allgemeine Nachrichten zu DAPNET sondern die zuletzt in die Rubriken eingestellten Meldungen. Jedes Mal, wenn einer der 10 verfügbaren Rubriken-Inhalte pro Rubrik geändert wird, wird dies hier aufgeführt."
+            },
+            "table": {
+                "timestamp": "Zeitstempel",
+                "rubric": "Rubrik",
+                "number": "#",
+                "message": "Nachricht"
+            }
+        },
+        "new": {
+            "newrubriccontent": "Neuer Rubriken Inhalt",
+            "message": "Nachricht",
+            "charactersremaining": "verbleibende Zeichen",
+            "rubrics": "Rubriken",
+            "number": "Nummer",
+            "chooseautomatically": "Automatisch bestimmen",
+            "information": {
+                "help": "Diese ist der Inhalt aller Rubriken. Sie sind in dieser geordenten Form bsi jetzt nur auf Skypern zu lesen. Allerdings werden Sie auch als persönlicher Ruf an die RIC 1000 + (Rubrik-Nummer) ausgesendet, z.B. für AlphaPoc-Meldeempfänger."
+            }
+        }
+    },
+    "nodes": {
+        "overview": {
+            "allnodes": "Alle Knoten",
+            "newnode": "Neuer Knoten",
+            "sendmailtoallowners": "Sende Email an alle Besitzer von Knoten",
+            "statistics": {
+                "totalnodes": "Gesamtzahl aller Nodes"
+            },
+            "information": {
+                "help": "Konten sind Instanzen des DAPNET-Verbundes, deren Status hier gezeigt wird."
+            },
+            "table": {
+                "name": "Name",
+                "version": "Version",
+                "ipaddress": "IP-Adresse",
+                "status": "Status"
+            }
+        },
+        "new": {
+            "newnode": "Neuer Knoten",
+            "editnode": "Ändere Konten",
+            "name": {
+                "title": "Name",
+                "help": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Knotens."
+            },
+            "status": {
+                "title": "Status",
+                "online": "Online",
+                "suspended": "abgeschaltet"
+            },
+            "information": {
+                "help": "Diese Tabelle zeige alle angemelteten DAPNET Knoten und ist hauptsächlich zur Information von Betreibern von Sendern oder Knoten gedacht."
+            }
+        }
+    },
+    "login": {
+        "username": "Benutzername",
+        "password": "Passwort",
+        "information": {
+            "help": "...",
+            "title": ""
+        }
+    },
+    "logout": {
+        "seepagewrong": "Wenn Sie diese Seite sehen, ist etwas schief gelaufen.",
+        "emoji": "Emoji kostenlos bereitgestellt durch"
+    },
+    "impress": {
+        "title": "Impressum"
+    },
+    "error404": {
+        "title": "Error 404 - Nicht gefunden",
+        "emoji": "Emoji kostenlos bereitgestellt durch"
+    },
+    "privacy": {
+        "title": "Datenschutz"
+    },
+    "versioncheck": {
+        "title": "Versionsüberprüfung"
+    },
+    "group": {
+        "overview": {
+            "newtxgroup": "Neue Sender-Gruppe",
+            "alltxgroups": "Alle Sender-Gruppen",
+            "totaltxgroups": "Gesamtzahl der Sender-Gruppen",
+            "information": {
+                "help": "Eine Sender-Gruppe ist ein logischer Zusammenschluss von einem oder mehreren Sendern zu einem gemeinsamen Bezeichner. Dies ist notwendig, um die Sender ein regionale Zonen aufzuteilen, da nicht jeder Inhalt über das ganze Netzwerk ausgestrahlt werden muss. Sowohl persönliche Rufe, wie auch Rubriken-Inhalte müssen einer Sender-Gruppe zugewiesen werden. Nur die in der oder den zugewiesenen Gruppen enthaltenen Sender werden vom DAPNET Knoten mit den betreffenden Daten versorgt."
+            }
+        },
+        "new": {
+            "newtxgroup": "Neue Sender-Gruppe",
+            "edittxgroup": "Ändere Sender-Gruppe",
+            "namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieser Sender-Gruppe.",
+            "information": {
+                "help": "Eine Sender-Gruppe kominiert einen oder mehrere Sender zu einer logischen Einheit."
+            }
+        }
+    },
+    "users": {
+        "general": {
+            "email": "Email",
+            "admin": "Admin?",
+            "newuser": "Neuer Nutzer"
+        },
+        "overview": {
+            "allusers": "Alle Nutzer",
+            "sendemailallusers": "Sende eine Email an alle Nutzer",
+            "totaladmins": "Gesamtzahl Admin",
+            "totalusers": "Gesamtzahl Nutzer",
+            "information": {
+                "help": "Dies ist eine Übersicht aller Benutzerzugänge im DAPNET Netzwerk. Wenn Sie kein Administor sind, werden Ihnen nicht die Details der Benutzerzugänge von anderen Benutzern angezeigt. Die können die Einstellungen Ihres Benutzerzugangs selbst ändern, z.B. das Passwort oder Ihre Email-Adresse."
+            }
+        },
+        "new": {
+            "edituser": "Ändere Nutzer",
+            "namehelp": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Knotens.",
+            "password": {
+                "help": "Das ist das neue zufällig Passwort:",
+                "randompassword": "Neues zufälliges Passwort erzeugen"
+            },
+            "information": {
+                "help": "Dies Tabelle zeigt die registrierten Nutzer und deren Details."
+            }
+        }
+    }
 }
