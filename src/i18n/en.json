@@ -323,7 +323,7 @@
             "information": {
                 "help": "Rubrics are a Skyper based invention allowing to send news sorted into chategories (the rubrics). Assign the number with care and contact <code>support [at] hampager.de</code> in case of doubt. Be aware that the number of rubrics is limited netwide to 99."
             },
-            "editrubric": ""
+            "editrubric": "Edit Rubric"
         },
         "activation": {
             "pagernumber": "Pager-Number (your RIC)",
@@ -475,8 +475,7 @@
         "username": "Username",
         "password": "Password",
         "information": {
-            "help": "...",
-            "title": ""
+            "help": "..."
         }
     },
     "logout": {
