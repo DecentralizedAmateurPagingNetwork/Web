@@ -57,8 +57,9 @@
 							<li class="clickable"><a v-on:click="changeLanguage('en')"><span class="flag-icon flag-icon-gb"></span> {{ $t('footer.language.en') }}</a></li>
 							<li class="clickable"><a v-on:click="changeLanguage('de')"><span class="flag-icon flag-icon-de"></span> {{ $t('footer.language.de') }}</a></li>
 							<li class="clickable"><a v-on:click="changeLanguage('es')"><span class="flag-icon flag-icon-es"></span> {{ $t('footer.language.es') }}</a></li>
-							<li class="clickable disabled"><a><span class="flag-icon flag-icon-fr"></span> {{ $t('footer.language.fr') }}</a></li>
-							<li class="clickable disabled"><a><span class="flag-icon flag-icon-pl"></span> {{ $t('footer.language.pl') }}</a></li>
+							<li class="clickable"><a v-on:click="changeLanguage('nl')"><span class="flag-icon flag-icon-nl"></span> {{ $t('footer.language.nl') }}</a></li>
+							<li class="clickable"><a v-on:click="changeLanguage('fr')"><span class="flag-icon flag-icon-fr"></span> {{ $t('footer.language.fr') }}</a></li>
+							<li class="clickable"><a v-on:click="changeLanguage('pl')"><span class="flag-icon flag-icon-pl"></span> {{ $t('footer.language.pl') }}</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">

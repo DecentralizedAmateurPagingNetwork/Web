@@ -9,7 +9,10 @@ const i18n = new VueI18n({
 	messages: {
 		'en': require('./en.json'),
 		'de': require('./de.json'),
-		'es': require('./es.json')
+		'es': require('./es.json'),
+		'nl': require('./nl.json'),
+		'fr': require('./fr.json'),
+		'pl': require('./pl.json')
 	}
 });
 
