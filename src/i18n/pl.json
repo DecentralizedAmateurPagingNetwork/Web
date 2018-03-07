@@ -16,8 +16,8 @@
 		},
 		"nodes": "Knoten",
 		"users": "Nutzer",
-		"more": {
-			"title": "Mehr",
+		"help": {
+			"title": "Help",
 			"wiki": "Dokumentation",
 			"support": "Support"
 		},
@@ -203,10 +203,6 @@
 			"nl": "Dutch",
 			"fr": "Französisch",
 			"pl": "Polnisch"
-		},
-		"more": {
-			"title": "Mehr",
-			"faq": "FAQ"
 		},
 		"support": {
 			"title": "Unterstütze uns",

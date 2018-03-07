@@ -16,8 +16,8 @@
 		},
 		"nodes": "Knoten",
 		"users": "Nutzer",
-		"more": {
-			"title": "Mehr",
+		"help": {
+			"title": "Hilfe",
 			"wiki": "Dokumentation",
 			"support": "Support"
 		},
@@ -30,7 +30,7 @@
 			"1": {
 				"title": "Willkommen beim DAPNET Web!",
 				"text": "Das DAPNET (Decentralized Amateur Paging Network) ist ein durch Funkamateure betriebenes Netzwerk. Da dieses Netzwerk auf Amateurfunk-Frequenzen arbeitet ist eine kommerzielle Nutzung verboten.<br>Wenn Sie Funkamateur sind, können Sie Ihren Zugang direkt beantragen.",
-			  "link": ""
+				"link": ""
 			},
 			"2": {
 				"title": "Raspager Sender",
@@ -203,10 +203,6 @@
 			"nl": "Niederländisch",
 			"fr": "Französisch",
 			"pl": "Polnisch"
-		},
-		"more": {
-			"title": "Mehr",
-			"faq": "FAQ"
 		},
 		"support": {
 			"title": "Unterstütze uns",

@@ -41,10 +41,10 @@
 					<li><router-link to="/users">{{ $t('navigation.users') }}</router-link></li>
 					<li class="divider-vertical"></li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ $t('navigation.more.title') }} <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ $t('navigation.help.title') }} <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><router-link to="/more/wiki">{{ $t('navigation.more.wiki') }}</router-link></li>
-							<li><router-link to="/more/support">{{ $t('navigation.more.support') }}</router-link></li>
+							<li><router-link to="/more/wiki">{{ $t('navigation.help.wiki') }}</router-link></li>
+							<li><router-link to="/more/support">{{ $t('navigation.help.support') }}</router-link></li>
 						</ul>
 					</li>
 					<li class="divider-vertical"></li>

@@ -16,8 +16,8 @@
 		},
 		"nodes": "Nodos",
 		"users": "Usuarios",
-		"more": {
-			"title": "More",
+		"help": {
+			"title": "Help",
 			"wiki": "Documentation",
 			"support": "Support"
 		},
@@ -203,10 +203,6 @@
 			"nl": "Dutch",
 			"fr": "French",
 			"pl": "Polish"
-		},
-		"more": {
-			"title": "Más",
-			"faq": "FAQ"
 		},
 		"support": {
 			"title": "Apoyanos ya",
