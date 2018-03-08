@@ -12,7 +12,8 @@ const i18n = new VueI18n({
 		'es': require('./es.json'),
 		'nl': require('./nl.json'),
 		'fr': require('./fr.json'),
-		'pl': require('./pl.json')
+		'pl': require('./pl.json'),
+		'it': require('./it.json')
 	}
 });
 
