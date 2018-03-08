@@ -6,7 +6,7 @@
             "title": "Rubrieken",
             "all": "Alle rubrieken",
             "activate": "Rubrieken activeren",
-            "content": "Rubrieken inhoud"
+            "content": "Rubriek inhoud"
         },
         "transmitters": {
             "title": "Zenders",
@@ -28,18 +28,18 @@
     "home": {
         "carousel": {
             "1": {
-                "title": "Welkokm bij DAPNET Web!",
-                "text": "Het DAPNET (Decentralized Amateur Paging Network) is een netwerk dat in stand gehouden wordt door enthousiaste zendamateurs. Aangezien amateur radiofrequenties gebruikt worden, is commercieel gebruik niet toegestaan.<br>Vraag nu uw login aan wanneer u een gelicenseerd zendamateur bent.",
+                "title": "Welkom bij DAPNET Web!",
+                "text": "Het DAPNET (Decentralized Amateur Paging Network) is een netwerk dat in stand gehouden wordt door enthousiaste zendamateurs. Aangezien amateur radiofrequenties gebruikt worden, is commercieel gebruik niet toegestaan.<br>Vraag nu uw login aan indien u een gelicenseerd zendamateur bent.",
                 "link": "NONE"
             },
             "2": {
                 "title": "Raspager zender",
-                "text": "Een goedkope en laag vermogen persoonlijke zender als add-on voor de Raspberry Pi.",
+                "text": "Een goedkope persoonlijke zender met laag vermogen als add-on voor de Raspberry Pi.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=raspager"
             },
             "3": {
                 "title": "Dekkingskaart",
-                "text": "Op de kaart worden zenders met hun gesimuleerde dekking weergegeven.",
+                "text": "Op de kaart worden zenders met hun gesimuleerd dekkingsgebied weergegeven.",
                 "link": "NONE"
             },
             "4": {
@@ -49,7 +49,7 @@
             },
             "5": {
                 "title": "Unipager - Een softwarepakket voor alle zender types.",
-                "text": "In RUST geschreven, de Unipager software is geschikt om alle zender types aan te sturen: Raspager, Ericsson C9000, Soundcard en RFM69. Een Debian package is beschikbaar voor eenvoudige installatie en actualisering.",
+                "text": "In RUST geschreven, is de Unipager software geschikt om alle zendertypes aan te sturen: Raspager, Ericsson C9000, Soundcard en RFM69. Een Debian package is beschikbaar voor eenvoudige installatie en actualisering.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=unipager"
             },
             "6": {
@@ -59,7 +59,7 @@
             },
             "7": {
                 "title": "SDR-gebaseerde zender met GM1200",
-                "text": "Benodigheden bestaan uit een Raspberry Pi, een radio die 9600Bd zenden kan en een eenvoudige audio-interface. Tevens bruikbaar in combinatie met het touchscreen.",
+                "text": "Benodigheden bestaan uit een Raspberry Pi, een radio die 9600Bd kan zenden en een eenvoudige audio-interface. Tevens bruikbaar in combinatie met het touchscreen.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=9k6"
             },
             "8": {
@@ -69,7 +69,7 @@
             },
             "9": {
                 "title": "Structuur van DAPNET",
-                "text": "Transparante en moderne communicatieprotocollen als REST en Websocket worden gebruikt.",
+                "text": "Er worden transparante en moderne communicatieprotocollen zoals REST en Websocket gebruikt.",
                 "link": "NONE"
             },
             "10": {
@@ -116,7 +116,7 @@
                 "widerangeonly": "Enkel groot bereik zender"
             },
             "information": {
-                "text": "Dit overzicht laat alle geregistreerde zenders van het DAPNET netwerk zien. Voordat u uw zender met een DAPNET-node kunt verbinden, zal deze eerst door een administrator geregistreerd moeten worden. Er zijn twee categorieën zenders: groot bereik (&gt; 1 Watt) en persoonlijk (&lt;= 1 Watt). Waarom is er een groot aantal offline zenders? Dit zijn zenders die in het verleden geregistreerd zijn maar momenteel niet online zijn. Er worden geen gegevens bijgehouden van zenders die online \"dienen te zijn\" en welke niet.<br>Zenders hebben één of meerdere beheerders die zelfstandig instellingen kunnen wijzigen. Elke zender heeft minimaal één en maximaal zestien toegewezen timeslots. Dit is noodzakelijk aangezien alle zenders op dezelfde frequentie zenden maar elkaar niet op hetzelfde moment dienen te overlappen. Let erop dat geen timeslots aan uw zender toegewezen worden welke reeds binnen het eigen dekkingsgebied gebruikt worden. Neem voor hulp contact op met een van de administrators."
+                "text": "Dit overzicht laat alle geregistreerde zenders van het DAPNET netwerk zien. Voordat u uw zender met een DAPNET-node kunt verbinden, zal deze eerst door een administrator geregistreerd moeten worden. Er zijn twee categorieën zenders: groot bereik (&gt; 1 Watt) en persoonlijk (&lt;= 1 Watt). Waarom is een groot aantal zenders offline? Dit zijn zenders die in het verleden geregistreerd zijn maar momenteel niet online zijn. Er worden geen gegevens bijgehouden van zenders die online \"dienen te zijn\" en welke niet.<br>Zenders hebben één of meerdere beheerders die zelfstandig instellingen kunnen wijzigen. Elke zender heeft minimaal één en maximaal zestien toegewezen timeslots. Dit is noodzakelijk aangezien alle zenders op dezelfde frequentie zenden maar elkaar niet op hetzelfde moment dienen te overlappen. Let erop dat geen timeslots aan uw zender toegewezen worden welke reeds binnen het eigen dekkingsgebied gebruikt worden. Neem voor hulp contact op met een van de administrators."
             }
         },
         "new": {
@@ -155,7 +155,7 @@
                     "help": "<b>Zender vermogen</b>: voer het vermogen van de zender in Watt in, inclusief kabelverliezen."
                 },
                 "antennalevel": {
-                    "help": "<b>Antennehoogte boven straatniveau</b>: voer de antennehoogte in meters boven straatniveau in; NIET ten opzichte van zeeniveau."
+                    "help": "<b>Antennehoogte boven straatniveau</b>: voer de antennehoogte in meters boven straatniveau in (NIET ten opzichte van zeeniveau)."
                 },
                 "antennagain": {
                     "help": "<b>Antenneversterking</b>: voer de antenneversterking van de hoofdlob (voor richtantennes) of de gemiddelde versterking (voor rondstralers) in dBi in (dBi: versterking t.o.v. isotope antenne)."
@@ -166,7 +166,7 @@
             },
             "timeslots": {
                 "title": "Timeslots",
-                "help": "Aangezien alle zenders dezelfde frequentie gebruiken, wordt een time division multiplex access schema gebruikt. Hiertoe zijn 16 timeslots beschikbaar. Wijs aan deze zender timeslots toe zonder dat overlapping mogelijk met zenders in de buurt die dezelfde timeslots gebruiken. U kunt de dekkingskaart gebruiken om vast te stellen welke timeslots door naburige zenders gebruikt worden. Indien u niet aan de vereisten kunt voldoen, dient u contact op te nemen met de beheerders van de naburige zenders om tot een oplossing te komen. Normaliter zijn maximaal 4 timeslots per zender meer dan genoeg"
+                "help": "Aangezien alle zenders dezelfde frequentie gebruiken, wordt een time division multiplex access schema gebruikt. Hiertoe zijn 16 timeslots beschikbaar. Wijs aan deze zender timeslots toe zonder dat overlapping ontstaat met zenders in de buurt die dezelfde timeslots gebruiken. U kunt de dekkingskaart gebruiken om vast te stellen welke timeslots door naburige zenders gebruikt worden. Indien u niet aan de vereisten kunt voldoen, dient u contact op te nemen met de beheerders van de naburige zenders om tot een oplossing te komen. Normaliter zijn maximaal 4 timeslots per zender meer dan genoeg"
             },
             "owner": {
                 "help": "Als beheerder kunt u de instellingen van deze zender wijzigen."
@@ -212,7 +212,8 @@
             "es": "Spaans",
             "nl": "Nederlands",
             "fr": "Frans",
-            "pl": "Pools"
+            "pl": "Pools",
+            "it": "Italian"
         },
         "support": {
             "title": "Steun ons",
