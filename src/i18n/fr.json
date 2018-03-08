@@ -11,24 +11,24 @@
         "transmitters": {
             "title": "Transmitters",
             "all": "All Transmitters",
-            "map": "Map",
+            "map": "Carte",
             "groups": "Transmitter Groups"
         },
         "nodes": "Nodes",
-        "users": "Users",
+        "users": "Utilisateurs",
         "help": {
-            "title": "Help",
+            "title": "Aidez-moi",
             "wiki": "Documentation",
-            "support": "Support"
+            "support": "Soutien"
         },
-        "settings": "Settings",
+        "settings": "Paramètres",
         "login": "Login",
         "logout": "Logout"
     },
     "home": {
         "carousel": {
             "1": {
-                "title": "Welcome to DAPNET Web!",
+                "title": "Bienvenue sur DAPNET Web!",
                 "text": "The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts. As it is used on amateur radio frequencies, commercial use is forbidden.<br>If you are a licensed amateur radio operator, get your login account now.",
                 "link": "NONE"
             },
@@ -38,7 +38,7 @@
                 "link": "http://hampager.de/dokuwiki/doku.php?id=raspager"
             },
             "3": {
-                "title": "Coverage Map",
+                "title": "Carte de couverture",
                 "text": "Transmitters are displayed on a map with their simulated coverage area.",
                 "link": "NONE"
             },
@@ -48,7 +48,7 @@
                 "link": "http://hampager.de/dokuwiki/doku.php?id=unipagernextion"
             },
             "5": {
-                "title": "Unipager - One software for all transmitter types",
+                "title": "Unipager - Un logiciel pour tous les types d'émetteurs",
                 "text": "Written in RUST, the Unipager software controls all transmitter types: Raspager, Ericsson C9000, Soundcard and RFM69. A Debian package is avaiable for easy install and update.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=unipager"
             },
@@ -68,46 +68,46 @@
                 "link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription"
             },
             "9": {
-                "title": "Structure of DAPNET",
+                "title": "Structure de DAPNET",
                 "text": "Transparent and up-to-date comminication protocols like REST and Websocket are used.",
                 "link": "NONE"
             },
             "10": {
-                "title": "Support by ticket system",
+                "title": "Support par système de ticket",
                 "text": "Support requests are handled by a team for quick response time and maximum knowledge sharing.",
                 "link": "https://support.hampager.de/"
             }
         },
         "information": {
             "dapnet": {
-                "title": "The DAPNET",
-                "projects": "Projects"
+                "title": "Le DAPNET",
+                "projects": "Projets"
             },
-            "map": "Go to full map view",
+            "map": "Aller à la carte complète",
             "statistics": {
                 "calls": "Calls",
                 "rubric-content": "Rubric Content",
                 "rubrics": "Rubrics",
-                "transmitters": "Transmitters",
-                "nodes": "Nodes",
-                "users": "Users"
+                "transmitters": "Émetteurs",
+                "nodes": "Nœuds",
+                "users": "Utilisateurs"
             }
         }
     },
     "transmitter": {
         "overview": {
             "table": {
-                "title": "All Transmitters",
-                "callsign": "Callsign",
-                "node": "Node",
-                "ipaddress": "IP-Address",
-                "device": "Device",
-                "status": "Status",
-                "connectedsince": "Connected since"
+                "title": "Tous les émetteurs",
+                "callsign": "Signe d'appel",
+                "node": "Nœud",
+                "ipaddress": "Adresse IP",
+                "device": "Dispositif",
+                "status": "Statut",
+                "connectedsince": "Connecté depuis"
             },
             "actions": {
-                "newtransmitter": "New Transmitter",
-                "sendmailtoallowners": "Send a mail to all owners"
+                "newtransmitter": "Nouveau transmetteur",
+                "sendmailtoallowners": "Envoyer un mail à tous les propriétaires"
             },
             "statistics": {
                 "widerange": "Widerange",
@@ -120,17 +120,17 @@
             }
         },
         "new": {
-            "newtransmitter": "New Transmitter",
-            "edittransmitter": "Edit Transmitter",
+            "newtransmitter": "Nouveau transmetteur",
+            "edittransmitter": "Modifier le transmetteur",
             "callsign": {
-                "title": "Callsign",
+                "title": "Signe d'appel",
                 "help": "Enter a valid amateur radio callsign of this transmitter. It will be also used for the 10 minute interval transmitter identification message to fulfill the law (at least the German law)."
             },
             "import": {
                 "help": "Easy import of stations from hamnetdb.net. Location data of the selected transmitter site will be copied into the form."
             },
             "password": {
-                "title": "Password",
+                "title": "Mot de passe",
                 "help": "Enter a authentication password for this transmitter. In the UniPager webinterface it’s called Auth Key."
             },
             "usage": {
@@ -140,9 +140,9 @@
                 "help": "For classification of the transmitters, there are two categories: Personal (Transmitters with low output power like RasPager) and Wide Range (Higher output power and elevated location site)."
             },
             "antennatype": {
-                "title": "Antenna Type",
+                "title": "Type d'antenne",
                 "omni": "Omni",
-                "directional": "Directional",
+                "directional": "Directionnel",
                 "other": "Other",
                 "help": "Please select if you have a omnidirectional antenna (e.g. X-50) or a directional antenna (e.g. Yagi)."
             },
@@ -176,16 +176,16 @@
             }
         },
         "map": {
-            "title": "Map",
+            "title": "Carte",
             "settings": {
-                "title": "Settings"
+                "title": "Paramètres"
             },
             "checkbox": {
-                "showonlineonly": "Show online transmitters only",
+                "showonlineonly": "Afficher uniquement les émetteurs en ligne",
                 "showwiderangeonly": "Show Widerange-transmitter only",
                 "showbytimeslot": "Show transmitters by timeslots",
-                "shownodes": "Show nodes",
-                "shownodeline": "Show line from transmitter to node"
+                "shownodes": "Afficher les nœuds",
+                "shownodeline": "Afficher la ligne de l'émetteur au noeud"
             },
             "actions": {
                 "showallcoverage": "Show all coverage-overlays",
@@ -197,32 +197,32 @@
                     "text": "Press \"Continue\" to load all coverage-overlays for the currently visible transmitters. This may take some time and put your device under heavy load."
                 },
                 "confirm": {
-                    "title": "Are you really sure?",
+                    "title": "Êtes-vous vraiment sûr?",
                     "text": "You are going to load and display the coverage of <b> {amount} transmitters</b>. This will take some time and put your device under heavy load.",
-                    "continue": "Yes, I am sure and I won't blame the developer if my browser crashes."
+                    "continue": "Oui, je suis sûr et je ne vais pas blâmer le développeur si mon navigateur tombe en panne."
                 }
             }
         }
     },
     "footer": {
         "language": {
-            "title": "Language",
-            "en": "English",
-            "de": "German",
-            "es": "Spanish",
-            "nl": "Dutch",
-            "fr": "French",
-            "pl": "Polish"
+            "title": "La langue",
+            "en": "Anglais",
+            "de": "Allemand",
+            "es": "Espanol",
+            "nl": "Néerlandais",
+            "fr": "Français",
+            "pl": "Polonais"
         },
         "support": {
-            "title": "Support us",
+            "title": "Soutenez-nous",
             "github": "GitHub",
             "rwth-amateur-radio": "RWTH Amateur Radio"
         },
         "contact": {
-            "title": "Contact us",
+            "title": "Contactez nous",
             "twitter": "Twitter",
-            "facebook": "Facebook",
+            "facebook": "Facebook ",
             "contact": "Contact",
             "impress": "Impress",
             "privacy": "Privacy"
@@ -233,72 +233,72 @@
         }
     },
     "table": {
-        "search": "Search",
+        "search": "Chercher",
         "pagination": {
             "page": "Page",
             "of": "of"
         },
         "actionbuttons": {
-            "edit": "Edit",
-            "delete": "Delete",
-            "email": "Send email",
+            "edit": "Modifier",
+            "delete": "Effacer",
+            "email": "Envoyer un email",
             "rubrics": "Send rubrics"
         }
     },
     "rest": {
         "errors": {
-            "title": "Error",
-            "no-connection": "No Connection",
-            "api-unreachable": "Unable to reach API server. Please try again later.",
-            "permissions": "Invalid login credentials or no permission for this request. Please check username and password.",
+            "title": "Erreur",
+            "no-connection": "Pas de connection",
+            "api-unreachable": "Impossible d'atteindre le serveur API. Veuillez réessayer plus tard.",
+            "permissions": "Informations d'identification de connexion non valides ou aucune autorisation pour cette demande. S'il vous plaît vérifier le nom d'utilisateur et mot de passe.",
             "http-error": "Unhandled HTTP error {status}. Please try again later.",
             "403": {
-                "title": "Forbidden",
-                "text": "No permission for this request."
+                "title": "Interdit",
+                "text": "Aucune autorisation pour cette demande."
             },
             "404": {
-                "title": "Not Found",
-                "text": "Unable to find the requested resource."
+                "title": "Pas trouvé",
+                "text": "Impossible de trouver la ressource demandée."
             }
         }
     },
     "alerts": {
         "success": {
-            "title": "Success",
-            "text": "Operation successfully executed."
+            "title": "Succès",
+            "text": "Opération exécutée avec succès."
         },
         "delete": {
-            "title": "Are you sure?",
-            "text": "You will not be able to recover this data once it is deleted."
+            "title": "Êtes-vous sûr?",
+            "text": "Vous ne pourrez pas récupérer ces données une fois qu'elles auront été supprimées."
         },
         "input": {
-            "title": "Missing input",
-            "text": "Please fill in every field to continue."
+            "title": "Entrée manquante",
+            "text": "S'il vous plaît remplir tous les champs pour continuer."
         }
     },
     "general": {
-        "continue": "Continue",
-        "submit": "Submit",
-        "abort": "Abort",
-        "search": "Search",
+        "continue": "Continuer",
+        "submit": "Soumettre",
+        "abort": "Avorter",
+        "search": "Chercher",
         "information": "Information",
         "owner": "Owner",
-        "actions": "Actions",
-        "statistics": "Statistics",
+        "actions": "Actes",
+        "statistics": "Statistiques",
         "description": "Description",
-        "name": "Name",
+        "name": "Nom",
         "latlong": {
             "title": "Latitude / Longitude",
-            "north": "North",
-            "south": "South",
-            "east": "East",
-            "west": "West"
+            "north": "Nord",
+            "south": "Sud",
+            "east": "Est",
+            "west": "Ouest"
         },
-        "password": "Password",
-        "yes": "Yes",
-        "no": "No",
-        "permalink": "Permalink",
-        "duplication": "Changing this name will create a duplication and <i>not</i> change the element's name."
+        "password": "Mot de passe",
+        "yes": "Oui",
+        "no": "Non",
+        "permalink": "\nPermalink ",
+        "duplication": "Changer ce nom va créer une duplication et <i>ne pas</ i> changer le nom de l'élément."
     },
     "rubric": {
         "overview": {
@@ -309,16 +309,16 @@
             "table": {
                 "number": "Number",
                 "name": "Name",
-                "label": "Label",
-                "transmittergroup": "Transmitter Groups"
+                "label": "Étiquette",
+                "transmittergroup": "Groupes d'émetteurs"
             }
         },
         "new": {
             "newrubric": "New Rubric",
             "name": "Name",
-            "label": "Label",
+            "label": "Étiquette",
             "number": "Number",
-            "transmittergroup": "Transmitter Groups",
+            "transmittergroup": "Groupes d'émetteurs",
             "information": {
                 "help": "Rubrics are a Skyper based invention allowing to send news sorted into chategories (the rubrics). Assign the number with care and contact <code>support [at] hampager.de</code> in case of doubt. Be aware that the number of rubrics is limited netwide to 99."
             },
@@ -329,7 +329,7 @@
             "information": {
                 "help": "Use the function to send an activation call to your Skyper. After successful reception, you can select the rubrics on \"Skyper Setup\" in the skyper menu."
             },
-            "transmittergroup": "Transmitter Groups"
+            "transmittergroup": "Groupes d'émetteurs"
         }
     },
     "subscribers": {
@@ -350,7 +350,7 @@
             "editsubscriber": "Edit Subscriber",
             "subscriber": {
                 "title": "Subscriber",
-                "help": "Please enter a valid amateur radio callsign of a human or a classifying name of an organization."
+                "help": "Veuillez entrer un indicatif de radio amateur valide d'un humain ou un nom de classification d'une organisation."
             },
             "description": {
                 "help": "Provide your name or any other useful description of this entry."
@@ -379,7 +379,7 @@
                 "help": "Calls are personal paging transmission to individual receivers."
             },
             "table": {
-                "timestamp": "Timestamp",
+                "timestamp": "Horodatage",
                 "txgroups": "TX Groups",
                 "message": "Message",
                 "emergency": "High Prio?"
@@ -395,11 +395,11 @@
                 "help": "Select one or multiple subscribers you what to send the message to."
             },
             "transmittergroups": {
-                "title": "Transmitter Groups",
+                "title": "Groupes d'émetteurs",
                 "help": "Select a logical transmitter group that should broadcast your message. Default is all transmitters, but if you know the approximate location of the receiver you might limit the transmitters used for your paging to a certain area. This reduces the load on the transmitters."
             },
             "emergency": {
-                "title": "Emergency?",
+                "title": "Urgence?",
                 "help": "In case you want your message to be delivered as soon as possible, check this box. No harmful things will happen, the DAPNET will just process your message with maximum priority. Please make a fair use of this feature."
             },
             "information": {
@@ -428,7 +428,7 @@
             "charactersremaining": "characters remaining",
             "rubrics": "Rubrics",
             "number": "Number",
-            "chooseautomatically": "Choose automatically",
+            "chooseautomatically": "Choisissez automatiquement",
             "information": {
                 "help": "These are the contents of rubrics. They are up to now only available on Skyper paging receivers in this form, but also sent as personal calls to RIC 1000 + (Rubric-Number) for reception with e.g. AlphaPoc."
             }
@@ -436,32 +436,32 @@
     },
     "nodes": {
         "overview": {
-            "allnodes": "All Nodes",
-            "newnode": "New Node",
+            "allnodes": "Tous les noeuds",
+            "newnode": "Nouveau noeud",
             "sendmailtoallowners": "Send a mail to all owners",
             "statistics": {
                 "totalnodes": "Total Nodes"
             },
             "information": {
-                "help": "Nodes are the instances of the DAPNET cluster. This list shows the status of them."
+                "help": "Les nœuds sont les instances du cluster DAPNET. Cette liste montre le statut d'eux."
             },
             "table": {
                 "name": "Name",
                 "version": "Version",
-                "ipaddress": "IP-Address",
-                "status": "Status"
+                "ipaddress": "Adresse IP",
+                "status": "Statut"
             }
         },
         "new": {
-            "newnode": "New Node",
-            "editnode": "Edit Node",
+            "newnode": "Nouveau noeud",
+            "editnode": "Modifier le noeud",
             "name": {
                 "title": "Name"
             },
             "status": {
-                "title": "Status",
-                "online": "Online",
-                "suspended": "Suspended"
+                "title": "Statut",
+                "online": "En ligne",
+                "suspended": "Suspendu"
             },
             "information": {
                 "help": "This table shows the registered DAPNET Core nodes and is mostly for SysOp information."
@@ -469,22 +469,22 @@
         }
     },
     "login": {
-        "username": "Username",
-        "password": "Password",
+        "username": "Nom d'utilisateur",
+        "password": "Mot de passe",
         "information": {
             "help": "..."
         }
     },
     "logout": {
         "seepagewrong": "If you see this page, something went wrong.",
-        "emoji": "Emoji provided for free by"
+        "emoji": "Emoji fourni gratuitement par"
     },
     "impress": {
         "title": "Impress"
     },
     "error404": {
-        "title": "Error 404 - Not Found",
-        "emoji": "Emoji provided for free by"
+        "title": "Erreur 404 - introuvable",
+        "emoji": "Emoji fourni gratuitement par"
     },
     "privacy": {
         "title": "Privacy"
@@ -494,16 +494,16 @@
     },
     "group": {
         "overview": {
-            "newtxgroup": "New Transmitter Groups",
-            "alltxgroups": "All Transmitter Groups",
+            "newtxgroup": "Nouveaux groupe d'émetteurs",
+            "alltxgroups": "Tous les groupes d'émetteurs",
             "totaltxgroups": "Total Groups",
             "information": {
                 "help": "A transmitter group is a logical association of one or multiple transmitters to a group. This is necessary to divide the transmitters into regional areas, as not all content has to be transmitted on the whole network. Both personal calls as well als rubric's content have to be linked to a transmitter group. Only transmitters that are member of this group will get the information from the DAPNET node in order to transmit it."
             }
         },
         "new": {
-            "newtxgroup": "New Transmitter Group",
-            "edittxgroup": "Edit Transmitter Group",
+            "newtxgroup": "Nouveaux groupe d'émetteurs",
+            "edittxgroup": "Modifier le groupe d'émetteurs",
             "information": {
                 "help": "A transmitter group combines one of several transmitters to a logical entity."
             }
@@ -513,11 +513,11 @@
         "general": {
             "email": "Email",
             "admin": "Admin?",
-            "newuser": "New User"
+            "newuser": "Nouvel utilisateur"
         },
         "overview": {
             "allusers": "All Users",
-            "sendemailallusers": "Send a mail to all users",
+            "sendemailallusers": "Envoyer un mail à tous les utilisateurs",
             "totaladmins": "Total Administrators",
             "totalusers": "Total Users",
             "information": {
@@ -525,10 +525,10 @@
             }
         },
         "new": {
-            "edituser": "Edit User",
+            "edituser": "Modifier l'utilisateur",
             "password": {
-                "help": "This is the newly generated password:",
-                "randompassword": "Generate new random password"
+                "help": "C'est le mot de passe nouvellement généré:",
+                "randompassword": "Générer un nouveau mot de passe aléatoire"
             },
             "information": {
                 "help": "This table shows the registered users and their detail information."
