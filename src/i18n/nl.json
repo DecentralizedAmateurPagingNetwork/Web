@@ -252,7 +252,7 @@
             "no-connection": "Geen verbinding",
             "api-unreachable": "API-server kan niet bereikt worden. S.v.p. later nogmaals proberen.",
             "permissions": "Ongeldige login gegevens of geen toestemming voor deze handeling. S.v.p. gebruikersnaam en wachtwoord controleren.",
-            "http-error": "Onverwerkte HTTP fout {status}. S.v.p. later nogmaal proberen.",
+            "http-error": "Onverwerkte HTTP fout {status}. S.v.p. later nogmaals proberen.",
             "403": {
                 "title": "Niet toegestaan",
                 "text": "Geen toestemming voor deze handeling."
@@ -397,7 +397,7 @@
             },
             "transmittergroups": {
                 "title": "Zender groepen",
-                "help": "Kies een logische zendergroep die uw bericht zal uitzenden. Standaard is dit Alle zenders maar indien u bij benadering de positie van de ontvanger kent, kunt u de benodigde zenders tot een bepaald gebied beperken. Dit verminderd de belasting van de zenders."
+                "help": "Kies een logische zendergroep die uw bericht zal uitzenden. Standaard zijn dit alle zenders maar indien u bij benadering de positie van de ontvanger kent, kunt u de benodigde zenders tot een bepaald gebied beperken. Dit vermindert de belasting van de zenders."
             },
             "emergency": {
                 "title": "Noodoproep?",
@@ -410,7 +410,7 @@
     },
     "news": {
         "overview": {
-            "allrubriccontent": "Volledige rubrieken inhoud",
+            "allrubriccontent": "Volledige rubriek inhoud",
             "newrubriccontent": "Nieuwe rubriek inhoud",
             "totalrubriccontent": "Totaal aantal rubriek-berichten",
             "information": {
@@ -465,7 +465,7 @@
                 "suspended": "Opgeschort"
             },
             "information": {
-                "help": "Deze tabel toont de geregistreerde DAPNET Core nodes en dient hoofdzakelijk voor beheerders informatie."
+                "help": "Deze tabel toont de geregistreerde DAPNET Core nodes en dient hoofdzakelijk als informatiebron voor beheerders."
             }
         }
     },
