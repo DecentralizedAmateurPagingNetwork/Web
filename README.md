@@ -85,6 +85,7 @@ git log v2.0.0...v2.0.1 --pretty=format:'* %s - %h'
 │   ├── assets     -> assets (css, images, etc.) which will be processed by webpack
 │   ├── components -> all vue-components (all pages with their template, javascript and css)
 │   ├── global     -> global methods used by many components
+│   ├── i18n       -> localization files
 │   ├── router     -> vue-router configuration
 │   └── store      -> user-data store with its default values
 └── static         -> assets (css, images, etc.) which will not be processed by webpack
