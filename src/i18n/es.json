@@ -5,7 +5,7 @@
         "rubrics": {
             "title": "Rúbricas",
             "all": "Todas las Rúbricas",
-            "activate": "Activate Rubrics",
+            "activate": "Activar rúbricas",
             "content": "Contenido de Rúbrica"
         },
         "transmitters": {
@@ -17,13 +17,13 @@
         "nodes": "Nodos",
         "users": "Usuarios",
         "help": {
-            "title": "Help",
-            "wiki": "Documentation",
-            "support": "Support"
+            "title": "Ayuda",
+            "wiki": "Documentación",
+            "support": "Apoyo"
         },
-        "settings": "Settings",
-        "login": "Login",
-        "logout": "Logout"
+        "settings": "Ajustes",
+        "login": "Iniciar sesión",
+        "logout": "Cerrar sesión"
     },
     "home": {
         "carousel": {
@@ -34,47 +34,47 @@
             },
             "2": {
                 "title": "Transmisor Raspager",
-                "text": "A low-cost and low-power personal transmitter as an add-on board for Raspberry Pi.",
+                "text": "Un transmisor personal de bajo costo y bajo potencia como placa adicional para Raspberry Pi",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=raspager"
             },
             "3": {
-                "title": "Coverage Map",
-                "text": "Transmitters are displayed on a map with their simulated coverage area.",
+                "title": "Mapa de cobertura",
+                "text": "Los transmisores se muestran en un mapa con su área de cobertura simulada.",
                 "link": "NONE"
             },
             "4": {
-                "title": "Touch Display for Transmitters",
+                "title": "Pantalla táctil para transmisores",
                 "text": "Easy-to-use graphical control display based on Nextion Displays. Connection to transmitter host via UART or USB2UART.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=unipagernextion"
             },
             "5": {
-                "title": "Unipager - One software for all transmitter types",
-                "text": "Written in RUST, the Unipager software controls all transmitter types: Raspager, Ericsson C9000, Soundcard and RFM69. A Debian package is avaiable for easy install and update.",
+                "title": "Unipager: un software para todos los tipos de transmisores",
+                "text": "Escrito en RUST, el software Unipager controla todos los tipos de transmisores: Raspager, Ericsson C9000, Soundcard y RFM69. Un paquete Debian está disponible para una instalación y actualización fácil.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=unipager"
             },
             "6": {
                 "title": "Modern paging receiver Swissphone",
-                "text": "High-End model for pro-users.",
+                "text": "Modelo de gama alta para usuarios profesionales",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=swissphonedescription"
             },
             "7": {
-                "title": "SDR based Transmitter with GM1200",
-                "text": "All you need is a Raspberry Pi, a 9600 Baud-ready radio and a simple audio interface. Also feasable in combination with the touch display.",
+                "title": "Transmisor basado en SDR con GM1200",
+                "text": "Todo lo que necesita es una Raspberry Pi, una radio preparada para 9600 Baud y una interfaz de audio simple. También es factible en combinación con la pantalla táctil.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=9k6"
             },
             "8": {
-                "title": "AlphaPOC 6002R paging reciever",
-                "text": "Commercially avaiable, small and no modification needed. Easy on-pager programming.",
+                "title": "Buscapersonas AlphaPOC 6002R",
+                "text": "Disponible comercialmente, pequeño y sin modificaciones necesarias. Programación fácil en el buscapersonas mismo.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription"
             },
             "9": {
-                "title": "Structure of DAPNET",
-                "text": "Transparent and up-to-date comminication protocols like REST and Websocket are used.",
+                "title": "Estructura de DAPNET",
+                "text": "Se utilizan protocolos de comunicación transparentes y actualizados como REST y Websocket.",
                 "link": "NONE"
             },
             "10": {
-                "title": "Support by ticket system",
-                "text": "Support requests are handled by a team for quick response time and maximum knowledge sharing.",
+                "title": "Soporte por sistema de tickets",
+                "text": "Las solicitudes de soporte son manejadas por un equipo para un tiempo de respuesta rápido y un intercambio de conocimiento máximo.",
                 "link": "https://support.hampager.de/"
             }
         },
@@ -99,7 +99,7 @@
             "table": {
                 "title": "Todos los transmisores",
                 "callsign": "Indicativo",
-                "node": "Node",
+                "node": "Nodo",
                 "ipaddress": "Dirección IP",
                 "device": "Device",
                 "status": "Estatus",
@@ -116,7 +116,7 @@
                 "widerangeonly": "solamente alcance amplia"
             },
             "information": {
-                "text": "This overview shows all registered transmitters of the DAPNET network. Before you can connect your transmitter to one of the DAPNET-Nodes, it has to be registered by one of the admins. There are two classes of transmitters: Widerange (&gt; 1 Watt) and Personal (&lt;= 1 Watt). Why is there such a big number of offline transmitters? These are transmitters which have been registered in the past, but apparently are not online now. There is no information stored which transmitters \"should\" be online and which not.<br>Transmitters have one or multiple owners who can change the settings by themselves. Each transmitter is assigned to one or max. 16 timeslots. This is necessary as they transmit all on the same frequency, but not overlapping at the same time. Be aware to assign no timeslots to your transmitter that are already used in you coverage area. Contact one of the admins, if you need help."
+                "text": "Esta descripción general muestra todos los transmisores registrados de la red DAPNET. Antes de que pueda conectar su transmisor a uno de los Nodos DAPNET, tiene que ser registrado por uno de los administradores. Hay dos clases de transmisores: Widerange (<10 vatios) y Personal (<1 vatios). ¿Por qué hay una gran cantidad de transmisores fuera de línea? Estos son transmisores que se han registrado en el pasado, pero aparentemente no están en línea ahora. No hay información almacenada  cuales transmisores \"deberían\" estar en línea y cuales no.<br>Los transmisores tienen uno o múltiples propietarios que pueden cambiar la configuración por sí mismos. Cada transmisor está asignado a uno o máx. 16 intervalo de tiempo. Esto es necesario ya que transmiten todos en la misma frecuencia, pero no se superponen al mismo tiempo. Tenga en cuenta que no asigne ningún intervalo de tiempo a su transmisor que ya esté en uso en su área de cobertura. Póngase en contacto con uno de los administradores, si necesita ayuda."
             }
         },
         "new": {
@@ -124,55 +124,55 @@
             "edittransmitter": "Cambiar Transmisor",
             "callsign": {
                 "title": "Señal de llamada",
-                "help": "Enter a valid amateur radio callsign of this transmitter. It will be also used for the 10 minute interval transmitter identification message to fulfill the law (at least the German law)."
+                "help": "Ingrese un indicativo válido de radio aficionado de este transmisor. También se usará para el mensaje de identificación del transmisor de intervalo de 10 minutos para cumplir con la ley (al menos la ley alemana)."
             },
             "import": {
-                "help": "Easy import of stations from hamnetdb.net. Location data of the selected transmitter site will be copied into the form."
+                "help": "Fácil importación de estaciones desde hamnetdb.net. Los datos de ubicación del sitio del transmisor seleccionado se copiarán en el formulario."
             },
             "password": {
                 "title": "Contraseña",
-                "help": "Enter a authentication password for this transmitter. In the UniPager webinterface it’s called Auth Key."
+                "help": "Ingrese una contraseña de autenticación para este transmisor. En la interfaz web de UniPager se llama Auth Key."
             },
             "usage": {
                 "title": "Uso",
                 "personal": "Personal",
                 "widerange": "Alcance amplia",
-                "help": "For classification of the transmitters, there are two categories: Personal (Transmitters with low output power like RasPager) and Wide Range (Higher output power and elevated location site)."
+                "help": "Para la clasificación de los transmisores, hay dos categorías: Personal (Transmisores con baja potencia de salida como RasPager) y Alcance amplia (mayor potencia de salida y sitio de ubicación elevada)."
             },
             "antennatype": {
                 "title": "Tipo de antena",
                 "omni": "Omni",
                 "directional": "Direccional",
-                "other": "Other",
+                "other": "Otro",
                 "help": "Please select if you have a omnidirectional antenna (e.g. X-50) or a directional antenna (e.g. Yagi)."
             },
             "antennadirection": {
-                "help": "<b>Antenna main beam direction</b>: Enter the antenna main beam direction in degrees according to \"True North\" (in German \"rechtweisend Nord\")."
+                "help": "<b>Dirección del haz principal de la antena</ b>: Ingrese la dirección del haz principal de la antena en grados de acuerdo con \"True North\" (en alemán \"rechtweisend Nord\")."
             },
             "other": {
                 "title": "Otro",
                 "power": {
-                    "help": "<b>Transmitter Power</b>: Enter the transmitter output power in Watts including your cable losses."
+                    "help": "<b>Potencia del transmisor</ b>: Ingrese la potencia de salida del transmisor en vatios, incluidas las pérdidas de su cable."
                 },
                 "antennalevel": {
-                    "help": "<b>Antenna elevation over ground</b>: Enter the antenna elevation over ground; NOT over NN (!) in meters."
+                    "help": "<b>Elevación de antena sobre el suelo</ b>: Ingrese la elevación de la antena sobre el suelo; NO sobre el nivel del mar (!) en metros."
                 },
                 "antennagain": {
-                    "help": "<b>Antenna gain</b>: Enter the antenna gain in the main lobe direction for directional antennas and the average gain for omnidirectional antennas in dBi (dBi: Gain over isotropic radiator)."
+                    "help": "<b>Ganancia de antena</ b>: Ingrese la ganancia de la antena en la dirección del lóbulo principal para las antenas direccionales y la ganancia promedio para las antenas omnidireccionales en dBi (dBi: ganancia sobre el radiador isotrópico)."
                 },
                 "txidentric": {
-                    "help": "<b>Transmitter identification RIC</b>: Enter a RIC (default value is 1) which will be used to generate an artificial paging message containing the amateur radio callsign as given in this form."
+                    "help": "<b>RIC de identificación del transmisor</ b>: Ingrese un RIC (valor predeterminado es 1) que se utilizará para generar un mensaje de búsqueda artificial que contenga el indicativo de radio aficionado como se indica en este formulario."
                 }
             },
             "timeslots": {
                 "title": "Intervalo de Tiempo",
-                "help": "As all transmitters use the same frequency a time division multiplex access scheme is used. There are 16 timeslots available. Assign the slots of this transmitter according to you surrounding transmitters in your neighborhood without overlapping timeslots that are assigned to more than one transmitter. You can use the transmitter map to check already assigned timeslots of adjacent transmitters. In case that you cannot fulfill your requirements, contact the adjacent transmitter owners and try to get an agreement. Normally four 4 or less timeslots per transmitter are more than enough."
+                "help": "Como todos los transmisores usan la misma frecuencia, se utiliza un esquema de acceso multiplexado por división de tiempo. Hay 16 intervalos disponibles. Asigne los intervalos de este transmisor de acuerdo con los transmisores que lo rodean en su vecindario sin superponer intervalos de tiempo que están asignadas a más de un transmisor. Puede usar el mapa de los transmisores para verificar los intervalos de tiempo ya asignados de los transmisores adyacentes. En caso de que no pueda cumplir con sus requisitos, comuníquese con los propietarios del transmisor adyacente y trate de obtener un acuerdo. Normalmente cuatro 4 o menos intervalos de tiempo por transmisor son más que suficientes."
             },
             "owner": {
                 "help": "Si usted es dueño, puede cambiar los parámetros de este transmisor."
             },
             "table": {
-                "description": "This table shows the registered paging transmitters, their online status and additional information. Personal transmitters have low output power and a very small coverage. Wide range transmitters are usually installed at elevated locations leading to a wide coverage area."
+                "description": "Esta tabla muestra los transmisores de paginación registrados, su estado en línea e información adicional. Los transmisores personales tienen poca potencia de salida y una cobertura muy pequeña. Los transmisores de amplio rango generalmente se instalan en ubicaciones elevadas que conducen a un área de cobertura amplia."
             }
         },
         "map": {
@@ -188,31 +188,31 @@
                 "shownodeline": "Show linea desde el transmisor al nodo"
             },
             "actions": {
-                "showallcoverage": "Show all coverage-overlays",
-                "removeallcoverage": "Remove all coverage-overlays"
+                "showallcoverage": "Mostrar todas las superposiciones de cobertura",
+                "removeallcoverage": "Eliminar todas las superposiciones de cobertura"
             },
             "alerts": {
                 "load": {
-                    "title": "Load coverage-overlays?",
-                    "text": "Press \"Continue\" to load all coverage-overlays for the currently visible transmitters. This may take some time and put your device under heavy load."
+                    "title": "Cargar superposiciones de cobertura?",
+                    "text": "Presione \"Continuar\" para cargar todas las superposiciones de cobertura para los transmisores actualmente visibles. Esto puede llevar algo de tiempo y poner su dispositivo bajo una carga pesada."
                 },
                 "confirm": {
-                    "title": "Are you really sure?",
-                    "text": "You are going to load and display the coverage of <b> {amount} transmitters</b>. This will take some time and put your device under heavy load.",
-                    "continue": "Yes, I am sure and I won't blame the developer if my browser crashes."
+                    "title": "¿Estas realmente seguro?",
+                    "text": "Va a cargar y mostrar la cobertura de <b> {cantidad} de transmisores </ b>. Esto llevará algún tiempo y pondrá su dispositivo bajo una carga pesada.",
+                    "continue": "Sí, estoy seguro y no culparé al desarrollador si mi navegador falla."
                 }
             }
         }
     },
     "footer": {
         "language": {
-            "title": "Language",
-            "en": "English",
-            "de": "German",
-            "es": "Spanish",
-            "nl": "Dutch",
-            "fr": "French",
-            "pl": "Polish"
+            "title": "Idioma",
+            "en": "Inglés",
+            "de": "Alemán",
+            "es": "Español",
+            "nl": "Holandés",
+            "fr": "Francés",
+            "pl": "Polaco"
         },
         "support": {
             "title": "Apoyanos ya",
@@ -228,7 +228,7 @@
             "privacy": "Privacy"
         },
         "versions": {
-            "title": "Versions",
+            "title": "Versiones",
             "check": "Comprobar"
         }
     },
@@ -249,9 +249,9 @@
         "errors": {
             "title": "Error",
             "no-connection": "Sin conexión",
-            "api-unreachable": "Unable to reach API server. Please try again later.",
-            "permissions": "Invalid login credentials or no permission for this request. Please check username and password.",
-            "http-error": "Unhandled HTTP error {status}. Please try again later.",
+            "api-unreachable": "No se puede llegar al servidor API. Por favor, inténtelo de nuevo más tarde.",
+            "permissions": "Credenciales de inicio de sesión inválidas o sin permiso para esta solicitud. Por favor verifique el nombre de usuario y la contraseña.",
+            "http-error": "Error HTTP sin gestionar {estado}. Por favor, inténtelo de nuevo más tarde.",
             "403": {
                 "title": "Prohibido",
                 "text": "No permission para esta solicitud."
@@ -277,7 +277,7 @@
         }
     },
     "general": {
-        "continue": "Continue",
+        "continue": "Continuar",
         "submit": "Enviar",
         "abort": "anular",
         "search": "Buscar",
@@ -298,13 +298,13 @@
         "yes": "Sí",
         "no": "No",
         "permalink": "Permalink",
-        "duplication": "Cambiar este nombre creará una duplicación y <i> no </ i> cambiará el nombre del elemento."
+        "duplication": "Cambiar este nombre creará una duplicación y <i>no</ i> cambiará el nombre del elemento."
     },
     "rubric": {
         "overview": {
-            "totalrubrics": "Total Rubrics",
+            "totalrubrics": "Total de rúbricas",
             "information": {
-                "help": "This is a list of all rubrics on the DAPNET. A rubric number can by assigned to several transmitter groups. Keep in mind that the transmitter groups are disjunct for the same rubric number in order to avoid overlapping number assigments.<br>Use the Activate Rubrics button to enable the reception of rubrics on your Skyper."
+                "help": "Esta es una lista de todas las rúbricas en DAPNET. Se puede asignar un número de rúbrica a varios grupos de transmisores. Tenga en cuenta que los grupos de transmisores están diferentes para el mismo número de rúbrica para evitar la superposición de asignaciones de números.<br>Utilice el botón Activar rúbricas para permitir la recepción de rúbricas en su Skyper."
             },
             "table": {
                 "number": "Número",
@@ -320,14 +320,14 @@
             "number": "Nombre",
             "transmittergroup": "Grupos de transmisores",
             "information": {
-                "help": "Rubrics are a Skyper based invention allowing to send news sorted into chategories (the rubrics). Assign the number with care and contact <code>support [at] hampager.de</code> in case of doubt. Be aware that the number of rubrics is limited netwide to 99."
+                "help": "Las rúbricas son una invención basada en Skyper que permite enviar noticias clasificadas en categorías (las rúbricas). Asigne el número con cuidado y póngase en contacto con <code>support [at] hampager.de</ code> en caso de duda. Tenga en cuenta que el número de rúbricas está limitado en toda la red a 99."
             },
-            "editrubric": "Edit Rubric"
+            "editrubric": "Editar rúbrica"
         },
         "activation": {
-            "pagernumber": "Pager-Number (your RIC)",
+            "pagernumber": "Número de buscapersonas (su RIC)",
             "information": {
-                "help": "Use the function to send an activation call to your Skyper. After successful reception, you can select the rubrics on \"Skyper Setup\" in the skyper menu."
+                "help": "Use la función para enviar una llamada de activación a su Skyper. Después de una recepción exitosa, puede seleccionar las rúbricas en \"Configuración de Skyper\" en el menú de Skyper."
             },
             "transmittergroup": "Grupos de transmisores"
         }
@@ -338,10 +338,10 @@
             "allsubscribers": "Todos los suscriptores",
             "totalsubscribers": "Total suscriptors",
             "information": {
-                "help": "A subscriber is the logical connection between a name (the callsign) and one or multiple RIC numbers, for example a Skyper address."
+                "help": "Un suscriptor es la conexión lógica entre un nombre (el indicativo) y uno o varios números RIC, por ejemplo, una dirección Skyper."
             },
             "table": {
-                "pager": "Pager",
+                "pager": "Buscapersonas",
                 "subscriber": "Suscriptor"
             }
         },
@@ -350,22 +350,22 @@
             "editsubscriber": "Editar suscriptor",
             "subscriber": {
                 "title": "Suscriptor",
-                "help": "Please enter a valid amateur radio callsign of a human or a classifying name of an organization."
+                "help": "Ingrese un indicativo válido de radio aficionado de un ser humano o un nombre clasificador de una organización."
             },
             "description": {
                 "help": "Proporcione su nombre o cualquier otra descripción útil de este elemento."
             },
             "pager": {
                 "title": "Buscapersonas",
-                "helprics": "Add one or more lines of pager RIC numbers.",
-                "helpnames": "Add a corresponding number for lines as a description for the RIC numbers given in the first box."
+                "helprics": "Agregue una o más líneas de números RIC de buscapersonas.",
+                "helpnames": "Agregue un número correspondiente para líneas como una descripción para los números RIC dados en el primer cuadro."
             },
             "owner": {
                 "title": "Dueño",
                 "help": "Un dueño de una asociación de suscriptores puede editar sus parámetros"
             },
             "information": {
-                "help": "Subscribers are an allocation between a name (usually your amateur radio callsign) and one or multiple pager IDs (RICs)."
+                "help": "Los suscriptores son una asignación entre un nombre (generalmente su indicativo de radio amateur) y uno o varios ID de buscapersonas (RIC)."
             }
         }
     },
@@ -376,7 +376,7 @@
             "emergencies": "Emergencias",
             "totalcalls": "Total llamadas",
             "information": {
-                "help": "Calls are personal paging transmission to individual receivers."
+                "help": "Las llamadas son transmisión personal de buscapersonas a receptores individuales."
             },
             "table": {
                 "timestamp": "Marca de tiempo",
@@ -389,7 +389,7 @@
             "newcall": "Nueva llamada",
             "message": {
                 "title": "Mensaje",
-                "charactersremaining": "80 characters remaining.<br>Enter your paging text. Your user name is added automatically."
+                "charactersremaining": "80 caracteres restantes. <br> Ingrese su mensaje. Su nombre de usuario se agrega automáticamente."
             },
             "subscribers": {
                 "help": "Seleccione uno o varios suscriptores a qué enviar el mensaje."
@@ -409,15 +409,15 @@
     },
     "news": {
         "overview": {
-            "allrubriccontent": "All Rubric Content",
+            "allrubriccontent": "Todo el contenido de la rúbrica",
             "newrubriccontent": "Nuevo contenido de rúbrica",
-            "totalrubriccontent": "Total Rubic Content",
+            "totalrubriccontent": "Todo el contenido de la rúbrica",
             "information": {
-                "help": "The content displayed here are NOT general news about DAPNET, but the recently sent content to rubrics. Every time a user updates the 10 available rubric messages slots, this change will be displayed here."
+                "help": "El contenido que se muestra aquí NO son noticias generales sobre DAPNET, sino el contenido enviado recientemente a las rúbricas. Cada vez que un usuario actualice las 10 ranuras de mensajes de rúbrica disponibles, este cambio se mostrará aquí."
             },
             "table": {
                 "timestamp": "Marca de tiempo",
-                "rubric": "Rubric",
+                "rubric": "Rúbrica",
                 "number": "#",
                 "message": "Mensaje"
             }
@@ -430,7 +430,7 @@
             "number": "Numero",
             "chooseautomatically": "Elija automáticamente",
             "information": {
-                "help": "These are the contents of rubrics. They are up to now only available on Skyper paging receivers in this form, but also sent as personal calls to RIC 1000 + (Rubric-Number) for reception with e.g. AlphaPoc."
+                "help": "Estos son los contenidos de las rúbricas. Hasta ahora, solo están disponibles en los receptores de paginación de Skyper en este formulario, pero también se envían como llamadas personales a RIC 1000 + (Número de rúbrica) para la recepción con, por ej. AlphaPoc."
             }
         }
     },
@@ -438,7 +438,7 @@
         "overview": {
             "allnodes": "Todos los Nodos",
             "newnode": "Nuevo Nodo",
-            "sendmailtoallowners": "Send a mail to all owners",
+            "sendmailtoallowners": "Enviar un correo a todos los propietarios",
             "statistics": {
                 "totalnodes": "Total Nodos"
             },
@@ -447,7 +447,7 @@
             },
             "table": {
                 "name": "Nombre",
-                "version": "Version",
+                "version": "Versión",
                 "ipaddress": "Dirección IP",
                 "status": "Estado"
             }
@@ -460,7 +460,7 @@
             },
             "status": {
                 "title": "Estado",
-                "online": "Online",
+                "online": "on-line",
                 "suspended": "Suspendido"
             },
             "information": {
@@ -483,7 +483,7 @@
         "title": "Impress"
     },
     "error404": {
-        "title": "Error 404 - Not Found",
+        "title": "Error 404 - No encontrado",
         "emoji": "Emoji proporcionado de forma gratuita por"
     },
     "privacy": {
@@ -494,18 +494,18 @@
     },
     "group": {
         "overview": {
-            "newtxgroup": "New Transmitter Groups",
-            "alltxgroups": "All Transmitter Groups",
-            "totaltxgroups": "Total Groups",
+            "newtxgroup": "Nuevos grupos de transmisores",
+            "alltxgroups": "Todos los grupos de transmisores",
+            "totaltxgroups": "Total de grupos de transmisores",
             "information": {
-                "help": "A transmitter group is a logical association of one or multiple transmitters to a group. This is necessary to divide the transmitters into regional areas, as not all content has to be transmitted on the whole network. Both personal calls as well als rubric's content have to be linked to a transmitter group. Only transmitters that are member of this group will get the information from the DAPNET node in order to transmit it."
+                "help": "Un grupo transmisor es una asociación lógica de uno o múltiples transmisores a un grupo. Esto es necesario para dividir los transmisores en áreas regionales, ya que no todo el contenido debe transmitirse en toda la red. Tanto las llamadas personales como el contenido de la rúbrica deben estar vinculados a un grupo transmisor. Solo los transmisores que son miembros de este grupo obtendrán la información del nodo DAPNET para transmitirla."
             }
         },
         "new": {
-            "newtxgroup": "New Transmitter Group",
-            "edittxgroup": "Edit Transmitter Group",
+            "newtxgroup": "Nuevos grupos de transmisores",
+            "edittxgroup": "Editar grupos de transmisores",
             "information": {
-                "help": "A transmitter group combines one of several transmitters to a logical entity."
+                "help": "Un grupo transmisor combina uno de varios transmisores con una entidad lógica."
             }
         }
     },
@@ -518,10 +518,10 @@
         "overview": {
             "allusers": "Todos los Usuarios",
             "sendemailallusers": "Enviar un correo a todos los usuarios",
-            "totaladmins": "Total Administrators",
+            "totaladmins": "Total de administradores",
             "totalusers": "Total Usuarios",
             "information": {
-                "help": "This is an overview of all registered user account on the DAPNET network. If you are not an admin, you don't see other user's details. You can edit your user by yourself, e.g. change your passwort or your email address."
+                "help": "Esta es una descripción general de todas las cuentas de usuario registradas en la red DAPNET. Si no eres administrador, no ves los detalles de otros usuarios. Puede editar su usuario usted mismo, por ejemplo cambios de su contraseña o su dirección de correo electrónico."
             }
         },
         "new": {
