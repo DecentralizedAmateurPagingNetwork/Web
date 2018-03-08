@@ -1,34 +1,34 @@
 {
     "navigation": {
-        "calls": "Calls",
-        "subscribers": "Subscribers",
+        "calls": "znaki wywoławcze",
+        "subscribers": "Subskrybenci",
         "rubrics": {
-            "title": "Rubrics",
-            "all": "All Rubrics",
+            "title": "Rubryki",
+            "all": "Wszystkie Rubryki",
             "activate": "Activate Rubrics",
             "content": "Rubric Content"
         },
         "transmitters": {
-            "title": "Transmitters",
-            "all": "All Transmitters",
-            "map": "Map",
+            "title": "Nadajnik",
+            "all": "Wszystkie nadajniki",
+            "map": "Mapa",
             "groups": "Transmitter Groups"
         },
         "nodes": "Nodes",
-        "users": "Users",
+        "users": "Użytkownicy",
         "help": {
             "title": "Help",
             "wiki": "Documentation",
             "support": "Support"
         },
-        "settings": "Settings",
+        "settings": "Ustawienia",
         "login": "Login",
         "logout": "Logout"
     },
     "home": {
         "carousel": {
             "1": {
-                "title": "Welcome to DAPNET Web!",
+                "title": "Witamy w DAPNET Web!",
                 "text": "The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts. As it is used on amateur radio frequencies, commercial use is forbidden.<br>If you are a licensed amateur radio operator, get your login account now.",
                 "link": "NONE"
             },
@@ -49,7 +49,7 @@
             },
             "5": {
                 "title": "Unipager - One software for all transmitter types",
-                "text": "Written in RUST, the Unipager software controls all transmitter types: Raspager, Ericsson C9000, Soundcard and RFM69. A Debian package is avaiable for easy install and update.",
+                "text": "Written in RUST, the Unipager software controls all transmitter types: Raspager, Ericsson C9000, Soundcard and RFM69. A Debian package is available for easy install and update.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=unipager"
             },
             "6": {
@@ -64,7 +64,7 @@
             },
             "8": {
                 "title": "AlphaPOC 6002R paging reciever",
-                "text": "Commercially avaiable, small and no modification needed. Easy on-pager programming.",
+                "text": "Commercially available, small and no modification needed. Easy on-pager programming.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription"
             },
             "9": {
