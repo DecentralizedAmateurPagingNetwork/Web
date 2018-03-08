@@ -10,7 +10,7 @@
 
 		<div class="row">
 			<div class="col-lg-9">
-				<h2>All Calls
+				<h2>{{ $t('calls.overview.allcalls') }}
 					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': running }" @click="loadData"></i>
 				</h2>
 
