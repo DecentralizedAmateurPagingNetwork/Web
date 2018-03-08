@@ -1,511 +1,511 @@
 {
     "navigation": {
-        "calls": "Calls",
-        "subscribers": "Subscribers",
+        "calls": "Oproepen",
+        "subscribers": "Ontvangers",
         "rubrics": {
-            "title": "Rubrics",
-            "all": "All Rubrics",
-            "activate": "Activate Rubrics",
-            "content": "Rubric Content"
+            "title": "Rubrieken",
+            "all": "Alle rubrieken",
+            "activate": "Rubrieken activeren",
+            "content": "Rubrieken inhoud"
         },
         "transmitters": {
-            "title": "Transmitters",
-            "all": "All Transmitters",
-            "map": "Map",
-            "groups": "Transmitter Groups"
+            "title": "Zenders",
+            "all": "Alle zenders",
+            "map": "Kaart",
+            "groups": "Zender groepen"
         },
         "nodes": "Nodes",
-        "users": "Users",
+        "users": "Gebruikers",
         "help": {
             "title": "Help",
-            "wiki": "Documentation",
-            "support": "Support"
+            "wiki": "Documentatie",
+            "support": "Ondersteuning"
         },
-        "settings": "Settings",
-        "login": "Login",
-        "logout": "Logout"
+        "settings": "Instellingen",
+        "login": "Inloggen",
+        "logout": "Uitloggen"
     },
     "home": {
         "carousel": {
             "1": {
-                "title": "Welcome to DAPNET Web!",
-                "text": "The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts. As it is used on amateur radio frequencies, commercial use is forbidden.<br>If you are a licensed amateur radio operator, get your login account now.",
+                "title": "Welkokm bij DAPNET Web!",
+                "text": "Het DAPNET (Decentralized Amateur Paging Network) is een netwerk dat in stand gehouden wordt door enthousiaste zendamateurs. Aangezien amateur radiofrequenties gebruikt worden, is commercieel gebruik niet toegestaan.<br>Vraag nu uw login aan wanneer u een gelicenseerd zendamateur bent.",
                 "link": "NONE"
             },
             "2": {
-                "title": "Transmitter Raspager",
-                "text": "A low-cost and low-power personal transmitter as an add-on board for Raspberry Pi.",
+                "title": "Raspager zender",
+                "text": "Een goedkope en laag vermogen persoonlijke zender als add-on voor de Raspberry Pi.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=raspager"
             },
             "3": {
-                "title": "Coverage Map",
-                "text": "Transmitters are displayed on a map with their simulated coverage area.",
+                "title": "Dekkingskaart",
+                "text": "Op de kaart worden zenders met hun gesimuleerde dekking weergegeven.",
                 "link": "NONE"
             },
             "4": {
-                "title": "Touch Display for Transmitters",
-                "text": "Easy-to-use graphical control display based on Nextion Displays. Connection to transmitter host via UART or USB2UART.",
+                "title": "Touchscreen voor zenders",
+                "text": "Gebruiksvriendelijke grafische bediening gebaseerd op Nextion schermen. Verbinding met de zender via UART of USB2UART.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=unipagernextion"
             },
             "5": {
-                "title": "Unipager - One software for all transmitter types",
-                "text": "Written in RUST, the Unipager software controls all transmitter types: Raspager, Ericsson C9000, Soundcard and RFM69. A Debian package is avaiable for easy install and update.",
+                "title": "Unipager - Een softwarepakket voor alle zender types.",
+                "text": "In RUST geschreven, de Unipager software is geschikt om alle zender types aan te sturen: Raspager, Ericsson C9000, Soundcard en RFM69. Een Debian package is beschikbaar voor eenvoudige installatie en actualisering.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=unipager"
             },
             "6": {
-                "title": "Modern paging receiver Swissphone",
-                "text": "High-End model for pro-users.",
+                "title": "Moderne pager van Swissphone",
+                "text": "High-end model voor professionele gebruikers.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=swissphonedescription"
             },
             "7": {
-                "title": "SDR based Transmitter with GM1200",
-                "text": "All you need is a Raspberry Pi, a 9600 Baud-ready radio and a simple audio interface. Also feasable in combination with the touch display.",
+                "title": "SDR-gebaseerde zender met GM1200",
+                "text": "Benodigheden bestaan uit een Raspberry Pi, een radio die 9600Bd zenden kan en een eenvoudige audio-interface. Tevens bruikbaar in combinatie met het touchscreen.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=9k6"
             },
             "8": {
-                "title": "AlphaPOC 6002R paging reciever",
-                "text": "Commercially avaiable, small and no modification needed. Easy on-pager programming.",
+                "title": "AlphaPOC 6002R pager",
+                "text": "Commerciële , kleine pager die zonder modificatie bruikbaar is. Eenvoudige programmering via de pager.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription"
             },
             "9": {
-                "title": "Structure of DAPNET",
-                "text": "Transparent and up-to-date comminication protocols like REST and Websocket are used.",
+                "title": "Structuur van DAPNET",
+                "text": "Transparante en moderne communicatieprotocollen als REST en Websocket worden gebruikt.",
                 "link": "NONE"
             },
             "10": {
-                "title": "Support by ticket system",
-                "text": "Support requests are handled by a team for quick response time and maximum knowledge sharing.",
+                "title": "Ondersteuning door middel van een ticket systeem",
+                "text": "Ondersteuningsaanvragen worden door een team behandeld zodat snelle responstijd en maximale kennisdeling gegarandeerd worden.",
                 "link": "https://support.hampager.de/"
             }
         },
         "information": {
             "dapnet": {
-                "title": "The DAPNET",
-                "projects": "Projects"
+                "title": "Het DAPNET",
+                "projects": "Projecten"
             },
-            "map": "Go to full map view",
+            "map": "Volledige kaart weergave",
             "statistics": {
-                "calls": "Calls",
-                "rubric-content": "Rubric Content",
-                "rubrics": "Rubrics",
-                "transmitters": "Transmitters",
+                "calls": "Oproepen",
+                "rubric-content": "Rubriek inhoud",
+                "rubrics": "Rubrieken",
+                "transmitters": "Zenders",
                 "nodes": "Nodes",
-                "users": "Users"
+                "users": "Gebruikers"
             }
         }
     },
     "transmitter": {
         "overview": {
             "table": {
-                "title": "All Transmitters",
-                "callsign": "Callsign",
+                "title": "Alle zenders",
+                "callsign": "Roepteken",
                 "node": "Node",
-                "ipaddress": "IP-Address",
-                "device": "Device",
+                "ipaddress": "IP-adres",
+                "device": "Type",
                 "status": "Status",
-                "connectedsince": "Connected since"
+                "connectedsince": "Verbonden sinds"
             },
             "actions": {
-                "newtransmitter": "New Transmitter",
-                "sendmailtoallowners": "Send a mail to all owners"
+                "newtransmitter": "Nieuwe zender",
+                "sendmailtoallowners": "Mail naar alle beheerders"
             },
             "statistics": {
-                "widerange": "Widerange",
-                "personal": "Personal",
-                "total": "Total",
-                "widerangeonly": "Widerange-transmitter only"
+                "widerange": "Groot bereik",
+                "personal": "Persoonlijk",
+                "total": "Totaal",
+                "widerangeonly": "Enkel groot bereik zender"
             },
             "information": {
-                "text": "This overview shows all registered transmitters of the DAPNET network. Before you can connect your transmitter to one of the DAPNET-Nodes, it has to be registered by one of the admins. There are two classes of transmitters: Widerange (&gt; 1 Watt) and Personal (&lt;= 1 Watt). Why is there such a big number of offline transmitters? These are transmitters which have been registered in the past, but apparently are not online now. There is no information stored which transmitters \"should\" be online and which not.<br>Transmitters have one or multiple owners who can change the settings by themselves. Each transmitter is assigned to one or max. 16 timeslots. This is necessary as they transmit all on the same frequency, but not overlapping at the same time. Be aware to assign no timeslots to your transmitter that are already used in you coverage area. Contact one of the admins, if you need help."
+                "text": "Dit overzicht laat alle geregistreerde zenders van het DAPNET netwerk zien. Voordat u uw zender met een DAPNET-node kunt verbinden, zal deze eerst door een administrator geregistreerd moeten worden. Er zijn twee categorieën zenders: groot bereik (&gt; 1 Watt) en persoonlijk (&lt;= 1 Watt). Waarom is er een groot aantal offline zenders? Dit zijn zenders die in het verleden geregistreerd zijn maar momenteel niet online zijn. Er worden geen gegevens bijgehouden van zenders die online \"dienen te zijn\" en welke niet.<br>Zenders hebben één of meerdere beheerders die zelfstandig instellingen kunnen wijzigen. Elke zender heeft minimaal één en maximaal zestien toegewezen timeslots. Dit is noodzakelijk aangezien alle zenders op dezelfde frequentie zenden maar elkaar niet op hetzelfde moment dienen te overlappen. Let erop dat geen timeslots aan uw zender toegewezen worden welke reeds binnen het eigen dekkingsgebied gebruikt worden. Neem voor hulp contact op met een van de administrators."
             }
         },
         "new": {
-            "newtransmitter": "New Transmitter",
-            "edittransmitter": "Edit Transmitter",
+            "newtransmitter": "Nieuwe zender",
+            "edittransmitter": "Zender wijzigen",
             "callsign": {
-                "title": "Callsign",
-                "help": "Enter a valid amateur radio callsign of this transmitter. It will be also used for the 10 minute interval transmitter identification message to fulfill the law (at least the German law)."
+                "title": "Roepteken",
+                "help": "Voer een geldig amateur roepteken voor de zender in. Dit zal ook gebruikt worden voor de identificatie die elke 10 minuten uitgezonden wordt om aan de (Duitse) regelgeving te voldoen."
             },
             "import": {
-                "help": "Easy import of stations from hamnetdb.net. Location data of the selected transmitter site will be copied into the form."
+                "help": "Eenvoudige import van stations van hamnetdb.net. Locatiegegevens van de geselecteerde zenderlocatie worden naar dit formulier gekopieerd."
             },
             "password": {
-                "title": "Password",
-                "help": "Enter a authentication password for this transmitter. In the UniPager webinterface it’s called Auth Key."
+                "title": "Wachtwoord",
+                "help": "Voer een wachtwoord in ter authenticatie van de zender. In de Unipager-webinterface heet dit Auth Key."
             },
             "usage": {
-                "title": "Usage",
-                "personal": "Personal",
-                "widerange": "Widerange",
-                "help": "For classification of the transmitters, there are two categories: Personal (Transmitters with low output power like RasPager) and Wide Range (Higher output power and elevated location site)."
+                "title": "Gebruik",
+                "personal": "Persoonlijk",
+                "widerange": "Groot bereik",
+                "help": "Zenders zijn in twee categorieën ingedeeld: persoonlijk (zenders met laag vermogen zoals RasPager) en groot bereik zenders (hoger uitgangsvermogen en hoger gelegen antennelocatie)."
             },
             "antennatype": {
-                "title": "Antenna Type",
-                "omni": "Omni",
-                "directional": "Directional",
-                "other": "Other",
-                "help": "Please select if you have a omnidirectional antenna (e.g. X-50) or a directional antenna (e.g. Yagi)."
+                "title": "Antenne type",
+                "omni": "Rondstraler",
+                "directional": "Richtantenne",
+                "other": "Diversen",
+                "help": "S.v.p. keuze maken of u een rondstraler (bijv. X-50) of een richtantenne (bijv. yagi) gebruikt."
             },
             "antennadirection": {
-                "help": "<b>Antenna main beam direction</b>: Enter the antenna main beam direction in degrees according to \"True North\" (in German \"rechtweisend Nord\")."
+                "help": "<b>Antenne richting</b>: voer de richting van de antenne in graden ten opzichte van het ware noorden in."
             },
             "other": {
-                "title": "Other",
+                "title": "Diversen",
                 "power": {
-                    "help": "<b>Transmitter Power</b>: Enter the transmitter output power in Watts including your cable losses."
+                    "help": "<b>Zender vermogen</b>: voer het vermogen van de zender in Watt in, inclusief kabelverliezen."
                 },
                 "antennalevel": {
-                    "help": "<b>Antenna elevation over ground</b>: Enter the antenna elevation over ground; NOT over NN (!) in meters."
+                    "help": "<b>Antennehoogte boven straatniveau</b>: voer de antennehoogte in meters boven straatniveau in; NIET ten opzichte van zeeniveau."
                 },
                 "antennagain": {
-                    "help": "<b>Antenna gain</b>: Enter the antenna gain in the main lobe direction for directional antennas and the average gain for omnidirectional antennas in dBi (dBi: Gain over isotropic radiator)."
+                    "help": "<b>Antenneversterking</b>: voer de antenneversterking van de hoofdlob (voor richtantennes) of de gemiddelde versterking (voor rondstralers) in dBi in (dBi: versterking t.o.v. isotope antenne)."
                 },
                 "txidentric": {
-                    "help": "<b>Transmitter identification RIC</b>: Enter a RIC (default value is 1) which will be used to generate an artificial paging message containing the amateur radio callsign as given in this form."
+                    "help": "<b>Zender identificatie RIC</b>: voer een RIC (standaardwaarde is 1) in waarmee een bericht gegenereerd zal worden ter identificatie van de zender door middel van het eerder opgegeven roepteken."
                 }
             },
             "timeslots": {
                 "title": "Timeslots",
-                "help": "As all transmitters use the same frequency a time division multiplex access scheme is used. There are 16 timeslots available. Assign the slots of this transmitter according to you surrounding transmitters in your neighborhood without overlapping timeslots that are assigned to more than one transmitter. You can use the transmitter map to check already assigned timeslots of adjacent transmitters. In case that you cannot fulfill your requirements, contact the adjacent transmitter owners and try to get an agreement. Normally four 4 or less timeslots per transmitter are more than enough."
+                "help": "Aangezien alle zenders dezelfde frequentie gebruiken, wordt een time division multiplex access schema gebruikt. Hiertoe zijn 16 timeslots beschikbaar. Wijs aan deze zender timeslots toe zonder dat overlapping mogelijk met zenders in de buurt die dezelfde timeslots gebruiken. U kunt de dekkingskaart gebruiken om vast te stellen welke timeslots door naburige zenders gebruikt worden. Indien u niet aan de vereisten kunt voldoen, dient u contact op te nemen met de beheerders van de naburige zenders om tot een oplossing te komen. Normaliter zijn maximaal 4 timeslots per zender meer dan genoeg"
             },
             "owner": {
-                "help": "If you are an owner, you can change the parameters for this transmitter."
+                "help": "Als beheerder kunt u de instellingen van deze zender wijzigen."
             },
             "table": {
-                "description": "This table shows the registered paging transmitters, their online status and additional information. Personal transmitters have low output power and a very small coverage. Wide range transmitters are usually installed at elevated locations leading to a wide coverage area."
+                "description": "Deze tabel toont de geregistreerde zenders, hun status en additionele informatie. Persoonlijke zenders hebben laag vermogen en een klein dekkingsgebied. Groot bereik zenders zijn in de regel op hoger gelegen locaties ondergebracht waardoor deze een groter gebied bestrijken."
             }
         },
         "map": {
-            "title": "Map",
+            "title": "Kaart",
             "settings": {
-                "title": "Settings"
+                "title": "Instellingen"
             },
             "checkbox": {
-                "showonlineonly": "Show online transmitters only",
-                "showwiderangeonly": "Show Widerange-transmitter only",
-                "showbytimeslot": "Show transmitters by timeslots",
-                "shownodes": "Show nodes",
-                "shownodeline": "Show line from transmitter to node"
+                "showonlineonly": "Toon online zenders",
+                "showwiderangeonly": "Toon groot bereik zenders",
+                "showbytimeslot": "Toon zenders naar timeslot",
+                "shownodes": "Toon nodes",
+                "shownodeline": "Toon lijn tussen zender en node"
             },
             "actions": {
-                "showallcoverage": "Show all coverage-overlays",
-                "removeallcoverage": "Remove all coverage-overlays"
+                "showallcoverage": "Toon alle dekkingsgebieden",
+                "removeallcoverage": "Verwijder alle dekkingsgebieden"
             },
             "alerts": {
                 "load": {
-                    "title": "Load coverage-overlays?",
-                    "text": "Press \"Continue\" to load all coverage-overlays for the currently visible transmitters. This may take some time and put your device under heavy load."
+                    "title": "Dekkingsgebieden laden?",
+                    "text": "Klik \"Doorgaan\" om alle dekkingsgebieden van de zichtbare zenders te laden. Dit kan enige tijd duren en de belasting van uw computer verhogen."
                 },
                 "confirm": {
-                    "title": "Are you really sure?",
-                    "text": "You are going to load and display the coverage of <b> {amount} transmitters</b>. This will take some time and put your device under heavy load.",
-                    "continue": "Yes, I am sure and I won't blame the developer if my browser crashes."
+                    "title": "Bevestigen",
+                    "text": "U gaat de dekking van <b>{amount} zenders</b> laden en weergeven. Dit zal enige tijd duren en uw computer zwaar belasten.",
+                    "continue": "Ja, ik ben zeker en zal de ontwikkelaar er niet de schuld van geven wanneer mijn browser vastloopt."
                 }
             }
         }
     },
     "footer": {
         "language": {
-            "title": "Language",
-            "en": "English",
-            "de": "German",
-            "es": "Spanish",
-            "nl": "Dutch",
-            "fr": "French",
-            "pl": "Polish"
+            "title": "Taal",
+            "en": "Engels",
+            "de": "Duits",
+            "es": "Spaans",
+            "nl": "Nederlands",
+            "fr": "Frans",
+            "pl": "Pools"
         },
         "support": {
-            "title": "Support us",
+            "title": "Steun ons",
             "github": "GitHub",
             "rwth-amateur-radio": "RWTH Amateur Radio"
         },
         "contact": {
-            "title": "Contact us",
+            "title": "Neem contact op",
             "twitter": "Twitter",
             "facebook": "Facebook",
             "contact": "Contact",
-            "impress": "Impress",
+            "impress": "Over en kleine lettertjes",
             "privacy": "Privacy"
         },
         "versions": {
-            "title": "Versions",
-            "check": "Check"
+            "title": "Versies",
+            "check": "Controleer"
         }
     },
     "table": {
-        "search": "Search",
+        "search": "Zoek",
         "pagination": {
-            "page": "Page",
-            "of": "of"
+            "page": "Pagina",
+            "of": "van"
         },
         "actionbuttons": {
-            "edit": "Edit",
-            "delete": "Delete",
-            "email": "Send email",
-            "rubrics": "Send rubrics"
+            "edit": "Wijzigen",
+            "delete": "Verwijderen",
+            "email": "Email sturen",
+            "rubrics": "Rubrieken zenden"
         }
     },
     "rest": {
         "errors": {
-            "title": "Error",
-            "no-connection": "No Connection",
-            "api-unreachable": "Unable to reach API server. Please try again later.",
-            "permissions": "Invalid login credentials or no permission for this request. Please check username and password.",
-            "http-error": "Unhandled HTTP error {status}. Please try again later.",
+            "title": "Fout",
+            "no-connection": "Geen verbinding",
+            "api-unreachable": "API-server kan niet bereikt worden. S.v.p. later nogmaals proberen.",
+            "permissions": "Ongeldige login gegevens of geen toestemming voor deze handeling. S.v.p. gebruikersnaam en wachtwoord controleren.",
+            "http-error": "Onverwerkte HTTP fout {status}. S.v.p. later nogmaal proberen.",
             "403": {
-                "title": "Forbidden",
-                "text": "No permission for this request."
+                "title": "Niet toegestaan",
+                "text": "Geen toestemming voor deze handeling."
             },
             "404": {
-                "title": "Not Found",
-                "text": "Unable to find the requested resource."
+                "title": "Niet gevonden",
+                "text": "Hulpmiddel onvindbaar."
             }
         }
     },
     "alerts": {
         "success": {
-            "title": "Success",
-            "text": "Operation successfully executed."
+            "title": "Gelukt",
+            "text": "Actie succesvol uitgevoerd."
         },
         "delete": {
-            "title": "Are you sure?",
-            "text": "You will not be able to recover this data once it is deleted."
+            "title": "Bent u zeker?",
+            "text": "Er is geen mogelijkheid deze gegevens te herstellen zodra deze gewist zijn."
         },
         "input": {
-            "title": "Missing input",
-            "text": "Please fill in every field to continue."
+            "title": "Invoer ontbreekt",
+            "text": "S.v.p. elk veld invullen om door te kunnen gaan."
         }
     },
     "general": {
-        "continue": "Continue",
-        "submit": "Submit",
-        "abort": "Abort",
-        "search": "Search",
-        "information": "Information",
-        "owner": "Owner",
-        "actions": "Actions",
-        "statistics": "Statistics",
-        "description": "Description",
-        "name": "Name",
+        "continue": "Doorgaan",
+        "submit": "Versturen",
+        "abort": "Afbreken",
+        "search": "Zoeken",
+        "information": "Informatie",
+        "owner": "Beheerder",
+        "actions": "Acties",
+        "statistics": "Statistieken",
+        "description": "Omschrijving",
+        "name": "Naam",
         "latlong": {
-            "title": "Latitude / Longitude",
-            "north": "North",
-            "south": "South",
-            "east": "East",
+            "title": "Breedtegraad / Lengtegraad",
+            "north": "Noord",
+            "south": "Zuid",
+            "east": "Oost",
             "west": "West"
         },
-        "password": "Password",
-        "yes": "Yes",
-        "no": "No",
+        "password": "Wachtwoord",
+        "yes": "Ja",
+        "no": "Nee",
         "permalink": "Permalink",
-        "duplication": "Changing this name will create a duplication and <i>not</i> change the element's name."
+        "duplication": "Aanpassen van deze naam zal een kopie van het element maken en dus <i>niet</i> de naam aanpassen."
     },
     "rubric": {
         "overview": {
-            "totalrubrics": "Total Rubrics",
+            "totalrubrics": "Totaal aantal rubrieken",
             "information": {
-                "help": "This is a list of all rubrics on the DAPNET. A rubric number can by assigned to several transmitter groups. Keep in mind that the transmitter groups are disjunct for the same rubric number in order to avoid overlapping number assigments.<br>Use the Activate Rubrics button to enable the reception of rubrics on your Skyper."
+                "help": "Dit is een lijst van alle rubrieken binnen DAPNET. Een rubriek nummer kan aan diverse zender groepen toegewezen zijn. Wees u ervan bewust dat de zendergroepen gescheiden worden bij gebruik van dezelfde rubriek nummers om overlapping in nummertoewijzing te voorkomen. <b>Gebruik de Rubrieken activeren knop om ontvangst van rubrieken met uw Skyper mogelijk te maken."
             },
             "table": {
-                "number": "Number",
-                "name": "Name",
+                "number": "Nummer",
+                "name": "Naam",
                 "label": "Label",
-                "transmittergroup": "Transmitter Groups"
+                "transmittergroup": "Zender groepen"
             }
         },
         "new": {
-            "newrubric": "New Rubric",
-            "name": "Name",
+            "newrubric": "Nieuwe rubriek",
+            "name": "Naam",
             "label": "Label",
-            "number": "Number",
-            "transmittergroup": "Transmitter Groups",
+            "number": "Nummer",
+            "transmittergroup": "Zender groepen",
             "information": {
-                "help": "Rubrics are a Skyper based invention allowing to send news sorted into chategories (the rubrics). Assign the number with care and contact <code>support [at] hampager.de</code> in case of doubt. Be aware that the number of rubrics is limited netwide to 99."
+                "help": "Rubrieken zijn een Skyper-gebaseerde ontwikkeling waarmee berichten in verschillende categorieën verzonden kunnen worden (rubrieken). Wijs hieraan zorgvuldig een nummer toe en neem bij twijfel contact op met <code>support[at]hampager.de</code>. Hou er rekening mee dat het aantal rubrieken netwerkbreed op 99 beperkt is."
             },
-            "editrubric": "Edit Rubric"
+            "editrubric": "Rubriek bewerken"
         },
         "activation": {
-            "pagernumber": "Pager-Number (your RIC)",
+            "pagernumber": "Pager nummer (uw RIC)",
             "information": {
-                "help": "Use the function to send an activation call to your Skyper. After successful reception, you can select the rubrics on \"Skyper Setup\" in the skyper menu."
+                "help": "Gebruik deze functie om een activeringsbericht naar uw Skyper te sturen. Na ontvangst kunt u rubrieken selecteren door in het Skyper-menu naar \"Skyper Setup\" te gaan."
             },
-            "transmittergroup": "Transmitter Groups"
+            "transmittergroup": "Zender groepen"
         }
     },
     "subscribers": {
         "overview": {
-            "newsubscriber": "New Subscriber",
-            "allsubscribers": "All Subscribers",
-            "totalsubscribers": "Total Subscribers",
+            "newsubscriber": "Nieuwe ontvanger",
+            "allsubscribers": "Alle ontvangers",
+            "totalsubscribers": "Totaal aantal ontvangers",
             "information": {
-                "help": "A subscriber is the logical connection between a name (the callsign) and one or multiple RIC numbers, for example a Skyper address."
+                "help": "Een ontvanger is de logische verbinding tussen een naam (het roepteken) en één of meerdere RIC-nummers, bijvoorbeeld een Skyper-adres."
             },
             "table": {
                 "pager": "Pager",
-                "subscriber": "Subscriber"
+                "subscriber": "Ontvanger"
             }
         },
         "new": {
-            "newsubscriber": "New Subscriber",
-            "editsubscriber": "Edit Subscriber",
+            "newsubscriber": "Nieuwe ontvanger",
+            "editsubscriber": "Ontvanger wijzigen",
             "subscriber": {
-                "title": "Subscriber",
-                "help": "Please enter a valid amateur radio callsign of a human or a classifying name of an organization."
+                "title": "Ontvanger",
+                "help": "S.v.p. een geldig amateur roepteken van een persoon of een eenduidige naam van een organisatie invoeren."
             },
             "description": {
-                "help": "Provide your name or any other useful description of this entry."
+                "help": "Voer uw naam of een andere bruikbare omschrijving in."
             },
             "pager": {
                 "title": "Pager",
-                "helprics": "Add one or more lines of pager RIC numbers.",
-                "helpnames": "Add a corresponding number for lines as a description for the RIC numbers given in the first box."
+                "helprics": "Voeg één of meer regels met pager RIC-nummers toe.",
+                "helpnames": "Voer een overeenkomstig aantal regels met omschrijvingen voor de RIC-nummers in."
             },
             "owner": {
-                "title": "Owner",
-                "help": "An owner of a subscriber association can edit its parameters."
+                "title": "Beheerder",
+                "help": "Een beheerder van een ontvanger kan deze gegevens wijzigen."
             },
             "information": {
-                "help": "Subscribers are an allocation between a name (usually your amateur radio callsign) and one or multiple pager IDs (RICs)."
+                "help": "Ontvangerss zijn een verbinding tussen een naam (normaliter uw amateur roepteken) en één of meerdere pager ID's (RIC)."
             }
         }
     },
     "calls": {
         "overview": {
-            "allcalls": "All Calls",
-            "newcall": "New Call",
-            "emergencies": "Emergencies",
-            "totalcalls": "Total Calls",
+            "allcalls": "Alle oproepen",
+            "newcall": "Nieuwe oproep",
+            "emergencies": "Noodoproepen",
+            "totalcalls": "Totaal aantal oproepen",
             "information": {
-                "help": "Calls are personal paging transmission to individual receivers."
+                "help": "Oproepen zijn persoonlijke pager berichten naar individuele ontvangers."
             },
             "table": {
-                "timestamp": "Timestamp",
-                "txgroups": "TX Groups",
-                "message": "Message",
-                "emergency": "High Prio?"
+                "timestamp": "Tijdstempel",
+                "txgroups": "TX groepen",
+                "message": "Bericht",
+                "emergency": "Hoge prioriteit?"
             }
         },
         "new": {
-            "newcall": "New Call",
+            "newcall": "Nieuwe oproep",
             "message": {
-                "title": "Message",
-                "charactersremaining": "80 characters remaining.<br>Enter your paging text. Your user name is added automatically."
+                "title": "Bericht",
+                "charactersremaining": "80 karakters over. <br>Voer uw paging tekst in. Uw gebruikersnaam is automatisch toegevoegd."
             },
             "subscribers": {
-                "help": "Select one or multiple subscribers you what to send the message to."
+                "help": "Kies één of meerdere ontvangers voor dit bericht."
             },
             "transmittergroups": {
-                "title": "Transmitter Groups",
-                "help": "Select a logical transmitter group that should broadcast your message. Default is all transmitters, but if you know the approximate location of the receiver you might limit the transmitters used for your paging to a certain area. This reduces the load on the transmitters."
+                "title": "Zender groepen",
+                "help": "Kies een logische zendergroep die uw bericht zal uitzenden. Standaard is dit Alle zenders maar indien u bij benadering de positie van de ontvanger kent, kunt u de benodigde zenders tot een bepaald gebied beperken. Dit verminderd de belasting van de zenders."
             },
             "emergency": {
-                "title": "Emergency?",
-                "help": "In case you want your message to be delivered as soon as possible, check this box. No harmful things will happen, the DAPNET will just process your message with maximum priority. Please make a fair use of this feature."
+                "title": "Noodoproep?",
+                "help": "Vink hier aan indien u het bericht zo spoedig mogelijk wilt uitzenden. Dit zal geen schadelijke / verstrekkende gevolgen hebben. Het DAPNET zal enkel uw bericht met maximale prioriteit versturen. S.v.p. gepast gebruik maken van deze functie."
             },
             "information": {
-                "help": "Here your recent paging calls are displayed."
+                "help": "Hier worden uw recente berichten weergegeven."
             }
         }
     },
     "news": {
         "overview": {
-            "allrubriccontent": "All Rubric Content",
-            "newrubriccontent": "New Rubric Content",
-            "totalrubriccontent": "Total Rubic Content",
+            "allrubriccontent": "Volledige rubrieken inhoud",
+            "newrubriccontent": "Nieuwe rubriek inhoud",
+            "totalrubriccontent": "Totaal aantal rubriek-berichten",
             "information": {
-                "help": "The content displayed here are NOT general news about DAPNET, but the recently sent content to rubrics. Every time a user updates the 10 available rubric messages slots, this change will be displayed here."
+                "help": "De hier weergegeven inhoud betreft GEEN algemeen nieuws over DAPNET, maar het betreft berichten die recentelijk naar rubrieken verstuurd zijn. Telkens wanneer een gebruiker die 10 beschikbare berichtslots wijzigt, wordt dit hier weergegeven."
             },
             "table": {
-                "timestamp": "Timestamp",
-                "rubric": "Rubric",
+                "timestamp": "Tijdstempel",
+                "rubric": "Rubriek",
                 "number": "#",
-                "message": "Message"
+                "message": "Bericht"
             }
         },
         "new": {
-            "newrubriccontent": "New Rubric Content",
-            "message": "Message",
-            "charactersremaining": "characters remaining",
-            "rubrics": "Rubrics",
-            "number": "Number",
-            "chooseautomatically": "Choose automatically",
+            "newrubriccontent": "Nieuwe rubriek inhoud",
+            "message": "Bericht",
+            "charactersremaining": "resterende karakters",
+            "rubrics": "Rubrieken",
+            "number": "Nummer",
+            "chooseautomatically": "Kies automatisch",
             "information": {
-                "help": "These are the contents of rubrics. They are up to now only available on Skyper paging receivers in this form, but also sent as personal calls to RIC 1000 + (Rubric-Number) for reception with e.g. AlphaPoc."
+                "help": "Dit is de inhoud van de rubrieken. Deze is tot nu toe enkel beschikbaar voor Skyper pagers maar wordt tevens als persoonlijk bericht verstuurd naar RIC 1000 + (rubriek nummer) voor ontvangst met bijv. AlphaPOC."
             }
         }
     },
     "nodes": {
         "overview": {
-            "allnodes": "All Nodes",
-            "newnode": "New Node",
-            "sendmailtoallowners": "Send a mail to all owners",
+            "allnodes": "Alle nodes",
+            "newnode": "Nieuwe node",
+            "sendmailtoallowners": "Email naar alle gebruikers",
             "statistics": {
-                "totalnodes": "Total Nodes"
+                "totalnodes": "Totaal aantal nodes"
             },
             "information": {
-                "help": "Nodes are the instances of the DAPNET cluster. This list shows the status of them."
+                "help": "Nodes zijn de entiteiten van het DAPNET cluster. De lijst toont hun status."
             },
             "table": {
-                "name": "Name",
-                "version": "Version",
-                "ipaddress": "IP-Address",
+                "name": "Naam",
+                "version": "Versie",
+                "ipaddress": "IP-adres",
                 "status": "Status"
             }
         },
         "new": {
-            "newnode": "New Node",
-            "editnode": "Edit Node",
+            "newnode": "Nieuwe node",
+            "editnode": "Node wijzigen",
             "name": {
-                "title": "Name"
+                "title": "Naam"
             },
             "status": {
                 "title": "Status",
                 "online": "Online",
-                "suspended": "Suspended"
+                "suspended": "Opgeschort"
             },
             "information": {
-                "help": "This table shows the registered DAPNET Core nodes and is mostly for SysOp information."
+                "help": "Deze tabel toont de geregistreerde DAPNET Core nodes en dient hoofdzakelijk voor beheerders informatie."
             }
         }
     },
     "login": {
-        "username": "Username",
-        "password": "Password",
+        "username": "Gebruikersnaam",
+        "password": "Wachtwoord",
         "information": {
             "help": "..."
         }
     },
     "logout": {
-        "seepagewrong": "If you see this page, something went wrong.",
-        "emoji": "Emoji provided for free by"
+        "seepagewrong": "Indien u deze pagina ziet, is iets niet goed gegaan.",
+        "emoji": "Emoji gratis ter beschikking gesteld door"
     },
     "impress": {
-        "title": "Impress"
+        "title": "Over"
     },
     "error404": {
-        "title": "Error 404 - Not Found",
-        "emoji": "Emoji provided for free by"
+        "title": "Fout 404 - Niet gevonden",
+        "emoji": "Emoji gratis ter beschikking gesteld door"
     },
     "privacy": {
         "title": "Privacy"
     },
     "versioncheck": {
-        "title": "Version Check"
+        "title": "Versie controle"
     },
     "group": {
         "overview": {
-            "newtxgroup": "New Transmitter Groups",
-            "alltxgroups": "All Transmitter Groups",
-            "totaltxgroups": "Total Groups",
+            "newtxgroup": "Nieuwe zender groep",
+            "alltxgroups": "Alle zender groepen",
+            "totaltxgroups": "Totaal aantal zender groepen",
             "information": {
-                "help": "A transmitter group is a logical association of one or multiple transmitters to a group. This is necessary to divide the transmitters into regional areas, as not all content has to be transmitted on the whole network. Both personal calls as well als rubric's content have to be linked to a transmitter group. Only transmitters that are member of this group will get the information from the DAPNET node in order to transmit it."
+                "help": "Een zender groep is een logische verbinding van één of meerdere zenders met een groep. Dit is noodzakelijk om zenders in regionale gebieden in te delen aangezien niet alle berichten over het gehele netwerk uitgezonden moeten worden. Zowel persoonlijke berichten als rubriek inhoud dienen met een zender groep verbonden te zijn. Enkel zenders binnen deze groep zullen de informatie van de DAPNET-node krijgen om deze uit te zenden."
             }
         },
         "new": {
-            "newtxgroup": "New Transmitter Group",
-            "edittxgroup": "Edit Transmitter Group",
+            "newtxgroup": "Nieuwe zender groep",
+            "edittxgroup": "Zender groep wijzigen",
             "information": {
-                "help": "A transmitter group combines one of several transmitters to a logical entity."
+                "help": "Een zender groep combineert één of meerdere zenders tot een logische eenheid."
             }
         }
     },
@@ -513,25 +513,25 @@
         "general": {
             "email": "Email",
             "admin": "Admin?",
-            "newuser": "New User"
+            "newuser": "Nieuwe gebruiker"
         },
         "overview": {
-            "allusers": "All Users",
-            "sendemailallusers": "Send a mail to all users",
-            "totaladmins": "Total Administrators",
-            "totalusers": "Total Users",
+            "allusers": "Alle gebruikers",
+            "sendemailallusers": "Email naar alle gebruikers",
+            "totaladmins": "Totaal aantal administrators",
+            "totalusers": "Totaal aantal gebruikers",
             "information": {
-                "help": "This is an overview of all registered user account on the DAPNET network. If you are not an admin, you don't see other user's details. You can edit your user by yourself, e.g. change your passwort or your email address."
+                "help": "Dit is een overzicht van alle geregistreerde gebruikersaccounts van het DAPNET-netwerk. Indien u geen administrator bent, ziet u geen details van andere gebruikers. U kunt uw eigen account zelf aanpassen, bijv. wachtwoord of email-adres."
             }
         },
         "new": {
-            "edituser": "Edit User",
+            "edituser": "Gebruiker wijzigen",
             "password": {
-                "help": "This is the newly generated password:",
-                "randompassword": "Generate new random password"
+                "help": "Dit is het nieuw gegenereerde wachtwoord:",
+                "randompassword": "Nieuw willekeurig wachtwoord genereren"
             },
             "information": {
-                "help": "This table shows the registered users and their detail information."
+                "help": "Deze tabel toont geregistreerde gebruikers en hun detail informatie."
             }
         }
     }
