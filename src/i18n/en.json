@@ -49,7 +49,7 @@
             },
             "5": {
                 "title": "Unipager - One software for all transmitter types",
-                "text": "Written in RUST, the Unipager software controls all transmitter types: Raspager, Ericsson C9000, Soundcard and RFM69. A Debian package is avaiable for easy install and update.",
+                "text": "Written in RUST, the Unipager software controls all transmitter types: Raspager, Ericsson C9000, Soundcard and RFM69. A Debian package is available for easy install and update.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=unipager"
             },
             "6": {
