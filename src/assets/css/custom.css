@@ -37,6 +37,10 @@ textarea {
 	font-size: 1.6rem !important;
 }
 
+.VueCarousel-pagination {
+	margin-top: -1em;
+}
+
 @media (min-width: 1330px) {
 	.container {
 		width: 1300px;
