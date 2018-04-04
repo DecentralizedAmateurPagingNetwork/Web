@@ -22,7 +22,7 @@
 				<div class="actions well">
 					<legend>{{ $t('general.actions') }}</legend>
 					<ul>
-						<li v-if="this.$store.getters.user.admin"><router-link to="/rubrics/new">New Rubric</router-link></li>
+						<li v-if="this.$store.getters.user.admin"><router-link to="/rubrics/new">{{ $t('rubric.new.newrubric') }}</router-link></li>
 					</ul>
 					<br>
 					<template v-if="table.rows">
