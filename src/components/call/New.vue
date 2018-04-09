@@ -28,7 +28,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-lg-2 control-label">{{ $t('navigation.subscribers') }}</label>
+							<label class="col-lg-2 control-label">{{ $t('navigation.transmitters.groups') }}</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.transmittergroups" :options="formData.transmittergroups" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
 								<span class="help-block">{{ $t('calls.new.subscribers.help') }}</span>
