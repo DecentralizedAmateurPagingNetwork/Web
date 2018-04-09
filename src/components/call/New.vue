@@ -17,7 +17,7 @@
 							<label class="col-lg-2 control-label">{{ $t('calls.new.message.title') }}</label>
 							<div class="col-lg-10">
 								<textarea class="form-control" rows="2" maxlength="80" v-model="form.message"></textarea>
-								<span class="help-block">{{ messageCharsRemaining }} / <p v-html="$t('calls.new.message.charactersremaining')"></p></span>
+								<span class="help-block" v-html="$t('calls.new.message.charactersremaining', { remaining: messageCharsRemaining })"></span>
 							</div>
 						</div>
 						<div class="form-group">

@@ -391,7 +391,7 @@
             "newcall": "New Call",
             "message": {
                 "title": "Message",
-                "charactersremaining": "80 characters remaining.<br>Enter your paging text. Your user name is added automatically."
+                "charactersremaining": "{remaining} / 80 characters remaining.<br>Enter your paging text. Your user name is added automatically."
             },
             "subscribers": {
                 "help": "Select one or multiple subscribers you what to send the message to."
