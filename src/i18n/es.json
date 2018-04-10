@@ -3,10 +3,10 @@
         "calls": "Llamadas",
         "subscribers": "Suscriptores",
         "rubrics": {
-            "title": "Rúbricas",
-            "all": "Todas las Rúbricas",
-            "activate": "Activar rúbricas",
-            "content": "Contenido de Rúbrica"
+            "title": "Temas",
+            "all": "Todos los temas",
+            "activate": "Activar acceso a temas",
+            "content": "Contenido del tema"
         },
         "transmitters": {
             "title": "Transmisores",
@@ -14,7 +14,7 @@
             "map": "Mapa",
             "groups": "Groupos de transmisores"
         },
-        "nodes": "Nodos",
+        "nodes": "Vértices",
         "users": "Usuarios",
         "help": {
             "title": "Ayuda",
@@ -34,7 +34,7 @@
             },
             "2": {
                 "title": "Transmisor Raspager",
-                "text": "Un transmisor personal de bajo costo y bajo potencia como placa adicional para Raspberry Pi",
+                "text": "Un transmisor personal de bajo costo y baja potencia como placa adicional para Raspberry Pi",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=raspager"
             },
             "3": {
@@ -44,7 +44,7 @@
             },
             "4": {
                 "title": "Pantalla táctil para transmisores",
-                "text": "Easy-to-use graphical control display based on Nextion Displays. Connection to transmitter host via UART or USB2UART.",
+                "text": "Pantalla de control gráfico de uso fácil basado en dispositivos Nextion. Conneción al transmisor por medio de UART or USB2UART.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=unipagernextion"
             },
             "5": {
@@ -53,18 +53,18 @@
                 "link": "http://hampager.de/dokuwiki/doku.php?id=unipager"
             },
             "6": {
-                "title": "Modern paging receiver Swissphone",
-                "text": "Modelo de gama alta para usuarios profesionales",
+                "title": "BiPeer moderno Swissphone",
+                "text": "Modelo de alta gama para usuarios profesionales",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=swissphonedescription"
             },
             "7": {
                 "title": "Transmisor basado en SDR con GM1200",
-                "text": "Todo lo que necesita es una Raspberry Pi, una radio preparada para 9600 Baud y una interfaz de audio simple. También es factible en combinación con la pantalla táctil.",
+                "text": "Todo lo que necesita es una Raspberry Pi, una radio preparada para 9600 Baud y un interfaz de audio simple. También es factible en combinación con la pantalla táctil.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=9k6"
             },
             "8": {
-                "title": "Buscapersonas AlphaPOC 6002R",
-                "text": "Disponible comercialmente, pequeño y sin modificaciones necesarias. Programación fácil en el buscapersonas mismo.",
+                "title": "BiPeer AlphaPOC 6002R",
+                "text": "Disponible comercialmente, pequeño y sin modificaciones necesarias. Programación fácil en el BiPeer mismo.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription"
             },
             "9": {
@@ -391,7 +391,7 @@
             "newcall": "Nueva llamada",
             "message": {
                 "title": "Mensaje",
-                "charactersremaining": "80 caracteres restantes. <br> Ingrese su mensaje. Su nombre de usuario se agrega automáticamente."
+                "charactersremaining": "{remaining} / 80 caracteres restantes. <br> Ingrese su mensaje. Su nombre de usuario se agrega automáticamente."
             },
             "subscribers": {
                 "help": "Seleccione uno o varios suscriptores a qué enviar el mensaje."
