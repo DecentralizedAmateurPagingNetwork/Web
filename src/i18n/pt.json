@@ -391,7 +391,7 @@
             "newcall": "New Call",
             "message": {
                 "title": "Mensagem ",
-                "charactersremaining": "80 characters remaining.<br>Enter your paging text. Your user name is added automatically."
+                "charactersremaining": "{remaining} / 80 characters remaining.<br>Enter your paging text. Your user name is added automatically."
             },
             "subscribers": {
                 "help": "Selecione um ou vários assinantes para o qual enviar a mensagem."
@@ -523,7 +523,7 @@
             "totaladmins": "Total Administrators",
             "totalusers": "Total Users",
             "information": {
-                "help": "This is an overview of all registered user account on the DAPNET network. If you are not an admin, you don't see other user's details. You can edit your user by yourself, e.g. change your passwort or your email address."
+                "help": "This is an overview of all registered user account on the DAPNET network. If you are not an admin, you don't see other user's details. You can edit your user by yourself, e.g. change your password or your email address."
             }
         },
         "new": {
