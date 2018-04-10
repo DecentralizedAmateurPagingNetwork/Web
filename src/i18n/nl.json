@@ -391,7 +391,7 @@
             "newcall": "Nieuwe oproep",
             "message": {
                 "title": "Bericht",
-                "charactersremaining": "80 karakters over. <br>Voer uw paging tekst in. Uw gebruikersnaam is automatisch toegevoegd."
+                "charactersremaining": "{remaining} / 80 karakters over. <br>Voer uw paging tekst in. Uw gebruikersnaam is automatisch toegevoegd."
             },
             "subscribers": {
                 "help": "Kies één of meerdere ontvangers voor dit bericht."
