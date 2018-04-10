@@ -391,7 +391,7 @@
             "newcall": "Neuer Ruf",
             "message": {
                 "title": "Nachricht",
-                "charactersremaining": "80 Zeichen verbleibend.<br>Bitte den Nachrichtentext eingeben. Das Absender-Rufzeichen wird automatisch hinzugefügt."
+                "charactersremaining": "{remaining} / 80 Zeichen verbleibend.<br>Bitte den Nachrichtentext eingeben. Das Absender-Rufzeichen wird automatisch hinzugefügt."
             },
             "subscribers": {
                 "help": "Einen oder mehrere Teilnehmer als Empfänger des Rufs auswählen."
