@@ -391,7 +391,7 @@
             "newcall": "Nuova chiamata",
             "message": {
                 "title": "Messaggio",
-                "charactersremaining": "80 caratteri rimanenti.<br>Inserisci il testo del cercapersone. Il tuo nome utente viene aggiunto automaticamente."
+                "charactersremaining": "{remaining} / 80 caratteri rimanenti.<br>Inserisci il testo del cercapersone. Il tuo nome utente viene aggiunto automaticamente."
             },
             "subscribers": {
                 "help": "Seleziona uno o più iscritti per mandargli il messaggio."
