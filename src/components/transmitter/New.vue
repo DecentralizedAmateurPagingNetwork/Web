@@ -29,7 +29,7 @@
 						<div class="form-group">
 							<label class="col-lg-2 control-label">{{ $t('transmitter.new.password.title') }}</label>
 							<div class="col-lg-10">
-								<input type="text" v-model.trim="form.password" class="form-control">
+								<input type="text" v-model="form.password" class="form-control">
 								<span class="help-block">{{ $t('transmitter.new.password.help') }}</span>
 							</div>
 						</div>
