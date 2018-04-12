@@ -1,0 +1,541 @@
+{
+    "navigation": {
+        "calls": "Meddelanden",
+        "subscribers": "Prenumeranter",
+        "rubrics": {
+            "title": "Rubriker",
+            "all": "Alla rubriker",
+            "activate": "Aktivera rubrik",
+            "content": "Rubrikinnehåll"
+        },
+        "transmitters": {
+            "title": "Sändare",
+            "all": "Alla sändare",
+            "map": "Karta",
+            "groups": "Sändargrupper"
+        },
+        "nodes": "Nodes",
+        "users": "Användare",
+        "help": {
+            "title": "Hjälp",
+            "wiki": "Dokumentation",
+            "support": "Stöd"
+        },
+        "settings": "Inställningar",
+        "login": "Logga in",
+        "logout": "Logga ut"
+    },
+    "home": {
+        "carousel": {
+            "1": {
+                "title": "Välkommen till DAPNET Web.",
+                "text": "DAPNETen (Decentralized Amateur Paging Network) är en nätverk som drivs av amatör radio entusiaster. Eftersom den används vid amatör radio frekvenser kommersiell användning förbjuden.\n<br>Om du är licensierad radio amatör, få ditt inloggningskonto nu.",
+                "link": "ingen"
+            },
+            "2": {
+                "title": "Raspager Sändare",
+                "text": "En billig och låg effekt personlig sändare som tilläggskort för Raspberry Pi.",
+                "link": "http://hampager.de/dokuwiki/doku.php?id=raspager "
+            },
+            "3": {
+                "title": "Täckningskarta",
+                "text": "Sändare visas på en karta med deras simulerade täckningsområde.",
+                "link": "ingen"
+            },
+            "4": {
+                "title": "Tryck på Display för sändare",
+                "text": "Lättanvänd grafisk kontrolldisplay baserad på Nextion Displays. Anslutning till sändarens värd via UART eller USB2UART.",
+                "link": "http://hampager.de/dokuwiki/doku.php?id=unipagernextion "
+            },
+            "5": {
+                "title": "Unipager - en mjukvara för alla sändartyper",
+                "text": "Skriven i RUST styr Unipager-programvaran alla sändartyper: Raspager, Ericsson C9000, Ljudkort och RFM69. Ett Debian-paket finns tillgängligt för enkel installation och uppdatering.",
+                "link": "http://hampager.de/dokuwiki/doku.php?id=unipager "
+            },
+            "6": {
+                "title": "Moderna paging mottagare Swissphone",
+                "text": "High-end modell för pro användare.",
+                "link": "http://hampager.de/dokuwiki/doku.php?id=swissphonedescription"
+            },
+            "7": {
+                "title": "SDR baserad sändre med GM1200 ",
+                "text": "Allt du behöver är en Raspberrz Pi, en radio som är redo för 9600 Baud och en enkel ljud interface. Också möjlig i kombination med pekskärmen.",
+                "link": "http://hampager.de/dokuwiki/doku.php?id=9k6 "
+            },
+            "8": {
+                "title": "AlphaPOC 6002R paging mottagare",
+                "text": "Kommersiellt tillgänglig, liten och ingen ändring behövs. Enkel på-pager programmering.",
+                "link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription"
+            },
+            "9": {
+                "title": "Struktur av DAPNET",
+                "text": "Transparenta och aktuella kommunikationsprotokoll som REST och Websocket används.",
+                "link": "ingen"
+            },
+            "10": {
+                "title": "Stöd via ticket system",
+                "text": "Supportförfrågningar hanteras av ett team för snabb svarstid och maximal kunskapsdelning.",
+                "link": "https://support.hampager.de/ "
+            }
+        },
+        "information": {
+            "dapnet": {
+                "title": "DAPNETen",
+                "projects": "Projekt"
+            },
+            "map": "Gå till fullständig kartvy",
+            "statistics": {
+                "calls": "Meddelander",
+                "rubric-content": "Rubrikinnehåll",
+                "rubrics": "Rubriker",
+                "transmitters": "Sändare",
+                "nodes": "Nodes",
+                "users": "Användare"
+            }
+        }
+    },
+    "transmitter": {
+        "overview": {
+            "table": {
+                "title": "Alla sändare",
+                "callsign": "Signal",
+                "node": "Node",
+                "ipaddress": "IP-adress",
+                "device": "Enhet",
+                "status": "Status",
+                "connectedsince": "Ansluten sedan"
+            },
+            "actions": {
+                "newtransmitter": "Ny sändare",
+                "sendmailtoallowners": "Skick mejl till alla ägare"
+            },
+            "statistics": {
+                "widerange": "Brett utbud",
+                "personal": "Personlig",
+                "total": "Antal",
+                "widerangeonly": "Endast sändare med brett utbrud"
+            },
+            "information": {
+                "text": "Denna översikt visar alla registrerade sändare i DAPNET-nätverket. Innan du kan ansluta din sändare till en av DAPNET-nodarna måste den registreras av en av administratörerna. Det finns två klasser av sändare: brett utbrud (> 1 Watt) och personlig (& lt; = 1 Watt). Varför finns ett så stort antal offline sändare? Dessa är sändare som tidigare har registrerats men är uppenbarligen inte online nu. Det finns ingen information lagrad som sändarna ska \"vara\" online och vilka inte. <br> Sändare har en eller flera ägare som kan ändra inställningarna själva. Varje sändare är tilldelad en eller max. 16 tidsluckor. Detta är nödvändigt eftersom de överför alla på samma frekvens, men inte överlappar varandra samtidigt. Var medveten om att du inte tilldela sändare som redan används i ditt täckningsområde. Kontakta en av administratörerna om du behöver hjälp."
+            }
+        },
+        "new": {
+            "newtransmitter": "Ny sändare",
+            "edittransmitter": "Redigera sändare",
+            "callsign": {
+                "title": "Signal",
+                "help": "Ange en giltig amatörradiosignal för denna sändare. Det kommer också att användas för 10 minuters intervall sändarens identifieringsmeddelande för att uppfylla lagen (åtminstone den tyska lagen)."
+            },
+            "import": {
+                "help": "Enkel import av stationer från hamnetdb.net. Platsdata för den valda sändarsidan kopieras till formuläret."
+            },
+            "password": {
+                "title": "Lösenord",
+                "help": "Ange ett autentiseringslösenord för den här sändaren. I UniPagers web interface heter det Auth Key."
+            },
+            "usage": {
+                "title": "Användande",
+                "personal": "Personlig",
+                "widerange": "Brett utbud",
+                "help": "För klassificering av sändarna finns det två kategorier: Personlig (Sändare med låg uteffekt som RasPager) och Wide Range (högre uteffekt och förhöjd platsplats)."
+            },
+            "antennatype": {
+                "title": "Antenn typ",
+                "omni": "Rundstrålande",
+                "directional": "Riktad",
+                "other": "Annan",
+                "help": "Välj om du har en omnidirektiv antenn (t ex X-50) eller en riktantenn (t ex Yagi)."
+            },
+            "antennadirection": {
+                "help": "<b> Antennens strålriktning </ b>: Ange antennens huvudljusriktning i grader enligt \"True North\" (på tyska \"rechtweisend Nord\")."
+            },
+            "other": {
+                "title": "Annan",
+                "power": {
+                    "help": "<b> Sändarens effekt </ b>: Ange sändarens utgångseffekt i Watt inklusive dina kabelförluster."
+                },
+                "antennalevel": {
+                    "help": "<b> Antenhöjning över marken </ b>: Ange antennhöjd över marken; INTE över NN (!) I meter."
+                },
+                "antennagain": {
+                    "help": "<b> Antennförstärkning </ b>: Ange antennförstärkningen i huvudlobriktningen för riktningsantenner och medelvärdet för omnidirektiva antenner i dBi (dBi: Gain over isotropic radiator)."
+                },
+                "txidentric": {
+                    "help": "<b> Sändarens identifiering RIC </ b>: Ange en RIC (standardvärde är 1) som kommer att användas för att generera ett artificiellt personsökningsmeddelande som innehåller amatörradiosignalen som anges i detta formulär."
+                }
+            },
+            "timeslots": {
+                "title": "Tidsluckor",
+                "help": "Eftersom alla sändare använder samma frekvens används en tidsdelnings-multiplexåtkomstschema. Det finns 16 tidsluckor tillgängliga. Tilldela slitsarna på denna sändare enligt dina omgivande sändare i ditt närområde utan överlappande tidsluckor som tilldelas mer än en sändare. Du kan använda sändarkartan för att kontrollera redan tilldelade tidsluckor för intilliggande sändare. Om du inte kan uppfylla dina krav kontaktar du närliggande sändare och försöker få ett avtal. Normalt är fyra 4 eller mindre tidsluckor per sändare mer än tillräckligt."
+            },
+            "owner": {
+                "help": "Om du är ägare kan du ändra parametrarna för den här sändaren."
+            },
+            "table": {
+                "description": "I tabellen visas de registrerade paging sändarna, deras online status och ytterligare information. Personliga sändare har låg uteffekt och en mycket liten täckning. Breddistanssändare installeras vanligtvis vid förhöjda platser vilket leder till ett brett täckningsområde."
+            }
+        },
+        "map": {
+            "title": "Karta",
+            "settings": {
+                "title": "Inställningar"
+            },
+            "checkbox": {
+                "showonlineonly": "Visa endast sändare på nätet",
+                "showwiderangeonly": "Visa endast sändare med brett utbud",
+                "showbytimeslot": "Visa sändare genom tidsluckor",
+                "shownodes": "Visa nodes",
+                "shownodeline": "Visa rad från sändare till node"
+            },
+            "actions": {
+                "showallcoverage": "Visa alla täckningsöverläggningar",
+                "removeallcoverage": "Ta bort alla täckningsöverlagringar"
+            },
+            "alerts": {
+                "load": {
+                    "title": "Ladda om täckningsöverlagringar?",
+                    "text": "Tryck på \"Fortsätt\" för att ladda alla täckningsöverlägg för de nuvarande synliga sändarna. Det kan ta lite tid och sätta enheten under tung belastning."
+                },
+                "confirm": {
+                    "title": "Är du verkligen säker?",
+                    "text": "Du ska ladda och visa täckningen av <b> {amount} sändare </ b>. Det tar lite tid och sätter din enhet under tung belastning.",
+                    "continue": "Ja, jag är säker och jag kommer inte att skylla på utvecklaren om min webbläsare kraschar."
+                }
+            }
+        }
+    },
+    "footer": {
+        "language": {
+            "title": "Språk",
+            "en": "Engelska",
+            "de": "Tyska",
+            "es": "Spanska",
+            "nl": "Nederländska",
+            "fr": "Franska",
+            "pl": "Polska",
+            "it": "Italienska",
+            "pt": "Portugisiska",
+            "se": "Swedish"
+        },
+        "support": {
+            "title": "Stötta oss",
+            "github": "GitHub",
+            "rwth-amateur-radio": "RWTH amatör radio"
+        },
+        "contact": {
+            "title": "Kontakta oss",
+            "twitter": "Twitter",
+            "facebook": "Facebook",
+            "contact": "Kontakt",
+            "impress": "Impressum",
+            "privacy": "Integritet"
+        },
+        "versions": {
+            "title": "Versioner",
+            "check": "Checka"
+        }
+    },
+    "table": {
+        "search": "Sök",
+        "pagination": {
+            "page": "Sida",
+            "of": "Av"
+        },
+        "actionbuttons": {
+            "edit": "Redigera",
+            "delete": "Radera",
+            "email": "Skick mejl",
+            "rubrics": "Skick rubriker"
+        }
+    },
+    "rest": {
+        "errors": {
+            "title": "Fel",
+            "no-connection": "Ingen förbindelse",
+            "api-unreachable": "Det gick inte att nå API-servern. Vänligen försök igen senare.",
+            "permissions": "Ogiltiga inloggningsuppgifter eller inget tillstånd för denna begäran. Vänligen kolla användarnamn och lösenord.",
+            "http-error": "Obehandlat HTTP-fel {status}. Vänligen försök igen senare.",
+            "403": {
+                "title": "Förbjuden",
+                "text": "Ingen tillåtelse för denna begäran."
+            },
+            "404": {
+                "title": "Hittades inte",
+                "text": "Det gick inte att hitta den begärda resursen."
+            }
+        }
+    },
+    "alerts": {
+        "success": {
+            "title": "Framgång",
+            "text": "Drift utförd framgångsrikt."
+        },
+        "delete": {
+            "title": "Är du säker?",
+            "text": "Du kommer inte att kunna återställa denna data när den har raderats."
+        },
+        "input": {
+            "title": "Saknad inmatning",
+            "text": "Vänligen fyll i alla fält för att fortsätta."
+        }
+    },
+    "general": {
+        "continue": "Fortsätta",
+        "submit": "Lämna",
+        "abort": "Avbryta",
+        "search": "Söka",
+        "information": "Information",
+        "owner": "Ägare",
+        "actions": "Handlingar",
+        "statistics": "Statistik",
+        "description": "Beskrivning",
+        "name": "Namn",
+        "latlong": {
+            "title": "Latitud / longitud",
+            "north": "Norr",
+            "south": "Syd",
+            "east": "Öst",
+            "west": "Väst"
+        },
+        "password": "Lösenord",
+        "yes": "Ja",
+        "no": "Nej",
+        "permalink": "Permalänk",
+        "duplication": "Om du ändrar detta namn skapas en duplicering och <i> inte </ i> ändrar elementets namn."
+    },
+    "rubric": {
+        "overview": {
+            "totalrubrics": "Summa rubriker",
+            "information": {
+                "help": "Detta är en lista över alla rubriker på DAPNET. Ett rubriknummer kan tilldelas flera sändargrupper. Tänk på att sändargrupperna är disjunktiva för samma rubriknummer för att undvika överlappande talanpassningar. <br> Använd knappen Aktivera rubriker för att möjliggöra mottagning av rubriker på din Skyper."
+            },
+            "table": {
+                "number": "Nummer",
+                "name": "Namn",
+                "label": "Etikett",
+                "transmittergroup": "Sändargrupper"
+            }
+        },
+        "new": {
+            "newrubric": "Ny Rubrik",
+            "name": "Namn",
+            "label": "Etikett",
+            "number": "Nummer",
+            "transmittergroup": "Sändargrupper",
+            "information": {
+                "help": "Rubriker är en Skyper-baserad uppfinning som tillåter att skicka nyheter sorterade i kategorier (rubrikerna). Tilldel nummeret försiktigt och kontakta <code> support [at] hampager.de </ code> vid tvekan. Var medveten om att antalet rubriker är begränsat över hela världen till 99."
+            },
+            "editrubric": "Redigera Rubrik"
+        },
+        "activation": {
+            "pagernumber": "Nummret av pager (din RIC)",
+            "information": {
+                "help": "Använd funktionen för att skicka en aktiveringsmeddelande till din Skyper. Efter framgångsrik mottagning kan du välja rubrikerna på \"Skyper Setup\" i Skyper-menyn."
+            },
+            "transmittergroup": "Sändargrupper"
+        }
+    },
+    "subscribers": {
+        "overview": {
+            "newsubscriber": "Ny prenumerant",
+            "allsubscribers": "Alla prenumeranter",
+            "totalsubscribers": "Totala prenumeranter",
+            "information": {
+                "help": "En abonnent är den logiska anslutningen mellan ett namn (signal) och ett eller flera RIC-nummer, till exempel en Skyper-adress."
+            },
+            "table": {
+                "pager": "Pager",
+                "subscriber": "Prenumerant"
+            }
+        },
+        "new": {
+            "newsubscriber": "Ny prenumerant",
+            "editsubscriber": "Redigera Prenumerant",
+            "subscriber": {
+                "title": "Prenumerant",
+                "help": "Vänligen ange ett giltigt amatör radio signal för ett personligt eller klassificerande namn på en organisation."
+            },
+            "description": {
+                "help": "Ange ditt namn eller någon annan användbar beskrivning av denna post."
+            },
+            "pager": {
+                "title": "Pager",
+                "helprics": "Lägg till en eller flera rader med personsökarens RIC-nummer.",
+                "helpnames": "Lägg till ett motsvarande nummer för linjer som en beskrivning för RIC-numren i den första rutan."
+            },
+            "owner": {
+                "title": "Ägare",
+                "help": "En ägare till en abonnentförening kan redigera sina parametrar."
+            },
+            "information": {
+                "help": "Prenumeranter är en fördelning mellan ett namn (vanligtvis ditt amatörradiosignal) och ett eller flera pager-ID (RIC)."
+            }
+        }
+    },
+    "calls": {
+        "overview": {
+            "allcalls": "Alla meddelander",
+            "newcall": "Ny meddelande",
+            "emergencies": "Nödsituationer",
+            "totalcalls": "Totalt samtal",
+            "information": {
+                "help": "Meddelander är en personlig personsökningsöverföring till enskilda mottagare."
+            },
+            "table": {
+                "timestamp": "Timestamp",
+                "txgroups": "TX-grupper",
+                "message": "Meddelande",
+                "emergency": "Hög prioritet?"
+            }
+        },
+        "new": {
+            "newcall": "Ny Meddelande",
+            "message": {
+                "title": "Meddelande",
+                "charactersremaining": "{remaining} / 80 tecken kvar. <br> Skriv in din personsöktext. Ditt användarnamn läggs till automatiskt."
+            },
+            "subscribers": {
+                "help": "Välj en eller flera abonnenter du ska skicka meddelandet till."
+            },
+            "transmittergroups": {
+                "title": "Sändargrupper",
+                "help": "Välj en logisk sändargrupp som ska sända ditt meddelande. Standard är alla sändare, men om du känner till mottagarens ungefärliga läge kan du begränsa sändarna som används för dina paging meddelander till ett visst område. Detta minskar belastningen på sändarna."
+            },
+            "emergency": {
+                "title": "Nödsituation?",
+                "help": "Om du vill att ditt meddelande ska levereras så snart som möjligt, markera den här rutan. Inga skadliga saker kommer att hända, DAPNET kommer bara att bearbeta ditt meddelande med högsta prioritet. Vänligen använd denna funktion rättvist."
+            },
+            "information": {
+                "help": "Här visas dina senaste paging meddelanden."
+            }
+        }
+    },
+    "news": {
+        "overview": {
+            "allrubriccontent": "Allt rubrikinnehåll",
+            "newrubriccontent": "Nytt rubrikinnehåll",
+            "totalrubriccontent": "Totalt rubiskt innehåll",
+            "information": {
+                "help": "Innehållet som visas här är INTE allmänna nyheter om DAPNET, men det nyligen skickade innehållet till rubriker. Varje gång en användare uppdaterar de 10 tillgängliga rubrikmeddelandena kommer denna ändring att visas här."
+            },
+            "table": {
+                "timestamp": "Timestamp",
+                "rubric": "Rubrik",
+                "number": "#",
+                "message": "Meddelanden"
+            }
+        },
+        "new": {
+            "newrubriccontent": "Ny rubrikinnehåll",
+            "message": "Meddelanden",
+            "charactersremaining": "Återstående karaktärer",
+            "rubrics": "Rubriker",
+            "number": "Nummer",
+            "chooseautomatically": "Välj automatiskt",
+            "information": {
+                "help": "Dessa är innehållet i rubrikerna. De är hittills endast tillgängliga på Skyper pagerna i denna form, men skickas även som personliga samtal till RIC 1000 + (Rubrik-nummer) för mottagning med t.ex. AlphaPoc."
+            }
+        }
+    },
+    "nodes": {
+        "overview": {
+            "allnodes": "Alla nodar",
+            "newnode": "Ny node",
+            "sendmailtoallowners": "Skick mejl till alla ägare",
+            "statistics": {
+                "totalnodes": "Totalt antal nodar"
+            },
+            "information": {
+                "help": "Noder är instanserna för DAPNET-klustret. Denna lista visar status för dem."
+            },
+            "table": {
+                "name": "Namn",
+                "version": "Version",
+                "ipaddress": "IP-adress",
+                "status": "Status"
+            }
+        },
+        "new": {
+            "newnode": "Ny Node",
+            "editnode": "Redigera Node",
+            "name": {
+                "title": "Namn"
+            },
+            "status": {
+                "title": "Status",
+                "online": "Online",
+                "suspended": "Avstängd"
+            },
+            "information": {
+                "help": "Tabellen visar de registrerade DAPNET Core-noderna och är mestadels för SysOp-information."
+            }
+        }
+    },
+    "login": {
+        "username": "Användernamn",
+        "password": "Lösenord",
+        "information": {
+            "help": "..."
+        }
+    },
+    "logout": {
+        "seepagewrong": "Om du ser den här sidan gick det något fel.",
+        "emoji": "Emoji tillhandahålls gratis av"
+    },
+    "impress": {
+        "title": "Impressum"
+    },
+    "error404": {
+        "title": "Error 404 - Hittades inte",
+        "emoji": "Emoji tillhandahålls gratis av"
+    },
+    "privacy": {
+        "title": "Integritet"
+    },
+    "versioncheck": {
+        "title": "Versionskontroll"
+    },
+    "group": {
+        "overview": {
+            "newtxgroup": "Nya sändargrupper",
+            "alltxgroups": "Alla sändargrupper",
+            "totaltxgroups": "Antal grupper",
+            "information": {
+                "help": "En sändargrupp är en logisk förening av en eller flera sändare till en grupp. Detta är nödvändigt för att dela sändarna i regionala områden, eftersom inte allt innehåll måste överföras på hela nätverket. Både personliga samtal och rubrikens innehåll måste kopplas till en sändargrupp. Endast sändare som är medlem i denna grupp kommer att få informationen från DAPNET-noden för att kunna överföra den."
+            }
+        },
+        "new": {
+            "newtxgroup": "Ny sändargrupp",
+            "edittxgroup": "Redigera sändargrupp",
+            "information": {
+                "help": "En sändargrupp kombinerar en av flera sändare till en logisk enhet."
+            }
+        }
+    },
+    "users": {
+        "general": {
+            "email": "Mejl",
+            "admin": "Admin?",
+            "newuser": "Ny användare"
+        },
+        "overview": {
+            "allusers": "Alla användare",
+            "sendemailallusers": "Skick mejl till alla användare",
+            "totaladmins": "Antal administratörer",
+            "totalusers": "Antal användare",
+            "information": {
+                "help": "Detta är en översikt över alla registrerade användarkonton på DAPNET-nätverket. Om du inte är en administratör ser du inte andra användares uppgifter. Du kan redigera din användare själv, t.ex. ändra ditt lösenord eller din e-postadress."
+            }
+        },
+        "new": {
+            "edituser": "Redigera användare",
+            "password": {
+                "help": "Det här är det nybildade lösenordet:",
+                "randompassword": "Skapa nytt slumpmässigt lösenord"
+            },
+            "information": {
+                "help": "Denna tabell visar de registrerade användarna och deras detaljerade uppgifter."
+            }
+        }
+    }
+}
