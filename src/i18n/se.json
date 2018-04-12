@@ -30,27 +30,27 @@
             "1": {
                 "title": "Välkommen till DAPNET Web.",
                 "text": "DAPNETen (Decentralized Amateur Paging Network) är en nätverk som drivs av amatör radio entusiaster. Eftersom den används vid amatör radio frekvenser kommersiell användning förbjuden.\n<br>Om du är licensierad radio amatör, få ditt inloggningskonto nu.",
-                "link": "ingen"
+                "link": "NONE"
             },
             "2": {
                 "title": "Raspager Sändare",
                 "text": "En billig och låg effekt personlig sändare som tilläggskort för Raspberry Pi.",
-                "link": "http://hampager.de/dokuwiki/doku.php?id=raspager "
+                "link": "http://hampager.de/dokuwiki/doku.php?id=raspager"
             },
             "3": {
                 "title": "Täckningskarta",
                 "text": "Sändare visas på en karta med deras simulerade täckningsområde.",
-                "link": "ingen"
+                "link": "NONE"
             },
             "4": {
                 "title": "Tryck på Display för sändare",
                 "text": "Lättanvänd grafisk kontrolldisplay baserad på Nextion Displays. Anslutning till sändarens värd via UART eller USB2UART.",
-                "link": "http://hampager.de/dokuwiki/doku.php?id=unipagernextion "
+                "link": "http://hampager.de/dokuwiki/doku.php?id=unipagernextion"
             },
             "5": {
                 "title": "Unipager - en mjukvara för alla sändartyper",
                 "text": "Skriven i RUST styr Unipager-programvaran alla sändartyper: Raspager, Ericsson C9000, Ljudkort och RFM69. Ett Debian-paket finns tillgängligt för enkel installation och uppdatering.",
-                "link": "http://hampager.de/dokuwiki/doku.php?id=unipager "
+                "link": "http://hampager.de/dokuwiki/doku.php?id=unipager"
             },
             "6": {
                 "title": "Moderna paging mottagare Swissphone",
@@ -58,9 +58,9 @@
                 "link": "http://hampager.de/dokuwiki/doku.php?id=swissphonedescription"
             },
             "7": {
-                "title": "SDR baserad sändre med GM1200 ",
+                "title": "SDR baserad sändre med GM1200",
                 "text": "Allt du behöver är en Raspberrz Pi, en radio som är redo för 9600 Baud och en enkel ljud interface. Också möjlig i kombination med pekskärmen.",
-                "link": "http://hampager.de/dokuwiki/doku.php?id=9k6 "
+                "link": "http://hampager.de/dokuwiki/doku.php?id=9k6"
             },
             "8": {
                 "title": "AlphaPOC 6002R paging mottagare",
@@ -70,12 +70,12 @@
             "9": {
                 "title": "Struktur av DAPNET",
                 "text": "Transparenta och aktuella kommunikationsprotokoll som REST och Websocket används.",
-                "link": "ingen"
+                "link": "NONE"
             },
             "10": {
                 "title": "Stöd via ticket system",
                 "text": "Supportförfrågningar hanteras av ett team för snabb svarstid och maximal kunskapsdelning.",
-                "link": "https://support.hampager.de/ "
+                "link": "https://support.hampager.de/"
             }
         },
         "information": {
