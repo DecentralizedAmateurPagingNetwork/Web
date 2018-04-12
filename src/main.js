@@ -84,6 +84,18 @@ Vue.http.options.timeout = 30000;
 Vue.http.headers.common['Authorization'] = 'Basic ' + store.getters.user.auth;
 delete Vue.http.headers.common['Content-Type'];
 
+Vue.http.interceptors.push((request) => {
+	if (request.body !== null) {
+		// remove whitespace from url
+		request.url = request.url.replace(/ /g, '');
+
+		// trim strings in body
+		for (const key of Object.keys(request.body)) {
+			if (typeof request.body[key] === 'string') request.body[key] = request.body[key].trim();
+		}
+	}
+});
+
 // output version and links onto console
 const pkg = require('../package.json');
 console.log('%c DAPNET Web v' + pkg.version + ' ', 'background: #112a2d; color: #bada55; font-size: large;');
