@@ -76,6 +76,14 @@ const GlobalMethodsPlugin = {
 			}
 		};
 
+		Vue.prototype.$dialogs.overwriteError = function(context) {
+			context.$swal({
+				title: context.$i18n.t('alerts.overwrite.title'),
+				html: context.$i18n.t('alerts.overwrite.text'),
+				type: 'error'
+			});
+		};
+
 		Vue.prototype.$helpers = {};
 
 		Vue.prototype.$helpers.getAjaxErrorMessage = function(context, response) {
