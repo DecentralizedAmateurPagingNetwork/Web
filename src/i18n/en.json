@@ -277,6 +277,10 @@
         "input": {
             "title": "Missing input",
             "text": "Please fill in every field to continue."
+        },
+        "overwrite": {
+            "title": "Prevented Overwriting",
+            "text": "A possible case of overwriting existing data has been prevented."
         }
     },
     "general": {
@@ -530,8 +534,7 @@
         "new": {
             "edituser": "Edit User",
             "password": {
-                "help": "This is the newly generated password:",
-                "randompassword": "Generate new random password"
+                "help": "This is the newly generated password:"
             },
             "information": {
                 "help": "This table shows the registered users and their detail information."
