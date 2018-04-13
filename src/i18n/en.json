@@ -131,7 +131,7 @@
             },
             "password": {
                 "title": "Password",
-                "help": "Enter a authentication password for this transmitter. In the UniPager webinterface it’s called Auth Key."
+                "help": "Enter an authentication password for this transmitter. In the UniPager webinterface it’s called Auth Key."
             },
             "usage": {
                 "title": "Usage",
@@ -379,7 +379,7 @@
             "emergencies": "Emergencies",
             "totalcalls": "Total Calls",
             "information": {
-                "help": "Calls are personal paging transmission to individual receivers."
+                "help": "Calls are a personal paging transmission to individual receivers."
             },
             "table": {
                 "timestamp": "Timestamp",
@@ -395,7 +395,7 @@
                 "charactersremaining": "{remaining} / 80 characters remaining.<br>Enter your paging text. Your user name is added automatically."
             },
             "subscribers": {
-                "help": "Select one or multiple subscribers you what to send the message to."
+                "help": "Select one or multiple subscribers you want to send the message to."
             },
             "transmittergroups": {
                 "title": "Transmitter Groups",
