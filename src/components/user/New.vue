@@ -23,12 +23,15 @@
 						</div>
 						<div class="form-group">
 							<label class="col-lg-2 control-label">{{ $t('general.password') }}</label>
-							<div class="col-lg-9">
-								<input type="password" v-model="form.password" class="form-control">
-								<span v-if="passwordGenerated" class="help-block">{{ $t('users.new.password.randompassword') }} <code>{{ passwordGenerated }}</code></span>
-							</div>
-							<div class="col-lg-1">
-								<button type="button" @click="generatePassword" title="Generate new random password" class="btn btn-warning" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-repeat"></i></button>
+							<div class="col-lg-10">
+								<div class="input-group">
+									<input :type="passwordVisible ? 'text' : 'password'" v-model="form.password" class="form-control">
+									<span class="input-group-btn">
+										<button type="button" @click="passwordVisible = !passwordVisible" title="Toggle password visibility" class="btn btn-info" data-toggle="tooltip" data-placement="bottom"><i class="fa" v-bind:class="{ 'fa-eye': passwordVisible, 'fa-eye-slash': !passwordVisible }"></i></button>
+										<button type="button" v-clipboard:copy="form.password" v-clipboard:success="() => {this.$dialogs.success(this)}" title="Copy password to clipboard" class="btn btn-info" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-clipboard"></i></button>
+										<button type="button" @click="generatePassword" title="Generate random password" class="btn btn-info" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-repeat"></i></button>
+									</span>
+								</div>
 							</div>
 						</div>
 						<div class="form-group">
@@ -87,7 +90,7 @@
 					email: '',
 					admin: false
 				},
-				passwordGenerated: ''
+				passwordVisible: false
 			};
 		},
 		methods: {
@@ -150,7 +153,7 @@
 
 				// display the new password
 				this.form.password = password;
-				this.passwordGenerated = password;
+				this.passwordVisible = true;
 			}
 		}
 	};
