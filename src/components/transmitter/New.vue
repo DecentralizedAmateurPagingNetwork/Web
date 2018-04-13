@@ -29,7 +29,13 @@
 						<div class="form-group">
 							<label class="col-lg-2 control-label">{{ $t('transmitter.new.password.title') }}</label>
 							<div class="col-lg-10">
-								<input type="text" v-model="form.password" class="form-control">
+								<div class="input-group">
+									<input :type="passwordVisible ? 'text' : 'password'" v-model="form.password" class="form-control">
+									<span class="input-group-btn">
+										<button type="button" @click="passwordVisible = !passwordVisible" title="Toggle password visibility" class="btn btn-info" data-toggle="tooltip" data-placement="bottom"><i class="fa" v-bind:class="{ 'fa-eye': passwordVisible, 'fa-eye-slash': !passwordVisible }"></i></button>
+										<button type="button" v-clipboard:copy="form.password" v-clipboard:success="() => {this.$dialogs.success(this)}" title="Copy password to clipboard" class="btn btn-info" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-clipboard"></i></button>
+									</span>
+								</div>
 								<span class="help-block">{{ $t('transmitter.new.password.help') }}</span>
 							</div>
 						</div>
@@ -282,6 +288,7 @@
 					timeslot: [],
 					owners: []
 				},
+				passwordVisible: false,
 				formData: {
 					hamnetDb: {
 						all: [],
