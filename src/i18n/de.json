@@ -277,6 +277,10 @@
         "input": {
             "title": "Fehlende Eingaben",
             "text": "Bitte füllen Sie alle Eingabefelder aus, um fortzufahren."
+        },
+        "overwrite": {
+            "title": "Überschreiben verhindert",
+            "text": "Ein mögliches Überschreiben bereits vorhandener Daten wurde verhindert."
         }
     },
     "general": {
@@ -530,8 +534,7 @@
         "new": {
             "edituser": "Ändere Nutzer",
             "password": {
-                "help": "Das ist das neue zufällig Passwort:",
-                "randompassword": "Neues zufälliges Passwort erzeugen"
+                "help": "Das ist das neue zufällig Passwort:"
             },
             "information": {
                 "help": "Dies Tabelle zeigt die registrierten Nutzer und deren Details."
