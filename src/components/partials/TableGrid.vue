@@ -10,7 +10,7 @@
 				</div>
 			</div>
 
-			<div class="col-lg-3 col-lg-push-5">
+			<div class="col-lg-4 col-lg-push-4">
 				<div id="paginationHolder">
 					<button class="btn btn-default btn-xs" @click="movePages(-1)"><i class="fa fa-arrow-left"></i></button>
 					&nbsp;{{ $t('table.pagination.page') }} <input v-model.number="gotoPage" type="number" min="1" :max="totalPages"> {{ $t('table.pagination.of') }} {{ totalPages }}&nbsp;
