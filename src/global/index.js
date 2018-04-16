@@ -112,6 +112,32 @@ const GlobalMethodsPlugin = {
 			return true;
 		};
 
+		// checks if the given data may overwrite an existing resource and denies or sends the request
+		Vue.prototype.$helpers.checkForOverwritingAndSend = function(context, routeId, url, body, gotoUrl) {
+			if (routeId) {
+				// name in route: yes --> editing, all ok
+				context.$helpers.sendData(context, url, body, gotoUrl);
+			} else {
+				// name in route: no --> check if existing
+				context.$http.get(url).then(() => {
+					// existing: yes --> error
+					context.$dialogs.overwriteError(context);
+				}, response => {
+					// existing: no --> creating, all ok
+					context.$helpers.sendData(context, url, body, gotoUrl);
+				});
+			}
+		};
+
+		// actually sends the given data to the server
+		Vue.prototype.$helpers.sendData = function(context, url, body, gotoUrl) {
+			context.$http.put(url, body).then(response => {
+				context.$router.push(gotoUrl);
+			}, response => {
+				context.$dialogs.ajaxError(context, response);
+			});
+		};
+
 		Vue.prototype.$helpers.zeroPad = function(number, size) {
 			let s = String(number);
 			while (s.length < (size || 2)) {
