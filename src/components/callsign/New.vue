@@ -181,13 +181,7 @@
 					}
 				});
 
-				if (noWarning) {
-					this.$http.put('callsigns/' + this.form.callsign, body).then(response => {
-						this.$router.push('/subscribers');
-					}, response => {
-						this.$dialogs.ajaxError(this, response);
-					});
-				}
+				if (noWarning) this.$helpers.checkForOverwritingAndSend(this, this.$route.params.id, 'callsigns/' + this.form.callsign, body, '/subscribers');
 			}
 		}
 	};

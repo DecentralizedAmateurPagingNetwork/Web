@@ -157,11 +157,7 @@
 					status: this.form.status
 				};
 
-				this.$http.put('nodes/' + this.form.name, body).then(response => {
-					this.$router.push('/nodes');
-				}, response => {
-					this.$dialogs.ajaxError(this, response);
-				});
+				this.$helpers.checkForOverwritingAndSend(this, this.$route.params.id, 'nodes/' + this.form.name, body, '/nodes');
 			}
 		}
 	};

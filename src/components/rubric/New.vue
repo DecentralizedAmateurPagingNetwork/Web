@@ -144,11 +144,7 @@
 					ownerNames: ownerNames
 				};
 
-				this.$http.put('rubrics/' + this.form.name, body).then(response => {
-					this.$router.push('/rubrics');
-				}, response => {
-					this.$dialogs.ajaxError(this, response);
-				});
+				this.$helpers.checkForOverwritingAndSend(this, this.$route.params.id, 'rubrics/' + this.form.name, body, '/rubrics');
 			}
 		}
 	};

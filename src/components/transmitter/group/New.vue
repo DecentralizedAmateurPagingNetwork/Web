@@ -135,11 +135,7 @@
 					ownerNames: ownerNames
 				};
 
-				this.$http.put('transmitterGroups/' + this.form.name, body).then(response => {
-					this.$router.push('/transmitters/groups');
-				}, response => {
-					this.$dialogs.ajaxError(this, response);
-				});
+				this.$helpers.checkForOverwritingAndSend(this, this.$route.params.id, 'transmitterGroups/' + this.form.name, body, '/transmitters/groups');
 			}
 		}
 	};

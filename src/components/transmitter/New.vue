@@ -352,11 +352,7 @@
 					ownerNames: ownerNames
 				};
 
-				this.$http.put('transmitters/' + this.form.name, body).then(response => {
-					this.$router.push('/transmitters');
-				}, response => {
-					this.$dialogs.ajaxError(this, response);
-				});
+				this.$helpers.checkForOverwritingAndSend(this, this.$route.params.id, 'transmitters/' + this.form.name, body, '/transmitters');
 			}
 		},
 		watch: {
