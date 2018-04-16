@@ -50,7 +50,7 @@
 			</div>
 			<div class="col-lg-3">
 				<h2>{{ $t('general.information') }}</h2>
-				<p></p>
+				<p v-html="$t('group.new.information.help')"></p>
 			</div>
 		</div>
 	</div>

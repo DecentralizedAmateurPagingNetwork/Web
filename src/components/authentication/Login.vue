@@ -39,7 +39,7 @@
 
 			<div class="col-lg-4">
 				<h2>{{ $t('general.information') }}</h2>
-				<p>{{ $t('login.information.help') }}</p>
+				<p v-html="$t('login.information.help')"></p>
 			</div>
 		</div>
 	</div>

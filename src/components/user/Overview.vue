@@ -37,7 +37,7 @@
 					</template>
 				</div>
 				<h2>{{ $t('general.information') }}</h2>
-				<p>{{ $t('users.overview.information.help') }}</p>
+				<p v-html="$t('users.overview.information.help')"></p>
 			</div>
 		</div>
 	</div>

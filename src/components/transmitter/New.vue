@@ -184,7 +184,7 @@
 						</ul>
 					</li>
 				</ul>
-				<p>{{ $t('transmitter.new.table.description') }}</p>
+				<p v-html="$t('transmitter.new.table.description')"></p>
 			</div>
 		</div>
 	</div>

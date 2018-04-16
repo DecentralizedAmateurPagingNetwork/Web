@@ -68,7 +68,7 @@
 			</div>
 			<div class="col-lg-3">
 				<h2>{{ $t('general.information') }}</h2>
-				<p>{{ $t('nodes.new.information.help') }}</p>
+				<p v-html="$t('nodes.new.information.help')"></p>
 			</div>
 		</div>
 	</div>
