@@ -1,7 +1,14 @@
 <template>
 	<div>
 		<div class="row">
-			<div class="col-lg-4">{{ $t('table.search') }}: <input v-model="searchQuery" style="width: 15em"></div>
+			<div class="col-lg-4">
+				<div class="input-group">
+					<input class="form-control input-sm" v-model="searchQuery" placeholder="Search">
+					<span class="input-group-btn">
+						<button class="btn btn-default btn-sm" @click="searchQuery = ''"><i class="fa fa-times"></i></button>
+					</span>
+				</div>
+			</div>
 
 			<div class="col-lg-4 col-lg-push-4">
 				<div id="paginationHolder">
