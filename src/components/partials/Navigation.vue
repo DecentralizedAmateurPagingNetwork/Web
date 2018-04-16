@@ -90,6 +90,8 @@
 				this.$store.commit('changeLanguage', {
 					language: lang
 				});
+
+				document.title = this.$root.$i18n.t(this.$route.meta.titleTranslationKey) + ' | DAPNET Web';
 			}
 		}
 	};

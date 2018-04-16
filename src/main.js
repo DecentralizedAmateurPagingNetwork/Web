@@ -77,7 +77,7 @@ router.beforeEach((to, from, next) => {
 
 router.afterEach((to, from) => {
 	// use current view as title-source
-	document.title = to.name + ' | DAPNET';
+	document.title = i18n.t(to.meta.titleTranslationKey) + ' | DAPNET Web';
 });
 
 // resource config

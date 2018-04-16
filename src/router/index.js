@@ -36,6 +36,7 @@ export default new Router({
 			name: 'Home',
 			component: Home,
 			meta: {
+				titleTranslationKey: 'pagetitle.home',
 				requireAuthentication: false
 			}
 		},
@@ -44,6 +45,7 @@ export default new Router({
 			name: 'Call Overview',
 			component: CallOverview,
 			meta: {
+				titleTranslationKey: 'pagetitle.calls.overview',
 				requireAuthentication: true
 			}
 		},
@@ -52,6 +54,7 @@ export default new Router({
 			name: 'New Call',
 			component: CallNew,
 			meta: {
+				titleTranslationKey: 'pagetitle.calls.new',
 				requireAuthentication: true
 			}
 		},
@@ -60,6 +63,7 @@ export default new Router({
 			name: 'Subscribers Overview',
 			component: CallsignOverview,
 			meta: {
+				titleTranslationKey: 'pagetitle.subscribers.overview',
 				requireAuthentication: true
 			}
 		},
@@ -68,6 +72,7 @@ export default new Router({
 			name: 'New Subscriber',
 			component: CallsignNew,
 			meta: {
+				titleTranslationKey: 'pagetitle.subscribers.new',
 				requireAuthentication: true
 			}
 		},
@@ -76,6 +81,7 @@ export default new Router({
 			name: 'Edit Subscriber',
 			component: CallsignNew,
 			meta: {
+				titleTranslationKey: 'pagetitle.subscribers.edit',
 				requireAuthentication: true
 			}
 		},
@@ -84,6 +90,7 @@ export default new Router({
 			name: 'Rubric Overview',
 			component: RubricOverview,
 			meta: {
+				titleTranslationKey: 'pagetitle.rubric.overview',
 				requireAuthentication: true
 			}
 		},
@@ -92,6 +99,7 @@ export default new Router({
 			name: 'New Rubric',
 			component: RubricNew,
 			meta: {
+				titleTranslationKey: 'pagetitle.rubric.new',
 				requireAuthentication: true
 			}
 		},
@@ -100,6 +108,7 @@ export default new Router({
 			name: 'Edit Rubric',
 			component: RubricNew,
 			meta: {
+				titleTranslationKey: 'pagetitle.rubric.edit',
 				requireAuthentication: true
 			}
 		},
@@ -108,6 +117,7 @@ export default new Router({
 			name: 'Activate Rubrics',
 			component: RubricActivation,
 			meta: {
+				titleTranslationKey: 'pagetitle.rubrics.activate',
 				requireAuthentication: true
 			}
 		},
@@ -116,6 +126,7 @@ export default new Router({
 			name: 'Rubric Content Overview',
 			component: NewsOverview,
 			meta: {
+				titleTranslationKey: 'pagetitle.rubric.content.overview',
 				requireAuthentication: true
 			}
 		},
@@ -124,6 +135,7 @@ export default new Router({
 			name: 'New Rubric Content',
 			component: NewsNew,
 			meta: {
+				titleTranslationKey: 'pagetitle.rubric.content.new',
 				requireAuthentication: true
 			}
 		},
@@ -132,6 +144,7 @@ export default new Router({
 			name: 'Transmitter Overview',
 			component: TransmitterOverview,
 			meta: {
+				titleTranslationKey: 'pagetitle.transmitter.overview',
 				requireAuthentication: true
 			}
 		},
@@ -140,6 +153,7 @@ export default new Router({
 			name: 'New Transmitter',
 			component: TransmitterNew,
 			meta: {
+				titleTranslationKey: 'pagetitle.transmitter.new',
 				requireAuthentication: true
 			}
 		},
@@ -148,6 +162,7 @@ export default new Router({
 			name: 'Edit Transmitter',
 			component: TransmitterNew,
 			meta: {
+				titleTranslationKey: 'pagetitle.transmitter.edit',
 				requireAuthentication: true
 			}
 		},
@@ -156,6 +171,7 @@ export default new Router({
 			name: 'Transmitter Map',
 			component: TransmitterMap,
 			meta: {
+				titleTranslationKey: 'pagetitle.transmitter.map.overview',
 				requireAuthentication: true
 			}
 		},
@@ -164,6 +180,7 @@ export default new Router({
 			name: 'Transmitter Map Details',
 			component: TransmitterMap,
 			meta: {
+				titleTranslationKey: 'pagetitle.transmitter.map.detail',
 				requireAuthentication: true
 			}
 		},
@@ -172,6 +189,7 @@ export default new Router({
 			name: 'Transmitter Group Overview',
 			component: TransmitterGroupOverview,
 			meta: {
+				titleTranslationKey: 'pagetitle.transmittergroup.overview',
 				requireAuthentication: true
 			}
 		},
@@ -180,6 +198,7 @@ export default new Router({
 			name: 'New Transmitter Group',
 			component: TransmitterGroupNew,
 			meta: {
+				titleTranslationKey: 'pagetitle.transmittergroup.new',
 				requireAuthentication: true
 			}
 		},
@@ -188,6 +207,7 @@ export default new Router({
 			name: 'Edit Transmitter Group',
 			component: TransmitterGroupNew,
 			meta: {
+				titleTranslationKey: 'pagetitle.transmittergroup.edit',
 				requireAuthentication: true
 			}
 		},
@@ -196,6 +216,7 @@ export default new Router({
 			name: 'Node Overview',
 			component: NodeOverview,
 			meta: {
+				titleTranslationKey: 'pagetitle.node.overview',
 				requireAuthentication: true
 			}
 		},
@@ -204,6 +225,7 @@ export default new Router({
 			name: 'New Node',
 			component: NodeNew,
 			meta: {
+				titleTranslationKey: 'pagetitle.node.new',
 				requireAuthentication: true
 			}
 		},
@@ -212,6 +234,7 @@ export default new Router({
 			name: 'Edit Node',
 			component: NodeNew,
 			meta: {
+				titleTranslationKey: 'pagetitle.node.edit',
 				requireAuthentication: true
 			}
 		},
@@ -220,6 +243,7 @@ export default new Router({
 			name: 'User Overview',
 			component: UserOverview,
 			meta: {
+				titleTranslationKey: 'pagetitle.user.overview',
 				requireAuthentication: true
 			}
 		},
@@ -228,6 +252,7 @@ export default new Router({
 			name: 'New User',
 			component: UserNew,
 			meta: {
+				titleTranslationKey: 'pagetitle.user.new',
 				requireAuthentication: true
 			}
 		},
@@ -236,6 +261,7 @@ export default new Router({
 			name: 'Edit User',
 			component: UserNew,
 			meta: {
+				titleTranslationKey: 'pagetitle.user.edit',
 				requireAuthentication: true
 			}
 		},
@@ -244,6 +270,7 @@ export default new Router({
 			name: 'Documentation',
 			component: Frame,
 			meta: {
+				titleTranslationKey: 'pagetitle.more.wiki',
 				requireAuthentication: false
 			},
 			props: {
@@ -256,6 +283,7 @@ export default new Router({
 			name: 'Support',
 			component: Frame,
 			meta: {
+				titleTranslationKey: 'pagetitle.more.support',
 				requireAuthentication: false
 			},
 			props: {
@@ -268,6 +296,7 @@ export default new Router({
 			name: 'Login',
 			component: Login,
 			meta: {
+				titleTranslationKey: 'pagetitle.login',
 				requireAuthentication: false
 			}
 		},
@@ -276,6 +305,7 @@ export default new Router({
 			name: 'Logout',
 			component: Logout,
 			meta: {
+				titleTranslationKey: 'pagetitle.logout',
 				requireAuthentication: true
 			}
 		},
@@ -284,6 +314,7 @@ export default new Router({
 			name: 'Version Check',
 			component: VersionCheck,
 			meta: {
+				titleTranslationKey: 'pagetitle.versioncheck',
 				requireAuthentication: false
 			}
 		},
@@ -292,6 +323,7 @@ export default new Router({
 			name: 'Impress',
 			component: Impress,
 			meta: {
+				titleTranslationKey: 'pagetitle.impress',
 				requireAuthentication: false
 			}
 		},
@@ -300,6 +332,7 @@ export default new Router({
 			name: 'Privacy',
 			component: Privacy,
 			meta: {
+				titleTranslationKey: 'pagetitle.privacy',
 				requireAuthentication: false
 			}
 		},
@@ -308,6 +341,7 @@ export default new Router({
 			name: 'Not Found',
 			component: NotFound,
 			meta: {
+				titleTranslationKey: 'pagetitle.notfund',
 				requireAuthentication: false
 			}
 		}
