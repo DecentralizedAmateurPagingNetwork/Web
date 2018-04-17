@@ -540,5 +540,61 @@
                 "help": "Dies Tabelle zeigt die registrierten Nutzer und deren Details."
             }
         }
+    },
+    "pagetitle": {
+        "home": "Startseite",
+        "calls": {
+            "overview": "Rufe Übersicht",
+            "new": "Neuer Ruf"
+        },
+        "subscribers": {
+            "overview": "Teilnehmer Übersicht",
+            "new": "Neuer Teilnehmer",
+            "edit": "Teilnehmer bearbeiten"
+        },
+        "rubric": {
+            "overview": "Rubriken Übersicht",
+            "new": "Neue Rubrik",
+            "edit": "Rubrik bearbeiten",
+            "activate": "Rubriken aktivieren",
+            "content": {
+                "overview": "Rubriken Inhalt Übersicht",
+                "new": "Neuer Rubriken Inhalt"
+            }
+        },
+        "transmitter": {
+            "overview": "Sender Übersicht",
+            "new": "Neuer Sender",
+            "edit": "Sender bearbeiten",
+            "map": {
+                "overview": "Senderkarte",
+                "detail": "Senderkarte Details"
+            }
+        },
+        "transmittergroup": {
+            "overview": "Sendergruppen Übersicht",
+            "new": "Neue Sendergruppe",
+            "edit": "Sendergruppe bearbeiten"
+        },
+        "node": {
+            "overview": "Knoten Übersicht",
+            "new": "Neuer Knoten",
+            "edit": "Knoten bearbeiten"
+        },
+        "user": {
+            "overview": "Nutzer Übersicht",
+            "new": "Neuer Nutzer",
+            "edit": "Nutzer bearbeiten"
+        },
+        "more": {
+            "wiki": "Dokumentaion",
+            "support": "Support"
+        },
+        "login": "Login",
+        "logout": "Logout",
+        "versioncheck": "Versionsüberprüfung",
+        "impress": "Impressum",
+        "privacy": "Datenschutz",
+        "notfound": "Nicht gefunden"
     }
 }

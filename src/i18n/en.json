@@ -540,5 +540,61 @@
                 "help": "This table shows the registered users and their detail information."
             }
         }
+    },
+    "pagetitle": {
+        "home": "Home",
+        "calls": {
+            "overview": "Call Overview",
+            "new": "New Call"
+        },
+        "subscribers": {
+            "overview": "Subscriber Overview",
+            "new": "New Subscriber",
+            "edit": "Edit Subscriber"
+        },
+        "rubric": {
+            "overview": "Rubric Overview",
+            "new": "New Rubric",
+            "edit": "Edit Rubric",
+            "activate": "Activate Rubrics",
+            "content": {
+                "overview": "Rubric Content Overview",
+                "new": "New Rubric Content"
+            }
+        },
+        "transmitter": {
+            "overview": "Transmitter Overview",
+            "new": "New Transmitter",
+            "edit": "Edit Transmitter",
+            "map": {
+                "overview": "Transmitter Map",
+                "detail": "Transmitter Map Details"
+            }
+        },
+        "transmittergroup": {
+            "overview": "Transmitter Group Overview",
+            "new": "New Transmitter Group",
+            "edit": "Edit Transmitter Group"
+        },
+        "node": {
+            "overview": "Node Overview",
+            "new": "New Node",
+            "edit": "Edit Node"
+        },
+        "user": {
+            "overview": "User Overview",
+            "new": "New User",
+            "edit": "Edit User"
+        },
+        "more": {
+            "wiki": "Documentation",
+            "support": "Support"
+        },
+        "login": "Login",
+        "logout": "Logout",
+        "versioncheck": "Versioncheck",
+        "impress": "Impress",
+        "privacy": "Privacy",
+        "notfound": "Not Found"
     }
 }
