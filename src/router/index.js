@@ -117,7 +117,7 @@ export default new Router({
 			name: 'Activate Rubrics',
 			component: RubricActivation,
 			meta: {
-				titleTranslationKey: 'pagetitle.rubrics.activate',
+				titleTranslationKey: 'pagetitle.rubric.activate',
 				requireAuthentication: true
 			}
 		},
@@ -341,7 +341,7 @@ export default new Router({
 			name: 'Not Found',
 			component: NotFound,
 			meta: {
-				titleTranslationKey: 'pagetitle.notfund',
+				titleTranslationKey: 'pagetitle.notfound',
 				requireAuthentication: false
 			}
 		}
