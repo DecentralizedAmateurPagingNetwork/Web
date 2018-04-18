@@ -215,7 +215,7 @@
             "pl": "Pools",
             "it": "Italiaans",
             "pt": "Portugees",
-            "se": "Swedish"
+            "se": "Zweeds"
         },
         "support": {
             "title": "Steun ons",
@@ -277,6 +277,10 @@
         "input": {
             "title": "Invoer ontbreekt",
             "text": "S.v.p. elk veld invullen om door te kunnen gaan."
+        },
+        "overwrite": {
+            "title": "Overschrijven voorkomen",
+            "text": "Het mogelijk overschrijven van bestaande gegevens is voorkomen."
         }
     },
     "general": {
@@ -530,12 +534,63 @@
         "new": {
             "edituser": "Gebruiker wijzigen",
             "password": {
-                "help": "Dit is het nieuw gegenereerde wachtwoord:",
-                "randompassword": "Nieuw willekeurig wachtwoord genereren"
+                "help": "Dit is het nieuw gegenereerde wachtwoord:"
             },
             "information": {
                 "help": "Deze tabel toont geregistreerde gebruikers en hun detail informatie."
             }
         }
+    },
+    "pagetitle": {
+        "home": "Home",
+        "calls": {
+            "overview": "Oproep overzicht",
+            "new": "Nieuwe oproep"
+        },
+        "subscribers": {
+            "overview": "Ontvanger overzicht",
+            "new": "Nieuwe ontvanger",
+            "edit": "Ontvanger bewerken"
+        },
+        "rubric": {
+            "overview": "Rubriek overzicht",
+            "new": "Nieuwe rubriek",
+            "edit": "Rubriek bewerken",
+            "activate": "Rubrieken activeren",
+            "content": {
+                "overview": "Rubriek inhoud overzicht",
+                "new": "NIeuwe rubriek inhoud"
+            }
+        },
+        "transmitter": {
+            "overview": "Zender overzicht",
+            "new": "Nieuwe zender",
+            "edit": "Zender bewerken",
+            "map": {
+                "overview": "Zender kaart",
+                "detail": "Zender kaart details"
+            }
+        },
+        "transmittergroup": {
+            "overview": "Zender groep overzicht",
+            "new": "Nieuwe zender groep",
+            "edit": "Zender groep bewerken"
+        },
+        "node": {
+            "overview": "Node overzicht",
+            "new": "Nieuwe node",
+            "edit": "Node bewerken"
+        },
+        "user": {
+            "overview": "Gebruikersoverzicht",
+            "new": "Nieuwe gebruiker",
+            "edit": "Gebruiker bewerken"
+        },
+        "login": "Inloggen",
+        "logout": "Uitloggen",
+        "versioncheck": "Versiecontrole",
+        "impress": "Over",
+        "privacy": "Privacy",
+        "notfound": "Niet gevonden"
     }
 }
