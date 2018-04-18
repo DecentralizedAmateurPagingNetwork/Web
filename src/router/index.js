@@ -19,7 +19,6 @@ import NodeOverview from '@/components/node/Overview';
 import NodeNew from '@/components/node/New';
 import UserOverview from '@/components/user/Overview';
 import UserNew from '@/components/user/New';
-import Frame from '@/components/more/Frame';
 import Login from '@/components/authentication/Login';
 import Logout from '@/components/authentication/Logout';
 import VersionCheck from '@/components/VersionCheck';
@@ -263,32 +262,6 @@ export default new Router({
 			meta: {
 				titleTranslationKey: 'pagetitle.user.edit',
 				requireAuthentication: true
-			}
-		},
-		{
-			path: '/more/wiki',
-			name: 'Documentation',
-			component: Frame,
-			meta: {
-				titleTranslationKey: 'pagetitle.more.wiki',
-				requireAuthentication: false
-			},
-			props: {
-				title: 'DAPNET DokuWiki',
-				url: 'http://hampager.de/dokuwiki/doku.php'
-			}
-		},
-		{
-			path: '/more/support',
-			name: 'Support',
-			component: Frame,
-			meta: {
-				titleTranslationKey: 'pagetitle.more.support',
-				requireAuthentication: false
-			},
-			props: {
-				title: 'DAPNET Support Center',
-				url: 'https://support.hampager.de'
 			}
 		},
 		{

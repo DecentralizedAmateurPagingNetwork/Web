@@ -39,12 +39,14 @@
 					<li><router-link to="/nodes">{{ $t('navigation.nodes') }}</router-link></li>
 					<li class="divider-vertical"></li>
 					<li><router-link to="/users">{{ $t('navigation.users') }}</router-link></li>
+				</ul>
+				<ul class="nav navbar-nav">
 					<li class="divider-vertical"></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ $t('navigation.help.title') }} <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><router-link to="/more/wiki">{{ $t('navigation.help.wiki') }}</router-link></li>
-							<li><router-link to="/more/support">{{ $t('navigation.help.support') }}</router-link></li>
+							<li><a href="https://hampager.de/dokuwiki/doku.php" target="_blank">{{ $t('navigation.help.wiki') }}</a></li>
+							<li><a href="https://support.hampager.de" target="_blank">{{ $t('navigation.help.support') }}</a></li>
 						</ul>
 					</li>
 					<li class="divider-vertical"></li>
