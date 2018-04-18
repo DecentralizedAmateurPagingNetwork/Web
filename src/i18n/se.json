@@ -29,7 +29,7 @@
         "carousel": {
             "1": {
                 "title": "Välkommen till DAPNET Web.",
-                "text": "DAPNETen (Decentralized Amateur Paging Network) är en nätverk som drivs av amatör radio entusiaster. Eftersom den används vid amatör radio frekvenser kommersiell användning förbjuden.\n<br>Om du är licensierad radio amatör, få ditt inloggningskonto nu.",
+                "text": "DAPNET (Decentralized Amateur Paging Network) är en nätverk som drivs av amatör radio entusiaster. Eftersom den används vid amatör radio frekvenser kommersiell användning förbjuden.\n<br>Om du är licensierad radio amatör, få ditt inloggningskonto nu.",
                 "link": "NONE"
             },
             "2": {
@@ -80,7 +80,7 @@
         },
         "information": {
             "dapnet": {
-                "title": "DAPNETen",
+                "title": "DAPNET",
                 "projects": "Projekt"
             },
             "map": "Gå till fullständig kartvy",
@@ -215,7 +215,7 @@
             "pl": "Polska",
             "it": "Italienska",
             "pt": "Portugisiska",
-            "se": "Swedish"
+            "se": "Svenska"
         },
         "support": {
             "title": "Stötta oss",
@@ -277,6 +277,10 @@
         "input": {
             "title": "Saknad inmatning",
             "text": "Vänligen fyll i alla fält för att fortsätta."
+        },
+        "overwrite": {
+            "title": "Förhindrad överskrivning",
+            "text": "Ett eventuellt fall av att skriva över befintliga data har förhindrats."
         }
     },
     "general": {
@@ -530,12 +534,63 @@
         "new": {
             "edituser": "Redigera användare",
             "password": {
-                "help": "Det här är det nybildade lösenordet:",
-                "randompassword": "Skapa nytt slumpmässigt lösenord"
+                "help": "Det här är det nybildade lösenordet:"
             },
             "information": {
                 "help": "Denna tabell visar de registrerade användarna och deras detaljerade uppgifter."
             }
         }
+    },
+    "pagetitle": {
+        "home": "Hem",
+        "calls": {
+            "overview": "meddelandeöversikt",
+            "new": "Nytt meddelande"
+        },
+        "subscribers": {
+            "overview": "Abonnentöversikt",
+            "new": "Ny prenumerant",
+            "edit": "Redigera abonnent"
+        },
+        "rubric": {
+            "overview": "Rubriköversikt",
+            "new": "Ny Rubrik",
+            "edit": "Redigera Rubrik",
+            "activate": "Aktivera rubriker",
+            "content": {
+                "overview": "Rubrikinnehållsöversikt",
+                "new": "Nytt rubrikinnehåll"
+            }
+        },
+        "transmitter": {
+            "overview": "Överföringsöversikt",
+            "new": "Ny sändare",
+            "edit": "Redigera sändare",
+            "map": {
+                "overview": "Sändarkarta",
+                "detail": "Sändarens kartdetaljer"
+            }
+        },
+        "transmittergroup": {
+            "overview": "Överföringsgruppsöversikt",
+            "new": "Ny sändargrupp",
+            "edit": "Redigera sändargruppen"
+        },
+        "node": {
+            "overview": "Node översikt",
+            "new": "Ny node",
+            "edit": "Redigera node"
+        },
+        "user": {
+            "overview": "Användaröversikt",
+            "new": "Ny användare",
+            "edit": "Redigera användare"
+        },
+        "login": "Logga in",
+        "logout": "Logga ut",
+        "versioncheck": "versions",
+        "impress": "Impressum",
+        "privacy": "Integritet",
+        "notfound": "Hittades inte"
     }
 }
