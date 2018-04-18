@@ -586,10 +586,6 @@
             "new": "Neuer Nutzer",
             "edit": "Nutzer bearbeiten"
         },
-        "more": {
-            "wiki": "Dokumentaion",
-            "support": "Support"
-        },
         "login": "Login",
         "logout": "Logout",
         "versioncheck": "Versionsüberprüfung",
