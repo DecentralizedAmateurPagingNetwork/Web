@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-4">
 				<div class="input-group">
-					<input class="form-control input-sm" v-model="searchQuery" placeholder="Search">
+					<input class="form-control input-sm" v-model="searchQuery" v-bind:placeholder="$t('general.search')">
 					<span class="input-group-btn">
 						<button class="btn btn-default btn-sm" @click="searchQuery = ''"><i class="fa fa-times"></i></button>
 					</span>
