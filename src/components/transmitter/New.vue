@@ -30,10 +30,11 @@
 							<label class="col-lg-2 control-label">{{ $t('transmitter.new.password.title') }}</label>
 							<div class="col-lg-10">
 								<div class="input-group">
-									<input :type="passwordVisible ? 'text' : 'password'" v-model="form.password" class="form-control">
+									<input :type="passwordVisible ? 'text' : 'password'" v-model="form.password" class="form-control" :class="passwordVisible ? 'password-readable' : ''">
 									<span class="input-group-btn">
 										<button type="button" @click="passwordVisible = !passwordVisible" title="Toggle password visibility" class="btn btn-info" data-toggle="tooltip" data-placement="bottom"><i class="fa" v-bind:class="{ 'fa-eye': passwordVisible, 'fa-eye-slash': !passwordVisible }"></i></button>
 										<button type="button" v-clipboard:copy="form.password" v-clipboard:success="() => {this.$dialogs.success(this)}" title="Copy password to clipboard" class="btn btn-info" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-clipboard"></i></button>
+										<button type="button" @click="form.password = $helpers.generatePassword(); passwordVisible = true;" title="Generate random password" class="btn btn-info" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-repeat"></i></button>
 									</span>
 								</div>
 								<span class="help-block">{{ $t('transmitter.new.password.help') }}</span>

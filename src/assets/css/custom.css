@@ -32,6 +32,10 @@ textarea {
 	text-decoration: underline;
 }
 
+.password-readable {
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
 /* temporary fix until SweetAlert2 releases a new version */
 .swal2-popup {
 	font-size: 1.6rem !important;
