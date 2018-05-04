@@ -141,7 +141,7 @@
 			},
 			generatePassword() {
 				// generate password
-				const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+				const chars = 'abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ0123456789';
 				let password = '';
 				for (let i = 0; i < 20; ++i) {
 					password += chars.charAt(Math.floor(Math.random() * chars.length));
