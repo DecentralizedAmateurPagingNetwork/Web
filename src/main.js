@@ -89,7 +89,7 @@ delete Vue.http.headers.common['Content-Type'];
 Vue.http.interceptors.push((request) => {
 	if (request.body !== null) {
 		// remove whitespace from url
-		request.url = request.url.replace(/ /g, '');
+		request.url = request.url.replace(/ /g, '').replace(/[\u200B-\u200D\uFEFF]/g, '');
 
 		// trim strings in body
 		for (const key of Object.keys(request.body)) {
