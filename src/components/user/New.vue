@@ -101,9 +101,15 @@
 				if (this.form.password.includes(':')) {
 					this.$swal({
 						title: 'Forbidden character',
-						html: 'Your password must not contain a colon (<code>:</code>), otherwise it may brake your login.',
+						html: 'Your password must not contain a colon (<code>:</code>), otherwise it may break your login.',
 						type: 'error'
 					});
+					return false;
+				}
+
+				// prevent anything but A-Z, a-z, 0-9 as password
+				if (this.form.password.match(/[^A-Za-z0-9]/g)) {
+					this.$dialogs.passwordError(this);
 					return false;
 				}
 

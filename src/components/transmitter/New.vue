@@ -323,6 +323,12 @@
 					return false;
 				}
 
+				// prevent anything but A-Z, a-z, 0-9 as password
+				if (this.form.password.match(/[^A-Za-z0-9]/g)) {
+					this.$dialogs.passwordError(this);
+					return false;
+				}
+
 				// check if location is valid
 				if (this.form.latitude.value === '' || this.form.longitude.value === '') {
 					this.$swal({
