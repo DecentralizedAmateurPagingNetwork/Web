@@ -281,6 +281,18 @@
         "overwrite": {
             "title": "Prevented Overwriting",
             "text": "A possible case of overwriting existing data has been prevented."
+        },
+        "password": {
+            "title": "Forbidden character",
+            "text": "Your password must not contain anything but <code>A-Z</code>, <code>a-Z</code> and/or <code>0-9</code>."
+        },
+        "colon": {
+            "title": "Forbidden character",
+            "text": "Your password must not contain a colon (<code>:</code>), otherwise it may break your login."
+        },
+        "location": {
+            "title": "Invalid location",
+            "text": "Please check the given location and make sure to use your locale's decimal separator (e.g. <code>,</code> in German or <code>.</code> in US-English)."
         }
     },
     "general": {
