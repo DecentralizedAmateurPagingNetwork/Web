@@ -331,11 +331,7 @@
 
 				// check if location is valid
 				if (this.form.latitude.value === '' || this.form.longitude.value === '') {
-					this.$swal({
-						title: 'Invalid location',
-						html: 'Please check the given location and make sure to use your locale\'s decimal separator (e.g. <code>,</code> in German or <code>.</code> in US-English).',
-						type: 'error'
-					});
+					this.$dialogs.locationError(this);
 					return false;
 				}
 

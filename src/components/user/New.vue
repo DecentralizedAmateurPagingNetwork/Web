@@ -99,11 +99,7 @@
 
 				// workaround to prevent broken authentication when using a colon in password
 				if (this.form.password.includes(':')) {
-					this.$swal({
-						title: 'Forbidden character',
-						html: 'Your password must not contain a colon (<code>:</code>), otherwise it may break your login.',
-						type: 'error'
-					});
+					this.$dialogs.colonError(this);
 					return false;
 				}
 

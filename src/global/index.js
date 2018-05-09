@@ -84,10 +84,26 @@ const GlobalMethodsPlugin = {
 			});
 		};
 
+		Vue.prototype.$dialogs.colonError = function(context) {
+			context.$swal({
+				title: context.$i18n.t('alerts.colon.title'),
+				html: context.$i18n.t('alerts.colon.text'),
+				type: 'error'
+			});
+		};
+
 		Vue.prototype.$dialogs.passwordError = function(context) {
 			context.$swal({
 				title: context.$i18n.t('alerts.password.title'),
 				html: context.$i18n.t('alerts.password.text'),
+				type: 'error'
+			});
+		};
+
+		Vue.prototype.$dialogs.locationError = function(context) {
+			context.$swal({
+				title: context.$i18n.t('alerts.location.title'),
+				html: context.$i18n.t('alerts.location.text'),
 				type: 'error'
 			});
 		};
