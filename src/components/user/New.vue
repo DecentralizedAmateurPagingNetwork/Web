@@ -97,12 +97,6 @@
 			submitForm(event) {
 				event.preventDefault();
 
-				// workaround to prevent broken authentication when using a colon in password
-				if (this.form.password.includes(':')) {
-					this.$dialogs.colonError(this);
-					return false;
-				}
-
 				// prevent anything but A-Z, a-z, 0-9 as password
 				if (this.form.password.match(/[^A-Za-z0-9]/g)) {
 					this.$dialogs.passwordError(this);
