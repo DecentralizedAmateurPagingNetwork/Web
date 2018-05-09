@@ -281,6 +281,18 @@
         "overwrite": {
             "title": "Überschreiben verhindert",
             "text": "Ein mögliches Überschreiben bereits vorhandener Daten wurde verhindert."
+        },
+        "password": {
+            "title": "Verbotenes Zeichen",
+            "text": "Das Passwort darf keine weiteren Zeichen außer <code>A-Z</code>, <code>a-Z</code> und/oder <code>0-9</code> beinhalten."
+        },
+        "colon": {
+            "title": "Verbotenes Zeichen",
+            "text": "Das Passwort darf keinen Doppelpunkt (<code>:</code>) beinhalten, da sonst der Login fehlschlagen wird."
+        },
+        "location": {
+            "title": "Ungültige Position",
+            "text": "Bitte die Position überprüfen und sicherstellen, dass das korrekte Dezimaltrennzeichen verwendet wird (z.B. <code>,</code> für Deutsch oder <code>.</code> für US-Englisch)."
         }
     },
     "general": {
