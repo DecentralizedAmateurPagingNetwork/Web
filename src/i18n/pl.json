@@ -131,7 +131,7 @@
             },
             "password": {
                 "title": "Password",
-                "help": "Enter a authentication password for this transmitter. In the UniPager webinterface it’s called Auth Key."
+                "help": "Enter an authentication password for this transmitter. In the UniPager webinterface it’s called Auth Key."
             },
             "usage": {
                 "title": "Usage",
@@ -214,7 +214,8 @@
             "fr": "French",
             "pl": "Polish",
             "it": "Italian",
-            "pt": "Portuguese"
+            "pt": "Portuguese",
+            "se": "Swedish"
         },
         "support": {
             "title": "Support us",
@@ -276,6 +277,18 @@
         "input": {
             "title": "Missing input",
             "text": "Please fill in every field to continue."
+        },
+        "overwrite": {
+            "title": "Prevented Overwriting",
+            "text": "A possible case of overwriting existing data has been prevented."
+        },
+        "password": {
+            "title": "Forbidden character",
+            "text": "Your password must not contain anything but <code>A-Z</code>, <code>a-Z</code> and/or <code>0-9</code>."
+        },
+        "location": {
+            "title": "Invalid location",
+            "text": "Please check the given location and make sure to use your locale's decimal separator (e.g. <code>,</code> in German or <code>.</code> in US-English)."
         }
     },
     "general": {
@@ -378,7 +391,7 @@
             "emergencies": "Emergencies",
             "totalcalls": "Total Calls",
             "information": {
-                "help": "Calls are personal paging transmission to individual receivers."
+                "help": "Calls are a personal paging transmission to individual receivers."
             },
             "table": {
                 "timestamp": "Timestamp",
@@ -394,7 +407,7 @@
                 "charactersremaining": "{remaining} / 80 characters remaining.<br>Enter your paging text. Your user name is added automatically."
             },
             "subscribers": {
-                "help": "Select one or multiple subscribers you what to send the message to."
+                "help": "Select one or multiple subscribers you want to send the message to."
             },
             "transmittergroups": {
                 "title": "Transmitter Groups",
@@ -474,7 +487,7 @@
         "username": "Username",
         "password": "Password",
         "information": {
-            "help": "..."
+            "help": "Please enter here your personal login data. This is necessary as you may trigger transmission on amateur radio frequencies after login. If the login does not work you most probably have not agreed to our privacy statement before 25.5.2018 of there is another problem. Please not that in case you have not agreeed to our privacy statement, we were obligated to delete all your personal related data including you user account and all data you provided in the past."
         }
     },
     "logout": {
@@ -529,12 +542,63 @@
         "new": {
             "edituser": "Edit User",
             "password": {
-                "help": "This is the newly generated password:",
-                "randompassword": "Generate new random password"
+                "help": "This is the newly generated password:"
             },
             "information": {
                 "help": "This table shows the registered users and their detail information."
             }
         }
+    },
+    "pagetitle": {
+        "home": "Home",
+        "calls": {
+            "overview": "Call Overview",
+            "new": "New Call"
+        },
+        "subscribers": {
+            "overview": "Subscriber Overview",
+            "new": "New Subscriber",
+            "edit": "Edit Subscriber"
+        },
+        "rubric": {
+            "overview": "Rubric Overview",
+            "new": "New Rubric",
+            "edit": "Edit Rubric",
+            "activate": "Activate Rubrics",
+            "content": {
+                "overview": "Rubric Content Overview",
+                "new": "New Rubric Content"
+            }
+        },
+        "transmitter": {
+            "overview": "Transmitter Overview",
+            "new": "New Transmitter",
+            "edit": "Edit Transmitter",
+            "map": {
+                "overview": "Transmitter Map",
+                "detail": "Transmitter Map Details"
+            }
+        },
+        "transmittergroup": {
+            "overview": "Transmitter Group Overview",
+            "new": "New Transmitter Group",
+            "edit": "Edit Transmitter Group"
+        },
+        "node": {
+            "overview": "Node Overview",
+            "new": "New Node",
+            "edit": "Edit Node"
+        },
+        "user": {
+            "overview": "User Overview",
+            "new": "New User",
+            "edit": "Edit User"
+        },
+        "login": "Login",
+        "logout": "Logout",
+        "versioncheck": "Versioncheck",
+        "impress": "Impress",
+        "privacy": "Privacy",
+        "notfound": "Not Found"
     }
 }
