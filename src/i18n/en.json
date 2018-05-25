@@ -286,10 +286,6 @@
             "title": "Forbidden character",
             "text": "Your password must not contain anything but <code>A-Z</code>, <code>a-Z</code> and/or <code>0-9</code>."
         },
-        "colon": {
-            "title": "Forbidden character",
-            "text": "Your password must not contain a colon (<code>:</code>), otherwise it may break your login."
-        },
         "location": {
             "title": "Invalid location",
             "text": "Please check the given location and make sure to use your locale's decimal separator (e.g. <code>,</code> in German or <code>.</code> in US-English)."
@@ -491,7 +487,7 @@
         "username": "Username",
         "password": "Password",
         "information": {
-            "help": "..."
+            "help": "Please enter here your personal login data. This is necessary as you may trigger transmission on amateur radio frequencies after login. If the login does not work you most probably have not agreed to our privacy statement before 25.5.2018 of there is another problem. Please not that in case you have not agreeed to our privacy statement, we were obligated to delete all your personal related data including you user account and all data you provided in the past."
         }
     },
     "logout": {
