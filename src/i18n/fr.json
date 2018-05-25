@@ -277,6 +277,18 @@
         "input": {
             "title": "Entrée manquante",
             "text": "S'il vous plaît remplir tous les champs pour continuer."
+        },
+        "overwrite": {
+            "title": "Prevented Overwriting",
+            "text": "A possible case of overwriting existing data has been prevented."
+        },
+        "password": {
+            "title": "Forbidden character",
+            "text": "Your password must not contain anything but <code>A-Z</code>, <code>a-Z</code> and/or <code>0-9</code>."
+        },
+        "location": {
+            "title": "Invalid location",
+            "text": "Please check the given location and make sure to use your locale's decimal separator (e.g. <code>,</code> in German or <code>.</code> in US-English)."
         }
     },
     "general": {
@@ -475,7 +487,7 @@
         "username": "Nom d'utilisateur",
         "password": "Mot de passe",
         "information": {
-            "help": "..."
+            "help": "Please enter here your personal login data. This is necessary as you may trigger transmission on amateur radio frequencies after login. If the login does not work you most probably have not agreed to our privacy statement before 25.5.2018 of there is another problem. Please not that in case you have not agreeed to our privacy statement, we were obligated to delete all your personal related data including you user account and all data you provided in the past."
         }
     },
     "logout": {
@@ -530,12 +542,63 @@
         "new": {
             "edituser": "Modifier l'utilisateur",
             "password": {
-                "help": "C'est le mot de passe nouvellement généré:",
-                "randompassword": "Générer un nouveau mot de passe aléatoire"
+                "help": "C'est le mot de passe nouvellement généré:"
             },
             "information": {
                 "help": "This table shows the registered users and their detail information."
             }
         }
+    },
+    "pagetitle": {
+        "home": "Home",
+        "calls": {
+            "overview": "Call Overview",
+            "new": "New Call"
+        },
+        "subscribers": {
+            "overview": "Subscriber Overview",
+            "new": "New Subscriber",
+            "edit": "Edit Subscriber"
+        },
+        "rubric": {
+            "overview": "Rubric Overview",
+            "new": "New Rubric",
+            "edit": "Edit Rubric",
+            "activate": "Activate Rubrics",
+            "content": {
+                "overview": "Rubric Content Overview",
+                "new": "New Rubric Content"
+            }
+        },
+        "transmitter": {
+            "overview": "Transmitter Overview",
+            "new": "New Transmitter",
+            "edit": "Edit Transmitter",
+            "map": {
+                "overview": "Transmitter Map",
+                "detail": "Transmitter Map Details"
+            }
+        },
+        "transmittergroup": {
+            "overview": "Transmitter Group Overview",
+            "new": "New Transmitter Group",
+            "edit": "Edit Transmitter Group"
+        },
+        "node": {
+            "overview": "Node Overview",
+            "new": "New Node",
+            "edit": "Edit Node"
+        },
+        "user": {
+            "overview": "User Overview",
+            "new": "New User",
+            "edit": "Edit User"
+        },
+        "login": "Login",
+        "logout": "Logout",
+        "versioncheck": "Versioncheck",
+        "impress": "Impress",
+        "privacy": "Privacy",
+        "notfound": "Not Found"
     }
 }
