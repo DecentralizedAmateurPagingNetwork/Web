@@ -281,6 +281,14 @@
         "overwrite": {
             "title": "Overschrijven voorkomen",
             "text": "Het mogelijk overschrijven van bestaande gegevens is voorkomen."
+        },
+        "password": {
+            "title": "Forbidden character",
+            "text": "Your password must not contain anything but <code>A-Z</code>, <code>a-Z</code> and/or <code>0-9</code>."
+        },
+        "location": {
+            "title": "Invalid location",
+            "text": "Please check the given location and make sure to use your locale's decimal separator (e.g. <code>,</code> in German or <code>.</code> in US-English)."
         }
     },
     "general": {
@@ -479,7 +487,7 @@
         "username": "Gebruikersnaam",
         "password": "Wachtwoord",
         "information": {
-            "help": "..."
+            "help": "Please enter here your personal login data. This is necessary as you may trigger transmission on amateur radio frequencies after login. If the login does not work you most probably have not agreed to our privacy statement before 25.5.2018 of there is another problem. Please not that in case you have not agreeed to our privacy statement, we were obligated to delete all your personal related data including you user account and all data you provided in the past."
         }
     },
     "logout": {
