@@ -236,7 +236,7 @@
         },
         "cookieconsent": {
             "button": "OK",
-            "text": "This site uses cookies and your browser's local storage to deliver our services. By using our site, you acknowledge that you have read and understand our <router-link to=\"/privacy\">Privacy Policy</router-link>."
+            "text": "This site uses cookies and your browser's local storage to deliver our services. By using our site, you acknowledge that you have read and understand our Privacy Policy."
         }
     },
     "table": {
