@@ -23,12 +23,20 @@
 					<p><b>{{ $t('footer.versions.title') }}:</b> Core: {{ version.core }} / Web: {{ version.web }} ({{ version.webCommit }}) / <router-link to="/version">{{ $t('footer.versions.check') }}</router-link></p>
 				</div>
 			</div>
+			<cookie-law theme="dark-lime" :button-text="$t('footer.cookieconsent.button')">
+				<div slot="message" v-html="$t('footer.cookieconsent.text')"></div>
+			</cookie-law>
 		</footer>
 	</div>
 </template>
 
 <script>
+	import CookieLaw from 'vue-cookie-law';
+
 	export default {
+		components: {
+			CookieLaw
+		},
 		created() {
 			// get core version
 			this.$http.get('core/version').then(response => {
@@ -60,6 +68,10 @@
 </script>
 
 <style scoped>
+	div.Cookie__content > div > a {
+		color: #8bc34a;
+	}
+
 	@media (min-width: 768px) {
 		footer {
 			margin: 2em 0;
