@@ -233,6 +233,10 @@
         "versions": {
             "title": "Versionen",
             "check": "Prüfen"
+        },
+        "cookieconsent": {
+            "button": "OK",
+            "text": "Diese Seite verwendet Cookies und den lokalen Speicher Ihres Browsers um die angebotenen Dienste bereitzustellen. Durch die Verwendung dieser Seite versichern Sie, dass Sie unsere <router-link to=\"/privacy\">Datenschutzerklärung</router-link> gelesen und verstanden haben."
         }
     },
     "table": {
