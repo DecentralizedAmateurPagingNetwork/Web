@@ -14,6 +14,7 @@ Written in the [Vue.js](https://github.com/vuejs/vue) framework and built using 
 1. Download the repository: `git clone https://github.com/DecentralizedAmateurPagingNetwork/Web.git`
 2. Checkout a specific tag: `git checkout tags/v2.0.0`
 	* This is highly recommended for improved stability and a consistent user experience
+	* Also you should use the [latest tag](https://github.com/DecentralizedAmateurPagingNetwork/Web/releases)
 3. Copy `src/store/defaultUrls.json.example` to `src/store/defaultUrls.json` and change the default url-settings
 4. Copy `src/store/defaultText.json.example` to `src/store/defaultText.json` and change the default custom text (displayed on the home page)
 	* You may use HTML markup here
@@ -61,6 +62,7 @@ Before updating make sure to read the changelog and to backup your customized fi
 
 1. Update your local repository: `git fetch`
 2. Run through step 2 of the installation process
+	* Again you should use the [latest tag](https://github.com/DecentralizedAmateurPagingNetwork/Web/releases)
 3. Run through steps 8. to 11. of the installation process
 4. Done!
 
