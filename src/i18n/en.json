@@ -318,7 +318,8 @@
         "yes": "Yes",
         "no": "No",
         "permalink": "Permalink",
-        "duplication": "Changing this name will create a duplication and <i>not</i> change the element's name."
+        "duplication": "Changing this name will create a duplication and <i>not</i> change the element's name.",
+        "news": "News"
     },
     "rubric": {
         "overview": {
