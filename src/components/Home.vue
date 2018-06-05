@@ -284,6 +284,13 @@
 		width: 100%;
 	}
 
+	@media screen and (min-width: 768px) {
+		.jumbotron {
+			padding-top: 20px;
+			padding-bottom: 10px;
+		}
+	}
+
 	@media (min-width: 1200px) {
 		.slide-image {
 			max-width: 400px;
