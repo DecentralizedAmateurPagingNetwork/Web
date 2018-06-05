@@ -116,6 +116,9 @@
 					this.form.longitude.orientation = (response.body.longitude >= 0 ? 1 : -1);
 					this.form.owners = ownerNames;
 					this.form.status = response.body.status;
+
+					// center location picker to node
+					this.map.center = [this.form.latitude.value * this.form.latitude.orientation, this.form.longitude.value * this.form.longitude.orientation];
 				}, response => {
 					this.$router.push('/nodes');
 				});

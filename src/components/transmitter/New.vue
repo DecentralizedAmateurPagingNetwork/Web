@@ -276,6 +276,9 @@
 					if (response.body.connectedSince !== null) {
 						this.nodeInformation.connection.since = new Date(response.body.connectedSince).toLocaleString();
 					}
+
+					// center location picker to transmitter
+					this.map.center = [this.form.latitude.value * this.form.latitude.orientation, this.form.longitude.value * this.form.longitude.orientation];
 				}, response => {
 					this.$router.push('/transmitters');
 				});
