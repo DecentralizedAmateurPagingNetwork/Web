@@ -29,7 +29,7 @@
         "carousel": {
             "1": {
                 "title": "Willkommen beim DAPNET Web!",
-                "text": "Das DAPNET (Decentralized Amateur Paging Network) ist ein durch Funkamateure betriebenes Netzwerk. Da dieses Netzwerk auf Amateurfunk-Frequenzen arbeitet ist eine kommerzielle Nutzung verboten.<br>Wenn Sie Funkamateur sind, können Sie Ihren Zugang direkt beantragen.",
+                "text": "Das DAPNET (Decentralized Amateur Paging Network) ist ein durch Funkamateure betriebenes Netzwerk. Da dieses Netzwerk auf Amateurfunk-Frequenzen arbeitet, ist eine kommerzielle Nutzung verboten.<br>Wenn Sie Funkamateur sind, können Sie Ihren Zugang direkt beantragen.",
                 "link": "NONE"
             },
             "2": {
@@ -166,7 +166,7 @@
             },
             "timeslots": {
                 "title": "Zeitschlitze",
-                "help": "Da alle Sender die gleiche Frequenz benutzen, wird ein Zeitmultiplex-Verfahren eingesetzt. Es gibt 16 Zeitschlitze. Bitte die Zuweisung der Zeitschlitze so vornehmen, dass es im Abdeckungsbereich dieses Senders keine Überschneidungen mit Zuordnungen von anderen bereits existierenden Sendern gibt. Die Kartenansicht kann dazu verwendet werden, sich einen Überblick über die bereits vorhandenen Sender und ihrer Zeitschlitze zu verschaffen.<br>Falls die Anforderungen dieses Senders zur Belegung von Zeitschlitzen durch die bestehende Zuweisung nicht erfüllt werden kann, bitte die Besitzer der umliegenden Sender kontaktieren und für eine Lösung sorgen. Im Normallfall sind 4 oder weniger Zeitschlitze pro Sender mehr als genug."
+                "help": "Da alle Sender die gleiche Frequenz benutzen, wird ein Zeitmultiplex-Verfahren eingesetzt. Es gibt 16 Zeitschlitze. Bitte die Zuweisung der Zeitschlitze so vornehmen, dass es im Abdeckungsbereich dieses Senders keine Überschneidungen mit Zuordnungen von anderen bereits existierenden Sendern gibt. Die Kartenansicht kann dazu verwendet werden, sich einen Überblick über die bereits vorhandenen Sender und ihrer Zeitschlitze zu verschaffen. Falls die Anforderungen dieses Senders zur Belegung von Zeitschlitzen durch die bestehende Zuweisung nicht erfüllt werden kann, bitte die Besitzer der umliegenden Sender kontaktieren und für eine Lösung sorgen. Im Normallfall sind 4 oder weniger Zeitschlitze pro Sender mehr als genug."
             },
             "owner": {
                 "help": "Besitzer können die Einstellungen eines Senders selbstständig ändern."
@@ -311,7 +311,8 @@
             "north": "Nord",
             "south": "Süd",
             "east": "Ost",
-            "west": "West"
+            "west": "West",
+            "picker": "Position auswählen"
         },
         "password": "Passwort",
         "yes": "Ja",
