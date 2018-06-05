@@ -20,6 +20,7 @@ import VueCarousel from 'vue-carousel';
 import VueClipboard from 'vue-clipboard2';
 import Multiselect from 'vue-multiselect';
 import swal from 'sweetalert2';
+import L from 'leaflet';
 import globalMethods from './global';
 import KonamiCode from 'vue-konami-code';
 
@@ -96,6 +97,14 @@ Vue.http.interceptors.push((request) => {
 			if (typeof request.body[key] === 'string') request.body[key] = request.body[key].trim();
 		}
 	}
+});
+
+// fix loading of leaflet marker icons
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+	iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+	iconUrl: require('leaflet/dist/images/marker-icon.png'),
+	shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
 
 // output version and links onto console
