@@ -28,7 +28,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col-lg-4">
+			<div class="col-lg-3">
 				<h2>{{ $t('home.information.dapnet.title') }}</h2>
 				<div class="well">
 					<img src="~@/assets/img/afu-dapnet-logo.png" alt="DAPNET Logo" />
@@ -46,7 +46,7 @@
 				</div>
 			</div>
 
-			<div class="col-lg-4">
+			<div class="col-lg-3">
 				<h2>{{ $t('general.information') }}</h2>
 				<p v-html="this.$store.getters.customText"></p>
 				<v-map ref="leafletMap" :zoom="map.zoom" :center="map.center" v-on:l-ready="mapReady" style="height: 30em; margin-top: 1em">
@@ -61,9 +61,23 @@
 				<p v-if="this.$store.getters.isUserLoggedIn"><router-link to="/transmitters/map">{{ $t('home.information.map') }}</router-link></p>
 			</div>
 
-			<div class="col-lg-4">
+			<div class="col-lg-3">
+				<h2>{{ $t('general.news') }}
+					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': news.running }" @click="loadNews"></i>
+				</h2>
+
+				<info-error :message="news.errorMessage"></info-error>
+
+				<div v-if="news.data" class="list-group">
+					<a v-for="item in news.data" :key="item.url" :href="item.url" class="list-group-item">
+						<h4 class="list-group-item-heading">{{ item.title }}</h4>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-lg-3">
 				<h2>{{ $t('general.statistics') }}
-					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': stats.running }" @click="loadData"></i>
+					<i class="fa fa-refresh fa-fw" :class="{ 'fa-spin': stats.running }" @click="loadStats"></i>
 				</h2>
 
 				<info-error :message="stats.errorMessage"></info-error>
@@ -96,7 +110,8 @@
 
 	export default {
 		created() {
-			this.loadData();
+			this.loadNews();
+			this.loadStats();
 			this.loadMap();
 			this.showPopups();
 		},
@@ -109,6 +124,11 @@
 					url: this.$store.getters.url.map,
 					markers: [],
 					coverageLayers: []
+				},
+				news: {
+					errorMessage: false,
+					running: false,
+					data: false
 				},
 				stats: {
 					errorMessage: false,
@@ -126,7 +146,26 @@
 			}
 		},
 		methods: {
-			loadData() {
+			loadNews() {
+				this.news.running = true;
+				this.$http.get(this.$store.getters.url.news).then(response => {
+					// success --> save new statistics
+					console.log(response);
+					// this.stats.data = response.body;
+					this.news.running = false;
+					this.news.errorMessage = false;
+				}, response => {
+					// error --> show error message
+					this.news.running = false;
+
+					if (response.status === 0) {
+						this.news.errorMessage = this.$i18n.t('rest.errors.api-unreachable');
+					} else {
+						this.news.errorMessage = this.$i18n.t('rest.errors.http-error', { status: response.status });
+					}
+				});
+			},
+			loadStats() {
 				this.stats.running = true;
 				this.$http.get('stats').then(response => {
 					// success --> save new statistics
