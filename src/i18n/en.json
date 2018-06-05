@@ -311,7 +311,8 @@
             "north": "North",
             "south": "South",
             "east": "East",
-            "west": "West"
+            "west": "West",
+            "picker": "Location Picker"
         },
         "password": "Password",
         "yes": "Yes",
