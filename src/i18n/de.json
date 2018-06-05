@@ -318,7 +318,8 @@
         "yes": "Ja",
         "no": "Nein",
         "permalink": "Permanentlink",
-        "duplication": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Elements."
+        "duplication": "Wenn dieser Name geändert wird, erzeugt das ein Duplikat und ändert <i>nicht</i> den Namen dieses Elements.",
+        "news": "Nachrichten"
     },
     "rubric": {
         "overview": {
