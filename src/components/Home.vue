@@ -98,6 +98,7 @@
 		created() {
 			this.loadData();
 			this.loadMap();
+			this.showPopups();
 		},
 		data() {
 			return {
@@ -207,6 +208,21 @@
 			},
 			getLink(index) {
 				return this.$i18n.t('home.carousel.' + index + '.link');
+			},
+			showPopups() {
+				// Horkheimerpreis - 2018-06-01
+				if (!this.$store.getters.popups.horkheimerpreis) {
+					this.$swal({
+						title: 'Amateurfunkgruppe der RWTH Aachen erhält Horkheimerpreis!',
+						html: 'Die Amateurfunkgruppe der RWTH Aachen hat während der Eröffnungsveranstaltung der 43. HAM RADIO den Horkheimerpreis 2018 erhalten. Der mit 2500 € dotierte Preis kann in vollem Ermessen zur Förderung des Amateurfunkdienstes eingesetzt werden. Die Gruppe um Ralf Wilke, DH3WR, an der RWTH Aachen befasst sich seit Jahren mit der Entwicklung von Hard- und Software im Bereich des Amateurfunkdienstes. <a href="https://www.darc.de/home/" target="_blank">Weiterlesen</a>',
+						imageUrl: 'https://www.darc.de/fileadmin/filemounts/gs/redaktion/DARC-Portal/2018/1806/1806_HAM-Horkheimer.jpg',
+						imageWidth: 1075,
+						imageHeight: 650,
+						width: '80%'
+					});
+
+					this.$store.commit('popupShown', 'horkheimerpreis');
+				}
 			}
 		}
 	};
