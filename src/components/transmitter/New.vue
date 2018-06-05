@@ -62,6 +62,15 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<label class="col-lg-2 control-label">{{ $t('general.latlong.picker') }}</label>
+							<div class="col-lg-10">
+								<v-map :zoom="map.zoom" :center="map.center" v-on:l-click="mapClicked" style="height: 30em">
+									<v-tilelayer :url="map.url" :attribution="map.attribution"></v-tilelayer>
+									<v-marker :lat-lng="map.marker"></v-marker>
+								</v-map>
+							</div>
+						</div>
+						<div class="form-group">
 							<label class="col-lg-2 control-label">{{ $t('transmitter.new.usage.title') }}</label>
 							<div class="col-lg-10">
 								<select class="form-control" v-model="form.usage">
@@ -192,6 +201,23 @@
 </template>
 
 <script>
+	import Vue from 'vue';
+	import Vue2Leaflet from 'vue2-leaflet';
+	import L from 'leaflet';
+	import 'leaflet/dist/leaflet.css';
+	Vue.component('v-map', Vue2Leaflet.Map);
+	Vue.component('v-tilelayer', Vue2Leaflet.TileLayer);
+	Vue.component('v-marker', Vue2Leaflet.Marker);
+	Vue.component('v-popup', Vue2Leaflet.Popup);
+
+	// fix missing marker icon
+	delete L.Icon.Default.prototype._getIconUrl;
+	L.Icon.Default.mergeOptions({
+		iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+		iconUrl: require('leaflet/dist/images/marker-icon.png'),
+		shadowUrl: require('leaflet/dist/images/marker-shadow.png')
+	});
+
 	export default {
 		created() {
 			this.$http.get(this.$store.getters.url.hamnetDb, {
@@ -297,6 +323,16 @@
 					},
 					users: []
 				},
+				map: {
+					zoom: this.$store.getters.map.zoom,
+					center: this.$store.getters.map.center,
+					attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
+					url: this.$store.getters.url.map,
+					marker: {
+						lat: 0,
+						lng: 0
+					}
+				},
 				nodeInformation: {
 					nodeName: '',
 					device: {
@@ -356,6 +392,24 @@
 				};
 
 				this.$helpers.checkForOverwritingAndSend(this, this.$route.params.id, 'transmitters/' + this.form.name, body, '/transmitters');
+			},
+			mapClicked(e) {
+				this.map.marker = {
+					lat: e.latlng.lat,
+					lng: e.latlng.lng
+				};
+
+				// set position in form
+				this.form.latitude.value = Math.abs(e.latlng.lat).toFixed(6);
+				this.form.latitude.orientation = (e.latlng.lat >= 0 ? 1 : -1);
+				this.form.longitude.value = Math.abs(e.latlng.lng).toFixed(6);
+				this.form.longitude.orientation = (e.latlng.lng >= 0 ? 1 : -1);
+			},
+			locationChanged() {
+				this.map.marker = {
+					lat: this.form.latitude.value * this.form.latitude.orientation,
+					lng: this.form.longitude.value * this.form.longitude.orientation
+				};
 			}
 		},
 		watch: {
@@ -365,6 +419,18 @@
 				this.form.latitude.orientation = (val.latitude >= 0 ? 1 : -1);
 				this.form.longitude.value = Math.abs(val.longitude).toFixed(6);
 				this.form.longitude.orientation = (val.longitude >= 0 ? 1 : -1);
+			},
+			'form.latitude.value': function() {
+				this.locationChanged();
+			},
+			'form.latitude.orientation': function() {
+				this.locationChanged();
+			},
+			'form.longitude.value': function() {
+				this.locationChanged();
+			},
+			'form.longitude.orientation': function() {
+				this.locationChanged();
 			}
 		}
 	};
