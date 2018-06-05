@@ -43,6 +43,15 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<label class="col-lg-2 control-label">{{ $t('general.latlong.picker') }}</label>
+							<div class="col-lg-10">
+								<v-map :zoom="map.zoom" :center="map.center" v-on:l-click="mapClicked" style="height: 30em">
+									<v-tilelayer :url="map.url" :attribution="map.attribution"></v-tilelayer>
+									<v-marker :lat-lng="map.marker"></v-marker>
+								</v-map>
+							</div>
+						</div>
+						<div class="form-group">
 							<label class="col-lg-2 control-label">{{ $t('general.owner') }}</label>
 							<div class="col-lg-10">
 								<multiselect v-model="form.owners" :options="formData.users" :multiple="true" :close-on-select="false" :hide-selected="true" :clear-on-select="true" placeholder="Type to search" label="name" track-by="name"></multiselect>
@@ -75,6 +84,13 @@
 </template>
 
 <script>
+	import Vue from 'vue';
+	import Vue2Leaflet from 'vue2-leaflet';
+	import 'leaflet/dist/leaflet.css';
+	Vue.component('v-map', Vue2Leaflet.Map);
+	Vue.component('v-tilelayer', Vue2Leaflet.TileLayer);
+	Vue.component('v-marker', Vue2Leaflet.Marker);
+
 	export default {
 		created() {
 			this.$http.get('users').then(response => {
@@ -123,6 +139,16 @@
 				},
 				formData: {
 					users: []
+				},
+				map: {
+					zoom: this.$store.getters.map.zoom,
+					center: this.$store.getters.map.center,
+					attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
+					url: this.$store.getters.url.map,
+					marker: {
+						lat: 0,
+						lng: 0
+					}
 				}
 			};
 		},
@@ -158,6 +184,38 @@
 				};
 
 				this.$helpers.checkForOverwritingAndSend(this, this.$route.params.id, 'nodes/' + this.form.name, body, '/nodes');
+			},
+			mapClicked(e) {
+				this.map.marker = {
+					lat: e.latlng.lat,
+					lng: e.latlng.lng
+				};
+
+				// set position in form
+				this.form.latitude.value = Math.abs(e.latlng.lat).toFixed(6);
+				this.form.latitude.orientation = (e.latlng.lat >= 0 ? 1 : -1);
+				this.form.longitude.value = Math.abs(e.latlng.lng).toFixed(6);
+				this.form.longitude.orientation = (e.latlng.lng >= 0 ? 1 : -1);
+			},
+			locationChanged() {
+				this.map.marker = {
+					lat: this.form.latitude.value * this.form.latitude.orientation,
+					lng: this.form.longitude.value * this.form.longitude.orientation
+				};
+			}
+		},
+		watch: {
+			'form.latitude.value': function() {
+				this.locationChanged();
+			},
+			'form.latitude.orientation': function() {
+				this.locationChanged();
+			},
+			'form.longitude.value': function() {
+				this.locationChanged();
+			},
+			'form.longitude.orientation': function() {
+				this.locationChanged();
 			}
 		}
 	};
