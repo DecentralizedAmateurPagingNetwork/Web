@@ -69,7 +69,7 @@
 				<info-error :message="news.errorMessage"></info-error>
 
 				<div v-if="news.data" class="list-group">
-					<a v-for="item in news.data" :key="item.url" :href="item.url" class="list-group-item">
+					<a v-for="item in news.data" :key="item.url" :href="item.url" target="_blank" class="list-group-item">
 						<h4 class="list-group-item-heading">{{ item.title }}</h4>
 					</a>
 				</div>
@@ -148,10 +148,28 @@
 		methods: {
 			loadNews() {
 				this.news.running = true;
-				this.$http.get(this.$store.getters.url.news).then(response => {
-					// success --> save new statistics
-					console.log(response);
-					// this.stats.data = response.body;
+				this.$http.get(this.$store.getters.url.news, {
+					before(request) {
+						request.headers.delete('Authorization');
+					}
+				}).then(response => {
+					// success --> parse and save news
+					const xml2js = require('xml2js').parseString;
+					xml2js(response.body, (err, result) => {
+						if (!err) {
+							this.news.data = [];
+							result['rdf:RDF']['item'].forEach(item => {
+								// skip media files
+								if (item.link[0].includes('doku.php?image=')) return;
+
+								this.news.data.push({
+									title: item.description[0].substring(0, item.description[0].indexOf('\n')),
+									url: item.link[0]
+								});
+							});
+						}
+					});
+
 					this.news.running = false;
 					this.news.errorMessage = false;
 				}, response => {
