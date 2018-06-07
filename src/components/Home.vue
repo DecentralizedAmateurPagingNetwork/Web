@@ -70,7 +70,7 @@
 
 				<div v-if="news.data" class="list-group">
 					<a v-for="item in news.data" :key="item.url" :href="item.url" target="_blank" class="list-group-item">
-						<h4 class="list-group-item-heading">{{ item.title }}</h4>
+						<p class="list-group-item-heading">{{ item.title }}</p>
 					</a>
 				</div>
 			</div>
