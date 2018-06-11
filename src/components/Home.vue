@@ -158,7 +158,12 @@
 					xml2js(response.body, (err, result) => {
 						if (!err) {
 							this.news.data = [];
+							let count = 1;
 							result['rdf:RDF']['item'].forEach(item => {
+								// check for limit
+								if (count > 5) return;
+								count++;
+
 								// skip media files
 								if (item.link[0].includes('doku.php?image=')) return;
 
