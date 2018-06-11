@@ -2,6 +2,8 @@
 The default DAPNET Web-frontend.
 Written in the [Vue.js](https://github.com/vuejs/vue) framework and built using [webpack](https://github.com/webpack/webpack).
 
+For further information visit this project's [wiki](https://github.com/DecentralizedAmateurPagingNetwork/Web/wiki).
+
 ## Requirements
 * Installed packages: `git`, `nodejs`, `npm`, `wget`
 	* You should install a current Node.js version (e.g. v6 LTS) by following [these instructions](https://nodejs.org/en/download/package-manager/)
@@ -38,25 +40,6 @@ Written in the [Vue.js](https://github.com/vuejs/vue) framework and built using 
 11. Copy your freshly generated files from `dist/` into your webserver's `htdocs/` directory
 12. Done!
 
-### Deployment into a subdirectory
-It is recommended to serve the DAPNET Web module from its own sub-domain.
-If you really need to use a sub-directory, make sure to edit `config/index.js` and adapt the content of line 11 (`publicPath`).
-Now run `npm run build` again and the page should be rendered correctly.
-
-### Access with port tcp/80 only
-In case you want to server users who have strong firewall restrictions and cannot access the default API Port 8080, you can use your apache webserver with `mod_proxy` to redirect the API calls from port tcp/80 to the API Port. Add these lines to your apache config and restart apache:
-```
-ProxyPass "/api" "http://YOURNODEURL:8080"
-ProxyPassReverse "/api" "http://YOURNODEURL:8080"
-```
-The file `defaultUrls.json` has to be adapted by
-```
-{
-    "api": "http://YOURWEBSERVERURL/api",
-    ...
-}
-```
-
 ## Updating
 Before updating make sure to read the changelog and to backup your customized files (see above)!
 
@@ -65,30 +48,3 @@ Before updating make sure to read the changelog and to backup your customized fi
 	* Again you should use the [latest tag](https://github.com/DecentralizedAmateurPagingNetwork/Web/releases)
 3. Run through steps 8. to 11. of the installation process
 4. Done!
-
-## Translation
-You are welcome to contribute translations to this project using [this link](https://poeditor.com/join/project/a4fVmB7IPr).
-We try to sync those strings with the GitHub repository as often as possible.
-
-## Changelog
-A list of changes is always available on the [Releases](https://github.com/DecentralizedAmateurPagingNetwork/Web/releases)-page.
-
-### Create Changelog
-```bash
-git log v2.0.0...v2.0.1 --pretty=format:'* %s - %h'
-```
-
-## Directories
-```
-├── build          -> webpack build files
-├── config         -> webpack build config
-├── dist           -> generated webapp (after "npm run build")
-├── src            -> the webapp's source code
-│   ├── assets     -> assets (css, images, etc.) which will be processed by webpack
-│   ├── components -> all vue-components (all pages with their template, javascript and css)
-│   ├── global     -> global methods used by many components
-│   ├── i18n       -> localization files
-│   ├── router     -> vue-router configuration
-│   └── store      -> user-data store with its default values
-└── static         -> assets (css, images, etc.) which will not be processed by webpack
-```
