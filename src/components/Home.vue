@@ -160,12 +160,12 @@
 							this.news.data = [];
 							let count = 1;
 							result['rdf:RDF']['item'].forEach(item => {
+								// skip media files
+								if (item.link[0].includes('doku.php?image=')) return;
+
 								// check for limit
 								if (count > 5) return;
 								count++;
-
-								// skip media files
-								if (item.link[0].includes('doku.php?image=')) return;
 
 								this.news.data.push({
 									title: item.description[0].substring(0, item.description[0].indexOf('\n')),
