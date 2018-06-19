@@ -305,6 +305,10 @@
 		width: 100%;
 	}
 
+	a.list-group-item .list-group-item-heading {
+		color: #777777;
+	}
+
 	@media screen and (min-width: 768px) {
 		.jumbotron {
 			padding-top: 20px;
