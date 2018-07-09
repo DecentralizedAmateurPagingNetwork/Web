@@ -124,6 +124,8 @@
 					admin: this.form.admin
 				};
 
+				this.$helpers.checkForOverwritingAndSend(this, this.$route.params.id, 'users/' + this.form.name, body, '/users');
+
 				// changed own password --> change auth-data
 				if (this.form.name === this.$store.getters.user.name && this.form.password !== '') {
 					this.$store.commit('login', {
@@ -132,8 +134,6 @@
 						admin: this.form.admin
 					});
 				}
-
-				this.$helpers.checkForOverwritingAndSend(this, this.$route.params.id, 'users/' + this.form.name, body, '/users');
 			}
 		}
 	};
