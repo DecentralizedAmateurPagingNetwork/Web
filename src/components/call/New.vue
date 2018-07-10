@@ -67,6 +67,7 @@
 				response.body.forEach(callsign => {
 					this.formData.callsigns.push({name: callsign.name});
 				});
+				this.formData.callsigns.sort((a, b) => a['name'].localeCompare(b['name']));
 			});
 
 			this.$http.get('transmitterGroups').then(response => {
