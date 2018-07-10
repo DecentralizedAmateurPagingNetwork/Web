@@ -233,6 +233,10 @@
         "versions": {
             "title": "Versioner",
             "check": "Checka"
+        },
+        "cookieconsent": {
+            "button": "OK",
+            "text": "This site uses cookies and your browser's local storage to deliver our services. By using our site, you acknowledge that you have read and understand our Privacy Policy."
         }
     },
     "table": {
@@ -307,13 +311,15 @@
             "north": "Norr",
             "south": "Syd",
             "east": "Öst",
-            "west": "Väst"
+            "west": "Väst",
+            "picker": "Location Picker"
         },
         "password": "Lösenord",
         "yes": "Ja",
         "no": "Nej",
         "permalink": "Permalänk",
-        "duplication": "Om du ändrar detta namn skapas en duplicering och <i> inte </ i> ändrar elementets namn."
+        "duplication": "Om du ändrar detta namn skapas en duplicering och <i> inte </ i> ändrar elementets namn.",
+        "news": "News"
     },
     "rubric": {
         "overview": {

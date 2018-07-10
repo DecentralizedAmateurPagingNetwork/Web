@@ -233,6 +233,10 @@
         "versions": {
             "title": "Versioni",
             "check": "Controllo"
+        },
+        "cookieconsent": {
+            "button": "OK",
+            "text": "This site uses cookies and your browser's local storage to deliver our services. By using our site, you acknowledge that you have read and understand our Privacy Policy."
         }
     },
     "table": {
@@ -307,13 +311,15 @@
             "north": "Nord",
             "south": "Sud",
             "east": "Est",
-            "west": "Ovest"
+            "west": "Ovest",
+            "picker": "Location Picker"
         },
         "password": "Password",
         "yes": "Sì",
         "no": "No",
         "permalink": "Permalink",
-        "duplication": "La modifica di questo nome creerà un duplicato e <i>non</ i> cambierà il nome dell'elemento."
+        "duplication": "La modifica di questo nome creerà un duplicato e <i>non</ i> cambierà il nome dell'elemento.",
+        "news": "News"
     },
     "rubric": {
         "overview": {

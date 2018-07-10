@@ -233,6 +233,10 @@
         "versions": {
             "title": "Versies",
             "check": "Controleer"
+        },
+        "cookieconsent": {
+            "button": "OK",
+            "text": "This site uses cookies and your browser's local storage to deliver our services. By using our site, you acknowledge that you have read and understand our Privacy Policy."
         }
     },
     "table": {
@@ -307,13 +311,15 @@
             "north": "Noord",
             "south": "Zuid",
             "east": "Oost",
-            "west": "West"
+            "west": "West",
+            "picker": "Location Picker"
         },
         "password": "Wachtwoord",
         "yes": "Ja",
         "no": "Nee",
         "permalink": "Permalink",
-        "duplication": "Aanpassen van deze naam zal een kopie van het element maken en dus <i>niet</i> de naam aanpassen."
+        "duplication": "Aanpassen van deze naam zal een kopie van het element maken en dus <i>niet</i> de naam aanpassen.",
+        "news": "News"
     },
     "rubric": {
         "overview": {
