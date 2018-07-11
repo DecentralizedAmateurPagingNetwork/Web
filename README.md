@@ -4,7 +4,19 @@ Written in the [Vue.js](https://github.com/vuejs/vue) framework and built using 
 
 For further information visit this project's [wiki](https://github.com/DecentralizedAmateurPagingNetwork/Web/wiki).
 
-## Requirements
+## Setup using Docker
+1. Make sure you have a current installation of Docker on your server
+2. Prepare a directory to hold your configuration (e.g. `/srv/dapnet/web/config`) and copy the following files from this repository there:
+    * `src/store/defaultUrls.json.example` to `defaultUrls.json` and change the default url-settings
+    * `src/store/defaultText.json.example` to `defaultText.json` and change the default custom text (displayed on the home page)
+    * `src/store/defaultMap.json.example` to `defaultMap.json` and change the default map-settings
+3. Pull the image and run the container while mapping the webserver to port `8080`: `docker run -v /srv/dapnet/web/config:/app/src/store:ro -p 8080:80 dapnet/web`
+4. You are done. The container will build the website, update the coverage data and publish the website on the specified port
+
+## Setup manually
+If you do not want to use the all-in-one Docker image, you are free to use the manual installation guide below.
+
+### Requirements
 * Installed packages: `git`, `nodejs`, `npm`, `wget`
 	* You should install a current Node.js version (e.g. v6 LTS) by following [these instructions](https://nodejs.org/en/download/package-manager/)
 	* This process will also install the `npm` binary
@@ -12,7 +24,7 @@ For further information visit this project's [wiki](https://github.com/Decentral
 * A running webserver (e.g. apache2, nginx, lighttpd, etc.)
 * A running [DAPNET Core](https://github.com/DecentralizedAmateurPagingNetwork/Core) with a reachable REST-interface
 
-## Installation
+### Installation
 1. Download the repository: `git clone https://github.com/DecentralizedAmateurPagingNetwork/Web.git`
 2. Checkout a specific tag: `git checkout tags/v2.0.0`
 	* This is highly recommended for improved stability and a consistent user experience
@@ -40,7 +52,7 @@ For further information visit this project's [wiki](https://github.com/Decentral
 11. Copy your freshly generated files from `dist/` into your webserver's `htdocs/` directory
 12. Done!
 
-## Updating
+### Updating
 Before updating make sure to read the changelog and to backup your customized files (see above)!
 
 1. Update your local repository: `git fetch`
