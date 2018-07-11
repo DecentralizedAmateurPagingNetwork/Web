@@ -1,0 +1,18 @@
+# dist
+dist/
+
+# npm
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# IntelliJ IDEA
+.idea/
+
+# default url stores (see README)
+src/store/defaultMap.json
+src/store/defaultText.json
+src/store/defaultUrls.json
+
+# map coverage (see README)
+static/coverage/
