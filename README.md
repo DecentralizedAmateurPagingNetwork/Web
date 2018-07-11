@@ -10,7 +10,10 @@ For further information visit this project's [wiki](https://github.com/Decentral
     * `src/store/defaultUrls.json.example` to `defaultUrls.json` and change the default url-settings
     * `src/store/defaultText.json.example` to `defaultText.json` and change the default custom text (displayed on the home page)
     * `src/store/defaultMap.json.example` to `defaultMap.json` and change the default map-settings
-3. Pull the image and run the container while mapping the webserver to port `8080`: `docker run -v /srv/dapnet/web/config:/app/src/store:ro -p 8080:80 dapnet/web`
+3. Pull the image and run the container while mapping the webserver to port `8080`:
+```bash
+docker run --name dapnet-web -d -v /srv/dapnet/web/config:/app/src/store:ro -p 8080:80 dapnet/web
+```
 4. You are done. The container will build the website, update the coverage data and publish the website on the specified port
 
 ## Setup manually
