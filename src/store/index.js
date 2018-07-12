@@ -4,9 +4,9 @@ import VuexPersistedState from 'vuex-persistedstate';
 
 Vue.use(Vuex);
 
-let defaultUrls = require('./defaultUrls.json');
-let defaultText = require('./defaultText.json');
-let defaultMap = require('./defaultMap.json');
+let defaultUrls = require('./config/defaultUrls.json');
+let defaultText = require('./config/defaultText.json');
+let defaultMap = require('./config/defaultMap.json');
 
 export default new Vuex.Store({
 	state: {

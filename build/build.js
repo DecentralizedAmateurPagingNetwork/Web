@@ -4,8 +4,8 @@ require('./check-versions')()
 process.env.NODE_ENV = 'production'
 
 const fileExists = require('file-exists')
-if (!fileExists.sync('src/store/defaultMap.json') || !fileExists.sync('src/store/defaultText.json') || !fileExists.sync('src/store/defaultUrls.json')) {
-	console.log('> ERROR: missing src/store/defaultXXX.json file(s)!')
+if (!fileExists.sync('src/store/config/defaultMap.json') || !fileExists.sync('src/store/config/defaultText.json') || !fileExists.sync('src/store/config/defaultUrls.json')) {
+	console.log('> ERROR: missing src/store/config/defaultXXX.json file(s)!')
 	process.exit(1)
 }
 

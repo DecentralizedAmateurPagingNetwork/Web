@@ -10,9 +10,9 @@ package-lock.json
 .idea/
 
 # default url stores (see README)
-src/store/defaultMap.json
-src/store/defaultText.json
-src/store/defaultUrls.json
+src/store/config/defaultMap.json
+src/store/config/defaultText.json
+src/store/config/defaultUrls.json
 
 # map coverage (see README)
 static/coverage/
