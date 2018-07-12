@@ -18,7 +18,7 @@ RUN cd /app/ && \
     npm install
 
 EXPOSE 80
-VOLUME /app/src/store/
+VOLUME /app/src/store/config/
 
 HEALTHCHECK --timeout=5s CMD curl --fail http://localhost:80 || exit 1
 
