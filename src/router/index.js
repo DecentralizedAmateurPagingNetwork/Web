@@ -13,6 +13,7 @@ import RubricActivation from '@/components/rubric/Activation';
 import TransmitterOverview from '@/components/transmitter/Overview';
 import TransmitterNew from '@/components/transmitter/New';
 import TransmitterMap from '@/components/transmitter/Map';
+import TransmitterMonitoring from '@/components/transmitter/Monitoring';
 import TransmitterGroupOverview from '@/components/transmitter/group/Overview';
 import TransmitterGroupNew from '@/components/transmitter/group/New';
 import NodeOverview from '@/components/node/Overview';
@@ -180,6 +181,15 @@ export default new Router({
 			component: TransmitterMap,
 			meta: {
 				titleTranslationKey: 'pagetitle.transmitter.map.detail',
+				requireAuthentication: true
+			}
+		},
+		{
+			path: '/transmitters/monitoring/:id',
+			name: 'Transmitter Monitoring',
+			component: TransmitterMonitoring,
+			meta: {
+				titleTranslationKey: 'pagetitle.transmitter.monitoring',
 				requireAuthentication: true
 			}
 		},
