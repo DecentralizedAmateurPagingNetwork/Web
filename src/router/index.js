@@ -18,6 +18,7 @@ import TransmitterGroupOverview from '@/components/transmitter/group/Overview';
 import TransmitterGroupNew from '@/components/transmitter/group/New';
 import NodeOverview from '@/components/node/Overview';
 import NodeNew from '@/components/node/New';
+import NodeMonitoring from '@/components/node/Monitoring';
 import UserOverview from '@/components/user/Overview';
 import UserNew from '@/components/user/New';
 import Login from '@/components/authentication/Login';
@@ -244,6 +245,15 @@ export default new Router({
 			component: NodeNew,
 			meta: {
 				titleTranslationKey: 'pagetitle.node.edit',
+				requireAuthentication: true
+			}
+		},
+		{
+			path: '/nodes/monitoring/:id',
+			name: 'Node Monitoring',
+			component: NodeMonitoring,
+			meta: {
+				titleTranslationKey: 'pagetitle.node.monitoring',
 				requireAuthentication: true
 			}
 		},

@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>{{ $t('pagetitle.transmitter.monitoring') }}</h1>
+					<h1>{{ $t('pagetitle.node.monitoring') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -39,7 +39,7 @@
 			this.ws.addEventListener('message', e => {
 				let data = JSON.parse(e.data);
 
-				if (data.type !== 'transmitter') return;
+				if (data.type !== 'node') return;
 				this.message = data;
 			});
 		},
