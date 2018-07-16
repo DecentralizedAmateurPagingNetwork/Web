@@ -583,7 +583,8 @@
             "map": {
                 "overview": "Senderkarte",
                 "detail": "Senderkarte Details"
-            }
+            },
+            "monitoring": "Sender Monitoring"
         },
         "transmittergroup": {
             "overview": "Sendergruppen Übersicht",
@@ -593,7 +594,8 @@
         "node": {
             "overview": "Knoten Übersicht",
             "new": "Neuer Knoten",
-            "edit": "Knoten bearbeiten"
+            "edit": "Knoten bearbeiten",
+            "monitoring": "Knoten Monitoring"
         },
         "user": {
             "overview": "Nutzer Übersicht",
