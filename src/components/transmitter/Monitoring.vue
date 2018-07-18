@@ -24,7 +24,15 @@
 					<li class="list-group-item"><b>Software</b><span class="badge">{{ monitoringData.config.software.name }} v{{ monitoringData.config.software.version }}</span></li>
 				</ul>
 			</div>
-			<div class="col-lg-9">
+			<div class="col-lg-3">
+				<h2>RF Hardware</h2>
+				<ul class="list-group">
+					<li class="list-group-item" v-for="(iData, iName) in monitoringData.rf_hardware[Object.keys(monitoringData.rf_hardware)[0]]" :key="iName">
+						<b><code>{{ iName }}</code></b><span class="badge">{{ iData }}</span>
+					</li>
+				</ul>
+			</div>
+			<div class="col-lg-6">
 				<h2>Temperatures</h2>
 				<chart-temperature :chartData="chartDataTemperature"></chart-temperature>
 			</div>
