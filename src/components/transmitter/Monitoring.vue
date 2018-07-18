@@ -231,6 +231,10 @@
 </script>
 
 <style scoped>
+	h3 > code {
+		font-size: 80%;
+	}
+
 	.badge {
 		background-color: #013c51;
 	}
