@@ -145,7 +145,7 @@
 				return {
 					labels: ['High', 'High-Medium', 'Medium', 'Medium-Low', 'Low'],
 					datasets: [{
-						backgroundColor: ['#d9230f', '#e04530', '#e08b27', '#e0D32b', '#469408'],
+						backgroundColor: ['#d9230f', '#e04530', '#e08b27', '#e0d32b', '#469408'],
 						data: this.monitoringData.messages.queued
 					}]
 				};
@@ -160,7 +160,9 @@
 					this.monitoringData.temperatures.cpu,
 					this.monitoringData.temperatures.power_supply
 				];
+				let backgroundColor = [];
 
+				// add custom values
 				if (this.monitoringData.temperatures.custom !== undefined) {
 					// eslint-disable-next-line
 					this.monitoringData.temperatures.custom.forEach(tempSet => {
@@ -169,9 +171,25 @@
 					});
 				}
 
+				// set background color according to value
+				data.forEach(temp => {
+					if (temp <= 10) {
+						backgroundColor.push('#107c94');
+					} else if (temp > 10 && temp < 25) {
+						backgroundColor.push('#469408');
+					} else if (temp > 25 && temp < 50) {
+						backgroundColor.push('#e0d32b');
+					} else if (temp > 50 && temp < 75) {
+						backgroundColor.push('#e08b27');
+					} else if (temp >= 75) {
+						backgroundColor.push('#d9230f');
+					}
+				});
+
 				return {
 					labels: labels,
 					datasets: [{
+						backgroundColor: backgroundColor,
 						data: data
 					}]
 				};
