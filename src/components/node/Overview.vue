@@ -16,7 +16,8 @@
 
 				<info-error :message="errorMessage"></info-error>
 
-				<tablegrid v-if="table.rows" :columns="table.columns" :data="table.rows" :mail-action="mailToOwner" :edit-action="editElement" :delete-action="deleteElement"></tablegrid>
+				<tablegrid v-if="table.rows" :columns="table.columns" :data="table.rows" :mail-action="mailToOwner"
+					:edit-action="editElement" :delete-action="deleteElement" :monitoring-action="openMonitoring"></tablegrid>
 			</div>
 			<div class="col-lg-3">
 				<div class="actions well">
@@ -175,6 +176,9 @@
 						this.$dialogs.ajaxError(this, response);
 					});
 				});
+			},
+			openMonitoring(element) {
+				this.$router.push({name: 'Node Monitoring', params: {id: element.name}});
 			},
 			mailToAll() {
 				let mailTo = [];
