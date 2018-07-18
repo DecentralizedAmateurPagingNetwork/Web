@@ -249,7 +249,8 @@
             "edit": "Edit",
             "delete": "Delete",
             "email": "Send email",
-            "rubrics": "Send rubrics"
+            "rubrics": "Send rubrics",
+            "monitoring": "Monitoring"
         }
     },
     "rest": {
