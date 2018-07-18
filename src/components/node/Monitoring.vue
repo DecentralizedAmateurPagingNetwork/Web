@@ -66,12 +66,12 @@
 		created() {
 			if (!this.$route.params.id) return;
 
-			this.ws = new WebSocket('ws://dapnetdc1.db0sda.ampr.org:9001');
+			this.ws = new WebSocket('ws://dapnetdc1.db0sda.ampr.org:9001/nodes');
 			this.ws.addEventListener('message', e => {
 				let data = JSON.parse(e.data);
 
-				// this transmitter only
-				if (data.type !== 'node' || data.name !== this.$route.params.id) return;
+				// this node only
+				if (data.name !== this.$route.params.id) return;
 
 				if (!this.monitoringData) {
 					// save initial copy of data
