@@ -34,7 +34,7 @@
 							<template v-if="key.id === 'actions'">
 								<template v-if="entry[key.id] === true">
 									<action-buttons :element="entry" :mail-action="mailAction" :edit-action="editAction"
-										:delete-action="deleteAction" :send-rubrics-action="sendRubricsAction"></action-buttons>
+										:delete-action="deleteAction" :monitoring-action="monitoringAction" :send-rubrics-action="sendRubricsAction"></action-buttons>
 								</template>
 								<template v-else>
 									---
@@ -69,6 +69,7 @@
 			columns: Array,
 			editAction: Function,
 			deleteAction: Function,
+			monitoringAction: Function,
 			mailAction: Function,
 			sendRubricsAction: Function
 		},

@@ -17,7 +17,7 @@
 				<info-error :message="errorMessage"></info-error>
 
 				<tablegrid v-if="table.rows" :columns="table.columns" :data="table.rows" :mail-action="mailToOwner"
-					:edit-action="editElement" :delete-action="deleteElement" :send-rubrics-action="sendRubrics"></tablegrid>
+					:edit-action="editElement" :delete-action="deleteElement" :monitoring-action="openMonitoring" :send-rubrics-action="sendRubrics"></tablegrid>
 			</div>
 			<div class="col-lg-3">
 				<div class="actions well">
@@ -270,6 +270,9 @@
 						this.$dialogs.ajaxError(this, response);
 					});
 				});
+			},
+			openMonitoring(element) {
+				this.$router.push({name: 'Transmitter Monitoring', params: {id: element.name}});
 			},
 			sendRubrics(element) {
 				this.$http.get('transmitterControl/sendRubricNames/' + element.name).then(() => {
