@@ -1,8 +1,8 @@
 <script>
-	import {PolarArea, mixins} from 'vue-chartjs';
+	import {HorizontalBar, mixins} from 'vue-chartjs';
 
 	export default {
-		mixins: [PolarArea, mixins.reactiveProp],
+		mixins: [HorizontalBar, mixins.reactiveProp],
 		data() {
 			return {
 				chartOptions: {
