@@ -18,6 +18,9 @@
 
 				<tablegrid v-if="table.rows" :columns="table.columns" :data="table.rows" :mail-action="mailToOwner"
 					:edit-action="editElement" :delete-action="deleteElement" :monitoring-action="openMonitoring" :send-rubrics-action="sendRubrics"></tablegrid>
+
+				<h2>Timeslots</h2>
+				<span class="label label-timeslot label-default" v-for="s in timeslotData" :key="s.name" :class="[s.active ? 'timeslot-active' : '']">{{ s.name }}</span>
 			</div>
 			<div class="col-lg-3">
 				<div class="actions well">
@@ -60,6 +63,25 @@
 			this.loadData();
 		},
 		data() {
+			// build timeslots
+			let timeslotData = [];
+
+			// timeslots: numbers
+			for (let i = 0; i <= 9; i++) {
+				timeslotData.push({
+					name: i,
+					active: false
+				});
+			}
+
+			// timeslots: letters
+			for (let i = 65; i <= 70; i++) {
+				timeslotData.push({
+					name: String.fromCharCode(i),
+					active: false
+				});
+			}
+
 			return {
 				errorMessage: false,
 				running: false,
@@ -100,6 +122,7 @@
 					],
 					rows: false
 				},
+				timeslotData: timeslotData,
 				settings: {
 					widerangeOnly: false
 				}
@@ -305,5 +328,26 @@
 </script>
 
 <style scoped>
+	.label-timeslot {
+		font-size: small;
+		margin-right: 2px;
+	}
 
+	@keyframes timeslot-active-animation {
+		0% {
+			opacity: 1.0;
+		}
+		50% {
+			opacity: 0.5;
+		}
+		100% {
+			opacity: 1.0;
+		}
+	}
+
+	.timeslot-active {
+		animation-name: timeslot-active-animation;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+	}
 </style>
