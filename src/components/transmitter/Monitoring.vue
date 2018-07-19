@@ -22,6 +22,7 @@
 					<li class="list-group-item"><b>Connected Since</b><span class="badge">{{ monitoringData.node.connected_since | parseDate }}</span></li>
 					<li class="list-group-item"><b>IP</b><span class="badge">{{ monitoringData.node.ip }}:{{ monitoringData.node.port }}</span></li>
 					<li class="list-group-item"><b>Software</b><span class="badge">{{ monitoringData.config.software.name }} v{{ monitoringData.config.software.version }}</span></li>
+					<li class="list-group-item"><b>Hardware</b><span class="badge">{{ monitoringData.hardware.platform }}</span></li>
 				</ul>
 			</div>
 			<div class="col-lg-3">
