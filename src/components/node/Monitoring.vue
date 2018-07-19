@@ -54,8 +54,8 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h2>Raw Data</h2>
-				<pre><code>{{ monitoringData }}<br></code></pre>
+				<h2 v-on:click="showRawData = !showRawData">Raw Data</h2>
+				<pre v-if="showRawData"><code>{{ monitoringData }}</code></pre>
 			</div>
 		</div>
 	</div>
@@ -85,7 +85,8 @@
 		data() {
 			return {
 				ws: false,
-				monitoringData: false
+				monitoringData: false,
+				showRawData: true
 			};
 		},
 		filters: {
