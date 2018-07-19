@@ -127,7 +127,7 @@
 		created() {
 			if (!this.$route.params.id) return;
 
-			this.ws = new WebSocket('ws://dapnetdc1.db0sda.ampr.org:9001/transmitters');
+			this.ws = new WebSocket(this.$store.getters.url.telemetry + '/transmitters');
 			this.ws.addEventListener('message', e => {
 				let data = JSON.parse(e.data);
 

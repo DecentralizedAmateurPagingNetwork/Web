@@ -45,7 +45,7 @@
 							<li class="list-group-item"><b>Healthy</b>
 								<span class="badge" :class="[sData.ok ? 'badge-success' : 'badge-danger']">{{ sData.ok | trueFalse }}</span>
 							</li>
-							<li class="list-group-item" v-if="sData.version"><b>Version</b><span class="badge">{{ sData.version }}</span></li>
+							<li class="list-group-item"><b>Version</b><span class="badge">{{ sData.version }}</span></li>
 						</ul>
 					</div>
 				</div>
@@ -66,7 +66,7 @@
 		created() {
 			if (!this.$route.params.id) return;
 
-			this.ws = new WebSocket('ws://dapnetdc1.db0sda.ampr.org:9001/nodes');
+			this.ws = new WebSocket(this.$store.getters.url.telemetry + '/nodes');
 			this.ws.addEventListener('message', e => {
 				let data = JSON.parse(e.data);
 

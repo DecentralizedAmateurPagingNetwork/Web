@@ -1,5 +1,6 @@
 {
 	"api": "https://www.hampager.de/api",
+	"telemetry": "ws://dapnetdc1.db0sda.ampr.org:9001",
 	"update": "https://www.hampager.de/dapnet-update/update.php",
 	"hamnetDb": "https://www.hampager.de/dapnet-update/callsignLocation.php",
 	"map": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
