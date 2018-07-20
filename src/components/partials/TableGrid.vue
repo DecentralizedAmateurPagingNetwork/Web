@@ -161,7 +161,13 @@
 			// next two methods are not filters anymore to allow usage of this
 			arrayToString(v) {
 				if (v instanceof Array) {
-					return v.join(', ');
+					if (v.length === 1) {
+						return v[0];
+					} else if (v.length === 2) {
+						return v[0] + ', ' + v[1];
+					} else if (v.length >= 3) {
+						return v[0] + ', ' + v[1] + ', +' + (v.length - 2);
+					}
 				} else {
 					return v;
 				}
