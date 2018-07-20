@@ -30,7 +30,7 @@
 				</thead>
 				<tbody>
 					<tr v-for="entry in paginatedData" :key="entry.id">
-						<td v-for="key in columns" :key="key.id">
+						<td v-for="key in columns" :key="key.id" :class="[entry.rowStyle ? entry.rowStyle : '']">
 							<template v-if="key.id === 'actions'">
 								<template v-if="entry[key.id] === true">
 									<action-buttons :element="entry" :mail-action="mailAction" :edit-action="editAction"
