@@ -161,7 +161,7 @@
                     "help": "<b>Antennengewinn</b>: Bitte den Antennengewinn in Hauptstrahlrichtung für Richtantennen und den mittleren Gewinn für Rundstrahlantennen in dBi angeben. (dBi: Gewinn im Vergleich zu einem isotropen Kugelstrahler)."
                 },
                 "txidentric": {
-                    "help": "<b>Identifizierungs-RIC des Senders</b>: Bitte eine RIC (der Normalfall ist 1) eigeben, die verwendet werden soll, um die Rufzeichennennung zu versenden. Diese künstiliche Nachricht enthält den unter \"Rufzeichen\" eingegebenen Text."
+                    "help": "<b>Identifizierungs-RIC des Senders</b>: Bitte eine RIC (der Normalfall ist 8) eigeben, die verwendet werden soll, um die Rufzeichennennung zu versenden. Diese künstiliche Nachricht enthält den unter \"Rufzeichen\" eingegebenen Text."
                 }
             },
             "timeslots": {
@@ -249,7 +249,8 @@
             "edit": "Bearbeiten",
             "delete": "Löschen",
             "email": "E-Mail senden",
-            "rubrics": "Rubriken senden"
+            "rubrics": "Rubriken senden",
+            "monitoring": "Monitoring"
         }
     },
     "rest": {
