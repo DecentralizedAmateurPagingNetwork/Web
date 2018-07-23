@@ -161,7 +161,7 @@
                     "help": "<b>Antenneversterking</b>: voer de antenneversterking van de hoofdlob (voor richtantennes) of de gemiddelde versterking (voor rondstralers) in dBi in (dBi: versterking t.o.v. isotope antenne)."
                 },
                 "txidentric": {
-                    "help": "<b>Zender identificatie RIC</b>: voer een RIC (standaardwaarde is 1) in waarmee een bericht gegenereerd zal worden ter identificatie van de zender door middel van het eerder opgegeven roepteken."
+                    "help": "<b>Zender identificatie RIC</b>: voer een RIC (standaardwaarde is 8) in waarmee een bericht gegenereerd zal worden ter identificatie van de zender door middel van het eerder opgegeven roepteken."
                 }
             },
             "timeslots": {
@@ -249,7 +249,8 @@
             "edit": "Wijzigen",
             "delete": "Verwijderen",
             "email": "Email sturen",
-            "rubrics": "Rubrieken zenden"
+            "rubrics": "Rubrieken zenden",
+            "monitoring": "Monitoring"
         }
     },
     "rest": {
@@ -583,7 +584,8 @@
             "map": {
                 "overview": "Zender kaart",
                 "detail": "Zender kaart details"
-            }
+            },
+            "monitoring": "Transmitter Monitoring"
         },
         "transmittergroup": {
             "overview": "Zender groep overzicht",
@@ -593,7 +595,8 @@
         "node": {
             "overview": "Node overzicht",
             "new": "Nieuwe node",
-            "edit": "Node bewerken"
+            "edit": "Node bewerken",
+            "monitoring": "Node Monitoring"
         },
         "user": {
             "overview": "Gebruikersoverzicht",
