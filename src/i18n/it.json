@@ -161,7 +161,7 @@
                     "help": "<b>Guadagno dell'antenna</b>: Inserisci il guadagno dell'antenna nel lobo principale per antenne direzionali e il guadagno medio per antenne omnidirezionali in dBi (dBi: Guadagno sul radiatore isotropico)"
                 },
                 "txidentric": {
-                    "help": "<b> Identificatore RIC del trasmettitore </b>: Inserisci un RIC (il valore predeterminato è 1) che sarà utilizzato per generare un messaggio di paging artificiale contenente l'identificatore di chiamata radioamatoriale inserito in questo formulario."
+                    "help": "<b> Identificatore RIC del trasmettitore </b>: Inserisci un RIC (il valore predeterminato è 8) che sarà utilizzato per generare un messaggio di paging artificiale contenente l'identificatore di chiamata radioamatoriale inserito in questo formulario."
                 }
             },
             "timeslots": {
@@ -249,7 +249,8 @@
             "edit": "Modificare",
             "delete": "Eliminare",
             "email": "Inviare una email",
-            "rubrics": "Mandare rubriche"
+            "rubrics": "Mandare rubriche",
+            "monitoring": "Monitoring"
         }
     },
     "rest": {
@@ -583,7 +584,8 @@
             "map": {
                 "overview": "Transmitter Map",
                 "detail": "Transmitter Map Details"
-            }
+            },
+            "monitoring": "Transmitter Monitoring"
         },
         "transmittergroup": {
             "overview": "Transmitter Group Overview",
@@ -593,7 +595,8 @@
         "node": {
             "overview": "Node Overview",
             "new": "New Node",
-            "edit": "Edit Node"
+            "edit": "Edit Node",
+            "monitoring": "Node Monitoring"
         },
         "user": {
             "overview": "User Overview",
