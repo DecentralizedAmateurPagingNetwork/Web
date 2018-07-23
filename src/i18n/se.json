@@ -29,7 +29,7 @@
         "carousel": {
             "1": {
                 "title": "Välkommen till DAPNET Web.",
-                "text": "DAPNET (Decentralized Amateur Paging Network) är en nätverk som drivs av amatör radio entusiaster. Eftersom den används vid amatör radio frekvenser kommersiell användning förbjuden.\n<br>Om du är licensierad radio amatör, få ditt inloggningskonto nu.",
+                "text": "DAPNET (Decentralized Amateur Paging Network) är ett nätverk som drivs av amatör radio entusiaster. Eftersom den använder amatörradio frekvenser kommersiell användning förbjuden.\n<br>Om du är licensierad radio amatör, få ditt inloggningskonto nu.",
                 "link": "NONE"
             },
             "2": {
@@ -161,7 +161,7 @@
                     "help": "<b> Antennförstärkning </ b>: Ange antennförstärkningen i huvudlobriktningen för riktningsantenner och medelvärdet för omnidirektiva antenner i dBi (dBi: Gain over isotropic radiator)."
                 },
                 "txidentric": {
-                    "help": "<b> Sändarens identifiering RIC </ b>: Ange en RIC (standardvärde är 1) som kommer att användas för att generera ett artificiellt personsökningsmeddelande som innehåller amatörradiosignalen som anges i detta formulär."
+                    "help": "<b> Sändarens identifiering RIC </ b>: Ange en RIC (standardvärde är 8) som kommer att användas för att generera ett artificiellt personsökningsmeddelande som innehåller amatörradiosignalen som anges i detta formulär."
                 }
             },
             "timeslots": {
@@ -236,7 +236,7 @@
         },
         "cookieconsent": {
             "button": "OK",
-            "text": "This site uses cookies and your browser's local storage to deliver our services. By using our site, you acknowledge that you have read and understand our Privacy Policy."
+            "text": "Den här webbplatsen använder cookies och webbläsarens lokala lagring för att leverera våra tjänster. Genom att använda vår webbplats erkänner du att du har läst och förstått vår sekretesspolicy."
         }
     },
     "table": {
@@ -249,7 +249,8 @@
             "edit": "Redigera",
             "delete": "Radera",
             "email": "Skick mejl",
-            "rubrics": "Skick rubriker"
+            "rubrics": "Skick rubriker",
+            "monitoring": "Övervakning"
         }
     },
     "rest": {
@@ -312,14 +313,14 @@
             "south": "Syd",
             "east": "Öst",
             "west": "Väst",
-            "picker": "Location Picker"
+            "picker": "Ange Plats"
         },
         "password": "Lösenord",
         "yes": "Ja",
         "no": "Nej",
         "permalink": "Permalänk",
         "duplication": "Om du ändrar detta namn skapas en duplicering och <i> inte </ i> ändrar elementets namn.",
-        "news": "News"
+        "news": "Nyheter"
     },
     "rubric": {
         "overview": {
@@ -493,7 +494,7 @@
         "username": "Användernamn",
         "password": "Lösenord",
         "information": {
-            "help": "Please enter here your personal login data. This is necessary as you may trigger transmission on amateur radio frequencies after login. If the login does not work you most probably have not agreed to our privacy statement before 25.5.2018 of there is another problem. Please not that in case you have not agreeed to our privacy statement, we were obligated to delete all your personal related data including you user account and all data you provided in the past."
+            "help": "Vänligen ange dina personliga inloggningsuppgifter här. Detta är nödvändigt eftersom du kan initiera sändning på amatörradiofrekvenser efter inloggning. Om inloggningen inte fungerar har du förmodligen inte godkänt vår sekretesspolicy före 25.5.2018 eller så är det ett annat problem. Notera att, om du inte har godkänt vår sekretesspolicy, var vi skyldiga att ta bort alla dina personliga relaterade uppgifter, inklusive ditt användarkonto och all information du tidigare angivit."
         }
     },
     "logout": {
@@ -583,7 +584,8 @@
             "map": {
                 "overview": "Sändarkarta",
                 "detail": "Sändarens kartdetaljer"
-            }
+            },
+            "monitoring": "Sändar Övervakning"
         },
         "transmittergroup": {
             "overview": "Överföringsgruppsöversikt",
@@ -593,7 +595,8 @@
         "node": {
             "overview": "Node översikt",
             "new": "Ny node",
-            "edit": "Redigera node"
+            "edit": "Redigera node",
+            "monitoring": "Nod Övervakning"
         },
         "user": {
             "overview": "Användaröversikt",
