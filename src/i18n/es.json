@@ -161,7 +161,7 @@
                     "help": "<b>Ganancia de antena</ b>: Ingrese la ganancia de la antena en la dirección del lóbulo principal para las antenas direccionales y la ganancia promedio para las antenas omnidireccionales en dBi (dBi: ganancia sobre el radiador isotrópico)."
                 },
                 "txidentric": {
-                    "help": "<b>RIC de identificación del transmisor</ b>: Ingrese un RIC (valor predeterminado es 1) que se utilizará para generar un mensaje de búsqueda artificial que contenga el indicativo de radio aficionado como se indica en este formulario."
+                    "help": "<b>RIC de identificación del transmisor</ b>: Ingrese un RIC (valor predeterminado es 8) que se utilizará para generar un mensaje de búsqueda artificial que contenga el indicativo de radio aficionado como se indica en este formulario."
                 }
             },
             "timeslots": {

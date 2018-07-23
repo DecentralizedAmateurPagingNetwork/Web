@@ -161,7 +161,7 @@
                     "help": "<b>Ganho de antena</ b>: Insira o ganho da antena na direção do lobo principal para as antenas direcionais e o ganho médio das antenas omnidirecionais em dBi (dBi: Ganho sobre o radiador isotrópico)."
                 },
                 "txidentric": {
-                    "help": "<b>Transmitter identification RIC</b>: Enter a RIC (default value is 1) which will be used to generate an artificial paging message containing the amateur radio callsign as given in this form."
+                    "help": "<b>Transmitter identification RIC</b>: Enter a RIC (default value is 8) which will be used to generate an artificial paging message containing the amateur radio callsign as given in this form."
                 }
             },
             "timeslots": {
