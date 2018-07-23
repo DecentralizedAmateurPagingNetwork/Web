@@ -161,7 +161,7 @@
                     "help": "<b> Antennförstärkning </ b>: Ange antennförstärkningen i huvudlobriktningen för riktningsantenner och medelvärdet för omnidirektiva antenner i dBi (dBi: Gain over isotropic radiator)."
                 },
                 "txidentric": {
-                    "help": "<b> Sändarens identifiering RIC </ b>: Ange en RIC (standardvärde är 1) som kommer att användas för att generera ett artificiellt personsökningsmeddelande som innehåller amatörradiosignalen som anges i detta formulär."
+                    "help": "<b> Sändarens identifiering RIC </ b>: Ange en RIC (standardvärde är 8) som kommer att användas för att generera ett artificiellt personsökningsmeddelande som innehåller amatörradiosignalen som anges i detta formulär."
                 }
             },
             "timeslots": {
