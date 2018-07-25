@@ -61,6 +61,7 @@
 		},
 		created() {
 			this.loadData();
+			this.prepareWebsocket();
 		},
 		data() {
 			// build timeslots
@@ -261,6 +262,15 @@
 					// error --> show error message
 					this.running = false;
 					this.errorMessage = this.$helpers.getAjaxErrorMessage(this, response);
+				});
+			},
+			prepareWebsocket() {
+				this.ws = new WebSocket(this.$store.getters.url.telemetry + '/transmitters');
+				this.ws.addEventListener('message', e => {
+					// let data = JSON.parse(e.data);
+
+					// TODO: Update current timeslot
+					// TODO: Update transmitter "rowStyle" based on "on_air"
 				});
 			},
 			mailToOwner(element) {
