@@ -25,7 +25,7 @@
 					<li class="list-group-item"><b>Hardware</b><span class="badge">{{ monitoringData.hardware.platform }}</span></li>
 				</ul>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3" v-if="monitoringData.rf_hardware">
 				<h2>RF Hardware</h2>
 				<ul class="list-group">
 					<li class="list-group-item" v-for="(iData, iName) in monitoringData.rf_hardware[Object.keys(monitoringData.rf_hardware)[0]]" :key="iName">
@@ -33,7 +33,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="col-lg-6">
+			<div class="col-lg-6" v-if="monitoringData.temperatures">
 				<h2>Temperatures</h2>
 				<chart-temperature :chartData="chartDataTemperature"></chart-temperature>
 			</div>
@@ -44,7 +44,7 @@
 				<div class="row">
 					<div class="col-lg-8">
 						<div class="row">
-							<div class="col-lg-12">
+							<div class="col-lg-12" v-if="monitoringData.messages.queued">
 								<h3>Queue</h3>
 								<table class="table table-striped">
 									<thead>
@@ -69,19 +69,19 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-lg-12">
+							<div class="col-lg-12" v-if="monitoringData.config.timeslots">
 								<h3>Timeslots</h3>
 								<span class="label label-timeslot" v-for="s in timeslotData" :key="s.name" :class="[s.active ? 'label-info' : 'label-default']">{{ s.name }}</span>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4">
+					<div class="col-lg-4" v-if="monitoringData.messages.queued">
 						<h3>Graph</h3>
 						<chart-message-queue :chartData="chartDataMessageQueue"></chart-message-queue>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3" v-if="monitoringData.ntp">
 				<h2>NTP Sync</h2>
 				<ul class="list-group">
 					<li class="list-group-item"><b>Synced</b>
@@ -91,7 +91,7 @@
 					<li class="list-group-item" v-for="s in monitoringData.ntp.servers" :key="s"><b>Server</b><span class="badge">{{ s }}</span></li>
 				</ul>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-3" v-if="monitoringData.power_supply">
 				<h2>Power Supply</h2>
 				<ul class="list-group">
 					<li class="list-group-item"><b>On Battery</b>
@@ -127,12 +127,10 @@
 		created() {
 			if (!this.$route.params.id) return;
 
-			this.ws = new WebSocket(this.$store.getters.url.telemetry + '/transmitters');
+			this.ws = new WebSocket(this.$store.getters.url.telemetry + '/transmitter/' + this.$route.params.id);
 			this.ws.addEventListener('message', e => {
 				let data = JSON.parse(e.data);
-
-				// this transmitter only
-				if (data.name !== this.$route.params.id) return;
+				console.log(data);
 
 				if (!this.monitoringData) {
 					// save initial copy of data
