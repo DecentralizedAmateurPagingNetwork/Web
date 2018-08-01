@@ -5,7 +5,7 @@
 				<div class="page-header">
 					<h1>
 						{{ $t('pagetitle.transmitter.monitoring') }}: {{ $route.params.id }}
-						<span class="label" :class="[monitoringData.onair ? 'label-success' : 'label-primary']">{{ monitoringData.onair | onAirText }}</span>
+						<span class="label" :class="[monitoringData.onair ? 'label-success active-animation' : 'label-primary']"><i class="fa fa-bullhorn"></i></span>
 					</h1>
 				</div>
 			</div>
