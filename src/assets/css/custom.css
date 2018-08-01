@@ -40,6 +40,24 @@ textarea {
 	z-index: 0;
 }
 
+@keyframes kf-active-animation {
+	0% {
+		opacity: 1.0;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1.0;
+	}
+}
+
+.active-animation {
+	animation-name: kf-active-animation;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
 /* temporary fix until SweetAlert2 releases a new version */
 .swal2-popup {
 	font-size: 1.6rem !important;
