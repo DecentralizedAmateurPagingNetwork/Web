@@ -9,6 +9,14 @@
 					responsive: true,
 					legend: {
 						display: false
+					},
+					scales: {
+						xAxes: [{
+							ticks: {
+								suggestedMin: 0,
+								suggestedMax: 10
+							}
+						}]
 					}
 				}
 			};
