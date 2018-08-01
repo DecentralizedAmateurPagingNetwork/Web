@@ -129,7 +129,6 @@
 			this.ws = new WebSocket(this.$store.getters.url.telemetry + '/transmitter/' + this.$route.params.id);
 			this.ws.addEventListener('message', e => {
 				let data = JSON.parse(e.data);
-				console.log(data);
 
 				if (!this.monitoringData) {
 					// save initial copy of data
