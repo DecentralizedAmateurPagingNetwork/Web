@@ -108,6 +108,7 @@
 
 		<div class="row">
 			<div class="col-lg-12">
+				<h2>Raw Data</h2>
 				<pre><code>{{ monitoringData }}</code></pre>
 			</div>
 		</div>

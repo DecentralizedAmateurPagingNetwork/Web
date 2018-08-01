@@ -54,8 +54,8 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 v-on:click="showRawData = !showRawData">Raw Data</h2>
-				<pre v-if="showRawData"><code>{{ monitoringData }}</code></pre>
+				<h2>Raw Data</h2>
+				<pre><code>{{ monitoringData }}</code></pre>
 			</div>
 		</div>
 	</div>
@@ -66,12 +66,9 @@
 		created() {
 			if (!this.$route.params.id) return;
 
-			this.ws = new WebSocket(this.$store.getters.url.telemetry + '/nodes');
+			this.ws = new WebSocket(this.$store.getters.url.telemetry + '/node/' + this.$route.params.id);
 			this.ws.addEventListener('message', e => {
 				let data = JSON.parse(e.data);
-
-				// this node only
-				if (data.name !== this.$route.params.id) return;
 
 				if (!this.monitoringData) {
 					// save initial copy of data
@@ -85,8 +82,7 @@
 		data() {
 			return {
 				ws: false,
-				monitoringData: false,
-				showRawData: true
+				monitoringData: false
 			};
 		},
 		filters: {
