@@ -3,7 +3,10 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="page-header">
-					<h1>{{ $t('pagetitle.transmitter.monitoring') }}: {{ $route.params.id }}</h1>
+					<h1>
+						{{ $t('pagetitle.transmitter.monitoring') }}: {{ $route.params.id }}
+						<span class="label" :class="[monitoringData.onair ? 'label-success' : 'label-primary']">{{ monitoringData.onair | onAirText }}</span>
+					</h1>
 				</div>
 			</div>
 		</div>
@@ -14,9 +17,6 @@
 				<ul class="list-group">
 					<li class="list-group-item"><b>Connected</b>
 						<span class="badge" :class="[monitoringData.node.connected ? 'badge-success' : 'badge-danger']">{{ monitoringData.node.connected | trueFalse }}</span>
-					</li>
-					<li class="list-group-item"><b>On-Air</b>
-						<span class="badge" :class="[monitoringData.onair ? 'badge-success' : 'badge-danger']">{{ monitoringData.onair | trueFalse }}</span>
 					</li>
 					<li class="list-group-item"><b>Node</b><span class="badge">{{ monitoringData.node.name }}</span></li>
 					<li class="list-group-item"><b>Connected Since</b><span class="badge">{{ monitoringData.node.connected_since | parseDate }}</span></li>
@@ -108,8 +108,7 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 v-on:click="showRawData = !showRawData">Raw Data</h2>
-				<pre v-if="showRawData"><code>{{ monitoringData }}</code></pre>
+				<pre><code>{{ monitoringData }}</code></pre>
 			</div>
 		</div>
 	</div>
@@ -144,8 +143,7 @@
 		data() {
 			return {
 				ws: false,
-				monitoringData: false,
-				showRawData: true
+				monitoringData: false
 			};
 		},
 		computed: {
@@ -231,6 +229,10 @@
 				if (value) return 'yes';
 				return 'no';
 			},
+			onAirText: function(value) {
+				if (value) return 'On Air';
+				return 'Off Air';
+			},
 			parseDate: function(value) {
 				return new Date(value).toLocaleString();
 			}
@@ -239,6 +241,12 @@
 </script>
 
 <style scoped>
+	h1 > .label {
+		font-size: 50%;
+		margin-left: .2em;
+		vertical-align: middle;
+	}
+
 	h3 > code {
 		font-size: 80%;
 	}
