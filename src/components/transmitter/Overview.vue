@@ -265,7 +265,7 @@
 				});
 			},
 			prepareWebsocket() {
-				this.ws = new WebSocket(this.$store.getters.url.telemetry + '/transmitter');
+				this.ws = new WebSocket(this.$store.getters.url.telemetry + '/transmitters');
 				this.ws.addEventListener('message', e => {
 					let data = JSON.parse(e.data);
 					console.log(data);
