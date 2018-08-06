@@ -53,6 +53,7 @@
 		},
 		created() {
 			this.loadData();
+			this.prepareWebsocket();
 		},
 		data() {
 			return {
@@ -144,6 +145,15 @@
 					// error --> show error message
 					this.running = false;
 					this.errorMessage = this.$helpers.getAjaxErrorMessage(this, response);
+				});
+			},
+			prepareWebsocket() {
+				this.ws = new WebSocket(this.$store.getters.url.telemetry + '/nodes');
+				this.ws.addEventListener('message', e => {
+					let data = JSON.parse(e.data);
+					console.log(data);
+
+					// TODO
 				});
 			},
 			mailToOwner(element) {
