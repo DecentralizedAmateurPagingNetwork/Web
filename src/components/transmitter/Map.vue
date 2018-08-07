@@ -88,18 +88,32 @@
 				popupAnchor: [0, 0]
 			});
 
-			this.icons.iconTransmitterOnline = L.icon({
-				iconUrl: './assets/img/marker-transmitter-online.png',
-				iconSize: [28, 30],
-				iconAnchor: [15, 30],
-				popupAnchor: [0, -25]
+			this.icons.iconTransmitterWiderangeOnline = L.icon({
+				iconUrl: './assets/img/marker-transmitter-widerange-online.png',
+				iconSize: [32, 32],
+				iconAnchor: [0, 16],
+				popupAnchor: [16, -12]
 			});
 
-			this.icons.iconTransmitterOffline = L.icon({
-				iconUrl: './assets/img/marker-transmitter-offline.png',
-				iconSize: [28, 30],
-				iconAnchor: [15, 30],
-				popupAnchor: [0, -25]
+			this.icons.iconTransmitterWiderangeOffline = L.icon({
+				iconUrl: './assets/img/marker-transmitter-widerange-offline.png',
+				iconSize: [32, 32],
+				iconAnchor: [0, 16],
+				popupAnchor: [16, -12]
+			});
+
+			this.icons.iconTransmitterPersonalOnline = L.icon({
+				iconUrl: './assets/img/marker-transmitter-personal-online.png',
+				iconSize: [32, 32],
+				iconAnchor: [0, 16],
+				popupAnchor: [22, -12]
+			});
+
+			this.icons.iconTransmitterPersonalOffline = L.icon({
+				iconUrl: './assets/img/marker-transmitter-personal-offline.png',
+				iconSize: [32, 32],
+				iconAnchor: [0, 16],
+				popupAnchor: [22, -12]
 			});
 
 			// load transmitters and nodes
@@ -191,9 +205,17 @@
 					if (this.skipThisTransmitter(transmitter)) return true;
 
 					// find icon
-					let selectedMarkerIcon = this.icons.iconTransmitterOnline;
-					if (transmitter.status !== 'ONLINE') {
-						selectedMarkerIcon = this.icons.iconTransmitterOffline;
+					let selectedMarkerIcon;
+					if (transmitter.usage === 'WIDERANGE') {
+						selectedMarkerIcon = this.icons.iconTransmitterWiderangeOnline;
+						if (transmitter.status !== 'ONLINE') {
+							selectedMarkerIcon = this.icons.iconTransmitterWiderangeOffline;
+						}
+					} else if (transmitter.usage === 'PERSONAL') {
+						selectedMarkerIcon = this.icons.iconTransmitterPersonalOnline;
+						if (transmitter.status !== 'ONLINE') {
+							selectedMarkerIcon = this.icons.iconTransmitterPersonalOffline;
+						}
 					}
 
 					// build marker
@@ -208,7 +230,6 @@
 							lng: transmitter.longitude
 						},
 						popup: '<b>' + nameLink + '</a></b><br>' +
-							'Usage: ' + transmitter.usage + '<br>' +
 							'Transmission Power (W): ' + transmitter.power + '<br>' +
 							'Height (m): ' + transmitter.antennaAboveGroundLevel + '<br>' +
 							'Timeslot: ' + transmitter.timeSlot + '<br>' +

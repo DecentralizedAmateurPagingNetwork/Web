@@ -208,17 +208,17 @@
 			},
 			loadMap() {
 				const icon = L.icon({
-					iconUrl: './assets/img/marker-transmitter-online.png',
-					iconSize: [28, 30],
-					iconAnchor: [15, 30],
-					popupAnchor: [0, -25]
+					iconUrl: './assets/img/marker-transmitter-widerange-online.png',
+					iconSize: [32, 32],
+					iconAnchor: [0, 16],
+					popupAnchor: [16, -12]
 				});
 
 				this.$http.get('transmitters').then(response => {
 					const transmitters = response.body;
 
 					transmitters.forEach(transmitter => {
-						if (transmitter.status !== 'ONLINE') return true;
+						if (transmitter.status !== 'ONLINE' || transmitter.usage !== 'WIDERANGE') return true;
 
 						// build marker
 						this.map.markers.push({
@@ -228,7 +228,6 @@
 								lng: transmitter.longitude
 							},
 							popup: '<b>' + transmitter.name + '</a></b><br>' +
-								'Usage: ' + transmitter.usage + '<br>' +
 								'Transmission Power (W): ' + transmitter.power + '<br>' +
 								'Height (m): ' + transmitter.antennaAboveGroundLevel + '<br>' +
 								'Timeslot: ' + transmitter.timeSlot + '<br>' +
