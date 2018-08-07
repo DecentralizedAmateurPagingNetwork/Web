@@ -18,10 +18,7 @@ export default new Vuex.Store({
 		},
 		language: 'en',
 		customText: defaultText,
-		map: defaultMap,
-		popups: {
-			horkheimerpreis: false
-		}
+		map: defaultMap
 	},
 	getters: {
 		url: state => {
@@ -45,9 +42,6 @@ export default new Vuex.Store({
 		},
 		map: state => {
 			return state.map;
-		},
-		popups: state => {
-			return state.popups;
 		}
 	},
 	mutations: {
@@ -67,9 +61,6 @@ export default new Vuex.Store({
 		},
 		changeLanguage(state, payload) {
 			state.language = payload.language;
-		},
-		popupShown(state, payload) {
-			state.popups[payload] = true;
 		}
 	},
 	plugins: [
@@ -77,8 +68,7 @@ export default new Vuex.Store({
 			key: 'dapnet-web',
 			paths: [
 				'user',
-				'language',
-				'popups'
+				'language'
 			]
 		})
 	]
