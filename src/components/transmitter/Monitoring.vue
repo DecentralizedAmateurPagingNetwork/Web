@@ -131,6 +131,11 @@
 			this.ws.addEventListener('message', e => {
 				let data = JSON.parse(e.data);
 
+				// return if response is empty
+				if (Object.keys(data).length === 0) {
+					this.$router.push('/transmitters');
+				}
+
 				if (!this.monitoringData) {
 					// save initial copy of data
 					this.monitoringData = data;
