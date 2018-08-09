@@ -16,11 +16,14 @@
 						<l-image-overlay :url="item.url" :bounds="item.bounds" :opacity="0.8"></l-image-overlay>
 					</l-group>
 					<l-tilelayer :url="url" :attribution="attribution"></l-tilelayer>
-					<!-- <v-marker-cluster> -->
-						<l-marker v-for="item in markers" :key="item.name" :lat-lng="item.position" :icon="item.icon" v-on:click="showCoverage(item.name)">
+					<v-marker-cluster>
+						<l-marker v-for="item in markerTransmitter" :key="item.name" :lat-lng="item.position" :icon="item.icon" v-on:click="showCoverage(item.name)">
 							<l-popup :content="item.popup"></l-popup>
 						</l-marker>
-					<!-- </v-marker-cluster> -->
+					</v-marker-cluster>
+					<l-marker v-for="item in markerNodes" :key="item.name" :lat-lng="item.position" :icon="item.icon">
+						<l-popup :content="item.popup"></l-popup>
+					</l-marker>
 					<l-polyline v-for="item in lines" :key="item.name" :lat-lngs="item.position" :color="item.color"></l-polyline>
 				</l-map>
 			</div>
@@ -54,13 +57,13 @@
 <script>
 	import Vue from 'vue';
 	import Vue2Leaflet from 'vue2-leaflet';
-	// import Vue2LeafletMarkercluster from 'vue2-leaflet-markercluster';
+	import Vue2LeafletMarkercluster from 'vue2-leaflet-markercluster';
 	import L from 'leaflet';
 	import 'leaflet/dist/leaflet.css';
 	import 'leaflet.fullscreen/Control.FullScreen.js';
 	import 'leaflet.fullscreen/Control.FullScreen.css';
-	// import 'leaflet.markercluster/dist/MarkerCluster.css';
-	// import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+	import 'leaflet.markercluster/dist/MarkerCluster.css';
+	import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 	Vue.component('l-map', Vue2Leaflet.LMap);
 	Vue.component('l-group', Vue2Leaflet.LLayerGroup);
 	Vue.component('l-image-overlay', Vue2Leaflet.LImageOverlay);
@@ -68,7 +71,7 @@
 	Vue.component('l-marker', Vue2Leaflet.LMarker);
 	Vue.component('l-popup', Vue2Leaflet.LPopup);
 	Vue.component('l-polyline', Vue2Leaflet.LPolyline);
-	// Vue.component('v-marker-cluster', Vue2LeafletMarkercluster);
+	Vue.component('v-marker-cluster', Vue2LeafletMarkercluster);
 
 	export default {
 		created() {
@@ -165,7 +168,8 @@
 				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
 				url: this.$store.getters.url.map,
 				icons: {},
-				markers: [],
+				markerTransmitter: [],
+				markerNodes: [],
 				lines: [],
 				coverageLayers: []
 			};
@@ -286,7 +290,8 @@
 					}
 				});
 
-				this.markers = markerNodes.concat(markerTransmitters);
+				this.markerTransmitter = markerTransmitters;
+				this.markerNodes = markerNodes;
 				this.lines = polylineTransmitters;
 			},
 			showCoverage(name) {
