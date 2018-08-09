@@ -11,16 +11,18 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div>{{ $t('general.search') }}: <input v-model="searchQuery"></div>
-				<v-map ref="leafletMap" :zoom="zoom" :center="center" v-on:l-ready="mapReady" style="height: 40em; margin-top: 1em">
-					<v-group v-for="item in coverageLayers" :key="item.name">
-						<v-image-overlay :url="item.url" :bounds="item.bounds" :opacity="0.8"></v-image-overlay>
-					</v-group>
-					<v-tilelayer :url="url" :attribution="attribution"></v-tilelayer>
-					<v-marker v-for="item in markers" :key="item.name" :lat-lng="item.position" :icon="item.icon" v-on:l-click="showCoverage(item.name)">
-						<v-popup :content="item.popup"></v-popup>
-					</v-marker>
-					<v-polyline v-for="item in lines" :key="item.name" :lat-lngs="item.position" :color="item.color"></v-polyline>
-				</v-map>
+				<l-map ref="leafletMap" :zoom="zoom" :center="center" style="height: 40em; margin-top: 1em">
+					<l-group v-for="item in coverageLayers" :key="item.name">
+						<l-image-overlay :url="item.url" :bounds="item.bounds" :opacity="0.8"></l-image-overlay>
+					</l-group>
+					<l-tilelayer :url="url" :attribution="attribution"></l-tilelayer>
+					<!-- <v-marker-cluster> -->
+						<l-marker v-for="item in markers" :key="item.name" :lat-lng="item.position" :icon="item.icon" v-on:click="showCoverage(item.name)">
+							<l-popup :content="item.popup"></l-popup>
+						</l-marker>
+					<!-- </v-marker-cluster> -->
+					<l-polyline v-for="item in lines" :key="item.name" :lat-lngs="item.position" :color="item.color"></l-polyline>
+				</l-map>
 			</div>
 		</div>
 
@@ -52,17 +54,21 @@
 <script>
 	import Vue from 'vue';
 	import Vue2Leaflet from 'vue2-leaflet';
+	// import Vue2LeafletMarkercluster from 'vue2-leaflet-markercluster';
 	import L from 'leaflet';
 	import 'leaflet/dist/leaflet.css';
 	import 'leaflet.fullscreen/Control.FullScreen.js';
 	import 'leaflet.fullscreen/Control.FullScreen.css';
-	Vue.component('v-map', Vue2Leaflet.Map);
-	Vue.component('v-group', Vue2Leaflet.LayerGroup);
-	Vue.component('v-image-overlay', Vue2Leaflet.ImageOverlay);
-	Vue.component('v-tilelayer', Vue2Leaflet.TileLayer);
-	Vue.component('v-marker', Vue2Leaflet.Marker);
-	Vue.component('v-popup', Vue2Leaflet.Popup);
-	Vue.component('v-polyline', Vue2Leaflet.Polyline);
+	// import 'leaflet.markercluster/dist/MarkerCluster.css';
+	// import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+	Vue.component('l-map', Vue2Leaflet.LMap);
+	Vue.component('l-group', Vue2Leaflet.LLayerGroup);
+	Vue.component('l-image-overlay', Vue2Leaflet.LImageOverlay);
+	Vue.component('l-tilelayer', Vue2Leaflet.LTileLayer);
+	Vue.component('l-marker', Vue2Leaflet.LMarker);
+	Vue.component('l-popup', Vue2Leaflet.LPopup);
+	Vue.component('l-polyline', Vue2Leaflet.LPolyline);
+	// Vue.component('v-marker-cluster', Vue2LeafletMarkercluster);
 
 	export default {
 		created() {
@@ -126,6 +132,15 @@
 					// create map out of loaded data
 					this.createMap();
 				});
+			});
+		},
+		mounted() {
+			this.$nextTick(() => {
+				// add scale to map
+				L.control.scale({ imperial: false }).addTo(this.$refs.leafletMap.mapObject);
+
+				// add fullscreen button to map
+				L.control.fullscreen().addTo(this.$refs.leafletMap.mapObject);
 			});
 		},
 		data() {
@@ -273,13 +288,6 @@
 
 				this.markers = markerNodes.concat(markerTransmitters);
 				this.lines = polylineTransmitters;
-			},
-			mapReady() {
-				// add scale to map
-				L.control.scale({ imperial: false }).addTo(this.$refs.leafletMap.mapObject);
-
-				// add fullscreen button to map
-				L.control.fullscreen().addTo(this.$refs.leafletMap.mapObject);
 			},
 			showCoverage(name) {
 				// check if the user clicked on a transmitter and fix name
