@@ -29,7 +29,7 @@
         "carousel": {
             "1": {
                 "title": "Bienvenido a DAPNET Web!",
-                "text": "The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts. As it is used on amateur radio frequencies, commercial use is forbidden.<br>If you are a licensed amateur radio operator, get your login account now.",
+                "text": "DAPNET (Red de localización de aficionados descentralizada) es una red operada por entusiastas de la radioafición. Como se usa en frecuencias de radioaficionados, el uso comercial está prohibido. <br> Si usted es un operador de radio aficionado con licencia, obtenga su cuenta de inicio de sesión ahora.",
                 "link": "NONE"
             },
             "2": {
@@ -63,7 +63,7 @@
                 "link": "http://hampager.de/dokuwiki/doku.php?id=9k6"
             },
             "8": {
-                "title": "BiPeer AlphaPOC 6002R",
+                "title": "BiPeer AlphaPOC 602R",
                 "text": "Disponible comercialmente, pequeño y sin modificaciones necesarias. Programación fácil en el BiPeer mismo.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription"
             },
@@ -124,7 +124,7 @@
             "edittransmitter": "Cambiar Transmisor",
             "callsign": {
                 "title": "Señal de llamada",
-                "help": "Ingrese un indicativo válido de radio aficionado de este transmisor. También se usará para el mensaje de identificación del transmisor de intervalo de 10 minutos para cumplir con la ley (al menos la ley alemana)."
+                "help": "Entra un indicativo válido de radio aficionado de este transmisor. También se usará para el mensaje de identificación del transmisor de intervalo de 10 minutos para cumplir con la ley (al menos la ley alemana)."
             },
             "import": {
                 "help": "Fácil importación de estaciones desde hamnetdb.net. Los datos de ubicación del sitio del transmisor seleccionado se copiarán en el formulario."
@@ -144,7 +144,7 @@
                 "omni": "Omni",
                 "directional": "Direccional",
                 "other": "Otro",
-                "help": "Please select if you have a omnidirectional antenna (e.g. X-50) or a directional antenna (e.g. Yagi)."
+                "help": "Seleccione si tiene una antena omnidireccional (por ejemplo, X-50) o una antena direccional (por ejemplo, Yagi)."
             },
             "antennadirection": {
                 "help": "<b>Dirección del haz principal de la antena</ b>: Ingrese la dirección del haz principal de la antena en grados de acuerdo con \"True North\" (en alemán \"rechtweisend Nord\")."
@@ -169,7 +169,7 @@
                 "help": "Como todos los transmisores usan la misma frecuencia, se utiliza un esquema de acceso multiplexado por división de tiempo. Hay 16 intervalos disponibles. Asigne los intervalos de este transmisor de acuerdo con los transmisores que lo rodean en su vecindario sin superponer intervalos de tiempo que están asignadas a más de un transmisor. Puede usar el mapa de los transmisores para verificar los intervalos de tiempo ya asignados de los transmisores adyacentes. En caso de que no pueda cumplir con sus requisitos, comuníquese con los propietarios del transmisor adyacente y trate de obtener un acuerdo. Normalmente cuatro 4 o menos intervalos de tiempo por transmisor son más que suficientes."
             },
             "owner": {
-                "help": "Si usted es dueño, puede cambiar los parámetros de este transmisor."
+                "help": "Si usted es el dueño, puede cambiar los parámetros de este transmisor."
             },
             "table": {
                 "description": "Esta tabla muestra los transmisores de paginación registrados, su estado en línea e información adicional. Los transmisores personales tienen poca potencia de salida y una cobertura muy pequeña. Los transmisores de amplio rango generalmente se instalan en ubicaciones elevadas que conducen a un área de cobertura amplia."
@@ -182,13 +182,13 @@
             },
             "checkbox": {
                 "showonlineonly": "Mostrar solo transmisores en línea",
-                "showwiderangeonly": "Show Widerange-transmitter only",
+                "showwiderangeonly": "Mostrar solo el transmisor Widerange",
                 "showbytimeslot": "Mostrar transmisores por intervalo de tiempo",
-                "shownodes": "Show nodos",
-                "shownodeline": "Show linea desde el transmisor al nodo"
+                "shownodes": "Mostrar nodos",
+                "shownodeline": "Mostrar línea desde el transmisor al nodo"
             },
             "actions": {
-                "showallcoverage": "Mostrar todas las superposiciones de cobertura",
+                "showallcoverage": "Mostrar todas las coberturas de cobertura",
                 "removeallcoverage": "Eliminar todas las superposiciones de cobertura"
             },
             "alerts": {
@@ -213,9 +213,9 @@
             "nl": "Holandés",
             "fr": "Francés",
             "pl": "Polaco",
-            "it": "Italian",
-            "pt": "Portuguese",
-            "se": "Swedish"
+            "it": "Italiano",
+            "pt": "Portuges",
+            "se": "Sueco"
         },
         "support": {
             "title": "Apoyanos ya",
@@ -227,8 +227,8 @@
             "twitter": "Twitter",
             "facebook": "Facebook",
             "contact": "Contacto",
-            "impress": "Impress",
-            "privacy": "Privacy"
+            "impress": "Impresión",
+            "privacy": "Privacidad"
         },
         "versions": {
             "title": "Versiones",
@@ -236,7 +236,7 @@
         },
         "cookieconsent": {
             "button": "OK",
-            "text": "This site uses cookies and your browser's local storage to deliver our services. By using our site, you acknowledge that you have read and understand our Privacy Policy."
+            "text": "Este sitio utiliza cookies y el almacenamiento local de su navegador para ofrecer nuestros servicios. Al utilizar nuestro sitio, usted reconoce que ha leído y entiende nuestra Política de privacidad."
         }
     },
     "table": {
@@ -250,7 +250,7 @@
             "delete": "Borrar",
             "email": "Enviar correo",
             "rubrics": "Emitir nombres de Rúbricas",
-            "monitoring": "Monitoring"
+            "monitoring": "Vigilancia\n"
         }
     },
     "rest": {
@@ -284,22 +284,22 @@
             "text": "Por favor complete cada campo para continuar."
         },
         "overwrite": {
-            "title": "Prevented Overwriting",
-            "text": "A possible case of overwriting existing data has been prevented."
+            "title": "Sobrescritura prevenida",
+            "text": "Se ha evitado un posible caso de sobrescribir los datos existentes."
         },
         "password": {
-            "title": "Forbidden character",
-            "text": "Your password must not contain anything but <code>A-Z</code>, <code>a-Z</code> and/or <code>0-9</code>."
+            "title": "Personaje prohibido",
+            "text": "Su contraseña no debe contener nada que no sea <code> A-Z </code>, <code> a-Z </code> y / o <code> 0-9 </code>."
         },
         "location": {
-            "title": "Invalid location",
-            "text": "Please check the given location and make sure to use your locale's decimal separator (e.g. <code>,</code> in German or <code>.</code> in US-English)."
+            "title": "Locación inválida\n",
+            "text": "Verifique la ubicación dada y asegúrese de usar el separador decimal de su localidad (por ejemplo, <code>, </code> en alemán o <code>. </code> en EE. UU. E inglés)."
         }
     },
     "general": {
         "continue": "Continuar",
         "submit": "Enviar",
-        "abort": "anular",
+        "abort": "Anular",
         "search": "Buscar",
         "information": "Información",
         "owner": "Dueño",
@@ -309,11 +309,11 @@
         "name": "Nombre",
         "latlong": {
             "title": "Latitud / Longitug",
-            "north": "norte",
-            "south": "sur",
-            "east": "este",
-            "west": "oeste",
-            "picker": "Location Picker"
+            "north": "Norte",
+            "south": "Sur",
+            "east": "Este",
+            "west": "Oeste",
+            "picker": "Selector de ubicación"
         },
         "password": "Contraseña",
         "yes": "Sí",
@@ -324,7 +324,7 @@
     },
     "rubric": {
         "overview": {
-            "totalrubrics": "Total de rúbricas",
+            "totalrubrics": "Total de Firmas",
             "information": {
                 "help": "Esta es una lista de todas las rúbricas en DAPNET. Se puede asignar un número de rúbrica a varios grupos de transmisores. Tenga en cuenta que los grupos de transmisores están diferentes para el mismo número de rúbrica para evitar la superposición de asignaciones de números.<br>Utilice el botón Activar rúbricas para permitir la recepción de rúbricas en su Skyper."
             },
@@ -431,7 +431,7 @@
     },
     "news": {
         "overview": {
-            "allrubriccontent": "Todo el contenido de la rúbrica",
+            "allrubriccontent": "Todo el contenido de la firma",
             "newrubriccontent": "Nuevo contenido de rúbrica",
             "totalrubriccontent": "Todo el contenido de la rúbrica",
             "information": {
@@ -460,7 +460,7 @@
         "overview": {
             "allnodes": "Todos los Nodos",
             "newnode": "Nuevo Nodo",
-            "sendmailtoallowners": "Enviar un correo a todos los propietarios",
+            "sendmailtoallowners": "Enviar un mail a todos los propietarios.",
             "statistics": {
                 "totalnodes": "Total Nodos"
             },
@@ -494,7 +494,7 @@
         "username": "Nombre de usuario",
         "password": "Contraseña",
         "information": {
-            "help": "Please enter here your personal login data. This is necessary as you may trigger transmission on amateur radio frequencies after login. If the login does not work you most probably have not agreed to our privacy statement before 25.5.2018 of there is another problem. Please not that in case you have not agreeed to our privacy statement, we were obligated to delete all your personal related data including you user account and all data you provided in the past."
+            "help": "Por favor entra aquí sus datos de acceso personales. Esto es necesario ya que puede activar la transmisión en las frecuencias de radio de aficionados después de iniciar sesión. Si el inicio de sesión no funciona, probablemente no haya aceptado nuestra declaración de privacidad antes del 25.5.2018 de que haya otro problema. Tenga en cuenta que, en caso de que no haya aceptado nuestra declaración de privacidad, nos obligaron a eliminar todos sus datos personales relacionados, incluida su cuenta de usuario y todos los datos que proporcionó anteriormente."
         }
     },
     "logout": {
@@ -502,7 +502,7 @@
         "emoji": "Emoji proporcionado de forma gratuita por"
     },
     "impress": {
-        "title": "Impress"
+        "title": "Impresion"
     },
     "error404": {
         "title": "Error 404 - No encontrado",
@@ -557,57 +557,57 @@
         }
     },
     "pagetitle": {
-        "home": "Home",
+        "home": "Domicilio",
         "calls": {
-            "overview": "Call Overview",
-            "new": "New Call"
+            "overview": "Resumen de llamadas",
+            "new": "Nueva llamada\n"
         },
         "subscribers": {
-            "overview": "Subscriber Overview",
-            "new": "New Subscriber",
-            "edit": "Edit Subscriber"
+            "overview": "Resumen suscriptor",
+            "new": "Nuevo suscriptor",
+            "edit": "Editar Suscriptor"
         },
         "rubric": {
-            "overview": "Rubric Overview",
-            "new": "New Rubric",
-            "edit": "Edit Rubric",
-            "activate": "Activate Rubrics",
+            "overview": "Descripción rúbrica",
+            "new": "Nueva rúbrica",
+            "edit": "Editar rúbrica",
+            "activate": "Activar rúbricas",
             "content": {
-                "overview": "Rubric Content Overview",
-                "new": "New Rubric Content"
+                "overview": "Resumen de contenido de la rúbrica",
+                "new": "Nuevo contenido de rúbrica"
             }
         },
         "transmitter": {
-            "overview": "Transmitter Overview",
-            "new": "New Transmitter",
-            "edit": "Edit Transmitter",
+            "overview": "Descripción general del transmisor",
+            "new": "Nuevo transmisor",
+            "edit": "Editar transmisor",
             "map": {
-                "overview": "Transmitter Map",
-                "detail": "Transmitter Map Details"
+                "overview": "Mapa transmisor",
+                "detail": "Detalles del mapa transmisor"
             },
-            "monitoring": "Transmitter Monitoring"
+            "monitoring": "Vigilancia del transmisor"
         },
         "transmittergroup": {
-            "overview": "Transmitter Group Overview",
-            "new": "New Transmitter Group",
-            "edit": "Edit Transmitter Group"
+            "overview": "Resumen del grupo de transmisores",
+            "new": "Nuevo grupo de transmisores",
+            "edit": "Editar grupo de transmisores"
         },
         "node": {
-            "overview": "Node Overview",
-            "new": "New Node",
-            "edit": "Edit Node",
-            "monitoring": "Node Monitoring"
+            "overview": "Visión general del nodo",
+            "new": "Nuevo nodo",
+            "edit": "Editar nodo",
+            "monitoring": "Vigilancia de Nodos"
         },
         "user": {
-            "overview": "User Overview",
-            "new": "New User",
-            "edit": "Edit User"
+            "overview": "Visión general del usuario",
+            "new": "Nuevo Usuario",
+            "edit": "Editar usuario"
         },
-        "login": "Login",
-        "logout": "Logout",
-        "versioncheck": "Versioncheck",
-        "impress": "Impress",
-        "privacy": "Privacy",
-        "notfound": "Not Found"
+        "login": "Iniciar sesión\n",
+        "logout": "Cerrar sesión",
+        "versioncheck": "Revisión de la versión",
+        "impress": "Impresión",
+        "privacy": "Privacidad",
+        "notfound": "No encontrado"
     }
 }
