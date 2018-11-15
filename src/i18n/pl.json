@@ -1,149 +1,149 @@
 {
     "navigation": {
-        "calls": "znaki wywoławcze",
-        "subscribers": "Subskrybenci",
+        "calls": "Znaki wywoławcze",
+        "subscribers": "Abonenci",
         "rubrics": {
-            "title": "Rubryki",
-            "all": "Wszystkie Rubryki",
-            "activate": "Activate Rubrics",
-            "content": "Rubric Content"
+            "title": "Grupy",
+            "all": "Wszystkie Grupy",
+            "activate": "Aktywuj Grupy",
+            "content": "Zawartość Grupy"
         },
         "transmitters": {
             "title": "Nadajnik",
             "all": "Wszystkie nadajniki",
             "map": "Mapa",
-            "groups": "Transmitter Groups"
+            "groups": "Grupy nadajników"
         },
-        "nodes": "Nodes",
+        "nodes": "Węzły",
         "users": "Użytkownicy",
         "help": {
-            "title": "Help",
-            "wiki": "Documentation",
-            "support": "Support"
+            "title": "Pomoc",
+            "wiki": "Dokumentacja",
+            "support": "Wsparcie"
         },
         "settings": "Ustawienia",
-        "login": "Login",
-        "logout": "Logout"
+        "login": "Zaloguj się",
+        "logout": "Wyloguj się"
     },
     "home": {
         "carousel": {
             "1": {
-                "title": "Witamy w DAPNET Web!",
-                "text": "The DAPNET (Decentralized Amateur Paging Network) is a network operated by amateur radio enthusiasts. As it is used on amateur radio frequencies, commercial use is forbidden.<br>If you are a licensed amateur radio operator, get your login account now.",
-                "link": "NONE"
+                "title": "Witamy na stronie DAPNET!",
+                "text": "DAPNET (Decentralized Amateur Paging Network - Amatorska Rozproszona Sieć Przywoławcza) jest siecią prowadzoną i obsługiwaną przez entuzjastów radioamatorów. Zabronione jest użytkowanie sieci w celach komercyjnych ponieważ jej nadajniki działają w zakresie częstotliwości amatorskich. <br>Jeśli jesteś licencjonowanym operatorem urządzeń radiowych w służbie amatorskiej, zarejestruj się już teraz.",
+                "link": "Nic"
             },
             "2": {
-                "title": "Transmitter Raspager",
-                "text": "A low-cost and low-power personal transmitter as an add-on board for Raspberry Pi.",
+                "title": "Nadajnik \"Raspager\"",
+                "text": "Tani nadajnik osobisty niskiej mocy w postaci nakładki na mikrokomputer Raspberry Pi.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=raspager"
             },
             "3": {
-                "title": "Coverage Map",
-                "text": "Transmitters are displayed on a map with their simulated coverage area.",
-                "link": "NONE"
+                "title": "Mapa pokrycia",
+                "text": "Na mapie pokazane są lokalizacje nadajników wraz z ich zasymulowanym zasięgiem.",
+                "link": "Brak"
             },
             "4": {
-                "title": "Touch Display for Transmitters",
-                "text": "Easy-to-use graphical control display based on Nextion Displays. Connection to transmitter host via UART or USB2UART.",
+                "title": "Ekran dotykowy dla nadajnika.",
+                "text": "Łatwy w użytkowaniu interfejs graficzny na bazie wyświetlaczy Nextion. Podłącz do nadajnika poprzez UART lub USB2UART.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=unipagernextion"
             },
             "5": {
-                "title": "Unipager - One software for all transmitter types",
-                "text": "Written in RUST, the Unipager software controls all transmitter types: Raspager, Ericsson C9000, Soundcard and RFM69. A Debian package is available for easy install and update.",
+                "title": "Unipager - Jedno oprogramowanie dla wszystkich typów nadajników.",
+                "text": "Napisane w RUST, oprogramowanie Unipager może sterować wszystkimi typami nadajników",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=unipager"
             },
             "6": {
-                "title": "Modern paging receiver Swissphone",
-                "text": "High-End model for pro-users.",
+                "title": "Nowoczesny pager Swissphone",
+                "text": "Model z wyższej półki dla profesjonalistów",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=swissphonedescription"
             },
             "7": {
-                "title": "SDR based Transmitter with GM1200",
-                "text": "All you need is a Raspberry Pi, a 9600 Baud-ready radio and a simple audio interface. Also feasable in combination with the touch display.",
+                "title": "Nadajnik wykonany na bazie SDR współpracującego z GM1200",
+                "text": "Potrzebujesz tylko Raspberry Pi i radio obsługujące transmisję 9600 Bodów oraz prosty interfejs audio. Do tego wszystkiego można jeszcze dodać ekran dotykowy.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=9k6"
             },
             "8": {
-                "title": "AlphaPOC 6002R paging reciever",
-                "text": "Commercially available, small and no modification needed. Easy on-pager programming.",
+                "title": "Pager AlphaPOC 602R",
+                "text": "Mały i nie wymagający modyfikacji, łatwy w programowaniu, dostępny w sprzedaży komercyjnej.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription"
             },
             "9": {
-                "title": "Structure of DAPNET",
-                "text": "Transparent and up-to-date comminication protocols like REST and Websocket are used.",
-                "link": "NONE"
+                "title": "Architektura sieci DAPNET",
+                "text": "Używamy przejrzystych i aktualnych protokołów komunikacyjnych takich jak REST oraz Websocket.",
+                "link": "Żaden"
             },
             "10": {
-                "title": "Support by ticket system",
-                "text": "Support requests are handled by a team for quick response time and maximum knowledge sharing.",
+                "title": "Wsparcie poprzez system biletów (ticket system).",
+                "text": "Zapytania do działu wsparcia obsługiwane są w taki sposób, aby jak najbardziej rzeczowa odpowiedź została udzielona w jak najkrótszym czasie.",
                 "link": "https://support.hampager.de/"
             }
         },
         "information": {
             "dapnet": {
-                "title": "The DAPNET",
-                "projects": "Projects"
+                "title": "Sieć DAPNET",
+                "projects": "Projekty"
             },
-            "map": "Go to full map view",
+            "map": "Przejdź do pełnego widoku mapy",
             "statistics": {
-                "calls": "Calls",
-                "rubric-content": "Rubric Content",
-                "rubrics": "Rubrics",
-                "transmitters": "Transmitters",
-                "nodes": "Nodes",
-                "users": "Users"
+                "calls": "Wywołania",
+                "rubric-content": "Zawartość Grupy",
+                "rubrics": "Grupy",
+                "transmitters": "Nadajniki",
+                "nodes": "Węzły",
+                "users": "Użytkownicy"
             }
         }
     },
     "transmitter": {
         "overview": {
             "table": {
-                "title": "All Transmitters",
-                "callsign": "Callsign",
-                "node": "Node",
-                "ipaddress": "IP-Address",
-                "device": "Device",
+                "title": "Wszystkie nadajniki",
+                "callsign": "Znak wywoławczy",
+                "node": "Węzeł",
+                "ipaddress": "Adres IP",
+                "device": "Urządzenie",
                 "status": "Status",
-                "connectedsince": "Connected since"
+                "connectedsince": "Połączony od"
             },
             "actions": {
-                "newtransmitter": "New Transmitter",
-                "sendmailtoallowners": "Send a mail to all owners"
+                "newtransmitter": "Nowy Nadajnik",
+                "sendmailtoallowners": "Wyślij e-mail do wszystkich właścicieli/opiekunów"
             },
             "statistics": {
-                "widerange": "Widerange",
-                "personal": "Personal",
-                "total": "Total",
-                "widerangeonly": "Widerange-transmitter only"
+                "widerange": "O większej mocy",
+                "personal": "Osobisty",
+                "total": "Wszystkie",
+                "widerangeonly": "Nadajniki o większej mocy"
             },
             "information": {
-                "text": "This overview shows all registered transmitters of the DAPNET network. Before you can connect your transmitter to one of the DAPNET-Nodes, it has to be registered by one of the admins. There are two classes of transmitters: Widerange (&gt; 1 Watt) and Personal (&lt;= 1 Watt). Why is there such a big number of offline transmitters? These are transmitters which have been registered in the past, but apparently are not online now. There is no information stored which transmitters \"should\" be online and which not.<br>Transmitters have one or multiple owners who can change the settings by themselves. Each transmitter is assigned to one or max. 16 timeslots. This is necessary as they transmit all on the same frequency, but not overlapping at the same time. Be aware to assign no timeslots to your transmitter that are already used in you coverage area. Contact one of the admins, if you need help."
+                "text": "Tu zobaczysz wszystkie zarejestrowane nadajniki sieci DAPNET. Przed podłączeniem swojego nadajnika do jednego z węzłów DAPNET, musi on zostać zarejestrowany przez jednego z administratorów. Mamy dwa rodzaje nadajników: O większej mocy (&gt; 1 Wat) oraz Osobisty (&gt;= 1 Watt). Zastanawiasz się dlaczego spora liczba nadajników nie jest połączona z siecią? Są to nadajniki zarejestrowane już jakiś czas temu, ale najwidoczniej zostały odłączone i nie wróciły do sieci. Nie posiadamy informacji, które z tych nadajników \"powinny być\" połączone, a które nie. <br>Nadajniki mają jednego lub kilku właścicieli/opiekunów, którzy samodzielnie mogą zmieniać ich ustawienia. Każdy nadajnik jest przypisany do jednego lub więcej (maksymalnie 16) szczelin czasowych. Jest to wymagane z tego powodu, iż w założeniu one wszystkie nadają na tej samej częstotliwości, a mają się nie nakładać w tym samym czasie. Zwróć uwagę, aby nie przypisywać swojego nadajnika do szczelin używanych już przez inny w twojej okolicy. Jeśli potrzebujesz pomocy, skontaktuj się z administracją."
             }
         },
         "new": {
-            "newtransmitter": "New Transmitter",
-            "edittransmitter": "Edit Transmitter",
+            "newtransmitter": "Nowy Nadajnik",
+            "edittransmitter": "Zmień ustawienia nadajnika",
             "callsign": {
-                "title": "Callsign",
+                "title": "Znak Wywoławczy",
                 "help": "Enter a valid amateur radio callsign of this transmitter. It will be also used for the 10 minute interval transmitter identification message to fulfill the law (at least the German law)."
             },
             "import": {
                 "help": "Easy import of stations from hamnetdb.net. Location data of the selected transmitter site will be copied into the form."
             },
             "password": {
-                "title": "Password",
+                "title": "Hasło",
                 "help": "Enter an authentication password for this transmitter. In the UniPager webinterface it’s called Auth Key."
             },
             "usage": {
-                "title": "Usage",
-                "personal": "Personal",
-                "widerange": "Widerange",
-                "help": "For classification of the transmitters, there are two categories: Personal (Transmitters with low output power like RasPager) and Wide Range (Higher output power and elevated location site)."
+                "title": "Historia użycia",
+                "personal": "Osobisty",
+                "widerange": "O większym zasięgu",
+                "help": "Nadajniki są podzielone na dwie kategorie: Osobiste (o niskiej mocy nadawania takie jak RasPager) oraz O większej mocy (wyższa moc nadawcza w wyższej lokalizacji antenowej)."
             },
             "antennatype": {
-                "title": "Antenna Type",
-                "omni": "Omni",
-                "directional": "Directional",
-                "other": "Other",
+                "title": "Typ anteny",
+                "omni": "Dookólna",
+                "directional": "Kierunkowa",
+                "other": "Inna",
                 "help": "Please select if you have a omnidirectional antenna (e.g. X-50) or a directional antenna (e.g. Yagi)."
             },
             "antennadirection": {
@@ -165,7 +165,7 @@
                 }
             },
             "timeslots": {
-                "title": "Timeslots",
+                "title": "Szczeliny czasowe",
                 "help": "As all transmitters use the same frequency a time division multiplex access scheme is used. There are 16 timeslots available. Assign the slots of this transmitter according to you surrounding transmitters in your neighborhood without overlapping timeslots that are assigned to more than one transmitter. You can use the transmitter map to check already assigned timeslots of adjacent transmitters. In case that you cannot fulfill your requirements, contact the adjacent transmitter owners and try to get an agreement. Normally four 4 or less timeslots per transmitter are more than enough."
             },
             "owner": {
@@ -176,9 +176,9 @@
             }
         },
         "map": {
-            "title": "Map",
+            "title": "Mapa",
             "settings": {
-                "title": "Settings"
+                "title": "Ustawienia"
             },
             "checkbox": {
                 "showonlineonly": "Show online transmitters only",

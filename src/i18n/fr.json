@@ -10,7 +10,7 @@
         },
         "transmitters": {
             "title": "Émetteurs",
-            "all": "Tout les émetteurs",
+            "all": "Tous les émetteurs",
             "map": "Carte",
             "groups": "Groupe de transmetteurs"
         },
@@ -63,7 +63,7 @@
                 "link": "http://hampager.de/dokuwiki/doku.php?id=9k6"
             },
             "8": {
-                "title": "Récepteur AlphaPOC 6002R",
+                "title": "Récepteur AlphaPOC 602R",
                 "text": "Disponible à la vente, petit et sans modifications à apporter. Simple à programmer.",
                 "link": "http://hampager.de/dokuwiki/doku.php?id=alphapocdescription"
             },
@@ -155,13 +155,13 @@
                     "help": "<b> Puissance de l'émetteur </ b>: entrez la puissance de sortie de l'émetteur en Watts, y compris les pertes de câble."
                 },
                 "antennalevel": {
-                    "help": "<b>Antenna elevation over ground</b>: Enter the antenna elevation over ground; NOT over NN (!) in meters."
+                    "help": "<b>Élévation de l'antenne par rapport au sol</b>: Saisissez l'élévation de l'antenne par rapport au sol. PAS du niveau de la mer (!) En mètres."
                 },
                 "antennagain": {
-                    "help": "<b>Antenna gain</b>: Enter the antenna gain in the main lobe direction for directional antennas and the average gain for omnidirectional antennas in dBi (dBi: Gain over isotropic radiator)."
+                    "help": "<b>Gain d'antenne</b>: Entrez le gain de l'antenne dans la direction du lobe principal pour les antennes directives ou le gain moyen d'antennes omnidirectionnelle en dBi (dBi: gain isotrope)."
                 },
                 "txidentric": {
-                    "help": "<b>Transmitter identification RIC</b>: Enter a RIC (default value is 8) which will be used to generate an artificial paging message containing the amateur radio callsign as given in this form."
+                    "help": "<b>RIC d'identification du pager</b>: Entrez le numéro  RIC (la valeur par défaut est de 8 chiffres) qui sera utilisé pour générer un message de paging artificiel contenant l'indicatif radio amateur tel qu'il est indiqué dans ce formulaire."
                 }
             },
             "timeslots": {
@@ -326,7 +326,7 @@
         "overview": {
             "totalrubrics": "Rubrique totale",
             "information": {
-                "help": "This is a list of all rubrics on the DAPNET. A rubric number can by assigned to several transmitter groups. Keep in mind that the transmitter groups are disjunct for the same rubric number in order to avoid overlapping number assigments.<br>Use the Activate Rubrics button to enable the reception of rubrics on your Skyper."
+                "help": "Voici une liste de toutes les rubriques du réseau DAPNET. Un numéro de rubrique peut être attribué à plusieurs groupes d'émetteurs. N'oubliez pas que les groupes d'émetteurs sont séparés pour le même numéro de rubrique afin d'éviter les assignations de numéros qui se chevauchent.<br>Utilisez le bouton Activer les rubriques pour activer la réception des rubriques sur votre Skyper."
             },
             "table": {
                 "number": "Nombre",
@@ -349,7 +349,7 @@
         "activation": {
             "pagernumber": "Numéro de récepteur (votre RIC) ",
             "information": {
-                "help": "Use the function to send an activation call to your Skyper. After successful reception, you can select the rubrics on \"Skyper Setup\" in the skyper menu."
+                "help": "Utilisez cette fonction pour envoyer un appel d'activation à votre Skyper. Une fois la réception réussie, vous pouvez sélectionner les rubriques dans \"Configuration Skyper\" dans le menu Skyper."
             },
             "transmittergroup": "Groupes d'émetteurs"
         }
@@ -357,21 +357,21 @@
     "subscribers": {
         "overview": {
             "newsubscriber": "Nouvel inscrit",
-            "allsubscribers": "Tout les inscrits",
+            "allsubscribers": "Tous les inscrits",
             "totalsubscribers": "Total des inscrits",
             "information": {
-                "help": "A subscriber is the logical connection between a name (the callsign) and one or multiple RIC numbers, for example a Skyper address."
+                "help": "Un abonné est la connexion logique entre un nom (l'indicatif d'appel) et un ou plusieurs numéros de RIC, par exemple une adresse Skyper."
             },
             "table": {
                 "pager": "Récepteur",
-                "subscriber": "Subscriber"
+                "subscriber": "Abonné"
             }
         },
         "new": {
-            "newsubscriber": "New Subscriber",
-            "editsubscriber": "Edit Subscriber",
+            "newsubscriber": "Nouvel Abonné",
+            "editsubscriber": "Editer l'Abonné",
             "subscriber": {
-                "title": "Subscriber",
+                "title": "Abonné",
                 "help": "Veuillez entrer un indicatif de radio amateur valide d'un humain ou un nom de classification d'une organisation."
             },
             "description": {
@@ -393,16 +393,16 @@
     },
     "calls": {
         "overview": {
-            "allcalls": "Tout les apples",
+            "allcalls": "Tous les appls",
             "newcall": "Nouvel appel",
             "emergencies": "Urgences",
             "totalcalls": "Total des apples",
             "information": {
-                "help": "Calls are a personal paging transmission to individual receivers."
+                "help": "Les appels sont une transmission de radiomessagerie personnelle à des récepteurs individuels"
             },
             "table": {
                 "timestamp": "Horodatage",
-                "txgroups": "TX Groups",
+                "txgroups": "Groupes d'émetteurs",
                 "message": "Message",
                 "emergency": "Haute priorité ?"
             }
@@ -445,7 +445,7 @@
             }
         },
         "new": {
-            "newrubriccontent": "New Rubric Content",
+            "newrubriccontent": "Nouveau contenu de la rubrique",
             "message": "Message",
             "charactersremaining": "caractères restants",
             "rubrics": "Rubriques",
@@ -538,7 +538,7 @@
             "newuser": "Nouvel utilisateur"
         },
         "overview": {
-            "allusers": "Tout les utilisateurs",
+            "allusers": "Tous les utilisateurs",
             "sendemailallusers": "Envoyer un mail à tous les utilisateurs",
             "totaladmins": "Total Administrators",
             "totalusers": "Total Users",
