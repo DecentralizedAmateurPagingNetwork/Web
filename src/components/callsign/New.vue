@@ -67,6 +67,18 @@
 <script>
 	export default {
 		created() {
+		function formatSubric(subric) {
+			if (subric == null) {
+				return ""
+			}
+			switch (subric) {
+				case 0: return "A"
+				case 1: return "B"
+				case 2: return "C"
+				case 3: return "D"
+				default: return ""
+			}
+		}
 			this.$http.get('users').then(response => {
 				response.body.forEach(user => {
 					this.formData.users.push({name: user.name});
@@ -81,7 +93,7 @@
 					let pagerNumbers = '';
 					let pagerNames = '';
 					response.body.pagers.forEach(pager => {
-						pagerNumbers += this.$helpers.zeroPad(pager.number, 7) + '\n';
+						pagerNumbers += this.$helpers.zeroPad(pager.number, 7) + formatSubric(pager.subric) + '\n';
 						pagerNames += pager.name + '\n';
 					});
 
@@ -128,6 +140,21 @@
 		},
 		methods: {
 			submitForm(event) {
+
+				function getSubric(number) {
+					if (number == null || number.trim().length < 2) {
+						return null
+					}
+
+					switch (number.slice(-1).toUpperCase()) {
+							case "A": return 0
+							case "B": return 1
+							case "C": return 2
+							case "D": return 3
+							default: return null
+					}
+				}
+
 				event.preventDefault();
 
 				// check for input in all fields
@@ -139,11 +166,13 @@
 				let pagerNames = this.form.pager.names.split('\n');
 				let pagers = [];
 				for (let i = 0; i < pagerNumbers.length; i++) {
-					let item = {};
-					item.number = pagerNumbers[i];
-					item.name = pagerNames[i];
+					let subric = getSubric(pagerNumbers[i])
 
-					pagers.push(item);
+					pagers.push({
+							number: subric == null ? pagerNumbers[i] : pagerNumbers[i].slice(0, -1),
+							name: pagerNames[i],
+							subric: subric,
+					});
 				}
 
 				let ownerNames = [];
