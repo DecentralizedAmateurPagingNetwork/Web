@@ -86,6 +86,20 @@
 		},
 		methods: {
 			loadData() {
+
+				function formatSubric(subric) {
+					if (subric == null) {
+						return ""
+					}
+					switch (subric) {
+							case 0: return "A"
+							case 1: return "B"
+							case 2: return "C"
+							case 3: return "D"
+							default: return ""
+					}
+				}
+
 				this.running = true;
 				this.$http.get('callsigns').then(response => {
 					// success --> save new data
@@ -94,7 +108,7 @@
 						// add pager list
 						if (this.$store.getters.user.admin) {
 							let pagerText = [];
-							callsign.pagers.forEach(pager => pagerText.push(pager.name + ' (' + this.$helpers.zeroPad(pager.number, 7) + ')'));
+							callsign.pagers.forEach(pager => pagerText.push(pager.name + ' (' + this.$helpers.zeroPad(pager.number, 7) + formatSubric(pager.subric) + ')'));
 							callsign.pagers = pagerText.join(', ');
 						} else {
 							callsign.pagers = '---';
